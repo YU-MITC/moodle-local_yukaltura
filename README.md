@@ -3,8 +3,8 @@
 YU Kaltura Local Libraries for Moodle
 ------
 
-This plugin provides libraries and APIs and power other "YU Video Package" plugins.
-This plugin is updated with stable releases. To follow active development on GitHub, click [here](https://github.com/YU-MITC/moodle-local_yukaltura/).
+This plugin provides media gallery (called "My Media") for users. Through the "My Media", users can upload media files, preview and delete their medias, and edit metadata of each media. Also, users can set enable/disable access restriction to their own media.
+This plugin is updated with stable releases. To follow active development on GitHub, click [here](https://github.com/YU-MITC/moodle-local_yumymedia/).
 
 Requirements
 ------
@@ -16,7 +16,7 @@ Web browsers must supprot the JavaScript and HTML5.
 Installation
 ------
 
-Unzip this plugin, and copy the directory (local/yukaltura) under moodle root directory (ex. /moodle).
+Unzip this plugin, and copy the directory (local/yumymedia) under moodle root directory (ex. /moodle).
 Installation will be completed after you log in as an administrator and access the notification menu.
 
 How to use
@@ -45,5 +45,4 @@ Warning
 ------
 
 We are not responsible for any problem caused by this software. 
-
 This software follows the license policy of Moodle (GNU GPL v3).
