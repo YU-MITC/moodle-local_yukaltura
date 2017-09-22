@@ -1,6 +1,6 @@
 # YU Video Package for Kaltura
 
-YU Kaltura local libraries for Moodle
+YU Kaltura Local Libraries for Moodle
 ------
 
 This plugin provides libraries and APIs and power other "YU Video Package" plugins.
