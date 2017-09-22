@@ -45,4 +45,5 @@ Warning
 ------
 
 We are not responsible for any problem caused by this software. 
+
 This software follows the license policy of Moodle (GNU GPL v3).
