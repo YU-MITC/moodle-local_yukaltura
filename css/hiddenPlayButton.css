@@ -1,0 +1,9 @@
+.largePlayBtn.icon-play {
+   content: "";
+   visibility: hidden !important;
+}
+
+.mwPlayerContainer.largePlayBtn, .mwPlayerContainer.largePlayBtn:hover {
+    content: "";
+    visibility: hidden !important;
+}
