@@ -18,8 +18,7 @@ Web browsers must supprot the JavaScript and HTML5.
 
 Installation
 ------
-
-Unzip this plugin, and copy the directory (local/yukaltura) under moodle root directory (ex. /moodle).
+Unzip the plugin into /local/yukaltura within your Moodle install.
 Installation will be completed after you log in as an administrator and access the notification menu.
 
 How to use
