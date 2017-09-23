@@ -6,7 +6,7 @@ Please note that there is a chance this module will not work on some Moodle envi
 YU Kaltura Media Local Libraries for Moodle
 ------
 
-This plugin provides media gallery (called "My Media") for users. Through the "My Media", users can upload media files, preview and delete their medias, and edit metadata of each media. Also, users can set enable/disable access restriction to their own media.
+This plugin provides libraries and APIs and power other "YU Kaltura Media Package" plugins.
 This plugin is updated with stable releases. To follow active development on GitHub, click [here](https://github.com/YU-MITC/moodle-local_yukaltura/).
 
 Requirements
