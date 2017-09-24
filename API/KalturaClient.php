@@ -3569,7 +3569,7 @@ class KalturaUploadTokenService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
         $this->client->queueServiceActionCall("uploadtoken", "delete", $kparams);
-        if ($this->client->isMultiRequest()) }
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
         $resultObject = $this->client->doQueue();
