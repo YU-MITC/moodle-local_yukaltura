@@ -31,8 +31,6 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-require_login();
-
 global $SESSION, $USER, $COURSE;
 
 $PAGE->set_context(context_system::instance());

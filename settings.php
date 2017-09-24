@@ -31,8 +31,6 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-require_session();
-
 global $PAGE;
 
 $param = optional_param('section', '', PARAM_TEXT);

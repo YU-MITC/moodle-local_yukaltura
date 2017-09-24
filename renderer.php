@@ -31,8 +31,6 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-require_login();
-
 class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
