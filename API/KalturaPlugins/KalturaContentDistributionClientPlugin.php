@@ -2030,7 +2030,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         }
         if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
-        ]
+        }
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "list", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
