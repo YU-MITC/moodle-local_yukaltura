@@ -31,6 +31,8 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
+require_login();
+
 global $PAGE;
 
 $param = optional_param('section', '', PARAM_TEXT);
@@ -187,8 +189,7 @@ if ($hassiteconfig) {
 
             if ($existingrootcategory) {
                 set_config('rootcategory_id', $existingrootcategory->id, KALTURA_PLUGIN_NAME);
-            }
-            else {
+            } else {
                 $result = local_yukaltura_create_root_category($connection);
                 if (is_array($result) && array_key_exists($result[0], $result) &&
                     array_key_exists($result[1], $result)) {

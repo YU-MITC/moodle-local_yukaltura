@@ -32,6 +32,8 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
+require_login();
+
 define('KALTURA_PLUGIN_NAME', 'local_yukaltura');
 define('KALTURA_DEFAULT_URI', 'http://www.kaltura.com');
 define('KALTURA_REPORT_DEFAULT_URI', 'http://apps.kaltura.com/hosted_pages');
@@ -694,10 +696,12 @@ function local_yukaltura_create_image_markup($entryobj, $title, $theme,
         $linksource = $beforestr . '/def_width/' . $originalwidth . $afterstr;
 
         $output .= '<a href="' . $linksource . '" target="_new">';
-        $output .= '<img src="' . $modifiedsource . '" width="' . $modifiedwidth . '" height="' . $modifiedheight . '" alt="' . $title . '" title = "' . $title . '" border="0"/>';
+        $output .= '<img src="' . $modifiedsource . '" width="' . $modifiedwidth;
+        $output .= '" height="' . $modifiedheight . '" alt="' . $title . '" title = "' . $title . '" border="0"/>';
         $output .= '</a>';
     } else {
-        $output .= '<img src="' . $modifiedsource . '" width="' . $entryobj->width . '" height="' . $entryobj->height. '" alt="' . $title . '" title = "' . $title . '" border="0"/>';
+        $output .= '<img src="' . $modifiedsource . '" width="' . $entryobj->width;
+        $output .= '" height="' . $entryobj->height. '" alt="' . $title . '" title = "' . $title . '" border="0"/>';
     }
 
     return $output;

@@ -22,11 +22,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaCaptionClientPlugin.php");
+
+require_login();
 
 class KalturaCaptionAssetItemFilter extends KalturaCaptionAssetFilter
 {
@@ -203,15 +204,19 @@ class KalturaCaptionAssetItemService extends KalturaServiceBase
 
     function search(KalturaBaseEntryFilter $entryFilter = null, KalturaCaptionAssetItemFilter $itemFilter = null, KalturaFilterPager $itemPager = null) {
         $kparams = array();
-        if ($entryFilter !== null)
+        if ($entryFilter !== null) {
             $this->client->addParam($kparams, "entryFilter", $entryFilter->toParams());
-        if ($itemFilter !== null)
+        }
+        if ($itemFilter !== null) {
             $this->client->addParam($kparams, "captionAssetItemFilter", $itemFilter->toParams());
-        if ($itemPager !== null)
+        }
+        if ($itemPager !== null) {
             $this->client->addParam($kparams, "captionAssetItemPager", $itemPager->toParams());
+        }
         $this->client->queueServiceActionCall("captionsearch_captionassetitem", "search", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaCaptionAssetItemListResponse");
@@ -239,8 +244,9 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
      * @return KalturaCaptionSearchClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance)
+        if(!self::$instance) {
             self::$instance = new KalturaCaptionSearchClientPlugin($client);
+        }
         return self::$instance;
     }
 
@@ -248,9 +254,7 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
      * @return array<KalturaServiceBase>
      */
     public function getServices() {
-        $services = array(
-            'captionAssetItem' => $this->captionAssetItem,
-        );
+        $services = array('captionAssetItem' => $this->captionAssetItem);
         return $services;
     }
 

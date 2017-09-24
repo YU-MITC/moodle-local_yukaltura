@@ -124,7 +124,7 @@ if (local_yukaltura_get_mymedia_permission()) {
 
             echo $renderer->create_options_table_upper($page);
 
-            echo $renderer->create_media_table($medialist, $connection);
+            echo $renderer->create_media_table($medialist);
 
             echo $renderer->create_options_table_lower($page);
         } else {

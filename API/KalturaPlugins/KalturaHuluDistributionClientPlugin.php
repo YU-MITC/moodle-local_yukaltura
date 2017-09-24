@@ -22,11 +22,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+
+require_login();
 
 class KalturaHuluDistributionProfileOrderBy
 {
@@ -155,8 +156,9 @@ class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
      * @return KalturaHuluDistributionClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance)
+        if(!self::$instance) {
             self::$instance = new KalturaHuluDistributionClientPlugin($client);
+        }
         return self::$instance;
     }
 

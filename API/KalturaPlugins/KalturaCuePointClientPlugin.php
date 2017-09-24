@@ -22,10 +22,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+
+require_login();
 
 class KalturaCuePointOrderBy
 {
@@ -394,8 +395,9 @@ class KalturaCuePointService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "cuePoint", $cuePoint->toParams());
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "add", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaCuePoint");
@@ -407,8 +409,9 @@ class KalturaCuePointService extends KalturaServiceBase
         $kfiles = array();
         $this->client->addParam($kfiles, "fileData", $fileData);
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "addFromBulk", $kparams, $kfiles);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaCuePointListResponse");
@@ -417,10 +420,12 @@ class KalturaCuePointService extends KalturaServiceBase
 
     function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        if ($pager !== null)
+        }
+        if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
+        }
         $this->client->queueServiceActionCall('cuepoint_cuepoint', 'serveBulk', $kparams);
         $resultObject = $this->client->getServeUrl();
         return $resultObject;
@@ -430,8 +435,9 @@ class KalturaCuePointService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "get", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaCuePoint");
@@ -440,13 +446,16 @@ class KalturaCuePointService extends KalturaServiceBase
 
     function listAction(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        if ($pager !== null)
+        }
+        if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
+        }
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "list", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaCuePointListResponse");
@@ -455,11 +464,13 @@ class KalturaCuePointService extends KalturaServiceBase
 
     function count(KalturaCuePointFilter $filter = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
+        }
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "count", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "integer");
@@ -471,8 +482,9 @@ class KalturaCuePointService extends KalturaServiceBase
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "cuePoint", $cuePoint->toParams());
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "update", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaCuePoint");
@@ -483,8 +495,9 @@ class KalturaCuePointService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "delete", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "null");
@@ -512,8 +525,9 @@ class KalturaCuePointClientPlugin extends KalturaClientPlugin
      * @return KalturaCuePointClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance)
+        if(!self::$instance) {
             self::$instance = new KalturaCuePointClientPlugin($client);
+        }
         return self::$instance;
     }
 
@@ -532,4 +546,3 @@ class KalturaCuePointClientPlugin extends KalturaClientPlugin
         return 'cuePoint';
     }
 }
-

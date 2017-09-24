@@ -22,10 +22,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+
+require_login();
 
 class KalturaFileSyncOrderBy
 {
@@ -285,8 +286,9 @@ class KalturaFileSyncClientPlugin extends KalturaClientPlugin
      * @return KalturaFileSyncClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance)
+        if(!self::$instance) {
             self::$instance = new KalturaFileSyncClientPlugin($client);
+        }
         return self::$instance;
     }
 
@@ -294,8 +296,7 @@ class KalturaFileSyncClientPlugin extends KalturaClientPlugin
      * @return array<KalturaServiceBase>
      */
     public function getServices() {
-        $services = array(
-        );
+        $services = array();
         return $services;
     }
 

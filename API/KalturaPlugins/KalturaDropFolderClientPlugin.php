@@ -22,10 +22,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+
+require_login();
 
 class KalturaDropFolderContentFileHandlerMatchPolicy
 {
@@ -1052,8 +1053,9 @@ class KalturaDropFolderService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "dropFolder", $dropFolder->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "add", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolder");
@@ -1064,8 +1066,9 @@ class KalturaDropFolderService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "get", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolder");
@@ -1077,8 +1080,9 @@ class KalturaDropFolderService extends KalturaServiceBase
         $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
         $this->client->addParam($kparams, "dropFolder", $dropFolder->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "update", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolder");
@@ -1089,8 +1093,9 @@ class KalturaDropFolderService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "delete", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolder");
@@ -1099,13 +1104,16 @@ class KalturaDropFolderService extends KalturaServiceBase
 
     function listAction(KalturaDropFolderFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        if ($pager !== null)
+        }
+        if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
+        }
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "list", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolderListResponse");
@@ -1123,8 +1131,9 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFile", $dropFolderFile->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "add", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolderFile");
@@ -1135,8 +1144,9 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "get", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolderFile");
@@ -1148,8 +1158,9 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->addParam($kparams, "dropFolderFile", $dropFolderFile->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "update", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolderFile");
@@ -1160,8 +1171,9 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "delete", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolderFile");
@@ -1170,13 +1182,16 @@ class KalturaDropFolderFileService extends KalturaServiceBase
 
     function listAction(KalturaDropFolderFileFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        if ($pager !== null)
+        }
+        if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
+        }
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "list", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolderFileListResponse");
@@ -1187,8 +1202,9 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "ignore", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaDropFolderFile");
@@ -1222,8 +1238,9 @@ class KalturaDropFolderClientPlugin extends KalturaClientPlugin
      * @return KalturaDropFolderClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance)
+        if(!self::$instance) {
             self::$instance = new KalturaDropFolderClientPlugin($client);
+        }
         return self::$instance;
     }
 
@@ -1231,9 +1248,7 @@ class KalturaDropFolderClientPlugin extends KalturaClientPlugin
      * @return array<KalturaServiceBase>
      */
     public function getServices() {
-        $services = array(
-            'dropFolder' => $this->dropFolder,
-            'dropFolderFile' => $this->dropFolderFile);
+        $services = array('dropFolder' => $this->dropFolder, 'dropFolderFile' => $this->dropFolderFile);
         return $services;
     }
 

@@ -22,10 +22,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+
+require_login();
 
 class KalturaAuditTrailAction
 {
@@ -688,8 +689,9 @@ class KalturaAuditTrailService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "auditTrail", $auditTrail->toParams());
         $this->client->queueServiceActionCall("audit_audittrail", "add", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaAuditTrail");
@@ -700,8 +702,9 @@ class KalturaAuditTrailService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("audit_audittrail", "get", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaAuditTrail");
@@ -710,13 +713,16 @@ class KalturaAuditTrailService extends KalturaServiceBase
 
     function listAction(KalturaAuditTrailFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        if ($pager !== null)
+        }
+        if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
+        }
         $this->client->queueServiceActionCall("audit_audittrail", "list", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultObject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultObject);
         $this->client->validateObjectType($resultObject, "KalturaAuditTrailListResponse");
@@ -744,8 +750,9 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
      * @return KalturaAuditClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance)
+        if(!self::$instance) {
             self::$instance = new KalturaAuditClientPlugin($client);
+        }
         return self::$instance;
     }
 
@@ -753,9 +760,7 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
      * @return array<KalturaServiceBase>
      */
     public function getServices() {
-        $services = array(
-            'auditTrail' => $this->auditTrail,
-        );
+        $services = array('auditTrail' => $this->auditTrail);
         return $services;
     }
 

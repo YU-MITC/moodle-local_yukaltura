@@ -31,6 +31,8 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
+require_login();
+
 class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
@@ -53,7 +55,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      *
      * @return HTML markup
      */
-    public function create_media_table($medialist = array(), $connection) {
+    public function create_media_table($medialist = array()) {
 
         $output      = '';
         $maxcolumns = 3;
