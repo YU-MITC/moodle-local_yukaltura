@@ -274,7 +274,7 @@ class KalturaClientBase
                 if ($result === false && serialize(false) !== $postResult) {
                     throw new KalturaClientException("failed to unserialize server result\n$postResult", KalturaClientException::ERROR_UNSERIALIZE_FAILED);
                 }
-                $dump = print($result);
+                $dump = var_dump($result);
                 $this->log("result (object dump): " . $dump);
             } else {
                 throw new KalturaClientException("unsupported format: $postResult", KalturaClientException::ERROR_FORMAT_NOT_SUPPORTED);
