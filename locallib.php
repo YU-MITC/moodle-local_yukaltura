@@ -166,9 +166,6 @@ function local_yukaltura_uninitialize_account() {
  * @param string $session The Kaltura session string
  */
 function local_yukaltura_send_initialization($session) {
-
-    global $CFG;
-
     $plugin = new stdClass();
     // We always want the version information even if it was already loaded by something else.
     include(dirname(__FILE__).'/version.php');
@@ -266,7 +263,7 @@ function local_yukaltura_login($admin = false, $privileges = '', $expiry = 10800
  * @return string|bool The session ID string value or false on error
  */
 function local_yukaltura_generate_weak_kaltura_session($courseid, $coursename) {
-    global $CFG, $USER, $DB;
+    global $CFG, $USER;
 
     $configobj = local_yukaltura_get_report_configuration_obj();
 
@@ -408,7 +405,6 @@ function local_yukaltura_get_configuration_obj() {
     global $CFG;
 
     $partnerid = local_yukaltura_get_partner_id();
-    $uri = local_yukaltura_get_host();
 
     if (empty($partnerid)) {
         return false;
@@ -438,7 +434,6 @@ function local_yukaltura_get_report_configuration_obj() {
     global $CFG;
 
     $partnerid = local_yukaltura_get_partner_id();
-    $uri = get_config(KALTURA_PLUGIN_NAME, 'report_uri');
 
     if (empty($partnerid)) {
         return false;
@@ -722,7 +717,7 @@ function local_yukaltura_create_image_markup($entryobj, $title, $theme,
  *
  * @return string - HTML markup
  */
-function local_yukaltura_get_kdp_code($entryobj, $uiconfid = 0, $courseid = 0, $session = '', $uid = 0) {
+function local_yukaltura_get_kdp_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
 
     if (!local_yukaltura_is_valid_entry_object($entryobj)) {
         return 'Unable to play media ('. $entryobj->id . ') please contact your site administrator.';
@@ -844,7 +839,6 @@ function local_yukaltura_get_kdp_flashvars($creatorname = '', $session = '') {
 }
 
 function local_yukaltura_get_root_category() {
-    global $CFG;
 
     $rootid = '';
     $rootpath = '';
@@ -905,7 +899,6 @@ function local_yukaltura_get_ready_entry_object($entryid, $readyonly = true) {
         }
 
         // Check if the entry object is cached.
-        $entries = new KalturaStaticEntries();
         $entryobj = KalturaStaticEntries::get_entry($entryid, $clientobj->baseEntry, false);
 
         if (!empty($entryobj)) {
@@ -1198,7 +1191,7 @@ function local_yukaltura_create_client_tag() {
  * and is used as the id of the object tag
  *
  */
-function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $courseid = 0, $session = '', $uid = 0) {
+function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
 
     if (!local_yukaltura_is_valid_entry_object($entryobj)) {
         return 'Unable to play media ('. $entryobj->id . ') please contact your site administrator.';
@@ -1220,7 +1213,7 @@ function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $courseid = 
         $kwidgetflashvar .= ",'". $proval[0] ."' : '". $proval[1] . "'";
     }
 
-    if (KalturaMediaType::IMAGE == $entreyobj->mediaType) {
+    if (KalturaMediaType::IMAGE == $entryobj->mediaType) {
         $kwidgetflashvar .= ", 'IframeCustomPluginCss1' : '". new moodle_url('/local/yukaltura/css/hiddenPlayButton.css') . "'";
     }
 
@@ -1292,15 +1285,13 @@ class yukaltura_connection {
     /**
      * Get the connection object.  Pass true to renew the connection
      *
-     * @param bool $renew true to renew the session if it has expired.  Otherwise
-     * false. (OBSOLETE the connection is always renewed.  TODO: remove this parameter
-     * from the function and areas where this method is referenced in all the plug-ins)
+     * @param bool $admin if true, get connection as admin, otherwise, as user.
      * @param int $timeout seconds to keep the session alive, if zero is passed the
      * last time out value will be used
      * @return object A Kaltura KalturaClient object
      */
-    public function get_connection($renew = true, $timeout = 0) {
-        self::$connection = local_yukaltura_login(true, '', $timeout);
+    public function get_connection($admin, $timeout = 0) {
+        self::$connection = local_yukaltura_login($admin, '', $timeout);
         return self::$connection;
     }
 
@@ -1818,7 +1809,6 @@ function local_yukaltura_create_root_category($connection) {
     $parentid = '';
     $categories = array();
     $rootcategory = get_config(KALTURA_PLUGIN_NAME, 'rootcategory');
-    $rootcategoryid = get_config(KALTURA_PLUGIN_NAME, 'rootcategory_id');
     $duplicate = false;
 
     // Split categories into an array.
@@ -1910,19 +1900,6 @@ function local_yukaltura_create_category($connection, $name, $parentid = 0) {
     }
 
     return false;
-}
-
-
-/**
- * Checks to see if a category with the same name exists.  If parent_id is
- * passed it checks to see a category with the same name and parent id exists
- * @param obj - Kaltura connection object
- * @param string - category name
- * @param int - (optional) parent id
- * @return bool - true if category exists, otherwise false
- */
-function local_yukaltura_category_exists($connection, $name, $parentid = 0) {
-    // TODO: is this function still needed?
 }
 
 

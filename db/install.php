@@ -17,8 +17,7 @@
 /**
  * Kaltura Post installation and migration code.
  *
- * @package    local
- * @subpackage yukaltura
+ * @package    local_yukaltura
  * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -77,9 +76,6 @@ function migrate_assignment_data() {
     if ($assigntableexists && $moduleexists) {
 
         try {
-            // Check of the kalmediaassign module exists and retrieve all old assignments.
-            $moduletableexists = kalmediaassign_exists($dbman);
-
             $params = array('assignmenttype' => 'kaltura');
             $oldassignments = $DB->get_records('assignment', $params);
 
@@ -89,7 +85,7 @@ function migrate_assignment_data() {
 
                     $courseid                  = $assignment->course;
                     $rebuildcourses[$courseid] = $courseid;
-                    $kalmdiaassignobj          = create_new_kalmediaassign($assignment);
+                    $kalmediaassignobj         = create_new_kalmediaassign($assignment);
                     $kalmediaassignid          = add_new_kalmediaassign($kalmediaassignobj);
 
                     if ($kalmediaassignid) {
@@ -220,7 +216,6 @@ function migrate_resource_data() {
 
     $dbman              = $DB->get_manager();
     $moduletableexists  = false;
-    $kalmediapresexists = false;
     $resourceoldexists  = false;
 
     // Check if the mdl_resource_old table exists and has any entries.

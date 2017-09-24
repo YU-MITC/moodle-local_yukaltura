@@ -54,7 +54,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      * @return HTML markup
      */
     public function create_media_table($medialist = array(), $connection) {
-        global $OUTPUT;
 
         $output      = '';
         $maxcolumns = 3;
@@ -74,9 +73,9 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         foreach ($medialist as $key => $media) {
             if (KalturaEntryStatus::READY == $media->status) {
-                $data[] = $this->create_media_entry_markup($media, true, $connection);
+                $data[] = $this->create_media_entry_markup($media, true);
             } else {
-                $data[] = $this->create_media_entry_markup($media, false, $connection);
+                $data[] = $this->create_media_entry_markup($media, false);
             }
 
             // When the max number of columns is reached, add the data to the table object.
@@ -121,7 +120,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      * @return HTML Markup for sorting pulldown.
      */
     public function create_sort_option() {
-        global $CFG, $SESSION;
+        global $SESSION;
 
         $recent = null;
         $old = null;
@@ -244,7 +243,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      * @return HTML Markup for sorting pulldown.
      */
     public function create_options_table_lower($page) {
-        global $USER;
 
         $output = '';
 
@@ -347,9 +345,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      *
      * @return HTML Markup for media entry.
      */
-    public function create_media_entry_markup($entry, $entryready = true, $connection) {
-
-        global $USER;
+    public function create_media_entry_markup($entry, $entryready = true) {
 
         $output = '';
 
@@ -394,7 +390,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $output .= html_writer::end_tag('div');
 
         // Add entry to cache.
-        $entries = new KalturaStaticEntries();
         KalturaStaticEntries::add_entry_object($entry);
         return $output;
 
