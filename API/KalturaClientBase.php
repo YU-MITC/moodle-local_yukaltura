@@ -242,8 +242,7 @@ class KalturaClientBase
                 $params = array_merge($params, $callParams);
                 $files = array_merge($files, $call->files);
             }
-        }
-        else {
+        } else {
             $call = $this->callsQueue[0];
             $url .= $call->service."&action=".$call->action;
             $params = array_merge($params, $call->params);
@@ -261,9 +260,7 @@ class KalturaClientBase
 
         if ($error) {
             throw new KalturaClientException($error, KalturaClientException::ERROR_GENERIC);
-        }
-        else
-        {
+        } else {
             $this->log("result (serialized): " . $postResult);
 
             if ($this->config->format == self::KALTURA_SERVICE_FORMAT_PHP) {
@@ -274,8 +271,7 @@ class KalturaClientBase
                 }
                 $dump = print($result);
                 $this->log("result (object dump): " . $dump);
-            }
-            else {
+            } else {
                 throw new KalturaClientException("unsupported format: $postResult", KalturaClientException::ERROR_FORMAT_NOT_SUPPORTED);
             }
         }
@@ -312,8 +308,7 @@ class KalturaClientBase
     private function doHttpRequest($url, $params = array(), $files = array()) {
         if (function_exists('curl_init')) {
             return $this->doCurl($url, $params, $files);
-        }
-        else {
+        } else {
             return $this->doPostRequest($url, $params, $files);
         }
     }
@@ -335,9 +330,7 @@ class KalturaClientBase
                 $file = "@".$file; // Let curl know its a file.
             }
             curl_setopt($ch, CURLOPT_POSTFIELDS, array_merge($params, $files));
-        }
-        else
-        {
+        } else {
             $opt = http_build_query($params, null, "&");
             $this->log("curl: $url&$opt");
             curl_setopt($ch, CURLOPT_POSTFIELDS, $opt);
@@ -347,8 +340,7 @@ class KalturaClientBase
         curl_setopt($ch, CURLOPT_USERAGENT, $this->config->userAgent);
         if (count($files) > 0) {
             curl_setopt($ch, CURLOPT_TIMEOUT, 0);
-        }
-        else {
+        } else {
             curl_setopt($ch, CURLOPT_TIMEOUT, $this->config->curlTimeout);
         }
 
@@ -497,9 +489,7 @@ class KalturaClientBase
             foreach($paramValue as $subParamName => $subParamValue) {
                 $this->addParam($params, "$paramName:$subParamName", $subParamValue);
             }
-        }
-        else
-        {
+        } else {
             $this->addParam($params, "$paramName:-", "");
         }
     }
@@ -535,8 +525,7 @@ class KalturaClientBase
             if (!($resultObject instanceof $objectType)) {
                 throw new KalturaClientException("Invalid object type", KalturaClientException::ERROR_INVALID_OBJECT_TYPE);
             }
-        }
-        else if (gettype($resultObject) !== "NULL" && gettype($resultObject) !== $objectType) {
+        } else if (gettype($resultObject) !== "NULL" && gettype($resultObject) !== $objectType) {
             throw new KalturaClientException("Invalid object type", KalturaClientException::ERROR_INVALID_OBJECT_TYPE);
         }
     }
@@ -642,13 +631,13 @@ class KalturaClientBase
             }
             if ($privilege == '*') {
                 $privilege = 'all:*';
-            ]
+            }
             $splittedPrivilege = explode(':', $privilege, 2);
             if (count($splittedPrivilege) > 1) {
                 $fields[$splittedPrivilege[0]] = $splittedPrivilege[1];
-            }
-            else
+            } else {
                 $fields[$splittedPrivilege[0]] = '';
+            }
         }
         $fields[self::FIELD_EXPIRY] = time() + $expiry;
         $fields[self::FIELD_TYPE] = $type;
@@ -765,8 +754,7 @@ class KalturaServiceActionCall
         foreach($params as $key => $val) {
             if (is_array($val)) {
                 $newParams[$key] = $this->parseParams($val);
-            }
-            else {
+            } else {
                 $newParams[$key] = $val;
             }
         }
@@ -831,8 +819,7 @@ abstract class KalturaObjectBase
         if ($paramValue !== null) {
             if($paramValue instanceof KalturaObjectBase) {
                 $params[$paramName] = $paramValue->toParams();
-            }
-            else {
+            } else {
                 $params[$paramName] = $paramValue;
             }
         }
