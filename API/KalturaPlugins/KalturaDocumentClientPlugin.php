@@ -330,6 +330,7 @@ class KalturaDocumentsService extends KalturaServiceBase
             foreach($attributes as $index => $obj) {
                 $this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
             }
+        }
         $this->client->queueServiceActionCall("document_documents", "convert", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
