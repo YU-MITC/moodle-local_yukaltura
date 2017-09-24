@@ -1,6 +1,8 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
- - rbx-2
+language: php
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+  - hhvm
  
