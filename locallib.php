@@ -32,8 +32,6 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-require_login();
-
 define('KALTURA_PLUGIN_NAME', 'local_yukaltura');
 define('KALTURA_DEFAULT_URI', 'http://www.kaltura.com');
 define('KALTURA_REPORT_DEFAULT_URI', 'http://apps.kaltura.com/hosted_pages');

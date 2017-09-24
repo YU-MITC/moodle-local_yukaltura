@@ -30,8 +30,6 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-require_login();
-
 class KalturaBaseRestriction extends KalturaObjectBase
 {
 

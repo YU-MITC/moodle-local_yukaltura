@@ -30,8 +30,6 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-require_login();
-
 function xmldb_local_yukaltura_install() {
 
     // Copy plug configuration data.

@@ -32,8 +32,6 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-require_login();
-
 class KalturaAccessControlService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null) {
