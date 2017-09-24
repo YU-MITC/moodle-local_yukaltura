@@ -631,12 +631,12 @@ class KalturaConversionProfileAssetParamsService extends KalturaServiceBase
 		return $resultObject;
 	}
 
-	function update($conversionProfileId, $assetParamsId, KalturaConversionProfileAssetParams $conversionProfileAssetParams)
+	function update($profileId, $assetParamsId, KalturaConversionProfileAssetParams $assetParams)
 	{
 		$kparams = array();
-		$this->client->addParam($kparams, "conversionProfileId", $conversionProfileId);
+		$this->client->addParam($kparams, "conversionProfileId", $profileId);
 		$this->client->addParam($kparams, "assetParamsId", $assetParamsId);
-		$this->client->addParam($kparams, "conversionProfileAssetParams", $conversionProfileAssetParams->toParams());
+		$this->client->addParam($kparams, "conversionProfileAssetParams", $assetParams->toParams());
 		$this->client->queueServiceActionCall("conversionprofileassetparams", "update", $kparams);
 		if ($this->client->isMultiRequest())
 			return $this->client->getMultiRequestResult();
@@ -890,13 +890,13 @@ class KalturaDocumentService extends KalturaServiceBase
 		return $resultObject;
 	}
 
-	function convert($entryId, $conversionProfileId = null, array $dynamicConversionAttributes = null)
+	function convert($entryId, $conversionProfileId = null, array $conversionAttributes = null)
 	{
 		$kparams = array();
 		$this->client->addParam($kparams, "entryId", $entryId);
 		$this->client->addParam($kparams, "conversionProfileId", $conversionProfileId);
-		if ($dynamicConversionAttributes !== null)
-			foreach($dynamicConversionAttributes as $index => $obj)
+		if ($conversionAttributes !== null)
+			foreach($conversionAttributes as $index => $obj)
 			{
 				$this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
 			}
@@ -1628,13 +1628,13 @@ class KalturaMediaService extends KalturaServiceBase
 		return $resultObject;
 	}
 
-	function convert($entryId, $conversionProfileId = null, array $dynamicConversionAttributes = null)
+	function convert($entryId, $profileId = null, array $conversionAttributes = null)
 	{
 		$kparams = array();
 		$this->client->addParam($kparams, "entryId", $entryId);
-		$this->client->addParam($kparams, "conversionProfileId", $conversionProfileId);
-		if ($dynamicConversionAttributes !== null)
-			foreach($dynamicConversionAttributes as $index => $obj)
+		$this->client->addParam($kparams, "conversionProfileId", $profileId);
+		if ($conversionAttributes !== null)
+			foreach($conversionAttributes as $index => $obj)
 			{
 				$this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
 			}
@@ -2710,11 +2710,11 @@ class KalturaSessionService extends KalturaServiceBase
 		return $resultObject;
 	}
 
-	function impersonate($secret, $impersonatedPartnerId, $userId = "", $type = 0, $partnerId = null, $expiry = 86400, $privileges = null)
+	function impersonate($secret, $imPartnerId, $userId = "", $type = 0, $partnerId = null, $expiry = 86400, $privileges = null)
 	{
 		$kparams = array();
 		$this->client->addParam($kparams, "secret", $secret);
-		$this->client->addParam($kparams, "impersonatedPartnerId", $impersonatedPartnerId);
+		$this->client->addParam($kparams, "impersonatedPartnerId", $imPartnerId);
 		$this->client->addParam($kparams, "userId", $userId);
 		$this->client->addParam($kparams, "type", $type);
 		$this->client->addParam($kparams, "partnerId", $partnerId);
