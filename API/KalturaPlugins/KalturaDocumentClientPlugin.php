@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -265,13 +266,11 @@ class KalturaSwfFlavorParams extends KalturaFlavorParams
 
 class KalturaDocumentsService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function addFromUploadedFile(KalturaDocumentEntry $documentEntry, $uploadTokenId)
-    {
+    function addFromUploadedFile(KalturaDocumentEntry $documentEntry, $uploadTokenId) {
         $kparams = array();
         $this->client->addParam($kparams, "documentEntry", $documentEntry->toParams());
         $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
@@ -284,8 +283,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromEntry($sourceEntryId, KalturaDocumentEntry $documentEntry = null, $paramsId = null)
-    {
+    function addFromEntry($sourceEntryId, KalturaDocumentEntry $documentEntry = null, $paramsId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "sourceEntryId", $sourceEntryId);
         if ($documentEntry !== null)
@@ -300,8 +298,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromFlavorAsset($sourceFlavorAssetId, KalturaDocumentEntry $documentEntry = null)
-    {
+    function addFromFlavorAsset($sourceFlavorAssetId, KalturaDocumentEntry $documentEntry = null) {
         $kparams = array();
         $this->client->addParam($kparams, "sourceFlavorAssetId", $sourceFlavorAssetId);
         if ($documentEntry !== null)
@@ -315,14 +312,12 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function convert($entryId, $profileId = null, array $attributes = null)
-    {
+    function convert($entryId, $profileId = null, array $attributes = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "conversionProfileId", $profileId);
         if ($attributes !== null)
-            foreach($attributes as $index => $obj)
-            {
+            foreach($attributes as $index => $obj) {
                 $this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
             }
         $this->client->queueServiceActionCall("document_documents", "convert", $kparams);
@@ -334,8 +329,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($entryId, $version = -1)
-    {
+    function get($entryId, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "version", $version);
@@ -348,8 +342,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($entryId, KalturaDocumentEntry $documentEntry)
-    {
+    function update($entryId, KalturaDocumentEntry $documentEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "documentEntry", $documentEntry->toParams());
@@ -362,8 +355,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($entryId)
-    {
+    function delete($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("document_documents", "delete", $kparams);
@@ -375,8 +367,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaDocumentEntryFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaDocumentEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -391,8 +382,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function upload($fileData)
-    {
+    function upload($fileData) {
         $kparams = array();
         $kfiles = array();
         $this->client->addParam($kfiles, "fileData", $fileData);
@@ -405,8 +395,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function convertPptToSwf($entryId)
-    {
+    function convertPptToSwf($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("document_documents", "convertPptToSwf", $kparams);
@@ -418,8 +407,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serve($entryId, $flavorAssetId = null, $forceProxy = false)
-    {
+    function serve($entryId, $flavorAssetId = null, $forceProxy = false) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "flavorAssetId", $flavorAssetId);
@@ -429,8 +417,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serveByFlavorParamsId($entryId, $flavorParamsId = null, $forceProxy = false)
-    {
+    function serveByFlavorParamsId($entryId, $flavorParamsId = null, $forceProxy = false) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "flavorParamsId", $flavorParamsId);
@@ -440,6 +427,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultObject;
     }
 }
+
 class KalturaDocumentClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -452,8 +440,7 @@ class KalturaDocumentClientPlugin extends KalturaClientPlugin
      */
     public $documents = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->documents = new KalturaDocumentsService($client);
     }
@@ -461,8 +448,7 @@ class KalturaDocumentClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaDocumentClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaDocumentClientPlugin($client);
         return self::$instance;
@@ -471,8 +457,7 @@ class KalturaDocumentClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'documents' => $this->documents,
         );
@@ -482,8 +467,7 @@ class KalturaDocumentClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'document';
     }
 }

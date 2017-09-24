@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -196,13 +197,11 @@ class KalturaCaptionAssetItemListResponse extends KalturaObjectBase
 
 class KalturaCaptionAssetItemService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function search(KalturaBaseEntryFilter $entryFilter = null, KalturaCaptionAssetItemFilter $itemFilter = null, KalturaFilterPager $itemPager = null)
-    {
+    function search(KalturaBaseEntryFilter $entryFilter = null, KalturaCaptionAssetItemFilter $itemFilter = null, KalturaFilterPager $itemPager = null) {
         $kparams = array();
         if ($entryFilter !== null)
             $this->client->addParam($kparams, "entryFilter", $entryFilter->toParams());
@@ -231,8 +230,7 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
      */
     public $captionAssetItem = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->captionAssetItem = new KalturaCaptionAssetItemService($client);
     }
@@ -240,8 +238,7 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaCaptionSearchClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaCaptionSearchClientPlugin($client);
         return self::$instance;
@@ -250,8 +247,7 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'captionAssetItem' => $this->captionAssetItem,
         );
@@ -261,9 +257,7 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'captionSearch';
     }
 }
-

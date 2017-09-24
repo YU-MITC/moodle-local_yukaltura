@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -259,13 +260,11 @@ class KalturaVirusScanProfileListResponse extends KalturaObjectBase
 
 class KalturaVirusScanProfileService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaVirusScanProfileFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaVirusScanProfileFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -280,8 +279,7 @@ class KalturaVirusScanProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function add(KalturaVirusScanProfile $profile)
-    {
+    function add(KalturaVirusScanProfile $profile) {
         $kparams = array();
         $this->client->addParam($kparams, "virusScanProfile", $profile->toParams());
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "add", $kparams);
@@ -293,8 +291,7 @@ class KalturaVirusScanProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($profileId)
-    {
+    function get($profileId) {
         $kparams = array();
         $this->client->addParam($kparams, "virusScanProfileId", $profileId);
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "get", $kparams);
@@ -306,8 +303,7 @@ class KalturaVirusScanProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($scanProfileId, KalturaVirusScanProfile $scanProfile)
-    {
+    function update($scanProfileId, KalturaVirusScanProfile $scanProfile) {
         $kparams = array();
         $this->client->addParam($kparams, "virusScanProfileId", $scanProfileId);
         $this->client->addParam($kparams, "virusScanProfile", $scanProfile->toParams());
@@ -320,8 +316,7 @@ class KalturaVirusScanProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($scanProfileId)
-    {
+    function delete($scanProfileId) {
         $kparams = array();
         $this->client->addParam($kparams, "virusScanProfileId", $scanProfileId);
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "delete", $kparams);
@@ -333,8 +328,7 @@ class KalturaVirusScanProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function scan($flavorAssetId, $scanProfileId = null)
-    {
+    function scan($flavorAssetId, $scanProfileId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "flavorAssetId", $flavorAssetId);
         $this->client->addParam($kparams, "virusScanProfileId", $scanProfileId);
@@ -359,8 +353,7 @@ class KalturaVirusScanClientPlugin extends KalturaClientPlugin
      */
     public $virusScanProfile = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->virusScanProfile = new KalturaVirusScanProfileService($client);
     }
@@ -368,8 +361,7 @@ class KalturaVirusScanClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaVirusScanClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaVirusScanClientPlugin($client);
         return self::$instance;
@@ -378,19 +370,15 @@ class KalturaVirusScanClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
-        $services = array(
-            'virusScanProfile' => $this->virusScanProfile,
-        );
+    public function getServices() {
+        $services = array('virusScanProfile' => $this->virusScanProfile);
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'virusScan';
     }
 }

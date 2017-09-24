@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -282,13 +283,11 @@ class KalturaCaptionAssetFilter extends KalturaCaptionAssetBaseFilter
 
 class KalturaCaptionAssetService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add($entryId, KalturaCaptionAsset $captionAsset)
-    {
+    function add($entryId, KalturaCaptionAsset $captionAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "captionAsset", $captionAsset->toParams());
@@ -301,8 +300,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function setContent($id, KalturaContentResource $contentResource)
-    {
+    function setContent($id, KalturaContentResource $contentResource) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "contentResource", $contentResource->toParams());
@@ -315,8 +313,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaCaptionAsset $captionAsset)
-    {
+    function update($id, KalturaCaptionAsset $captionAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "captionAsset", $captionAsset->toParams());
@@ -329,8 +326,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serveByEntryId($entryId, $captionParamId = null)
-    {
+    function serveByEntryId($entryId, $captionParamId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "captionParamId", $captionParamId);
@@ -339,8 +335,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getUrl($id, $storageId = null)
-    {
+    function getUrl($id, $storageId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "storageId", $storageId);
@@ -353,8 +348,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getRemotePaths($id)
-    {
+    function getRemotePaths($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("caption_captionasset", "getRemotePaths", $kparams);
@@ -366,8 +360,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serve($captionAssetId)
-    {
+    function serve($captionAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "captionAssetId", $captionAssetId);
         $this->client->queueServiceActionCall('caption_captionasset', 'serve', $kparams);
@@ -375,8 +368,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function setAsDefault($captionAssetId)
-    {
+    function setAsDefault($captionAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "captionAssetId", $captionAssetId);
         $this->client->queueServiceActionCall("caption_captionasset", "setAsDefault", $kparams);
@@ -388,8 +380,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($captionAssetId)
-    {
+    function get($captionAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "captionAssetId", $captionAssetId);
         $this->client->queueServiceActionCall("caption_captionasset", "get", $kparams);
@@ -401,8 +392,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -417,8 +407,7 @@ class KalturaCaptionAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($captionAssetId)
-    {
+    function delete($captionAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "captionAssetId", $captionAssetId);
         $this->client->queueServiceActionCall("caption_captionasset", "delete", $kparams);
@@ -433,13 +422,11 @@ class KalturaCaptionAssetService extends KalturaServiceBase
 
 class KalturaCaptionParamsService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaCaptionParams $captionParams)
-    {
+    function add(KalturaCaptionParams $captionParams) {
         $kparams = array();
         $this->client->addParam($kparams, "captionParams", $captionParams->toParams());
         $this->client->queueServiceActionCall("caption_captionparams", "add", $kparams);
@@ -451,8 +438,7 @@ class KalturaCaptionParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("caption_captionparams", "get", $kparams);
@@ -464,8 +450,7 @@ class KalturaCaptionParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaCaptionParams $captionParams)
-    {
+    function update($id, KalturaCaptionParams $captionParams) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "captionParams", $captionParams->toParams());
@@ -478,8 +463,7 @@ class KalturaCaptionParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("caption_captionparams", "delete", $kparams);
@@ -491,8 +475,7 @@ class KalturaCaptionParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaCaptionParamsFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaCaptionParamsFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -524,8 +507,7 @@ class KalturaCaptionClientPlugin extends KalturaClientPlugin
      */
     public $captionParams = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->captionAsset = new KalturaCaptionAssetService($client);
         $this->captionParams = new KalturaCaptionParamsService($client);
@@ -534,8 +516,7 @@ class KalturaCaptionClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaCaptionClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaCaptionClientPlugin($client);
         return self::$instance;
@@ -544,8 +525,7 @@ class KalturaCaptionClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'captionAsset' => $this->captionAsset,
             'captionParams' => $this->captionParams,
@@ -556,8 +536,7 @@ class KalturaCaptionClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'caption';
     }
 }

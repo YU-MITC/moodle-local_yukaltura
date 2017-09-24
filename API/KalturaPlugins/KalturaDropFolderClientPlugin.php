@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -1043,13 +1044,11 @@ class KalturaSftpDropFolder extends KalturaSshDropFolder
 
 class KalturaDropFolderService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaDropFolder $dropFolder)
-    {
+    function add(KalturaDropFolder $dropFolder) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolder", $dropFolder->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "add", $kparams);
@@ -1061,8 +1060,7 @@ class KalturaDropFolderService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($dropFolderId)
-    {
+    function get($dropFolderId) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "get", $kparams);
@@ -1074,8 +1072,7 @@ class KalturaDropFolderService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($dropFolderId, KalturaDropFolder $dropFolder)
-    {
+    function update($dropFolderId, KalturaDropFolder $dropFolder) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
         $this->client->addParam($kparams, "dropFolder", $dropFolder->toParams());
@@ -1088,8 +1085,7 @@ class KalturaDropFolderService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($dropFolderId)
-    {
+    function delete($dropFolderId) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "delete", $kparams);
@@ -1101,8 +1097,7 @@ class KalturaDropFolderService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaDropFolderFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaDropFolderFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -1120,13 +1115,11 @@ class KalturaDropFolderService extends KalturaServiceBase
 
 class KalturaDropFolderFileService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaDropFolderFile $dropFolderFile)
-    {
+    function add(KalturaDropFolderFile $dropFolderFile) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFile", $dropFolderFile->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "add", $kparams);
@@ -1138,8 +1131,7 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($dropFolderFileId)
-    {
+    function get($dropFolderFileId) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "get", $kparams);
@@ -1151,8 +1143,7 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($dropFolderFileId, KalturaDropFolderFile $dropFolderFile)
-    {
+    function update($dropFolderFileId, KalturaDropFolderFile $dropFolderFile) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->addParam($kparams, "dropFolderFile", $dropFolderFile->toParams());
@@ -1165,8 +1156,7 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($dropFolderFileId)
-    {
+    function delete($dropFolderFileId) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "delete", $kparams);
@@ -1178,8 +1168,7 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaDropFolderFileFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaDropFolderFileFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -1194,8 +1183,7 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function ignore($dropFolderFileId)
-    {
+    function ignore($dropFolderFileId) {
         $kparams = array();
         $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "ignore", $kparams);
@@ -1224,8 +1212,7 @@ class KalturaDropFolderClientPlugin extends KalturaClientPlugin
      */
     public $dropFolderFile = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->dropFolder = new KalturaDropFolderService($client);
         $this->dropFolderFile = new KalturaDropFolderFileService($client);
@@ -1234,8 +1221,7 @@ class KalturaDropFolderClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaDropFolderClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaDropFolderClientPlugin($client);
         return self::$instance;
@@ -1244,20 +1230,17 @@ class KalturaDropFolderClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'dropFolder' => $this->dropFolder,
-            'dropFolderFile' => $this->dropFolderFile,
-        );
+            'dropFolderFile' => $this->dropFolderFile);
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'dropFolder';
     }
 }

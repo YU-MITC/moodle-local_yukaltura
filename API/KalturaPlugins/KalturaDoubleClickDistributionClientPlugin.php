@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -115,13 +116,11 @@ class KalturaDoubleClickDistributionProvider extends KalturaDistributionProvider
 
 class KalturaDoubleClickService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function getFeed($distributionProfileId, $hash, $page = 1, $period = -1)
-    {
+    function getFeed($distributionProfileId, $hash, $page = 1, $period = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "distributionProfileId", $distributionProfileId);
         $this->client->addParam($kparams, "hash", $hash);
@@ -144,8 +143,7 @@ class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin
      */
     public $doubleClick = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->doubleClick = new KalturaDoubleClickService($client);
     }
@@ -153,8 +151,7 @@ class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaDoubleClickDistributionClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaDoubleClickDistributionClientPlugin($client);
         return self::$instance;
@@ -163,8 +160,7 @@ class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'doubleClick' => $this->doubleClick,
         );
@@ -174,8 +170,7 @@ class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'doubleClickDistribution';
     }
 }

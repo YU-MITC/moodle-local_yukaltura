@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -385,13 +386,11 @@ class KalturaCuePointListResponse extends KalturaObjectBase
 
 class KalturaCuePointService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaCuePoint $cuePoint)
-    {
+    function add(KalturaCuePoint $cuePoint) {
         $kparams = array();
         $this->client->addParam($kparams, "cuePoint", $cuePoint->toParams());
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "add", $kparams);
@@ -403,8 +402,7 @@ class KalturaCuePointService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromBulk($fileData)
-    {
+    function addFromBulk($fileData) {
         $kparams = array();
         $kfiles = array();
         $this->client->addParam($kfiles, "fileData", $fileData);
@@ -417,8 +415,7 @@ class KalturaCuePointService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -429,8 +426,7 @@ class KalturaCuePointService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "get", $kparams);
@@ -442,8 +438,7 @@ class KalturaCuePointService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -458,8 +453,7 @@ class KalturaCuePointService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function count(KalturaCuePointFilter $filter = null)
-    {
+    function count(KalturaCuePointFilter $filter = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -472,8 +466,7 @@ class KalturaCuePointService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaCuePoint $cuePoint)
-    {
+    function update($id, KalturaCuePoint $cuePoint) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "cuePoint", $cuePoint->toParams());
@@ -486,8 +479,7 @@ class KalturaCuePointService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "delete", $kparams);
@@ -511,8 +503,7 @@ class KalturaCuePointClientPlugin extends KalturaClientPlugin
      */
     public $cuePoint = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->cuePoint = new KalturaCuePointService($client);
     }
@@ -520,8 +511,7 @@ class KalturaCuePointClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaCuePointClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaCuePointClientPlugin($client);
         return self::$instance;
@@ -530,19 +520,15 @@ class KalturaCuePointClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
-        $services = array(
-            'cuePoint' => $this->cuePoint,
-        );
+    public function getServices() {
+        $services = array('cuePoint' => $this->cuePoint);
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'cuePoint';
     }
 }

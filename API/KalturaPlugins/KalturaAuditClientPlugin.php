@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -679,13 +680,11 @@ class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo
 
 class KalturaAuditTrailService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaAuditTrail $auditTrail)
-    {
+    function add(KalturaAuditTrail $auditTrail) {
         $kparams = array();
         $this->client->addParam($kparams, "auditTrail", $auditTrail->toParams());
         $this->client->queueServiceActionCall("audit_audittrail", "add", $kparams);
@@ -697,8 +696,7 @@ class KalturaAuditTrailService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("audit_audittrail", "get", $kparams);
@@ -710,8 +708,7 @@ class KalturaAuditTrailService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaAuditTrailFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAuditTrailFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -738,8 +735,7 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
      */
     public $auditTrail = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->auditTrail = new KalturaAuditTrailService($client);
     }
@@ -747,8 +743,7 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaAuditClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaAuditClientPlugin($client);
         return self::$instance;
@@ -757,8 +752,7 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'auditTrail' => $this->auditTrail,
         );
@@ -768,8 +762,7 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'audit';
     }
 }

@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -268,13 +269,11 @@ class KalturaShortLinkListResponse extends KalturaObjectBase
 
 class KalturaShortLinkService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaShortLinkFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaShortLinkFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -289,8 +288,7 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function add(KalturaShortLink $shortLink)
-    {
+    function add(KalturaShortLink $shortLink) {
         $kparams = array();
         $this->client->addParam($kparams, "shortLink", $shortLink->toParams());
         $this->client->queueServiceActionCall("shortlink_shortlink", "add", $kparams);
@@ -302,8 +300,7 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("shortlink_shortlink", "get", $kparams);
@@ -315,8 +312,7 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaShortLink $shortLink)
-    {
+    function update($id, KalturaShortLink $shortLink) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "shortLink", $shortLink->toParams());
@@ -329,8 +325,7 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("shortlink_shortlink", "delete", $kparams);
@@ -342,8 +337,7 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function gotoAction($id, $proxy = false)
-    {
+    function gotoAction($id, $proxy = false) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "proxy", $proxy);
@@ -364,8 +358,7 @@ class KalturaShortLinkClientPlugin extends KalturaClientPlugin
      */
     public $shortLink = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->shortLink = new KalturaShortLinkService($client);
     }
@@ -373,8 +366,7 @@ class KalturaShortLinkClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaShortLinkClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaShortLinkClientPlugin($client);
         return self::$instance;
@@ -383,19 +375,15 @@ class KalturaShortLinkClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
-        $services = array(
-            'shortLink' => $this->shortLink,
-        );
+    public function getServices() {
+        $services = array('shortLink' => $this->shortLink);
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'shortLink';
     }
 }

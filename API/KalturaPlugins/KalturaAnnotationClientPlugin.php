@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -175,13 +176,11 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
 
 class KalturaAnnotationService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaAnnotation $annotation)
-    {
+    function add(KalturaAnnotation $annotation) {
         $kparams = array();
         $this->client->addParam($kparams, "annotation", $annotation->toParams());
         $this->client->queueServiceActionCall("annotation_annotation", "add", $kparams);
@@ -193,8 +192,7 @@ class KalturaAnnotationService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaAnnotation $annotation)
-    {
+    function update($id, KalturaAnnotation $annotation) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "annotation", $annotation->toParams());
@@ -207,8 +205,7 @@ class KalturaAnnotationService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaAnnotationFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAnnotationFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -223,8 +220,7 @@ class KalturaAnnotationService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromBulk($fileData)
-    {
+    function addFromBulk($fileData) {
         $kparams = array();
         $kfiles = array();
         $this->client->addParam($kfiles, "fileData", $fileData);
@@ -237,8 +233,7 @@ class KalturaAnnotationService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -249,8 +244,7 @@ class KalturaAnnotationService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("annotation_annotation", "get", $kparams);
@@ -262,8 +256,7 @@ class KalturaAnnotationService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function count(KalturaCuePointFilter $filter = null)
-    {
+    function count(KalturaCuePointFilter $filter = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -276,8 +269,7 @@ class KalturaAnnotationService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("annotation_annotation", "delete", $kparams);
@@ -301,8 +293,7 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
      */
     public $annotation = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->annotation = new KalturaAnnotationService($client);
     }
@@ -310,8 +301,7 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaAnnotationClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaAnnotationClientPlugin($client);
         return self::$instance;
@@ -320,8 +310,7 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'annotation' => $this->annotation,
         );
@@ -331,8 +320,7 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'annotation';
     }
 }

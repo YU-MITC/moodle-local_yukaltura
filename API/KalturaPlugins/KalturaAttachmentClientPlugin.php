@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
@@ -158,13 +159,11 @@ class KalturaAttachmentAssetFilter extends KalturaAttachmentAssetBaseFilter
 
 class KalturaAttachmentAssetService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add($entryId, KalturaAttachmentAsset $attachmentAsset)
-    {
+    function add($entryId, KalturaAttachmentAsset $attachmentAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "attachmentAsset", $attachmentAsset->toParams());
@@ -177,8 +176,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function setContent($id, KalturaContentResource $contentResource)
-    {
+    function setContent($id, KalturaContentResource $contentResource) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "contentResource", $contentResource->toParams());
@@ -191,8 +189,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaAttachmentAsset $attachmentAsset)
-    {
+    function update($id, KalturaAttachmentAsset $attachmentAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "attachmentAsset", $attachmentAsset->toParams());
@@ -205,8 +202,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getUrl($id, $storageId = null)
-    {
+    function getUrl($id, $storageId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "storageId", $storageId);
@@ -219,8 +215,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getRemotePaths($id)
-    {
+    function getRemotePaths($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "getRemotePaths", $kparams);
@@ -232,8 +227,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serve($attachmentAssetId)
-    {
+    function serve($attachmentAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
         $this->client->queueServiceActionCall('attachment_attachmentasset', 'serve', $kparams);
@@ -241,8 +235,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($attachmentAssetId)
-    {
+    function get($attachmentAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "get", $kparams);
@@ -254,8 +247,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -270,8 +262,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($attachmentAssetId)
-    {
+    function delete($attachmentAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "delete", $kparams);
@@ -295,8 +286,7 @@ class KalturaAttachmentClientPlugin extends KalturaClientPlugin
      */
     public $attachmentAsset = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->attachmentAsset = new KalturaAttachmentAssetService($client);
     }
@@ -304,8 +294,7 @@ class KalturaAttachmentClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaAttachmentClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaAttachmentClientPlugin($client);
         return self::$instance;
@@ -314,8 +303,7 @@ class KalturaAttachmentClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'attachmentAsset' => $this->attachmentAsset,
         );
@@ -325,8 +313,7 @@ class KalturaAttachmentClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'attachment';
     }
 }

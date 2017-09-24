@@ -22,6 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/config.php');
 require_once("KalturaClientBase.php");
 require_once("KalturaEnums.php");
 require_once("KalturaTypes.php");
@@ -29,13 +30,11 @@ require_once("KalturaTypes.php");
 
 class KalturaAccessControlService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaAccessControl $accessControl)
-    {
+    function add(KalturaAccessControl $accessControl) {
         $kparams = array();
         $this->client->addParam($kparams, "accessControl", $accessControl->toParams());
         $this->client->queueServiceActionCall("accesscontrol", "add", $kparams);
@@ -47,8 +46,7 @@ class KalturaAccessControlService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("accesscontrol", "get", $kparams);
@@ -60,8 +58,7 @@ class KalturaAccessControlService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaAccessControl $accessControl)
-    {
+    function update($id, KalturaAccessControl $accessControl) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "accessControl", $accessControl->toParams());
@@ -74,8 +71,7 @@ class KalturaAccessControlService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("accesscontrol", "delete", $kparams);
@@ -87,8 +83,7 @@ class KalturaAccessControlService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaAccessControlFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAccessControlFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -106,13 +101,11 @@ class KalturaAccessControlService extends KalturaServiceBase
 
 class KalturaAdminUserService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function updatePassword($email, $password, $newEmail = "", $newPassword = "")
-    {
+    function updatePassword($email, $password, $newEmail = "", $newPassword = "") {
         $kparams = array();
         $this->client->addParam($kparams, "email", $email);
         $this->client->addParam($kparams, "password", $password);
@@ -127,8 +120,7 @@ class KalturaAdminUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function resetPassword($email)
-    {
+    function resetPassword($email) {
         $kparams = array();
         $this->client->addParam($kparams, "email", $email);
         $this->client->queueServiceActionCall("adminuser", "resetPassword", $kparams);
@@ -140,8 +132,7 @@ class KalturaAdminUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function login($email, $password, $partnerId = null)
-    {
+    function login($email, $password, $partnerId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "email", $email);
         $this->client->addParam($kparams, "password", $password);
@@ -155,8 +146,7 @@ class KalturaAdminUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function setInitialPassword($hashKey, $newPassword)
-    {
+    function setInitialPassword($hashKey, $newPassword) {
         $kparams = array();
         $this->client->addParam($kparams, "hashKey", $hashKey);
         $this->client->addParam($kparams, "newPassword", $newPassword);
@@ -172,13 +162,11 @@ class KalturaAdminUserService extends KalturaServiceBase
 
 class KalturaBaseEntryService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaBaseEntry $entry, $type = null)
-    {
+    function add(KalturaBaseEntry $entry, $type = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entry", $entry->toParams());
         $this->client->addParam($kparams, "type", $type);
@@ -191,8 +179,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addContent($entryId, KalturaResource $resource)
-    {
+    function addContent($entryId, KalturaResource $resource) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "resource", $resource->toParams());
@@ -205,8 +192,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromUploadedFile(KalturaBaseEntry $entry, $uploadTokenId, $type = null)
-    {
+    function addFromUploadedFile(KalturaBaseEntry $entry, $uploadTokenId, $type = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entry", $entry->toParams());
         $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
@@ -220,8 +206,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($entryId, $version = -1)
-    {
+    function get($entryId, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "version", $version);
@@ -234,8 +219,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getRemotePaths($entryId)
-    {
+    function getRemotePaths($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("baseentry", "getRemotePaths", $kparams);
@@ -247,8 +231,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($entryId, KalturaBaseEntry $baseEntry)
-    {
+    function update($entryId, KalturaBaseEntry $baseEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "baseEntry", $baseEntry->toParams());
@@ -261,8 +244,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateContent($entryId, KalturaResource $resource, $conversionProfileId = null)
-    {
+    function updateContent($entryId, KalturaResource $resource, $conversionProfileId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "resource", $resource->toParams());
@@ -276,8 +258,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getByIds($entryIds)
-    {
+    function getByIds($entryIds) {
         $kparams = array();
         $this->client->addParam($kparams, "entryIds", $entryIds);
         $this->client->queueServiceActionCall("baseentry", "getByIds", $kparams);
@@ -289,8 +270,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($entryId)
-    {
+    function delete($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("baseentry", "delete", $kparams);
@@ -302,8 +282,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaBaseEntryFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaBaseEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -318,8 +297,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function count(KalturaBaseEntryFilter $filter = null)
-    {
+    function count(KalturaBaseEntryFilter $filter = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -332,8 +310,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function upload($fileData)
-    {
+    function upload($fileData) {
         $kparams = array();
         $kfiles = array();
         $this->client->addParam($kfiles, "fileData", $fileData);
@@ -346,8 +323,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateThumbnailJpeg($entryId, $fileData)
-    {
+    function updateThumbnailJpeg($entryId, $fileData) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $kfiles = array();
@@ -361,8 +337,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateThumbnailFromUrl($entryId, $url)
-    {
+    function updateThumbnailFromUrl($entryId, $url) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "url", $url);
@@ -375,8 +350,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateThumbnailFromSourceEntry($entryId, $sourceEntryId, $timeOffset)
-    {
+    function updateThumbnailFromSourceEntry($entryId, $sourceEntryId, $timeOffset) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "sourceEntryId", $sourceEntryId);
@@ -390,8 +364,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function flag(KalturaModerationFlag $moderationFlag)
-    {
+    function flag(KalturaModerationFlag $moderationFlag) {
         $kparams = array();
         $this->client->addParam($kparams, "moderationFlag", $moderationFlag->toParams());
         $this->client->queueServiceActionCall("baseentry", "flag", $kparams);
@@ -403,8 +376,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function reject($entryId)
-    {
+    function reject($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("baseentry", "reject", $kparams);
@@ -416,8 +388,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function approve($entryId)
-    {
+    function approve($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("baseentry", "approve", $kparams);
@@ -429,8 +400,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listFlags($entryId, KalturaFilterPager $pager = null)
-    {
+    function listFlags($entryId, KalturaFilterPager $pager = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         if ($pager !== null)
@@ -444,8 +414,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function anonymousRank($entryId, $rank)
-    {
+    function anonymousRank($entryId, $rank) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "rank", $rank);
@@ -458,8 +427,7 @@ class KalturaBaseEntryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getContextData($entryId, KalturaEntryContextDataParams $contextDataParams)
-    {
+    function getContextData($entryId, KalturaEntryContextDataParams $contextDataParams) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "contextDataParams", $contextDataParams->toParams());
@@ -475,13 +443,11 @@ class KalturaBaseEntryService extends KalturaServiceBase
 
 class KalturaBulkUploadService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add($conversionProfileId, $csvFileData, $bulkUploadType = null, $uploadedBy = null)
-    {
+    function add($conversionProfileId, $csvFileData, $bulkUploadType = null, $uploadedBy = null) {
         $kparams = array();
         $this->client->addParam($kparams, "conversionProfileId", $conversionProfileId);
         $kfiles = array();
@@ -497,8 +463,7 @@ class KalturaBulkUploadService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("bulkupload", "get", $kparams);
@@ -510,8 +475,7 @@ class KalturaBulkUploadService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($pager !== null)
             $this->client->addParam($kparams, "pager", $pager->toParams());
@@ -524,8 +488,7 @@ class KalturaBulkUploadService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serve($id)
-    {
+    function serve($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall('bulkupload', 'serve', $kparams);
@@ -533,8 +496,7 @@ class KalturaBulkUploadService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serveLog($id)
-    {
+    function serveLog($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall('bulkupload', 'serveLog', $kparams);
@@ -542,8 +504,7 @@ class KalturaBulkUploadService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function abort($id)
-    {
+    function abort($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("bulkupload", "abort", $kparams);
@@ -558,13 +519,11 @@ class KalturaBulkUploadService extends KalturaServiceBase
 
 class KalturaCategoryService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaCategory $category)
-    {
+    function add(KalturaCategory $category) {
         $kparams = array();
         $this->client->addParam($kparams, "category", $category->toParams());
         $this->client->queueServiceActionCall("category", "add", $kparams);
@@ -576,8 +535,7 @@ class KalturaCategoryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("category", "get", $kparams);
@@ -589,8 +547,7 @@ class KalturaCategoryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaCategory $category)
-    {
+    function update($id, KalturaCategory $category) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "category", $category->toParams());
@@ -603,8 +560,7 @@ class KalturaCategoryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("category", "delete", $kparams);
@@ -616,8 +572,7 @@ class KalturaCategoryService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaCategoryFilter $filter = null)
-    {
+    function listAction(KalturaCategoryFilter $filter = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -633,13 +588,11 @@ class KalturaCategoryService extends KalturaServiceBase
 
 class KalturaConversionProfileAssetParamsService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaConversionProfileAssetParamsFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaConversionProfileAssetParamsFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -654,8 +607,7 @@ class KalturaConversionProfileAssetParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($profileId, $assetParamsId, KalturaConversionProfileAssetParams $assetParams)
-    {
+    function update($profileId, $assetParamsId, KalturaConversionProfileAssetParams $assetParams) {
         $kparams = array();
         $this->client->addParam($kparams, "conversionProfileId", $profileId);
         $this->client->addParam($kparams, "assetParamsId", $assetParamsId);
@@ -672,13 +624,11 @@ class KalturaConversionProfileAssetParamsService extends KalturaServiceBase
 
 class KalturaConversionProfileService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function setAsDefault($id)
-    {
+    function setAsDefault($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("conversionprofile", "setAsDefault", $kparams);
@@ -690,8 +640,7 @@ class KalturaConversionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getDefault()
-    {
+    function getDefault() {
         $kparams = array();
         $this->client->queueServiceActionCall("conversionprofile", "getDefault", $kparams);
         if ($this->client->isMultiRequest())
@@ -702,8 +651,7 @@ class KalturaConversionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function add(KalturaConversionProfile $conversionProfile)
-    {
+    function add(KalturaConversionProfile $conversionProfile) {
         $kparams = array();
         $this->client->addParam($kparams, "conversionProfile", $conversionProfile->toParams());
         $this->client->queueServiceActionCall("conversionprofile", "add", $kparams);
@@ -715,8 +663,7 @@ class KalturaConversionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("conversionprofile", "get", $kparams);
@@ -728,8 +675,7 @@ class KalturaConversionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaConversionProfile $conversionProfile)
-    {
+    function update($id, KalturaConversionProfile $conversionProfile) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "conversionProfile", $conversionProfile->toParams());
@@ -742,8 +688,7 @@ class KalturaConversionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("conversionprofile", "delete", $kparams);
@@ -755,8 +700,7 @@ class KalturaConversionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaConversionProfileFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaConversionProfileFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -774,13 +718,11 @@ class KalturaConversionProfileService extends KalturaServiceBase
 
 class KalturaDataService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaDataEntry $dataEntry)
-    {
+    function add(KalturaDataEntry $dataEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "dataEntry", $dataEntry->toParams());
         $this->client->queueServiceActionCall("data", "add", $kparams);
@@ -792,8 +734,7 @@ class KalturaDataService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($entryId, $version = -1)
-    {
+    function get($entryId, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "version", $version);
@@ -806,8 +747,7 @@ class KalturaDataService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($entryId, KalturaDataEntry $documentEntry)
-    {
+    function update($entryId, KalturaDataEntry $documentEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "documentEntry", $documentEntry->toParams());
@@ -820,8 +760,7 @@ class KalturaDataService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($entryId)
-    {
+    function delete($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("data", "delete", $kparams);
@@ -833,8 +772,7 @@ class KalturaDataService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaDataEntryFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaDataEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -849,8 +787,7 @@ class KalturaDataService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serve($entryId, $version = -1, $forceProxy = false)
-    {
+    function serve($entryId, $version = -1, $forceProxy = false) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "version", $version);
@@ -863,8 +800,7 @@ class KalturaDataService extends KalturaServiceBase
 
 class KalturaDocumentService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
@@ -898,8 +834,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromFlavorAsset($sourceFlavorAssetId, KalturaDocumentEntry $documentEntry = null)
-    {
+    function addFromFlavorAsset($sourceFlavorAssetId, KalturaDocumentEntry $documentEntry = null) {
         $kparams = array();
         $this->client->addParam($kparams, "sourceFlavorAssetId", $sourceFlavorAssetId);
         if ($documentEntry !== null)
@@ -913,14 +848,12 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function convert($entryId, $conversionProfileId = null, array $conversionAttributes = null)
-    {
+    function convert($entryId, $conversionProfileId = null, array $conversionAttributes = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "conversionProfileId", $conversionProfileId);
         if ($conversionAttributes !== null)
-            foreach($conversionAttributes as $index => $obj)
-            {
+            foreach($conversionAttributes as $index => $obj) {
                 $this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
             }
         $this->client->queueServiceActionCall("document", "convert", $kparams);
@@ -932,8 +865,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($entryId, $version = -1)
-    {
+    function get($entryId, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "version", $version);
@@ -946,8 +878,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($entryId, KalturaDocumentEntry $documentEntry)
-    {
+    function update($entryId, KalturaDocumentEntry $documentEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "documentEntry", $documentEntry->toParams());
@@ -960,8 +891,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($entryId)
-    {
+    function delete($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("document", "delete", $kparams);
@@ -973,8 +903,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaDocumentEntryFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaDocumentEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -989,8 +918,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function upload($fileData)
-    {
+    function upload($fileData) {
         $kparams = array();
         $kfiles = array();
         $this->client->addParam($kfiles, "fileData", $fileData);
@@ -1003,8 +931,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function convertPptToSwf($entryId)
-    {
+    function convertPptToSwf($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("document", "convertPptToSwf", $kparams);
@@ -1016,8 +943,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serve($entryId, $flavorAssetId = null, $forceProxy = false)
-    {
+    function serve($entryId, $flavorAssetId = null, $forceProxy = false) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "flavorAssetId", $flavorAssetId);
@@ -1027,8 +953,7 @@ class KalturaDocumentService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serveByFlavorParamsId($entryId, $flavorParamsId = null, $forceProxy = false)
-    {
+    function serveByFlavorParamsId($entryId, $flavorParamsId = null, $forceProxy = false) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "flavorParamsId", $flavorParamsId);
@@ -1041,13 +966,11 @@ class KalturaDocumentService extends KalturaServiceBase
 
 class KalturaEmailIngestionProfileService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaEmailIngestionProfile $EmailIP)
-    {
+    function add(KalturaEmailIngestionProfile $EmailIP) {
         $kparams = array();
         $this->client->addParam($kparams, "EmailIP", $EmailIP->toParams());
         $this->client->queueServiceActionCall("emailingestionprofile", "add", $kparams);
@@ -1059,8 +982,7 @@ class KalturaEmailIngestionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getByEmailAddress($emailAddress)
-    {
+    function getByEmailAddress($emailAddress) {
         $kparams = array();
         $this->client->addParam($kparams, "emailAddress", $emailAddress);
         $this->client->queueServiceActionCall("emailingestionprofile", "getByEmailAddress", $kparams);
@@ -1072,8 +994,7 @@ class KalturaEmailIngestionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("emailingestionprofile", "get", $kparams);
@@ -1085,8 +1006,7 @@ class KalturaEmailIngestionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaEmailIngestionProfile $EmailIP)
-    {
+    function update($id, KalturaEmailIngestionProfile $EmailIP) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "EmailIP", $EmailIP->toParams());
@@ -1112,8 +1032,7 @@ class KalturaEmailIngestionProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addMediaEntry(KalturaMediaEntry $mediaEntry, $uploadTokenId, $emailProfId, $fromAddress, $emailMsgId)
-    {
+    function addMediaEntry(KalturaMediaEntry $mediaEntry, $uploadTokenId, $emailProfId, $fromAddress, $emailMsgId) {
         $kparams = array();
         $this->client->addParam($kparams, "mediaEntry", $mediaEntry->toParams());
         $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
@@ -1132,13 +1051,11 @@ class KalturaEmailIngestionProfileService extends KalturaServiceBase
 
 class KalturaFlavorAssetService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add($entryId, KalturaFlavorAsset $flavorAsset)
-    {
+    function add($entryId, KalturaFlavorAsset $flavorAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "flavorAsset", $flavorAsset->toParams());
@@ -1151,8 +1068,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaFlavorAsset $flavorAsset)
-    {
+    function update($id, KalturaFlavorAsset $flavorAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "flavorAsset", $flavorAsset->toParams());
@@ -1165,8 +1081,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function setContent($id, KalturaContentResource $contentResource)
-    {
+    function setContent($id, KalturaContentResource $contentResource) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "contentResource", $contentResource->toParams());
@@ -1179,8 +1094,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("flavorasset", "get", $kparams);
@@ -1192,8 +1106,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getByEntryId($entryId)
-    {
+    function getByEntryId($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("flavorasset", "getByEntryId", $kparams);
@@ -1205,8 +1118,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -1221,8 +1133,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getWebPlayableByEntryId($entryId)
-    {
+    function getWebPlayableByEntryId($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("flavorasset", "getWebPlayableByEntryId", $kparams);
@@ -1234,8 +1145,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function convert($entryId, $flavorParamsId)
-    {
+    function convert($entryId, $flavorParamsId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "flavorParamsId", $flavorParamsId);
@@ -1248,8 +1158,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function reconvert($id)
-    {
+    function reconvert($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("flavorasset", "reconvert", $kparams);
@@ -1261,8 +1170,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("flavorasset", "delete", $kparams);
@@ -1274,8 +1182,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getUrl($id, $storageId = null)
-    {
+    function getUrl($id, $storageId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "storageId", $storageId);
@@ -1288,8 +1195,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getRemotePaths($id)
-    {
+    function getRemotePaths($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("flavorasset", "getRemotePaths", $kparams);
@@ -1301,8 +1207,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getDownloadUrl($id, $useCdn = false)
-    {
+    function getDownloadUrl($id, $useCdn = false) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "useCdn", $useCdn);
@@ -1315,8 +1220,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getFlavorAssetsWithParams($entryId)
-    {
+    function getFlavorAssetsWithParams($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("flavorasset", "getFlavorAssetsWithParams", $kparams);
@@ -1331,13 +1235,11 @@ class KalturaFlavorAssetService extends KalturaServiceBase
 
 class KalturaFlavorParamsService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaFlavorParams $flavorParams)
-    {
+    function add(KalturaFlavorParams $flavorParams) {
         $kparams = array();
         $this->client->addParam($kparams, "flavorParams", $flavorParams->toParams());
         $this->client->queueServiceActionCall("flavorparams", "add", $kparams);
@@ -1349,8 +1251,7 @@ class KalturaFlavorParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("flavorparams", "get", $kparams);
@@ -1362,8 +1263,7 @@ class KalturaFlavorParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaFlavorParams $flavorParams)
-    {
+    function update($id, KalturaFlavorParams $flavorParams) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "flavorParams", $flavorParams->toParams());
@@ -1376,8 +1276,7 @@ class KalturaFlavorParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("flavorparams", "delete", $kparams);
@@ -1389,8 +1288,7 @@ class KalturaFlavorParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaFlavorParamsFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaFlavorParamsFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -1405,8 +1303,7 @@ class KalturaFlavorParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getByConversionProfileId($conversionProfileId)
-    {
+    function getByConversionProfileId($conversionProfileId) {
         $kparams = array();
         $this->client->addParam($kparams, "conversionProfileId", $conversionProfileId);
         $this->client->queueServiceActionCall("flavorparams", "getByConversionProfileId", $kparams);
@@ -1421,13 +1318,11 @@ class KalturaFlavorParamsService extends KalturaServiceBase
 
 class KalturaLiveStreamService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaLiveStreamAdminEntry $liveStreamEntry, $sourceType = null)
-    {
+    function add(KalturaLiveStreamAdminEntry $liveStreamEntry, $sourceType = null) {
         $kparams = array();
         $this->client->addParam($kparams, "liveStreamEntry", $liveStreamEntry->toParams());
         $this->client->addParam($kparams, "sourceType", $sourceType);
@@ -1440,8 +1335,7 @@ class KalturaLiveStreamService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($entryId, $version = -1)
-    {
+    function get($entryId, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "version", $version);
@@ -1454,8 +1348,7 @@ class KalturaLiveStreamService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($entryId, KalturaLiveStreamAdminEntry $liveStreamEntry)
-    {
+    function update($entryId, KalturaLiveStreamAdminEntry $liveStreamEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "liveStreamEntry", $liveStreamEntry->toParams());
@@ -1468,8 +1361,7 @@ class KalturaLiveStreamService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($entryId)
-    {
+    function delete($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("livestream", "delete", $kparams);
@@ -1481,8 +1373,7 @@ class KalturaLiveStreamService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaLiveStreamEntryFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaLiveStreamEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -1497,8 +1388,7 @@ class KalturaLiveStreamService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateOfflineThumbnailJpeg($entryId, $fileData)
-    {
+    function updateOfflineThumbnailJpeg($entryId, $fileData) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $kfiles = array();
@@ -1512,8 +1402,7 @@ class KalturaLiveStreamService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateOfflineThumbnailFromUrl($entryId, $url)
-    {
+    function updateOfflineThumbnailFromUrl($entryId, $url) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "url", $url);
@@ -1529,13 +1418,11 @@ class KalturaLiveStreamService extends KalturaServiceBase
 
 class KalturaMediaService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaMediaEntry $entry)
-    {
+    function add(KalturaMediaEntry $entry) {
         $kparams = array();
         $this->client->addParam($kparams, "entry", $entry->toParams());
         $this->client->queueServiceActionCall("media", "add", $kparams);
@@ -1547,8 +1434,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addContent($entryId, KalturaResource $resource = null)
-    {
+    function addContent($entryId, KalturaResource $resource = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         if ($resource !== null)
@@ -1562,8 +1448,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromUrl(KalturaMediaEntry $mediaEntry, $url)
-    {
+    function addFromUrl(KalturaMediaEntry $mediaEntry, $url) {
         $kparams = array();
         $this->client->addParam($kparams, "mediaEntry", $mediaEntry->toParams());
         $this->client->addParam($kparams, "url", $url);
@@ -1576,8 +1461,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromSearchResult(KalturaMediaEntry $mediaEntry = null, KalturaSearchResult $searchResult = null)
-    {
+    function addFromSearchResult(KalturaMediaEntry $mediaEntry = null, KalturaSearchResult $searchResult = null) {
         $kparams = array();
         if ($mediaEntry !== null)
             $this->client->addParam($kparams, "mediaEntry", $mediaEntry->toParams());
@@ -1592,8 +1476,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromUploadedFile(KalturaMediaEntry $mediaEntry, $uploadTokenId)
-    {
+    function addFromUploadedFile(KalturaMediaEntry $mediaEntry, $uploadTokenId) {
         $kparams = array();
         $this->client->addParam($kparams, "mediaEntry", $mediaEntry->toParams());
         $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
@@ -1606,8 +1489,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromRecordedWebcam(KalturaMediaEntry $mediaEntry, $webcamTokenId)
-    {
+    function addFromRecordedWebcam(KalturaMediaEntry $mediaEntry, $webcamTokenId) {
         $kparams = array();
         $this->client->addParam($kparams, "mediaEntry", $mediaEntry->toParams());
         $this->client->addParam($kparams, "webcamTokenId", $webcamTokenId);
@@ -1620,8 +1502,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromEntry($sourceEntryId, KalturaMediaEntry $mediaEntry = null, $sourceFlavorParamsId = null)
-    {
+    function addFromEntry($sourceEntryId, KalturaMediaEntry $mediaEntry = null, $sourceFlavorParamsId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "sourceEntryId", $sourceEntryId);
         if ($mediaEntry !== null)
@@ -1636,8 +1517,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromFlavorAsset($sourceFlavorAssetId, KalturaMediaEntry $mediaEntry = null)
-    {
+    function addFromFlavorAsset($sourceFlavorAssetId, KalturaMediaEntry $mediaEntry = null) {
         $kparams = array();
         $this->client->addParam($kparams, "sourceFlavorAssetId", $sourceFlavorAssetId);
         if ($mediaEntry !== null)
@@ -1651,14 +1531,12 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function convert($entryId, $profileId = null, array $conversionAttributes = null)
-    {
+    function convert($entryId, $profileId = null, array $conversionAttributes = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "conversionProfileId", $profileId);
         if ($conversionAttributes !== null)
-            foreach($conversionAttributes as $index => $obj)
-            {
+            foreach($conversionAttributes as $index => $obj) {
                 $this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
             }
         $this->client->queueServiceActionCall("media", "convert", $kparams);
@@ -1670,8 +1548,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($entryId, $version = -1)
-    {
+    function get($entryId, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "version", $version);
@@ -1684,8 +1561,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($entryId, KalturaMediaEntry $mediaEntry)
-    {
+    function update($entryId, KalturaMediaEntry $mediaEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "mediaEntry", $mediaEntry->toParams());
@@ -1698,8 +1574,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateContent($entryId, KalturaResource $resource, $conversionProfileId = null)
-    {
+    function updateContent($entryId, KalturaResource $resource, $conversionProfileId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "resource", $resource->toParams());
@@ -1713,8 +1588,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($entryId)
-    {
+    function delete($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("media", "delete", $kparams);
@@ -1726,8 +1600,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function approveReplace($entryId)
-    {
+    function approveReplace($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("media", "approveReplace", $kparams);
@@ -1739,8 +1612,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function cancelReplace($entryId)
-    {
+    function cancelReplace($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("media", "cancelReplace", $kparams);
@@ -1752,8 +1624,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaMediaEntryFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaMediaEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -1768,8 +1639,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function count(KalturaMediaEntryFilter $filter = null)
-    {
+    function count(KalturaMediaEntryFilter $filter = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -1782,8 +1652,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function upload($fileData)
-    {
+    function upload($fileData) {
         $kparams = array();
         $kfiles = array();
         $this->client->addParam($kfiles, "fileData", $fileData);
@@ -1796,8 +1665,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateThumbnail($entryId, $timeOffset, $flavorParamsId = null)
-    {
+    function updateThumbnail($entryId, $timeOffset, $flavorParamsId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "timeOffset", $timeOffset);
@@ -1811,8 +1679,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateThumbnailFromSourceEntry($entryId, $sourceEntryId, $timeOffset, $flavorParamsId = null)
-    {
+    function updateThumbnailFromSourceEntry($entryId, $sourceEntryId, $timeOffset, $flavorParamsId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "sourceEntryId", $sourceEntryId);
@@ -1827,8 +1694,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateThumbnailJpeg($entryId, $fileData)
-    {
+    function updateThumbnailJpeg($entryId, $fileData) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $kfiles = array();
@@ -1842,8 +1708,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateThumbnailFromUrl($entryId, $url)
-    {
+    function updateThumbnailFromUrl($entryId, $url) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "url", $url);
@@ -1856,8 +1721,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function requestConversion($entryId, $fileFormat)
-    {
+    function requestConversion($entryId, $fileFormat) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "fileFormat", $fileFormat);
@@ -1870,8 +1734,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function flag(KalturaModerationFlag $moderationFlag)
-    {
+    function flag(KalturaModerationFlag $moderationFlag) {
         $kparams = array();
         $this->client->addParam($kparams, "moderationFlag", $moderationFlag->toParams());
         $this->client->queueServiceActionCall("media", "flag", $kparams);
@@ -1883,8 +1746,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function reject($entryId)
-    {
+    function reject($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("media", "reject", $kparams);
@@ -1896,8 +1758,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function approve($entryId)
-    {
+    function approve($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("media", "approve", $kparams);
@@ -1909,8 +1770,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listFlags($entryId, KalturaFilterPager $pager = null)
-    {
+    function listFlags($entryId, KalturaFilterPager $pager = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         if ($pager !== null)
@@ -1924,8 +1784,7 @@ class KalturaMediaService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function anonymousRank($entryId, $rank)
-    {
+    function anonymousRank($entryId, $rank) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "rank", $rank);
@@ -1941,13 +1800,11 @@ class KalturaMediaService extends KalturaServiceBase
 
 class KalturaMixingService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaMixEntry $mixEntry)
-    {
+    function add(KalturaMixEntry $mixEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "mixEntry", $mixEntry->toParams());
         $this->client->queueServiceActionCall("mixing", "add", $kparams);
@@ -1959,8 +1816,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($entryId, $version = -1)
-    {
+    function get($entryId, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "version", $version);
@@ -1973,8 +1829,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($entryId, KalturaMixEntry $mixEntry)
-    {
+    function update($entryId, KalturaMixEntry $mixEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "mixEntry", $mixEntry->toParams());
@@ -1987,8 +1842,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($entryId)
-    {
+    function delete($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("mixing", "delete", $kparams);
@@ -2000,8 +1854,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaMixEntryFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaMixEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2016,8 +1869,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function count(KalturaMediaEntryFilter $filter = null)
-    {
+    function count(KalturaMediaEntryFilter $filter = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2030,8 +1882,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function cloneAction($entryId)
-    {
+    function cloneAction($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("mixing", "clone", $kparams);
@@ -2043,8 +1894,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function appendMediaEntry($mixEntryId, $mediaEntryId)
-    {
+    function appendMediaEntry($mixEntryId, $mediaEntryId) {
         $kparams = array();
         $this->client->addParam($kparams, "mixEntryId", $mixEntryId);
         $this->client->addParam($kparams, "mediaEntryId", $mediaEntryId);
@@ -2057,8 +1907,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function requestFlattening($entryId, $fileFormat, $version = -1)
-    {
+    function requestFlattening($entryId, $fileFormat, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "fileFormat", $fileFormat);
@@ -2072,8 +1921,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getMixesByMediaId($mediaEntryId)
-    {
+    function getMixesByMediaId($mediaEntryId) {
         $kparams = array();
         $this->client->addParam($kparams, "mediaEntryId", $mediaEntryId);
         $this->client->queueServiceActionCall("mixing", "getMixesByMediaId", $kparams);
@@ -2085,8 +1933,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getReadyMediaEntries($mixId, $version = -1)
-    {
+    function getReadyMediaEntries($mixId, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "mixId", $mixId);
         $this->client->addParam($kparams, "version", $version);
@@ -2099,8 +1946,7 @@ class KalturaMixingService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function anonymousRank($entryId, $rank)
-    {
+    function anonymousRank($entryId, $rank) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "rank", $rank);
@@ -2116,13 +1962,11 @@ class KalturaMixingService extends KalturaServiceBase
 
 class KalturaNotificationService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function getClientNotification($entryId, $type)
-    {
+    function getClientNotification($entryId, $type) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "type", $type);
@@ -2138,13 +1982,11 @@ class KalturaNotificationService extends KalturaServiceBase
 
 class KalturaPartnerService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function register(KalturaPartner $partner, $cmsPassword = "")
-    {
+    function register(KalturaPartner $partner, $cmsPassword = "") {
         $kparams = array();
         $this->client->addParam($kparams, "partner", $partner->toParams());
         $this->client->addParam($kparams, "cmsPassword", $cmsPassword);
@@ -2157,8 +1999,7 @@ class KalturaPartnerService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update(KalturaPartner $partner, $allowEmpty = false)
-    {
+    function update(KalturaPartner $partner, $allowEmpty = false) {
         $kparams = array();
         $this->client->addParam($kparams, "partner", $partner->toParams());
         $this->client->addParam($kparams, "allowEmpty", $allowEmpty);
@@ -2171,8 +2012,7 @@ class KalturaPartnerService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getSecrets($partnerId, $adminEmail, $cmsPassword)
-    {
+    function getSecrets($partnerId, $adminEmail, $cmsPassword) {
         $kparams = array();
         $this->client->addParam($kparams, "partnerId", $partnerId);
         $this->client->addParam($kparams, "adminEmail", $adminEmail);
@@ -2186,8 +2026,7 @@ class KalturaPartnerService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getInfo()
-    {
+    function getInfo() {
         $kparams = array();
         $this->client->queueServiceActionCall("partner", "getInfo", $kparams);
         if ($this->client->isMultiRequest())
@@ -2198,8 +2037,7 @@ class KalturaPartnerService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getUsage($year = "", $month = 1, $resolution = "days")
-    {
+    function getUsage($year = "", $month = 1, $resolution = "days") {
         $kparams = array();
         $this->client->addParam($kparams, "year", $year);
         $this->client->addParam($kparams, "month", $month);
@@ -2216,13 +2054,11 @@ class KalturaPartnerService extends KalturaServiceBase
 
 class KalturaPermissionItemService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaPermissionItem $permissionItem)
-    {
+    function add(KalturaPermissionItem $permissionItem) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionItem", $permissionItem->toParams());
         $this->client->queueServiceActionCall("permissionitem", "add", $kparams);
@@ -2234,8 +2070,7 @@ class KalturaPermissionItemService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($permissionItemId)
-    {
+    function get($permissionItemId) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionItemId", $permissionItemId);
         $this->client->queueServiceActionCall("permissionitem", "get", $kparams);
@@ -2247,8 +2082,7 @@ class KalturaPermissionItemService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($permissionItemId, KalturaPermissionItem $permissionItem)
-    {
+    function update($permissionItemId, KalturaPermissionItem $permissionItem) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionItemId", $permissionItemId);
         $this->client->addParam($kparams, "permissionItem", $permissionItem->toParams());
@@ -2261,8 +2095,7 @@ class KalturaPermissionItemService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($permissionItemId)
-    {
+    function delete($permissionItemId) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionItemId", $permissionItemId);
         $this->client->queueServiceActionCall("permissionitem", "delete", $kparams);
@@ -2274,8 +2107,7 @@ class KalturaPermissionItemService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaPermissionItemFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaPermissionItemFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2293,13 +2125,11 @@ class KalturaPermissionItemService extends KalturaServiceBase
 
 class KalturaPermissionService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaPermission $permission)
-    {
+    function add(KalturaPermission $permission) {
         $kparams = array();
         $this->client->addParam($kparams, "permission", $permission->toParams());
         $this->client->queueServiceActionCall("permission", "add", $kparams);
@@ -2311,8 +2141,7 @@ class KalturaPermissionService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($permissionName)
-    {
+    function get($permissionName) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionName", $permissionName);
         $this->client->queueServiceActionCall("permission", "get", $kparams);
@@ -2324,8 +2153,7 @@ class KalturaPermissionService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($permissionName, KalturaPermission $permission)
-    {
+    function update($permissionName, KalturaPermission $permission) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionName", $permissionName);
         $this->client->addParam($kparams, "permission", $permission->toParams());
@@ -2338,8 +2166,7 @@ class KalturaPermissionService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($permissionName)
-    {
+    function delete($permissionName) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionName", $permissionName);
         $this->client->queueServiceActionCall("permission", "delete", $kparams);
@@ -2351,8 +2178,7 @@ class KalturaPermissionService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaPermissionFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaPermissionFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2367,8 +2193,7 @@ class KalturaPermissionService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getCurrentPermissions()
-    {
+    function getCurrentPermissions() {
         $kparams = array();
         $this->client->queueServiceActionCall("permission", "getCurrentPermissions", $kparams);
         if ($this->client->isMultiRequest())
@@ -2382,13 +2207,11 @@ class KalturaPermissionService extends KalturaServiceBase
 
 class KalturaPlaylistService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaPlaylist $playlist, $updateStats = false)
-    {
+    function add(KalturaPlaylist $playlist, $updateStats = false) {
         $kparams = array();
         $this->client->addParam($kparams, "playlist", $playlist->toParams());
         $this->client->addParam($kparams, "updateStats", $updateStats);
@@ -2401,8 +2224,7 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id, $version = -1)
-    {
+    function get($id, $version = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "version", $version);
@@ -2415,8 +2237,7 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaPlaylist $playlist, $updateStats = false)
-    {
+    function update($id, KalturaPlaylist $playlist, $updateStats = false) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "playlist", $playlist->toParams());
@@ -2430,8 +2251,7 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("playlist", "delete", $kparams);
@@ -2443,8 +2263,7 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function cloneAction($id, KalturaPlaylist $newPlaylist = null)
-    {
+    function cloneAction($id, KalturaPlaylist $newPlaylist = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         if ($newPlaylist !== null)
@@ -2458,8 +2277,7 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaPlaylistFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaPlaylistFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2474,8 +2292,7 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function execute($id, $detailed = "")
-    {
+    function execute($id, $detailed = "") {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "detailed", $detailed);
@@ -2488,8 +2305,7 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function executeFromContent($playlistType, $playlistContent, $detailed = "")
-    {
+    function executeFromContent($playlistType, $playlistContent, $detailed = "") {
         $kparams = array();
         $this->client->addParam($kparams, "playlistType", $playlistType);
         $this->client->addParam($kparams, "playlistContent", $playlistContent);
@@ -2503,11 +2319,9 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function executeFromFilters(array $filters, $totalResults, $detailed = "")
-    {
+    function executeFromFilters(array $filters, $totalResults, $detailed = "") {
         $kparams = array();
-        foreach($filters as $index => $obj)
-        {
+        foreach($filters as $index => $obj) {
             $this->client->addParam($kparams, "filters:$index", $obj->toParams());
         }
         $this->client->addParam($kparams, "totalResults", $totalResults);
@@ -2521,8 +2335,7 @@ class KalturaPlaylistService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getStatsFromContent($playlistType, $playlistContent)
-    {
+    function getStatsFromContent($playlistType, $playlistContent) {
         $kparams = array();
         $this->client->addParam($kparams, "playlistType", $playlistType);
         $this->client->addParam($kparams, "playlistContent", $playlistContent);
@@ -2538,13 +2351,11 @@ class KalturaPlaylistService extends KalturaServiceBase
 
 class KalturaReportService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function getGraphs($reportType, KalturaReportInputFilter $reportInputFilter, $dimension = null, $objectIds = null)
-    {
+    function getGraphs($reportType, KalturaReportInputFilter $reportInputFilter, $dimension = null, $objectIds = null) {
         $kparams = array();
         $this->client->addParam($kparams, "reportType", $reportType);
         $this->client->addParam($kparams, "reportInputFilter", $reportInputFilter->toParams());
@@ -2559,8 +2370,7 @@ class KalturaReportService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getTotal($reportType, KalturaReportInputFilter $reportInputFilter, $objectIds = null)
-    {
+    function getTotal($reportType, KalturaReportInputFilter $reportInputFilter, $objectIds = null) {
         $kparams = array();
         $this->client->addParam($kparams, "reportType", $reportType);
         $this->client->addParam($kparams, "reportInputFilter", $reportInputFilter->toParams());
@@ -2574,8 +2384,7 @@ class KalturaReportService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getTable($reportType, KalturaReportInputFilter $reportInputFilter, KalturaFilterPager $pager, $order = null, $objectIds = null)
-    {
+    function getTable($reportType, KalturaReportInputFilter $reportInputFilter, KalturaFilterPager $pager, $order = null, $objectIds = null) {
         $kparams = array();
         $this->client->addParam($kparams, "reportType", $reportType);
         $this->client->addParam($kparams, "reportInputFilter", $reportInputFilter->toParams());
@@ -2591,8 +2400,7 @@ class KalturaReportService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getUrlForReportAsCsv($reportTitle, $reportText, $headers, $reportType, KalturaReportInputFilter $reportInputFilter, $dimension = null, KalturaFilterPager $pager = null, $order = null, $objectIds = null)
-    {
+    function getUrlForReportAsCsv($reportTitle, $reportText, $headers, $reportType, KalturaReportInputFilter $reportInputFilter, $dimension = null, KalturaFilterPager $pager = null, $order = null, $objectIds = null) {
         $kparams = array();
         $this->client->addParam($kparams, "reportTitle", $reportTitle);
         $this->client->addParam($kparams, "reportText", $reportText);
@@ -2616,13 +2424,11 @@ class KalturaReportService extends KalturaServiceBase
 
 class KalturaSchemaService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function serve($type)
-    {
+    function serve($type) {
         $kparams = array();
         $this->client->addParam($kparams, "type", $type);
         $this->client->queueServiceActionCall('schema', 'serve', $kparams);
@@ -2633,13 +2439,11 @@ class KalturaSchemaService extends KalturaServiceBase
 
 class KalturaSearchService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function search(KalturaSearch $search, KalturaFilterPager $pager = null)
-    {
+    function search(KalturaSearch $search, KalturaFilterPager $pager = null) {
         $kparams = array();
         $this->client->addParam($kparams, "search", $search->toParams());
         if ($pager !== null)
@@ -2653,8 +2457,7 @@ class KalturaSearchService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getMediaInfo(KalturaSearchResult $searchResult)
-    {
+    function getMediaInfo(KalturaSearchResult $searchResult) {
         $kparams = array();
         $this->client->addParam($kparams, "searchResult", $searchResult->toParams());
         $this->client->queueServiceActionCall("search", "getMediaInfo", $kparams);
@@ -2666,8 +2469,7 @@ class KalturaSearchService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function searchUrl($mediaType, $url)
-    {
+    function searchUrl($mediaType, $url) {
         $kparams = array();
         $this->client->addParam($kparams, "mediaType", $mediaType);
         $this->client->addParam($kparams, "url", $url);
@@ -2680,8 +2482,7 @@ class KalturaSearchService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function externalLogin($searchSource, $userName, $password)
-    {
+    function externalLogin($searchSource, $userName, $password) {
         $kparams = array();
         $this->client->addParam($kparams, "searchSource", $searchSource);
         $this->client->addParam($kparams, "userName", $userName);
@@ -2698,13 +2499,11 @@ class KalturaSearchService extends KalturaServiceBase
 
 class KalturaSessionService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function start($secret, $userId = "", $type = 0, $partnerId = null, $expiry = 86400, $privileges = null)
-    {
+    function start($secret, $userId = "", $type = 0, $partnerId = null, $expiry = 86400, $privileges = null) {
         $kparams = array();
         $this->client->addParam($kparams, "secret", $secret);
         $this->client->addParam($kparams, "userId", $userId);
@@ -2721,8 +2520,7 @@ class KalturaSessionService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function end()
-    {
+    function end() {
         $kparams = array();
         $this->client->queueServiceActionCall("session", "end", $kparams);
         if ($this->client->isMultiRequest())
@@ -2733,8 +2531,7 @@ class KalturaSessionService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function impersonate($secret, $imPartnerId, $userId = "", $type = 0, $partnerId = null, $expiry = 86400, $privileges = null)
-    {
+    function impersonate($secret, $imPartnerId, $userId = "", $type = 0, $partnerId = null, $expiry = 86400, $privileges = null) {
         $kparams = array();
         $this->client->addParam($kparams, "secret", $secret);
         $this->client->addParam($kparams, "impersonatedPartnerId", $imPartnerId);
@@ -2752,8 +2549,7 @@ class KalturaSessionService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function startWidgetSession($widgetId, $expiry = 86400)
-    {
+    function startWidgetSession($widgetId, $expiry = 86400) {
         $kparams = array();
         $this->client->addParam($kparams, "widgetId", $widgetId);
         $this->client->addParam($kparams, "expiry", $expiry);
@@ -2769,13 +2565,11 @@ class KalturaSessionService extends KalturaServiceBase
 
 class KalturaStatsService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function collect(KalturaStatsEvent $event)
-    {
+    function collect(KalturaStatsEvent $event) {
         $kparams = array();
         $this->client->addParam($kparams, "event", $event->toParams());
         $this->client->queueServiceActionCall("stats", "collect", $kparams);
@@ -2787,8 +2581,7 @@ class KalturaStatsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function kmcCollect(KalturaStatsKmcEvent $kmcEvent)
-    {
+    function kmcCollect(KalturaStatsKmcEvent $kmcEvent) {
         $kparams = array();
         $this->client->addParam($kparams, "kmcEvent", $kmcEvent->toParams());
         $this->client->queueServiceActionCall("stats", "kmcCollect", $kparams);
@@ -2800,8 +2593,7 @@ class KalturaStatsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function reportKceError(KalturaCEError $kalturaCEError)
-    {
+    function reportKceError(KalturaCEError $kalturaCEError) {
         $kparams = array();
         $this->client->addParam($kparams, "kalturaCEError", $kalturaCEError->toParams());
         $this->client->queueServiceActionCall("stats", "reportKceError", $kparams);
@@ -2816,13 +2608,11 @@ class KalturaStatsService extends KalturaServiceBase
 
 class KalturaStorageProfileService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaStorageProfile $storageProfile)
-    {
+    function add(KalturaStorageProfile $storageProfile) {
         $kparams = array();
         $this->client->addParam($kparams, "storageProfile", $storageProfile->toParams());
         $this->client->queueServiceActionCall("storageprofile", "add", $kparams);
@@ -2834,8 +2624,7 @@ class KalturaStorageProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateStatus($storageId, $status)
-    {
+    function updateStatus($storageId, $status) {
         $kparams = array();
         $this->client->addParam($kparams, "storageId", $storageId);
         $this->client->addParam($kparams, "status", $status);
@@ -2848,8 +2637,7 @@ class KalturaStorageProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($storageProfileId)
-    {
+    function get($storageProfileId) {
         $kparams = array();
         $this->client->addParam($kparams, "storageProfileId", $storageProfileId);
         $this->client->queueServiceActionCall("storageprofile", "get", $kparams);
@@ -2861,8 +2649,7 @@ class KalturaStorageProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($storageProfileId, KalturaStorageProfile $storageProfile)
-    {
+    function update($storageProfileId, KalturaStorageProfile $storageProfile) {
         $kparams = array();
         $this->client->addParam($kparams, "storageProfileId", $storageProfileId);
         $this->client->addParam($kparams, "storageProfile", $storageProfile->toParams());
@@ -2875,8 +2662,7 @@ class KalturaStorageProfileService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaStorageProfileFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaStorageProfileFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2894,13 +2680,11 @@ class KalturaStorageProfileService extends KalturaServiceBase
 
 class KalturaSyndicationFeedService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaBaseSyndicationFeed $syndicationFeed)
-    {
+    function add(KalturaBaseSyndicationFeed $syndicationFeed) {
         $kparams = array();
         $this->client->addParam($kparams, "syndicationFeed", $syndicationFeed->toParams());
         $this->client->queueServiceActionCall("syndicationfeed", "add", $kparams);
@@ -2912,8 +2696,7 @@ class KalturaSyndicationFeedService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("syndicationfeed", "get", $kparams);
@@ -2925,8 +2708,7 @@ class KalturaSyndicationFeedService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaBaseSyndicationFeed $syndicationFeed)
-    {
+    function update($id, KalturaBaseSyndicationFeed $syndicationFeed) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "syndicationFeed", $syndicationFeed->toParams());
@@ -2939,8 +2721,7 @@ class KalturaSyndicationFeedService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("syndicationfeed", "delete", $kparams);
@@ -2952,8 +2733,7 @@ class KalturaSyndicationFeedService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaBaseSyndicationFeedFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaBaseSyndicationFeedFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2968,8 +2748,7 @@ class KalturaSyndicationFeedService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getEntryCount($feedId)
-    {
+    function getEntryCount($feedId) {
         $kparams = array();
         $this->client->addParam($kparams, "feedId", $feedId);
         $this->client->queueServiceActionCall("syndicationfeed", "getEntryCount", $kparams);
@@ -2981,8 +2760,7 @@ class KalturaSyndicationFeedService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function requestConversion($feedId)
-    {
+    function requestConversion($feedId) {
         $kparams = array();
         $this->client->addParam($kparams, "feedId", $feedId);
         $this->client->queueServiceActionCall("syndicationfeed", "requestConversion", $kparams);
@@ -2997,13 +2775,11 @@ class KalturaSyndicationFeedService extends KalturaServiceBase
 
 class KalturaSystemService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function ping()
-    {
+    function ping() {
         $kparams = array();
         $this->client->queueServiceActionCall("system", "ping", $kparams);
         if ($this->client->isMultiRequest())
@@ -3017,13 +2793,11 @@ class KalturaSystemService extends KalturaServiceBase
 
 class KalturaThumbAssetService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add($entryId, KalturaThumbAsset $thumbAsset)
-    {
+    function add($entryId, KalturaThumbAsset $thumbAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "thumbAsset", $thumbAsset->toParams());
@@ -3036,8 +2810,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function setContent($id, KalturaContentResource $contentResource)
-    {
+    function setContent($id, KalturaContentResource $contentResource) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "contentResource", $contentResource->toParams());
@@ -3050,8 +2823,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaThumbAsset $thumbAsset)
-    {
+    function update($id, KalturaThumbAsset $thumbAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "thumbAsset", $thumbAsset->toParams());
@@ -3064,8 +2836,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serveByEntryId($entryId, $thumbParamId = null)
-    {
+    function serveByEntryId($entryId, $thumbParamId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "thumbParamId", $thumbParamId);
@@ -3074,8 +2845,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function serve($thumbAssetId)
-    {
+    function serve($thumbAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "thumbAssetId", $thumbAssetId);
         $this->client->queueServiceActionCall('thumbasset', 'serve', $kparams);
@@ -3083,8 +2853,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function setAsDefault($thumbAssetId)
-    {
+    function setAsDefault($thumbAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "thumbAssetId", $thumbAssetId);
         $this->client->queueServiceActionCall("thumbasset", "setAsDefault", $kparams);
@@ -3096,8 +2865,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function generateByEntryId($entryId, $destThumbParamsId)
-    {
+    function generateByEntryId($entryId, $destThumbParamsId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "destThumbParamsId", $destThumbParamsId);
@@ -3110,8 +2878,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function generate($entryId, KalturaThumbParams $thumbParams, $sourceAssetId = null)
-    {
+    function generate($entryId, KalturaThumbParams $thumbParams, $sourceAssetId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "thumbParams", $thumbParams->toParams());
@@ -3125,8 +2892,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function regenerate($thumbAssetId)
-    {
+    function regenerate($thumbAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "thumbAssetId", $thumbAssetId);
         $this->client->queueServiceActionCall("thumbasset", "regenerate", $kparams);
@@ -3138,8 +2904,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($thumbAssetId)
-    {
+    function get($thumbAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "thumbAssetId", $thumbAssetId);
         $this->client->queueServiceActionCall("thumbasset", "get", $kparams);
@@ -3151,8 +2916,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getByEntryId($entryId)
-    {
+    function getByEntryId($entryId) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("thumbasset", "getByEntryId", $kparams);
@@ -3164,8 +2928,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -3180,8 +2943,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromUrl($entryId, $url)
-    {
+    function addFromUrl($entryId, $url) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "url", $url);
@@ -3194,8 +2956,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function addFromImage($entryId, $fileData)
-    {
+    function addFromImage($entryId, $fileData) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $kfiles = array();
@@ -3209,8 +2970,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($thumbAssetId)
-    {
+    function delete($thumbAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "thumbAssetId", $thumbAssetId);
         $this->client->queueServiceActionCall("thumbasset", "delete", $kparams);
@@ -3222,8 +2982,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getUrl($id, $storageId = null)
-    {
+    function getUrl($id, $storageId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "storageId", $storageId);
@@ -3236,8 +2995,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getRemotePaths($id)
-    {
+    function getRemotePaths($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("thumbasset", "getRemotePaths", $kparams);
@@ -3252,13 +3010,11 @@ class KalturaThumbAssetService extends KalturaServiceBase
 
 class KalturaThumbParamsService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaThumbParams $thumbParams)
-    {
+    function add(KalturaThumbParams $thumbParams) {
         $kparams = array();
         $this->client->addParam($kparams, "thumbParams", $thumbParams->toParams());
         $this->client->queueServiceActionCall("thumbparams", "add", $kparams);
@@ -3270,8 +3026,7 @@ class KalturaThumbParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("thumbparams", "get", $kparams);
@@ -3283,8 +3038,7 @@ class KalturaThumbParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaThumbParams $thumbParams)
-    {
+    function update($id, KalturaThumbParams $thumbParams) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "thumbParams", $thumbParams->toParams());
@@ -3297,8 +3051,7 @@ class KalturaThumbParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("thumbparams", "delete", $kparams);
@@ -3310,8 +3063,7 @@ class KalturaThumbParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaThumbParamsFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaThumbParamsFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -3326,8 +3078,7 @@ class KalturaThumbParamsService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getByConversionProfileId($conversionProfileId)
-    {
+    function getByConversionProfileId($conversionProfileId) {
         $kparams = array();
         $this->client->addParam($kparams, "conversionProfileId", $conversionProfileId);
         $this->client->queueServiceActionCall("thumbparams", "getByConversionProfileId", $kparams);
@@ -3342,13 +3093,11 @@ class KalturaThumbParamsService extends KalturaServiceBase
 
 class KalturaUiConfService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaUiConf $uiConf)
-    {
+    function add(KalturaUiConf $uiConf) {
         $kparams = array();
         $this->client->addParam($kparams, "uiConf", $uiConf->toParams());
         $this->client->queueServiceActionCall("uiconf", "add", $kparams);
@@ -3360,8 +3109,7 @@ class KalturaUiConfService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaUiConf $uiConf)
-    {
+    function update($id, KalturaUiConf $uiConf) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "uiConf", $uiConf->toParams());
@@ -3374,8 +3122,7 @@ class KalturaUiConfService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("uiconf", "get", $kparams);
@@ -3387,8 +3134,7 @@ class KalturaUiConfService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("uiconf", "delete", $kparams);
@@ -3400,8 +3146,7 @@ class KalturaUiConfService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function cloneAction($id)
-    {
+    function cloneAction($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("uiconf", "clone", $kparams);
@@ -3413,8 +3158,7 @@ class KalturaUiConfService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listTemplates(KalturaUiConfFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listTemplates(KalturaUiConfFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -3429,8 +3173,7 @@ class KalturaUiConfService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaUiConfFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaUiConfFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -3445,8 +3188,7 @@ class KalturaUiConfService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getAvailableTypes()
-    {
+    function getAvailableTypes() {
         $kparams = array();
         $this->client->queueServiceActionCall("uiconf", "getAvailableTypes", $kparams);
         if ($this->client->isMultiRequest())
@@ -3460,13 +3202,11 @@ class KalturaUiConfService extends KalturaServiceBase
 
 class KalturaUploadService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function upload($fileData)
-    {
+    function upload($fileData) {
         $kparams = array();
         $kfiles = array();
         $this->client->addParam($kfiles, "fileData", $fileData);
@@ -3479,8 +3219,7 @@ class KalturaUploadService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getUploadedFileTokenByFileName($fileName)
-    {
+    function getUploadedFileTokenByFileName($fileName) {
         $kparams = array();
         $this->client->addParam($kparams, "fileName", $fileName);
         $this->client->queueServiceActionCall("upload", "getUploadedFileTokenByFileName", $kparams);
@@ -3495,13 +3234,11 @@ class KalturaUploadService extends KalturaServiceBase
 
 class KalturaUploadTokenService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaUploadToken $uploadToken = null)
-    {
+    function add(KalturaUploadToken $uploadToken = null) {
         $kparams = array();
         if ($uploadToken !== null)
             $this->client->addParam($kparams, "uploadToken", $uploadToken->toParams());
@@ -3514,8 +3251,7 @@ class KalturaUploadTokenService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($uploadTokenId)
-    {
+    function get($uploadTokenId) {
         $kparams = array();
         $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
         $this->client->queueServiceActionCall("uploadtoken", "get", $kparams);
@@ -3527,8 +3263,7 @@ class KalturaUploadTokenService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function upload($uploadTokenId, $fileData, $resume = false, $finalChunk = true, $resumeAt = -1)
-    {
+    function upload($uploadTokenId, $fileData, $resume = false, $finalChunk = true, $resumeAt = -1) {
         $kparams = array();
         $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
         $kfiles = array();
@@ -3545,8 +3280,7 @@ class KalturaUploadTokenService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($uploadTokenId)
-    {
+    function delete($uploadTokenId) {
         $kparams = array();
         $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
         $this->client->queueServiceActionCall("uploadtoken", "delete", $kparams);
@@ -3558,8 +3292,7 @@ class KalturaUploadTokenService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaUploadTokenFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaUploadTokenFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -3577,13 +3310,11 @@ class KalturaUploadTokenService extends KalturaServiceBase
 
 class KalturaUserRoleService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaUserRole $userRole)
-    {
+    function add(KalturaUserRole $userRole) {
         $kparams = array();
         $this->client->addParam($kparams, "userRole", $userRole->toParams());
         $this->client->queueServiceActionCall("userrole", "add", $kparams);
@@ -3595,8 +3326,7 @@ class KalturaUserRoleService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($userRoleId)
-    {
+    function get($userRoleId) {
         $kparams = array();
         $this->client->addParam($kparams, "userRoleId", $userRoleId);
         $this->client->queueServiceActionCall("userrole", "get", $kparams);
@@ -3608,8 +3338,7 @@ class KalturaUserRoleService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($userRoleId, KalturaUserRole $userRole)
-    {
+    function update($userRoleId, KalturaUserRole $userRole) {
         $kparams = array();
         $this->client->addParam($kparams, "userRoleId", $userRoleId);
         $this->client->addParam($kparams, "userRole", $userRole->toParams());
@@ -3622,8 +3351,7 @@ class KalturaUserRoleService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($userRoleId)
-    {
+    function delete($userRoleId) {
         $kparams = array();
         $this->client->addParam($kparams, "userRoleId", $userRoleId);
         $this->client->queueServiceActionCall("userrole", "delete", $kparams);
@@ -3635,8 +3363,7 @@ class KalturaUserRoleService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaUserRoleFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaUserRoleFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -3651,8 +3378,7 @@ class KalturaUserRoleService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function cloneAction($userRoleId)
-    {
+    function cloneAction($userRoleId) {
         $kparams = array();
         $this->client->addParam($kparams, "userRoleId", $userRoleId);
         $this->client->queueServiceActionCall("userrole", "clone", $kparams);
@@ -3667,13 +3393,11 @@ class KalturaUserRoleService extends KalturaServiceBase
 
 class KalturaUserService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaUser $user)
-    {
+    function add(KalturaUser $user) {
         $kparams = array();
         $this->client->addParam($kparams, "user", $user->toParams());
         $this->client->queueServiceActionCall("user", "add", $kparams);
@@ -3685,8 +3409,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($userId, KalturaUser $user)
-    {
+    function update($userId, KalturaUser $user) {
         $kparams = array();
         $this->client->addParam($kparams, "userId", $userId);
         $this->client->addParam($kparams, "user", $user->toParams());
@@ -3699,8 +3422,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($userId)
-    {
+    function get($userId) {
         $kparams = array();
         $this->client->addParam($kparams, "userId", $userId);
         $this->client->queueServiceActionCall("user", "get", $kparams);
@@ -3712,8 +3434,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function getByLoginId($loginId)
-    {
+    function getByLoginId($loginId) {
         $kparams = array();
         $this->client->addParam($kparams, "loginId", $loginId);
         $this->client->queueServiceActionCall("user", "getByLoginId", $kparams);
@@ -3725,8 +3446,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function delete($userId)
-    {
+    function delete($userId) {
         $kparams = array();
         $this->client->addParam($kparams, "userId", $userId);
         $this->client->queueServiceActionCall("user", "delete", $kparams);
@@ -3738,8 +3458,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaUserFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaUserFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -3754,8 +3473,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function notifyBan($userId)
-    {
+    function notifyBan($userId) {
         $kparams = array();
         $this->client->addParam($kparams, "userId", $userId);
         $this->client->queueServiceActionCall("user", "notifyBan", $kparams);
@@ -3767,8 +3485,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function login($partnerId, $userId, $password, $expiry = 86400, $privileges = "*")
-    {
+    function login($partnerId, $userId, $password, $expiry = 86400, $privileges = "*") {
         $kparams = array();
         $this->client->addParam($kparams, "partnerId", $partnerId);
         $this->client->addParam($kparams, "userId", $userId);
@@ -3784,8 +3501,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function loginByLoginId($loginId, $password, $partnerId = null, $expiry = 86400, $privileges = "*")
-    {
+    function loginByLoginId($loginId, $password, $partnerId = null, $expiry = 86400, $privileges = "*") {
         $kparams = array();
         $this->client->addParam($kparams, "loginId", $loginId);
         $this->client->addParam($kparams, "password", $password);
@@ -3801,8 +3517,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function updateLoginData($oldLoginId, $password, $newLoginId = "", $newPassword = "", $newFirstName = null, $newLastName = null)
-    {
+    function updateLoginData($oldLoginId, $password, $newLoginId = "", $newPassword = "", $newFirstName = null, $newLastName = null) {
         $kparams = array();
         $this->client->addParam($kparams, "oldLoginId", $oldLoginId);
         $this->client->addParam($kparams, "password", $password);
@@ -3819,8 +3534,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function resetPassword($email)
-    {
+    function resetPassword($email) {
         $kparams = array();
         $this->client->addParam($kparams, "email", $email);
         $this->client->queueServiceActionCall("user", "resetPassword", $kparams);
@@ -3832,8 +3546,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function setInitialPassword($hashKey, $newPassword)
-    {
+    function setInitialPassword($hashKey, $newPassword) {
         $kparams = array();
         $this->client->addParam($kparams, "hashKey", $hashKey);
         $this->client->addParam($kparams, "newPassword", $newPassword);
@@ -3846,8 +3559,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function enableLogin($userId, $loginId, $password = null)
-    {
+    function enableLogin($userId, $loginId, $password = null) {
         $kparams = array();
         $this->client->addParam($kparams, "userId", $userId);
         $this->client->addParam($kparams, "loginId", $loginId);
@@ -3861,8 +3573,7 @@ class KalturaUserService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function disableLogin($userId = null, $loginId = null)
-    {
+    function disableLogin($userId = null, $loginId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "userId", $userId);
         $this->client->addParam($kparams, "loginId", $loginId);
@@ -3878,13 +3589,11 @@ class KalturaUserService extends KalturaServiceBase
 
 class KalturaWidgetService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaWidget $widget)
-    {
+    function add(KalturaWidget $widget) {
         $kparams = array();
         $this->client->addParam($kparams, "widget", $widget->toParams());
         $this->client->queueServiceActionCall("widget", "add", $kparams);
@@ -3896,8 +3605,7 @@ class KalturaWidgetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function update($id, KalturaWidget $widget)
-    {
+    function update($id, KalturaWidget $widget) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "widget", $widget->toParams());
@@ -3910,8 +3618,7 @@ class KalturaWidgetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("widget", "get", $kparams);
@@ -3923,8 +3630,7 @@ class KalturaWidgetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function cloneAction(KalturaWidget $widget)
-    {
+    function cloneAction(KalturaWidget $widget) {
         $kparams = array();
         $this->client->addParam($kparams, "widget", $widget->toParams());
         $this->client->queueServiceActionCall("widget", "clone", $kparams);
@@ -3936,8 +3642,7 @@ class KalturaWidgetService extends KalturaServiceBase
         return $resultObject;
     }
 
-    function listAction(KalturaWidgetFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaWidgetFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -3955,13 +3660,11 @@ class KalturaWidgetService extends KalturaServiceBase
 
 class KalturaXInternalService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function xAddBulkDownload($entryIds, $flavorParamsId = "")
-    {
+    function xAddBulkDownload($entryIds, $flavorParamsId = "") {
         $kparams = array();
         $this->client->addParam($kparams, "entryIds", $entryIds);
         $this->client->addParam($kparams, "flavorParamsId", $flavorParamsId);
@@ -4216,8 +3919,7 @@ class KalturaClient extends KalturaClientBase
      *
      * @param KalturaConfiguration $config
      */
-    public function __construct(KalturaConfiguration $config)
-    {
+    public function __construct(KalturaConfiguration $config) {
         parent::__construct($config);
         
         $this->accessControl = new KalturaAccessControlService($this);
