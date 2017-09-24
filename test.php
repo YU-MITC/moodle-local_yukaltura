@@ -26,9 +26,9 @@
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(__FILE__) . '/locallib.php');
 
-global $CFG, $USER, $PAGE;
-
 require_login();
+
+global $CFG, $USER, $PAGE;
 
 $context = get_context_instance(CONTEXT_SYSTEM);
 
