@@ -46,7 +46,8 @@ install:
 
 before_script:
   - npm install grunt-cli -g
-
+  - npm install
+  
 script:
   - moodle-plugin-ci phplint
   - moodle-plugin-ci phpcpd
