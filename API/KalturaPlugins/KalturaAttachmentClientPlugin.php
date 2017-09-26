@@ -310,7 +310,7 @@ class KalturaAttachmentClientPlugin extends KalturaClientPlugin
      * @return KalturaAttachmentClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaAttachmentClientPlugin($client);
         }
         return self::$instance;

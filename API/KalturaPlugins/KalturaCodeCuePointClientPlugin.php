@@ -48,56 +48,56 @@ class KalturaCodeCuePointOrderBy
 abstract class KalturaCodeCuePointBaseFilter extends KalturaCuePointFilter
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeMultiLikeAnd = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $descriptionLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $descriptionMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -114,14 +114,14 @@ class KalturaCodeCuePointFilter extends KalturaCodeCuePointBaseFilter
 class KalturaCodeCuePoint extends KalturaCuePoint
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $code = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -145,7 +145,7 @@ class KalturaCodeCuePointClientPlugin extends KalturaClientPlugin
      * @return KalturaCodeCuePointClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaCodeCuePointClientPlugin($client);
         }
         return self::$instance;

@@ -727,7 +727,7 @@ class KalturaAuditTrailService extends KalturaServiceBase
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
+        $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAuditTrailListResponse");
         return $resultobject;
@@ -754,7 +754,7 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
      * @return KalturaAuditClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaAuditClientPlugin($client);
         }
         return self::$instance;
