@@ -33,7 +33,6 @@ env:
  matrix:
   - DB=pgsql
   - DB=mysqli
-  fast_finish: true
 
 before_install:
   - phpenv config-rm xdebug.ini
