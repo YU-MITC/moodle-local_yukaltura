@@ -36,6 +36,7 @@ define(['jquery'], function($) {
     /**
      * This function reflects change of sort option.
      * @access private
+     * @param none
      * @return {void}
      */
     function changeSort() {
@@ -69,7 +70,8 @@ define(['jquery'], function($) {
     /**
      * This function centerize modal window.
      * @access private
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function centeringModalSyncer(content_panel){
         if(timer !== false){
@@ -93,7 +95,7 @@ define(['jquery'], function($) {
      * This function print modal window.
      * @access private
      * @param {string} - URL of simple selector web page.
-     * @return {void}
+     * @return nothing
      */
     function fadeInSelectorWindow(selectorURL) {
         // Avoidance of duplicatable execute.
@@ -129,7 +131,8 @@ define(['jquery'], function($) {
     /**
      * This function delete modal window.
      * @access private
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function fadeOutSelectorWindow() {
 
@@ -146,7 +149,8 @@ define(['jquery'], function($) {
     /**
      * This function is callback for OK button click.
      * @access private
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function selectorSubmitClick() {
         // Get entry id of selected media.
@@ -207,7 +211,8 @@ define(['jquery'], function($) {
     /**
      * This function replaces "Add Media" label when membed media is selected.
      * @access private
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function replaceAddMediaLabel(str) {
         parent.document.getElementById("id_add_media").value = str;
@@ -215,6 +220,8 @@ define(['jquery'], function($) {
 
     /**
      * This function print modal window of player properties.
+     * @param string - URL of selector page.
+     * @return nothing
      */
     function fadeInPropertiesWindow(selectorURL) {
         // Avoidance of duplicatable execute.
@@ -250,7 +257,8 @@ define(['jquery'], function($) {
     /**
      * This function deletes modal window of player properties.
      * @access private
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function fadeOutPropertiesWindow() {
 
@@ -268,7 +276,8 @@ define(['jquery'], function($) {
     /**
      * This function is callback for player dimension.
      * @access private
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function handlePlayerDimensionChange() {
         var width = document.getElementById("media_prop_width").value;
@@ -288,7 +297,8 @@ define(['jquery'], function($) {
     /**
      * This function is callback for player dimension.
      * @access private
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function handlePlayerSizeSelect() {
         var sizeSelect = document.getElementById("media_prop_size");
@@ -347,6 +357,7 @@ define(['jquery'], function($) {
     /**
      * Retrieve OS type.
      * @acecss private
+     * @param none
      * @return {string} - os type.
      */
     function getOperatingSytstem() {
@@ -377,7 +388,8 @@ define(['jquery'], function($) {
     /**
      * This function is callback for OK button on player properties window.
      * @acecss pivate
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function propertiesSubmitClick() {
         var str = document.getElementById("media_prop_name").value;
@@ -459,7 +471,8 @@ define(['jquery'], function($) {
     /**
      * This function describe module parameters to mod_form.
      * @access private
-     * @return {void}
+     * @param none
+     * @return nothing
      */
     function loadPropertiesParameter() {
         document.getElementById("media_prop_name").value = parent.document.getElementById("media_title").value;
