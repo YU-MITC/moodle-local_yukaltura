@@ -283,7 +283,7 @@ class KalturaClientBase
 
         $endtime = microtime (true);
 
-        $this->log("execution time for [".$url."]: [" . ($endtime - $startsime) . "]");
+        $this->log("execution time for [".$url."]: [" . ($endtime - $starttime) . "]");
 
         return $result;
     }
