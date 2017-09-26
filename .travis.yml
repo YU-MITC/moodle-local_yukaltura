@@ -9,6 +9,8 @@ addons:
     packages:
       - oracle-java8-installer
       - oracle-java8-set-default
+      - nodejs
+      - npm
 
 cache:
   directories:
@@ -33,8 +35,6 @@ env:
   - DB=mysqli
   fast_finish: true
 
-before_script:
-  - npm install grunt-cli -g 
 before_install:
   - phpenv config-rm xdebug.ini
   - nvm install node
@@ -44,6 +44,9 @@ before_install:
 
 install:
   - moodle-plugin-ci install
+
+before_script:
+  - npm install grunt-cli -g
 
 script:
   - moodle-plugin-ci phplint
