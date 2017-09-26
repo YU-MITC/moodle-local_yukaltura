@@ -430,7 +430,7 @@ class KalturaClientBase
         $response = @stream_get_contents($fp);
         if ($response === false) {
             throw new KalturaClientException("Problem reading data from $url,
-                                             $phpErrorMsg", KalturaClientException::ERROR_READ_FAILED);
+                                             $phperrormsg", KalturaClientException::ERROR_READ_FAILED);
         }
         return array($response, '');
     }
@@ -615,7 +615,7 @@ class KalturaClientBase
         $info = implode ( ";", $fields );
 
         $signature = $this->hash($adminsecret , $info);
-        $strtohash = $signature . "|" . $info ;
+        $strtohash = $signature . "|" . $info;
         $encodedstr = base64_encode( $strtohash );
 
         return $encodedstr;
