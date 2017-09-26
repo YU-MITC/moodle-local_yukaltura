@@ -52,7 +52,7 @@ class KalturaAnnotationOrderBy
 class KalturaAnnotation extends KalturaCuePoint
 {
     /**
-     * 
+     *
      *
      * @var string
      * @insertonly
@@ -60,7 +60,7 @@ class KalturaAnnotation extends KalturaCuePoint
     public $parentId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -87,63 +87,63 @@ class KalturaAnnotation extends KalturaCuePoint
 abstract class KalturaAnnotationBaseFilter extends KalturaCuePointFilter
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $parentIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $parentIdIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $textLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $textMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $textMultiLikeAnd = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $endTimeGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $endTimeLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $durationGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -160,7 +160,7 @@ class KalturaAnnotationFilter extends KalturaAnnotationBaseFilter
 class KalturaAnnotationListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaAnnotation
      * @readonly
@@ -168,7 +168,7 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -181,24 +181,24 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
 
 class KalturaAnnotationService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaAnnotation $annotation) {
+    public function add(KalturaAnnotation $annotation) {
         $kparams = array();
         $this->client->addParam($kparams, "annotation", $annotation->toParams());
         $this->client->queueServiceActionCall("annotation_annotation", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaAnnotation");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaAnnotation");
+        return $resultobject;
     }
 
-    function update($id, KalturaAnnotation $annotation) {
+    public function update($id, KalturaAnnotation $annotation) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "annotation", $annotation->toParams());
@@ -206,13 +206,13 @@ class KalturaAnnotationService extends KalturaServiceBase
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaAnnotation");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaAnnotation");
+        return $resultobject;
     }
 
-    function listAction(KalturaAnnotationFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaAnnotationFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -224,27 +224,27 @@ class KalturaAnnotationService extends KalturaServiceBase
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaAnnotationListResponse");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaAnnotationListResponse");
+        return $resultobject;
     }
 
-    function addFromBulk($fileData) {
+    public function addFromBulk($filedata) {
         $kparams = array();
         $kfiles = array();
-        $this->client->addParam($kfiles, "fileData", $fileData);
+        $this->client->addParam($kfiles, "fileData", $filedata);
         $this->client->queueServiceActionCall("annotation_annotation", "addFromBulk", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaCuePointListResponse");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaCuePointListResponse");
+        return $resultobject;
     }
 
-    function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -253,24 +253,24 @@ class KalturaAnnotationService extends KalturaServiceBase
             $this->client->addParam($kparams, "pager", $pager->toParams());
         }
         $this->client->queueServiceActionCall('annotation_annotation', 'serveBulk', $kparams);
-        $resultObject = $this->client->getServeUrl();
-        return $resultObject;
+        $resultobject = $this->client->getServeUrl();
+        return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("annotation_annotation", "get", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaCuePoint");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaCuePoint");
+        return $resultobject;
     }
 
-    function count(KalturaCuePointFilter $filter = null) {
+    public function count(KalturaCuePointFilter $filter = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -279,23 +279,23 @@ class KalturaAnnotationService extends KalturaServiceBase
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "integer");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "integer");
+        return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("annotation_annotation", "delete", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "null");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "null");
+        return $resultobject;
     }
 }
 class KalturaAnnotationClientPlugin extends KalturaClientPlugin
@@ -319,7 +319,7 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
      * @return KalturaAnnotationClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaAnnotationClientPlugin($client);
         }
         return self::$instance;
