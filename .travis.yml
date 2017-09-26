@@ -57,7 +57,7 @@ script:
   - moodle-plugin-ci savepoints
   - moodle-plugin-ci mustache
   - moodle-plugin-ci grunt
-  - moodle-plugin-ci grunt --tasks css
+  - moodle-plugin-ci grunt --tasks jshint
   - moodle-plugin-ci grunt --tasks js
   - moodle-plugin-ci phpunit
   - moodle-plugin-ci behat
