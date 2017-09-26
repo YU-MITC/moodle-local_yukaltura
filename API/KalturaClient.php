@@ -1096,7 +1096,7 @@ class KalturaEmailIngestionProfileService extends KalturaServiceBase
     public function update($id, KalturaEmailIngestionProfile $emailip) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "EmailIP", $EmailIP->toParams());
+        $this->client->addParam($kparams, "EmailIP", $emailip->toParams());
         $this->client->queueServiceActionCall("emailingestionprofile", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -1107,8 +1107,7 @@ class KalturaEmailIngestionProfileService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function delete($id)
-    {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("emailingestionprofile", "delete", $kparams);
@@ -1145,10 +1144,10 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         parent::__construct($client);
     }
 
-    public function add($entryId, KalturaFlavorAsset $flavorasset) {
+    public function add($entryid, KalturaFlavorAsset $flavorasset) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryid);
-        $this->client->addParam($kparams, "flavorAsset", $flavorAsset->toParams());
+        $this->client->addParam($kparams, "flavorAsset", $flavorasset->toParams());
         $this->client->queueServiceActionCall("flavorasset", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -1246,7 +1245,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase
 
     public function convert($entryid, $flavorparamsid) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
+        $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "flavorParamsId", $flavorparamsid);
         $this->client->queueServiceActionCall("flavorasset", "convert", $kparams);
         if ($this->client->isMultiRequest()) {
@@ -1672,7 +1671,7 @@ class KalturaMediaService extends KalturaServiceBase
         $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "conversionProfileId", $profileid);
         if ($attributes !== null) {
-            foreach($attributes as $index => $obj) {
+            foreach ($attributes as $index => $obj) {
                 $this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
             }
         }
@@ -2163,10 +2162,10 @@ class KalturaPartnerService extends KalturaServiceBase
         parent::__construct($client);
     }
 
-    public function register(KalturaPartner $partner, $cmsPassword = "") {
+    public function register(KalturaPartner $partner, $cmspassword = "") {
         $kparams = array();
         $this->client->addParam($kparams, "partner", $partner->toParams());
-        $this->client->addParam($kparams, "cmsPassword", $cmsPassword);
+        $this->client->addParam($kparams, "cmsPassword", $cmspassword);
         $this->client->queueServiceActionCall("partner", "register", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2266,7 +2265,7 @@ class KalturaPermissionItemService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function update($permissionItemid, KalturaPermissionitem $permissionitem) {
+    public function update($permissionitemid, KalturaPermissionitem $permissionitem) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionItemId", $permissionitemid);
         $this->client->addParam($kparams, "permissionItem", $permissionitem->toParams());
@@ -2344,7 +2343,7 @@ class KalturaPermissionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function update($permissionName, KalturaPermission $permission) {
+    public function update($permissionname, KalturaPermission $permission) {
         $kparams = array();
         $this->client->addParam($kparams, "permissionName", $permissionname);
         $this->client->addParam($kparams, "permission", $permission->toParams());
@@ -2529,7 +2528,7 @@ class KalturaPlaylistService extends KalturaServiceBase
 
     public function executeFromFilters(array $filters, $totalresults, $detailed = "") {
         $kparams = array();
-        foreach($filters as $index => $obj) {
+        foreach ($filters as $index => $obj) {
             $this->client->addParam($kparams, "filters:$index", $obj->toParams());
         }
         $this->client->addParam($kparams, "totalResults", $totalresults);
@@ -2596,10 +2595,11 @@ class KalturaReportService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function getTable($reporttype, KalturaReportInputFilter $reportinputfilter, KalturaFilterPager $pager, $order = null, $objectids = null) {
+    public function getTable($reporttype, KalturaReportInputFilter $reportinputfilter, KalturaFilterPager $pager,
+                             $order = null, $objectids = null) {
         $kparams = array();
         $this->client->addParam($kparams, "reportType", $reporttype);
-        $this->client->addParam($kparams, "reportInputFilter", $reportInputFilter->toParams());
+        $this->client->addParam($kparams, "reportInputFilter", $reportinputfilter->toParams());
         $this->client->addParam($kparams, "pager", $pager->toParams());
         $this->client->addParam($kparams, "order", $order);
         $this->client->addParam($kparams, "objectIds", $objectids);
@@ -2613,7 +2613,9 @@ class KalturaReportService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function getUrlForReportAsCsv($reporttitle, $reporttext, $headers, $reporttype, KalturaReportInputFilter $reportinputfilter, $dimension = null, KalturaFilterPager $pager = null, $order = null, $objectids = null) {
+    public function getUrlForReportAsCsv($reporttitle, $reporttext, $headers, $reporttype,
+                                         KalturaReportInputFilter $reportinputfilter, $dimension = null,
+                                         KalturaFilterPager $pager = null, $order = null, $objectids = null) {
         $kparams = array();
         $this->client->addParam($kparams, "reportTitle", $reporttitle);
         $this->client->addParam($kparams, "reportText", $reporttext);
@@ -2753,7 +2755,8 @@ class KalturaSessionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function impersonate($secret, $impartnerid, $userid = "", $type = 0, $partnerid = null, $expiry = 86400, $privileges = null) {
+    public function impersonate($secret, $impartnerid, $userid = "", $type = 0, $partnerid = null,
+                                $expiry = 86400, $privileges = null) {
         $kparams = array();
         $this->client->addParam($kparams, "secret", $secret);
         $this->client->addParam($kparams, "impersonatedPartnerId", $impartnerid);
@@ -3130,7 +3133,7 @@ class KalturaThumbAssetService extends KalturaServiceBase
     public function generate($entryid, KalturaThumbParams $thumbparams, $sourceassetid = null) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryid);
-        $this->client->addParam($kparams, "thumbParams", $thumbParams->toParams());
+        $this->client->addParam($kparams, "thumbParams", $thumbparams->toParams());
         $this->client->addParam($kparams, "sourceAssetId", $sourceassetid);
         $this->client->queueServiceActionCall("thumbasset", "generate", $kparams);
         if ($this->client->isMultiRequest()) {
@@ -3241,10 +3244,10 @@ class KalturaThumbAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function getUrl($id, $storageId = null) {
+    public function getUrl($id, $storageid = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "storageId", $storageId);
+        $this->client->addParam($kparams, "storageId", $storageid);
         $this->client->queueServiceActionCall("thumbasset", "getUrl", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -3827,7 +3830,8 @@ class KalturaUserService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function updateLoginData($oldloginid, $password, $newloginid = "", $newpassword = "", $newfirstname = null, $newlastname = null) {
+    public function updateLoginData($oldloginid, $password, $newloginid = "", $newpassword = "",
+                                    $newfirstname = null, $newlastname = null) {
         $kparams = array();
         $this->client->addParam($kparams, "oldLoginId", $oldloginid);
         $this->client->addParam($kparams, "password", $password);
@@ -3904,7 +3908,7 @@ class KalturaUserService extends KalturaServiceBase
 
 class KalturaWidgetService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
@@ -4094,8 +4098,9 @@ class KalturaClient extends KalturaClientBase
     public $media = null;
 
     /**
-     * A Mix is an XML unique format invented by Kaltura, it allows the user to create a mix of videos and images, in and out points, transitions, text overlays, soundtrack, effects and much more...
-     * Mixing service lets you create a new mix, manage its metadata and make basic manipulations.   
+     * A Mix is an XML unique format invented by Kaltura, it allows the user to create a mix of videos and images,
+     * in and out points, transitions, text overlays, soundtrack, effects and much more...
+     * Mixing service lets you create a new mix, manage its metadata and make basic manipulations.
      * @var KalturaMixingService
      */
     public $mixing = null;
@@ -4194,20 +4199,20 @@ class KalturaClient extends KalturaClientBase
     public $thumbParams = null;
 
     /**
-     * UiConf service lets you create and manage your UIConfs for the various flash components
-     * This service is used by the KMC-ApplicationStudio
+     * UiConf service lets you create and manage your UIConfs for the various flash components.
+     * This service is used by the KMC-ApplicationStudio.
      * @var KalturaUiConfService
      */
     public $uiConf = null;
 
     /**
-     * 
+     *
      * @var KalturaUploadService
      */
     public $upload = null;
 
     /**
-     * 
+     *
      * @var KalturaUploadTokenService
      */
     public $uploadToken = null;
@@ -4220,7 +4225,8 @@ class KalturaClient extends KalturaClientBase
 
     /**
      * Manage partner users on Kaltura's side
-     * The userId in kaltura is the unique Id in the partner's system, and the [partnerId,Id] couple are unique key in kaltura's DB
+     * The userId in kaltura is the unique Id in the partner's system,
+     *  and the [partnerId,Id] couple are unique key in kaltura's DB.
      * @var KalturaUserService
      */
     public $user = null;
@@ -4232,7 +4238,8 @@ class KalturaClient extends KalturaClientBase
     public $widget = null;
 
     /**
-     * Internal Service is used for actions that are used internally in Kaltura applications and might be changed in the future without any notice.
+     * Internal Service is used for actions that are used internally in Kaltura applications
+     * and might be changed in the future without any notice.
      * @var KalturaXInternalService
      */
     public $xInternal = null;
