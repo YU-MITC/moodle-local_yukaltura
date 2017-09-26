@@ -68,70 +68,70 @@ class KalturaHuluDistributionProviderFilter extends KalturaHuluDistributionProvi
 class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpHost = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpLogin = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpPass = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seriesChannel = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seriesPrimaryCategory = null;
 
     /**
-     * 
+     *
      *
      * @var array of KalturaString
      */
     public $seriesAdditionalCategories;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seasonNumber = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seasonSynopsis = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seasonTuneInInformation = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -160,7 +160,7 @@ class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
      * @return KalturaHuluDistributionClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaHuluDistributionClientPlugin($client);
         }
         return self::$instance;

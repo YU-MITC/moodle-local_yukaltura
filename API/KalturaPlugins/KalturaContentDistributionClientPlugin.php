@@ -880,7 +880,7 @@ class KalturaEntryDistributionListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -900,7 +900,7 @@ abstract class KalturaDistributionProviderBaseFilter extends KalturaFilter
     public $typeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -1139,7 +1139,7 @@ abstract class KalturaGenericDistributionProviderBaseFilter extends KalturaDistr
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */

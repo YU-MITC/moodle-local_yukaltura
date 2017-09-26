@@ -713,7 +713,7 @@ abstract class KalturaDropFolderFileBaseFilter extends KalturaFilter
     public $dropFolderIdIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
