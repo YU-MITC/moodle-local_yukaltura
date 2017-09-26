@@ -132,8 +132,8 @@ class KalturaDoubleClickService extends KalturaServiceBase
         $this->client->addParam($kparams, "page", $page);
         $this->client->addParam($kparams, "period", $period);
         $this->client->queueServiceActionCall('doubleclickdistribution_doubleclick', 'getFeed', $kparams);
-        $resultObject = $this->client->getServeUrl();
-        return $resultObject;
+        $resultobject = $this->client->getServeUrl();
+        return $resultobject;
     }
 }
 class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin

@@ -327,7 +327,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "conversionProfileId", $profileid);
         if ($attributes !== null) {
-            foreach($attributes as $index => $obj) {
+            foreach ($attributes as $index => $obj) {
                 $this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
             }
         }

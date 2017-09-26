@@ -54,7 +54,7 @@ class KalturaDropFolderXmlBulkUploadClientPlugin extends KalturaClientPlugin
      * @return KalturaDropFolderXmlBulkUploadClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaDropFolderXmlBulkUploadClientPlugin($client);
         }
         return self::$instance;
