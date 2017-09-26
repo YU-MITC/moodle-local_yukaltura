@@ -22,6 +22,8 @@ php:
 
 node_js:
 - "6"
+- "7"
+- "8"
 
 env:
  global:
@@ -29,7 +31,14 @@ env:
  matrix:
   - DB=pgsql
   - DB=mysqli
+  fast_finish: true
 
+before_install:
+  - if [[ `npm -v` =~ ^[1-2] ]]; then npm i -g npm@3; fi
+
+before_script:
+  - npm uninstall grunt # https://github.com/npm/npm/issues/3958
+ 
 before_install:
   - phpenv config-rm xdebug.ini
   - nvm install node
