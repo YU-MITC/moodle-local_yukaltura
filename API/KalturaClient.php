@@ -4143,8 +4143,8 @@ class KalturaClient extends KalturaClientBase
     public $report = null;
 
     /**
-     * Expose the schema definitions for syndication MRSS, bulk upload XML and other schema types. 
-     * 
+     * Expose the schema definitions for syndication MRSS, bulk upload XML and other schema types.
+     *
      * @var KalturaSchemaService
      */
     public $schema = null;
