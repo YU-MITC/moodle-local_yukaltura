@@ -17,8 +17,7 @@
 /**
  * YU Kaltura static entries class
  *
- * @package    local
- * @subpackage yukaltura
+ * @package    local_yukaltura
  * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
@@ -40,6 +39,8 @@ class KalturaStaticEntries {
     /**
      * Retrieve all entry objects that have been seralized and stored in the
      * session global
+     *
+     * @return nothing
      */
     public function __construct() {
 
@@ -64,7 +65,7 @@ class KalturaStaticEntries {
      *
      * @param object - an entry object
      *
-     * @return - nothing
+     * @return nothing
      */
     public static function add_entry_object($entryobj) {
         if (!array_key_exists($entryobj->id, self::$entries)) {
@@ -106,7 +107,7 @@ class KalturaStaticEntries {
      * @param string - entry id
      * @param object - a KalturaBaseEntryService object
      *
-     * @return - nothing
+     * @return nothing
      */
     private static function get_entry_from_api($entryid, $baseentryservice) {
 
@@ -177,6 +178,10 @@ class KalturaStaticEntries {
 
     /**
      * Remove an entry from cache.
+     *
+     * @param int - id of media entry
+     *
+     * @return nothing
      */
     public static function remove_entry($entryid) {
         global $SESSION;
@@ -194,6 +199,8 @@ class KalturaStaticEntries {
     /**
      * All stored entry objects will be serialized and stored in the PHP session
      * global.
+     *
+     * @return nothing
      */
     public function __destruct() {
         global $SESSION;

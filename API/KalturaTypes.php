@@ -79,7 +79,7 @@ class KalturaAccessControl extends KalturaObjectBase
     public $description = null;
 
     /**
-     * Creation date as Unix timestamp (In seconds)    *     *
+     * Creation date as Unix timestamp (In seconds)
      *
      * @var int
      * @readonly
@@ -355,7 +355,7 @@ class KalturaUser extends KalturaObjectBase
     public $updatedAt = null;
 
     /**
-     * Can be used to store various partner related data as a string    *     *
+     * Can be used to store various partner related data as a string
      * @var string
      */
     public $partnerData = null;
@@ -527,7 +527,7 @@ class KalturaBaseEntry extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     * The ID of the user who is the owner of this entry    *     *
+     * The ID of the user who is the owner of this entry
      *
      * @var string
      */
@@ -647,7 +647,7 @@ class KalturaBaseEntry extends KalturaObjectBase
     public $groupId = null;
 
     /**
-     * Can be used to store various partner related data as a string    *     *
+     * Can be used to store various partner related data as a string
      *
      * @var string
      */
@@ -696,7 +696,7 @@ class KalturaBaseEntry extends KalturaObjectBase
     public $thumbnailUrl = null;
 
     /**
-     * The Access Control ID assigned to this entry (null when not set, send -1 to remove)     *     *
+     * The Access Control ID assigned to this entry (null when not set, send -1 to remove) 
      *
      * @var int
      */
@@ -755,20 +755,20 @@ class KalturaBaseEntry extends KalturaObjectBase
     public $partnerSortValue = null;
 
     /**
-     * Override the default ingestion profile     *     *
+     * Override the default ingestion profile 
      * @var int
      */
     public $conversionProfileId = null;
 
     /**
-     * ID of source root entry, used for clipped, skipped and cropped entries that created from another entry     *     *
+     * ID of source root entry, used for clipped, skipped and cropped entries that created from another entry 
      * @var string
      * @readonly
      */
     public $rootEntryId = null;
 
     /**
-     * clipping, skipping and cropping attributes that used to create this entry     *     *
+     * clipping, skipping and cropping attributes that used to create this entry 
      * @var array of KalturaOperationAttributes
      */
     public $operationAttributes;
@@ -830,7 +830,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $idEqual = null;
 
     /**
-     * This filter should be in use for retrieving few specific entries (string should include comma separated list of entryId strings).
+     * This filter should be in use for retrieving few specific entries
+     * (string should include comma separated list of entryId strings).
      * @var string
      *
      * @var string
@@ -844,7 +845,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $idNotIn = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It should include only one string to search for in entry names (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It should include only one string to search for in entry names (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -852,7 +854,10 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $nameLike = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It could include few (comma separated) strings for searching in entry names, while applying an OR logic to retrieve entries that contain at least one input string (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It could include few (comma separated) strings for searching in entry names,
+     * while applying an OR logic to retrieve entries that contain at least one input string
+     * (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -860,7 +865,10 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $nameMultiLikeOr = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It could include few (comma separated) strings for searching in entry names, while applying an AND logic to retrieve entries that contain all input strings (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It could include few (comma separated) strings for searching in entry names,
+     * while applying an AND logic to retrieve entries that contain all input strings
+     * (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -876,7 +884,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $nameEqual = null;
 
     /**
-     * This filter should be in use for retrieving only entries which were uploaded by/assigned to users of a specific Kaltura Partner (identified by Partner ID).
+     * This filter should be in use for retrieving only entries
+     * which were uploaded by/assigned to users of a specific Kaltura Partner (identified by Partner ID).
      * @var int
      *
      * @var int
@@ -884,7 +893,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $partnerIdEqual = null;
 
     /**
-     * This filter should be in use for retrieving only entries within Kaltura network which were uploaded by/assigned to users of few Kaltura Partners  (string should include comma separated list of PartnerIDs)
+     * This filter should be in use for retrieving only entries within Kaltura network
+     * which were uploaded by/assigned to users of few Kaltura Partners  (string should include comma separated list of PartnerIDs)
      * @var string
      *
      * @var string
@@ -892,7 +902,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $partnerIdIn = null;
 
     /**
-     * This filter parameter should be in use for retrieving only entries, uploaded by/assigned to a specific user (identified by user Id).
+     * This filter parameter should be in use for retrieving only entries,
+     * uploaded by/assigned to a specific user (identified by user Id).
      * @var string
      *
      * @var string
@@ -900,7 +911,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $userIdEqual = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It should include only one string to search for in entry tags (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It should include only one string to search for in entry tags (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -908,7 +920,10 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $tagsLike = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It could include few (comma separated) strings for searching in entry tags, while applying an OR logic to retrieve entries that contain at least one input string (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It could include few (comma separated) strings for searching in entry tags,
+     * while applying an OR logic to retrieve entries that contain at least one input string
+     * (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -916,7 +931,10 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $tagsMultiLikeOr = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It could include few (comma separated) strings for searching in entry tags, while applying an AND logic to retrieve entries that contain all input strings (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It could include few (comma separated) strings for searching in entry tags,
+     * while applying an AND logic to retrieve entries that contain all input strings
+     * (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -924,7 +942,9 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $tagsMultiLikeAnd = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It should include only one string to search for in entry tags set by an ADMIN user (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It should include only one string to search for in entry tags set by an ADMIN user
+     * (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -932,7 +952,10 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $adminTagsLike = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It could include few (comma separated) strings for searching in entry tags, set by an ADMIN user, while applying an OR logic to retrieve entries that contain at least one input string (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It could include few (comma separated) strings for searching in entry tags, set by an ADMIN user,
+     * while applying an OR logic to retrieve entries that contain at least one input string
+     * (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -940,7 +963,10 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $adminTagsMultiLikeOr = null;
 
     /**
-     * This filter should be in use for retrieving specific entries. It could include few (comma separated) strings for searching in entry tags, set by an ADMIN user, while applying an AND logic to retrieve entries that contain all input strings (no wildcards, spaces are treated as part of the string).
+     * This filter should be in use for retrieving specific entries.
+     * It could include few (comma separated) strings for searching in entry tags,
+     * set by an ADMIN user, while applying an AND logic to retrieve entries that contain all input strings
+     * (no wildcards, spaces are treated as part of the string).
      * @var string
      *
      * @var string
@@ -988,7 +1014,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $statusNotEqual = null;
 
     /**
-     * This filter should be in use for retrieving only entries, at few specific {@link ?object=KalturaEntryStatus KalturaEntryStatus} (comma separated).
+     * This filter should be in use for retrieving only entries,
+     * at few specific {@link ?object=KalturaEntryStatus KalturaEntryStatus} (comma separated).
      * @dynamicType KalturaEntryStatus
      *
      * @var string
@@ -996,7 +1023,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $statusIn = null;
 
     /**
-     * This filter should be in use for retrieving only entries, not at few specific {@link ?object=KalturaEntryStatus KalturaEntryStatus} (comma separated).
+     * This filter should be in use for retrieving only entries,
+     * not at few specific {@link ?object=KalturaEntryStatus KalturaEntryStatus} (comma separated).
      * @dynamicType KalturaEntryStatus
      *
      * @var string
@@ -1034,7 +1062,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $typeEqual = null;
 
     /**
-     * This filter should be in use for retrieving entries of few {@link ?object=KalturaEntryType KalturaEntryType} (string should include a comma separated list of {@link ?object=KalturaEntryType KalturaEntryType} enumerated parameters).
+     * This filter should be in use for retrieving entries of few {@link ?object=KalturaEntryType KalturaEntryType}
+     * (string should include a comma separated list of {@link ?object=KalturaEntryType KalturaEntryType} enumerated parameters).
      * @dynamicType KalturaEntryType
      *
      * @var string
@@ -1042,7 +1071,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $typeIn = null;
 
     /**
-     * This filter parameter should be in use for retrieving only entries which were created at Kaltura system after a specific time/date (standard timestamp format).
+     * This filter parameter should be in use for retrieving only entries
+     * which were created at Kaltura system after a specific time/date (standard timestamp format).
      * @var int
      *
      * @var int
@@ -1050,7 +1080,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     * This filter parameter should be in use for retrieving only entries which were created at Kaltura system before a specific time/date (standard timestamp format).
+     * This filter parameter should be in use for retrieving only entries
+     * which were created at Kaltura system before a specific time/date (standard timestamp format).
      * @var int
      *
      * @var int
@@ -1076,7 +1107,9 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $groupIdEqual = null;
 
     /**
-     * This filter should be in use for retrieving specific entries while search match the input string within all of the following metadata attributes: name, description, tags, adminTags.
+     * This filter should be in use for retrieving specific entries
+     * while search match the input string within all of the following metadata attributes:
+     * name, description, tags, adminTags.
      * @var string
      *
      * @var string
@@ -1084,7 +1117,9 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $searchTextMatchAnd = null;
 
     /**
-     * This filter should be in use for retrieving specific entries while search match the input string within at least one of the following metadata attributes: name, description, tags, adminTags.
+     * This filter should be in use for retrieving specific entries
+     * while search match the input string within at least one of the following metadata attributes:
+     * name, description, tags, adminTags.
      * @var string
      *
      * @var string
@@ -1845,7 +1880,7 @@ class KalturaCategory extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     * The name of the Category.    *     * The following characters are not allowed: '<', '>', ','
+     * The name of the Category. The following characters are not allowed: '<', '>', ','
      *
      * @var string
      */
@@ -2301,7 +2336,7 @@ class KalturaConversionProfile extends KalturaObjectBase
     public $defaultEntryId = null;
 
     /**
-     * Creation date as Unix timestamp (In seconds)    *     *
+     * Creation date as Unix timestamp (In seconds)
      * @var int
      * @readonly
      */
@@ -2448,13 +2483,13 @@ class KalturaConversionAttribute extends KalturaObjectBase
     public $flavorParamsId = null;
 
     /**
-     * Attribute name     *     *
+     * Attribute name 
      * @var string
      */
     public $name = null;
 
     /**
-     * Attribute value     *     *
+     * Attribute value 
      * @var string
      */
     public $value = null;
@@ -2648,7 +2683,7 @@ class KalturaMediaEntry extends KalturaPlayableEntry
     public $conversionQuality = null;
 
     /**
-     * The source type of the entry    *     *
+     * The source type of the entry
      * @var KalturaSourceType
      * @insertonly
      */
@@ -2824,7 +2859,7 @@ class KalturaFlavorAsset extends KalturaAsset
     public $flavorParamsId = null;
 
     /**
-     * The width of the Flavor Asset    *     *
+     * The width of the Flavor Asset
      * @var int
      * @readonly
      */
@@ -2839,7 +2874,7 @@ class KalturaFlavorAsset extends KalturaAsset
     public $height = null;
 
     /**
-     * The overall bitrate (in KBits) of the Flavor Asset    *     *
+     * The overall bitrate (in KBits) of the Flavor Asset
      * @var int
      * @readonly
      */
@@ -3731,7 +3766,7 @@ class KalturaMixListResponse extends KalturaObjectBase
 class KalturaClientNotification extends KalturaObjectBase
 {
     /**
-     * The URL where the notification should be sent to    *     *
+     * The URL where the notification should be sent to
      * @var string
      */
     public $url = null;
@@ -4451,7 +4486,8 @@ class KalturaMediaEntryFilterForPlaylist extends KalturaMediaEntryFilter
 class KalturaPlaylist extends KalturaBaseEntry
 {
     /**
-     * Content of the playlist -    *     * XML if the playlistType is dynamic    *     * text if the playlistType is static    *     * url if the playlistType is mRss    *     *
+     * Content of the playlist -
+     * XML if the playlistType is dynamic text if the playlistType is static url if the playlistType is mRss
      * @var string
      */
     public $playlistContent = null;
@@ -4469,7 +4505,7 @@ class KalturaPlaylist extends KalturaBaseEntry
     public $totalResults = null;
 
     /**
-     * Type of playlist     *     *
+     * Type of playlist 
      * @var KalturaPlaylistType
      */
     public $playlistType = null;
@@ -4731,7 +4767,8 @@ class KalturaStatsEvent extends KalturaObjectBase
     public $eventTimestamp = null;
 
     /**
-     * a unique string generated by the client that will represent the client-side session: the primary component will pass it on to other components that sprout from it
+     * A unique string generated by the client that will represent the client-side session:
+     * the primary component will pass it on to other components that sprout from it.
      *
      * @var string
      */
@@ -4750,7 +4787,7 @@ class KalturaStatsEvent extends KalturaObjectBase
     public $entryId = null;
 
     /**
-     * the UV cookie - creates in the operational system and should be passed on ofr every event    *     *
+     * The UV cookie - creates in the operational system and should be passed on ofr every event.
      * @var string
      */
     public $uniqueViewer = null;
@@ -4768,25 +4805,25 @@ class KalturaStatsEvent extends KalturaObjectBase
     public $uiconfId = null;
 
     /**
-     * the partner's user id    *     *
+     * the partner's user id
      * @var string
      */
     public $userId = null;
 
     /**
-     * the timestamp along the video when the event happend    *     *
+     * the timestamp along the video when the event happend.
      * @var int
      */
     public $currentPoint = null;
 
     /**
-     * the duration of the video in milliseconds - will make it much faster than quering the db for each entry    *     *
+     * The duration of the video in milliseconds - will make it much faster than quering the db for each entry.
      * @var int
      */
     public $duration = null;
 
     /**
-     * will be retrieved from the request of the user    *     *
+     * will be retrieved from the request of the user.
      * @var string
      * @readonly
      */
@@ -4807,13 +4844,13 @@ class KalturaStatsEvent extends KalturaObjectBase
     public $controlId = null;
 
     /**
-     * true if the user ever used seek in this session    *     *
+     * true if the user ever used seek in this session.
      * @var bool
      */
     public $seek = null;
 
     /**
-     * timestamp of the new point on the timeline of the video after the user seeks    *     *
+     * timestamp of the new point on the timeline of the video after the user seeks.
      * @var int
      */
     public $newPoint = null;
@@ -4864,7 +4901,8 @@ class KalturaStatsKmcEvent extends KalturaObjectBase
     public $eventTimestamp = null;
 
     /**
-     * a unique string generated by the client that will represent the client-side session: the primary component will pass it on to other components that sprout from it
+     * A unique string generated by the client that will represent the client-side session:
+     * the primary component will pass it on to other components that sprout from it
      *
      * @var string
      */
@@ -4895,13 +4933,13 @@ class KalturaStatsKmcEvent extends KalturaObjectBase
     public $uiconfId = null;
 
     /**
-     * the partner's user id    *     *
+     * the partner's user id
      * @var string
      */
     public $userId = null;
 
     /**
-     * will be retrieved from the request of the user    *     *
+     * will be retrieved from the request of the user
      * @var string
      * @readonly
      */
@@ -5442,7 +5480,7 @@ class KalturaThumbAsset extends KalturaAsset
     public $thumbParamsId = null;
 
     /**
-     * The width of the Flavor Asset    *     *
+     * The width of the Flavor Asset
      * @var int
      * @readonly
      */
@@ -5963,7 +6001,8 @@ class KalturaUploadToken extends KalturaObjectBase
     public $status = null;
 
     /**
-     * Name of the file for the upload token, can be empty when the upload token is created and will be updated internally after the file is uploaded
+     * Name of the file for the upload token,
+     * can be empty when the upload token is created and will be updated internally after the file is uploaded
      *
      * @var string
      * @insertonly
@@ -5971,7 +6010,8 @@ class KalturaUploadToken extends KalturaObjectBase
     public $fileName = null;
 
     /**
-     * File size in bytes, can be empty when the upload token is created and will be updated internally after the file is uploaded
+     * File size in bytes,
+     * can be empty when the upload token is created and will be updated internally after the file is uploaded
      *
      * @var float
      * @insertonly
@@ -6433,7 +6473,7 @@ class KalturaWidget extends KalturaObjectBase
     public $updatedAt = null;
 
     /**
-     * Can be used to store various partner related data as a string    *     *
+     * Can be used to store various partner related data as a string
      * @var string
      */
     public $partnerData = null;
@@ -6641,7 +6681,7 @@ class KalturaCountryRestriction extends KalturaBaseRestriction
     public $countryRestrictionType = null;
 
     /**
-     * Comma separated list of country codes to allow to deny    *     *
+     * Comma separated list of country codes to allow to deny
      * @var string
      */
     public $countryList = null;
@@ -6671,7 +6711,7 @@ class KalturaIpAddressRestriction extends KalturaBaseRestriction
     public $ipAddressRestrictionType = null;
 
     /**
-     * Comma separated list of ip address to allow to deny    *     *
+     * Comma separated list of ip address to allow to deny
      * @var string
      */
     public $ipAddressList = null;
@@ -6687,7 +6727,7 @@ class KalturaSessionRestriction extends KalturaBaseRestriction
 class KalturaPreviewRestriction extends KalturaSessionRestriction
 {
     /**
-     * The preview restriction length    *     *
+     * The preview restriction length
      * @var int
      */
     public $previewLength = null;
@@ -7760,7 +7800,7 @@ class KalturaAssetParamsResourceContainer extends KalturaResource
 class KalturaAssetResource extends KalturaContentResource
 {
     /**
-     * ID of the source asset    *     *
+     * ID of the source asset
      * @var string
      */
     public $assetId = null;
@@ -7788,7 +7828,7 @@ abstract class KalturaDataCenterContentResource extends KalturaContentResource
 class KalturaEntryResource extends KalturaContentResource
 {
     /**
-     * ID of the source entry    *     *
+     * ID of the source entry
      * @var string
      */
     public $entryId = null;
@@ -7806,25 +7846,25 @@ class KalturaEntryResource extends KalturaContentResource
 class KalturaFileSyncResource extends KalturaContentResource
 {
     /**
-     * The object type of the file sync object    *     *
+     * The object type of the file sync object
      * @var int
      */
     public $fileSyncObjectType = null;
 
     /**
-     * The object sub-type of the file sync object    *     *
+     * The object sub-type of the file sync object
      * @var int
      */
     public $objectSubType = null;
 
     /**
-     * The object id of the file sync object    *     *
+     * The object id of the file sync object
      * @var string
      */
     public $objectId = null;
 
     /**
-     * The version of the file sync object    *     *
+     * The version of the file sync object
      * @var string
      */
     public $version = null;
@@ -7848,7 +7888,7 @@ class KalturaOperationResource extends KalturaContentResource
     public $operationAttributes;
 
     /**
-     * ID of alternative asset params to be used instead of the system default flavor params    *     *
+     * ID of alternative asset params to be used instead of the system default flavor params
      * @var int
      */
     public $assetParamsId = null;
@@ -7859,7 +7899,7 @@ class KalturaOperationResource extends KalturaContentResource
 class KalturaUrlResource extends KalturaContentResource
 {
     /**
-     * Remote URL, FTP, HTTP or HTTPS    *     *
+     * Remote URL, FTP, HTTP or HTTPS
      * @var string
      */
     public $url = null;
@@ -7870,7 +7910,7 @@ class KalturaUrlResource extends KalturaContentResource
 class KalturaRemoteStorageResource extends KalturaUrlResource
 {
     /**
-     * ID of storage profile to be associated with the created file sync, used for file serving URL composing.    *     *
+     * ID of storage profile to be associated with the created file sync, used for file serving URL composing.
      * @var int
      */
     public $storageProfileId = null;
@@ -7881,7 +7921,7 @@ class KalturaRemoteStorageResource extends KalturaUrlResource
 class KalturaRemoteStorageResources extends KalturaContentResource
 {
     /**
-     * Array of remote stoage resources    *     *
+     * Array of remote stoage resources
      * @var array of KalturaRemoteStorageResource
      */
     public $resources;
@@ -7892,7 +7932,7 @@ class KalturaRemoteStorageResources extends KalturaContentResource
 class KalturaServerFileResource extends KalturaDataCenterContentResource
 {
     /**
-     * Full path to the local file    *     *
+     * Full path to the local file
      * @var string
      */
     public $localFilePath = null;
@@ -7929,7 +7969,7 @@ class KalturaSshUrlResource extends KalturaUrlResource
 class KalturaUploadedFileTokenResource extends KalturaDataCenterContentResource
 {
     /**
-     * Token that returned from upload.upload action or uploadToken.add action.    *     *
+     * Token that returned from upload.upload action or uploadToken.add action.
      * @var string
      */
     public $token = null;
@@ -7940,7 +7980,7 @@ class KalturaUploadedFileTokenResource extends KalturaDataCenterContentResource
 class KalturaWebcamTokenResource extends KalturaDataCenterContentResource
 {
     /**
-     * Token that returned from media server such as FMS or red5.    *     *
+     * Token that returned from media server such as FMS or red5.
      * @var string
      */
     public $token = null;

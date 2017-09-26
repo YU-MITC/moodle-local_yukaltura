@@ -1,9 +1,10 @@
 .largePlayBtn.icon-play {
-   content: "";
-   visibility: hidden !important;
+    content: "";
+    visibility: hidden;
 }
 
-.mwPlayerContainer.largePlayBtn, .mwPlayerContainer.largePlayBtn:hover {
+.mwPlayerContainer.largePlayBtn,
+.mwPlayerContainer.largePlayBtn:hover {
     content: "";
-    visibility: hidden !important;
+    visibility: hidden;
 }

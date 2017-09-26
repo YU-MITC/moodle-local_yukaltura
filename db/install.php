@@ -30,6 +30,13 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
+/**
+ * This function install XML DB to Moodle.
+ *
+ * @param none
+ * @return boolean - true if error does not occur.
+ *
+ */
 function xmldb_local_yukaltura_install() {
 
     // Copy plug configuration data.
@@ -54,6 +61,10 @@ function xmldb_local_yukaltura_install() {
  * record using the data from the old media assignment submission record and
  * remove the old assignment submission data.  Lastly the old assignment record
  * is remove.
+ *
+ * @param none
+ * @return nothing
+ * 
  */
 function migrate_assignment_data() {
     global $DB;
@@ -186,6 +197,7 @@ function migrate_assignment_data() {
  *
  * @param int - Id of new assignment instance
  * @param int - Id of old assignment instance
+ * @return nothing
  */
 function update_calendar_event($newassignmentid, $oldassignmentid) {
     global $DB;
@@ -209,6 +221,8 @@ function update_calendar_event($newassignmentid, $oldassignmentid) {
  * resource/presentation modules.  Removes old resource data from the
  * resource_old table as well as from the resource table
  *
+ * @param none
+ * @return nothing
  */
 function migrate_resource_data() {
     global $CFG, $DB;
@@ -346,6 +360,9 @@ function migrate_resource_data() {
 /**
  * Update Kaltura 1.9 configuration settings to 2.1 spec settings.
  * This function also removes all of the old 1.9 player configurations
+ *
+ * @param none
+ * @return nothing
  */
 function migrate_configuration_data() {
     global $DB;
@@ -535,7 +552,7 @@ function create_new_kalmediapres($oldresource) {
 /**
  * Check if the Kaltura media assignment table schema exists
  *
- * @para object - db manager
+ * @param object - db manager
  * @return bool - true if exists, else false
  */
 function kalmediaassign_exists($dbman) {
@@ -558,7 +575,7 @@ function kalmediaassign_exists($dbman) {
 /**
  * Check if the Kaltura media resource table schema exists
  *
- * @para object - db manager
+ * @param object - db manager
  * @return bool - true if exists, else false
  */
 function kalmediares_exists($dbman) {
@@ -581,7 +598,7 @@ function kalmediares_exists($dbman) {
 /**
  * Check if the Kaltura media presentation table schema exists
  *
- * @para object - db manager
+ * @param object - db manager
  * @return bool - true if exists, else false
  */
 function kalmediapres_exists($dbman) {

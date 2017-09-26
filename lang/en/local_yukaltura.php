@@ -17,8 +17,7 @@
 /**
  * Kaltura media assignment locallib
  *
- * @package    local
- * @subpackage kaltura
+ * @package    local_kaltura
  * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
