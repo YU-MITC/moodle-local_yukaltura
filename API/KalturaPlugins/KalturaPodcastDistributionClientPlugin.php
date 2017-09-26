@@ -112,7 +112,7 @@ class KalturaPodcastDistributionClientPlugin extends KalturaClientPlugin
      * @return KalturaPodcastDistributionClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaPodcastDistributionClientPlugin($client);
         }
         return self::$instance;

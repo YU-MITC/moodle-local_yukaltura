@@ -211,7 +211,7 @@ class KalturaVirusScanProfile extends KalturaObjectBase
     public $name = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaVirusScanProfileStatus
      */

@@ -560,7 +560,7 @@ class KalturaMetadataProfileField extends KalturaObjectBase
     public $id = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -917,11 +917,11 @@ class KalturaMetadataProfileService extends KalturaServiceBase
         return $resultobject;
     }
 
-    public function updateDefinitionFromFile($id, $xsdFile) {
+    public function updateDefinitionFromFile($id, $xsdfile) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $kfiles = array();
-        $this->client->addParam($kfiles, "xsdFile", $xsdFile);
+        $this->client->addParam($kfiles, "xsdFile", $xsdfile);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "updateDefinitionFromFile", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();

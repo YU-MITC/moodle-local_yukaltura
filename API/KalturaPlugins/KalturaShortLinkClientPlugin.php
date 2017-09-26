@@ -87,7 +87,7 @@ abstract class KalturaShortLinkBaseFilter extends KalturaFilter
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -108,7 +108,7 @@ abstract class KalturaShortLinkBaseFilter extends KalturaFilter
     public $expiresAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -220,7 +220,7 @@ class KalturaShortLink extends KalturaObjectBase
     public $userId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
