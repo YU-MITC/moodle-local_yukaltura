@@ -33,12 +33,8 @@ env:
   - DB=mysqli
   fast_finish: true
 
-before_install:
-  - if [[ `npm -v` =~ ^[1-2] ]]; then npm i -g npm@3; fi
-
 before_script:
-  - npm uninstall grunt # https://github.com/npm/npm/issues/3958
- 
+  - npm install grunt-cli -g 
 before_install:
   - phpenv config-rm xdebug.ini
   - nvm install node
@@ -58,5 +54,7 @@ script:
   - moodle-plugin-ci savepoints
   - moodle-plugin-ci mustache
   - moodle-plugin-ci grunt
+  - grunt-cli css
+  - grunt-cli js
   - moodle-plugin-ci phpunit
   - moodle-plugin-ci behat
