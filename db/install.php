@@ -64,7 +64,6 @@ function xmldb_local_yukaltura_install() {
  *
  * @param none
  * @return nothing
- * 
  */
 function migrate_assignment_data() {
     global $DB;

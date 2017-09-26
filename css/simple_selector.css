@@ -1,12 +1,12 @@
 img.media_thumbnail {
-    display:block;
-    -moz-box-shadow: 2px 2px 3px 3px #CCC;
-    -webkit-box-shadow: 2px 2px 3px 3px #CCC;
-    box-shadow: 2px 2px 3px 3px #CCC;
+    display: block;
+    -moz-box-shadow: 2px 2px 3px 3px #ccc;
+    -webkit-box-shadow: 2px 2px 3px 3px ccc;
+    box-shadow: 2px 2px 3px 3px #ccc;
     background-color: #eee;
     padding: 3px;
     margin: 3px;
-    transition:all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 img:hover.media_thumbnail {
@@ -15,9 +15,18 @@ img:hover.media_thumbnail {
     background-color: #00f;
 }
 
-#selectorSort, #simple_search, #search_label, #select_id, #select_name,#media_prop_name, #media_prop_player, #media_prop_size, #media_prop_width, #media_prop_height {
+#selectorSort,
+#simple_search,
+#search_label,
+#select_id,
+#select_name,
+#media_prop_name,
+#media_prop_player,
+#media_prop_size,
+#media_prop_width,
+#media_prop_height {
     font-size: 14px;
-    font-family: arial,helvetica,clean,sans-serif;
+    font-family: arial,helvetica, clean, sans-serif;
     font-size-adjust: none;
     font-stretch: normal;
     font-style: normal;
@@ -30,7 +39,10 @@ img:hover.media_thumbnail {
 }
 
 
-#submit_btn, #cancel_btn , #simple_search_btn, #clear_simple_search_btn {
+#submit_btn,
+#cancel_btn,
+#simple_search_btn,
+#clear_simple_search_btn {
     display: inline-block;
     margin: 0px 0px 10px 5px;
     padding: 4px 12px 4px 12px;

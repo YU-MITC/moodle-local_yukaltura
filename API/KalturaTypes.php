@@ -696,7 +696,7 @@ class KalturaBaseEntry extends KalturaObjectBase
     public $thumbnailUrl = null;
 
     /**
-     * The Access Control ID assigned to this entry (null when not set, send -1 to remove) 
+     * The Access Control ID assigned to this entry (null when not set, send -1 to remove)
      *
      * @var int
      */
@@ -755,20 +755,20 @@ class KalturaBaseEntry extends KalturaObjectBase
     public $partnerSortValue = null;
 
     /**
-     * Override the default ingestion profile 
+     * Override the default ingestion profile
      * @var int
      */
     public $conversionProfileId = null;
 
     /**
-     * ID of source root entry, used for clipped, skipped and cropped entries that created from another entry 
+     * ID of source root entry, used for clipped, skipped and cropped entries that created from another entry
      * @var string
      * @readonly
      */
     public $rootEntryId = null;
 
     /**
-     * clipping, skipping and cropping attributes that used to create this entry 
+     * clipping, skipping and cropping attributes that used to create this entry
      * @var array of KalturaOperationAttributes
      */
     public $operationAttributes;
@@ -998,7 +998,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $categoriesIdsMatchOr = null;
 
     /**
-     * This filter should be in use for retrieving only entries, at a specific {@link ?object=KalturaEntryStatus KalturaEntryStatus}.
+     * This filter should be in use for retrieving only entries,
+     * at a specific {@link ?object=KalturaEntryStatus KalturaEntryStatus}.
      * @var KalturaEntryStatus
      *
      * @var KalturaEntryStatus
@@ -1006,7 +1007,8 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
     public $statusEqual = null;
 
     /**
-     * This filter should be in use for retrieving only entries, not at a specific {@link ?object=KalturaEntryStatus KalturaEntryStatus}.
+     * This filter should be in use for retrieving only entries,
+     * not at a specific {@link ?object=KalturaEntryStatus KalturaEntryStatus}.
      * @var KalturaEntryStatus
      *
      * @var KalturaEntryStatus
@@ -4505,7 +4507,7 @@ class KalturaPlaylist extends KalturaBaseEntry
     public $totalResults = null;
 
     /**
-     * Type of playlist 
+     * Type of playlist
      * @var KalturaPlaylistType
      */
     public $playlistType = null;
