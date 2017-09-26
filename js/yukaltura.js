@@ -74,8 +74,10 @@ M.local_yukaltura.get_thumbnail_url = function(entry_id) {
 
 };
 
-/*
+/**
  * Perform course searching with auto-complete
+ * @param none
+ * @return nothing
  */
 M.local_yukaltura.search_course = function() {
 
