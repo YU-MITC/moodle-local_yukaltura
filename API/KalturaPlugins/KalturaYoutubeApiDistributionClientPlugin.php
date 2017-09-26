@@ -68,56 +68,56 @@ class KalturaYoutubeApiDistributionProviderFilter extends KalturaYoutubeApiDistr
 class KalturaYoutubeApiDistributionProfile extends KalturaDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $username = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $password = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $defaultCategory = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $allowComments = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $allowEmbedding = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $allowRatings = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $allowResponses = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -146,7 +146,7 @@ class KalturaYoutubeApiDistributionClientPlugin extends KalturaClientPlugin
      * @return KalturaYoutubeApiDistributionClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaYoutubeApiDistributionClientPlugin($client);
         }
         return self::$instance;
@@ -167,4 +167,3 @@ class KalturaYoutubeApiDistributionClientPlugin extends KalturaClientPlugin
         return 'youtubeApiDistribution';
     }
 }
-

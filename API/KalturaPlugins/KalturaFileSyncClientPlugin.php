@@ -198,7 +198,7 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
     public $syncTimeGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */

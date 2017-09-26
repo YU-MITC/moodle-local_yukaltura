@@ -68,14 +68,14 @@ class KalturaPodcastDistributionProviderFilter extends KalturaPodcastDistributio
 class KalturaPodcastDistributionProfile extends KalturaDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $xsl = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -83,7 +83,7 @@ class KalturaPodcastDistributionProfile extends KalturaDistributionProfile
     public $feedId = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */

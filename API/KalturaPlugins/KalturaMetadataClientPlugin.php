@@ -83,119 +83,119 @@ class KalturaMetadataStatus
 abstract class KalturaMetadataBaseFilter extends KalturaFilter
 {
     /**
-     * 
+     *
      *
      * @var int
      */
     public $partnerIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $metadataProfileIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $metadataProfileVersionEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $metadataProfileVersionGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $metadataProfileVersionLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataObjectType
      */
     public $metadataObjectTypeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $objectIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $objectIdIn = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $versionEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $versionGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $versionLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $updatedAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataStatus
      */
     public $statusEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -212,7 +212,7 @@ class KalturaMetadataFilter extends KalturaMetadataBaseFilter
 class KalturaMetadata extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -220,7 +220,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $id = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -228,7 +228,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -236,7 +236,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $metadataProfileId = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -244,7 +244,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $metadataProfileVersion = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataObjectType
      * @readonly
@@ -252,7 +252,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $metadataObjectType = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -260,7 +260,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $objectId = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -268,7 +268,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $version = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -276,7 +276,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $createdAt = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -284,7 +284,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $updatedAt = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataStatus
      * @readonly
@@ -292,7 +292,7 @@ class KalturaMetadata extends KalturaObjectBase
     public $status = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -305,7 +305,7 @@ class KalturaMetadata extends KalturaObjectBase
 class KalturaMetadataListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaMetadata
      * @readonly
@@ -313,7 +313,7 @@ class KalturaMetadataListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -326,91 +326,91 @@ class KalturaMetadataListResponse extends KalturaObjectBase
 abstract class KalturaMetadataProfileBaseFilter extends KalturaFilter
 {
     /**
-     * 
+     *
      *
      * @var int
      */
     public $idEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $partnerIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataObjectType
      */
     public $metadataObjectTypeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $versionEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $nameEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $systemNameEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $systemNameIn = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $updatedAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataProfileStatus
      */
     public $statusEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -427,7 +427,7 @@ class KalturaMetadataProfileFilter extends KalturaMetadataProfileBaseFilter
 class KalturaMetadataProfile extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -435,7 +435,7 @@ class KalturaMetadataProfile extends KalturaObjectBase
     public $id = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -443,14 +443,14 @@ class KalturaMetadataProfile extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataObjectType
      */
     public $metadataObjectType = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -458,28 +458,28 @@ class KalturaMetadataProfile extends KalturaObjectBase
     public $version = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $name = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $systemName = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $description = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -487,7 +487,7 @@ class KalturaMetadataProfile extends KalturaObjectBase
     public $createdAt = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -495,7 +495,7 @@ class KalturaMetadataProfile extends KalturaObjectBase
     public $updatedAt = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataProfileStatus
      * @readonly
@@ -503,7 +503,7 @@ class KalturaMetadataProfile extends KalturaObjectBase
     public $status = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -511,7 +511,7 @@ class KalturaMetadataProfile extends KalturaObjectBase
     public $xsd = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -519,7 +519,7 @@ class KalturaMetadataProfile extends KalturaObjectBase
     public $views = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaMetadataProfileCreateMode
      */
@@ -531,7 +531,7 @@ class KalturaMetadataProfile extends KalturaObjectBase
 class KalturaMetadataProfileListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaMetadataProfile
      * @readonly
@@ -539,7 +539,7 @@ class KalturaMetadataProfileListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -552,7 +552,7 @@ class KalturaMetadataProfileListResponse extends KalturaObjectBase
 class KalturaMetadataProfileField extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -568,7 +568,7 @@ class KalturaMetadataProfileField extends KalturaObjectBase
     public $xPath = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -576,7 +576,7 @@ class KalturaMetadataProfileField extends KalturaObjectBase
     public $key = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -589,7 +589,7 @@ class KalturaMetadataProfileField extends KalturaObjectBase
 class KalturaMetadataProfileFieldListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaMetadataProfileField
      * @readonly
@@ -597,7 +597,7 @@ class KalturaMetadataProfileFieldListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -610,14 +610,14 @@ class KalturaMetadataProfileFieldListResponse extends KalturaObjectBase
 class KalturaMetadataSearchItem extends KalturaSearchOperator
 {
     /**
-     * 
+     *
      *
      * @var int
      */
     public $metadataProfileId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -629,11 +629,11 @@ class KalturaMetadataSearchItem extends KalturaSearchOperator
 
 class KalturaMetadataService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaMetadataFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaMetadataFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -645,161 +645,161 @@ class KalturaMetadataService extends KalturaServiceBase
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataListResponse");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataListResponse");
+        return $resultobject;
     }
 
-    function add($metadataProfileId, $objectType, $objectId, $xmlData) {
+    public function add($profileid, $objecttype, $objectid, $xmldata) {
         $kparams = array();
-        $this->client->addParam($kparams, "metadataProfileId", $metadataProfileId);
-        $this->client->addParam($kparams, "objectType", $objectType);
-        $this->client->addParam($kparams, "objectId", $objectId);
-        $this->client->addParam($kparams, "xmlData", $xmlData);
+        $this->client->addParam($kparams, "metadataProfileId", $profileid);
+        $this->client->addParam($kparams, "objectType", $objecttype);
+        $this->client->addParam($kparams, "objectId", $objectid);
+        $this->client->addParam($kparams, "xmlData", $xmldata);
         $this->client->queueServiceActionCall("metadata_metadata", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadata");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadata");
+        return $resultobject;
     }
 
-    function addFromFile($metadataProfileId, $objectType, $objectId, $xmlFile) {
+    public function addFromFile($profileid, $objecttype, $objectid, $xmlfile) {
         $kparams = array();
-        $this->client->addParam($kparams, "metadataProfileId", $metadataProfileId);
-        $this->client->addParam($kparams, "objectType", $objectType);
-        $this->client->addParam($kparams, "objectId", $objectId);
+        $this->client->addParam($kparams, "metadataProfileId", $frofileid);
+        $this->client->addParam($kparams, "objectType", $objecttype);
+        $this->client->addParam($kparams, "objectId", $objectid);
         $kfiles = array();
-        $this->client->addParam($kfiles, "xmlFile", $xmlFile);
+        $this->client->addParam($kfiles, "xmlFile", $xmlfile);
         $this->client->queueServiceActionCall("metadata_metadata", "addFromFile", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadata");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadata");
+        return $resultobject;
     }
 
-    function addFromUrl($metadataProfileId, $objectType, $objectId, $url) {
+    public function addFromUrl($profileid, $objecttype, $objectid, $url) {
         $kparams = array();
-        $this->client->addParam($kparams, "metadataProfileId", $metadataProfileId);
-        $this->client->addParam($kparams, "objectType", $objectType);
-        $this->client->addParam($kparams, "objectId", $objectId);
+        $this->client->addParam($kparams, "metadataProfileId", $profileid);
+        $this->client->addParam($kparams, "objectType", $objecttype);
+        $this->client->addParam($kparams, "objectId", $objectid);
         $this->client->addParam($kparams, "url", $url);
         $this->client->queueServiceActionCall("metadata_metadata", "addFromUrl", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadata");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadata");
+        return $resultobject;
     }
 
-    function addFromBulk($metadataProfileId, $objectType, $objectId, $url) {
+    public function addFromBulk($metadataprofileid, $objecttype, $objectid, $url) {
         $kparams = array();
-        $this->client->addParam($kparams, "metadataProfileId", $metadataProfileId);
-        $this->client->addParam($kparams, "objectType", $objectType);
-        $this->client->addParam($kparams, "objectId", $objectId);
+        $this->client->addParam($kparams, "metadataProfileId", $profileid);
+        $this->client->addParam($kparams, "objectType", $objecttype);
+        $this->client->addParam($kparams, "objectId", $objectid);
         $this->client->addParam($kparams, "url", $url);
         $this->client->queueServiceActionCall("metadata_metadata", "addFromBulk", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadata");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadata");
+        return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("metadata_metadata", "delete", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "null");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "null");
+        return $resultobject;
     }
 
-    function invalidate($id) {
+    public function invalidate($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("metadata_metadata", "invalidate", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "null");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "null");
+        return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("metadata_metadata", "get", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadata");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadata");
+        return $resultobject;
     }
 
-    function update($id, $xmlData = null) {
+    public function update($id, $xmldata = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "xmlData", $xmlData);
+        $this->client->addParam($kparams, "xmlData", $xmldata);
         $this->client->queueServiceActionCall("metadata_metadata", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadata");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadata");
+        return $resultobject;
     }
 
-    function updateFromFile($id, $xmlFile = null) {
+    public function updateFromFile($id, $xmlfile = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $kfiles = array();
-        $this->client->addParam($kfiles, "xmlFile", $xmlFile);
+        $this->client->addParam($kfiles, "xmlFile", $xmlfile);
         $this->client->queueServiceActionCall("metadata_metadata", "updateFromFile", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadata");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadata");
+        return $resultobject;
     }
 
-    function serve($id) {
+    public function serve($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall('metadata_metadata', 'serve', $kparams);
-        $resultObject = $this->client->getServeUrl();
-        return $resultObject;
+        $resultobject = $this->client->getServeUrl();
+        return $resultobject;
     }
 }
 
 class KalturaMetadataProfileService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaMetadataProfileFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaMetadataProfileFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -811,113 +811,113 @@ class KalturaMetadataProfileService extends KalturaServiceBase
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfileListResponse");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfileListResponse");
+        return $resultobject;
     }
 
-    function listFields($metadataProfileId) {
+    public function listFields($profileid) {
         $kparams = array();
-        $this->client->addParam($kparams, "metadataProfileId", $metadataProfileId);
+        $this->client->addParam($kparams, "metadataProfileId", $profileid);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "listFields", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfileFieldListResponse");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfileFieldListResponse");
+        return $resultobject;
     }
 
-    function add(KalturaMetadataProfile $metadataProfile, $xsdData, $viewsData = null) {
+    public function add(KalturaMetadataProfile $profile, $xsddata, $viewsdata = null) {
         $kparams = array();
-        $this->client->addParam($kparams, "metadataProfile", $metadataProfile->toParams());
-        $this->client->addParam($kparams, "xsdData", $xsdData);
-        $this->client->addParam($kparams, "viewsData", $viewsData);
+        $this->client->addParam($kparams, "metadataProfile", $profile->toParams());
+        $this->client->addParam($kparams, "xsdData", $xsddata);
+        $this->client->addParam($kparams, "viewsData", $viewsdata);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfile");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfile");
+        return $resultobject;
     }
 
-    function addFromFile(KalturaMetadataProfile $metadataProfile, $xsdFile, $viewsFile = null) {
+    public function addFromFile(KalturaMetadataProfile $profile, $xsdfile, $viewsfile = null) {
         $kparams = array();
-        $this->client->addParam($kparams, "metadataProfile", $metadataProfile->toParams());
+        $this->client->addParam($kparams, "metadataProfile", $profile->toParams());
         $kfiles = array();
-        $this->client->addParam($kfiles, "xsdFile", $xsdFile);
-        $this->client->addParam($kfiles, "viewsFile", $viewsFile);
+        $this->client->addParam($kfiles, "xsdFile", $xsdfile);
+        $this->client->addParam($kfiles, "viewsFile", $viewsfile);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "addFromFile", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfile");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfile");
+        return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "delete", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "null");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "null");
+        return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "get", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfile");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfile");
+        return $resultobject;
     }
 
-    function update($id, KalturaMetadataProfile $metadataProfile, $xsdData = null, $viewsData = null) {
+    public function update($id, KalturaMetadataProfile $profile, $xsddata = null, $viewsdata = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "metadataProfile", $metadataProfile->toParams());
-        $this->client->addParam($kparams, "xsdData", $xsdData);
-        $this->client->addParam($kparams, "viewsData", $viewsData);
+        $this->client->addParam($kparams, "metadataProfile", $profile->toParams());
+        $this->client->addParam($kparams, "xsdData", $xsddata);
+        $this->client->addParam($kparams, "viewsData", $viewsdata);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfile");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfile");
+        return $resultobject;
     }
 
-    function revert($id, $toVersion) {
+    public function revert($id, $version) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "toVersion", $toVersion);
+        $this->client->addParam($kparams, "toVersion", $version);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "revert", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfile");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfile");
+        return $resultobject;
     }
 
-    function updateDefinitionFromFile($id, $xsdFile) {
+    public function updateDefinitionFromFile($id, $xsdFile) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $kfiles = array();
@@ -926,41 +926,41 @@ class KalturaMetadataProfileService extends KalturaServiceBase
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfile");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfile");
+        return $resultobject;
     }
 
-    function updateViewsFromFile($id, $viewsFile) {
+    public function updateViewsFromFile($id, $viewsfile) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $kfiles = array();
-        $this->client->addParam($kfiles, "viewsFile", $viewsFile);
+        $this->client->addParam($kfiles, "viewsFile", $viewsfile);
         $this->client->queueServiceActionCall("metadata_metadataprofile", "updateViewsFromFile", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaMetadataProfile");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaMetadataProfile");
+        return $resultobject;
     }
 
-    function serve($id) {
+    public function serve($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall('metadata_metadataprofile', 'serve', $kparams);
-        $resultObject = $this->client->getServeUrl();
-        return $resultObject;
+        $resultobject = $this->client->getServeUrl();
+        return $resultobject;
     }
 
-    function serveView($id) {
+    public function serveView($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall('metadata_metadataprofile', 'serveView', $kparams);
-        $resultObject = $this->client->getServeUrl();
-        return $resultObject;
+        $resultobject = $this->client->getServeUrl();
+        return $resultobject;
     }
 }
 class KalturaMetadataClientPlugin extends KalturaClientPlugin
@@ -990,7 +990,7 @@ class KalturaMetadataClientPlugin extends KalturaClientPlugin
      * @return KalturaMetadataClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaMetadataClientPlugin($client);
         }
         return self::$instance;

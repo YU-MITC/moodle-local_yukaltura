@@ -52,35 +52,35 @@ class KalturaShortLinkStatus
 abstract class KalturaShortLinkBaseFilter extends KalturaFilter
 {
     /**
-     * 
+     *
      *
      * @var int
      */
     public $idEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $idIn = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -94,14 +94,14 @@ abstract class KalturaShortLinkBaseFilter extends KalturaFilter
     public $updatedAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $expiresAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -115,49 +115,49 @@ abstract class KalturaShortLinkBaseFilter extends KalturaFilter
     public $partnerIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $partnerIdIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $userIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $userIdIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $systemNameEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $systemNameIn = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaShortLinkStatus
      */
     public $statusEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -174,7 +174,7 @@ class KalturaShortLinkFilter extends KalturaShortLinkBaseFilter
 class KalturaShortLink extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -182,7 +182,7 @@ class KalturaShortLink extends KalturaObjectBase
     public $id = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -190,7 +190,7 @@ class KalturaShortLink extends KalturaObjectBase
     public $createdAt = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -198,14 +198,14 @@ class KalturaShortLink extends KalturaObjectBase
     public $updatedAt = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $expiresAt = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -213,7 +213,7 @@ class KalturaShortLink extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -227,21 +227,21 @@ class KalturaShortLink extends KalturaObjectBase
     public $name = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $systemName = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $fullUrl = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaShortLinkStatus
      */
@@ -253,7 +253,7 @@ class KalturaShortLink extends KalturaObjectBase
 class KalturaShortLinkListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaShortLink
      * @readonly
@@ -261,7 +261,7 @@ class KalturaShortLinkListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -274,11 +274,11 @@ class KalturaShortLinkListResponse extends KalturaObjectBase
 
 class KalturaShortLinkService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaShortLinkFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaShortLinkFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -290,72 +290,72 @@ class KalturaShortLinkService extends KalturaServiceBase
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaShortLinkListResponse");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaShortLinkListResponse");
+        return $resultobject;
     }
 
-    function add(KalturaShortLink $shortLink) {
+    public function add(KalturaShortLink $shortlink) {
         $kparams = array();
-        $this->client->addParam($kparams, "shortLink", $shortLink->toParams());
+        $this->client->addParam($kparams, "shortLink", $shortlink->toParams());
         $this->client->queueServiceActionCall("shortlink_shortlink", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaShortLink");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaShortLink");
+        return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("shortlink_shortlink", "get", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaShortLink");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaShortLink");
+        return $resultobject;
     }
 
-    function update($id, KalturaShortLink $shortLink) {
+    public function update($id, KalturaShortLink $shortlink) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "shortLink", $shortLink->toParams());
+        $this->client->addParam($kparams, "shortLink", $shortlink->toParams());
         $this->client->queueServiceActionCall("shortlink_shortlink", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaShortLink");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaShortLink");
+        return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("shortlink_shortlink", "delete", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
         }
-        $resultObject = $this->client->doQueue();
-        $this->client->throwExceptionIfError($resultObject);
-        $this->client->validateObjectType($resultObject, "KalturaShortLink");
-        return $resultObject;
+        $resultobject = $this->client->doQueue();
+        $this->client->throwExceptionIfError($resultobject);
+        $this->client->validateObjectType($resultobject, "KalturaShortLink");
+        return $resultobject;
     }
 
-    function gotoAction($id, $proxy = false) {
+    public function gotoAction($id, $proxy = false) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "proxy", $proxy);
         $this->client->queueServiceActionCall('shortlink_shortlink', 'goto', $kparams);
-        $resultObject = $this->client->getServeUrl();
-        return $resultObject;
+        $resultobject = $this->client->getServeUrl();
+        return $resultobject;
     }
 }
 class KalturaShortLinkClientPlugin extends KalturaClientPlugin
@@ -379,7 +379,7 @@ class KalturaShortLinkClientPlugin extends KalturaClientPlugin
      * @return KalturaShortLinkClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaShortLinkClientPlugin($client);
         }
         return self::$instance;
@@ -400,4 +400,3 @@ class KalturaShortLinkClientPlugin extends KalturaClientPlugin
         return 'shortLink';
     }
 }
-

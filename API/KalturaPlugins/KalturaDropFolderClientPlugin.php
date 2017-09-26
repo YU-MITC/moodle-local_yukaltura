@@ -615,7 +615,7 @@ class KalturaDropFolderFile extends KalturaObjectBase
     public $status = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
