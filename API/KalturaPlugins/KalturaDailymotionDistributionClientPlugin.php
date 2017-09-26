@@ -68,21 +68,21 @@ class KalturaDailymotionDistributionProviderFilter extends KalturaDailymotionDis
 class KalturaDailymotionDistributionProfile extends KalturaDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $user = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $password = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -111,7 +111,7 @@ class KalturaDailymotionDistributionClientPlugin extends KalturaClientPlugin
      * @return KalturaDailymotionDistributionClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaDailymotionDistributionClientPlugin($client);
         }
         return self::$instance;

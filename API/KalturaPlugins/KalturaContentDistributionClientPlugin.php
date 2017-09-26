@@ -2120,7 +2120,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
     public function serveReturnedData($id, $actiontype) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "actionType", $actionType);
+        $this->client->addParam($kparams, "actionType", $actiontype);
         $this->client->queueServiceActionCall('contentdistribution_entrydistribution', 'serveReturnedData', $kparams);
         $resultobject = $this->client->getServeUrl();
         return $resultobject;
@@ -2514,7 +2514,7 @@ class KalturaContentDistributionClientPlugin extends KalturaClientPlugin
      * @return KalturaContentDistributionClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaContentDistributionClientPlugin($client);
         }
         return self::$instance;

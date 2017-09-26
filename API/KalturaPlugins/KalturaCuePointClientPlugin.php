@@ -100,7 +100,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -130,7 +130,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $startTime = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -529,7 +529,7 @@ class KalturaCuePointClientPlugin extends KalturaClientPlugin
      * @return KalturaCuePointClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaCuePointClientPlugin($client);
         }
         return self::$instance;
