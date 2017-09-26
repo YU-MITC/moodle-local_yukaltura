@@ -2485,13 +2485,13 @@ class KalturaConversionAttribute extends KalturaObjectBase
     public $flavorParamsId = null;
 
     /**
-     * Attribute name 
+     * Attribute name
      * @var string
      */
     public $name = null;
 
     /**
-     * Attribute value 
+     * Attribute value
      * @var string
      */
     public $value = null;
