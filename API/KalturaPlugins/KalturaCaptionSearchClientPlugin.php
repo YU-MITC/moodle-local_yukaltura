@@ -209,13 +209,13 @@ class KalturaCaptionAssetItemService extends KalturaServiceBase
     public function search(KalturaBaseEntryFilter $entryfilter = null, KalturaCaptionAssetItemFilter $itemfilter = null,
                            KalturaFilterPager $itempager = null) {
         $kparams = array();
-        if ($entryFilter !== null) {
+        if ($entryfilter !== null) {
             $this->client->addParam($kparams, "entryFilter", $entryfilter->toParams());
         }
-        if ($itemFilter !== null) {
+        if ($itemfilter !== null) {
             $this->client->addParam($kparams, "captionAssetItemFilter", $itemfilter->toParams());
         }
-        if ($itemPager !== null) {
+        if ($itempager !== null) {
             $this->client->addParam($kparams, "captionAssetItemPager", $itempager->toParams());
         }
         $this->client->queueServiceActionCall("captionsearch_captionassetitem", "search", $kparams);
@@ -249,7 +249,7 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
      * @return KalturaCaptionSearchClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaCaptionSearchClientPlugin($client);
         }
         return self::$instance;
