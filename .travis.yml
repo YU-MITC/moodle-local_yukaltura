@@ -23,11 +23,6 @@ php:
 node_js:
 - "6"
 
-before_script:
- - nvm install 6
- - nvm use 6
- - npm install
-
 env:
  global:
   - MOODLE_BRANCH=MOODLE_32_STABLE
@@ -53,7 +48,6 @@ script:
   - moodle-plugin-ci validate
   - moodle-plugin-ci savepoints
   - moodle-plugin-ci mustache
-  - npm run lint
   - moodle-plugin-ci grunt
   - moodle-plugin-ci phpunit
   - moodle-plugin-ci behat
