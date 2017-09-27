@@ -81,13 +81,13 @@ class yukaltura_course_testcase extends advanced_testcase {
 
         $expected = array(
             (object)array(
-                'id' => '2',
+                //'id' => '2',
                 'fullname' => 'course10',
                 'shortname' => 'crs1',
                 'idnumber' => 'id1'
             ),
             (object)array(
-                'id' => '3',
+                //'id' => '3',
                 'fullname' => 'course11',
                 'shortname' => 'crs2',
                 'idnumber' => 'id2'
