@@ -32,8 +32,16 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
+/**
+ * Kaltura static entries class.
+ *
+ * @package local_yukaltura
+ * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class KalturaStaticEntries {
 
+    /** @var array of Kaltura Media entry. */
     private static $entries = array();
 
     /**
@@ -63,7 +71,7 @@ class KalturaStaticEntries {
     /**
      * Add an entry object directory to the array
      *
-     * @param object - an entry object
+     * @param object $entryobj - an entry object
      *
      * @return nothing
      */
@@ -79,9 +87,9 @@ class KalturaStaticEntries {
      * cached.  If not, retreive the object via API calls.  Else just return the
      * object
      *
-     * @param string - entry id to retrieve
-     * @param object - a KalturaBaseEntryService object
-     * @param bool - true to make an API call if the entry object doesn't exist.
+     * @param string $entryid - entry id to retrieve
+     * @param object $baseentryservice - a KalturaBaseEntryService object
+     * @param bool $fetch - true to make an API call if the entry object doesn't exist.
      * False do not make an API call
      *
      * @return mixed - entry object or false if it was not found
@@ -104,8 +112,8 @@ class KalturaStaticEntries {
      * Makes an API call to retrieve an entry object and store the object in the
      * static entries list
      *
-     * @param string - entry id
-     * @param object - a KalturaBaseEntryService object
+     * @param string $entryid - entry id
+     * @param object $baseentryserviec - a KalturaBaseEntryService object
      *
      * @return nothing
      */
@@ -120,8 +128,8 @@ class KalturaStaticEntries {
     /**
      * Return a list of entry objects
      *
-     * @param string - an entry id
-     * @param object - a KalturaBaseEntryService object
+     * @param array $entryids - an entry id
+     * @param object $baseentryservice - a KalturaBaseEntryService object
      *
      * @return array - array of entry objects with the entry id as the key
      */
@@ -157,8 +165,8 @@ class KalturaStaticEntries {
      * Retrieve a list of entry objects; and store the objects in the static
      * array.
      *
-     * @param array - array of entry ids to retreive
-     * @param object - a KalturaBaseEntryService object
+     * @param array $entryids - array of entry ids to retreive
+     * @param object $baseentryservice - a KalturaBaseEntryService object
      *
      * @return nothing
      */
@@ -179,7 +187,7 @@ class KalturaStaticEntries {
     /**
      * Remove an entry from cache.
      *
-     * @param int - id of media entry
+     * @param string $entryid - id of Kaltura Media entry
      *
      * @return nothing
      */
@@ -200,6 +208,7 @@ class KalturaStaticEntries {
      * All stored entry objects will be serialized and stored in the PHP session
      * global.
      *
+     * @param none
      * @return nothing
      */
     public function __destruct() {

@@ -26,13 +26,13 @@
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(dirname(dirname(__FILE__))) . '/local/yukaltura/locallib.php');
 
-$entryid   = required_param('entry_id', PARAM_TEXT);
-$height     = optional_param('height', 0, PARAM_INT);
-$width      = optional_param('width', 0, PARAM_INT);
-$uiconfid   = optional_param('uiconf_id', 0, PARAM_INT);
-$title      = optional_param('media_title', '', PARAM_TEXT);
-$widget     = optional_param('widget', 'kdp', PARAM_TEXT);
-$courseid   = required_param('courseid', PARAM_INT);
+$entryid  = required_param('entry_id', PARAM_TEXT);
+$height   = optional_param('height', 0, PARAM_INT);
+$width    = optional_param('width', 0, PARAM_INT);
+$uiconfid = optional_param('uiconf_id', 0, PARAM_INT);
+$title    = optional_param('media_title', '', PARAM_TEXT);
+$widget   = optional_param('widget', 'kdp', PARAM_TEXT);
+$courseid = required_param('courseid', PARAM_INT);
 
 if (!defined('MOODLE_INTERNAL')) {
     // It must be included from a Moodle page.

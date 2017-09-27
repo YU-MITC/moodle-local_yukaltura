@@ -31,53 +31,145 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
+/**
+ * KALTURA_PLUGIN_NAME - local plugin name.
+ */
 define('KALTURA_PLUGIN_NAME', 'local_yukaltura');
+
+/**
+ * KALTURA_DEFAULT_URI - URL of Kaltura SaaS Edition.
+ */
 define('KALTURA_DEFAULT_URI', 'http://www.kaltura.com');
+
+/**
+ * KALTURA_REPORT_DEFAULT_URI - Report page URL of Kaltura SaaS Edition.
+ */
 define('KALTURA_REPORT_DEFAULT_URI', 'http://apps.kaltura.com/hosted_pages');
 
-define('KALTURA_PLAYER_UPLOADERREGULAR',                6709401); // KCW.
-define('KALTURA_PLAYER_PLAYERREGULARDARK',              6709411); // KDP dark.
-define('KALTURA_PLAYER_PLAYERREGULARLIGHT',             6709421); // KDP light.
-define('KALTURA_PLAYER_PLAYERMEDIAPRESENTATION',        4860481);
-define('KALTURA_FILE_UPLAODER',                         6386311); // KSU.
-define('KALTURA_PLAYER_MYMEDIA_UPLOADER',               8464961); // KCW.
-define('KALTURA_PLAYER_MYMEDIA_SCREEN_RECORDER',        9780761); // KSR.
-define('KALTURA_PLAYER_KSU',                            1002613); // KSU.
+/**
+ * KALTURA_PLAYER_PLAYERREGULARDARK - UiConf id of KDP dark.
+ */
+define('KALTURA_PLAYER_PLAYERREGULARDARK', 6709411);
 
-define('KALTURA_FILTER_MEDIA_WIDTH', 400);
-define('KALTURA_FILTER_MEDIA_HEIGHT', 300);
-define('KALTURA_ASSIGN_MEDIA_WIDTH', 400);
+/**
+ * KALTURA_PLAYER_PLAYERREGULARLIGHT - UiConf id of KDP light.
+ */
+define('KALTURA_PLAYER_PLAYERREGULARLIGHT', 6709421);
+
+/**
+ * KALTURA_PLAYER_PLAYERMEDIAPRESENTATION - UiConf Kaltura Media Presentation.
+ */
+define('KALTURA_PLAYER_PLAYERMEDIAPRESENTATION', 4860481);
+
+/**
+ * KALTURA_ASSIGN_MEDIA_WIDTH - Player width of Kaltura Media Assignment.
+ */
+ define('KALTURA_ASSIGN_MEDIA_WIDTH', 400);
+
+/**
+ * KALTURA_ASSIGN_MEDIA_HEIGHT - Player height of Kaltura Media Assignment.
+ */
 define('KALTURA_ASSIGN_MEDIA_HEIGHT', 365);
+
+/**
+ * KALTURA_ASSIGN_POPUP_MEDIA_WIDTH - Pop up Player width of Kaltura Media Assignment.
+ */
 define('KALTURA_ASSIGN_POPUP_MEDIA_WIDTH', 500);
+
+/**
+ * KALTURA_ASSIGN_POPUP_MEDIA_WIDTH - Pop up Player height of Kaltura Media Assignment.
+ */
 define('KALTURA_ASSIGN_POPUP_MEDIA_HEIGHT', 460);
 
-// YUI panel popup border adjustments to make the embedded video look centered.
+/**
+ * YUI panel popup border adjustment to make the embedded video look centered.
+ */
 define('KALTURA_POPUP_WIDTH_ADJUSTMENT', 30);
+
+/**
+ * YUI panel popup border adjustment to make the embedded video look centered.
+ */
 define('KALTURA_POPUP_HEIGHT_ADJUSTMENT', 50);
 
-define('KALTURA_SESSION_LENGTH', 10800); // 3 hours.
+/**
+ * Time lengh (sec) of Kaltura Session.
+ */
+define('KALTURA_SESSION_LENGTH', 10800); // Three hours.
 
+/**
+ * Label of Access Restriction.
+ */
 define('KALTURA_IPADDRESS_ANY', 'ANY');
+
+/**
+ * Label of Access Restriction.
+ */
 define('KALTURA_IPADDRESS_INT', 'INTERNAL');
 
+/**
+ * Moodle database key name of acess control (internal).
+ */
 define('KALTURA_INTERNAL_ACCESS_CONFIG_NAME', 'access_control_internal_id');
+
+/**
+ * Moodle database key name of acess control.
+ */
 define('KALTURA_INTERNAL_ACCESS_CONTROL_NAME', 'Internal Access');
+
+/**
+ * Access control (internal only) description for Kaltura Server.
+ */
 define('KALTURA_INTERNAL_ACCESS_CONTROL_DESC', 'Access conrtorl for internal only');
+
+/**
+ * Access control (inetrnal only) system name for Kaltura Server.
+ */
 define('KALTURA_INTERNAL_ACCESS_CONTROL_SYSTEM_NAME', 'moodleprofile');
+
+/**
+ * Access control (inetrnal only) name for Kaltura Server.
+ */
 define('KALTURA_DEFAULT_ACCESS_CONTROL_NAME', 'Default');
+
+/**
+ * Access control (default) name for Kaltura Server.
+ */
 define('KALTURA_DEFAULT_ACCESS_CONTROL_DESC', 'Default access control profile');
+
+/**
+ * Access control (default) system name for Kaltura Server.
+ */
 define('KALTURA_DEFAULT_ACCESS_CONTROL_SYSTEM_NAME', 'Default');
+
+/**
+ * Moodle database key name of acess control (default).
+ */
 define('KALTURA_DEFAULT_ACCESS_CONFIG_NAME', 'acecss_control_default_id');
 
+/**
+ * Image width for desktop theme.
+ */
 define('KALTURA_IMAGE_DESKTOP_WIDTH', 640);
+
+/**
+ * Image height for desktop theme.
+ */
 define('KALTURA_IMAGE_DESKTOP_HEIGHT', 480);
+
+/**
+ * Image width for mobile theme.
+ */
 define('KALTURA_IMAGE_MOBILE_WIDTH', 320);
+
+/**
+ * Image height for mobile theme.
+ */
 define('KALTURA_IMAGE_MOBILE_HEIGHT', 240);
 
 /**
  * Initialize the kaltura account and obtain the secrets and partner ID
  *
- * @param string - username (email)
+ * @param string - username (email address)
  * @param string - password
  * @param string - URI
  *
@@ -170,7 +262,8 @@ function local_yukaltura_uninitialize_account() {
 /**
  * Send initializations information to the Kaltura server
  *
- * @param string $session The Kaltura session string
+ * @param string $session - The Kaltura session string
+ * @return nothing
  */
 function local_yukaltura_send_initialization($session) {
     $plugin = new stdClass();
@@ -196,10 +289,10 @@ function local_yukaltura_send_initialization($session) {
 /**
  * Log in with the user's credentials.  General a kaltura session locally
  *
- * @param boolean - true to login as an administrator or false to login as user
- * @param string - privleges give to the user
- * @param int - number of seconds to keep the session alive
- * @param boolean - use of test connection
+ * @param boolean $admin - true to login as an administrator or false to login as user.
+ * @param string $privileges - privleges give to the user.
+ * @param int $expiry - number of seconds to keep the session alive.
+ * @param boolean $testconn - use of test connection.
  *
  * @return obj - KalturaClient
  */
@@ -266,8 +359,8 @@ function local_yukaltura_login($admin = false, $privileges = '', $expiry = 10800
 /**
  * Generate a weak Kaltura session
  *
- * @param int $courseid The id of the course
- * @param string $course_name The name of the course
+ * @param int $courseid - The id of the course
+ * @param string $coursename - The name of the course
  *
  * @return string|bool - The session ID string value or false on error
  */
@@ -354,7 +447,7 @@ function local_yukaltura_generate_weak_kaltura_session($courseid, $coursename) {
  * returns a user Kaltura session. The session value returned is mainly used for
  * inclusion into the video markup flashvars query string.
  *
- * @param string - privilege string
+ * @param string $medialist - privilege string.
  * @return array - an array of Kaltura media entry ids
  */
 function local_yukaltura_generate_kaltura_session($medialist = array()) {
@@ -392,8 +485,7 @@ function local_yukaltura_generate_kaltura_session($medialist = array()) {
  * Returns an array with the login and password as values respectively
  *
  * @param none
- * @return array - login, password or an array of false values if none
- * were found
+ * @return array - login, password or an array of false values if none were found.
  */
 function local_yukaltura_get_credentials() {
 
@@ -410,7 +502,7 @@ function local_yukaltura_get_credentials() {
  * Retrieve an instance of the KalturaConfiguration class
  *
  * @param none
- * @return obj - KalturaConfiguration
+ * @return obj - KalturaConfiguration object
  */
 function local_yukaltura_get_configuration_obj() {
     global $CFG;
@@ -440,7 +532,7 @@ function local_yukaltura_get_configuration_obj() {
  * Retrieve an instance of the KalturaConfiguration class
  *
  * @param none
- * @return obj - KalturaConfiguration
+ * @return obj - KalturaConfiguration object
  */
 function local_yukaltura_get_report_configuration_obj() {
     global $CFG;
@@ -491,7 +583,7 @@ function local_yukaltura_testconnection_markup() {
  * Retrieve a list of all the custom players available to the account.
  *
  * @param none
- * @return string|bool - The session ID string value or false on error
+ * @return string|bool - The session ID string value or false on error.
  */
 
 function local_yukaltura_get_custom_players() {
@@ -531,10 +623,10 @@ function local_yukaltura_get_custom_players() {
 /**
  * Retrieves the default player UIConf ID or the custom UIConf ID
  *
- * @param string - type of player uiconf to return, accepted values
+ * @param string $type - type of player uiconf to return, accepted values
  * are player, uploader and presentation
  *
- * @return int - uiconf id of the type of player requested
+ * @return int - UiConf id of the type of player requested.
  */
 function local_yukaltura_get_player_uiconf($type = 'player') {
 
@@ -568,7 +660,7 @@ function local_yukaltura_get_player_uiconf($type = 'player') {
 /**
  * Retrives the player resource override configuration value
  *
- * @param nothing
+ * @param none
  *
  * @return string - 1 if override is required, else 0
  */
@@ -579,7 +671,7 @@ function local_yukaltura_get_player_override() {
 /**
  * Return the host URI and removes trailing slash
  *
- * @param nothing
+ * @param none
  *
  * @return string - host URI
  */
@@ -601,7 +693,7 @@ function local_yukaltura_get_host() {
 /**
  * Return the partner Id
  *
- * @param nothing
+ * @param none
  *
  * @return int - partner Id
  */
@@ -612,6 +704,7 @@ function local_yukaltura_get_partner_id() {
 /**
  * Return the admin secret
  *
+ * @param none
  * @return string - admin secret
  */
 function local_yukaltura_get_admin_secret() {
@@ -630,7 +723,7 @@ function local_yukaltura_get_publisher_name() {
 /**
  * Initialize the KalturaUser object
  *
- * @param bool - true to set isAdmin
+ * @param bool $admin - true to set isAdmin
  *
  * @return object - KalturaUser object
  */
@@ -651,11 +744,11 @@ function local_yukaltura_init_kaltura_user($admin = false) {
 /**
  * Create html image markup string.
  *
- * @param object - KalturaMediaEntry object.
- * @param string - media title used to alt property.
- * @param string - moodle theme, is desktop or mobile.
- * @param int - maximum width of thumbnail.
- * @param int - maximum height of thumbnail.
+ * @param object $entryobj - KalturaMediaEntry object.
+ * @param string $title - media title used to alt property.
+ * @param string $theme - moodle theme, is desktop or mobile.
+ * @param int $maxwidth - maximum width of thumbnail.
+ * @param int $maxheight - maximum height of thumbnail.
  * @return string - image markup.
  */
 function local_yukaltura_create_image_markup($entryobj, $title, $theme,
@@ -729,13 +822,11 @@ function local_yukaltura_create_image_markup($entryobj, $title, $theme,
 /**
  * This functions returns the HTML markup for the Kaltura dynamic player.
  *
- * @param obj - Kaltura media object
- * @param int - player ui_conf_id (optional).  If no value is specified the
+ * @param obj $entryobj - KalturaMedia object
+ * @param int $uiconfid - player ui_conf_id (optional).  If no value is specified the
  * default player will be used.
- * @param int - Moodle course id (optional).  This parameter is required in
- * order to generate Kaltura analytics data.
- * @param string - A kaltura session string
- * @param int - a unique identifier, this value is appented to 'kaltura_player_'
+ * @param string $session - A kaltura session string
+ * @param int $uid - a unique identifier, this value is appented to 'kaltura_player_'
  * and is used as the id of the object tag
  *
  * @return string - HTML markup
@@ -815,9 +906,9 @@ function local_yukaltura_get_kdp_code($entryobj, $uiconfid = 0, $session = '', $
  * This function returns a string of flash variables required for Kaltura
  * analytics
  *
- * @param creator_name
- * @param string - Kaltura session string
- * @return string - query string of flash variables
+ * @param string $creatorname - username or media creator.
+ * @param string $session - Kaltura session string.
+ * @return string - query string of flash variables.
  *
  */
 function local_yukaltura_get_kdp_flashvars($creatorname = '', $session = '') {
@@ -841,9 +932,6 @@ function local_yukaltura_get_kdp_flashvars($creatorname = '', $session = '') {
     if ('' != $creatorname) {
         return $flashvars;
     }
-
-    // Require the Repository library for category information.
-    require_once(dirname(dirname(dirname(__FILE__))) . '/local/yukaltura/locallib.php');
 
     $kaltura = new yukaltura_connection();
     $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
@@ -908,12 +996,12 @@ function local_yukaltura_is_valid_entry_object($entryobj) {
  * only return an entry object if the status is set to true.  Otherwise it will
  * return false.
  *
- * @param string - entry id
- * @param bool - true if this function is the only return an entry object when
- * the entry status is set to 'ready'.  False, to return the entry object
- * regardless of it's status
+ * @param string $entryid - entry id of Kaltura Media.
+ * @param bool $readonly - true if this function is the only return an entry object
+ * when the entry status is set to 'ready'.  False, to return the entry object
+ * regardless of it's status.
  *
- * @param mixed - entry object, or false (depending on the entry status and the
+ * @return mixed - entry object, or false (depending on the entry status and the
  * second prameter
  *
  * TODO: Change the name of this function (and all references) since it on
@@ -1007,7 +1095,7 @@ function local_yukaltura_has_mobile_flavor_enabled() {
 
 /**
  * This function test connection to kaltura server.
- * @param obj - Kaltura Client
+ * @param obj $clientobj - Kaltura Client
  * @return mixed - list of permission if succeeded, false if failed.
  */
 function local_yukaltura_test_connection($clientobj) {
@@ -1035,7 +1123,7 @@ function local_yukaltura_test_connection($clientobj) {
 
 /**
  * Return the Kaltura HTML5 javascript library URL
- * @param int - uiconf_id of the player to use
+ * @param int $uiconfid - uiconf_id of the player to use
  *
  * @return string - url to the Kaltura HTML5 library URL
  */
@@ -1062,9 +1150,9 @@ function local_yukaltura_get_enable_html5() {
 /**
  * This function saves standard media metadata
  *
- * @param obj - Kaltura connection object
- * @param int - Kaltura media id
- * @param array - array of properties to update (accepted keys/value
+ * @param obj $connection - Kaltura connection object
+ * @param string $entryid - Kaltura media id
+ * @param array $param - array of properties to update (accepted keys/value
  * pairs 'name', 'tags', 'desc', 'catids')
  *
  * @return bool - true of successful or false
@@ -1103,12 +1191,11 @@ function local_yukaltura_update_media_metadata($connection, $entryid, $param) {
  * returned.  This function will one day become deprecated; but it for now it is
  * needed because of KALDEV-28
  *
- * @param object - entry object
+ * @param object $entryobj - entry object
  *
  * @return boolean - true of the entry type is valid, false if invliad AND the
  * id parameter of the entry_object is overwritten and must be retrieve from the
  * kaltura server again
- *
  */
 function local_yukaltura_media_type_valid($entryobj) {
     try {
@@ -1148,8 +1235,8 @@ function local_yukaltura_media_type_valid($entryobj) {
 /**
  * This function deletes a media from the Kaltura server
  *
- * @param obj - Kaltura connection object
- * @param string - Kaltura media entry id
+ * @param obj $connection - Kaltura connection object
+ * @param string $entryid - Kaltura media entry id
  *
  * @return bool - true of success, false
  */
@@ -1161,7 +1248,7 @@ function local_yukaltura_delete_media($connection, $entryid) {
 /**
  * This function determins whether Moodle is at 2.2 or newer.
  *
- * @param - none
+ * @param none
  * @return bool - true if this version of Moodle is newer than Moodel 2.3rc1
  * otherwise false
  */
@@ -1219,14 +1306,13 @@ function local_yukaltura_create_client_tag() {
  * caching filtered text and the XHR loading of course section by the MyMobile
  * theme.
  *
- * @param obj - Kaltura media object
- * @param int - player ui_conf_id (optional).  If no value is specified the
+ * @param obj $entryobj - Kaltura media object
+ * @param int $uiconfid - player ui_conf_id (optional).  If no value is specified the
  * default player will be used.
- * @param int - Moodle course id (optional).  This parameter is required in
- * order to generate Kaltura analytics data.
- * @param string - A kaltura session string
- * @param int - a unique identifier, this value is appented to 'kaltura_player_'
+ * @param string $session - A kaltura session string
+ * @param int $uid - a unique identifier, this value is appented to 'kaltura_player_'
  * and is used as the id of the object tag
+ * @return string - HTML tags of kwidget player.
  *
  */
 function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
@@ -1299,12 +1385,18 @@ function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '
 }
 
 /**
- * Connection Class
+ * Kaltura connection class
+ * @package    local_yukaltura
+ * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class yukaltura_connection {
 
+    /** @var object - kaltura connection object */
     private static $connection  = null;
-    private static $timeout     = 0;
+    /** @var int - time length until session is expired.
+    private static $timeout = 0;
+    /** @var int - start time of Kaltura session.
     private static $timestarted = 0;
 
     /**
@@ -1482,7 +1574,7 @@ function kaltura_course_report_view_permission() {
 /*
  * This function retrieve client ip address.
  *
- * @param bool - if true, check proxy forwarder variable.
+ * @param bool $checkproxy - if true, check proxy forwarder variable.
  *
  * @return string - client ip address.
  */
@@ -1504,8 +1596,8 @@ function local_yukaltura_get_client_ipaddress($checkproxy = true) {
 /**
  * This function retrieve server variables.
  *
- * @param string - server variable name.
- * @param string  - return this value if there does not exist the variable.
+ * @param string $key - server variable name.
+ * @param string $default  - return this value if there does not exist the variable.
  *
  * @return string - value of the variable.
  */
@@ -1517,7 +1609,7 @@ function local_yukaltura_get_server_variable($key, $default = null) {
 /**
  * This function checks whether the IP address of the client is internal.
  *
- * @param string - IP address.
+ * @param string $ipaddress - IP address of client.
  *
  * @return bool - true if the IP adrress is internal, otherwise false.
  */
@@ -1573,8 +1665,8 @@ function local_yukaltura_check_internal($ipaddress) {
 /**
  * This function checks whether the IP address of the client is within a predetermined range.
  *
- * @param string - IP address.
- * @param string - range of IP address.
+ * @param string $ip - IP address.
+ * @param string $range - range of IP address.
  *
  * @return bool - true if the IP adrress is within the predetermined range, otherwise false.
  */
@@ -1624,7 +1716,7 @@ function check_ipaddress_in_range($ip, $range) {
 /**
  * This function retrieves defaul access control of Kaltura server.
  *
- * @parama object - connection object for Kaltura server.
+ * @parama object $connection - connection object for Kaltura server.
  *
  * @return object - object of defaul access control.
  */
@@ -1662,7 +1754,7 @@ function local_yukaltura_get_default_access_control($connection) {
 /**
  * This function retrieves internal access control of Kaltura server.
  *
- * @parama object - connection object for Kaltura server.
+ * @parama object $connection - connection object for Kaltura server.
  *
  * @return object - object of internal access control.
  */
@@ -1699,7 +1791,7 @@ function local_yukaltura_get_internal_access_control($connection) {
 /**
  * This function creates default access control of Kaltura server.
  *
- * @parama object - connection object for Kaltura server.
+ * @parama object $connection - connection object for Kaltura server.
  *
  * @return object - object of internal access control.
  */
@@ -1726,7 +1818,7 @@ function local_yukaltura_create_default_access_control($connection) {
 /**
  * This function creates internal access control of Kaltura server.
  *
- * @parama object - connection object for Kaltura server.
+ * @parama object $connection - connection object for Kaltura server.
  *
  * @return object - object of internal access control.
  */
@@ -1766,8 +1858,8 @@ function local_yukaltura_create_internal_access_control($connection) {
 /**
  * This function updates internal access control of Kaltura server.
  *
- * @param object - connection object for Kaltura server.
- * @param id - id of access control.
+ * @param object $connection - connection object for Kaltura server.
+ * @param int $id - id of access control.
  *
  * @return bool - true if update is scceeded, otherwise false.
  */
@@ -1839,9 +1931,9 @@ function local_yukaltura_get_mymedia_permission() {
 }
 
 /**
- * Create the root category structure in the KMC
+ * Create the root category structure.
  *
- * @param obj - Kaltura connection object
+ * @param obj $connection - Kaltura connection object
  * @return mixed - an array with the root category path and the root category id
  *  or false if something wrong happened
  */
@@ -1917,9 +2009,9 @@ function local_yukaltura_create_root_category($connection) {
  * Create a category in the KMC.  If a perent id is passed then the category
  * will be created as a sub category of the parent id
  *
- * @param obj - Kaltura connection object
- * @param string - category name
- * @param int - (optional) parent id
+ * @param obj $connection - Kaltura connection object
+ * @param string $name - category name
+ * @param int $partnerid - (optional) parent id
  * @return mixed - KalturaCategory if category was created, otherwise false
  */
 function local_yukaltura_create_category($connection, $name, $parentid = 0) {
@@ -1947,9 +2039,9 @@ function local_yukaltura_create_category($connection, $name, $parentid = 0) {
 
 /**
  * Checks if a specific category has a matching fullName value
- * @param obj - Kaltura connection object
- * @param int - category id
- * @param string - category fullName path
+ * @param obj $connection - Kaltura connection object
+ * @param int $categoryid - category id
+ * @param string $path - category fullName path
  * @return bool - true if category with fullName path exists. Else false
  */
 function local_yukaltura_category_id_path_exists($connection, $categoryid, $path) {
@@ -1980,8 +2072,8 @@ function local_yukaltura_category_id_path_exists($connection, $categoryid, $path
  * a KalturaCategory object.  Otherwise false.  The API does not allow searching
  * for categories (using the 'category' service) by name
  *
- * @param yukaltura_connection $connection An instance of the yukaltura_connection class
- * @param string $path The Kaltura root path
+ * @param object $connection - An instance of the yukaltura_connection class.
+ * @param string $path - The Kaltura root path.
  * @return bool|KalturaCategory - A KalturaCategory if path exists, otherwise false
  */
 function local_yukaltura_category_path_exists($connection, $path) {
@@ -2027,8 +2119,8 @@ function local_yukaltura_category_path_exists($connection, $path) {
  * This function creates a Kaltura category, if one doesn't exist, whose name is
  * the Moodle username; and returns the category
  *
- * @param obj - Kaltura connection object
- * @param int - Moodle username
+ * @param obj $connection - Kaltura connection object
+ * @param int $username - Moodle username
  *
  * @return mixed - KalturaCategory object, or false if it failed to create one
  */
@@ -2065,11 +2157,11 @@ function local_yukaltura_create_user_category($connection, $username) {
  * Refactored code from @see search_own_medias(), except it also returns medias
  * that are still being converted.
  *
- * @param obj - $connection Kaltura connection object
- * @param string - $search Search string (optional)
- * @param int - $page_index Pager index
- * @param int - $search Number of medias to display on a single page (optional override)
- * @param string - $sort Optional sort (most recent or alphabetical)
+ * @param obj $connection - Kaltura connection object
+ * @param string $search - Search string (optional)
+ * @param int $pageindex - Pager index
+ * @param int $search - Number of medias to display on a single page (optional override)
+ * @param string $sort - Optional sort (most recent or alphabetical)
  *
  * @return array - List of medias
  */
@@ -2101,9 +2193,9 @@ function local_yukaltura_search_mymedia_medias($connection, $search = '', $pagei
  * name and tags are not empty.  A tagsMultiLikeOr is used when tags is not
  * empty.  A nameMultiLikeOr is used when name is not empty
  *
- * @param string - media name search criteria
- * @param string - media tags serach criteria
- * @param string (optional) - generic search criteria override.  Forces the
+ * @param string $name - media name search criteria
+ * @param string $tags - media tags serach criteria
+ * @param string $multioverride - (optional) generic search criteria override.  Forces the
  * function to use tagsNameMultiLikeOr search filter
  *
  * @return obj - KalturaMediaEntryFilter object
@@ -2153,8 +2245,8 @@ function local_yukaltura_create_media_filter($name, $tags, $multioverride = '') 
  * PRECONVERT, KalturaEntryStatus::IMPORT to retrieve medias that are still
  * being converted.
  *
- * @param string $search Media search string (separated by spaces)
- * @param string $sort Optional sort (most recent or alphabetical)
+ * @param string $search - Media search string (separated by spaces)
+ * @param string $sort - Optional sort (most recent or alphabetical)
  *
  * @return obj - KalturaMediaEntryFilter object
  */
@@ -2195,8 +2287,8 @@ function local_yukaltura_create_mymedia_filter($search, $sort = null) {
  * pageIndex equal to the parameter.  The size of the page is determined by the
  * itemsperpage plug-in configuration setting.
  *
- * @param int - pager index value
- * @param int - number of items to display on a page (optinal override)
+ * @param int $pageindex - pager index value
+ * @param int $itemsperpage - number of items to display on a page (optinal override)
  *
  * @return obj - KalturaFilterPager object
  */

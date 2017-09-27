@@ -32,14 +32,16 @@ if (!defined('MOODLE_INTERNAL')) {
 
 /**
  * Renderer class of local_yukaltura
- *
+ * @package local_yukaltura
+ * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later 
  */
 class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
      * Generate the HTML for the iframe
-     *
-     * @return string The HTML iframe
+     * @param none
+     * @return string - HTML markup for iframe
      */
     public function render_recent_courses() {
         $html = '<div class="resourcecontent resourcegeneral">
@@ -52,9 +54,9 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function outputs a table layout for display media
      *
-     * @param array - array of Kaltura media entry objects
+     * @param array $medialist - array of Kaltura media entry objects
      *
-     * @return HTML markup
+     * @return string - HTML markup for media table
      */
     public function create_media_table($medialist = array()) {
 
@@ -119,8 +121,8 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
      * This function creates HTML markup used to sort the media listing.
-     *
-     * @return HTML Markup for sorting pulldown.
+     * @param none
+     * @return string - HTML markup for sorting pulldown.
      */
     public function create_sort_option() {
         global $SESSION;
@@ -213,7 +215,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display table upper options.
      *
-     * @param string - HTML text (paging markup).
+     * @param string $page - HTML text (paging markup).
      * @return string - HTML text added sorting pulldown.
      */
     public function create_options_table_upper($page) {
@@ -244,8 +246,8 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display table lower options.
      *
-     * @param string - HTML text (paging markup).
-     * @return HTML Markup for sorting pulldown.
+     * @param string $page - HTML text (paging markup).
+     * @return string - HTML markup for sorting pulldown.
      */
     public function create_options_table_lower($page) {
 
@@ -273,9 +275,9 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display the media name
      *
-     * @param string - name of media
+     * @param string $name - name of media entry.
      *
-     * @return string - HTML markup
+     * @return string - HTML markup for media name part.
      */
     public function create_media_name_markup($name) {
 
@@ -293,8 +295,9 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display the media thumbnail
      *
-     * @param string - thumbnail URL
-     * @param string - alternate text
+     * @param string $url - thumbnail URL
+     * @param string $alt - alternate text
+     * @param string $entryid - id of Kaltura Media entry.
      *
      * @return string - HTML markup
      */
@@ -326,7 +329,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display the media created daytime.
      *
-     * @param string - name of media
+     * @param string $dage - name of media
      *
      * @return string - HTML markup
      */
@@ -346,7 +349,8 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup for a media entry
      *
-     * @param obj - Kaltura media object
+     * @param obj $entry - Kaltura media object
+     * @param bool $entryready - true if entry is ready,
      *
      * @return string - HTML Markup for media entry.
      */
@@ -403,7 +407,8 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup for a search tool box.
      *
-     * @return string - HTML Markup for search tool box.
+     * @param none
+     * @return string - HTML markup for search tool box.
      */
     public function create_search_markup() {
         global $SESSION;
@@ -507,7 +512,8 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup for loading screen.
      *
-     * @return string - HTML Markup for loading screen.
+     * @param none
+     * @return string - HTML markup for loading screen.
      */
     public function create_loading_screen_markup() {
 
@@ -531,7 +537,8 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup for selected media name, submit button, and cancel button.
      *
-     * @return string - HTML Markup for selected media name, submit button, and cancel button.
+     * @param none
+     * @return string - HTML markup for selected media name, submit button, and cancel button.
      */
     public function create_selector_submit_form() {
         $output = '';
@@ -582,7 +589,8 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display media properties.
      *
-     * @return string - HTML Markup for media properties.
+     * @param none
+     * @return string - HTML markup for media properties.
      */
     public function create_properties_markup() {
         $output = '';
@@ -612,8 +620,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      * the javascript (see function "handle_cancel" in kaltura.js
      *
      * @param none
-     *
-     * @return string - HTML markup
+     * @return string - HTML markup of media preferences.
      */
     public function get_media_preferences_markup() {
         $output = '';
@@ -738,7 +745,8 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display properties submit block.
      *
-     * @return HTML Markup for propertied submit block.
+     * @param none
+     * @return string - HTML markup for propertied submit block.
      */
     public function create_properties_submit_markup() {
         $output = '';
@@ -773,10 +781,9 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     }
 
     /**
-     * his function creates HTML markup used to display no permission message.
+     * This function creates HTML markup used to display no permission message.
      *
      * @param none
-     *
      * @return string - HTML markup for no permission message.
      */
     public function create_permission_message() {
@@ -804,4 +811,3 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     }
 
 }
-

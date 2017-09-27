@@ -67,7 +67,7 @@ function clickThumbnailImage(select_id, select_name, select_thumbnail) {
 /**
  * This function centerize modal window.
  * @access private
- * @param none
+ * @param {object} - HTML element of content panel.
  * @return nothing
  */
 function centeringModalSyncer(content_panel){
@@ -209,7 +209,7 @@ function selectorSubmitClick() {
 /**
  * This function replaces "Add Media" label when membed media is selected.
  * @access private
- * @param none
+ * @param {string} - Label of "Add Media" button.
  * @return nothing
  */
 function replaceAddMediaLabel(str) {
@@ -218,7 +218,7 @@ function replaceAddMediaLabel(str) {
 
 /**
  * This function print modal window of player properties.
- * @param string - URL of selector page.
+ * @param {string} - URL of selector page.
  * @return nothing
  */
 function fadeInPropertiesWindow(selectorURL) {

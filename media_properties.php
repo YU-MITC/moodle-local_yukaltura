@@ -58,7 +58,7 @@ if (!$connection) {
     print_error('conn_failed', 'local_yukaltura', $url);
 }
 
-$partnerid    = local_yukaltura_get_partner_id();
+$partnerid = local_yukaltura_get_partner_id();
 $loginsession = '';
 
 $context = context_user::instance($USER->id);

@@ -194,8 +194,8 @@ function migrate_assignment_data() {
  * Updates the calendar event entry to refer to the new media assignment
  * instance
  *
- * @param int - Id of new assignment instance
- * @param int - Id of old assignment instance
+ * @param int $newassignmentid - Id of new assignment instance
+ * @param int $oldassignmentid - Id of old assignment instance
  * @return nothing
  */
 function update_calendar_event($newassignmentid, $oldassignmentid) {
@@ -412,7 +412,7 @@ function migrate_configuration_data() {
  * mappings where the key is the 1.9 configuraiton name and the value is the 2.1
  * configuration name
  *
- * @param - none
+ * @param none
  * @return array - array key 1.9 names, value 2.1 names
  */
 function configuration_data_mapping() {
@@ -428,7 +428,7 @@ function configuration_data_mapping() {
 /**
  * Adds a new instance of the kaltura media assignment
  *
- * @param object - a kaltura media assignment instance object
+ * @param object $kalmediaassign - a kaltura media assignment instance object
  * @return int - id of the newly inserted record or false
  */
 function add_new_kalmediaassign($kalmediaassign) {
@@ -443,7 +443,7 @@ function add_new_kalmediaassign($kalmediaassign) {
  * Construct a kaltura media assignmentobject using parameters from a Moodle 1.9
  * kaltura media assignment type
  *
- * @param object - kaltura media assignment object (ver: Moodle 1.9)
+ * @param object $oldassignment - kaltura media assignment object (ver: Moodle 1.9)
  * @return object - kaltura media assignment object (var: Moodle 2.1)
  */
 function create_new_kalmediaassign($oldassignment) {
@@ -468,8 +468,8 @@ function create_new_kalmediaassign($oldassignment) {
 /**
  * Adds a new instance of the kaltura media assignment submission
  *
- * @param int - Id of the kaltura media assignment the submission is for
- * @param object - old media assignment submission object
+ * @param int $kalmediassginid - Id of the kaltura media assignment the submission is for
+ * @param object $oldassignsub - old media assignment submission object
  *
  * @return int - id of the newly inserted record or false
  */
@@ -498,7 +498,7 @@ function create_new_kalmediaassign_submission($kalmediaassignid, $oldassignsub) 
  * Construct a kaltura media resource object using parameters from a Moodle 1.9
  * kaltura meia resource
  *
- * @param object - kaltura media resource object (ver: Moodle 1.9)
+ * @param object $oldresource - kaltura media resource object (ver: Moodle 1.9)
  * @return object - kaltura media resource object (var: Moodle 2.1)
  */
 function create_new_kalmediares($oldresource) {
@@ -524,7 +524,7 @@ function create_new_kalmediares($oldresource) {
  * Construct a kaltura media presentation object using parameters from a Moodle
  * 1.9 kaltura media resource
  *
- * @param object - kaltura media presentation object (ver: Moodle 1.9)
+ * @param object $oldsource - kaltura media presentation object (ver: Moodle 1.9)
  * @return object - kaltura media presentation object (var: Moodle 2.1)
  */
 function create_new_kalmediapres($oldresource) {
@@ -551,7 +551,7 @@ function create_new_kalmediapres($oldresource) {
 /**
  * Check if the Kaltura media assignment table schema exists
  *
- * @param object - db manager
+ * @param object $dbman - Database manager
  * @return bool - true if exists, else false
  */
 function kalmediaassign_exists($dbman) {
@@ -574,7 +574,7 @@ function kalmediaassign_exists($dbman) {
 /**
  * Check if the Kaltura media resource table schema exists
  *
- * @param object - db manager
+ * @param object $dbman - Database manager
  * @return bool - true if exists, else false
  */
 function kalmediares_exists($dbman) {
@@ -597,7 +597,7 @@ function kalmediares_exists($dbman) {
 /**
  * Check if the Kaltura media presentation table schema exists
  *
- * @param object - db manager
+ * @param object $dbman - Database manager
  * @return bool - true if exists, else false
  */
 function kalmediapres_exists($dbman) {
