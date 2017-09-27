@@ -79,6 +79,11 @@ class yukaltura_course_testcase extends advanced_testcase {
         // Non-existing course.
         $search3 = search_course('course3');
 
+        foreach ($search1 as $course) {
+            unset($course['id']);
+        }
+        unset($course);
+
         $expected = array(
             (object)array(
                 //'id' => '2',
