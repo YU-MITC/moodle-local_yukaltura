@@ -34,7 +34,7 @@ if (!defined('MOODLE_INTERNAL')) {
  * Renderer class of local_yukaltura
  * @package local_yukaltura
  * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later 
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_yukaltura_renderer extends plugin_renderer_base {
 
