@@ -1394,9 +1394,9 @@ class yukaltura_connection {
 
     /** @var object - kaltura connection object */
     private static $connection  = null;
-    /** @var int - time length until session is expired.
+    /** @var int - time length until session is expired. */
     private static $timeout = 0;
-    /** @var int - start time of Kaltura session.
+    /** @var int - start time of Kaltura session. */
     private static $timestarted = 0;
 
     /**
