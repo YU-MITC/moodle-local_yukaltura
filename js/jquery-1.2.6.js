@@ -21,6 +21,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/*global $:false unsed:false undef:false jQuery:true */
+/* global $ */
+
 (function(){
 /*
  * jQuery 1.2.6 - New Wave Javascript

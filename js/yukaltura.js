@@ -21,6 +21,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/*global $:false unsed:false undef:false jQuery:true */
+/* global $ */
+
 M.local_yukaltura = {};
 
 M.local_yukaltura.loading_panel = {};

@@ -1127,7 +1127,7 @@ function local_yukaltura_test_connection($clientobj) {
  *
  * @return string - url to the Kaltura HTML5 library URL
  */
-function local_yukaltura_htm5_javascript_url($uiconfid) {
+function local_yukaltura_html5_javascript_url($uiconfid) {
 
     $host = local_yukaltura_get_host();
     $partnerid = local_yukaltura_get_partner_id();
