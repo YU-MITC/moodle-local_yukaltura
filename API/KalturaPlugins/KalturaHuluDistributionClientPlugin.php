@@ -15,24 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file is part of Kaltura Client API.
+ * Kaltura Client API.
  *
- * @package    local_yukaltura
- * @copyright  (C) 2014 Kaltura Inc.
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 class KalturaHuluDistributionProfileOrderBy
 {
@@ -69,70 +63,70 @@ class KalturaHuluDistributionProviderFilter extends KalturaHuluDistributionProvi
 class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
-     *
+     * 
      *
      * @var string
      */
     public $sftpHost = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $sftpLogin = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $sftpPass = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $seriesChannel = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $seriesPrimaryCategory = null;
 
     /**
-     *
+     * 
      *
      * @var array of KalturaString
      */
     public $seriesAdditionalCategories;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $seasonNumber = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $seasonSynopsis = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $seasonTuneInInformation = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -153,32 +147,37 @@ class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client) {
+    protected function __construct(KalturaClient $client)
+    {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaHuluDistributionClientPlugin
      */
-    public static function get(KalturaClient $client) {
-        if (!self::$instance) {
+    public static function get(KalturaClient $client)
+    {
+        if(!self::$instance)
             self::$instance = new KalturaHuluDistributionClientPlugin($client);
-        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices() {
-        $services = array();
+    public function getServices()
+    {
+        $services = array(
+        );
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return 'huluDistribution';
     }
 }
+

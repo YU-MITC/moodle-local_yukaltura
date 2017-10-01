@@ -15,23 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file is part of Kaltura Client API.
+ * Kaltura Client API.
  *
- * @package    local_yukaltura
- * @copyright  (C) 2014 Kaltura Inc.
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 class KalturaAuditTrailAction
 {
@@ -119,7 +113,7 @@ abstract class KalturaAuditTrailInfo extends KalturaObjectBase
 class KalturaAuditTrail extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -127,7 +121,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $id = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -143,7 +137,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $parsedAt = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailStatus
      * @readonly
@@ -151,42 +145,42 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $status = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailObjectType
      */
     public $auditObjectType = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $objectId = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $relatedObjectId = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailObjectType
      */
     public $relatedObjectType = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $entryId = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -194,7 +188,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $masterPartnerId = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -202,7 +196,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     *
+     * 
      *
      * @var string
      * @readonly
@@ -210,28 +204,28 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $requestId = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $userId = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailAction
      */
     public $action = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailInfo
      */
     public $data;
 
     /**
-     *
+     * 
      *
      * @var string
      * @readonly
@@ -239,7 +233,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $ks = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailContext
      * @readonly
@@ -255,7 +249,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $entryPoint = null;
 
     /**
-     *
+     * 
      *
      * @var string
      * @readonly
@@ -263,7 +257,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $serverName = null;
 
     /**
-     *
+     * 
      *
      * @var string
      * @readonly
@@ -271,7 +265,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $ipAddress = null;
 
     /**
-     *
+     * 
      *
      * @var string
      * @readonly
@@ -279,21 +273,21 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $userAgent = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $clientTag = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $description = null;
 
     /**
-     *
+     * 
      *
      * @var string
      * @readonly
@@ -306,259 +300,259 @@ class KalturaAuditTrail extends KalturaObjectBase
 abstract class KalturaAuditTrailBaseFilter extends KalturaFilter
 {
     /**
-     *
+     * 
      *
      * @var int
      */
     public $idEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $parsedAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $parsedAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailStatus
      */
     public $statusEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailObjectType
      */
     public $auditObjectTypeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $auditObjectTypeIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $objectIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $objectIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $relatedObjectIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $relatedObjectIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailObjectType
      */
     public $relatedObjectTypeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $relatedObjectTypeIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $entryIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $entryIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $masterPartnerIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $masterPartnerIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $partnerIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $partnerIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $requestIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $requestIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $userIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $userIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailAction
      */
     public $actionEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $actionIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $ksEqual = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailContext
      */
     public $contextEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $contextIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $entryPointEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $entryPointIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $serverNameEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $serverNameIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $ipAddressEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $ipAddressIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -575,7 +569,7 @@ class KalturaAuditTrailFilter extends KalturaAuditTrailBaseFilter
 class KalturaAuditTrailListResponse extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var array of KalturaAuditTrail
      * @readonly
@@ -583,7 +577,7 @@ class KalturaAuditTrailListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -596,21 +590,21 @@ class KalturaAuditTrailListResponse extends KalturaObjectBase
 class KalturaAuditTrailChangeItem extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var string
      */
     public $descriptor = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $oldValue = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -622,7 +616,7 @@ class KalturaAuditTrailChangeItem extends KalturaObjectBase
 class KalturaAuditTrailChangeInfo extends KalturaAuditTrailInfo
 {
     /**
-     *
+     * 
      *
      * @var array of KalturaAuditTrailChangeItem
      */
@@ -634,35 +628,35 @@ class KalturaAuditTrailChangeInfo extends KalturaAuditTrailInfo
 class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo
 {
     /**
-     *
+     * 
      *
      * @var string
      */
     public $version = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $objectSubType = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $dc = null;
 
     /**
-     *
+     * 
      *
      * @var bool
      */
     public $original = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaAuditTrailFileSyncType
      */
@@ -674,7 +668,7 @@ class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo
 class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo
 {
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -686,48 +680,47 @@ class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo
 
 class KalturaAuditTrailService extends KalturaServiceBase
 {
-    public function __construct(KalturaClient $client = null) {
+    function __construct(KalturaClient $client = null)
+    {
         parent::__construct($client);
     }
 
-    public function add(KalturaAuditTrail $audittrail) {
+    function add(KalturaAuditTrail $auditTrail)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "auditTrail", $audittrail->toParams());
+        $this->client->addParam($kparams, "auditTrail", $auditTrail->toParams());
         $this->client->queueServiceActionCall("audit_audittrail", "add", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAuditTrail");
         return $resultobject;
     }
 
-    public function get($id) {
+    function get($id)
+    {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("audit_audittrail", "get", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAuditTrail");
         return $resultobject;
     }
 
-    public function listAction(KalturaAuditTrailFilter $filter = null, KalturaFilterPager $pager = null) {
+    function listAction(KalturaAuditTrailFilter $filter = null, KalturaFilterPager $pager = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
-        if ($pager !== null) {
+        if ($pager !== null)
             $this->client->addParam($kparams, "pager", $pager->toParams());
-        }
         $this->client->queueServiceActionCall("audit_audittrail", "list", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAuditTrailListResponse");
@@ -746,7 +739,8 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
      */
     public $auditTrail = null;
 
-    protected function __construct(KalturaClient $client) {
+    protected function __construct(KalturaClient $client)
+    {
         parent::__construct($client);
         $this->auditTrail = new KalturaAuditTrailService($client);
     }
@@ -754,25 +748,29 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaAuditClientPlugin
      */
-    public static function get(KalturaClient $client) {
-        if (!self::$instance) {
+    public static function get(KalturaClient $client)
+    {
+        if(!self::$instance)
             self::$instance = new KalturaAuditClientPlugin($client);
-        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices() {
-        $services = array('auditTrail' => $this->auditTrail);
+    public function getServices()
+    {
+        $services = array(
+            'auditTrail' => $this->auditTrail,
+        );
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return 'audit';
     }
 }

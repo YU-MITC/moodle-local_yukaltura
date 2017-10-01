@@ -15,23 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file is part of Kaltura Client API.
+ * Kaltura Client API.
  *
- * @package    local_yukaltura
- * @copyright  (C) 2014 Kaltura Inc.
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 class KalturaDropFolderContentFileHandlerMatchPolicy
 {
@@ -193,7 +187,7 @@ class KalturaSshDropFolderOrderBy
 abstract class KalturaDropFolderFileHandlerConfig extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileHandlerType
      * @readonly
@@ -206,7 +200,7 @@ abstract class KalturaDropFolderFileHandlerConfig extends KalturaObjectBase
 class KalturaDropFolder extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -214,7 +208,7 @@ class KalturaDropFolder extends KalturaObjectBase
     public $id = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @insertonly
@@ -222,113 +216,112 @@ class KalturaDropFolder extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $name = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $description = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderType
      */
     public $type = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderStatus
      */
     public $status = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $conversionProfileId = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $dc = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $path = null;
 
     /**
-     * The ammount of time, in seconds, that should pass so that a file
-     * with no change in size we'll be treated as "finished uploading to folder".
+     * The ammount of time, in seconds, that should pass so that a file with no change in size we'll be treated as "finished uploading to folder"
      *
      * @var int
      */
     public $fileSizeCheckInterval = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileDeletePolicy
      */
     public $fileDeletePolicy = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $autoFileDeleteDays = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileHandlerType
      */
     public $fileHandlerType = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileNamePatterns = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileHandlerConfig
      */
     public $fileHandlerConfig;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $tags = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $ignoreFileNamePatterns = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -336,7 +329,7 @@ class KalturaDropFolder extends KalturaObjectBase
     public $createdAt = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -349,182 +342,182 @@ class KalturaDropFolder extends KalturaObjectBase
 abstract class KalturaDropFolderBaseFilter extends KalturaFilter
 {
     /**
-     *
+     * 
      *
      * @var int
      */
     public $idEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $idIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $partnerIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $partnerIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $nameLike = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderType
      */
     public $typeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $typeIn = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderStatus
      */
     public $statusEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $conversionProfileIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $conversionProfileIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $dcEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $dcIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $pathLike = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileHandlerType
      */
     public $fileHandlerTypeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileHandlerTypeIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileNamePatternsLike = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileNamePatternsMultiLikeOr = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileNamePatternsMultiLikeAnd = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $tagsLike = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $tagsMultiLikeOr = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $tagsMultiLikeAnd = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
@@ -541,7 +534,7 @@ class KalturaDropFolderFilter extends KalturaDropFolderBaseFilter
 class KalturaDropFolderListResponse extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var array of KalturaDropFolder
      * @readonly
@@ -549,7 +542,7 @@ class KalturaDropFolderListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -562,7 +555,7 @@ class KalturaDropFolderListResponse extends KalturaObjectBase
 class KalturaDropFolderFile extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -570,7 +563,7 @@ class KalturaDropFolderFile extends KalturaObjectBase
     public $id = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -578,7 +571,7 @@ class KalturaDropFolderFile extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @insertonly
@@ -586,7 +579,7 @@ class KalturaDropFolderFile extends KalturaObjectBase
     public $dropFolderId = null;
 
     /**
-     *
+     * 
      *
      * @var string
      * @insertonly
@@ -594,14 +587,14 @@ class KalturaDropFolderFile extends KalturaObjectBase
     public $fileName = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $fileSize = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -609,49 +602,49 @@ class KalturaDropFolderFile extends KalturaObjectBase
     public $fileSizeLastSetAt = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileStatus
      */
     public $status = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parsedSlug = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parsedFlavor = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileErrorCode
      */
     public $errorCode = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $errorDescription = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $lastModificationTime = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -659,7 +652,7 @@ class KalturaDropFolderFile extends KalturaObjectBase
     public $createdAt = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -672,161 +665,161 @@ class KalturaDropFolderFile extends KalturaObjectBase
 abstract class KalturaDropFolderFileBaseFilter extends KalturaFilter
 {
     /**
-     *
+     * 
      *
      * @var int
      */
     public $idEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $idIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $partnerIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $partnerIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $dropFolderIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $dropFolderIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileNameEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileNameIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileNameLike = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileStatus
      */
     public $statusEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parsedSlugEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parsedSlugIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parsedSlugLike = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parsedFlavorEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parsedFlavorIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parsedFlavorLike = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderFileErrorCode
      */
     public $errorCodeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $errorCodeIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
@@ -843,7 +836,7 @@ class KalturaDropFolderFileFilter extends KalturaDropFolderFileBaseFilter
 class KalturaDropFolderFileListResponse extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var array of KalturaDropFolderFile
      * @readonly
@@ -851,7 +844,7 @@ class KalturaDropFolderFileListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -914,7 +907,7 @@ class KalturaSftpDropFolderFilter extends KalturaSftpDropFolderBaseFilter
 class KalturaDropFolderFileResource extends KalturaDataCenterContentResource
 {
     /**
-     * Id of the drop folder file object.
+     * Id of the drop folder file object
      *
      * @var int
      */
@@ -926,7 +919,7 @@ class KalturaDropFolderFileResource extends KalturaDataCenterContentResource
 class KalturaDropFolderContentFileHandlerConfig extends KalturaDropFolderFileHandlerConfig
 {
     /**
-     *
+     * 
      *
      * @var KalturaDropFolderContentFileHandlerMatchPolicy
      */
@@ -937,7 +930,7 @@ class KalturaDropFolderContentFileHandlerConfig extends KalturaDropFolderFileHan
      * The following might be extracted from the file name and used if defined:
      * - (?P<referenceId>\w+) - will be used as the drop folder file's parsed slug.
      * - (?P<flavorName>\w+)  - will be used as the drop folder file's parsed flavor.
-     *
+     * 
      *
      * @var string
      */
@@ -954,28 +947,28 @@ abstract class KalturaRemoteDropFolder extends KalturaDropFolder
 class KalturaFtpDropFolder extends KalturaRemoteDropFolder
 {
     /**
-     *
+     * 
      *
      * @var string
      */
     public $host = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $port = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $username = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -987,49 +980,49 @@ class KalturaFtpDropFolder extends KalturaRemoteDropFolder
 abstract class KalturaSshDropFolder extends KalturaRemoteDropFolder
 {
     /**
-     *
+     * 
      *
      * @var string
      */
     public $host = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $port = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $username = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $password = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $privateKey = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $publicKey = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -1051,75 +1044,74 @@ class KalturaSftpDropFolder extends KalturaSshDropFolder
 
 class KalturaDropFolderService extends KalturaServiceBase
 {
-    public function __construct(KalturaClient $client = null) {
+    function __construct(KalturaClient $client = null)
+    {
         parent::__construct($client);
     }
 
-    public function add(KalturaDropFolder $dropfolder) {
+    function add(KalturaDropFolder $dropFolder)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolder", $dropfolder->toParams());
+        $this->client->addParam($kparams, "dropFolder", $dropFolder->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "add", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolder");
         return $resultobject;
     }
 
-    public function get($dropfolderid) {
+    function get($dropFolderId)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolderId", $dropfolderid);
+        $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "get", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolder");
         return $resultobject;
     }
 
-    public function update($dropfolderid, KalturaDropFolder $dropfolder) {
+    function update($dropFolderId, KalturaDropFolder $dropFolder)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolderId", $dropfolderid);
-        $this->client->addParam($kparams, "dropFolder", $dropfolder->toParams());
+        $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
+        $this->client->addParam($kparams, "dropFolder", $dropFolder->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "update", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolder");
         return $resultobject;
     }
 
-    public function delete($dropfolderid) {
+    function delete($dropFolderId)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolderId", $dropfolderid);
+        $this->client->addParam($kparams, "dropFolderId", $dropFolderId);
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "delete", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolder");
         return $resultobject;
     }
 
-    public function listAction(KalturaDropFolderFilter $filter = null, KalturaFilterPager $pager = null) {
+    function listAction(KalturaDropFolderFilter $filter = null, KalturaFilterPager $pager = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
-        if ($pager !== null) {
+        if ($pager !== null)
             $this->client->addParam($kparams, "pager", $pager->toParams());
-        }
         $this->client->queueServiceActionCall("dropfolder_dropfolder", "list", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolderListResponse");
@@ -1129,88 +1121,87 @@ class KalturaDropFolderService extends KalturaServiceBase
 
 class KalturaDropFolderFileService extends KalturaServiceBase
 {
-    public function __construct(KalturaClient $client = null) {
+    function __construct(KalturaClient $client = null)
+    {
         parent::__construct($client);
     }
 
-    public function add(KalturaDropFolderFile $dropfolderfile) {
+    function add(KalturaDropFolderFile $dropFolderFile)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolderFile", $dropfolderfile->toParams());
+        $this->client->addParam($kparams, "dropFolderFile", $dropFolderFile->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "add", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolderFile");
         return $resultobject;
     }
 
-    public function get($dropfolderfileid) {
+    function get($dropFolderFileId)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolderFileId", $dropfolderfileid);
+        $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "get", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolderFile");
         return $resultobject;
     }
 
-    public function update($dropfolderfileid, KalturaDropFolderFile $dropfolderfile) {
+    function update($dropFolderFileId, KalturaDropFolderFile $dropFolderFile)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolderFileId", $dropfolderfileid);
-        $this->client->addParam($kparams, "dropFolderFile", $dropfolderfile->toParams());
+        $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
+        $this->client->addParam($kparams, "dropFolderFile", $dropFolderFile->toParams());
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "update", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolderFile");
         return $resultobject;
     }
 
-    public function delete($dropfolderfileid) {
+    function delete($dropFolderFileId)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolderFileId", $dropfolderfileid);
+        $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "delete", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolderFile");
         return $resultobject;
     }
 
-    public function listAction(KalturaDropFolderFileFilter $filter = null, KalturaFilterPager $pager = null) {
+    function listAction(KalturaDropFolderFileFilter $filter = null, KalturaFilterPager $pager = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
-        if ($pager !== null) {
+        if ($pager !== null)
             $this->client->addParam($kparams, "pager", $pager->toParams());
-        }
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "list", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolderFileListResponse");
         return $resultobject;
     }
 
-    public function ignore($dropfolderfileid) {
+    function ignore($dropFolderFileId)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "dropFolderFileId", $dropfolderfileid);
+        $this->client->addParam($kparams, "dropFolderFileId", $dropFolderFileId);
         $this->client->queueServiceActionCall("dropfolder_dropfolderfile", "ignore", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaDropFolderFile");
@@ -1234,7 +1225,8 @@ class KalturaDropFolderClientPlugin extends KalturaClientPlugin
      */
     public $dropFolderFile = null;
 
-    protected function __construct(KalturaClient $client) {
+    protected function __construct(KalturaClient $client)
+    {
         parent::__construct($client);
         $this->dropFolder = new KalturaDropFolderService($client);
         $this->dropFolderFile = new KalturaDropFolderFileService($client);
@@ -1243,25 +1235,30 @@ class KalturaDropFolderClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaDropFolderClientPlugin
      */
-    public static function get(KalturaClient $client) {
-        if (!self::$instance) {
+    public static function get(KalturaClient $client)
+    {
+        if(!self::$instance)
             self::$instance = new KalturaDropFolderClientPlugin($client);
-        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices() {
-        $services = array('dropFolder' => $this->dropFolder, 'dropFolderFile' => $this->dropFolderFile);
+    public function getServices()
+    {
+        $services = array(
+            'dropFolder' => $this->dropFolder,
+            'dropFolderFile' => $this->dropFolderFile,
+        );
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return 'dropFolder';
     }
 }

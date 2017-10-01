@@ -125,7 +125,7 @@ M.local_yukaltura.search_course = function() {
             }
         });
 
-       kaltura_search.onkeypress = function(e) {
+        kaltura_search.onkeypress = function(e) {
             // Enter is pressed.
             if (e.keyCode === 13) {
                 var query = search_txt.get('value');

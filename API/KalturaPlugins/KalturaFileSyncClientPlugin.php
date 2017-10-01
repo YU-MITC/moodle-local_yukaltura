@@ -15,23 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file is part of Kaltura Client API.
+ * Kaltura Client API.
  *
- * @package    local_yukaltura
- * @copyright  (C) 2014 Kaltura Inc.
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 class KalturaFileSyncOrderBy
 {
@@ -66,203 +60,203 @@ class KalturaFileSyncType
 abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 {
     /**
-     *
+     * 
      *
      * @var int
      */
     public $partnerIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaFileSyncObjectType
      */
     public $fileObjectTypeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileObjectTypeIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $objectIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $objectIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $versionEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $versionIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $objectSubTypeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $objectSubTypeIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $dcEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $dcIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $originalEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $updatedAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $readyAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $readyAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $syncTimeGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $syncTimeLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaFileSyncStatus
      */
     public $statusEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaFileSyncType
      */
     public $fileTypeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $fileTypeIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $linkedIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $linkCountGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $linkCountLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $fileSizeGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
@@ -283,32 +277,36 @@ class KalturaFileSyncClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client) {
+    protected function __construct(KalturaClient $client)
+    {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaFileSyncClientPlugin
      */
-    public static function get(KalturaClient $client) {
-        if (!self::$instance) {
+    public static function get(KalturaClient $client)
+    {
+        if(!self::$instance)
             self::$instance = new KalturaFileSyncClientPlugin($client);
-        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices() {
-        $services = array();
+    public function getServices()
+    {
+        $services = array(
+        );
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return 'fileSync';
     }
 }

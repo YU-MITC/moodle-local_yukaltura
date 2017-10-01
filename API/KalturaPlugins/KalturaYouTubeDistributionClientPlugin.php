@@ -15,24 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file is part of Kaltura Client API.
+ * Kaltura Client API.
  *
- * @package    local_yukaltura
- * @copyright  (C) 2014 Kaltura Inc.
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 class KalturaYouTubeDistributionProfileOrderBy
 {
@@ -69,140 +63,140 @@ class KalturaYouTubeDistributionProviderFilter extends KalturaYouTubeDistributio
 class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
-     *
+     * 
      *
      * @var string
      */
     public $username = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $notificationEmail = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $sftpHost = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $sftpLogin = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $sftpPublicKey = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $sftpPrivateKey = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $sftpBaseDir = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $ownerName = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $defaultCategory = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $allowComments = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $allowEmbedding = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $allowRatings = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $allowResponses = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $commercialPolicy = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $ugcPolicy = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $target = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $adServerPartnerId = null;
 
     /**
-     *
+     * 
      *
      * @var bool
      */
     public $enableAdServer = null;
 
     /**
-     *
+     * 
      *
      * @var bool
      */
     public $allowPreRollAds = null;
 
     /**
-     *
+     * 
      *
      * @var bool
      */
@@ -223,32 +217,37 @@ class KalturaYouTubeDistributionClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client) {
+    protected function __construct(KalturaClient $client)
+    {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaYouTubeDistributionClientPlugin
      */
-    public static function get(KalturaClient $client) {
-        if (!self::$instance) {
+    public static function get(KalturaClient $client)
+    {
+        if(!self::$instance)
             self::$instance = new KalturaYouTubeDistributionClientPlugin($client);
-        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices() {
-        $services = array();
+    public function getServices()
+    {
+        $services = array(
+        );
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return 'youTubeDistribution';
     }
 }
+

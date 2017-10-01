@@ -15,23 +15,17 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file is part of Kaltura Client API.
+ * Kaltura Client API.
  *
- * @package    local_yukaltura
- * @copyright  (C) 2014 Kaltura Inc.
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 class KalturaCuePointOrderBy
 {
@@ -61,7 +55,7 @@ class KalturaCuePointType
 abstract class KalturaCuePoint extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var string
      * @readonly
@@ -69,7 +63,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $id = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaCuePointType
      * @readonly
@@ -77,7 +71,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $cuePointType = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaCuePointStatus
      * @readonly
@@ -85,7 +79,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $status = null;
 
     /**
-     *
+     * 
      *
      * @var string
      * @insertonly
@@ -93,7 +87,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $entryId = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -101,7 +95,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -109,7 +103,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $createdAt = null;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -117,7 +111,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $updatedAt = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -131,7 +125,7 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $startTime = null;
 
     /**
-     *
+     * 
      *
      * @var string
      * @readonly
@@ -139,35 +133,35 @@ abstract class KalturaCuePoint extends KalturaObjectBase
     public $userId = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $partnerData = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $partnerSortValue = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaNullableBoolean
      */
     public $forceStop = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $thumbOffset = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -179,182 +173,182 @@ abstract class KalturaCuePoint extends KalturaObjectBase
 abstract class KalturaCuePointBaseFilter extends KalturaFilter
 {
     /**
-     *
+     * 
      *
      * @var string
      */
     public $idEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $idIn = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaCuePointType
      */
     public $cuePointTypeEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $cuePointTypeIn = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaCuePointStatus
      */
     public $statusEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $entryIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $entryIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $updatedAtLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $tagsLike = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $tagsMultiLikeOr = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $tagsMultiLikeAnd = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $startTimeGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $startTimeLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $userIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $userIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $partnerSortValueEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $partnerSortValueIn = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $partnerSortValueGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $partnerSortValueLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var KalturaNullableBoolean
      */
     public $forceStopEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $systemNameEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -371,7 +365,7 @@ class KalturaCuePointFilter extends KalturaCuePointBaseFilter
 class KalturaCuePointListResponse extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var array of KalturaCuePoint
      * @readonly
@@ -379,7 +373,7 @@ class KalturaCuePointListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -392,117 +386,114 @@ class KalturaCuePointListResponse extends KalturaObjectBase
 
 class KalturaCuePointService extends KalturaServiceBase
 {
-    public function __construct(KalturaClient $client = null) {
+    function __construct(KalturaClient $client = null)
+    {
         parent::__construct($client);
     }
 
-    public function add(KalturaCuePoint $cuepoint) {
+    function add(KalturaCuePoint $cuePoint)
+    {
         $kparams = array();
-        $this->client->addParam($kparams, "cuePoint", $cuepoint->toParams());
+        $this->client->addParam($kparams, "cuePoint", $cuePoint->toParams());
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "add", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaCuePoint");
         return $resultobject;
     }
 
-    public function addFromBulk($filedata) {
+    function addFromBulk($fileData)
+    {
         $kparams = array();
         $kfiles = array();
-        $this->client->addParam($kfiles, "fileData", $filedata);
+        $this->client->addParam($kfiles, "fileData", $fileData);
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "addFromBulk", $kparams, $kfiles);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaCuePointListResponse");
         return $resultobject;
     }
 
-    public function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
+    function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
-        if ($pager !== null) {
+        if ($pager !== null)
             $this->client->addParam($kparams, "pager", $pager->toParams());
-        }
         $this->client->queueServiceActionCall('cuepoint_cuepoint', 'serveBulk', $kparams);
         $resultobject = $this->client->getServeUrl();
         return $resultobject;
     }
 
-    public function get($id) {
+    function get($id)
+    {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "get", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaCuePoint");
         return $resultobject;
     }
 
-    public function listAction(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
+    function listAction(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
-        if ($pager !== null) {
+        if ($pager !== null)
             $this->client->addParam($kparams, "pager", $pager->toParams());
-        }
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "list", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaCuePointListResponse");
         return $resultobject;
     }
 
-    public function count(KalturaCuePointFilter $filter = null) {
+    function count(KalturaCuePointFilter $filter = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "count", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "integer");
         return $resultobject;
     }
 
-    public function update($id, KalturaCuePoint $cuepoint) {
+    function update($id, KalturaCuePoint $cuePoint)
+    {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "cuePoint", $cuepoint->toParams());
+        $this->client->addParam($kparams, "cuePoint", $cuePoint->toParams());
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "update", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaCuePoint");
         return $resultobject;
     }
 
-    public function delete($id) {
+    function delete($id)
+    {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("cuepoint_cuepoint", "delete", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "null");
@@ -521,7 +512,8 @@ class KalturaCuePointClientPlugin extends KalturaClientPlugin
      */
     public $cuePoint = null;
 
-    protected function __construct(KalturaClient $client) {
+    protected function __construct(KalturaClient $client)
+    {
         parent::__construct($client);
         $this->cuePoint = new KalturaCuePointService($client);
     }
@@ -529,25 +521,30 @@ class KalturaCuePointClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaCuePointClientPlugin
      */
-    public static function get(KalturaClient $client) {
-        if (!self::$instance) {
+    public static function get(KalturaClient $client)
+    {
+        if(!self::$instance)
             self::$instance = new KalturaCuePointClientPlugin($client);
-        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices() {
-        $services = array('cuePoint' => $this->cuePoint);
+    public function getServices()
+    {
+        $services = array(
+            'cuePoint' => $this->cuePoint,
+        );
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return 'cuePoint';
     }
 }
+

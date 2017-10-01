@@ -15,24 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file is part of Kaltura Client API.
+ * Kaltura Client API.
  *
- * @package    local_yukaltura
- * @copyright  (C) 2014 Kaltura Inc.
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaCuePointClientPlugin.php");
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 class KalturaAnnotationOrderBy
 {
@@ -53,7 +47,7 @@ class KalturaAnnotationOrderBy
 class KalturaAnnotation extends KalturaCuePoint
 {
     /**
-     *
+     * 
      *
      * @var string
      * @insertonly
@@ -61,7 +55,7 @@ class KalturaAnnotation extends KalturaCuePoint
     public $parentId = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
@@ -88,63 +82,63 @@ class KalturaAnnotation extends KalturaCuePoint
 abstract class KalturaAnnotationBaseFilter extends KalturaCuePointFilter
 {
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parentIdEqual = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $parentIdIn = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $textLike = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $textMultiLikeOr = null;
 
     /**
-     *
+     * 
      *
      * @var string
      */
     public $textMultiLikeAnd = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $endTimeGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $endTimeLessThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
     public $durationGreaterThanOrEqual = null;
 
     /**
-     *
+     * 
      *
      * @var int
      */
@@ -161,7 +155,7 @@ class KalturaAnnotationFilter extends KalturaAnnotationBaseFilter
 class KalturaAnnotationListResponse extends KalturaObjectBase
 {
     /**
-     *
+     * 
      *
      * @var array of KalturaAnnotation
      * @readonly
@@ -169,7 +163,7 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     *
+     * 
      *
      * @var int
      * @readonly
@@ -182,117 +176,114 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
 
 class KalturaAnnotationService extends KalturaServiceBase
 {
-    public function __construct(KalturaClient $client = null) {
+    function __construct(KalturaClient $client = null)
+    {
         parent::__construct($client);
     }
 
-    public function add(KalturaAnnotation $annotation) {
+    function add(KalturaAnnotation $annotation)
+    {
         $kparams = array();
         $this->client->addParam($kparams, "annotation", $annotation->toParams());
         $this->client->queueServiceActionCall("annotation_annotation", "add", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAnnotation");
         return $resultobject;
     }
 
-    public function update($id, KalturaAnnotation $annotation) {
+    function update($id, KalturaAnnotation $annotation)
+    {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "annotation", $annotation->toParams());
         $this->client->queueServiceActionCall("annotation_annotation", "update", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAnnotation");
         return $resultobject;
     }
 
-    public function listAction(KalturaAnnotationFilter $filter = null, KalturaFilterPager $pager = null) {
+    function listAction(KalturaAnnotationFilter $filter = null, KalturaFilterPager $pager = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
-        if ($pager !== null) {
+        if ($pager !== null)
             $this->client->addParam($kparams, "pager", $pager->toParams());
-        }
         $this->client->queueServiceActionCall("annotation_annotation", "list", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAnnotationListResponse");
         return $resultobject;
     }
 
-    public function addFromBulk($filedata) {
+    function addFromBulk($fileData)
+    {
         $kparams = array();
         $kfiles = array();
-        $this->client->addParam($kfiles, "fileData", $filedata);
+        $this->client->addParam($kfiles, "fileData", $fileData);
         $this->client->queueServiceActionCall("annotation_annotation", "addFromBulk", $kparams, $kfiles);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaCuePointListResponse");
         return $resultobject;
     }
 
-    public function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null) {
+    function serveBulk(KalturaCuePointFilter $filter = null, KalturaFilterPager $pager = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
-        if ($pager !== null) {
+        if ($pager !== null)
             $this->client->addParam($kparams, "pager", $pager->toParams());
-        }
         $this->client->queueServiceActionCall('annotation_annotation', 'serveBulk', $kparams);
         $resultobject = $this->client->getServeUrl();
         return $resultobject;
     }
 
-    public function get($id) {
+    function get($id)
+    {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("annotation_annotation", "get", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaCuePoint");
         return $resultobject;
     }
 
-    public function count(KalturaCuePointFilter $filter = null) {
+    function count(KalturaCuePointFilter $filter = null)
+    {
         $kparams = array();
-        if ($filter !== null) {
+        if ($filter !== null)
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        }
         $this->client->queueServiceActionCall("annotation_annotation", "count", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "integer");
         return $resultobject;
     }
 
-    public function delete($id) {
+    function delete($id)
+    {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("annotation_annotation", "delete", $kparams);
-        if ($this->client->isMultiRequest()) {
+        if ($this->client->isMultiRequest())
             return $this->client->getMultiRequestResult();
-        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "null");
@@ -311,7 +302,8 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
      */
     public $annotation = null;
 
-    protected function __construct(KalturaClient $client) {
+    protected function __construct(KalturaClient $client)
+    {
         parent::__construct($client);
         $this->annotation = new KalturaAnnotationService($client);
     }
@@ -319,25 +311,29 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaAnnotationClientPlugin
      */
-    public static function get(KalturaClient $client) {
-        if (!self::$instance) {
+    public static function get(KalturaClient $client)
+    {
+        if(!self::$instance)
             self::$instance = new KalturaAnnotationClientPlugin($client);
-        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices() {
-        $services = array('annotation' => $this->annotation);
+    public function getServices()
+    {
+        $services = array(
+            'annotation' => $this->annotation,
+        );
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return 'annotation';
     }
 }
