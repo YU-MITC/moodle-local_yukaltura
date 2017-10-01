@@ -83,63 +83,63 @@ class KalturaAdType
 abstract class KalturaAdCuePointBaseFilter extends KalturaCuePointFilter
 {
     /**
-     * 
+     *
      *
      * @var KalturaAdProtocolType
      */
     public $protocolTypeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $protocolTypeIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $titleLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $titleMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $titleMultiLikeAnd = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $endTimeGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $endTimeLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $durationGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -163,7 +163,7 @@ class KalturaAdCuePointFilter extends KalturaAdCuePointBaseFilter
 class KalturaAdCuePoint extends KalturaCuePoint
 {
     /**
-     * 
+     *
      *
      * @var KalturaAdProtocolType
      * @insertonly
@@ -171,28 +171,28 @@ class KalturaAdCuePoint extends KalturaCuePoint
     public $protocolType = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sourceUrl = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaAdType
      */
     public $adType = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $title = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -219,16 +219,14 @@ class KalturaAdCuePointClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaAdCuePointClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaAdCuePointClientPlugin($client);
         return self::$instance;
@@ -237,8 +235,7 @@ class KalturaAdCuePointClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -247,8 +244,7 @@ class KalturaAdCuePointClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'adCuePoint';
     }
 }

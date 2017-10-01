@@ -33,7 +33,6 @@ if (!defined('MOODLE_INTERNAL')) {
 /**
  * This function install XML DB to Moodle.
  *
- * @param none
  * @return boolean - true if error does not occur.
  *
  */
@@ -62,8 +61,6 @@ function xmldb_local_yukaltura_install() {
  * remove the old assignment submission data.  Lastly the old assignment record
  * is remove.
  *
- * @param none
- * @return nothing
  */
 function migrate_assignment_data() {
     global $DB;
@@ -196,7 +193,6 @@ function migrate_assignment_data() {
  *
  * @param int $newassignmentid - Id of new assignment instance
  * @param int $oldassignmentid - Id of old assignment instance
- * @return nothing
  */
 function update_calendar_event($newassignmentid, $oldassignmentid) {
     global $DB;
@@ -220,8 +216,6 @@ function update_calendar_event($newassignmentid, $oldassignmentid) {
  * resource/presentation modules.  Removes old resource data from the
  * resource_old table as well as from the resource table
  *
- * @param none
- * @return nothing
  */
 function migrate_resource_data() {
     global $CFG, $DB;
@@ -360,8 +354,6 @@ function migrate_resource_data() {
  * Update Kaltura 1.9 configuration settings to 2.1 spec settings.
  * This function also removes all of the old 1.9 player configurations
  *
- * @param none
- * @return nothing
  */
 function migrate_configuration_data() {
     global $DB;
@@ -412,7 +404,6 @@ function migrate_configuration_data() {
  * mappings where the key is the 1.9 configuraiton name and the value is the 2.1
  * configuration name
  *
- * @param none
  * @return array - array key 1.9 names, value 2.1 names
  */
 function configuration_data_mapping() {
@@ -468,9 +459,8 @@ function create_new_kalmediaassign($oldassignment) {
 /**
  * Adds a new instance of the kaltura media assignment submission
  *
- * @param int $kalmediassginid - Id of the kaltura media assignment the submission is for
+ * @param int $kalmediaassignid - Id of the kaltura media assignment the submission is for
  * @param object $oldassignsub - old media assignment submission object
- *
  * @return int - id of the newly inserted record or false
  */
 function create_new_kalmediaassign_submission($kalmediaassignid, $oldassignsub) {
@@ -524,7 +514,7 @@ function create_new_kalmediares($oldresource) {
  * Construct a kaltura media presentation object using parameters from a Moodle
  * 1.9 kaltura media resource
  *
- * @param object $oldsource - kaltura media presentation object (ver: Moodle 1.9)
+ * @param object $oldresource - kaltura media presentation object (ver: Moodle 1.9)
  * @return object - kaltura media presentation object (var: Moodle 2.1)
  */
 function create_new_kalmediapres($oldresource) {

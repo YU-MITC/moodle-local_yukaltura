@@ -2234,10 +2234,10 @@
                 c3 = data[i++];
                 code = ((c & 0x0F) << 12) | ((c2 & 0x3F) << 6) | (c3 & 0x3F);
             } else if (n === 15) {
-                // Case: 1111 0xxx
-                // Case: 10xx xxxx
-                // Case: 10xx xxxx
-                // Case: 10xx xxxx
+                // Case: 1111 0xxx.
+                // Case: 10xx xxxx.
+                // Case: 10xx xxxx.
+                // Case: 10xx xxxx.
                 c2 = data[i++];
                 c3 = data[i++];
                 c4 = data[i++];
@@ -2249,13 +2249,13 @@
             } else {
                 // Split in surrogate halves.
                 code -= 0x10000;
-                results[results.length] = (code >> 10) + 0xD800; // High surrogate
-                results[results.length] = (code % 0x400) + 0xDC00; // Low surrogate
+                results[results.length] = (code >> 10) + 0xD800; // High surrogate.
+                results[results.length] = (code % 0x400) + 0xDC00; // Low surrogate.
             }
         }
 
         return results;
-}
+    }
 
     /**
      * UTF-16 (JavaScript Unicode array) to UTF-16
@@ -2289,7 +2289,7 @@
                 bom = [0xFE, 0xFF];
                 utf16 = UNICODEToUTF16BE(data);
             } else {
-                // Little-endian
+                // Little-endian.
                 bom = [0xFF, 0xFE];
                 utf16 = UNICODEToUTF16LE(data);
             }
@@ -2627,7 +2627,7 @@
                 results[results.length] = c2;
             } else {
                 results[results.length] = c2;
-               results[results.length] = c1;
+                results[results.length] = c1;
             }
         }
 
@@ -3030,7 +3030,6 @@
         return UTF8ToSJIS(UTF16LEToUTF8(data));
     }
 
-
     /**
      * Assign the internal encoding name from the argument encoding name.
      *
@@ -3069,7 +3068,6 @@
         return name;
     }
 
-
     // Helpers.
     function isObject(x) {
         var type = typeof x;
@@ -3077,14 +3075,12 @@
     }
 
     function isArray(x) {
-        return Array.isArray ? Array.isArray(x) :
-        toString.call(x) === '[object Array]';
+        return Array.isArray ? Array.isArray(x) : toString.call(x) === '[object Array]';
     }
 
     function isString(x) {
         return typeof x === 'string' || toString.call(x) === '[object String]';
     }
-
 
     function getKeys(object) {
         if (Object.keys) {
@@ -3101,7 +3097,6 @@
         return keys;
     }
 
-
     function createBuffer(bits, size) {
         if (!HAS_TYPED) {
             return new Array(size);
@@ -3113,7 +3108,6 @@
         }
     }
 
-
     function stringToBuffer(string) {
         var length = string.length;
         var buffer = createBuffer(16, length);
@@ -3124,7 +3118,6 @@
 
         return buffer;
     }
-
 
     function codeToString_fast(code) {
         if (CAN_CHARCODE_APPLY && CAN_CHARCODE_APPLY_TYPED) {
@@ -3151,7 +3144,6 @@
 
         return codeToString_chunked(code);
     }
-
 
     function codeToString_chunked(code) {
         var string = '';
@@ -3201,7 +3193,6 @@
         return string;
     }
 
-
     function stringToCode(string) {
         var code = [];
         var len = string && string.length;
@@ -3241,14 +3232,12 @@
         return slice.call(buffer);
     }
 
-    // Base64
-    /* Copyright (C) 1999 Masanao Izumo <iz@onicos.co.jp>
+    /* Base64
+     * Copyright (C) 1999 Masanao Izumo <iz@onicos.co.jp>
      * Version: 1.0
      * LastModified: Dec 25 1999
      * This library is free.  You can redistribute it and/or modify it.
      */
-    // -- Masanao Izumo Copyright 1999 "free"
-    // Modified to add support for Binary Array for Encoding.js
 
     var base64EncodeChars = [
         65,  66,  67,  68,  69,  70,  71,  72,  73,  74,  75,  76,  77,
@@ -3270,7 +3259,6 @@
     ];
 
     var base64EncodePadding = '='.charCodeAt(0);
-
 
     function base64encode(data) {
         var out, i, len;
@@ -3308,7 +3296,6 @@
 
         return codeToString_fast(out);
     }
-
 
     function base64decode(str) {
         var c1, c2, c3, c4;
@@ -6084,18 +6071,10 @@
         0xE9BEA3:0x6D62, 0xE9BEA5:0x6D63, 0xE3809C:0x2141
     };
 
-    /**
-     * Encoding conversion table for JIS to UTF-8.
-     *
-     * @ignore
-     */
+    // Encoding conversion table for JIS to UTF-8.
     var JIS_TO_UTF8_TABLE = null;
 
-    /**
-     * The encoding conversion table for JIS X 0212:1990 (Hojo-Kanji) to UTF-8.
-     *
-     * @ignore
-     */
+    // The encoding conversion table for JIS X 0212:1990 (Hojo-Kanji) to UTF-8.
     var JISX0212_TO_UTF8_TABLE = null;
 
     function init_JIS_TO_UTF8_TABLE() {
@@ -6127,11 +6106,7 @@
         }
     }
 
-    /**
-     * Katakana table
-     *
-     * @ignore
-     */
+    // Katakana table.
     var hankanaCase_table = {
         0x3001:0xFF64, 0x3002:0xFF61, 0x300C:0xFF62, 0x300D:0xFF63, 0x309B:0xFF9E,
         0x309C:0xFF9F, 0x30A1:0xFF67, 0x30A2:0xFF71, 0x30A3:0xFF68, 0x30A4:0xFF72,
@@ -6148,23 +6123,12 @@
         0x30F3:0xFF9D, 0x30FB:0xFF65, 0x30FC:0xFF70
     };
 
-    /**
-     * @ignore
-     */
     var hankanaCase_sonants = {0x30F4:0xFF73, 0x30F7:0xFF9C, 0x30FA:0xFF66};
 
-    /**
-     * Sonant marks.
-     *
-     * @ignore
-     */
+    // Sonant marks.
     var hankanaCase_marks = [0xFF9E, 0xFF9F];
 
-    /**
-     * Zenkaku table [U+FF61] - [U+FF9F]
-     *
-     * @ignore
-     */
+    // Zenkaku table [U+FF61] - [U+FF9F].
     var zenkanaCase_table = [
         0x3002, 0x300C, 0x300D, 0x3001, 0x30FB, 0x30F2, 0x30A1, 0x30A3,
         0x30A5, 0x30A7, 0x30A9, 0x30E3, 0x30E5, 0x30E7, 0x30C3, 0x30FC,

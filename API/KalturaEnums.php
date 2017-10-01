@@ -32,8 +32,12 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Acecss Conntrol OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAccessControlOrderBy
 {
@@ -42,8 +46,12 @@ class KalturaAccessControlOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Admin User OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdminUserOrderBy
 {
@@ -54,8 +62,12 @@ class KalturaAdminUserOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Action Permission Item OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaApiActionPermissionItemOrderBy
 {

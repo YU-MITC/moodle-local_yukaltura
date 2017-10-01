@@ -40,7 +40,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
      * Generate the HTML for the iframe
-     * @param none
      * @return string - HTML markup for iframe
      */
     public function render_recent_courses() {
@@ -121,7 +120,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
      * This function creates HTML markup used to sort the media listing.
-     * @param none
      * @return string - HTML markup for sorting pulldown.
      */
     public function create_sort_option() {
@@ -329,7 +327,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display the media created daytime.
      *
-     * @param string $dage - name of media
+     * @param string $date - name of media
      *
      * @return string - HTML markup
      */
@@ -407,7 +405,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup for a search tool box.
      *
-     * @param none
      * @return string - HTML markup for search tool box.
      */
     public function create_search_markup() {
@@ -512,7 +509,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup for loading screen.
      *
-     * @param none
      * @return string - HTML markup for loading screen.
      */
     public function create_loading_screen_markup() {
@@ -537,7 +533,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup for selected media name, submit button, and cancel button.
      *
-     * @param none
      * @return string - HTML markup for selected media name, submit button, and cancel button.
      */
     public function create_selector_submit_form() {
@@ -589,7 +584,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display media properties.
      *
-     * @param none
      * @return string - HTML markup for media properties.
      */
     public function create_properties_markup() {
@@ -619,7 +613,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      * Create player properties panel markup.  Default values are loaded from
      * the javascript (see function "handle_cancel" in kaltura.js
      *
-     * @param none
      * @return string - HTML markup of media preferences.
      */
     public function get_media_preferences_markup() {
@@ -702,8 +695,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      * If the override configuration option is checked, then this function will
      * only return a single array entry with the overridden player
      *
-     * @param none
-     *
      * @return array - First element will be an array whose keys are player ids
      * and values are player name.  Second element will be the default selected
      * player.  The default player is determined by the Kaltura configuraiton
@@ -745,7 +736,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display properties submit block.
      *
-     * @param none
      * @return string - HTML markup for propertied submit block.
      */
     public function create_properties_submit_markup() {
@@ -783,7 +773,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup used to display no permission message.
      *
-     * @param none
      * @return string - HTML markup for no permission message.
      */
     public function create_permission_message() {

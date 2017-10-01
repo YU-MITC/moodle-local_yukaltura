@@ -47,8 +47,6 @@ class KalturaStaticEntries {
     /**
      * Retrieve all entry objects that have been seralized and stored in the
      * session global
-     *
-     * @return nothing
      */
     public function __construct() {
 
@@ -72,7 +70,6 @@ class KalturaStaticEntries {
      * Add an entry object directory to the array
      *
      * @param object $entryobj - an entry object
-     *
      * @return nothing
      */
     public static function add_entry_object($entryobj) {
@@ -86,12 +83,9 @@ class KalturaStaticEntries {
      * Retrieve an entry object.  First verify if the object has already been
      * cached.  If not, retreive the object via API calls.  Else just return the
      * object
-     *
      * @param string $entryid - entry id to retrieve
      * @param object $baseentryservice - a KalturaBaseEntryService object
      * @param bool $fetch - true to make an API call if the entry object doesn't exist.
-     * False do not make an API call
-     *
      * @return mixed - entry object or false if it was not found
      */
     public static function get_entry($entryid, $baseentryservice, $fetch = true) {
@@ -110,12 +104,10 @@ class KalturaStaticEntries {
 
     /**
      * Makes an API call to retrieve an entry object and store the object in the
-     * static entries list
-     *
-     * @param string $entryid - entry id
-     * @param object $baseentryserviec - a KalturaBaseEntryService object
-     *
-     * @return nothing
+     * static entries list.
+     * @param string $entryid - id of kaltura media entry.
+     * @param object $baseentryservice - a KalturaBaseEntryService object.
+     * @return - nothing.
      */
     private static function get_entry_from_api($entryid, $baseentryservice) {
 
@@ -127,11 +119,9 @@ class KalturaStaticEntries {
 
     /**
      * Return a list of entry objects
-     *
-     * @param array $entryids - an entry id
-     * @param object $baseentryservice - a KalturaBaseEntryService object
-     *
-     * @return array - array of entry objects with the entry id as the key
+     * @param array $entryids an entry id
+     * @param object $baseentryservice a KalturaBaseEntryService object
+     * @return array array of entry objects with the entry id as the key
      */
     public static function list_entries($entryids = array(), $baseentryservice) {
 
@@ -165,9 +155,8 @@ class KalturaStaticEntries {
      * Retrieve a list of entry objects; and store the objects in the static
      * array.
      *
-     * @param array $entryids - array of entry ids to retreive
-     * @param object $baseentryservice - a KalturaBaseEntryService object
-     *
+     * @param array $entryids array of entry ids to retreive
+     * @param object $baseentryservice a KalturaBaseEntryService object
      * @return nothing
      */
     private static function list_entries_from_api($entryids = array(), $baseentryservice) {
@@ -188,7 +177,6 @@ class KalturaStaticEntries {
      * Remove an entry from cache.
      *
      * @param string $entryid - id of Kaltura Media entry
-     *
      * @return nothing
      */
     public static function remove_entry($entryid) {
@@ -207,9 +195,6 @@ class KalturaStaticEntries {
     /**
      * All stored entry objects will be serialized and stored in the PHP session
      * global.
-     *
-     * @param none
-     * @return nothing
      */
     public function __destruct() {
         global $SESSION;

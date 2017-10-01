@@ -169,9 +169,9 @@ define('KALTURA_IMAGE_MOBILE_HEIGHT', 240);
 /**
  * Initialize the kaltura account and obtain the secrets and partner ID
  *
- * @param string - username (email address)
- * @param string - password
- * @param string - URI
+ * @param string $login - username (email address)
+ * @param string $password - password
+ * @param string $uri - URI
  *
  * @return boolean - true on success or false
  */
@@ -248,10 +248,6 @@ function local_yukaltura_initialize_account($login, $password, $uri = '') {
 
 /**
  * Uninitialize the kaltura account.
- *
- * @param none
- *
- * @return nothing
  */
 function local_yukaltura_uninitialize_account() {
     set_config('secret', '', KALTURA_PLUGIN_NAME);
@@ -263,7 +259,6 @@ function local_yukaltura_uninitialize_account() {
  * Send initializations information to the Kaltura server
  *
  * @param string $session - The Kaltura session string
- * @return nothing
  */
 function local_yukaltura_send_initialization($session) {
     $plugin = new stdClass();
@@ -443,7 +438,7 @@ function local_yukaltura_generate_weak_kaltura_session($courseid, $coursename) {
 }
 
 /**
- * This function is refactored code from @see login(). It only generates and
+ * This function is refactored code from login(). It only generates and
  * returns a user Kaltura session. The session value returned is mainly used for
  * inclusion into the video markup flashvars query string.
  *
@@ -484,7 +479,6 @@ function local_yukaltura_generate_kaltura_session($medialist = array()) {
 /**
  * Returns an array with the login and password as values respectively
  *
- * @param none
  * @return array - login, password or an array of false values if none were found.
  */
 function local_yukaltura_get_credentials() {
@@ -501,7 +495,6 @@ function local_yukaltura_get_credentials() {
 /**
  * Retrieve an instance of the KalturaConfiguration class
  *
- * @param none
  * @return obj - KalturaConfiguration object
  */
 function local_yukaltura_get_configuration_obj() {
@@ -531,7 +524,6 @@ function local_yukaltura_get_configuration_obj() {
 /**
  * Retrieve an instance of the KalturaConfiguration class
  *
- * @param none
  * @return obj - KalturaConfiguration object
  */
 function local_yukaltura_get_report_configuration_obj() {
@@ -560,7 +552,6 @@ function local_yukaltura_get_report_configuration_obj() {
 
 /**
  * Returns the test connection markup
- * @param none
  * @return string - HTML markup for test connection
  */
 function local_yukaltura_testconnection_markup() {
@@ -582,10 +573,8 @@ function local_yukaltura_testconnection_markup() {
 /**
  * Retrieve a list of all the custom players available to the account.
  *
- * @param none
  * @return string|bool - The session ID string value or false on error.
  */
-
 function local_yukaltura_get_custom_players() {
 
     try {
@@ -660,8 +649,6 @@ function local_yukaltura_get_player_uiconf($type = 'player') {
 /**
  * Retrives the player resource override configuration value
  *
- * @param none
- *
  * @return string - 1 if override is required, else 0
  */
 function local_yukaltura_get_player_override() {
@@ -670,8 +657,6 @@ function local_yukaltura_get_player_override() {
 
 /**
  * Return the host URI and removes trailing slash
- *
- * @param none
  *
  * @return string - host URI
  */
@@ -693,8 +678,6 @@ function local_yukaltura_get_host() {
 /**
  * Return the partner Id
  *
- * @param none
- *
  * @return int - partner Id
  */
 function local_yukaltura_get_partner_id() {
@@ -704,21 +687,29 @@ function local_yukaltura_get_partner_id() {
 /**
  * Return the admin secret
  *
- * @param none
  * @return string - admin secret
  */
 function local_yukaltura_get_admin_secret() {
     return get_config(KALTURA_PLUGIN_NAME, 'adminsecret');
 }
 
+/**
+ * Return the user secret
+ *
+ * @return string - user secret
+ */
 function local_yukaltura_get_secret() {
     return get_config(KALTURA_PLUGIN_NAME, 'secret');
 }
 
+/**
+ * Return the publiser name
+ *
+ * @return string - publisher name
+ */
 function local_yukaltura_get_publisher_name() {
     return get_config(KALTURA_PLUGIN_NAME, 'login');
 }
-
 
 /**
  * Initialize the KalturaUser object
@@ -952,7 +943,6 @@ function local_yukaltura_get_kdp_flashvars($creatorname = '', $session = '') {
 /**
  * This function returns root categories.
  *
- * @param none
  * @return array - root categories.
  *
  */
@@ -979,7 +969,7 @@ function local_yukaltura_get_root_category() {
  * This function checks for the existance of required entry object
  * properties.  See KALDEV-28 for details.
  *
- * @param object - entry object
+ * @param object $entryobj - entry object
  * @return bool - true if valid, else false
  */
 function local_yukaltura_is_valid_entry_object($entryobj) {
@@ -997,15 +987,12 @@ function local_yukaltura_is_valid_entry_object($entryobj) {
  * return false.
  *
  * @param string $entryid - entry id of Kaltura Media.
- * @param bool $readonly - true if this function is the only return an entry object
- * when the entry status is set to 'ready'.  False, to return the entry object
- * regardless of it's status.
+ * @param bool $readyonly - true if this function is the only return an entry object
+ * when the entry status is set to 'ready'.
+ * False, to return the entry object regardless of it's status.
  *
  * @return mixed - entry object, or false (depending on the entry status and the
  * second prameter
- *
- * TODO: Change the name of this function (and all references) since it on
- * longer only returns an entry object when the status is set to 'ready'
  */
 function local_yukaltura_get_ready_entry_object($entryid, $readyonly = true) {
 
@@ -1053,8 +1040,6 @@ function local_yukaltura_get_ready_entry_object($entryid, $readyonly = true) {
 
 /**
  * Check that the account has mobile flavours enabled
- *
- * @param none
  *
  * @return bool - true if enabled, otherwise false
  */
@@ -1138,8 +1123,6 @@ function local_yukaltura_html5_javascript_url($uiconfid) {
 
 /**
  * Retrives the enable html 5 flavour configuration option
- *
- * @param nothing
  *
  * @return string - 1 if enabled, else 0
  */
@@ -1248,7 +1231,6 @@ function local_yukaltura_delete_media($connection, $entryid) {
 /**
  * This function determins whether Moodle is at 2.2 or newer.
  *
- * @param none
  * @return bool - true if this version of Moodle is newer than Moodel 2.3rc1
  * otherwise false
  */
@@ -1279,7 +1261,6 @@ function local_yukaltura_is_moodle_pre_twothree() {
 /**
  * This function creates a client tag used to identify API requests to the
  * Kaltura server
- * @param none
  * @return string - client tag
  */
 function local_yukaltura_create_client_tag() {
@@ -1402,8 +1383,7 @@ class yukaltura_connection {
     /**
      * Constructor for Kaltura connection class.
      *
-     * @param int - Length of timeout for Kaltura session in minutes
-     * @return none
+     * @param int $timeout - Length of timeout for Kaltura session in minutes
      */
     public function __construct($timeout = KALTURA_SESSION_LENGTH) {
         self::$connection = local_yukaltura_login(true, '', $timeout);
@@ -1428,7 +1408,6 @@ class yukaltura_connection {
 
     /**
      * Return the number of seconds the session is alive for
-     * @param - none
      * @return int - number of seconds the session is set to live
      */
     public function get_timeout() {
@@ -1438,13 +1417,15 @@ class yukaltura_connection {
 
     /**
      * Return the time the session started
-     * @param - none
      * @return int - unix timestamp
      */
     public function get_timestarted() {
         return self::$timestarted;
     }
 
+    /**
+     * Descruct connnection instance.
+     */
     public function __destruct() {
         global $SESSION;
 
@@ -1500,7 +1481,6 @@ function search_course($query) {
 
 /**
  * Returns a list of recently accessed Moodle courses
- * @param none
  * @return mixed - An array of courses on success; false, otherwise
  */
 function recent_course_history_listing() {
@@ -1541,7 +1521,6 @@ function recent_course_history_listing() {
  * This is a similar and more efficient implementation of the get_user_capability_course function.
  * Currently this is used to determine if the "Kaltura Course Media Reports" link gets displayed to the user.
  *
- * @param none
  * @return boolean - Returns true if user has permission; otherwise, false
  */
 function kaltura_course_report_view_permission() {
@@ -1571,14 +1550,13 @@ function kaltura_course_report_view_permission() {
     return false;
 }
 
-/*
+/**
  * This function retrieve client ip address.
  *
  * @param bool $checkproxy - if true, check proxy forwarder variable.
  *
  * @return string - client ip address.
  */
-
 function local_yukaltura_get_client_ipaddress($checkproxy = true) {
 
     if ($checkproxy && local_yukaltura_get_server_variable('HTTP_CLIENT_IP') != null) {
@@ -1590,8 +1568,6 @@ function local_yukaltura_get_client_ipaddress($checkproxy = true) {
     }
     return $ip;
 }
-
-
 
 /**
  * This function retrieve server variables.
@@ -1716,7 +1692,7 @@ function check_ipaddress_in_range($ip, $range) {
 /**
  * This function retrieves defaul access control of Kaltura server.
  *
- * @parama object $connection - connection object for Kaltura server.
+ * @param object $connection - connection object for Kaltura server.
  *
  * @return object - object of defaul access control.
  */
@@ -1754,7 +1730,7 @@ function local_yukaltura_get_default_access_control($connection) {
 /**
  * This function retrieves internal access control of Kaltura server.
  *
- * @parama object $connection - connection object for Kaltura server.
+ * @param object $connection - connection object for Kaltura server.
  *
  * @return object - object of internal access control.
  */
@@ -1791,7 +1767,7 @@ function local_yukaltura_get_internal_access_control($connection) {
 /**
  * This function creates default access control of Kaltura server.
  *
- * @parama object $connection - connection object for Kaltura server.
+ * @param object $connection - connection object for Kaltura server.
  *
  * @return object - object of internal access control.
  */
@@ -1818,7 +1794,7 @@ function local_yukaltura_create_default_access_control($connection) {
 /**
  * This function creates internal access control of Kaltura server.
  *
- * @parama object $connection - connection object for Kaltura server.
+ * @param object $connection - connection object for Kaltura server.
  *
  * @return object - object of internal access control.
  */
@@ -1898,7 +1874,6 @@ function local_yukaltura_update_internal_access_control($connection, $id) {
 /**
  * This function checks if the user can use My Media..
  *
- * @param none
  * @return - true if user can use My Media, otherwise false.
  */
 function local_yukaltura_get_mymedia_permission() {
@@ -2009,10 +1984,10 @@ function local_yukaltura_create_root_category($connection) {
  * Create a category in the KMC.  If a perent id is passed then the category
  * will be created as a sub category of the parent id
  *
- * @param obj $connection - Kaltura connection object
+ * @param object $connection - Kaltura connection object
  * @param string $name - category name
- * @param int $partnerid - (optional) parent id
- * @return mixed - KalturaCategory if category was created, otherwise false
+ * @param int $parentid - (optional) parent id
+ * @return object - KalturaCategory if category was created, otherwise false
  */
 function local_yukaltura_create_category($connection, $name, $parentid = 0) {
 
@@ -2154,13 +2129,13 @@ function local_yukaltura_create_user_category($connection, $username) {
 }
 
 /**
- * Refactored code from @see search_own_medias(), except it also returns medias
+ * Refactored code from search_own_medias(), except it also returns medias
  * that are still being converted.
  *
- * @param obj $connection - Kaltura connection object
+ * @param object $connection - Kaltura connection object
  * @param string $search - Search string (optional)
  * @param int $pageindex - Pager index
- * @param int $search - Number of medias to display on a single page (optional override)
+ * @param int $mediasperpage - Number of medias to display on a single page (optional override)
  * @param string $sort - Optional sort (most recent or alphabetical)
  *
  * @return array - List of medias
@@ -2240,14 +2215,13 @@ function local_yukaltura_create_media_filter($name, $tags, $multioverride = '') 
 }
 
 /**
- * Refactored code from @see create_media_filter(), except it only uses
+ * Refactored code from create_media_filter(), except it only uses
  * tagsNameMultiLikeOr and uses KalturaEntryStatus::READY, KalturaEntryStatus::
  * PRECONVERT, KalturaEntryStatus::IMPORT to retrieve medias that are still
  * being converted.
  *
  * @param string $search - Media search string (separated by spaces)
  * @param string $sort - Optional sort (most recent or alphabetical)
- *
  * @return obj - KalturaMediaEntryFilter object
  */
 function local_yukaltura_create_mymedia_filter($search, $sort = null) {

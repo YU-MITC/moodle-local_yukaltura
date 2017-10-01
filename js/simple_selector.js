@@ -31,9 +31,7 @@ var timer = false;
 
 /**
  * This function reflects change of sort option.
- * @access private
- * @param none
- * @return nothing
+ * @access public
  */
 function changeSort() {
     // Get url.
@@ -48,7 +46,6 @@ function changeSort() {
  * @param {int} - entry ID of selected media.
  * @param {string} - title of selected media.
  * @param {string} - tag of selected thumbnail.
- * @return nothing
  */
 function clickThumbnailImage(select_id, select_name, select_thumbnail) {
     // Get entry id of selected media.
@@ -67,7 +64,6 @@ function clickThumbnailImage(select_id, select_name, select_thumbnail) {
  * This function centerize modal window.
  * @access private
  * @param {object} - HTML element of content panel.
- * @return nothing
  */
 function centeringModalSyncer(content_panel){
     if (timer !== false){
@@ -91,7 +87,6 @@ function centeringModalSyncer(content_panel){
  * This function print modal window.
  * @access private
  * @param {string} - URL of simple selector web page.
- * @return nothing
  */
 function fadeInSelectorWindow(selectorURL) {
     // Avoidance of duplicatable execute.
@@ -127,9 +122,7 @@ function fadeInSelectorWindow(selectorURL) {
 
 /**
  * This function delete modal window.
- * @access private
- * @param none
- * @return nothing
+ * @access public
  */
 function fadeOutSelectorWindow() {
 
@@ -145,9 +138,7 @@ function fadeOutSelectorWindow() {
 
 /**
  * This function is callback for OK button click.
- * @access private
- * @param none
- * @return nothing
+ * @access public
  */
 function selectorSubmitClick() {
     // Get entry id of selected media.
@@ -209,7 +200,6 @@ function selectorSubmitClick() {
  * This function replaces "Add Media" label when membed media is selected.
  * @access private
  * @param {string} - Label of "Add Media" button.
- * @return nothing
  */
 function replaceAddMediaLabel(str) {
     parent.document.getElementById("id_add_media").value = str;
@@ -218,7 +208,6 @@ function replaceAddMediaLabel(str) {
 /**
  * This function print modal window of player properties.
  * @param {string} - URL of selector page.
- * @return nothing
  */
 function fadeInPropertiesWindow(selectorURL) {
     // Avoidance of duplicatable execute.
@@ -255,8 +244,6 @@ function fadeInPropertiesWindow(selectorURL) {
 /**
  * This function deletes modal window of player properties.
  * @access private
- * @param none
- * @return nothing
  */
 function fadeOutPropertiesWindow() {
 
@@ -272,9 +259,7 @@ function fadeOutPropertiesWindow() {
 
 /**
  * This function is callback for player dimension.
- * @access private
- * @param none
- * @return nothing
+ * @access public
  */
 function handlePlayerDimensionChange() {
     var width = document.getElementById("media_prop_width").value;
@@ -293,8 +278,6 @@ function handlePlayerDimensionChange() {
 /**
  * This function is callback for player dimension.
  * @access private
- * @param none
- * @return nothing
  */
 function handlePlayerSizeSelect() {
     var sizeSelect = document.getElementById("media_prop_size");
@@ -352,8 +335,7 @@ function checkPlayerDimension(width, height) {
 
 /**
  * Retrieve OS type.
- * @acecss private
- * @param none
+ * @acecss public
  * @return {string} - os type.
  */
 function getOperatingSytstem() {
@@ -384,9 +366,7 @@ function getOperatingSytstem() {
 
 /**
  * This function is callback for OK button on player properties window.
- * @acecss pivate
- * @param none
- * @return nothing
+ * @acecss public
  */
 function propertiesSubmitClick() {
     var str = document.getElementById("media_prop_name").value;
@@ -467,9 +447,7 @@ function propertiesSubmitClick() {
 
 /**
  * This function describe module parameters to mod_form.
- * @access private
- * @param none
- * @return nothing
+ * @access public
  */
 function loadPropertiesParameter() {
     document.getElementById("media_prop_name").value = parent.document.getElementById("media_title").value;
