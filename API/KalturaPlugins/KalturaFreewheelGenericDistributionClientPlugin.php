@@ -27,7 +27,17 @@ require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelGenericDistributionProfileOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -36,30 +46,54 @@ class KalturaFreewheelGenericDistributionProfileOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelGenericDistributionProviderOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaFreewheelGenericDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaFreewheelGenericDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelGenericDistributionProfileFilter extends KalturaFreewheelGenericDistributionProfileBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelGenericDistributionProviderFilter extends KalturaFreewheelGenericDistributionProviderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
@@ -139,14 +173,21 @@ class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDist
      */
     public $replaceAirDates = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelGenericDistributionProvider extends KalturaDistributionProvider
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelGenericDistributionClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -187,4 +228,3 @@ class KalturaFreewheelGenericDistributionClientPlugin extends KalturaClientPlugi
         return 'freewheelGenericDistribution';
     }
 }
-

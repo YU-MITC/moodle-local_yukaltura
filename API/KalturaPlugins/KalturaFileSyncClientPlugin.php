@@ -26,7 +26,17 @@
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFileSyncOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -41,6 +51,10 @@ class KalturaFileSyncOrderBy
     const FILE_SIZE_DESC = "-fileSize";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFileSyncStatus
 {
     const ERROR = -1;
@@ -50,6 +64,10 @@ class KalturaFileSyncStatus
     const PURGED = 4;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFileSyncType
 {
     const FILE = 1;
@@ -57,6 +75,10 @@ class KalturaFileSyncType
     const URL = 3;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 {
     /**
@@ -262,14 +284,21 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
      */
     public $fileSizeLessThanOrEqual = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFileSyncFilter extends KalturaFileSyncBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFileSyncClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -310,4 +339,3 @@ class KalturaFileSyncClientPlugin extends KalturaClientPlugin
         return 'fileSync';
     }
 }
-

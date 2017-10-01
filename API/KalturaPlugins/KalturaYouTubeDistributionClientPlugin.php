@@ -27,7 +27,17 @@ require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaYouTubeDistributionProfileOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -36,30 +46,54 @@ class KalturaYouTubeDistributionProfileOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaYouTubeDistributionProviderOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaYouTubeDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaYouTubeDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaYouTubeDistributionProfileFilter extends KalturaYouTubeDistributionProfileBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaYouTubeDistributionProviderFilter extends KalturaYouTubeDistributionProviderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
@@ -202,14 +236,21 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
      */
     public $allowPostRollAds = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaYouTubeDistributionProvider extends KalturaDistributionProvider
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaYouTubeDistributionClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -250,4 +291,3 @@ class KalturaYouTubeDistributionClientPlugin extends KalturaClientPlugin
         return 'youTubeDistribution';
     }
 }
-

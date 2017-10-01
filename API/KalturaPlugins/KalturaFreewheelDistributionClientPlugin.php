@@ -27,7 +27,17 @@ require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelDistributionProfileOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -36,30 +46,54 @@ class KalturaFreewheelDistributionProfileOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelDistributionProviderOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaFreewheelDistributionProfileBaseFilter extends KalturaDistributionProfileFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaFreewheelDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelDistributionProfileFilter extends KalturaFreewheelDistributionProfileBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelDistributionProviderFilter extends KalturaFreewheelDistributionProviderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelDistributionProfile extends KalturaDistributionProfile
 {
     /**
@@ -104,14 +138,21 @@ class KalturaFreewheelDistributionProfile extends KalturaDistributionProfile
      */
     public $metadataProfileId = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelDistributionProvider extends KalturaDistributionProvider
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFreewheelDistributionClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -152,4 +193,3 @@ class KalturaFreewheelDistributionClientPlugin extends KalturaClientPlugin
         return 'freewheelDistribution';
     }
 }
-

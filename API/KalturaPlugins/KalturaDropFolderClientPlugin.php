@@ -26,7 +26,17 @@
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderContentFileHandlerMatchPolicy
 {
     const ADD_AS_NEW = 1;
@@ -34,12 +44,20 @@ class KalturaDropFolderContentFileHandlerMatchPolicy
     const MATCH_EXISTING_OR_KEEP_IN_FOLDER = 3;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileDeletePolicy
 {
     const MANUAL_DELETE = 1;
     const AUTO_DELETE = 2;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileErrorCode
 {
     const ERROR_UPDATE_ENTRY = "1";
@@ -55,12 +73,20 @@ class KalturaDropFolderFileErrorCode
     const ERROR_ADDING_BULK_UPLOAD = "dropFolderXmlBulkUpload.ERROR_ADDING_BULK_UPLOAD";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileHandlerType
 {
     const CONTENT = "1";
     const XML = "dropFolderXmlBulkUpload.XML";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileOrderBy
 {
     const ID_ASC = "+id";
@@ -81,6 +107,10 @@ class KalturaDropFolderFileOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileStatus
 {
     const UPLOADING = 1;
@@ -97,6 +127,10 @@ class KalturaDropFolderFileStatus
     const ERROR_DOWNLOADING = 12;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderOrderBy
 {
     const ID_ASC = "+id";
@@ -109,6 +143,10 @@ class KalturaDropFolderOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderStatus
 {
     const DISABLED = 0;
@@ -116,6 +154,10 @@ class KalturaDropFolderStatus
     const DELETED = 2;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderType
 {
     const LOCAL = "1";
@@ -124,6 +166,10 @@ class KalturaDropFolderType
     const SFTP = "4";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFtpDropFolderOrderBy
 {
     const ID_ASC = "+id";
@@ -136,6 +182,10 @@ class KalturaFtpDropFolderOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaRemoteDropFolderOrderBy
 {
     const ID_ASC = "+id";
@@ -148,6 +198,10 @@ class KalturaRemoteDropFolderOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaScpDropFolderOrderBy
 {
     const ID_ASC = "+id";
@@ -160,6 +214,10 @@ class KalturaScpDropFolderOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSftpDropFolderOrderBy
 {
     const ID_ASC = "+id";
@@ -172,6 +230,10 @@ class KalturaSftpDropFolderOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSshDropFolderOrderBy
 {
     const ID_ASC = "+id";
@@ -184,6 +246,10 @@ class KalturaSshDropFolderOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaDropFolderFileHandlerConfig extends KalturaObjectBase
 {
     /**
@@ -194,9 +260,12 @@ abstract class KalturaDropFolderFileHandlerConfig extends KalturaObjectBase
      */
     public $handlerType = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolder extends KalturaObjectBase
 {
     /**
@@ -336,9 +405,12 @@ class KalturaDropFolder extends KalturaObjectBase
      */
     public $updatedAt = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaDropFolderBaseFilter extends KalturaFilter
 {
     /**
@@ -523,14 +595,21 @@ abstract class KalturaDropFolderBaseFilter extends KalturaFilter
      */
     public $updatedAtLessThanOrEqual = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFilter extends KalturaDropFolderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderListResponse extends KalturaObjectBase
 {
     /**
@@ -549,9 +628,12 @@ class KalturaDropFolderListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFile extends KalturaObjectBase
 {
     /**
@@ -659,9 +741,12 @@ class KalturaDropFolderFile extends KalturaObjectBase
      */
     public $updatedAt = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaDropFolderFileBaseFilter extends KalturaFilter
 {
     /**
@@ -825,14 +910,21 @@ abstract class KalturaDropFolderFileBaseFilter extends KalturaFilter
      */
     public $updatedAtLessThanOrEqual = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileFilter extends KalturaDropFolderFileBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileListResponse extends KalturaObjectBase
 {
     /**
@@ -851,59 +943,102 @@ class KalturaDropFolderFileListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaRemoteDropFolderBaseFilter extends KalturaDropFolderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaRemoteDropFolderFilter extends KalturaRemoteDropFolderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaFtpDropFolderBaseFilter extends KalturaRemoteDropFolderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaSshDropFolderBaseFilter extends KalturaRemoteDropFolderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSshDropFolderFilter extends KalturaSshDropFolderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaScpDropFolderBaseFilter extends KalturaSshDropFolderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaSftpDropFolderBaseFilter extends KalturaSshDropFolderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFtpDropFolderFilter extends KalturaFtpDropFolderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaScpDropFolderFilter extends KalturaScpDropFolderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSftpDropFolderFilter extends KalturaSftpDropFolderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileResource extends KalturaDataCenterContentResource
 {
     /**
@@ -913,9 +1048,12 @@ class KalturaDropFolderFileResource extends KalturaDataCenterContentResource
      */
     public $dropFolderFileId = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderContentFileHandlerConfig extends KalturaDropFolderFileHandlerConfig
 {
     /**
@@ -936,14 +1074,21 @@ class KalturaDropFolderContentFileHandlerConfig extends KalturaDropFolderFileHan
      */
     public $slugRegex = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaRemoteDropFolder extends KalturaDropFolder
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaFtpDropFolder extends KalturaRemoteDropFolder
 {
     /**
@@ -974,9 +1119,12 @@ class KalturaFtpDropFolder extends KalturaRemoteDropFolder
      */
     public $password = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaSshDropFolder extends KalturaRemoteDropFolder
 {
     /**
@@ -1028,20 +1176,30 @@ abstract class KalturaSshDropFolder extends KalturaRemoteDropFolder
      */
     public $passPhrase = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaScpDropFolder extends KalturaSshDropFolder
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSftpDropFolder extends KalturaSshDropFolder
 {
 
 }
 
-
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -1119,6 +1277,10 @@ class KalturaDropFolderService extends KalturaServiceBase
     }
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderFileService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -1208,6 +1370,11 @@ class KalturaDropFolderFileService extends KalturaServiceBase
         return $resultobject;
     }
 }
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDropFolderClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -1262,4 +1429,3 @@ class KalturaDropFolderClientPlugin extends KalturaClientPlugin
         return 'dropFolder';
     }
 }
-

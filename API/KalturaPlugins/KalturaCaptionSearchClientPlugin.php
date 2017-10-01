@@ -27,7 +27,17 @@ require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaCaptionClientPlugin.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetItemFilter extends KalturaCaptionAssetFilter
 {
     /**
@@ -128,9 +138,12 @@ class KalturaCaptionAssetItemFilter extends KalturaCaptionAssetFilter
      */
     public $endTimeLessThanOrEqual = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetItem extends KalturaObjectBase
 {
     /**
@@ -170,9 +183,12 @@ class KalturaCaptionAssetItem extends KalturaObjectBase
      */
     public $content = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetItemListResponse extends KalturaObjectBase
 {
     /**
@@ -191,10 +207,12 @@ class KalturaCaptionAssetItemListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
-
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetItemService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -220,6 +238,11 @@ class KalturaCaptionAssetItemService extends KalturaServiceBase
         return $resultobject;
     }
 }
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -267,4 +290,3 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
         return 'captionSearch';
     }
 }
-

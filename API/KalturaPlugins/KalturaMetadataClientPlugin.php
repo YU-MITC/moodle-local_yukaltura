@@ -26,7 +26,17 @@
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataObjectType
 {
     const ENTRY = "1";
@@ -35,6 +45,10 @@ class KalturaMetadataObjectType
     const CODE_CUE_POINT = "codeCuePointMetadata.CodeCuePoint";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataOrderBy
 {
     const METADATA_PROFILE_VERSION_ASC = "+metadataProfileVersion";
@@ -47,12 +61,20 @@ class KalturaMetadataOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfileCreateMode
 {
     const API = 1;
     const KMC = 2;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfileOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -61,6 +83,10 @@ class KalturaMetadataProfileOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfileStatus
 {
     const ACTIVE = 1;
@@ -68,6 +94,10 @@ class KalturaMetadataProfileStatus
     const TRANSFORMING = 3;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataStatus
 {
     const VALID = 1;
@@ -75,6 +105,10 @@ class KalturaMetadataStatus
     const DELETED = 3;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaMetadataBaseFilter extends KalturaFilter
 {
     /**
@@ -196,14 +230,21 @@ abstract class KalturaMetadataBaseFilter extends KalturaFilter
      */
     public $statusIn = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataFilter extends KalturaMetadataBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadata extends KalturaObjectBase
 {
     /**
@@ -294,9 +335,12 @@ class KalturaMetadata extends KalturaObjectBase
      */
     public $xml = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataListResponse extends KalturaObjectBase
 {
     /**
@@ -315,9 +359,12 @@ class KalturaMetadataListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaMetadataProfileBaseFilter extends KalturaFilter
 {
     /**
@@ -411,14 +458,21 @@ abstract class KalturaMetadataProfileBaseFilter extends KalturaFilter
      */
     public $statusIn = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfileFilter extends KalturaMetadataProfileBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfile extends KalturaObjectBase
 {
     /**
@@ -520,9 +574,12 @@ class KalturaMetadataProfile extends KalturaObjectBase
      */
     public $createMode = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfileListResponse extends KalturaObjectBase
 {
     /**
@@ -541,9 +598,12 @@ class KalturaMetadataProfileListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfileField extends KalturaObjectBase
 {
     /**
@@ -578,9 +638,12 @@ class KalturaMetadataProfileField extends KalturaObjectBase
      */
     public $label = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfileFieldListResponse extends KalturaObjectBase
 {
     /**
@@ -599,9 +662,12 @@ class KalturaMetadataProfileFieldListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataSearchItem extends KalturaSearchOperator
 {
     /**
@@ -618,10 +684,12 @@ class KalturaMetadataSearchItem extends KalturaSearchOperator
      */
     public $orderBy = null;
 
-
 }
 
-
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -788,6 +856,10 @@ class KalturaMetadataService extends KalturaServiceBase
     }
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataProfileService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -959,6 +1031,11 @@ class KalturaMetadataProfileService extends KalturaServiceBase
         return $resultobject;
     }
 }
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaMetadataClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -1013,4 +1090,3 @@ class KalturaMetadataClientPlugin extends KalturaClientPlugin
         return 'metadata';
     }
 }
-

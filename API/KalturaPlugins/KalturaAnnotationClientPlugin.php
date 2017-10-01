@@ -27,7 +27,17 @@ require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaCuePointClientPlugin.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAnnotationOrderBy
 {
     const END_TIME_ASC = "+endTime";
@@ -44,6 +54,10 @@ class KalturaAnnotationOrderBy
     const PARTNER_SORT_VALUE_DESC = "-partnerSortValue";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAnnotation extends KalturaCuePoint
 {
     /**
@@ -76,9 +90,12 @@ class KalturaAnnotation extends KalturaCuePoint
      */
     public $duration = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaAnnotationBaseFilter extends KalturaCuePointFilter
 {
     /**
@@ -144,14 +161,21 @@ abstract class KalturaAnnotationBaseFilter extends KalturaCuePointFilter
      */
     public $durationLessThanOrEqual = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAnnotationFilter extends KalturaAnnotationBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAnnotationListResponse extends KalturaObjectBase
 {
     /**
@@ -170,10 +194,12 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
-
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAnnotationService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -290,6 +316,11 @@ class KalturaAnnotationService extends KalturaServiceBase
         return $resultobject;
     }
 }
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAnnotationClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -337,4 +368,3 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
         return 'annotation';
     }
 }
-

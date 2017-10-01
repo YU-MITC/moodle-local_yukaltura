@@ -27,7 +27,17 @@ require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaHuluDistributionProfileOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -36,30 +46,54 @@ class KalturaHuluDistributionProfileOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaHuluDistributionProviderOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaHuluDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaHuluDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaHuluDistributionProfileFilter extends KalturaHuluDistributionProfileBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaHuluDistributionProviderFilter extends KalturaHuluDistributionProviderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
@@ -132,14 +166,21 @@ class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProf
      */
     public $videoMediaType = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaHuluDistributionProvider extends KalturaDistributionProvider
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -180,4 +221,3 @@ class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
         return 'huluDistribution';
     }
 }
-

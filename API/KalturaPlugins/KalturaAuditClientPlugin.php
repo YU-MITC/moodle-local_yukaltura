@@ -26,7 +26,17 @@
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailAction
 {
     const CREATED = "CREATED";
@@ -40,6 +50,10 @@ class KalturaAuditTrailAction
     const RELATION_REMOVED = "RELATION_REMOVED";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailContext
 {
     const CLIENT = -1;
@@ -48,6 +62,10 @@ class KalturaAuditTrailContext
     const API_V3 = 2;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailFileSyncType
 {
     const FILE = 1;
@@ -55,6 +73,10 @@ class KalturaAuditTrailFileSyncType
     const URL = 3;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailObjectType
 {
     const ACCESS_CONTROL = "accessControl";
@@ -90,6 +112,10 @@ class KalturaAuditTrailObjectType
     const PERMISSION = "Permission";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -98,6 +124,10 @@ class KalturaAuditTrailOrderBy
     const PARSED_AT_DESC = "-parsedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailStatus
 {
     const PENDING = 1;
@@ -105,11 +135,19 @@ class KalturaAuditTrailStatus
     const FAILED = 3;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaAuditTrailInfo extends KalturaObjectBase
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrail extends KalturaObjectBase
 {
     /**
@@ -294,9 +332,12 @@ class KalturaAuditTrail extends KalturaObjectBase
      */
     public $errorDescription = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaAuditTrailBaseFilter extends KalturaFilter
 {
     /**
@@ -558,14 +599,21 @@ abstract class KalturaAuditTrailBaseFilter extends KalturaFilter
      */
     public $clientTagEqual = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailFilter extends KalturaAuditTrailBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailListResponse extends KalturaObjectBase
 {
     /**
@@ -584,9 +632,12 @@ class KalturaAuditTrailListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailChangeItem extends KalturaObjectBase
 {
     /**
@@ -610,9 +661,12 @@ class KalturaAuditTrailChangeItem extends KalturaObjectBase
      */
     public $newValue = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailChangeInfo extends KalturaAuditTrailInfo
 {
     /**
@@ -622,9 +676,12 @@ class KalturaAuditTrailChangeInfo extends KalturaAuditTrailInfo
      */
     public $changedItems;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo
 {
     /**
@@ -662,9 +719,12 @@ class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo
      */
     public $fileType = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo
 {
     /**
@@ -674,10 +734,12 @@ class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo
      */
     public $info = null;
 
-
 }
 
-
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditTrailService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -727,6 +789,11 @@ class KalturaAuditTrailService extends KalturaServiceBase
         return $resultobject;
     }
 }
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaAuditClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -774,4 +841,3 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
         return 'audit';
     }
 }
-

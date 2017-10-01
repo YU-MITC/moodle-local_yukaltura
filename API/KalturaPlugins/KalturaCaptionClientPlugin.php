@@ -26,7 +26,17 @@
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetOrderBy
 {
     const SIZE_ASC = "+size";
@@ -39,6 +49,10 @@ class KalturaCaptionAssetOrderBy
     const DELETED_AT_DESC = "-deletedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetStatus
 {
     const ERROR = -1;
@@ -48,16 +62,28 @@ class KalturaCaptionAssetStatus
     const IMPORTING = 7;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionParamsOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionType
 {
     const SRT = "1";
     const DFXP = "2";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAsset extends KalturaAsset
 {
     /**
@@ -120,9 +146,12 @@ class KalturaCaptionAsset extends KalturaAsset
      */
     public $status = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetListResponse extends KalturaObjectBase
 {
     /**
@@ -141,9 +170,12 @@ class KalturaCaptionAssetListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionParams extends KalturaAssetParams
 {
     /**
@@ -187,9 +219,12 @@ class KalturaCaptionParams extends KalturaAssetParams
      */
     public $sourceParamsId = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaCaptionParamsBaseFilter extends KalturaAssetParamsFilter
 {
     /**
@@ -206,14 +241,21 @@ abstract class KalturaCaptionParamsBaseFilter extends KalturaAssetParamsFilter
      */
     public $formatIn = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionParamsFilter extends KalturaCaptionParamsBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionParamsListResponse extends KalturaObjectBase
 {
     /**
@@ -232,9 +274,12 @@ class KalturaCaptionParamsListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaCaptionAssetBaseFilter extends KalturaAssetFilter
 {
     /**
@@ -272,15 +317,21 @@ abstract class KalturaCaptionAssetBaseFilter extends KalturaAssetFilter
      */
     public $statusNotIn = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetFilter extends KalturaCaptionAssetBaseFilter
 {
 
 }
 
-
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionAssetService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -432,6 +483,10 @@ class KalturaCaptionAssetService extends KalturaServiceBase
     }
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionParamsService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -508,6 +563,11 @@ class KalturaCaptionParamsService extends KalturaServiceBase
         return $resultobject;
     }
 }
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCaptionClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -562,4 +622,3 @@ class KalturaCaptionClientPlugin extends KalturaClientPlugin
         return 'caption';
     }
 }
-

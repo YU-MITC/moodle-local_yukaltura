@@ -27,7 +27,17 @@ require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDoubleClickDistributionProfileOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -36,30 +46,54 @@ class KalturaDoubleClickDistributionProfileOrderBy
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDoubleClickDistributionProviderOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaDoubleClickDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaDoubleClickDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDoubleClickDistributionProfileFilter extends KalturaDoubleClickDistributionProfileBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDoubleClickDistributionProviderFilter extends KalturaDoubleClickDistributionProviderBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDoubleClickDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
@@ -105,15 +139,21 @@ class KalturaDoubleClickDistributionProfile extends KalturaConfigurableDistribut
      */
     public $itemsPerPage = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDoubleClickDistributionProvider extends KalturaDistributionProvider
 {
 
 }
 
-
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDoubleClickService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -133,6 +173,11 @@ class KalturaDoubleClickService extends KalturaServiceBase
         return $resultobject;
     }
 }
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -180,4 +225,3 @@ class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin
         return 'doubleClickDistribution';
     }
 }
-

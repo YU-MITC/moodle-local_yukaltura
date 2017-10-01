@@ -23,6 +23,13 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/config.php');
+
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
 /**
  * @package Kaltura
  * @subpackage Client

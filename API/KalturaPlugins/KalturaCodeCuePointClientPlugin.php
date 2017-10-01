@@ -27,7 +27,17 @@ require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaCuePointClientPlugin.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCodeCuePointOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
@@ -40,6 +50,10 @@ class KalturaCodeCuePointOrderBy
     const PARTNER_SORT_VALUE_DESC = "-partnerSortValue";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaCodeCuePointBaseFilter extends KalturaCuePointFilter
 {
     /**
@@ -98,14 +112,21 @@ abstract class KalturaCodeCuePointBaseFilter extends KalturaCuePointFilter
      */
     public $descriptionMultiLikeAnd = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCodeCuePointFilter extends KalturaCodeCuePointBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCodeCuePoint extends KalturaCuePoint
 {
     /**
@@ -122,9 +143,12 @@ class KalturaCodeCuePoint extends KalturaCuePoint
      */
     public $description = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaCodeCuePointClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -165,4 +189,3 @@ class KalturaCodeCuePointClientPlugin extends KalturaClientPlugin
         return 'codeCuePoint';
     }
 }
-

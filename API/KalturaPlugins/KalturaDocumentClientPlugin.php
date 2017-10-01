@@ -26,7 +26,17 @@
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
+if (!defined('MOODLE_INTERNAL')) {
+    // It must be included from a Moodle page.
+    die('Direct access to this script is forbidden.');
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentEntryOrderBy
 {
     const NAME_ASC = "+name";
@@ -47,14 +57,26 @@ class KalturaDocumentEntryOrderBy
     const PARTNER_SORT_VALUE_DESC = "-partnerSortValue";
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentFlavorParamsOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentFlavorParamsOutputOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentType
 {
     const DOCUMENT = 11;
@@ -62,22 +84,42 @@ class KalturaDocumentType
     const PDF = 13;
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaPdfFlavorParamsOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaPdfFlavorParamsOutputOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSwfFlavorParamsOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSwfFlavorParamsOutputOrderBy
 {
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentEntry extends KalturaBaseEntry
 {
     /**
@@ -97,9 +139,12 @@ class KalturaDocumentEntry extends KalturaBaseEntry
      */
     public $assetParamsIds = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaDocumentEntryBaseFilter extends KalturaBaseEntryFilter
 {
     /**
@@ -130,14 +175,21 @@ abstract class KalturaDocumentEntryBaseFilter extends KalturaBaseEntryFilter
      */
     public $assetParamsIdsMatchAnd = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentEntryFilter extends KalturaDocumentEntryBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentListResponse extends KalturaObjectBase
 {
     /**
@@ -156,79 +208,138 @@ class KalturaDocumentListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaDocumentFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaDocumentFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaPdfFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaPdfFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaSwfFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 abstract class KalturaSwfFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentFlavorParamsFilter extends KalturaDocumentFlavorParamsBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentFlavorParamsOutputFilter extends KalturaDocumentFlavorParamsOutputBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaPdfFlavorParamsFilter extends KalturaPdfFlavorParamsBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaPdfFlavorParamsOutputFilter extends KalturaPdfFlavorParamsOutputBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSwfFlavorParamsFilter extends KalturaSwfFlavorParamsBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSwfFlavorParamsOutputFilter extends KalturaSwfFlavorParamsOutputBaseFilter
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentFlavorParamsOutput extends KalturaFlavorParamsOutput
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentFlavorParams extends KalturaFlavorParams
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaPdfFlavorParamsOutput extends KalturaFlavorParamsOutput
 {
     /**
@@ -238,9 +349,12 @@ class KalturaPdfFlavorParamsOutput extends KalturaFlavorParamsOutput
      */
     public $readonly = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaPdfFlavorParams extends KalturaFlavorParams
 {
     /**
@@ -250,20 +364,30 @@ class KalturaPdfFlavorParams extends KalturaFlavorParams
      */
     public $readonly = null;
 
-
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSwfFlavorParamsOutput extends KalturaFlavorParamsOutput
 {
 
 }
 
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaSwfFlavorParams extends KalturaFlavorParams
 {
 
 }
 
-
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentsService extends KalturaServiceBase
 {
     function __construct(KalturaClient $client = null)
@@ -441,6 +565,11 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 }
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
 class KalturaDocumentClientPlugin extends KalturaClientPlugin
 {
     /**
@@ -488,4 +617,3 @@ class KalturaDocumentClientPlugin extends KalturaClientPlugin
         return 'document';
     }
 }
-
