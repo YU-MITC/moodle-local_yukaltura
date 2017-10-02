@@ -274,7 +274,7 @@ class KalturaBaseSyndicationFeedOrderBy
     const CREATED_AT_DESC = "-createdAt";
 }
 
-//**
+/**
  * Kaltura Batch Job Error Types class
  *
  * @package   local_yukaltura
