@@ -17,11 +17,11 @@
  * YU Kaltura local libraries script
  *
  * @package    local_yukaltura
+ * @copyright  (C) 2014 Kaltura Inc.
  * @copyright  (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/*global $:false unsed:false undef:false jQuery:true */
 /* global $ */
 
 M.local_yukaltura = {};
@@ -79,8 +79,6 @@ M.local_yukaltura.get_thumbnail_url = function(entry_id) {
 
 /**
  * Perform course searching with auto-complete
- * @param none
- * @return nothing
  */
 M.local_yukaltura.search_course = function() {
 

@@ -80,8 +80,12 @@ class KalturaApiActionPermissionItemOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Parameter Permission Item Action class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaApiParameterPermissionItemAction
 {
@@ -92,8 +96,12 @@ class KalturaApiParameterPermissionItemAction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Parameter Permission Item OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaApiParameterPermissionItemOrderBy
 {
@@ -106,8 +114,12 @@ class KalturaApiParameterPermissionItemOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetOrderBy
 {
@@ -122,8 +134,12 @@ class KalturaAssetOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetParamsOrderBy
 {
@@ -141,16 +157,24 @@ class KalturaAssetParamsOrigin
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params Output OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetParamsOutputOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetStatus
 {
@@ -162,8 +186,12 @@ class KalturaAssetStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audio Codec class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAudioCodec
 {
@@ -177,8 +205,12 @@ class KalturaAudioCodec
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Entry OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseEntryOrderBy
 {
@@ -201,8 +233,12 @@ class KalturaBaseEntryOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Job Order By class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseJobOrderBy
 {
@@ -219,8 +255,12 @@ class KalturaBaseJobOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Syndication Feed OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseSyndicationFeedOrderBy
 {
@@ -234,9 +274,13 @@ class KalturaBaseSyndicationFeedOrderBy
     const CREATED_AT_DESC = "-createdAt";
 }
 
-/**
- * @package Kaltura
- * @subpackage Client
+//**
+ * Kaltura Batch Job Error Types class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBatchJobErrorTypes
 {
@@ -249,8 +293,12 @@ class KalturaBatchJobErrorTypes
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Batch Job OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBatchJobOrderBy
 {
@@ -283,8 +331,12 @@ class KalturaBatchJobOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Batch Job Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBatchJobStatus
 {
@@ -303,8 +355,12 @@ class KalturaBatchJobStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Batch Job Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBatchJobType
 {
@@ -351,8 +407,12 @@ class KalturaBatchJobType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Bulk Upload Action class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBulkUploadAction
 {
@@ -362,8 +422,12 @@ class KalturaBulkUploadAction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Bulk Upload Result Object Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBulkUploadResultObjectType
 {
@@ -371,8 +435,12 @@ class KalturaBulkUploadResultObjectType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Bulk Upload Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBulkUploadType
 {
@@ -382,8 +450,12 @@ class KalturaBulkUploadType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Category OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCategoryOrderBy
 {
@@ -396,8 +468,12 @@ class KalturaCategoryOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Commercial Use Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCommercialUseType
 {
@@ -406,8 +482,12 @@ class KalturaCommercialUseType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Container Format class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaContainerFormat
 {
@@ -432,8 +512,12 @@ class KalturaContainerFormat
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Control Panel Command OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaControlPanelCommandOrderBy
 {
@@ -444,8 +528,12 @@ class KalturaControlPanelCommandOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Control Panel Command Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaControlPanelCommandStatus
 {
@@ -456,8 +544,12 @@ class KalturaControlPanelCommandStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Control Panel Command Target Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaControlPanelCommandTargetType
 {
@@ -469,8 +561,12 @@ class KalturaControlPanelCommandTargetType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Control Panel Command Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaControlPanelCommandType
 {
@@ -481,16 +577,24 @@ class KalturaControlPanelCommandType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile Asset Params OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileAssetParamsOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileOrderBy
 {
@@ -499,8 +603,12 @@ class KalturaConversionProfileOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileStatus
 {
@@ -510,8 +618,12 @@ class KalturaConversionProfileStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Country Restriction Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCountryRestrictionType
 {
@@ -520,8 +632,12 @@ class KalturaCountryRestrictionType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Data Entry OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDataEntryOrderBy
 {
@@ -544,8 +660,12 @@ class KalturaDataEntryOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Directory Restriction Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDirectoryRestrictionType
 {
@@ -554,8 +674,12 @@ class KalturaDirectoryRestrictionType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Duration Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDurationType
 {
@@ -566,8 +690,12 @@ class KalturaDurationType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Editor Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEditorType
 {
@@ -576,8 +704,12 @@ class KalturaEditorType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Email Ingestion Profile Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEmailIngestionProfileStatus
 {
@@ -586,8 +718,12 @@ class KalturaEmailIngestionProfileStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Entry Moderation Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryModerationStatus
 {
@@ -599,8 +735,12 @@ class KalturaEntryModerationStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Entry Replacement Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryReplacementStatus
 {
@@ -611,8 +751,12 @@ class KalturaEntryReplacementStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Entry Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryStatus
 {
@@ -630,8 +774,12 @@ class KalturaEntryStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Entry Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryType
 {
@@ -645,8 +793,12 @@ class KalturaEntryType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura File Syndication Object Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFileSyncObjectType
 {
@@ -665,8 +817,12 @@ class KalturaFileSyncObjectType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Asset OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorAssetOrderBy
 {
@@ -681,8 +837,12 @@ class KalturaFlavorAssetOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Asset Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorAssetStatus
 {
@@ -699,24 +859,36 @@ class KalturaFlavorAssetStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParamsOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params Output OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParamsOutputOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Ready Behavior Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorReadyBehaviorType
 {
@@ -726,8 +898,12 @@ class KalturaFlavorReadyBehaviorType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Gender class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGender
 {
@@ -737,8 +913,12 @@ class KalturaGender
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Generic Syndication Feed OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericSyndicationFeedOrderBy
 {
@@ -753,8 +933,12 @@ class KalturaGenericSyndicationFeedOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Generic Xslt Syndication Feed OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericXsltSyndicationFeedOrderBy
 {
@@ -769,8 +953,12 @@ class KalturaGenericXsltSyndicationFeedOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Google Syndication Feed Adult Values class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGoogleSyndicationFeedAdultValues
 {
@@ -779,8 +967,12 @@ class KalturaGoogleSyndicationFeedAdultValues
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Google Video Syndication Feed OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGoogleVideoSyndicationFeedOrderBy
 {
@@ -795,8 +987,12 @@ class KalturaGoogleVideoSyndicationFeedOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura iTunes Syndication Feed Adult Values class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaITunesSyndicationFeedAdultValues
 {
@@ -806,8 +1002,12 @@ class KalturaITunesSyndicationFeedAdultValues
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura iTunes Syndication Feed Categories class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaITunesSyndicationFeedCategories
 {
@@ -881,8 +1081,12 @@ class KalturaITunesSyndicationFeedCategories
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura iTunes Syndication Feed OrderBy  class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaITunesSyndicationFeedOrderBy
 {
@@ -897,8 +1101,12 @@ class KalturaITunesSyndicationFeedOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura IP Address Restriction class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaIpAddressRestrictionType
 {
@@ -907,8 +1115,12 @@ class KalturaIpAddressRestrictionType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Language class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLanguage
 {
@@ -1058,8 +1270,12 @@ class KalturaLanguage
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Language Code class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLanguageCode
 {
@@ -1209,8 +1425,12 @@ class KalturaLanguageCode
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura License Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLicenseType
 {
@@ -1234,8 +1454,12 @@ class KalturaLicenseType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream Administration Entry OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamAdminEntryOrderBy
 {
@@ -1268,8 +1492,12 @@ class KalturaLiveStreamAdminEntryOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Streaming Entry OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamEntryOrderBy
 {
@@ -1302,8 +1530,12 @@ class KalturaLiveStreamEntryOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Mail Job OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMailJobOrderBy
 {
@@ -1320,8 +1552,12 @@ class KalturaMailJobOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Entry OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaEntryOrderBy
 {
@@ -1354,32 +1590,48 @@ class KalturaMediaEntryOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Flavor Params OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaFlavorParamsOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Flavor Params Output OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaFlavorParamsOutputOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Information OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaInfoOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaType
 {
@@ -1393,8 +1645,12 @@ class KalturaMediaType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Mix Entry OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMixEntryOrderBy
 {
@@ -1425,8 +1681,12 @@ class KalturaMixEntryOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Moderation Flag Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaModerationFlagStatus
 {
@@ -1435,8 +1695,12 @@ class KalturaModerationFlagStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Moderation Flag Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaModerationFlagType
 {
@@ -1447,8 +1711,12 @@ class KalturaModerationFlagType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Moderation Object Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaModerationObjectType
 {
@@ -1457,8 +1725,12 @@ class KalturaModerationObjectType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Notification OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaNotificationOrderBy
 {
@@ -1475,8 +1747,12 @@ class KalturaNotificationOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Notification Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaNotificationType
 {
@@ -1492,8 +1768,12 @@ class KalturaNotificationType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Nullable Boolean class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaNullableBoolean
 {
@@ -1503,8 +1783,12 @@ class KalturaNullableBoolean
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Partner OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPartnerOrderBy
 {
@@ -1525,8 +1809,12 @@ class KalturaPartnerOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Partner Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPartnerStatus
 {
@@ -1536,8 +1824,12 @@ class KalturaPartnerStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Partner Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPartnerType
 {
@@ -1554,8 +1846,12 @@ class KalturaPartnerType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Item OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionItemOrderBy
 {
@@ -1568,8 +1864,12 @@ class KalturaPermissionItemOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Item Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionItemType
 {
@@ -1578,8 +1878,12 @@ class KalturaPermissionItemType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionOrderBy
 {
@@ -1594,8 +1898,12 @@ class KalturaPermissionOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionStatus
 {
@@ -1605,8 +1913,12 @@ class KalturaPermissionStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionType
 {
@@ -1617,8 +1929,12 @@ class KalturaPermissionType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playable Entry OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlayableEntryOrderBy
 {
@@ -1649,8 +1965,12 @@ class KalturaPlayableEntryOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playlist OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlaylistOrderBy
 {
@@ -1673,8 +1993,12 @@ class KalturaPlaylistOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playlist Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlaylistType
 {
@@ -1684,8 +2008,12 @@ class KalturaPlaylistType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Report Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaReportType
 {
@@ -1700,8 +2028,12 @@ class KalturaReportType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Schema Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSchemaType
 {
@@ -1714,8 +2046,12 @@ class KalturaSchemaType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Condition Comparison class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchConditionComparison
 {
@@ -1727,8 +2063,12 @@ class KalturaSearchConditionComparison
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Operator Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchOperatorType
 {
@@ -1737,8 +2077,12 @@ class KalturaSearchOperatorType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Provider Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchProviderType
 {
@@ -1761,8 +2105,12 @@ class KalturaSearchProviderType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Session Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSessionType
 {
@@ -1771,8 +2119,12 @@ class KalturaSessionType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Site Restriction Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSiteRestrictionType
 {
@@ -1781,8 +2133,12 @@ class KalturaSiteRestrictionType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Source Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSourceType
 {
@@ -1794,8 +2150,12 @@ class KalturaSourceType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Stats Event Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStatsEventType
 {
@@ -1842,8 +2202,12 @@ class KalturaStatsEventType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Stats Kmc Event Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStatsKmcEventType
 {
@@ -1914,8 +2278,12 @@ class KalturaStatsKmcEventType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Storage Profile Delivery Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStorageProfileDeliveryStatus
 {
@@ -1924,8 +2292,12 @@ class KalturaStorageProfileDeliveryStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Storage Profile OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStorageProfileOrderBy
 {
@@ -1936,8 +2308,12 @@ class KalturaStorageProfileOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Storage Profile Protocol class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStorageProfileProtocol
 {
@@ -1949,8 +2325,12 @@ class KalturaStorageProfileProtocol
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Storage Profile Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStorageProfileStatus
 {
@@ -1960,8 +2340,12 @@ class KalturaStorageProfileStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Syndication Feed Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationFeedStatus
 {
@@ -1970,8 +2354,12 @@ class KalturaSyndicationFeedStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Syndication Feed Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationFeedType
 {
@@ -1984,8 +2372,12 @@ class KalturaSyndicationFeedType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura ThumbAsset OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbAssetOrderBy
 {
@@ -2000,8 +2392,12 @@ class KalturaThumbAssetOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura ThumbAsset Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbAssetStatus
 {
@@ -2013,8 +2409,12 @@ class KalturaThumbAssetStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura ThumbCrop class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbCropType
 {
@@ -2025,24 +2425,36 @@ class KalturaThumbCropType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura TnumbParams OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParamsOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura ThumbParams Output OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParamsOutputOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura TubeMogul Syndication Feed Categories class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaTubeMogulSyndicationFeedCategories
 {
@@ -2064,8 +2476,12 @@ class KalturaTubeMogulSyndicationFeedCategories
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura TubeMogul Syndication Feer OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaTubeMogulSyndicationFeedOrderBy
 {
@@ -2080,8 +2496,12 @@ class KalturaTubeMogulSyndicationFeedOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura UiConf Creation Mode class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUiConfCreationMode
 {
@@ -2090,8 +2510,12 @@ class KalturaUiConfCreationMode
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura UiConf Object Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUiConfObjType
 {
@@ -2116,8 +2540,12 @@ class KalturaUiConfObjType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura UiConf OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUiConfOrderBy
 {
@@ -2128,8 +2556,12 @@ class KalturaUiConfOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Upload Error Code class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadErrorCode
 {
@@ -2139,8 +2571,12 @@ class KalturaUploadErrorCode
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Upload Token OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadTokenOrderBy
 {
@@ -2149,8 +2585,12 @@ class KalturaUploadTokenOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Upload Token Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadTokenStatus
 {
@@ -2163,8 +2603,12 @@ class KalturaUploadTokenStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Agent Restriction Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserAgentRestrictionType
 {
@@ -2173,16 +2617,24 @@ class KalturaUserAgentRestrictionType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Login Data OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserLoginDataOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserOrderBy
 {
@@ -2193,8 +2645,12 @@ class KalturaUserOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Role OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserRoleOrderBy
 {
@@ -2209,8 +2665,12 @@ class KalturaUserRoleOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Role Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserRoleStatus
 {
@@ -2220,8 +2680,12 @@ class KalturaUserRoleStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserStatus
 {
@@ -2231,8 +2695,12 @@ class KalturaUserStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltur Video Codec class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaVideoCodec
 {
@@ -2255,8 +2723,12 @@ class KalturaVideoCodec
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Widget OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaWidgetOrderBy
 {
@@ -2265,8 +2737,12 @@ class KalturaWidgetOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Widget Security Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaWidgetSecurityType
 {
@@ -2275,8 +2751,12 @@ class KalturaWidgetSecurityType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Yahoo Syndication Freed Adult Values class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYahooSyndicationFeedAdultValues
 {
@@ -2285,8 +2765,12 @@ class KalturaYahooSyndicationFeedAdultValues
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Yahoo Syndication Freed Categories class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYahooSyndicationFeedCategories
 {
@@ -2313,8 +2797,12 @@ class KalturaYahooSyndicationFeedCategories
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Yahoo Syndication Feed OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYahooSyndicationFeedOrderBy
 {

@@ -162,7 +162,7 @@ if ($hassiteconfig) {
                     }
                 }
             }
-        } else if ($ipaddress != null && 0 != strcmp($ipaddress, $ipaddressprevious)) {
+        } else if ($ipaddress != null && 0 != strcmp($ipaddress, $ipaddressprevious) && 0 != strcmp($ipaddress, '0.0.0.0/0')) {
             $control = local_yukaltura_get_internal_access_control($connection);
 
             if (is_null($control)) {
@@ -421,6 +421,5 @@ if ($hassiteconfig) {
         );
 
     $testscript = $CFG->wwwroot . '/local/yukaltura/test.php';
-    // $PAGE->requires->js_init_call('M.local_yukaltura.init_config', array($testscript), true, $jsmodule);
-    $PAGE->requires->yui_module('moodle-local_yukaltura-settings', 'M.local_yukaltura.init_config', array($testscript));
+    $PAGE->requires->js_init_call('M.local_yukaltura.init_config', array($testscript), true, $jsmodule);
 }
