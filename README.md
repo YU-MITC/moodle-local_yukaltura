@@ -43,5 +43,6 @@ First clone the repository with "git clone", then "git checkout MOODLE_29_STABLE
 Warning
 ------
 
-We are not responsible for any problem caused by this software. 
-This software follows the license policy of Moodle (GNU GPL v3).
+* We are not responsible for any problem caused by this software. 
+* This software follows the license policy of Moodle (GNU GPL v3).
+* "Kaltura" is the registered trademark of the Kaltura Inc.

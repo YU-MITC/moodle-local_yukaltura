@@ -421,6 +421,6 @@ if ($hassiteconfig) {
         );
 
     $testscript = $CFG->wwwroot . '/local/yukaltura/test.php';
-    $PAGE->requires->js_init_call('M.local_yukaltura.init_config', array($testscript), true, $jsmodule);
-
+    // $PAGE->requires->js_init_call('M.local_yukaltura.init_config', array($testscript), true, $jsmodule);
+    $PAGE->requires->yui_module('moodle-local_yukaltura', 'M.local_yukaltura.init_config', array($testscript), true, $jsmodule);
 }
