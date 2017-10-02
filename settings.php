@@ -72,12 +72,12 @@ if ($hassiteconfig) {
     $initialized = false;
 
     // Check to see if the username, password or uri has changed.
-    $login              = get_config(KALTURA_PLUGIN_NAME, 'login');
-    $loginprevious     = get_config(KALTURA_PLUGIN_NAME, 'login_previous');
-    $password           = get_config(KALTURA_PLUGIN_NAME, 'password');
-    $passwordprevious  = get_config(KALTURA_PLUGIN_NAME, 'password_previous');
-    $uri                = get_config(KALTURA_PLUGIN_NAME, 'uri');
-    $uriprevious       = get_config(KALTURA_PLUGIN_NAME, 'uri_previous');
+    $login = get_config(KALTURA_PLUGIN_NAME, 'login');
+    $loginprevious = get_config(KALTURA_PLUGIN_NAME, 'login_previous');
+    $password = get_config(KALTURA_PLUGIN_NAME, 'password');
+    $passwordprevious = get_config(KALTURA_PLUGIN_NAME, 'password_previous');
+    $uri = get_config(KALTURA_PLUGIN_NAME, 'uri');
+    $uriprevious = get_config(KALTURA_PLUGIN_NAME, 'uri_previous');
 
     // Check if a new URI has been entered.
     $newuri = ( ($uri && !$uriprevious) || (0 != strcmp($uri, $uriprevious)) ) ? true : false;
@@ -422,5 +422,5 @@ if ($hassiteconfig) {
 
     $testscript = $CFG->wwwroot . '/local/yukaltura/test.php';
     // $PAGE->requires->js_init_call('M.local_yukaltura.init_config', array($testscript), true, $jsmodule);
-    $PAGE->requires->yui_module('moodle-local_yukaltura', 'M.local_yukaltura.init_config', array($testscript), true, $jsmodule);
+    $PAGE->requires->yui_module('moodle-local_yukaltura-settings', 'M.local_yukaltura.init_config', array($testscript));
 }
