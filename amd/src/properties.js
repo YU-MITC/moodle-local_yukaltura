@@ -51,7 +51,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
          * This function print modal window of player properties.
          * @param {string} - URL of selector page.
          */
-        fadeInPropertiesWindow: function() {
+        var fadeInPropertiesWindow = function() {
             // Avoidance of duplicatable execute.
             $(this).blur();  // Unfocous.
             if ($("#modal_window")[0]) {
@@ -87,7 +87,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
          * This function deletes modal window of player properties.
          * @access private
          */
-        fadeOutPropertiesWindow: function() {
+        var fadeOutPropertiesWindow = function() {
 
             // Restore scroll position of base window.
             window.scrollTo(modalX, modalY);
@@ -103,7 +103,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
          * This function is callback for player dimension.
          * @access public
          */
-        handlePlayerDimensionChange: function() {
+        var handlePlayerDimensionChange = function() {
             var width = document.getElementById("media_prop_width").value;
             var height = document.getElementById("media_prop_height").value;
             var regex = /^\d{2,4}$/;
@@ -121,7 +121,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
          * This function is callback for player dimension.
          * @access private
          */
-        handlePlayerSizeSelect: function() {
+        var handlePlayerSizeSelect = function() {
             var sizeSelect = document.getElementById("media_prop_size");
             var index = document.getElementById("media_prop_size").selectedIndex;
             if (index == sizeSelect.options.length - 1) {
@@ -143,7 +143,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
          * This function is callback for OK button on player properties window.
          * @acecss public
          */
-        propertiesSubmitClick: function() {
+        var propertiesSubmitClick = function() {
             var str = document.getElementById("media_prop_name").value;
 
             str = str.trim();
@@ -223,7 +223,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
          * This function describe module parameters to mod_form.
          * @access public
          */
-        loadPropertiesParameter: function() {
+        var loadPropertiesParameter = function() {
             document.getElementById("media_prop_name").value = parent.document.getElementById("media_title").value;
 
             var playerSelect = document.getElementById("media_prop_player");
@@ -269,7 +269,6 @@ require(['jquery', 'jqueryui'], function($, jqui) {
                 sizeSelect.options[0].selected = true;
             }
         }
-    };
 
     /**
      * This function centerize modal window.
