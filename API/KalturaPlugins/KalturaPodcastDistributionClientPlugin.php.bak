@@ -35,12 +35,8 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPodcastDistributionProfileOrderBy
 {
@@ -51,24 +47,16 @@ class KalturaPodcastDistributionProfileOrderBy
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPodcastDistributionProviderOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaPodcastDistributionProfileBaseFilter extends KalturaDistributionProfileFilter
 {
@@ -76,12 +64,8 @@ abstract class KalturaPodcastDistributionProfileBaseFilter extends KalturaDistri
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaPodcastDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
@@ -89,12 +73,8 @@ abstract class KalturaPodcastDistributionProviderBaseFilter extends KalturaDistr
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPodcastDistributionProfileFilter extends KalturaPodcastDistributionProfileBaseFilter
 {
@@ -102,12 +82,8 @@ class KalturaPodcastDistributionProfileFilter extends KalturaPodcastDistribution
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPodcastDistributionProviderFilter extends KalturaPodcastDistributionProviderBaseFilter
 {
@@ -115,12 +91,8 @@ class KalturaPodcastDistributionProviderFilter extends KalturaPodcastDistributio
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPodcastDistributionProfile extends KalturaDistributionProfile
 {
@@ -149,12 +121,8 @@ class KalturaPodcastDistributionProfile extends KalturaDistributionProfile
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPodcastDistributionProvider extends KalturaDistributionProvider
 {
@@ -162,12 +130,8 @@ class KalturaPodcastDistributionProvider extends KalturaDistributionProvider
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPodcastDistributionClientPlugin extends KalturaClientPlugin
 {

@@ -35,12 +35,8 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDoubleClickDistributionProfileOrderBy
 {
@@ -51,24 +47,16 @@ class KalturaDoubleClickDistributionProfileOrderBy
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDoubleClickDistributionProviderOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaDoubleClickDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
 {
@@ -76,12 +64,8 @@ abstract class KalturaDoubleClickDistributionProfileBaseFilter extends KalturaCo
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaDoubleClickDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
@@ -89,12 +73,8 @@ abstract class KalturaDoubleClickDistributionProviderBaseFilter extends KalturaD
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDoubleClickDistributionProfileFilter extends KalturaDoubleClickDistributionProfileBaseFilter
 {
@@ -102,12 +82,8 @@ class KalturaDoubleClickDistributionProfileFilter extends KalturaDoubleClickDist
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDoubleClickDistributionProviderFilter extends KalturaDoubleClickDistributionProviderBaseFilter
 {
@@ -115,12 +91,8 @@ class KalturaDoubleClickDistributionProviderFilter extends KalturaDoubleClickDis
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDoubleClickDistributionProfile extends KalturaConfigurableDistributionProfile
 {
@@ -170,12 +142,8 @@ class KalturaDoubleClickDistributionProfile extends KalturaConfigurableDistribut
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDoubleClickDistributionProvider extends KalturaDistributionProvider
 {
@@ -183,12 +151,8 @@ class KalturaDoubleClickDistributionProvider extends KalturaDistributionProvider
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDoubleClickService extends KalturaServiceBase
 {
@@ -211,12 +175,8 @@ class KalturaDoubleClickService extends KalturaServiceBase
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin
 {

@@ -34,12 +34,8 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentEntryOrderBy
 {
@@ -62,36 +58,24 @@ class KalturaDocumentEntryOrderBy
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentFlavorParamsOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentFlavorParamsOutputOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentType
 {
@@ -101,60 +85,40 @@ class KalturaDocumentType
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPdfFlavorParamsOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPdfFlavorParamsOutputOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaSwfFlavorParamsOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaSwfFlavorParamsOutputOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentEntry extends KalturaBaseEntry
 {
@@ -178,12 +142,8 @@ class KalturaDocumentEntry extends KalturaBaseEntry
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaDocumentEntryBaseFilter extends KalturaBaseEntryFilter
 {
@@ -218,12 +178,8 @@ abstract class KalturaDocumentEntryBaseFilter extends KalturaBaseEntryFilter
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentEntryFilter extends KalturaDocumentEntryBaseFilter
 {
@@ -231,12 +187,8 @@ class KalturaDocumentEntryFilter extends KalturaDocumentEntryBaseFilter
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentListResponse extends KalturaObjectBase
 {
@@ -259,12 +211,8 @@ class KalturaDocumentListResponse extends KalturaObjectBase
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaDocumentFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
 {
@@ -272,12 +220,8 @@ abstract class KalturaDocumentFlavorParamsBaseFilter extends KalturaFlavorParams
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaDocumentFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
 {
@@ -285,12 +229,8 @@ abstract class KalturaDocumentFlavorParamsOutputBaseFilter extends KalturaFlavor
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaPdfFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
 {
@@ -298,12 +238,8 @@ abstract class KalturaPdfFlavorParamsBaseFilter extends KalturaFlavorParamsFilte
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaPdfFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
 {
@@ -311,12 +247,8 @@ abstract class KalturaPdfFlavorParamsOutputBaseFilter extends KalturaFlavorParam
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaSwfFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
 {
@@ -324,12 +256,8 @@ abstract class KalturaSwfFlavorParamsBaseFilter extends KalturaFlavorParamsFilte
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaSwfFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
 {
@@ -337,12 +265,8 @@ abstract class KalturaSwfFlavorParamsOutputBaseFilter extends KalturaFlavorParam
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentFlavorParamsFilter extends KalturaDocumentFlavorParamsBaseFilter
 {
@@ -350,12 +274,8 @@ class KalturaDocumentFlavorParamsFilter extends KalturaDocumentFlavorParamsBaseF
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentFlavorParamsOutputFilter extends KalturaDocumentFlavorParamsOutputBaseFilter
 {
@@ -363,12 +283,8 @@ class KalturaDocumentFlavorParamsOutputFilter extends KalturaDocumentFlavorParam
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPdfFlavorParamsFilter extends KalturaPdfFlavorParamsBaseFilter
 {
@@ -376,12 +292,8 @@ class KalturaPdfFlavorParamsFilter extends KalturaPdfFlavorParamsBaseFilter
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPdfFlavorParamsOutputFilter extends KalturaPdfFlavorParamsOutputBaseFilter
 {
@@ -389,12 +301,8 @@ class KalturaPdfFlavorParamsOutputFilter extends KalturaPdfFlavorParamsOutputBas
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaSwfFlavorParamsFilter extends KalturaSwfFlavorParamsBaseFilter
 {
@@ -402,12 +310,8 @@ class KalturaSwfFlavorParamsFilter extends KalturaSwfFlavorParamsBaseFilter
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaSwfFlavorParamsOutputFilter extends KalturaSwfFlavorParamsOutputBaseFilter
 {
@@ -415,12 +319,8 @@ class KalturaSwfFlavorParamsOutputFilter extends KalturaSwfFlavorParamsOutputBas
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentFlavorParamsOutput extends KalturaFlavorParamsOutput
 {
@@ -428,12 +328,8 @@ class KalturaDocumentFlavorParamsOutput extends KalturaFlavorParamsOutput
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentFlavorParams extends KalturaFlavorParams
 {
@@ -441,12 +337,8 @@ class KalturaDocumentFlavorParams extends KalturaFlavorParams
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPdfFlavorParamsOutput extends KalturaFlavorParamsOutput
 {
@@ -460,12 +352,8 @@ class KalturaPdfFlavorParamsOutput extends KalturaFlavorParamsOutput
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaPdfFlavorParams extends KalturaFlavorParams
 {
@@ -479,12 +367,8 @@ class KalturaPdfFlavorParams extends KalturaFlavorParams
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaSwfFlavorParamsOutput extends KalturaFlavorParamsOutput
 {
@@ -492,12 +376,8 @@ class KalturaSwfFlavorParamsOutput extends KalturaFlavorParamsOutput
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaSwfFlavorParams extends KalturaFlavorParams
 {
@@ -505,12 +385,8 @@ class KalturaSwfFlavorParams extends KalturaFlavorParams
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentsService extends KalturaServiceBase
 {
@@ -691,12 +567,8 @@ class KalturaDocumentsService extends KalturaServiceBase
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDocumentClientPlugin extends KalturaClientPlugin
 {

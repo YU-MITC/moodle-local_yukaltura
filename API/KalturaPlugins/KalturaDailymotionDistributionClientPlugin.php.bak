@@ -35,12 +35,8 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDailymotionDistributionProfileOrderBy
 {
@@ -51,24 +47,16 @@ class KalturaDailymotionDistributionProfileOrderBy
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDailymotionDistributionProviderOrderBy
 {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaDailymotionDistributionProfileBaseFilter extends KalturaDistributionProfileFilter
 {
@@ -76,12 +64,8 @@ abstract class KalturaDailymotionDistributionProfileBaseFilter extends KalturaDi
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 abstract class KalturaDailymotionDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
@@ -89,12 +73,8 @@ abstract class KalturaDailymotionDistributionProviderBaseFilter extends KalturaD
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDailymotionDistributionProfileFilter extends KalturaDailymotionDistributionProfileBaseFilter
 {
@@ -102,12 +82,8 @@ class KalturaDailymotionDistributionProfileFilter extends KalturaDailymotionDist
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDailymotionDistributionProviderFilter extends KalturaDailymotionDistributionProviderBaseFilter
 {
@@ -115,12 +91,8 @@ class KalturaDailymotionDistributionProviderFilter extends KalturaDailymotionDis
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDailymotionDistributionProfile extends KalturaDistributionProfile
 {
@@ -148,12 +120,8 @@ class KalturaDailymotionDistributionProfile extends KalturaDistributionProfile
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDailymotionDistributionProvider extends KalturaDistributionProvider
 {
@@ -161,12 +129,8 @@ class KalturaDailymotionDistributionProvider extends KalturaDistributionProvider
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
 class KalturaDailymotionDistributionClientPlugin extends KalturaClientPlugin
 {

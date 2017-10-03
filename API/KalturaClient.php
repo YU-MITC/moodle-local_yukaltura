@@ -4311,7 +4311,7 @@ class KalturaXInternalService extends KalturaServiceBase
 class KalturaClient extends KalturaClientBase
 {
     /**
-     * @var string
+     * @var API Version
      */
     protected $apiVersion = '3.1.4';
 

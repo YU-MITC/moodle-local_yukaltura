@@ -49,10 +49,9 @@ $PAGE->requires->js('/local/yukaltura/js/encoding.js', true);
 //$PAGE->requires->js('/local/yukaltura/js/jquery-3.0.0.js', true);
 $PAGE->requires->js('/local/yukaltura/js/simple_selector.js', true);
 $PAGE->requires->css('/local/yukaltura/css/simple_selector.css', true);
-//$PAGE->requires->jquery();
-//$PAGE->requires->jquery_plugin('ui');
-//$PAGE->requires->jquery_plugin('ui-css');
-$PAGE->requires->js_call_amd('local_yukaltura/properties', 'init');
+$PAGE->requires->jquery();
+$PAGE->requires->jquery_plugin('ui');
+$PAGE->requires->jquery_plugin('ui-css');
 
 $OUTPUT->header();
 
@@ -76,9 +75,12 @@ $renderer = $PAGE->get_renderer('local_yukaltura');
 //echo '<html lang="ja">';
 //echo '<head>';
 //echo '<meta charset="UTF-8">';
+echo '<link rel="stylesheet" type="text/css" href="css/simple_selector.css">';
 //echo '<title>Simple Selector</title>';
+echo '<script src="js/simple_selector.js"></script>';
 //echo '<script src="js/jquery-1.2.6.js"></script>';
 //echo '<script src="js/jquery-3.0.0.js"></script>';
+echo '<script src="js/encoding.js"></script>';
 //echo '</head>';
 //echo '<body text="black" bgcolor="white" link="blue" alink="red" vlink="purple" onload="loadPropertiesParameter()">';
 

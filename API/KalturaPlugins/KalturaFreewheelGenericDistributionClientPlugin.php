@@ -35,8 +35,12 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFreewheelGenericDistributionProfileOrderBy
 {
@@ -47,16 +51,24 @@ class KalturaFreewheelGenericDistributionProfileOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFreewheelGenericDistributionProviderOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaFreewheelGenericDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
 {
@@ -64,8 +76,12 @@ abstract class KalturaFreewheelGenericDistributionProfileBaseFilter extends Kalt
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaFreewheelGenericDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
@@ -73,8 +89,12 @@ abstract class KalturaFreewheelGenericDistributionProviderBaseFilter extends Kal
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFreewheelGenericDistributionProfileFilter extends KalturaFreewheelGenericDistributionProfileBaseFilter
 {
@@ -82,8 +102,12 @@ class KalturaFreewheelGenericDistributionProfileFilter extends KalturaFreewheelG
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFreewheelGenericDistributionProviderFilter extends KalturaFreewheelGenericDistributionProviderBaseFilter
 {
@@ -91,8 +115,12 @@ class KalturaFreewheelGenericDistributionProviderFilter extends KalturaFreewheel
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDistributionProfile
 {
@@ -176,8 +204,12 @@ class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDist
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFreewheelGenericDistributionProvider extends KalturaDistributionProvider
 {
@@ -185,8 +217,12 @@ class KalturaFreewheelGenericDistributionProvider extends KalturaDistributionPro
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFreewheelGenericDistributionClientPlugin extends KalturaClientPlugin
 {

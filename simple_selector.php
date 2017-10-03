@@ -49,9 +49,12 @@ $PAGE->set_heading($header);
 $PAGE->add_body_class('mymedia-index');
 
 $PAGE->requires->css('/local/yukaltura/css/simple_selector.css', true);
+$PAGE->requires->jquery();
+$PAGE->requires->jquery_plugin('ui');
+$PAGE->requires->jquery_plugin('ui-css'); 
 $PAGE->requires->js('/local/yukaltura/js/simple_selector.js', true);
-$PAGE->requires->js('/local/yukaltura/js/jquery-1.2.6.js', true);
-$PAGE->requires->js('/local/yukaltura/js/jquery-3.0.0.js', true);
+//$PAGE->requires->js('/local/yukaltura/js/jquery-1.2.6.js', true);
+//$PAGE->requires->js('/local/yukaltura/js/jquery-3.0.0.js', true);
 
 // Connect to Kaltura server.
 $kaltura = new yukaltura_connection();

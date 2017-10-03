@@ -32,8 +32,12 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Restriction class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseRestriction extends KalturaObjectBase
 {
@@ -41,8 +45,12 @@ class KalturaBaseRestriction extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Access Control class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAccessControl extends KalturaObjectBase
 {
@@ -115,8 +123,12 @@ class KalturaAccessControl extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Item class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaSearchItem extends KalturaObjectBase
 {
@@ -124,8 +136,12 @@ abstract class KalturaSearchItem extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Filetr class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFilter extends KalturaObjectBase
 {
@@ -146,8 +162,12 @@ class KalturaFilter extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Acecss Control Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAccessControlBaseFilter extends KalturaFilter
 {
@@ -196,8 +216,12 @@ abstract class KalturaAccessControlBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Access Control Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAccessControlFilter extends KalturaAccessControlBaseFilter
 {
@@ -205,8 +229,12 @@ class KalturaAccessControlFilter extends KalturaAccessControlBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Filter Pager class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFilterPager extends KalturaObjectBase
 {
@@ -229,8 +257,12 @@ class KalturaFilterPager extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Access Control List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAccessControlListResponse extends KalturaObjectBase
 {
@@ -253,8 +285,12 @@ class KalturaAccessControlListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Object Base class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUser extends KalturaObjectBase
 {
@@ -510,8 +546,12 @@ class KalturaUser extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Admin User class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdminUser extends KalturaUser
 {
@@ -519,8 +559,12 @@ class KalturaAdminUser extends KalturaUser
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Dynamic Enum class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDynamicEnum extends KalturaObjectBase
 {
@@ -528,8 +572,12 @@ class KalturaDynamicEnum extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Operation Attributes class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaOperationAttributes extends KalturaObjectBase
 {
@@ -537,8 +585,12 @@ abstract class KalturaOperationAttributes extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Entry class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseEntry extends KalturaObjectBase
 {
@@ -844,8 +896,12 @@ class KalturaBaseEntry extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaResource extends KalturaObjectBase
 {
@@ -853,8 +909,12 @@ abstract class KalturaResource extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Remote Path class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaRemotePath extends KalturaObjectBase
 {
@@ -877,8 +937,12 @@ class KalturaRemotePath extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Remote Path List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaRemotePathListResponse extends KalturaObjectBase
 {
@@ -901,8 +965,12 @@ class KalturaRemotePathListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Entry Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
 {
@@ -1428,8 +1496,12 @@ abstract class KalturaBaseEntryBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Entry Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseEntryFilter extends KalturaBaseEntryBaseFilter
 {
@@ -1450,8 +1522,12 @@ class KalturaBaseEntryFilter extends KalturaBaseEntryBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Entry List Reponse class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseEntryListResponse extends KalturaObjectBase
 {
@@ -1474,8 +1550,12 @@ class KalturaBaseEntryListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Moderation Flag class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaModerationFlag extends KalturaObjectBase
 {
@@ -1566,8 +1646,12 @@ class KalturaModerationFlag extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Moderation Flag List Reponse class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaModerationFlagListResponse extends KalturaObjectBase
 {
@@ -1590,8 +1674,12 @@ class KalturaModerationFlagListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Entry Context Data Params class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryContextDataParams extends KalturaObjectBase
 {
@@ -1619,8 +1707,12 @@ class KalturaEntryContextDataParams extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Entry Context Data Result class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryContextDataResult extends KalturaObjectBase
 {
@@ -1704,8 +1796,12 @@ class KalturaEntryContextDataResult extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Bult Upload Plugin Data class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBulkUploadPluginData extends KalturaObjectBase
 {
@@ -1726,8 +1822,12 @@ class KalturaBulkUploadPluginData extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Bulk Upload Result class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBulkUploadResult extends KalturaObjectBase
 {
@@ -1935,8 +2035,12 @@ class KalturaBulkUploadResult extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Bulk Upload class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBulkUpload extends KalturaObjectBase
 {
@@ -2055,8 +2159,12 @@ class KalturaBulkUpload extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Bulk Upload List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBulkUploadListResponse extends KalturaObjectBase
 {
@@ -2079,8 +2187,12 @@ class KalturaBulkUploadListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Category class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCategory extends KalturaObjectBase
 {
@@ -2155,8 +2267,12 @@ class KalturaCategory extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Category Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaCategoryBaseFilter extends KalturaFilter
 {
@@ -2212,8 +2328,12 @@ abstract class KalturaCategoryBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Category Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCategoryFilter extends KalturaCategoryBaseFilter
 {
@@ -2221,8 +2341,12 @@ class KalturaCategoryFilter extends KalturaCategoryBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Catefory List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCategoryListResponse extends KalturaObjectBase
 {
@@ -2245,8 +2369,12 @@ class KalturaCategoryListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile Asset Params Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaConversionProfileAssetParamsBaseFilter extends KalturaFilter
 {
@@ -2323,8 +2451,12 @@ abstract class KalturaConversionProfileAssetParamsBaseFilter extends KalturaFilt
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaConversionProfileBaseFilter extends KalturaFilter
 {
@@ -2408,8 +2540,12 @@ abstract class KalturaConversionProfileBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileFilter extends KalturaConversionProfileBaseFilter
 {
@@ -2417,8 +2553,12 @@ class KalturaConversionProfileFilter extends KalturaConversionProfileBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAssetParamsBaseFilter extends KalturaFilter
 {
@@ -2453,8 +2593,12 @@ abstract class KalturaAssetParamsBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetParamsFilter extends KalturaAssetParamsBaseFilter
 {
@@ -2462,8 +2606,12 @@ class KalturaAssetParamsFilter extends KalturaAssetParamsBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile Asset Params Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileAssetParamsFilter extends KalturaConversionProfileAssetParamsBaseFilter
 {
@@ -2484,8 +2632,12 @@ class KalturaConversionProfileAssetParamsFilter extends KalturaConversionProfile
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile Asset Params class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileAssetParams extends KalturaObjectBase
 {
@@ -2541,8 +2693,12 @@ class KalturaConversionProfileAssetParams extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile Asset Params List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileAssetParamsListResponse extends KalturaObjectBase
 {
@@ -2565,8 +2721,12 @@ class KalturaConversionProfileAssetParamsListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Crop Dimensions class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCropDimensions extends KalturaObjectBase
 {
@@ -2605,8 +2765,12 @@ class KalturaCropDimensions extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfile extends KalturaObjectBase
 {
@@ -2751,8 +2915,12 @@ class KalturaConversionProfile extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Profile List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileListResponse extends KalturaObjectBase
 {
@@ -2775,8 +2943,12 @@ class KalturaConversionProfileListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Data Entry class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDataEntry extends KalturaBaseEntry
 {
@@ -2798,8 +2970,12 @@ class KalturaDataEntry extends KalturaBaseEntry
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Data Entry Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDataEntryBaseFilter extends KalturaBaseEntryFilter
 {
@@ -2807,8 +2983,12 @@ abstract class KalturaDataEntryBaseFilter extends KalturaBaseEntryFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Data Entry Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDataEntryFilter extends KalturaDataEntryBaseFilter
 {
@@ -2816,8 +2996,12 @@ class KalturaDataEntryFilter extends KalturaDataEntryBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Data List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDataListResponse extends KalturaObjectBase
 {
@@ -2840,8 +3024,12 @@ class KalturaDataListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Conversion Attribute class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionAttribute extends KalturaObjectBase
 {
@@ -2872,8 +3060,12 @@ class KalturaConversionAttribute extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Email Ingestion Profile class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEmailIngestionProfile extends KalturaObjectBase
 {
@@ -2996,8 +3188,12 @@ class KalturaEmailIngestionProfile extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playable Entry class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlayableEntry extends KalturaBaseEntry
 {
@@ -3067,8 +3263,12 @@ class KalturaPlayableEntry extends KalturaBaseEntry
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Entry class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaEntry extends KalturaPlayableEntry
 {
@@ -3156,8 +3356,12 @@ class KalturaMediaEntry extends KalturaPlayableEntry
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAsset extends KalturaObjectBase
 {
@@ -3271,8 +3475,12 @@ class KalturaAsset extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flabor Asset class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorAsset extends KalturaAsset
 {
@@ -3369,8 +3577,12 @@ class KalturaFlavorAsset extends KalturaAsset
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Content Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaContentResource extends KalturaResource
 {
@@ -3378,8 +3590,12 @@ abstract class KalturaContentResource extends KalturaResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAssetBaseFilter extends KalturaFilter
 {
@@ -3505,8 +3721,12 @@ abstract class KalturaAssetBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetFilter extends KalturaAssetBaseFilter
 {
@@ -3514,8 +3734,12 @@ class KalturaAssetFilter extends KalturaAssetBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Asset List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorAssetListResponse extends KalturaObjectBase
 {
@@ -3538,8 +3762,12 @@ class KalturaFlavorAssetListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura String class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaString extends KalturaObjectBase
 {
@@ -3553,8 +3781,12 @@ class KalturaString extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetParams extends KalturaObjectBase
 {
@@ -3636,8 +3868,12 @@ class KalturaAssetParams extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParams extends KalturaAssetParams
 {
@@ -3783,8 +4019,12 @@ class KalturaFlavorParams extends KalturaAssetParams
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Asset With Params class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorAssetWithParams extends KalturaObjectBase
 {
@@ -3815,8 +4055,12 @@ class KalturaFlavorAssetWithParams extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params Base Filetr class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaFlavorParamsBaseFilter extends KalturaAssetParamsFilter
 {
@@ -3830,8 +4074,12 @@ abstract class KalturaFlavorParamsBaseFilter extends KalturaAssetParamsFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParamsFilter extends KalturaFlavorParamsBaseFilter
 {
@@ -3839,8 +4087,12 @@ class KalturaFlavorParamsFilter extends KalturaFlavorParamsBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParamsListResponse extends KalturaObjectBase
 {
@@ -3863,8 +4115,12 @@ class KalturaFlavorParamsListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream Bitrate class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamBitrate extends KalturaObjectBase
 {
@@ -3892,8 +4148,12 @@ class KalturaLiveStreamBitrate extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream Entry class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamEntry extends KalturaMediaEntry
 {
@@ -3955,8 +4215,12 @@ class KalturaLiveStreamEntry extends KalturaMediaEntry
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream Admin Entry class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamAdminEntry extends KalturaLiveStreamEntry
 {
@@ -3996,8 +4260,12 @@ class KalturaLiveStreamAdminEntry extends KalturaLiveStreamEntry
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playable Entry Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaPlayableEntryBaseFilter extends KalturaBaseEntryFilter
 {
@@ -4067,8 +4335,12 @@ abstract class KalturaPlayableEntryBaseFilter extends KalturaBaseEntryFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playable Entry Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlayableEntryFilter extends KalturaPlayableEntryBaseFilter
 {
@@ -4076,8 +4348,12 @@ class KalturaPlayableEntryFilter extends KalturaPlayableEntryBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Entry Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaMediaEntryBaseFilter extends KalturaPlayableEntryFilter
 {
@@ -4126,8 +4402,12 @@ abstract class KalturaMediaEntryBaseFilter extends KalturaPlayableEntryFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Entry Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaEntryFilter extends KalturaMediaEntryBaseFilter
 {
@@ -4135,8 +4415,12 @@ class KalturaMediaEntryFilter extends KalturaMediaEntryBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream Entry Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaLiveStreamEntryBaseFilter extends KalturaMediaEntryFilter
 {
@@ -4144,8 +4428,12 @@ abstract class KalturaLiveStreamEntryBaseFilter extends KalturaMediaEntryFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream Entry Filter
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamEntryFilter extends KalturaLiveStreamEntryBaseFilter
 {
@@ -4153,8 +4441,12 @@ class KalturaLiveStreamEntryFilter extends KalturaLiveStreamEntryBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamListResponse extends KalturaObjectBase
 {
@@ -4177,8 +4469,12 @@ class KalturaLiveStreamListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearch extends KalturaObjectBase
 {
@@ -4223,8 +4519,12 @@ class KalturaSearch extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Result class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchResult extends KalturaSearch
 {
@@ -4301,6 +4601,14 @@ class KalturaSearchResult extends KalturaSearch
 
 }
 
+/**
+ * Kaltura Media List Response class.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class KalturaMediaListResponse extends KalturaObjectBase
 {
     /**
@@ -4322,8 +4630,12 @@ class KalturaMediaListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Mix Entry class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMixEntry extends KalturaPlayableEntry
 {
@@ -4354,8 +4666,12 @@ class KalturaMixEntry extends KalturaPlayableEntry
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Mix Entry Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaMixEntryBaseFilter extends KalturaPlayableEntryFilter
 {
@@ -4363,8 +4679,12 @@ abstract class KalturaMixEntryBaseFilter extends KalturaPlayableEntryFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Mix Entry Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMixEntryFilter extends KalturaMixEntryBaseFilter
 {
@@ -4372,8 +4692,12 @@ class KalturaMixEntryFilter extends KalturaMixEntryBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Mix List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMixListResponse extends KalturaObjectBase
 {
@@ -4396,8 +4720,12 @@ class KalturaMixListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client Notification class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaClientNotification extends KalturaObjectBase
 {
@@ -4418,8 +4746,12 @@ class KalturaClientNotification extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Key Value class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaKeyValue extends KalturaObjectBase
 {
@@ -4440,8 +4772,12 @@ class KalturaKeyValue extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Partner class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPartner extends KalturaObjectBase
 {
@@ -4710,8 +5046,12 @@ class KalturaPartner extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Partner Usage class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPartnerUsage extends KalturaObjectBase
 {
@@ -4774,8 +5114,12 @@ class KalturaPartnerUsage extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Item class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaPermissionItem extends KalturaObjectBase
 {
@@ -4829,8 +5173,12 @@ abstract class KalturaPermissionItem extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Item Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaPermissionItemBaseFilter extends KalturaFilter
 {
@@ -4921,8 +5269,12 @@ abstract class KalturaPermissionItemBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Item Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionItemFilter extends KalturaPermissionItemBaseFilter
 {
@@ -4930,8 +5282,12 @@ class KalturaPermissionItemFilter extends KalturaPermissionItemBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Item List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionItemListResponse extends KalturaObjectBase
 {
@@ -4954,8 +5310,12 @@ class KalturaPermissionItemListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermission extends KalturaObjectBase
 {
@@ -5058,8 +5418,12 @@ class KalturaPermission extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaPermissionBaseFilter extends KalturaFilter
 {
@@ -5206,8 +5570,12 @@ abstract class KalturaPermissionBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionFilter extends KalturaPermissionBaseFilter
 {
@@ -5215,8 +5583,12 @@ class KalturaPermissionFilter extends KalturaPermissionBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Permission List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionListResponse extends KalturaObjectBase
 {
@@ -5239,8 +5611,12 @@ class KalturaPermissionListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Entry Filter For Playlist class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaEntryFilterForPlaylist extends KalturaMediaEntryFilter
 {
@@ -5254,8 +5630,12 @@ class KalturaMediaEntryFilterForPlaylist extends KalturaMediaEntryFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playlist class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlaylist extends KalturaBaseEntry
 {
@@ -5317,8 +5697,12 @@ class KalturaPlaylist extends KalturaBaseEntry
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playlist Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaPlaylistBaseFilter extends KalturaBaseEntryFilter
 {
@@ -5326,8 +5710,12 @@ abstract class KalturaPlaylistBaseFilter extends KalturaBaseEntryFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playlist Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlaylistFilter extends KalturaPlaylistBaseFilter
 {
@@ -5335,8 +5723,12 @@ class KalturaPlaylistFilter extends KalturaPlaylistBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Playlist List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlaylistListResponse extends KalturaObjectBase
 {
@@ -5359,8 +5751,12 @@ class KalturaPlaylistListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Report Input Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaReportInputFilter extends KalturaObjectBase
 {
@@ -5416,8 +5812,12 @@ class KalturaReportInputFilter extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Report Graph class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaReportGraph extends KalturaObjectBase
 {
@@ -5438,8 +5838,12 @@ class KalturaReportGraph extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Report Total class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaReportTotal extends KalturaObjectBase
 {
@@ -5460,8 +5864,12 @@ class KalturaReportTotal extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Report Table class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaReportTable extends KalturaObjectBase
 {
@@ -5492,8 +5900,12 @@ class KalturaReportTable extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Result Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchResultResponse extends KalturaObjectBase
 {
@@ -5516,8 +5928,12 @@ class KalturaSearchResultResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Auth Data class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchAuthData extends KalturaObjectBase
 {
@@ -5546,8 +5962,12 @@ class KalturaSearchAuthData extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Start Widget Session Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStartWidgetSessionResponse extends KalturaObjectBase
 {
@@ -5578,8 +5998,12 @@ class KalturaStartWidgetSessionResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Stats Event class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStatsEvent extends KalturaObjectBase
 {
@@ -5722,8 +6146,12 @@ class KalturaStatsEvent extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Stats Kmc Event class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStatsKmcEvent extends KalturaObjectBase
 {
@@ -5810,8 +6238,12 @@ class KalturaStatsKmcEvent extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura CE Error class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCEError extends KalturaObjectBase
 {
@@ -5889,8 +6321,12 @@ class KalturaCEError extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Storeage Profile class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStorageProfile extends KalturaObjectBase
 {
@@ -6092,8 +6528,12 @@ class KalturaStorageProfile extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Storage Profile Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaStorageProfileBaseFilter extends KalturaFilter
 {
@@ -6198,8 +6638,12 @@ abstract class KalturaStorageProfileBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Storage Profile Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStorageProfileFilter extends KalturaStorageProfileBaseFilter
 {
@@ -6207,8 +6651,12 @@ class KalturaStorageProfileFilter extends KalturaStorageProfileBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Storaget Profile List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStorageProfileListResponse extends KalturaObjectBase
 {
@@ -6231,8 +6679,12 @@ class KalturaStorageProfileListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Syndication Freed class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaBaseSyndicationFeed extends KalturaObjectBase
 {
@@ -6360,8 +6812,12 @@ abstract class KalturaBaseSyndicationFeed extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Syndication Feed Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaBaseSyndicationFeedBaseFilter extends KalturaFilter
 {
@@ -6369,8 +6825,12 @@ abstract class KalturaBaseSyndicationFeedBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Syndication Feed Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseSyndicationFeedFilter extends KalturaBaseSyndicationFeedBaseFilter
 {
@@ -6378,8 +6838,12 @@ class KalturaBaseSyndicationFeedFilter extends KalturaBaseSyndicationFeedBaseFil
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Syndication Feed List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseSyndicationFeedListResponse extends KalturaObjectBase
 {
@@ -6402,8 +6866,12 @@ class KalturaBaseSyndicationFeedListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Syndication Feed Entry Count class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationFeedEntryCount extends KalturaObjectBase
 {
@@ -6431,8 +6899,12 @@ class KalturaSyndicationFeedEntryCount extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Asset class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbAsset extends KalturaAsset
 {
@@ -6475,8 +6947,12 @@ class KalturaThumbAsset extends KalturaAsset
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Params class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParams extends KalturaAssetParams
 {
@@ -6582,8 +7058,12 @@ class KalturaThumbParams extends KalturaAssetParams
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Asset List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbAssetListResponse extends KalturaObjectBase
 {
@@ -6606,8 +7086,12 @@ class KalturaThumbAssetListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Params Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaThumbParamsBaseFilter extends KalturaAssetParamsFilter
 {
@@ -6621,8 +7105,12 @@ abstract class KalturaThumbParamsBaseFilter extends KalturaAssetParamsFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Params Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParamsFilter extends KalturaThumbParamsBaseFilter
 {
@@ -6630,8 +7118,12 @@ class KalturaThumbParamsFilter extends KalturaThumbParamsBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Params List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParamsListResponse extends KalturaObjectBase
 {
@@ -6654,8 +7146,12 @@ class KalturaThumbParamsListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura UiConf class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUiConf extends KalturaObjectBase
 {
@@ -6808,8 +7304,12 @@ class KalturaUiConf extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura UiConf Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaUiConfBaseFilter extends KalturaFilter
 {
@@ -6921,8 +7421,12 @@ abstract class KalturaUiConfBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura UiConf Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUiConfFilter extends KalturaUiConfBaseFilter
 {
@@ -6930,8 +7434,12 @@ class KalturaUiConfFilter extends KalturaUiConfBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura UiConf List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUiConfListResponse extends KalturaObjectBase
 {
@@ -6954,8 +7462,12 @@ class KalturaUiConfListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura UiConf Type Information class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUiConfTypeInfo extends KalturaObjectBase
 {
@@ -6994,8 +7506,12 @@ class KalturaUiConfTypeInfo extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Upload Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadResponse extends KalturaObjectBase
 {
@@ -7030,8 +7546,12 @@ class KalturaUploadResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Upload Token class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadToken extends KalturaObjectBase
 {
@@ -7112,8 +7632,12 @@ class KalturaUploadToken extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Upload Token Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaUploadTokenBaseFilter extends KalturaFilter
 {
@@ -7155,8 +7679,12 @@ abstract class KalturaUploadTokenBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Upload Token Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadTokenFilter extends KalturaUploadTokenBaseFilter
 {
@@ -7164,8 +7692,12 @@ class KalturaUploadTokenFilter extends KalturaUploadTokenBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Upload Token List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadTokenListResponse extends KalturaObjectBase
 {
@@ -7188,8 +7720,12 @@ class KalturaUploadTokenListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Role class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserRole extends KalturaObjectBase
 {
@@ -7263,8 +7799,12 @@ class KalturaUserRole extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Role Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaUserRoleBaseFilter extends KalturaFilter
 {
@@ -7376,8 +7916,12 @@ abstract class KalturaUserRoleBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Role Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserRoleFilter extends KalturaUserRoleBaseFilter
 {
@@ -7385,8 +7929,12 @@ class KalturaUserRoleFilter extends KalturaUserRoleBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Role List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserRoleListResponse extends KalturaObjectBase
 {
@@ -7406,9 +7954,16 @@ class KalturaUserRoleListResponse extends KalturaObjectBase
      */
     public $totalCount = null;
 
-
 }
 
+/**
+ * Kaltura User Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 abstract class KalturaUserBaseFilter extends KalturaFilter
 {
     /**
@@ -7498,8 +8053,12 @@ abstract class KalturaUserBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserFilter extends KalturaUserBaseFilter
 {
@@ -7527,8 +8086,12 @@ class KalturaUserFilter extends KalturaUserBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserListResponse extends KalturaObjectBase
 {
@@ -7551,8 +8114,12 @@ class KalturaUserListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Widget class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaWidget extends KalturaObjectBase
 {
@@ -7649,8 +8216,12 @@ class KalturaWidget extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Widget Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaWidgetBaseFilter extends KalturaFilter
 {
@@ -7741,8 +8312,12 @@ abstract class KalturaWidgetBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Widget Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaWidgetFilter extends KalturaWidgetBaseFilter
 {
@@ -7750,8 +8325,12 @@ class KalturaWidgetFilter extends KalturaWidgetBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Widget List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaWidgetListResponse extends KalturaObjectBase
 {
@@ -7774,8 +8353,12 @@ class KalturaWidgetListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Partner Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaPartnerBaseFilter extends KalturaFilter
 {
@@ -7866,8 +8449,12 @@ abstract class KalturaPartnerBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Partner Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPartnerFilter extends KalturaPartnerBaseFilter
 {
@@ -7875,8 +8462,12 @@ class KalturaPartnerFilter extends KalturaPartnerBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Country Restriction class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCountryRestriction extends KalturaBaseRestriction
 {
@@ -7899,8 +8490,12 @@ class KalturaCountryRestriction extends KalturaBaseRestriction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Directory Restriction class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDirectoryRestriction extends KalturaBaseRestriction
 {
@@ -7915,8 +8510,12 @@ class KalturaDirectoryRestriction extends KalturaBaseRestriction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura IP Address Restriction class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaIpAddressRestriction extends KalturaBaseRestriction
 {
@@ -7939,8 +8538,12 @@ class KalturaIpAddressRestriction extends KalturaBaseRestriction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Session Restriction class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSessionRestriction extends KalturaBaseRestriction
 {
@@ -7948,8 +8551,12 @@ class KalturaSessionRestriction extends KalturaBaseRestriction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Preview Rerstriction class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPreviewRestriction extends KalturaSessionRestriction
 {
@@ -7964,8 +8571,12 @@ class KalturaPreviewRestriction extends KalturaSessionRestriction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Site Restriction
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSiteRestriction extends KalturaBaseRestriction
 {
@@ -7988,8 +8599,12 @@ class KalturaSiteRestriction extends KalturaBaseRestriction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Agent Restriction class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserAgentRestriction extends KalturaBaseRestriction
 {
@@ -8012,8 +8627,12 @@ class KalturaUserAgentRestriction extends KalturaBaseRestriction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Condition class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchCondition extends KalturaSearchItem
 {
@@ -8034,8 +8653,12 @@ class KalturaSearchCondition extends KalturaSearchItem
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Comparable Condition class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchComparableCondition extends KalturaSearchCondition
 {
@@ -8049,8 +8672,12 @@ class KalturaSearchComparableCondition extends KalturaSearchCondition
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Search Operator class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchOperator extends KalturaSearchItem
 {
@@ -8071,8 +8698,12 @@ class KalturaSearchOperator extends KalturaSearchItem
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Job Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaBaseJobBaseFilter extends KalturaFilter
 {
@@ -8184,8 +8815,12 @@ abstract class KalturaBaseJobBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Base Job Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseJobFilter extends KalturaBaseJobBaseFilter
 {
@@ -8193,8 +8828,12 @@ class KalturaBaseJobFilter extends KalturaBaseJobBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Batch Job Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaBatchJobBaseFilter extends KalturaBaseJobFilter
 {
@@ -8677,8 +9316,12 @@ abstract class KalturaBatchJobBaseFilter extends KalturaBaseJobFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Control Panel Command Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaControlPanelCommandBaseFilter extends KalturaFilter
 {
@@ -8762,8 +9405,12 @@ abstract class KalturaControlPanelCommandBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Mail Job Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaMailJobBaseFilter extends KalturaBaseJobFilter
 {
@@ -8771,8 +9418,12 @@ abstract class KalturaMailJobBaseFilter extends KalturaBaseJobFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Notification Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaNotificationBaseFilter extends KalturaBaseJobFilter
 {
@@ -8780,8 +9431,12 @@ abstract class KalturaNotificationBaseFilter extends KalturaBaseJobFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Batch Job Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBatchJobFilter extends KalturaBatchJobBaseFilter
 {
@@ -8789,8 +9444,12 @@ class KalturaBatchJobFilter extends KalturaBatchJobBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Control Panel Command Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaControlPanelCommandFilter extends KalturaControlPanelCommandBaseFilter
 {
@@ -8798,8 +9457,12 @@ class KalturaControlPanelCommandFilter extends KalturaControlPanelCommandBaseFil
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Mail Job Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMailJobFilter extends KalturaMailJobBaseFilter
 {
@@ -8807,8 +9470,12 @@ class KalturaMailJobFilter extends KalturaMailJobBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Notification Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaNotificationFilter extends KalturaNotificationBaseFilter
 {
@@ -8816,8 +9483,12 @@ class KalturaNotificationFilter extends KalturaNotificationBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Batch Job Filter Ext class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBatchJobFilterExt extends KalturaBatchJobFilter
 {
@@ -8831,8 +9502,12 @@ class KalturaBatchJobFilterExt extends KalturaBatchJobFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params Output Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAssetParamsOutputBaseFilter extends KalturaAssetParamsFilter
 {
@@ -8874,8 +9549,12 @@ abstract class KalturaAssetParamsOutputBaseFilter extends KalturaAssetParamsFilt
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Asset Base Filter
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaFlavorAssetBaseFilter extends KalturaAssetFilter
 {
@@ -8903,8 +9582,12 @@ abstract class KalturaFlavorAssetBaseFilter extends KalturaAssetFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params Output Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaFlavorParamsOutputBaseFilter extends KalturaFlavorParamsFilter
 {
@@ -8939,8 +9622,12 @@ abstract class KalturaFlavorParamsOutputBaseFilter extends KalturaFlavorParamsFi
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Flavor Params Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaMediaFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
 {
@@ -8948,8 +9635,12 @@ abstract class KalturaMediaFlavorParamsBaseFilter extends KalturaFlavorParamsFil
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params Output Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParamsOutputFilter extends KalturaFlavorParamsOutputBaseFilter
 {
@@ -8957,8 +9648,12 @@ class KalturaFlavorParamsOutputFilter extends KalturaFlavorParamsOutputBaseFilte
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Flavor Params Output Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaMediaFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
 {
@@ -8966,8 +9661,12 @@ abstract class KalturaMediaFlavorParamsOutputBaseFilter extends KalturaFlavorPar
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Information Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaMediaInfoBaseFilter extends KalturaFilter
 {
@@ -8981,8 +9680,12 @@ abstract class KalturaMediaInfoBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Asset Baset Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaThumbAssetBaseFilter extends KalturaAssetFilter
 {
@@ -9010,8 +9713,12 @@ abstract class KalturaThumbAssetBaseFilter extends KalturaAssetFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Params Output Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaThumbParamsOutputBaseFilter extends KalturaThumbParamsFilter
 {
@@ -9046,8 +9753,12 @@ abstract class KalturaThumbParamsOutputBaseFilter extends KalturaThumbParamsFilt
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params Output Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetParamsOutputFilter extends KalturaAssetParamsOutputBaseFilter
 {
@@ -9055,8 +9766,12 @@ class KalturaAssetParamsOutputFilter extends KalturaAssetParamsOutputBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Asset Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorAssetFilter extends KalturaFlavorAssetBaseFilter
 {
@@ -9064,8 +9779,12 @@ class KalturaFlavorAssetFilter extends KalturaFlavorAssetBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Flavor Params Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaFlavorParamsFilter extends KalturaMediaFlavorParamsBaseFilter
 {
@@ -9073,8 +9792,12 @@ class KalturaMediaFlavorParamsFilter extends KalturaMediaFlavorParamsBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Flavor Params Output Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaFlavorParamsOutputFilter extends KalturaMediaFlavorParamsOutputBaseFilter
 {
@@ -9082,8 +9805,12 @@ class KalturaMediaFlavorParamsOutputFilter extends KalturaMediaFlavorParamsOutpu
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Information Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaInfoFilter extends KalturaMediaInfoBaseFilter
 {
@@ -9091,8 +9818,12 @@ class KalturaMediaInfoFilter extends KalturaMediaInfoBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Thumb Asset Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbAssetFilter extends KalturaThumbAssetBaseFilter
 {
@@ -9100,8 +9831,12 @@ class KalturaThumbAssetFilter extends KalturaThumbAssetBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParamsOutputFilter extends KalturaThumbParamsOutputBaseFilter
 {
@@ -9109,8 +9844,12 @@ class KalturaThumbParamsOutputFilter extends KalturaThumbParamsOutputBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream Admin Entry Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaLiveStreamAdminEntryBaseFilter extends KalturaLiveStreamEntryFilter
 {
@@ -9118,8 +9857,12 @@ abstract class KalturaLiveStreamAdminEntryBaseFilter extends KalturaLiveStreamEn
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Live Stream Admin Entry Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamAdminEntryFilter extends KalturaLiveStreamAdminEntryBaseFilter
 {
@@ -9127,8 +9870,12 @@ class KalturaLiveStreamAdminEntryFilter extends KalturaLiveStreamAdminEntryBaseF
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Admin User Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAdminUserBaseFilter extends KalturaUserFilter
 {
@@ -9136,8 +9883,12 @@ abstract class KalturaAdminUserBaseFilter extends KalturaUserFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Login Data Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaUserLoginDataBaseFilter extends KalturaFilter
 {
@@ -9151,8 +9902,12 @@ abstract class KalturaUserLoginDataBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Admin User Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdminUserFilter extends KalturaAdminUserBaseFilter
 {
@@ -9160,8 +9915,12 @@ class KalturaAdminUserFilter extends KalturaAdminUserBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Google Video Syndication Feed Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaGoogleVideoSyndicationFeedBaseFilter extends KalturaBaseSyndicationFeedFilter
 {
@@ -9169,8 +9928,12 @@ abstract class KalturaGoogleVideoSyndicationFeedBaseFilter extends KalturaBaseSy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Google Video Syndication Feed Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGoogleVideoSyndicationFeedFilter extends KalturaGoogleVideoSyndicationFeedBaseFilter
 {
@@ -9178,8 +9941,12 @@ class KalturaGoogleVideoSyndicationFeedFilter extends KalturaGoogleVideoSyndicat
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura iTunes Syndication Feed Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaITunesSyndicationFeedBaseFilter extends KalturaBaseSyndicationFeedFilter
 {
@@ -9187,8 +9954,12 @@ abstract class KalturaITunesSyndicationFeedBaseFilter extends KalturaBaseSyndica
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura iTunes Syndication Feed Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaITunesSyndicationFeedFilter extends KalturaITunesSyndicationFeedBaseFilter
 {
@@ -9196,8 +9967,12 @@ class KalturaITunesSyndicationFeedFilter extends KalturaITunesSyndicationFeedBas
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura TubeMogul Syndication Feed Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaTubeMogulSyndicationFeedBaseFilter extends KalturaBaseSyndicationFeedFilter
 {
@@ -9205,8 +9980,12 @@ abstract class KalturaTubeMogulSyndicationFeedBaseFilter extends KalturaBaseSynd
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura TubeMogul Syndication Feed Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaTubeMogulSyndicationFeedFilter extends KalturaTubeMogulSyndicationFeedBaseFilter
 {
@@ -9214,8 +9993,12 @@ class KalturaTubeMogulSyndicationFeedFilter extends KalturaTubeMogulSyndicationF
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura User Login Data Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserLoginDataFilter extends KalturaUserLoginDataBaseFilter
 {
@@ -9223,8 +10006,12 @@ class KalturaUserLoginDataFilter extends KalturaUserLoginDataBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Yahoo Syndication Feed Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaYahooSyndicationFeedBaseFilter extends KalturaBaseSyndicationFeedFilter
 {
@@ -9232,8 +10019,12 @@ abstract class KalturaYahooSyndicationFeedBaseFilter extends KalturaBaseSyndicat
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Yahoo Syndication Feed Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYahooSyndicationFeedFilter extends KalturaYahooSyndicationFeedBaseFilter
 {
@@ -9241,8 +10032,12 @@ class KalturaYahooSyndicationFeedFilter extends KalturaYahooSyndicationFeedBaseF
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Action Permission Item Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaApiActionPermissionItemBaseFilter extends KalturaPermissionItemFilter
 {
@@ -9250,8 +10045,12 @@ abstract class KalturaApiActionPermissionItemBaseFilter extends KalturaPermissio
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Parameter Permission Item Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaApiParameterPermissionItemBaseFilter extends KalturaPermissionItemFilter
 {
@@ -9259,8 +10058,12 @@ abstract class KalturaApiParameterPermissionItemBaseFilter extends KalturaPermis
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Action Permission Item Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaApiActionPermissionItemFilter extends KalturaApiActionPermissionItemBaseFilter
 {
@@ -9268,8 +10071,12 @@ class KalturaApiActionPermissionItemFilter extends KalturaApiActionPermissionIte
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Parameter Permission Item Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaApiParameterPermissionItemFilter extends KalturaApiParameterPermissionItemBaseFilter
 {
@@ -9277,8 +10084,12 @@ class KalturaApiParameterPermissionItemFilter extends KalturaApiParameterPermiss
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaGenericSyndicationFeedBaseFilter extends KalturaBaseSyndicationFeedFilter
 {
@@ -9286,8 +10097,12 @@ abstract class KalturaGenericSyndicationFeedBaseFilter extends KalturaBaseSyndic
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Generic Syndication Feed Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericSyndicationFeedFilter extends KalturaGenericSyndicationFeedBaseFilter
 {
@@ -9295,8 +10110,12 @@ class KalturaGenericSyndicationFeedFilter extends KalturaGenericSyndicationFeedB
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Generic Xslt Syndication Feed Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaGenericXsltSyndicationFeedBaseFilter extends KalturaGenericSyndicationFeedFilter
 {
@@ -9304,8 +10123,12 @@ abstract class KalturaGenericXsltSyndicationFeedBaseFilter extends KalturaGeneri
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Generic Xslt Syndication Feed Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericXsltSyndicationFeedFilter extends KalturaGenericXsltSyndicationFeedBaseFilter
 {
@@ -9313,8 +10136,12 @@ class KalturaGenericXsltSyndicationFeedFilter extends KalturaGenericXsltSyndicat
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Clip Attributes class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaClipAttributes extends KalturaOperationAttributes
 {
@@ -9335,8 +10162,12 @@ class KalturaClipAttributes extends KalturaOperationAttributes
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params Resource Container class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetParamsResourceContainer extends KalturaResource
 {
@@ -9357,8 +10188,12 @@ class KalturaAssetParamsResourceContainer extends KalturaResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetResource extends KalturaContentResource
 {
@@ -9372,8 +10207,12 @@ class KalturaAssetResource extends KalturaContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params Resource Containers class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetsParamsResourceContainers extends KalturaResource
 {
@@ -9387,8 +10226,12 @@ class KalturaAssetsParamsResourceContainers extends KalturaResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Data Center Content Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDataCenterContentResource extends KalturaContentResource
 {
@@ -9396,8 +10239,12 @@ abstract class KalturaDataCenterContentResource extends KalturaContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Entry Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryResource extends KalturaContentResource
 {
@@ -9418,8 +10265,12 @@ class KalturaEntryResource extends KalturaContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura File Sync Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFileSyncResource extends KalturaContentResource
 {
@@ -9454,8 +10305,12 @@ class KalturaFileSyncResource extends KalturaContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Operation Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaOperationResource extends KalturaContentResource
 {
@@ -9483,8 +10338,12 @@ class KalturaOperationResource extends KalturaContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Url Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUrlResource extends KalturaContentResource
 {
@@ -9498,8 +10357,12 @@ class KalturaUrlResource extends KalturaContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Remote Storage Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaRemoteStorageResource extends KalturaUrlResource
 {
@@ -9513,8 +10376,12 @@ class KalturaRemoteStorageResource extends KalturaUrlResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Remote Storage Resources class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaRemoteStorageResources extends KalturaContentResource
 {
@@ -9528,8 +10395,12 @@ class KalturaRemoteStorageResources extends KalturaContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Server File Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaServerFileResource extends KalturaDataCenterContentResource
 {
@@ -9543,8 +10414,12 @@ class KalturaServerFileResource extends KalturaDataCenterContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura SSH Url Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSshUrlResource extends KalturaUrlResource
 {
@@ -9572,8 +10447,12 @@ class KalturaSshUrlResource extends KalturaUrlResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Uploaded File Token Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadedFileTokenResource extends KalturaDataCenterContentResource
 {
@@ -9587,8 +10466,12 @@ class KalturaUploadedFileTokenResource extends KalturaDataCenterContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Webcam Token Resource class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaWebcamTokenResource extends KalturaDataCenterContentResource
 {
@@ -9602,8 +10485,12 @@ class KalturaWebcamTokenResource extends KalturaDataCenterContentResource
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Asset Params Output class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAssetParamsOutput extends KalturaAssetParams
 {
@@ -9653,8 +10540,12 @@ class KalturaAssetParamsOutput extends KalturaAssetParams
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Flavor Params Output class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParamsOutput extends KalturaFlavorParams
 {
@@ -9703,8 +10594,12 @@ class KalturaFlavorParamsOutput extends KalturaFlavorParams
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Flavor Params Output class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaFlavorParamsOutput extends KalturaFlavorParamsOutput
 {
@@ -9717,8 +10612,12 @@ class KalturaMediaFlavorParams extends KalturaFlavorParams
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Media Flavor Params class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParamsOutput extends KalturaThumbParams
 {
@@ -9753,8 +10652,12 @@ class KalturaThumbParamsOutput extends KalturaThumbParams
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Action Permission Item class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaApiActionPermissionItem extends KalturaPermissionItem
 {
@@ -9775,8 +10678,12 @@ class KalturaApiActionPermissionItem extends KalturaPermissionItem
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura API Parameter Permission Item class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaApiParameterPermissionItem extends KalturaPermissionItem
 {
@@ -9804,8 +10711,12 @@ class KalturaApiParameterPermissionItem extends KalturaPermissionItem
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Generic Syndication Feed class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericSyndicationFeed extends KalturaBaseSyndicationFeed
 {
@@ -9828,8 +10739,12 @@ class KalturaGenericSyndicationFeed extends KalturaBaseSyndicationFeed
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Genetic Xslt Syndication class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericXsltSyndicationFeed extends KalturaGenericSyndicationFeed
 {
@@ -9854,8 +10769,12 @@ class KalturaGenericXsltSyndicationFeed extends KalturaGenericSyndicationFeed
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Google Video Syndication Feed class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGoogleVideoSyndicationFeed extends KalturaBaseSyndicationFeed
 {
@@ -9869,8 +10788,12 @@ class KalturaGoogleVideoSyndicationFeed extends KalturaBaseSyndicationFeed
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura iTunes Syndication Feed class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaITunesSyndicationFeed extends KalturaBaseSyndicationFeed
 {
@@ -9947,8 +10870,12 @@ class KalturaITunesSyndicationFeed extends KalturaBaseSyndicationFeed
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura TubeMogul Syndication Feed class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaTubeMogulSyndicationFeed extends KalturaBaseSyndicationFeed
 {
@@ -9963,8 +10890,12 @@ class KalturaTubeMogulSyndicationFeed extends KalturaBaseSyndicationFeed
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Yahoo Syndication Feed class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYahooSyndicationFeed extends KalturaBaseSyndicationFeed
 {

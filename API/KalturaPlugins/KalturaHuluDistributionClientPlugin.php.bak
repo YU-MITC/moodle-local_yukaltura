@@ -26,7 +26,7 @@
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
-require_once(dirname(__FILE__) . "/KalturaCuePointClientPlugin.php");
+require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 
 if (!defined('MOODLE_INTERNAL')) {
@@ -35,144 +35,156 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
-class KalturaCodeCuePointOrderBy
+class KalturaHuluDistributionProfileOrderBy
 {
     const CREATED_AT_ASC = "+createdAt";
     const CREATED_AT_DESC = "-createdAt";
     const UPDATED_AT_ASC = "+updatedAt";
     const UPDATED_AT_DESC = "-updatedAt";
-    const START_TIME_ASC = "+startTime";
-    const START_TIME_DESC = "-startTime";
-    const PARTNER_SORT_VALUE_ASC = "+partnerSortValue";
-    const PARTNER_SORT_VALUE_DESC = "-partnerSortValue";
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
-abstract class KalturaCodeCuePointBaseFilter extends KalturaCuePointFilter
+class KalturaHuluDistributionProviderOrderBy
+{
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
+abstract class KalturaHuluDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
+{
+
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
+abstract class KalturaHuluDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
+{
+
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
+class KalturaHuluDistributionProfileFilter extends KalturaHuluDistributionProfileBaseFilter
+{
+
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
+class KalturaHuluDistributionProviderFilter extends KalturaHuluDistributionProviderBaseFilter
+{
+
+}
+
+/**
+ * @package Kaltura
+ * @subpackage Client
+ */
+class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
      * 
      *
      * @var string
      */
-    public $codeLike = null;
+    public $sftpHost = null;
 
     /**
      * 
      *
      * @var string
      */
-    public $codeMultiLikeOr = null;
+    public $sftpLogin = null;
 
     /**
      * 
      *
      * @var string
      */
-    public $codeMultiLikeAnd = null;
+    public $sftpPass = null;
 
     /**
      * 
      *
      * @var string
      */
-    public $codeEqual = null;
+    public $seriesChannel = null;
 
     /**
      * 
      *
      * @var string
      */
-    public $codeIn = null;
+    public $seriesPrimaryCategory = null;
+
+    /**
+     * 
+     *
+     * @var array of KalturaString
+     */
+    public $seriesAdditionalCategories;
 
     /**
      * 
      *
      * @var string
      */
-    public $descriptionLike = null;
+    public $seasonNumber = null;
 
     /**
      * 
      *
      * @var string
      */
-    public $descriptionMultiLikeOr = null;
+    public $seasonSynopsis = null;
 
     /**
      * 
      *
      * @var string
      */
-    public $descriptionMultiLikeAnd = null;
+    public $seasonTuneInInformation = null;
+
+    /**
+     * 
+     *
+     * @var string
+     */
+    public $videoMediaType = null;
 
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
-class KalturaCodeCuePointFilter extends KalturaCodeCuePointBaseFilter
+class KalturaHuluDistributionProvider extends KalturaDistributionProvider
 {
 
 }
 
 /**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package Kaltura
+ * @subpackage Client
  */
-class KalturaCodeCuePoint extends KalturaCuePoint
+class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
 {
     /**
-     * 
-     *
-     * @var string
-     */
-    public $code = null;
-
-    /**
-     * 
-     *
-     * @var string
-     */
-    public $description = null;
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaCodeCuePointClientPlugin extends KalturaClientPlugin
-{
-    /**
-     * @var KalturaCodeCuePointClientPlugin
+     * @var KalturaHuluDistributionClientPlugin
      */
     protected static $instance;
 
@@ -182,12 +194,12 @@ class KalturaCodeCuePointClientPlugin extends KalturaClientPlugin
     }
 
     /**
-     * @return KalturaCodeCuePointClientPlugin
+     * @return KalturaHuluDistributionClientPlugin
      */
     public static function get(KalturaClient $client)
     {
         if(!self::$instance)
-            self::$instance = new KalturaCodeCuePointClientPlugin($client);
+            self::$instance = new KalturaHuluDistributionClientPlugin($client);
         return self::$instance;
     }
 
@@ -206,6 +218,6 @@ class KalturaCodeCuePointClientPlugin extends KalturaClientPlugin
      */
     public function getName()
     {
-        return 'codeCuePoint';
+        return 'huluDistribution';
     }
 }

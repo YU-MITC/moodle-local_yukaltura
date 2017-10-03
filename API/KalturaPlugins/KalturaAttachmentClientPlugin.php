@@ -34,8 +34,12 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Asset OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetOrderBy
 {
@@ -50,8 +54,12 @@ class KalturaAttachmentAssetOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Asset Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetStatus
 {
@@ -63,8 +71,12 @@ class KalturaAttachmentAssetStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentType
 {
@@ -74,8 +86,12 @@ class KalturaAttachmentType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Asset class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAsset extends KalturaAsset
 {
@@ -112,8 +128,12 @@ class KalturaAttachmentAsset extends KalturaAsset
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Asset List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetListResponse extends KalturaObjectBase
 {
@@ -136,8 +156,12 @@ class KalturaAttachmentAssetListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Asset Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAttachmentAssetBaseFilter extends KalturaAssetFilter
 {
@@ -179,8 +203,12 @@ abstract class KalturaAttachmentAssetBaseFilter extends KalturaAssetFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Asset Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetFilter extends KalturaAttachmentAssetBaseFilter
 {
@@ -188,87 +216,89 @@ class KalturaAttachmentAssetFilter extends KalturaAttachmentAssetBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Asset Service class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add($entryId, KalturaAttachmentAsset $attachmentAsset)
-    {
+    function add($entryId, KalturaAttachmentAsset $attachmentAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "attachmentAsset", $attachmentAsset->toParams());
         $this->client->queueServiceActionCall("attachment_attachmentasset", "add", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAttachmentAsset");
         return $resultobject;
     }
 
-    function setContent($id, KalturaContentResource $contentResource)
-    {
+    function setContent($id, KalturaContentResource $contentResource) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "contentResource", $contentResource->toParams());
         $this->client->queueServiceActionCall("attachment_attachmentasset", "setContent", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAttachmentAsset");
         return $resultobject;
     }
 
-    function update($id, KalturaAttachmentAsset $attachmentAsset)
-    {
+    function update($id, KalturaAttachmentAsset $attachmentAsset) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "attachmentAsset", $attachmentAsset->toParams());
         $this->client->queueServiceActionCall("attachment_attachmentasset", "update", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAttachmentAsset");
         return $resultobject;
     }
 
-    function getUrl($id, $storageId = null)
-    {
+    function getUrl($id, $storageId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "storageId", $storageId);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "getUrl", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "string");
         return $resultobject;
     }
 
-    function getRemotePaths($id)
-    {
+    function getRemotePaths($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "getRemotePaths", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaRemotePathListResponse");
         return $resultobject;
     }
 
-    function serve($attachmentAssetId)
-    {
+    function serve($attachmentAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
         $this->client->queueServiceActionCall('attachment_attachmentasset', 'serve', $kparams);
@@ -276,42 +306,44 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function get($attachmentAssetId)
-    {
+    function get($attachmentAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "get", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAttachmentAsset");
         return $resultobject;
     }
 
-    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        if ($pager !== null)
+        }
+        if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
+        }
         $this->client->queueServiceActionCall("attachment_attachmentasset", "list", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAttachmentAssetListResponse");
         return $resultobject;
     }
 
-    function delete($attachmentAssetId)
-    {
+    function delete($attachmentAssetId) {
         $kparams = array();
         $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "delete", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "null");
@@ -320,8 +352,12 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Attachment Client Plugin class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentClientPlugin extends KalturaClientPlugin
 {
@@ -335,8 +371,7 @@ class KalturaAttachmentClientPlugin extends KalturaClientPlugin
      */
     public $attachmentAsset = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->attachmentAsset = new KalturaAttachmentAssetService($client);
     }
@@ -344,29 +379,25 @@ class KalturaAttachmentClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaAttachmentClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if(!self::$instance) {
             self::$instance = new KalturaAttachmentClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
-        $services = array(
-            'attachmentAsset' => $this->attachmentAsset,
-        );
+    public function getServices() {
+        $services = array('attachmentAsset' => $this->attachmentAsset);
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'attachment';
     }
 }

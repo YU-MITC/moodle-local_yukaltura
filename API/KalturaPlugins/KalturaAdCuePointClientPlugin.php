@@ -35,8 +35,12 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Ad Cue Point OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdCuePointOrderBy
 {
@@ -55,8 +59,12 @@ class KalturaAdCuePointOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Ad Protocol Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdProtocolType
 {
@@ -67,8 +75,12 @@ class KalturaAdProtocolType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Ad Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdType
 {
@@ -77,8 +89,12 @@ class KalturaAdType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Ad Cue Point Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAdCuePointBaseFilter extends KalturaCuePointFilter
 {
@@ -148,8 +164,12 @@ abstract class KalturaAdCuePointBaseFilter extends KalturaCuePointFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Ad Cue Point Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdCuePointFilter extends KalturaAdCuePointBaseFilter
 {
@@ -157,8 +177,12 @@ class KalturaAdCuePointFilter extends KalturaAdCuePointBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Ad Cue Point class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdCuePoint extends KalturaCuePoint
 {
@@ -209,8 +233,12 @@ class KalturaAdCuePoint extends KalturaCuePoint
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Ad Cue Point Client Plugin class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdCuePointClientPlugin extends KalturaClientPlugin
 {
@@ -219,30 +247,38 @@ class KalturaAdCuePointClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
+    /**
+     * Contructor.
+     * @param KalturaClient $client - Kaltura Client object
+     */
     protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
-     * @return KalturaAdCuePointClientPlugin
+     * Get the client plugin instance.
+     * @param KalturaClient $client - Kaltura Client object.
+     * @return KalturaAdCuePointClientPlugin - instance.
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance)
+        if (!self::$instance) {
             self::$instance = new KalturaAdCuePointClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
-     * @return array<KalturaServiceBase>
+     * Get services.
+     * @return array - array of <KalturaServiceBase>
      */
     public function getServices() {
-        $services = array(
-        );
+        $services = array();
         return $services;
     }
 
     /**
-     * @return string
+     * Return class name.
+     * @return string - class name
      */
     public function getName() {
         return 'adCuePoint';

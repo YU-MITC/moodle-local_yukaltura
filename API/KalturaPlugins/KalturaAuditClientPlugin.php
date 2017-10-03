@@ -34,8 +34,12 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Action class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailAction
 {
@@ -51,8 +55,12 @@ class KalturaAuditTrailAction
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Context class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailContext
 {
@@ -63,8 +71,12 @@ class KalturaAuditTrailContext
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial File Syndication class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailFileSyncType
 {
@@ -74,8 +86,12 @@ class KalturaAuditTrailFileSyncType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Object Type class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailObjectType
 {
@@ -113,8 +129,12 @@ class KalturaAuditTrailObjectType
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial OrderBy class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailOrderBy
 {
@@ -125,8 +145,12 @@ class KalturaAuditTrailOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Status class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailStatus
 {
@@ -136,8 +160,12 @@ class KalturaAuditTrailStatus
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Information class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAuditTrailInfo extends KalturaObjectBase
 {
@@ -145,8 +173,12 @@ abstract class KalturaAuditTrailInfo extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrail extends KalturaObjectBase
 {
@@ -335,8 +367,12 @@ class KalturaAuditTrail extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Base Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAuditTrailBaseFilter extends KalturaFilter
 {
@@ -602,8 +638,12 @@ abstract class KalturaAuditTrailBaseFilter extends KalturaFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailFilter extends KalturaAuditTrailBaseFilter
 {
@@ -611,8 +651,12 @@ class KalturaAuditTrailFilter extends KalturaAuditTrailBaseFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailListResponse extends KalturaObjectBase
 {
@@ -635,8 +679,12 @@ class KalturaAuditTrailListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Change Item class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailChangeItem extends KalturaObjectBase
 {
@@ -664,8 +712,12 @@ class KalturaAuditTrailChangeItem extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Change Information class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailChangeInfo extends KalturaAuditTrailInfo
 {
@@ -679,8 +731,12 @@ class KalturaAuditTrailChangeInfo extends KalturaAuditTrailInfo
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial File Sync Creation Information class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo
 {
@@ -722,8 +778,12 @@ class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Text Information class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo
 {
@@ -737,52 +797,57 @@ class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Trial Service class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaAuditTrail $auditTrail)
-    {
+    function add(KalturaAuditTrail $auditTrail) {
         $kparams = array();
         $this->client->addParam($kparams, "auditTrail", $auditTrail->toParams());
         $this->client->queueServiceActionCall("audit_audittrail", "add", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAuditTrail");
         return $resultobject;
     }
 
-    function get($id)
-    {
+    function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("audit_audittrail", "get", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAuditTrail");
         return $resultobject;
     }
 
-    function listAction(KalturaAuditTrailFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaAuditTrailFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        if ($pager !== null)
+        }
+        if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
+        }
         $this->client->queueServiceActionCall("audit_audittrail", "list", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaAuditTrailListResponse");
@@ -791,8 +856,12 @@ class KalturaAuditTrailService extends KalturaServiceBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Audit Client Plugin class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditClientPlugin extends KalturaClientPlugin
 {
@@ -806,8 +875,7 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
      */
     public $auditTrail = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->auditTrail = new KalturaAuditTrailService($client);
     }
@@ -815,8 +883,7 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaAuditClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
+    public static function get(KalturaClient $client) {
         if(!self::$instance)
             self::$instance = new KalturaAuditClientPlugin($client);
         return self::$instance;
@@ -825,19 +892,15 @@ class KalturaAuditClientPlugin extends KalturaClientPlugin
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
-        $services = array(
-            'auditTrail' => $this->auditTrail,
-        );
+    public function getServices() {
+        $services = array('auditTrail' => $this->auditTrail);
         return $services;
     }
 
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'audit';
     }
 }

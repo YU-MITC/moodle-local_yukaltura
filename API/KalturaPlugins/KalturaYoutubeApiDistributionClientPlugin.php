@@ -35,8 +35,12 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYoutubeApiDistributionProfileOrderBy
 {
@@ -47,16 +51,24 @@ class KalturaYoutubeApiDistributionProfileOrderBy
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYoutubeApiDistributionProviderOrderBy
 {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaYoutubeApiDistributionProfileBaseFilter extends KalturaDistributionProfileFilter
 {
@@ -64,8 +76,12 @@ abstract class KalturaYoutubeApiDistributionProfileBaseFilter extends KalturaDis
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaYoutubeApiDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
 {
@@ -73,8 +89,12 @@ abstract class KalturaYoutubeApiDistributionProviderBaseFilter extends KalturaDi
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYoutubeApiDistributionProfileFilter extends KalturaYoutubeApiDistributionProfileBaseFilter
 {
@@ -82,8 +102,12 @@ class KalturaYoutubeApiDistributionProfileFilter extends KalturaYoutubeApiDistri
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYoutubeApiDistributionProviderFilter extends KalturaYoutubeApiDistributionProviderBaseFilter
 {
@@ -91,8 +115,12 @@ class KalturaYoutubeApiDistributionProviderFilter extends KalturaYoutubeApiDistr
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYoutubeApiDistributionProfile extends KalturaDistributionProfile
 {
@@ -155,8 +183,12 @@ class KalturaYoutubeApiDistributionProfile extends KalturaDistributionProfile
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYoutubeApiDistributionProvider extends KalturaDistributionProvider
 {
@@ -164,8 +196,12 @@ class KalturaYoutubeApiDistributionProvider extends KalturaDistributionProvider
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYoutubeApiDistributionClientPlugin extends KalturaClientPlugin
 {
