@@ -27,7 +27,7 @@
  * @module local_yukaltura/properties
  */
 
-require(['jquery', 'jqueryui'], function($, jqui) {
+require(['jquery', 'jqueryui'], function($) {
     var modalX = 0;
     var modalY = 0;
 
@@ -35,7 +35,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
 
     return {
         init: function() {
-            $("submit_btn").click(function() {
+            $("submit_btn").click(function($("propertiesURL").val()) {
                 propertiesSubmitClick();
             });
             $("cancel_btn").click(function() {
@@ -44,6 +44,9 @@ require(['jquery', 'jqueryui'], function($, jqui) {
             $("add_media").click(function() {
                 fadeInPropertiesWindow();
             });
+            $("media_prop_size").change(function() {
+                handlePlayerSizeSelect();
+            });
         }
     };
 
@@ -51,7 +54,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
          * This function print modal window of player properties.
          * @param {string} - URL of selector page.
          */
-        var fadeInPropertiesWindow = function() {
+        var fadeInPropertiesWindow = function(propertiesURL) {
             // Avoidance of duplicatable execute.
             $(this).blur();  // Unfocous.
             if ($("#modal_window")[0]) {
@@ -72,7 +75,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
             centeringModalSyncer("#media_properties_panel");
 
             $("#media_properties_panel").fadeIn("slow");
-            $("#media_properties_panel").html("<iframe src=\"" + selectorURL + "\" width=\"100%\" height=\"100%\">");
+            $("#media_properties_panel").html("<iframe src=\"" + propertiesURL + "\" width=\"100%\" height=\"100%\">");
 
             // Centering content.
             centeringModalSyncer("#media_properties_panel");
