@@ -21,8 +21,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/* global $ */
-
 /**
  * @module local_yukaltura/properties
  */
@@ -35,6 +33,9 @@ require(['jquery', 'jqueryui'], function($) {
 
     return {
         init: function() {
+            $(window).load(function() {
+                loadPropertiesParameter();
+            });
             $("submit_btn").click(function() {
                 propertiesSubmitClick($("propertiesURL").val());
             });
@@ -117,7 +118,7 @@ require(['jquery', 'jqueryui'], function($) {
                 document.getElementById("submit_btn").disabled = true;
                 document.getElementById("submit_btn").style.opacity = "0.5";
             }
-        }
+        };
 
 
         /**
@@ -140,7 +141,7 @@ require(['jquery', 'jqueryui'], function($) {
                 document.getElementById("submit_btn").disabled = false;
                 document.getElementById("submit_btn").style.opacity = "1.0";
             }
-        }
+        };
 
         /**
          * This function is callback for OK button on player properties window.
@@ -219,7 +220,7 @@ require(['jquery', 'jqueryui'], function($) {
 
             // Delete modal window of player propertieds.
             fadeOutPropertiesWindow();
-        }
+        };
 
 
         /**
@@ -271,7 +272,7 @@ require(['jquery', 'jqueryui'], function($) {
                 document.getElementById("media_prop_height").value = "";
                 sizeSelect.options[0].selected = true;
             }
-        }
+        };
 
     /**
      * This function centerize modal window.
