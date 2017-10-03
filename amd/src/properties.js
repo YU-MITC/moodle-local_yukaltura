@@ -48,6 +48,12 @@ require(['jquery', 'jqueryui'], function($) {
             $("media_prop_size").change(function() {
                 handlePlayerSizeSelect();
             });
+            $("media_prop_width").change(function() {
+                handlePlayerDimensionChange();
+            });
+            $("media_prop_height").change(function() {
+                handlePlayerDimensionChange();
+            });
         }
     };
 
