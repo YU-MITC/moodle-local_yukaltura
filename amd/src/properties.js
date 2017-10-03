@@ -44,7 +44,8 @@ require(['jquery', 'jqueryui'], function($, jqui) {
             $("add_media").click(function() {
                 fadeInPropertiesWindow();
             });
-        };
+        }
+    };
 
         /**
          * This function print modal window of player properties.
