@@ -44,7 +44,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
             $("add_media").click(function() {
                 fadeInPropertiesWindow();
             });
-        }
+        };
 
         /**
          * This function print modal window of player properties.
@@ -80,7 +80,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
                 centeringModalSyncer("#media_properties_panel");
             });
 
-        }
+        };
 
         /**
          * This function deletes modal window of player properties.
@@ -96,7 +96,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
             $("#modal_window", parent.document).remove();
             $("#media_properties_panel", parent.document).fadeOut("slow");
             $("#media_properties_panel", parent.document).remove();
-        }
+        };
 
         /**
          * This function is callback for player dimension.
@@ -291,7 +291,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
             // Execute centering of modal window.
             $(contentPanel).css({"left": ((w - cw) / 2) + "px", "top": ((h - ch) / 2) + "px"});
         }, 200);
-    }
+    };
 
     /**
      * This function checks letter of name.
@@ -306,7 +306,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
         }
 
         return true;
-    }
+    };
 
     /**
      * This function checks player size.
@@ -326,7 +326,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
         }
 
         return true;
-    }
+    };
 
     /**
      * Retrieve OS type.
@@ -357,5 +357,5 @@ require(['jquery', 'jqueryui'], function($, jqui) {
         }
 
         return os;
-    }
+    };
 });
