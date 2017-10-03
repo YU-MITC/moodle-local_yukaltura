@@ -42,7 +42,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
                 fadeOutPropertiesWindow();
             });
             $("add_media").click(function() {
-                fadeInPropertiesWindow($("properties_urrl").val());
+                fadeInPropertiesWindow();
             });
         }
 
@@ -50,7 +50,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
          * This function print modal window of player properties.
          * @param {string} - URL of selector page.
          */
-        fadeInPropertiesWindow: function(selectorURL) {
+        fadeInPropertiesWindow: function() {
             // Avoidance of duplicatable execute.
             $(this).blur();  // Unfocous.
             if ($("#modal_window")[0]) {
@@ -268,7 +268,7 @@ require(['jquery', 'jqueryui'], function($, jqui) {
                 sizeSelect.options[0].selected = true;
             }
         }
-    }
+    };
 
     /**
      * This function centerize modal window.
@@ -358,4 +358,4 @@ require(['jquery', 'jqueryui'], function($, jqui) {
 
         return os;
     }
-}
+});
