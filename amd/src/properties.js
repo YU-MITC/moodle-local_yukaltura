@@ -35,8 +35,8 @@ require(['jquery', 'jqueryui'], function($) {
 
     return {
         init: function() {
-            $("submit_btn").click(function($("propertiesURL").val()) {
-                propertiesSubmitClick();
+            $("submit_btn").click(function() {
+                propertiesSubmitClick($("propertiesURL").val());
             });
             $("cancel_btn").click(function() {
                 fadeOutPropertiesWindow();
