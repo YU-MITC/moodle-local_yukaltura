@@ -656,7 +656,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
                          2 => get_string('media_prop_size_custom', 'kalmediares')
                          );
 
-        $attr = array('id' => 'media_prop_size', 'onchange' => 'handlePlayerSizeSelect();');
+        $attr = array('id' => 'media_prop_size');
         $selected = !empty($defaults) ? $defaults['media_prop_size'] : array();
 
         $output .= html_writer::select($options, 'media_prop_size', $selected, array(), $attr);
@@ -669,8 +669,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
                       'name' => 'media_prop_width',
                       'value' => '',
                       'maxlength' => '4',
-                      'size' => '4',
-                      'onchange' => 'handlePlayerDimensionChange();'
+                      'size' => '4'
                       );
         $output .= html_writer::empty_tag('input', $attr);
 
@@ -681,8 +680,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
                       'name' => 'media_prop_height',
                       'value' => '',
                       'maxlength' => '4',
-                      'size' => '4',
-                      'onchange' => 'handlePlayerDimensionChange();'
+                      'size' => '4'
                       );
         $output .= html_writer::empty_tag('input', $attr);
 
@@ -749,7 +747,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $output .= html_writer::start_tag('td', array());
 
         $attr = array('type' => 'button', 'id' => 'submit_btn', 'name' => 'submit_btn',
-                      'value' => 'OK', 'onclick' => 'propertiesSubmitClick();');
+                      'value' => 'OK');
         $output .= html_writer::empty_tag('input', $attr);
 
         $output .= html_writer::end_tag('td');
@@ -757,7 +755,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $output .= html_writer::start_tag('td', array());
 
         $attr = array('type' => 'button', 'id' => 'cancel_btn', 'name' => 'cancel_btn',
-                      'value' => 'Cancel, Close', 'onclick' => 'fadeOutPropertiesWindow();');
+                      'value' => 'Cancel, Close');
         $output .= html_writer::empty_tag('input', $attr);
 
         $output .= html_writer::end_tag('td');

@@ -22,13 +22,10 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-M.local_yukaltura = {
-    Y : null,
-    transaction : {},
+M.local_yukaltura = M.local_yukaltura || {};
 
-    init: function (Y) {
-        this.Y = Y;
-
+M.local_yukatlura.settings = {
+    init: function () {
         // Check for an instance of the Kaltura connection type element.
         if (Y.DOM.byId("id_s_local_yukaltura_conn_server")) {
 
@@ -50,7 +47,7 @@ M.local_yukaltura = {
 
             // Add 'change' event to the connection type selection drop down.
             connectionType.on('change', function (e) {
-
+                e.preventDefault();
                 var connectionUri = Y.DOM.byId("id_s_local_yukaltura_uri");
 
                 if (connectionUri.disabled) {
@@ -152,6 +149,7 @@ M.local_yukaltura = {
                 source: 'courses.php?query={query}&action=autocomplete',
                 on : {
                     select : function(e) {
+                        e.preventDefault();
                         Y.io('courses.php', {
                             method: 'POST',
                             data: {course_id : e.result.raw.id, action: 'select_course'},
@@ -159,7 +157,7 @@ M.local_yukaltura = {
                                 success: function(id, result) {
                                     var data = Y.JSON.parse(result.responseText);
                                     if (data.failure && data.failure == true) {
-                                        alert(data.message);
+                                        window.alert(data.message);
                                     } else {
                                         document.getElementById('resourceobject').src = decodeURIComponent(data.url);
                                     }
@@ -184,6 +182,7 @@ M.local_yukaltura = {
             };
 
             search_btn.on('click', function(e) {
+                e.preventDefault();
                 var query = search_txt.get('value');
                 // Don't accept an empty search string.
                 if (!(/^\s*$/.test(query))) {
@@ -193,6 +192,7 @@ M.local_yukaltura = {
             });
 
             clear_btn.on('click', function(e) {
+                e.preventDefault();
                 search_txt.set("value", "");
             });
 
@@ -203,7 +203,7 @@ M.local_yukaltura = {
     get_thumbnail_url: function(entry_id) {
 
         YUI().use("io-base", "json-parse", "node", function (Y) {
-            var location = M.local_yukaltura.dataroot + entry_id;
+            var location = M.local_yukaltura.settings.dataroot + entry_id;
 
             Y.io(location);
 
@@ -228,24 +228,23 @@ M.local_yukaltura = {
     loading_panel: {},
 
     show_loading: function () {
-        M.local_yukaltura.loading_panel = new Y.YUI2.widget.Panel("wait",
+        M.local_yukaltura.settings.loading_panel = new Y.YUI2.widget.Panel("wait",
             {width:"240px", fixedcenter:true, close:false, draggable:false, zindex:4, modal:true, visible:false});
 
-        M.local_yukaltura.loading_panel.setHeader("Loading, please wait...");
-        M.local_yukaltura.loading_panel.setBody('<img src="../../local/yukaltura/pix/rel_interstitial_loading.gif" />');
-        M.local_yukaltura.loading_panel.render();
+        M.local_yukaltura.settings.loading_panel.setHeader("Loading, please wait...");
+        M.local_yukaltura.settings.loading_panel.setBody('<img src="../../local/yukaltura/pix/rel_interstitial_loading.gif" />');
+        M.local_yukaltura.settings.loading_panel.render();
 
-        M.local_yukaltura.loading_panel.show();
+        M.local_yukaltura.settings.loading_panel.show();
     },
 
     hide_loading: function () {
-        M.local_yukaltura.loading_panel.hide();
+        M.local_yukaltura.settings.loading_panel.hide();
     },
 
     dataroot: {},
 
     set_dataroot: function(web_location) {
-        M.local_yukaltura.dataroot = web_location;
+        M.local_yukaltura.settings.dataroot = web_location;
     }
-
 };

@@ -32,29 +32,24 @@ if (!defined('MOODLE_INTERNAL')) {
 
 global $SESSION, $USER, $COURSE, $OUTPUT;
 
-$coursecontext = context_course::instance($COURSE->id);
-$PAGE->set_context($coursecontext);
+$context = context_course::instance($COURSE->id);
+$PAGE->set_context($context);
 
 $header  = format_string($SITE->shortname).": Media Properties";
 
 $PAGE->set_url('/local/yukaltura/media_properties.php');
-$PAGE->set_course($COURSE);
+//$PAGE->set_course($COURSE);
 
-$PAGE->set_pagetype('mymedia-index');
+$PAGE->set_pagetype('player-properties');
 $PAGE->set_pagelayout('print');
 $PAGE->set_title($header);
 $PAGE->set_heading($header);
-$PAGE->add_body_class('mymedia-index'); 
-$PAGE->requires->js('/local/yukaltura/js/encoding.js', true);
-//$PAGE->requires->js('/local/yukaltura/js/jquery-3.0.0.js', true);
-$PAGE->requires->js('/local/yukaltura/js/simple_selector.js', true);
+$PAGE->add_body_class('player-properties'); 
 $PAGE->requires->css('/local/yukaltura/css/simple_selector.css', true);
-//$PAGE->requires->jquery();
-//$PAGE->requires->jquery_plugin('ui');
-//$PAGE->requires->jquery_plugin('ui-css');
-$PAGE->requires->js_call_amd('local_yukaltura/properties', 'init');
+$PAGE->requires->js_call_amd('local_yukaltura/properties', 'init',
+                             array($CFG->wwwroot . "/local/yukaltura/media_properties.php"));
 
-$OUTPUT->header();
+echo $OUTPUT->header();
 
 // Connect to Kaltura server.
 $kaltura = new yukaltura_connection();
@@ -95,5 +90,5 @@ try {
 
 //echo '</body>';
 //echo '</html>';
-$OUTPUT->footer();
+echo $OUTPUT->footer();
 

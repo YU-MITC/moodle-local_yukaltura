@@ -1,0 +1,10 @@
+{
+  "name": "moodle-local_yukaltura-settings",
+  "builds": {
+    "moodle-local_yukaltura-settings": {
+      "jsfiles": [
+        "settings.js"
+      ]
+    }
+  }
+}
