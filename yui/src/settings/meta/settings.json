@@ -1,9 +1,0 @@
-{
-  "moodle-local_yukaltura-settings": {
-    "requires": [
-        "base",
-        "node",
-        "dom"
-    ]
-  }
-}
