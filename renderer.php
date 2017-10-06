@@ -302,8 +302,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr   = array('class' => 'selector media thumbnail');
         $output .= html_writer::start_tag('div', $attr);
 
-        $thumbnail = $url . '/width/150/height/100/type/3';
-
         $attr    = array('src' => $url . '/width/120/height/80/type/3',
                          'class' => 'media_thumbnail',
                          'id' => $entryid,

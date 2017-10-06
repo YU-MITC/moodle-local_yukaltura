@@ -1306,7 +1306,6 @@ function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '
         $uid .= '_' . mt_rand();
     }
 
-    $host             = local_yukaltura_get_host();
     $flashvars        = local_yukaltura_get_kdp_flashvars($entryobj->creatorId, $session);
     $flashvars        = explode('&amp;', $flashvars);
     $kwidgetflashvar  = '';
