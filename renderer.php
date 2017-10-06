@@ -166,7 +166,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $sort .= html_writer::end_tag('td');
         $sort .= html_writer::start_tag('td');
         $sort .= '&nbsp;';
-        $sort .= html_writer::start_tag('select', array('id' => 'selectorSort', 'onchange' => 'changeSort()'));
+        $sort .= html_writer::start_tag('select', array('id' => 'selectorSort'));
 
         $attr = array('value' => $sorturl . 'recent');
 
@@ -314,8 +314,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
                          'alt' => $alt,
                          'height' => '80',
                          'width'  => '120',
-                         'title' => $alt,
-                         'onclick' => 'clickThumbnailImage(\'' . $entryid  . '\',\'' . $alt . '\',\'' . $thumbnail . '\')');
+                         'title' => $alt);
 
         $output .= html_writer::empty_tag('img', $attr);
 
@@ -561,7 +560,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $output .= html_writer::start_tag('td', array());
 
         $attr = array('type' => 'button', 'id' => 'submit_btn', 'name' => 'submit_btn',
-                      'value' => 'OK', 'onclick' => 'selectorSubmitClick();', 'disabled' => 'true');
+                      'value' => 'OK', 'disabled' => 'true');
         $output .= html_writer::empty_tag('input', $attr);
 
         $output .= html_writer::end_tag('td');
@@ -569,7 +568,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $output .= html_writer::start_tag('td', array());
 
         $attr = array('type' => 'button', 'id' => 'cancel_btn', 'name' => 'cancel_btn',
-                      'value' => 'Cancel, Close', 'onclick' => 'fadeOutSelectorWindow();');
+                      'value' => 'Cancel, Close');
         $output .= html_writer::empty_tag('input', $attr);
 
         $output .= html_writer::end_tag('td');
@@ -786,8 +785,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr = array('type' => 'button',
                       'name' => 'faedeout',
                       'id' => 'fadeout',
-                      'value' => 'Close',
-                      'onclick' => 'fadeOutSelectorWindow()'
+                      'value' => 'Close'
                      );
 
         $output .= html_writer::empty_tag('input', $attr);

@@ -28,6 +28,10 @@
 define(['jquery'], function($) {
 
     return {
+        /**
+         * Initial function.
+         * @access
+         */
         init: function(propertiesUrl) {
 
             var modalX = 0;
@@ -44,6 +48,9 @@ define(['jquery'], function($) {
                     clearTimeout(timer);
                 }
                 timer = setTimeout(function() {
+                    $(contentPanel).css({"width": "400px", "height": "400px"});
+                    $(contentPanel).css({"font-size": "14px"});
+
                     // Get width and height of window.
                     var w = $(window).width();
                     var h = $(window).height();
@@ -223,7 +230,6 @@ define(['jquery'], function($) {
                     }
                 } else {
                     var dimension = $("#media_prop_size option:selected").text();
-                    window.alert(dimension);
                     var dimensionArray = dimension.match(/\d{2,4}/g);
                     if (dimensionArray === null || dimensionArray.length != 2) {
                         window.alert("Player size(width,height) is a wrong dimension.");

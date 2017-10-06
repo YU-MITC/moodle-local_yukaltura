@@ -41,10 +41,10 @@ $PAGE->set_url('/local/yukaltura/media_properties.php');
 //$PAGE->set_course($COURSE);
 
 $PAGE->set_pagetype('player-properties');
-$PAGE->set_pagelayout('print');
+$PAGE->set_pagelayout('embedded');
 $PAGE->set_title($header);
-$PAGE->set_heading($header);
-$PAGE->add_body_class('player-properties'); 
+$PAGE->set_heading("");
+$PAGE->add_body_class('player-properties');
 $PAGE->requires->css('/local/yukaltura/css/simple_selector.css', true);
 $PAGE->requires->js_call_amd('local_yukaltura/properties', 'init',
                              array($CFG->wwwroot . "/local/yukaltura/media_properties.php"));
@@ -66,16 +66,6 @@ $loginsession = '';
 $context = context_user::instance($USER->id);
 
 $renderer = $PAGE->get_renderer('local_yukaltura');
-
-//echo '<!DOCTYPE html>';
-//echo '<html lang="ja">';
-//echo '<head>';
-//echo '<meta charset="UTF-8">';
-//echo '<title>Simple Selector</title>';
-//echo '<script src="js/jquery-1.2.6.js"></script>';
-//echo '<script src="js/jquery-3.0.0.js"></script>';
-//echo '</head>';
-//echo '<body text="black" bgcolor="white" link="blue" alink="red" vlink="purple" onload="loadPropertiesParameter()">';
 
 try {
 

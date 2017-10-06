@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+M.local_yukaltura = {};
+
 M.local_yukaltura = {
     Y : null,
     transaction : {},
@@ -50,7 +52,7 @@ M.local_yukaltura = {
 
             // Add 'change' event to the connection type selection drop down.
             connectionType.on('change', function (e) {
-
+                e.preventDefault();
                 var connectionUri = Y.DOM.byId("id_s_local_yukaltura_uri");
 
                 if (connectionUri.disabled) {
@@ -76,7 +78,7 @@ M.local_yukaltura = {
             }
 
             kalturaPlayer.on('change', function (e) {
-
+                e.preventDefault();
                 var kalturaCustomPlayer = Y.DOM.byId("id_s_local_yukaltura_player_custom");
 
                 var kalturaPlayerDom = Y.Node.getDOMNode(e.target);
@@ -105,7 +107,7 @@ M.local_yukaltura = {
             }
 
             kalturaPlayerResource.on('change', function (e) {
-
+                e.preventDefault();
                 var kalturaCustomPlayerResource = Y.DOM.byId("id_s_local_yukaltura_player_resource_custom");
 
                 var kalturaPlayerResourceDom = Y.Node.getDOMNode(e.target);
@@ -152,6 +154,7 @@ M.local_yukaltura = {
                 source: 'courses.php?query={query}&action=autocomplete',
                 on : {
                     select : function(e) {
+                        e.preventDefault();
                         Y.io('courses.php', {
                             method: 'POST',
                             data: {course_id : e.result.raw.id, action: 'select_course'},
@@ -159,7 +162,7 @@ M.local_yukaltura = {
                                 success: function(id, result) {
                                     var data = Y.JSON.parse(result.responseText);
                                     if (data.failure && data.failure == true) {
-                                        alert(data.message);
+                                        window.alert(data.message);
                                     } else {
                                         document.getElementById('resourceobject').src = decodeURIComponent(data.url);
                                     }
@@ -171,6 +174,7 @@ M.local_yukaltura = {
             });
 
             kaltura_search.onkeypress = function(e) {
+                e.preventDefault();
                 // Enter is pressed.
                 if (e.keyCode === 13) {
                     var query = search_txt.get('value');
@@ -184,6 +188,7 @@ M.local_yukaltura = {
             };
 
             search_btn.on('click', function(e) {
+                e.preventDefault();
                 var query = search_txt.get('value');
                 // Don't accept an empty search string.
                 if (!(/^\s*$/.test(query))) {
@@ -193,6 +198,7 @@ M.local_yukaltura = {
             });
 
             clear_btn.on('click', function(e) {
+                e.preventDefault();
                 search_txt.set("value", "");
             });
 
