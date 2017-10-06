@@ -22,22 +22,18 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
-require_once(dirname(__FILE__) . '/locallib.php');
-
 if (!defined('MOODLE_INTERNAL')) {
     // It must be included from a Moodle page.
     die('Direct access to this script is forbidden.');
 }
 
-global $PAGE, $SITE;
+$param = optional_param('section', '', PARAM_TEXT);
 
-$PAGE->set_url('/local/yukaltura/settings.php');
-$PAGE->set_course($SITE);
+require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
+require_once(dirname(__FILE__) . '/locallib.php');
+
 
 require_login();
-
-$param = optional_param('section', '', PARAM_TEXT);
 
 /*
  * $enableapicalls is a flag to enable the settings page to make API calls to

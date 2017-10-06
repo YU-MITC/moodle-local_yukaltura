@@ -146,7 +146,7 @@ class KalturaYoutubeApiDistributionProfile extends KalturaDistributionProfile
     public $defaultCategory = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */

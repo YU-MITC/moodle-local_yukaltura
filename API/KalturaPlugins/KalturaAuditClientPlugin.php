@@ -281,7 +281,7 @@ class KalturaAuditTrail extends KalturaObjectBase
     public $userId = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaAuditTrailAction
      */
@@ -788,7 +788,7 @@ class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo
 class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo
 {
     /**
-     * 
+     *
      *
      * @var string
      */

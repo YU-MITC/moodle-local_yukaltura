@@ -108,7 +108,7 @@ class KalturaCaptionAsset extends KalturaAsset
 {
     /**
      * The Caption Params used to create this Caption Asset
-     * 
+     *
      *
      * @var int
      * @insertonly
@@ -117,7 +117,7 @@ class KalturaCaptionAsset extends KalturaAsset
 
     /**
      * The language of the caption asset content
-     * 
+     *
      *
      * @var KalturaLanguage
      */
@@ -125,7 +125,7 @@ class KalturaCaptionAsset extends KalturaAsset
 
     /**
      * The language of the caption asset content
-     * 
+     *
      *
      * @var KalturaLanguageCode
      * @readonly
@@ -134,7 +134,7 @@ class KalturaCaptionAsset extends KalturaAsset
 
     /**
      * Is default caption asset of the entry
-     * 
+     *
      *
      * @var KalturaNullableBoolean
      */
@@ -142,7 +142,7 @@ class KalturaCaptionAsset extends KalturaAsset
 
     /**
      * Friendly label
-     * 
+     *
      *
      * @var string
      */
@@ -150,7 +150,7 @@ class KalturaCaptionAsset extends KalturaAsset
 
     /**
      * The caption format
-     * 
+     *
      *
      * @var KalturaCaptionType
      * @insertonly
@@ -159,7 +159,7 @@ class KalturaCaptionAsset extends KalturaAsset
 
     /**
      * The status of the asset
-     * 
+     *
      *
      * @var KalturaCaptionAssetStatus
      * @readonly
@@ -179,7 +179,7 @@ class KalturaCaptionAsset extends KalturaAsset
 class KalturaCaptionAssetListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaCaptionAsset
      * @readonly
@@ -187,7 +187,7 @@ class KalturaCaptionAssetListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -208,7 +208,7 @@ class KalturaCaptionParams extends KalturaAssetParams
 {
     /**
      * The language of the caption content
-     * 
+     *
      *
      * @var KalturaLanguage
      * @insertonly
@@ -217,7 +217,7 @@ class KalturaCaptionParams extends KalturaAssetParams
 
     /**
      * Is default caption asset of the entry
-     * 
+     *
      *
      * @var KalturaNullableBoolean
      */
@@ -225,7 +225,7 @@ class KalturaCaptionParams extends KalturaAssetParams
 
     /**
      * Friendly label
-     * 
+     *
      *
      * @var string
      */
@@ -233,7 +233,7 @@ class KalturaCaptionParams extends KalturaAssetParams
 
     /**
      * The caption format
-     * 
+     *
      *
      * @var KalturaCaptionType
      * @insertonly
@@ -260,14 +260,14 @@ class KalturaCaptionParams extends KalturaAssetParams
 abstract class KalturaCaptionParamsBaseFilter extends KalturaAssetParamsFilter
 {
     /**
-     * 
+     *
      *
      * @var KalturaCaptionType
      */
     public $formatEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -299,7 +299,7 @@ class KalturaCaptionParamsFilter extends KalturaCaptionParamsBaseFilter
 class KalturaCaptionParamsListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaCaptionParams
      * @readonly
@@ -307,7 +307,7 @@ class KalturaCaptionParamsListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -327,35 +327,35 @@ class KalturaCaptionParamsListResponse extends KalturaObjectBase
 abstract class KalturaCaptionAssetBaseFilter extends KalturaAssetFilter
 {
     /**
-     * 
+     *
      *
      * @var KalturaCaptionType
      */
     public $formatEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $formatIn = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaCaptionAssetStatus
      */
     public $statusEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */

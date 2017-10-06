@@ -313,7 +313,7 @@ class KalturaSshDropFolderOrderBy
 abstract class KalturaDropFolderFileHandlerConfig extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var KalturaDropFolderFileHandlerType
      * @readonly

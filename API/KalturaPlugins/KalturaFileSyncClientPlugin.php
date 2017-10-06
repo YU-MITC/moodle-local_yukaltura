@@ -203,7 +203,7 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */

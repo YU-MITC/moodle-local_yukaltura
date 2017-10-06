@@ -425,7 +425,7 @@ class KalturaCuePointFilter extends KalturaCuePointBaseFilter
 class KalturaCuePointListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaCuePoint
      * @readonly
@@ -433,7 +433,7 @@ class KalturaCuePointListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly

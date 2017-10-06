@@ -84,7 +84,7 @@ abstract class KalturaShortLinkBaseFilter extends KalturaFilter
     public $idEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -182,7 +182,7 @@ abstract class KalturaShortLinkBaseFilter extends KalturaFilter
     public $statusEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */

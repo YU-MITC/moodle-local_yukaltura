@@ -467,7 +467,7 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaDistributionProviderType
      * @insertonly
@@ -992,7 +992,7 @@ abstract class KalturaEntryDistributionBaseFilter extends KalturaFilter
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
