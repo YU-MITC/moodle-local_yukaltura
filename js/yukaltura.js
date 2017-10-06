@@ -25,10 +25,10 @@
 M.local_yukaltura = {};
 
 M.local_yukaltura = {
-    Y : null,
-    transaction : {},
+    Y: null,
+    transaction: {},
 
-    init: function (Y) {
+    init: function(Y) {
         this.Y = Y;
 
         // Check for an instance of the Kaltura connection type element.
@@ -51,7 +51,7 @@ M.local_yukaltura = {
             }
 
             // Add 'change' event to the connection type selection drop down.
-            connectionType.on('change', function (e) {
+            connectionType.on('change', function(e) {
                 e.preventDefault();
                 var connectionUri = Y.DOM.byId("id_s_local_yukaltura_uri");
 
@@ -77,7 +77,7 @@ M.local_yukaltura = {
                 Y.DOM.byId('id_s_local_yukaltura_player_custom').disabled = true;
             }
 
-            kalturaPlayer.on('change', function (e) {
+            kalturaPlayer.on('change', function(e) {
                 e.preventDefault();
                 var kalturaCustomPlayer = Y.DOM.byId("id_s_local_yukaltura_player_custom");
 
@@ -106,7 +106,7 @@ M.local_yukaltura = {
                 Y.DOM.byId('id_s_local_yukaltura_player_resource_custom').disabled = true;
             }
 
-            kalturaPlayerResource.on('change', function (e) {
+            kalturaPlayerResource.on('change', function(e) {
                 e.preventDefault();
                 var kalturaCustomPlayerResource = Y.DOM.byId("id_s_local_yukaltura_player_resource_custom");
 
@@ -142,7 +142,7 @@ M.local_yukaltura = {
                 enableCache: false,
                 minQueryLength: 2,
                 resultListLocator: 'data.courses',
-                resultFormatter: function (query, results) {
+                resultFormatter: function(query, results) {
                     return Y.Array.map(results, function(result) {
                         var course = result.raw;
                         if (course.shortname) {
@@ -152,12 +152,12 @@ M.local_yukaltura = {
                     });
                 },
                 source: 'courses.php?query={query}&action=autocomplete',
-                on : {
-                    select : function(e) {
+                on: {
+                    select: function(e) {
                         e.preventDefault();
                         Y.io('courses.php', {
                             method: 'POST',
-                            data: {course_id : e.result.raw.id, action: 'select_course'},
+                            data: {course_id: e.result.raw.id, action: 'select_course'},
                             on: {
                                 success: function(id, result) {
                                     var data = Y.JSON.parse(result.responseText);
@@ -208,7 +208,7 @@ M.local_yukaltura = {
 
     get_thumbnail_url: function(entry_id) {
 
-        YUI().use("io-base", "json-parse", "node", function (Y) {
+        YUI().use("io-base", "json-parse", "node", function(Y) {
             var location = M.local_yukaltura.dataroot + entry_id;
 
             Y.io(location);
@@ -233,7 +233,7 @@ M.local_yukaltura = {
 
     loading_panel: {},
 
-    show_loading: function () {
+    show_loading: function() {
         M.local_yukaltura.loading_panel = new Y.YUI2.widget.Panel("wait",
             {width:"240px", fixedcenter:true, close:false, draggable:false, zindex:4, modal:true, visible:false});
 

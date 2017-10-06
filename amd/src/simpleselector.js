@@ -30,7 +30,9 @@ define(['jquery'], function($) {
     return {
         /**
          * Initial function.
-         * @access
+         * @access public
+         * @param {string} selectorURL - url of simple selector page.
+         * @param {string} replaceLabel - label of media replace button.
          */
         init: function(selectorUrl, replaceLabel) {
 
@@ -52,9 +54,7 @@ define(['jquery'], function($) {
             /**
              * This is callback function for thumbnail click.
              * @access private
-             * @param {int} - entry ID of selected media.
-             * @param {string} - title of selected media.
-             * @param {string} - tag of selected thumbnail.
+             * @param {object} e - event object of target image.
              */
             function clickThumbnailImage(e) {
                 var selectId = e.target.id;
@@ -72,17 +72,17 @@ define(['jquery'], function($) {
                 $("#select_thumbnail").val(selectThumbnail);
 
                 // Enable OK button.
-                $("#submit_btn").prop("disabled",false);
+                $("#submit_btn").prop("disabled", false);
                 $("#submit_btn").css({opacity: "1.0"});
             }
 
             /**
              * This function centerize modal window.
              * @access private
-             * @param {object} - HTML element of content panel.
+             * @param {object} contentPanel - HTML element of content panel.
              */
-            function centeringModalSyncer(contentPanel){
-                if (timer !== false){
+            function centeringModalSyncer(contentPanel) {
+                if (timer !== false) {
                     clearTimeout(timer);
                 }
                 timer = setTimeout(function() {
@@ -102,7 +102,8 @@ define(['jquery'], function($) {
             /**
              * This function print modal window.
              * @access private
-             * @param {string} - URL of simple selector web page.
+             * @param {string} url - URL of simple selector web page.
+             * @return {bool} - if fade-in modal window, return true.
              */
             function fadeInSelectorWindow(url) {
                 // Avoidance of duplicatable execute.
@@ -194,7 +195,7 @@ define(['jquery'], function($) {
                     if ($("#media_thumbnail", parent.document) !== null) {
                         $("#media_thumbnail", parent.document).prop("src", selectThumbnail);
                         $("#media_thumbnail", parent.document).prop("alt", selectName);
-                        $("#media_thumbnail", parent.document).prop("title",  selectName);
+                        $("#media_thumbnail", parent.document).prop("title", selectName);
                     }
 
                     var idMediaProperties = $("#id_media_properties", parent.document);
@@ -215,7 +216,7 @@ define(['jquery'], function($) {
             /**
              * This function replaces "Add Media" label when membed media is selected.
              * @access private
-             * @param {string} - Label of "Add Media" button.
+             * @param {string} str - Label of "Add Media" button.
              */
             function replaceAddMediaLabel(str) {
                 $("#id_add_media", parent.document).val(str);

@@ -30,7 +30,8 @@ define(['jquery'], function($) {
     return {
         /**
          * Initial function.
-         * @access
+         * @access public
+         * @param {string} propertiesUrl - url of media properties page.
          */
         init: function(propertiesUrl) {
 
@@ -40,8 +41,8 @@ define(['jquery'], function($) {
 
             /**
              * This function centerize modal window.
-             * @access private
-             * @param {object} - HTML element of content panel.
+             * @access public
+             * @param {object} contentPanel - HTML element of content panel.
              */
             function centeringModalSyncer(contentPanel) {
                 if (timer !== false) {
@@ -66,8 +67,8 @@ define(['jquery'], function($) {
 
             /**
              * This function checks letter of name.
-             * @access private
-             * @param {string} - media title
+             * @access public
+             * @param {string} str - media title
              * @return {bool} - if check is passed, return "true". Otherwise return "false".
              */
             function checkNameString(str) {
@@ -82,8 +83,8 @@ define(['jquery'], function($) {
             /**
              * This function checks player size.
              * @access private
-             * @param {int} - player width set by user.
-             * @param {int} - player height set by user.
+             * @param {int} width - player width set by user.
+             * @param {int} height - player height set by user.
              * @return {bool} - if palyer size is appropriate, return "true". Otherwise return "false".
              */
             function checkPlayerDimension(width, height) {
@@ -98,7 +99,8 @@ define(['jquery'], function($) {
 
             /**
              * This function print modal window of player properties.
-             * @param {string} - URL of selector page.
+             * @param {string} url - URL of selector page.
+             * @return {bool} - if fade-in modal window, return true;
              */
             function fadeInPropertiesWindow(url) {
                 // Avoidance of duplicatable execute.
@@ -130,11 +132,12 @@ define(['jquery'], function($) {
                     centeringModalSyncer("#media_properties_panel");
                 });
 
+                return true;
             }
 
             /**
              * This function deletes modal window of player properties.
-             * @access private
+             * @access public
              */
             function fadeOutPropertiesWindow() {
 
@@ -196,6 +199,7 @@ define(['jquery'], function($) {
             /**
              * This function is callback for OK button on player properties window.
              * @acecss public
+             * @return {bool} - if fade-out modal window, return true.
              */
             function propertiesSubmitClick() {
                 var str = $("#media_prop_name").val();
@@ -251,6 +255,8 @@ define(['jquery'], function($) {
 
                 // Delete modal window of player propertieds.
                 fadeOutPropertiesWindow();
+
+                return true;
             }
 
             /**
@@ -278,8 +284,8 @@ define(['jquery'], function($) {
                 $("#media_prop_width").prop("disabled", false);
                 $("#media_prop_height").prop("disabled", false);
                 if (width !== "" && width != "0" && height !== "" && height != "0") {
-                    for (i = 0; i < $("#media_prop_size").children("option").length; i++) {
-                        if ($("#media_prop_size option:eq(" + i + ")").text().indexOf(dimension) != -1) {
+                    for (var j = 0; j < $("#media_prop_size").children("option").length; j++) {
+                        if ($("#media_prop_size option:eq(" + j + ")").text().indexOf(dimension) != -1) {
                             $("#media_prop_size").prop("selectedIndex", i);
                             $("#media_prop_width").prop("disabled", true);
                             $("#media_prop_height").prop("disabled", true);

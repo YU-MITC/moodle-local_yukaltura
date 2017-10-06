@@ -27,9 +27,9 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-$plugin->version = 2017100600;
+$plugin->version = 2017100700;
 $plugin->component = 'local_yukaltura';
-$plugin->release = 'YU Kaltura Media Local Libraries 1.0.4';
+$plugin->release = 'YU Kaltura Media Local Libraries 1.0.5';
 $plugin->requires = 2015051100;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->system_version = 2.1; // Used to send information to Kaltura.
