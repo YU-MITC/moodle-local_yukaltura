@@ -35,104 +35,108 @@ if (!defined('MOODLE_INTERNAL')) {
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Caption Asset Item Filter class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCaptionAssetItemFilter extends KalturaCaptionAssetFilter
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $contentLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $contentMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $contentMultiLikeAnd = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $partnerDescriptionLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $partnerDescriptionMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $partnerDescriptionMultiLikeAnd = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaLanguage
      */
     public $languageEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $languageIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $labelEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $labelIn = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $startTimeGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $startTimeLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $endTimeGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -141,14 +145,18 @@ class KalturaCaptionAssetItemFilter extends KalturaCaptionAssetFilter
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Caption Asset Item class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCaptionAssetItem extends KalturaObjectBase
 {
     /**
      * The Caption Asset object
-     * 
+     *
      *
      * @var KalturaCaptionAsset
      */
@@ -156,28 +164,28 @@ class KalturaCaptionAssetItem extends KalturaObjectBase
 
     /**
      * The entry object
-     * 
+     *
      *
      * @var KalturaBaseEntry
      */
     public $entry;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $startTime = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $endTime = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -186,13 +194,17 @@ class KalturaCaptionAssetItem extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Caption Asset Item List Response class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCaptionAssetItemListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaCaptionAssetItem
      * @readonly
@@ -200,7 +212,7 @@ class KalturaCaptionAssetItemListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -210,28 +222,34 @@ class KalturaCaptionAssetItemListResponse extends KalturaObjectBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Caption Asset Item Service class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCaptionAssetItemService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function search(KalturaBaseEntryFilter $entryFilter = null, KalturaCaptionAssetItemFilter $captionAssetItemFilter = null, KalturaFilterPager $captionAssetItemPager = null)
-    {
+    function search(KalturaBaseEntryFilter $entryFilter = null, KalturaCaptionAssetItemFilter $captionAssetItemFilter = null, KalturaFilterPager $captionAssetItemPager = null) {
         $kparams = array();
-        if ($entryFilter !== null)
+        if ($entryFilter !== null) {
             $this->client->addParam($kparams, "entryFilter", $entryFilter->toParams());
-        if ($captionAssetItemFilter !== null)
+        }
+        if ($captionAssetItemFilter !== null) {
             $this->client->addParam($kparams, "captionAssetItemFilter", $captionAssetItemFilter->toParams());
-        if ($captionAssetItemPager !== null)
+        }
+        if ($captionAssetItemPager !== null) {
             $this->client->addParam($kparams, "captionAssetItemPager", $captionAssetItemPager->toParams());
+        }
         $this->client->queueServiceActionCall("captionsearch_captionassetitem", "search", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaCaptionAssetItemListResponse");
@@ -240,8 +258,12 @@ class KalturaCaptionAssetItemService extends KalturaServiceBase
 }
 
 /**
- * @package Kaltura
- * @subpackage Client
+ * Kaltura Caption Search Client Plugin class
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2014 Kaltura Inc.
+ * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
 {
@@ -255,8 +277,7 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
      */
     public $captionAssetItem = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->captionAssetItem = new KalturaCaptionAssetItemService($client);
     }
@@ -264,18 +285,17 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaCaptionSearchClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaCaptionSearchClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'captionAssetItem' => $this->captionAssetItem,
         );
@@ -285,8 +305,7 @@ class KalturaCaptionSearchClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'captionSearch';
     }
 }

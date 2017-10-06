@@ -98,105 +98,105 @@ class KalturaFileSyncType
 abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 {
     /**
-     * 
+     *
      *
      * @var int
      */
     public $partnerIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaFileSyncObjectType
      */
     public $fileObjectTypeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $fileObjectTypeIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $objectIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $objectIdIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $versionEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $versionIn = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $objectSubTypeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $objectSubTypeIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $dcEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $dcIn = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $originalEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -210,91 +210,91 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
     public $updatedAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $readyAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $readyAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $syncTimeGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $syncTimeLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaFileSyncStatus
      */
     public $statusEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaFileSyncType
      */
     public $fileTypeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $fileTypeIn = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $linkedIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $linkCountGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $linkCountLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $fileSizeGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -330,26 +330,24 @@ class KalturaFileSyncClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaFileSyncClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaFileSyncClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -358,8 +356,7 @@ class KalturaFileSyncClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'fileSync';
     }
 }

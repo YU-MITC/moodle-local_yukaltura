@@ -125,70 +125,70 @@ class KalturaHuluDistributionProviderFilter extends KalturaHuluDistributionProvi
 class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpHost = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpLogin = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpPass = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seriesChannel = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seriesPrimaryCategory = null;
 
     /**
-     * 
+     *
      *
      * @var array of KalturaString
      */
     public $seriesAdditionalCategories;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seasonNumber = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seasonSynopsis = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $seasonTuneInInformation = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -224,26 +224,24 @@ class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaHuluDistributionClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaHuluDistributionClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -252,8 +250,7 @@ class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'huluDistribution';
     }
 }

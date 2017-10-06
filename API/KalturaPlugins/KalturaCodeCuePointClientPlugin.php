@@ -65,56 +65,56 @@ class KalturaCodeCuePointOrderBy
 abstract class KalturaCodeCuePointBaseFilter extends KalturaCuePointFilter
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeMultiLikeAnd = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $codeIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $descriptionLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $descriptionMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -146,14 +146,14 @@ class KalturaCodeCuePointFilter extends KalturaCodeCuePointBaseFilter
 class KalturaCodeCuePoint extends KalturaCuePoint
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $code = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -176,26 +176,24 @@ class KalturaCodeCuePointClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaCodeCuePointClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaCodeCuePointClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -204,8 +202,7 @@ class KalturaCodeCuePointClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'codeCuePoint';
     }
 }

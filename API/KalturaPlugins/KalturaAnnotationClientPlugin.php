@@ -69,7 +69,7 @@ class KalturaAnnotationOrderBy
 class KalturaAnnotation extends KalturaCuePoint
 {
     /**
-     * 
+     *
      *
      * @var string
      * @insertonly
@@ -77,7 +77,7 @@ class KalturaAnnotation extends KalturaCuePoint
     public $parentId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -111,63 +111,63 @@ class KalturaAnnotation extends KalturaCuePoint
 abstract class KalturaAnnotationBaseFilter extends KalturaCuePointFilter
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $parentIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $parentIdIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $textLike = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $textMultiLikeOr = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $textMultiLikeAnd = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $endTimeGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $endTimeLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $durationGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -199,7 +199,7 @@ class KalturaAnnotationFilter extends KalturaAnnotationBaseFilter
 class KalturaAnnotationListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaAnnotation
      * @readonly
@@ -207,7 +207,7 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -388,7 +388,7 @@ class KalturaAnnotationClientPlugin extends KalturaClientPlugin
      * @return KalturaAnnotationClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaAnnotationClientPlugin($client);
         }
         return self::$instance;

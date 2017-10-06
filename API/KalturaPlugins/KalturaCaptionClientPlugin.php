@@ -665,7 +665,7 @@ class KalturaCaptionClientPlugin extends KalturaClientPlugin
      * @return KalturaCaptionClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaCaptionClientPlugin($client);
         }
         return self::$instance;

@@ -62,26 +62,24 @@ class KalturaDropFolderXmlBulkUploadClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaDropFolderXmlBulkUploadClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaDropFolderXmlBulkUploadClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -90,8 +88,7 @@ class KalturaDropFolderXmlBulkUploadClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'dropFolderXmlBulkUpload';
     }
 }

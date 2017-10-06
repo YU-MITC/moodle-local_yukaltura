@@ -267,15 +267,16 @@ class KalturaBaseEntryService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->queueServiceActionCall("baseentry", "getRemotePaths", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaRemotePathListResponse");
         return $resultobject;
     }
 
-public function update($entryId, KalturaBaseEntry $baseEntry) {
+    public function update($entryId, KalturaBaseEntry $baseEntry) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryId);
         $this->client->addParam($kparams, "baseEntry", $baseEntry->toParams());
@@ -304,7 +305,7 @@ public function update($entryId, KalturaBaseEntry $baseEntry) {
         return $resultobject;
     }
 
-public function getByIds($entryIds) {
+    public function getByIds($entryIds) {
         $kparams = array();
         $this->client->addParam($kparams, "entryIds", $entryIds);
         $this->client->queueServiceActionCall("baseentry", "getByIds", $kparams);
@@ -1363,8 +1364,9 @@ class KalturaFlavorAssetService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("flavorasset", "delete", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "null");
@@ -2764,7 +2766,7 @@ class KalturaReportService extends KalturaServiceBase
     }
 
     public function getTable($reportType, KalturaReportInputFilter $reportInputFilter, KalturaFilterPager $pager,
-                      $order = null, $objectIds = null)  {
+                      $order = null, $objectIds = null) {
         $kparams = array();
         $this->client->addParam($kparams, "reportType", $reportType);
         $this->client->addParam($kparams, "reportInputFilter", $reportInputFilter->toParams());
@@ -3339,8 +3341,9 @@ class KalturaThumbAssetService extends KalturaServiceBase
         $kparams = array();
         $this->client->addParam($kparams, "thumbAssetId", $thumbAssetId);
         $this->client->queueServiceActionCall("thumbasset", "setAsDefault", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "null");

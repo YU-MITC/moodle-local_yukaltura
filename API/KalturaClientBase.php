@@ -157,8 +157,7 @@ class KalturaClientBase
         $this->config = $config;
 
         $logger = $this->config->getLogger();
-        if ($logger)
-        {
+        if ($logger) {
             $this->shouldLog = true;
         }
 
@@ -181,7 +180,7 @@ class KalturaClientBase
                     }
                     $pluginName = $plugin->getName();
                     $services = $plugin->getServices();
-                    foreach($services as $serviceName => $service) {
+                    foreach ($services as $serviceName => $service) {
                         $service->setClient($this);
                         $this->pluginServices[$serviceName] = $service;
                     }

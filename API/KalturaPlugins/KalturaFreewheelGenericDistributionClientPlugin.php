@@ -125,77 +125,77 @@ class KalturaFreewheelGenericDistributionProviderFilter extends KalturaFreewheel
 class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $apikey = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $email = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpPass = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpLogin = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $contentOwner = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $upstreamVideoId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $upstreamNetworkName = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $upstreamNetworkId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $categoryId = null;
 
     /**
-     * 
+     *
      *
      * @var bool
      */
     public $replaceGroup = null;
 
     /**
-     * 
+     *
      *
      * @var bool
      */
@@ -231,26 +231,24 @@ class KalturaFreewheelGenericDistributionClientPlugin extends KalturaClientPlugi
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaFreewheelGenericDistributionClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaFreewheelGenericDistributionClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -259,8 +257,7 @@ class KalturaFreewheelGenericDistributionClientPlugin extends KalturaClientPlugi
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'freewheelGenericDistribution';
     }
 }

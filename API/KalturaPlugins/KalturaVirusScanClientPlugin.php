@@ -105,98 +105,98 @@ class KalturaVirusScanProfileStatus
 abstract class KalturaVirusScanProfileBaseFilter extends KalturaFilter
 {
     /**
-     * 
+     *
      *
      * @var int
      */
     public $idEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $idIn = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $updatedAtGreaterThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $updatedAtLessThanOrEqual = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $partnerIdEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $partnerIdIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $nameEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $nameLike = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaVirusScanProfileStatus
      */
     public $statusEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaVirusScanEngineType
      */
     public $engineTypeEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -228,7 +228,7 @@ class KalturaVirusScanProfileFilter extends KalturaVirusScanProfileBaseFilter
 class KalturaVirusScanProfile extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -236,7 +236,7 @@ class KalturaVirusScanProfile extends KalturaObjectBase
     public $id = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -244,7 +244,7 @@ class KalturaVirusScanProfile extends KalturaObjectBase
     public $createdAt = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -252,7 +252,7 @@ class KalturaVirusScanProfile extends KalturaObjectBase
     public $updatedAt = null;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -260,35 +260,35 @@ class KalturaVirusScanProfile extends KalturaObjectBase
     public $partnerId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $name = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaVirusScanProfileStatus
      */
     public $status = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaVirusScanEngineType
      */
     public $engineType = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaBaseEntryFilter
      */
     public $entryFilter;
 
     /**
-     * 
+     *
      *
      * @var KalturaVirusFoundAction
      */
@@ -307,7 +307,7 @@ class KalturaVirusScanProfile extends KalturaObjectBase
 class KalturaVirusScanProfileListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaVirusScanProfile
      * @readonly
@@ -315,7 +315,7 @@ class KalturaVirusScanProfileListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -334,88 +334,89 @@ class KalturaVirusScanProfileListResponse extends KalturaObjectBase
  */
 class KalturaVirusScanProfileService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null)
-    {
+    function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaVirusScanProfileFilter $filter = null, KalturaFilterPager $pager = null)
-    {
+    function listAction(KalturaVirusScanProfileFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
-        if ($filter !== null)
+        if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
-        if ($pager !== null)
+        }
+        if ($pager !== null) {
             $this->client->addParam($kparams, "pager", $pager->toParams());
+        }
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "list", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaVirusScanProfileListResponse");
         return $resultobject;
     }
 
-    function add(KalturaVirusScanProfile $virusScanProfile)
-    {
+    function add(KalturaVirusScanProfile $virusScanProfile) {
         $kparams = array();
         $this->client->addParam($kparams, "virusScanProfile", $virusScanProfile->toParams());
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "add", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaVirusScanProfile");
         return $resultobject;
     }
 
-    function get($virusScanProfileId)
-    {
+    function get($virusScanProfileId) {
         $kparams = array();
         $this->client->addParam($kparams, "virusScanProfileId", $virusScanProfileId);
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "get", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaVirusScanProfile");
         return $resultobject;
     }
 
-    function update($virusScanProfileId, KalturaVirusScanProfile $virusScanProfile)
-    {
+    function update($virusScanProfileId, KalturaVirusScanProfile $virusScanProfile) {
         $kparams = array();
         $this->client->addParam($kparams, "virusScanProfileId", $virusScanProfileId);
         $this->client->addParam($kparams, "virusScanProfile", $virusScanProfile->toParams());
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "update", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaVirusScanProfile");
         return $resultobject;
     }
 
-    function delete($virusScanProfileId)
-    {
+    function delete($virusScanProfileId) {
         $kparams = array();
         $this->client->addParam($kparams, "virusScanProfileId", $virusScanProfileId);
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "delete", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaVirusScanProfile");
         return $resultobject;
     }
 
-    function scan($flavorAssetId, $virusScanProfileId = null)
-    {
+    function scan($flavorAssetId, $virusScanProfileId = null) {
         $kparams = array();
         $this->client->addParam($kparams, "flavorAssetId", $flavorAssetId);
         $this->client->addParam($kparams, "virusScanProfileId", $virusScanProfileId);
         $this->client->queueServiceActionCall("virusscan_virusscanprofile", "scan", $kparams);
-        if ($this->client->isMultiRequest())
+        if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
+        }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "integer");
@@ -443,8 +444,7 @@ class KalturaVirusScanClientPlugin extends KalturaClientPlugin
      */
     public $virusScanProfile = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->virusScanProfile = new KalturaVirusScanProfileService($client);
     }
@@ -452,18 +452,17 @@ class KalturaVirusScanClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaVirusScanClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaVirusScanClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'virusScanProfile' => $this->virusScanProfile,
         );
@@ -473,8 +472,7 @@ class KalturaVirusScanClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'virusScan';
     }
 }

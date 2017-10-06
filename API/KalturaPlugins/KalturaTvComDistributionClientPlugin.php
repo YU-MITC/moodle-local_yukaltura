@@ -125,14 +125,14 @@ class KalturaTVComDistributionProviderFilter extends KalturaTVComDistributionPro
 class KalturaTVComDistributionProfile extends KalturaConfigurableDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var int
      */
     public $metadataProfileId = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -140,70 +140,70 @@ class KalturaTVComDistributionProfile extends KalturaConfigurableDistributionPro
     public $feedUrl = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $feedTitle = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $feedLink = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $feedDescription = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $feedLanguage = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $feedCopyright = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $feedImageTitle = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $feedImageUrl = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $feedImageLink = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
     public $feedImageWidth = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -244,8 +244,7 @@ class KalturaTvComDistributionClientPlugin extends KalturaClientPlugin
      */
     public $tvCom = null;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
         $this->tvCom = new KalturaTvComService($client);
     }
@@ -253,18 +252,17 @@ class KalturaTvComDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return KalturaTvComDistributionClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaTvComDistributionClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
             'tvCom' => $this->tvCom,
         );
@@ -274,8 +272,7 @@ class KalturaTvComDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'tvComDistribution';
     }
 }

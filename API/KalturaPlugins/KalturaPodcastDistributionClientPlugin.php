@@ -125,14 +125,14 @@ class KalturaPodcastDistributionProviderFilter extends KalturaPodcastDistributio
 class KalturaPodcastDistributionProfile extends KalturaDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $xsl = null;
 
     /**
-     * 
+     *
      *
      * @var string
      * @readonly
@@ -140,7 +140,7 @@ class KalturaPodcastDistributionProfile extends KalturaDistributionProfile
     public $feedId = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -176,26 +176,24 @@ class KalturaPodcastDistributionClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaPodcastDistributionClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaPodcastDistributionClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -204,8 +202,7 @@ class KalturaPodcastDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'podcastDistribution';
     }
 }

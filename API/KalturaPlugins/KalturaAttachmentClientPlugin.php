@@ -118,7 +118,7 @@ class KalturaAttachmentAsset extends KalturaAsset
 
     /**
      * The status of the asset
-     * 
+     *
      *
      * @var KalturaAttachmentAssetStatus
      * @readonly
@@ -138,7 +138,7 @@ class KalturaAttachmentAsset extends KalturaAsset
 class KalturaAttachmentAssetListResponse extends KalturaObjectBase
 {
     /**
-     * 
+     *
      *
      * @var array of KalturaAttachmentAsset
      * @readonly
@@ -146,7 +146,7 @@ class KalturaAttachmentAssetListResponse extends KalturaObjectBase
     public $objects;
 
     /**
-     * 
+     *
      *
      * @var int
      * @readonly
@@ -166,35 +166,35 @@ class KalturaAttachmentAssetListResponse extends KalturaObjectBase
 abstract class KalturaAttachmentAssetBaseFilter extends KalturaAssetFilter
 {
     /**
-     * 
+     *
      *
      * @var KalturaAttachmentType
      */
     public $formatEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $formatIn = null;
 
     /**
-     * 
+     *
      *
      * @var KalturaAttachmentAssetStatus
      */
     public $statusEqual = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -380,7 +380,7 @@ class KalturaAttachmentClientPlugin extends KalturaClientPlugin
      * @return KalturaAttachmentClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if(!self::$instance) {
+        if (!self::$instance) {
             self::$instance = new KalturaAttachmentClientPlugin($client);
         }
         return self::$instance;

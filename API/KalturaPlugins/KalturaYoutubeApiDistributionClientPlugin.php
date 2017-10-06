@@ -125,21 +125,21 @@ class KalturaYoutubeApiDistributionProviderFilter extends KalturaYoutubeApiDistr
 class KalturaYoutubeApiDistributionProfile extends KalturaDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $username = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $password = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
@@ -153,28 +153,28 @@ class KalturaYoutubeApiDistributionProfile extends KalturaDistributionProfile
     public $allowComments = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $allowEmbedding = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $allowRatings = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $allowResponses = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -210,26 +210,24 @@ class KalturaYoutubeApiDistributionClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaYoutubeApiDistributionClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaYoutubeApiDistributionClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -238,8 +236,7 @@ class KalturaYoutubeApiDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'youtubeApiDistribution';
     }
 }

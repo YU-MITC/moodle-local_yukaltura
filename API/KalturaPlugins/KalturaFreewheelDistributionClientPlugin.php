@@ -125,42 +125,42 @@ class KalturaFreewheelDistributionProviderFilter extends KalturaFreewheelDistrib
 class KalturaFreewheelDistributionProfile extends KalturaDistributionProfile
 {
     /**
-     * 
+     *
      *
      * @var string
      */
     public $apikey = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $email = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpPass = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $sftpLogin = null;
 
     /**
-     * 
+     *
      *
      * @var string
      */
     public $accountId = null;
 
     /**
-     * 
+     *
      *
      * @var int
      */
@@ -196,26 +196,24 @@ class KalturaFreewheelDistributionClientPlugin extends KalturaClientPlugin
      */
     protected static $instance;
 
-    protected function __construct(KalturaClient $client)
-    {
+    protected function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
      * @return KalturaFreewheelDistributionClientPlugin
      */
-    public static function get(KalturaClient $client)
-    {
-        if(!self::$instance)
+    public static function get(KalturaClient $client) {
+        if (!self::$instance) {
             self::$instance = new KalturaFreewheelDistributionClientPlugin($client);
+        }
         return self::$instance;
     }
 
     /**
      * @return array<KalturaServiceBase>
      */
-    public function getServices()
-    {
+    public function getServices() {
         $services = array(
         );
         return $services;
@@ -224,8 +222,7 @@ class KalturaFreewheelDistributionClientPlugin extends KalturaClientPlugin
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'freewheelDistribution';
     }
 }
