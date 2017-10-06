@@ -30,7 +30,12 @@ if (!defined('MOODLE_INTERNAL')) {
     die('Direct access to this script is forbidden.');
 }
 
-global $PAGE;
+global $PAGE, $SITE;
+
+$PAGE->set_url('/local/yukaltura/settings.php');
+$PAGE->set_course($SITE);
+
+require_login();
 
 $param = optional_param('section', '', PARAM_TEXT);
 

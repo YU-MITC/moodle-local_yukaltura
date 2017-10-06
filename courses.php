@@ -33,6 +33,8 @@ if (!defined('MOODLE_INTERNAL')) {
 
 global $PAGE, $DB;
 
+require_login();
+
 $id = optional_param('course_id', 0, PARAM_INT);
 $action = optional_param('action', '', PARAM_TEXT);
 $query = optional_param('query', '', PARAM_TEXT);

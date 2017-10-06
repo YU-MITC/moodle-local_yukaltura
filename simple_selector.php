@@ -48,6 +48,8 @@ $PAGE->set_title($header);
 $PAGE->set_heading($header);
 $PAGE->add_body_class('mymedia-index');
 
+require_login();
+
 $PAGE->requires->css('/local/yukaltura/css/simple_selector.css', true);
 $PAGE->requires->js_call_amd('local_yukaltura/simpleselector', 'init',
                              array($CFG->wwwroot . "/local/yukaltura/simple_selector.php", null));

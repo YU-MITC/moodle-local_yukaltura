@@ -43,10 +43,10 @@ define(['jquery'], function($) {
              * @access public
              */
             function changeSort() {
-               // Get url.
-               var url = $("#selectorSort").val();
-              // Change url of selector window.
-              location.href = url;
+                // Get url.
+                var url = $("#selectorSort").val();
+                // Change url of selector window.
+                location.href = url;
             }
 
             /**
@@ -245,12 +245,12 @@ define(['jquery'], function($) {
                 $(".media_thumbnail").on("click", function(e) {
                     clickThumbnailImage(e);
                 });
-             } else {
+            } else {
                 $("#media_thumbnail").on("change", function() {
                     replaceAddMediaLabel(replaceLabel);
                 });
             }
-                
+
         }
     };
 });

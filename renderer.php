@@ -22,13 +22,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
-require_once(dirname(dirname(dirname(__FILE__))) . '/lib/tablelib.php');
+defined('MOODLE_INTERNAL') || die;
 
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
+require_once(dirname(dirname(dirname(__FILE__))) . '/lib/tablelib.php');
 
 /**
  * Renderer class of local_yukaltura

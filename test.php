@@ -39,6 +39,8 @@ $url = new moodle_url('/local/yukaltura/test.php');
 $PAGE->set_url($url);
 $PAGE->set_context($context);
 
+require_login();
+
 echo $OUTPUT->header();
 
 require_capability('moodle/site:config', $context);

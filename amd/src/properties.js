@@ -59,9 +59,9 @@ define(['jquery'], function($) {
                     var cw = $(contentPanel).outerWidth();
                     var ch = $(contentPanel).outerHeight();
 
-                   // Execute centering of modal window.
-                   $(contentPanel).css({"left": ((w - cw) / 2) + "px", "top": ((h - ch) / 2) + "px"});
-               }, 200);
+                    // Execute centering of modal window.
+                    $(contentPanel).css({"left": ((w - cw) / 2) + "px", "top": ((h - ch) / 2) + "px"});
+                }, 200);
             }
 
             /**
@@ -155,7 +155,7 @@ define(['jquery'], function($) {
             function handlePlayerDimensionChange() {
                 var flag = false;
                 var widthStr = $("#media_prop_width").val();
-                var heightStr =$("#media_prop_height").val();
+                var heightStr = $("#media_prop_height").val();
                 var regex = /^\d{2,4}$/;
                 if (regex.test(widthStr) === true && regex.test(heightStr) === true) {
                     var widthInt = parseInt(widthStr);
@@ -262,7 +262,7 @@ define(['jquery'], function($) {
                 var uiconfid = $("#uiconf_id", parent.document).val();
                 var flag = false;
                 for (var i = 0; i < $("#media_prop_player").children("option").length; i++) {
-                    if ($("#media_prop_player option:eq("+ i + ")").val() == uiconfid) {
+                    if ($("#media_prop_player option:eq(" + i + ")").val() == uiconfid) {
                         $("#media_prop_player").prop("selectedIndex", i);
                         flag = true;
                     }
@@ -279,7 +279,7 @@ define(['jquery'], function($) {
                 $("#media_prop_height").prop("disabled", false);
                 if (width !== "" && width != "0" && height !== "" && height != "0") {
                     for (i = 0; i < $("#media_prop_size").children("option").length; i++) {
-                        if ($("#media_prop_size option:eq("+ i + ")").text().indexOf(dimension) != -1) {
+                        if ($("#media_prop_size option:eq(" + i + ")").text().indexOf(dimension) != -1) {
                             $("#media_prop_size").prop("selectedIndex", i);
                             $("#media_prop_width").prop("disabled", true);
                             $("#media_prop_height").prop("disabled", true);

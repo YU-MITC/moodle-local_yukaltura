@@ -38,7 +38,6 @@ $PAGE->set_context($context);
 $header  = format_string($SITE->shortname).": Media Properties";
 
 $PAGE->set_url('/local/yukaltura/media_properties.php');
-//$PAGE->set_course($COURSE);
 
 $PAGE->set_pagetype('player-properties');
 $PAGE->set_pagelayout('embedded');
@@ -48,6 +47,8 @@ $PAGE->add_body_class('player-properties');
 $PAGE->requires->css('/local/yukaltura/css/simple_selector.css', true);
 $PAGE->requires->js_call_amd('local_yukaltura/properties', 'init',
                              array($CFG->wwwroot . "/local/yukaltura/media_properties.php"));
+
+require_login();
 
 echo $OUTPUT->header();
 
@@ -78,7 +79,5 @@ try {
     echo $ex->getMessage();
 }
 
-//echo '</body>';
-//echo '</html>';
 echo $OUTPUT->footer();
 
