@@ -72,7 +72,6 @@ class KalturaAnnotation extends KalturaCuePoint
      *
      *
      * @var string
-     * @insertonly
      */
     public $parentId = null;
 
@@ -94,7 +93,6 @@ class KalturaAnnotation extends KalturaCuePoint
      * Duration in milliseconds
      *
      * @var int
-     * @readonly
      */
     public $duration = null;
 
@@ -202,7 +200,6 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaAnnotation
-     * @readonly
      */
     public $objects;
 
@@ -210,7 +207,6 @@ class KalturaAnnotationListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

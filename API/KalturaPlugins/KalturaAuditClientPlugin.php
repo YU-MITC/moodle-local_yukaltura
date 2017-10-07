@@ -186,7 +186,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -194,7 +193,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -202,7 +200,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      * Indicates when the data was parsed
      *
      * @var int
-     * @readonly
      */
     public $parsedAt = null;
 
@@ -210,7 +207,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var KalturaAuditTrailStatus
-     * @readonly
      */
     public $status = null;
 
@@ -253,7 +249,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $masterPartnerId = null;
 
@@ -261,7 +256,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -269,7 +263,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $requestId = null;
 
@@ -298,7 +291,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $ks = null;
 
@@ -306,7 +298,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var KalturaAuditTrailContext
-     * @readonly
      */
     public $context = null;
 
@@ -314,7 +305,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      * The API service and action that called and caused this audit
      *
      * @var string
-     * @readonly
      */
     public $entryPoint = null;
 
@@ -322,7 +312,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $serverName = null;
 
@@ -330,7 +319,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $ipAddress = null;
 
@@ -338,7 +326,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $userAgent = null;
 
@@ -360,7 +347,6 @@ class KalturaAuditTrail extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $errorDescription = null;
 
@@ -664,7 +650,6 @@ class KalturaAuditTrailListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaAuditTrail
-     * @readonly
      */
     public $objects;
 
@@ -672,7 +657,6 @@ class KalturaAuditTrailListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

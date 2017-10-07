@@ -287,7 +287,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -295,7 +294,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -303,7 +301,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $metadataProfileId = null;
 
@@ -311,7 +308,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $metadataProfileVersion = null;
 
@@ -319,7 +315,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var KalturaMetadataObjectType
-     * @readonly
      */
     public $metadataObjectType = null;
 
@@ -327,7 +322,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $objectId = null;
 
@@ -335,7 +329,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 
@@ -343,7 +336,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -351,7 +343,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -359,7 +350,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var KalturaMetadataStatus
-     * @readonly
      */
     public $status = null;
 
@@ -367,7 +357,6 @@ class KalturaMetadata extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $xml = null;
 
@@ -387,7 +376,6 @@ class KalturaMetadataListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaMetadata
-     * @readonly
      */
     public $objects;
 
@@ -395,7 +383,6 @@ class KalturaMetadataListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -531,7 +518,6 @@ class KalturaMetadataProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -539,7 +525,6 @@ class KalturaMetadataProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -554,7 +539,6 @@ class KalturaMetadataProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 
@@ -583,7 +567,6 @@ class KalturaMetadataProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -591,7 +574,6 @@ class KalturaMetadataProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -599,7 +581,6 @@ class KalturaMetadataProfile extends KalturaObjectBase
      *
      *
      * @var KalturaMetadataProfileStatus
-     * @readonly
      */
     public $status = null;
 
@@ -607,7 +588,6 @@ class KalturaMetadataProfile extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $xsd = null;
 
@@ -615,7 +595,6 @@ class KalturaMetadataProfile extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $views = null;
 
@@ -642,7 +621,6 @@ class KalturaMetadataProfileListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaMetadataProfile
-     * @readonly
      */
     public $objects;
 
@@ -650,7 +628,6 @@ class KalturaMetadataProfileListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -670,7 +647,6 @@ class KalturaMetadataProfileField extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -678,7 +654,6 @@ class KalturaMetadataProfileField extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $xPath = null;
 
@@ -686,7 +661,6 @@ class KalturaMetadataProfileField extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $key = null;
 
@@ -694,7 +668,6 @@ class KalturaMetadataProfileField extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $label = null;
 
@@ -714,7 +687,6 @@ class KalturaMetadataProfileFieldListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaMetadataProfileField
-     * @readonly
      */
     public $objects;
 
@@ -722,7 +694,6 @@ class KalturaMetadataProfileFieldListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

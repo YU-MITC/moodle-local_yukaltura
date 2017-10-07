@@ -207,7 +207,6 @@ class KalturaCaptionAssetItemListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaCaptionAssetItem
-     * @readonly
      */
     public $objects;
 
@@ -215,7 +214,6 @@ class KalturaCaptionAssetItemListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

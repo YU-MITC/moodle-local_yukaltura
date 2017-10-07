@@ -217,7 +217,6 @@ class KalturaShortLink extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -225,7 +224,6 @@ class KalturaShortLink extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -233,7 +231,6 @@ class KalturaShortLink extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -248,7 +245,6 @@ class KalturaShortLink extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -303,7 +299,6 @@ class KalturaShortLinkListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaShortLink
-     * @readonly
      */
     public $objects;
 
@@ -311,7 +306,6 @@ class KalturaShortLinkListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

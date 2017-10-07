@@ -316,7 +316,6 @@ abstract class KalturaDropFolderFileHandlerConfig extends KalturaObjectBase
      *
      *
      * @var KalturaDropFolderFileHandlerType
-     * @readonly
      */
     public $handlerType = null;
 
@@ -336,7 +335,6 @@ class KalturaDropFolder extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -344,7 +342,6 @@ class KalturaDropFolder extends KalturaObjectBase
      *
      *
      * @var int
-     * @insertonly
      */
     public $partnerId = null;
 
@@ -457,7 +454,6 @@ class KalturaDropFolder extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -465,7 +461,6 @@ class KalturaDropFolder extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -692,7 +687,6 @@ class KalturaDropFolderListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaDropFolder
-     * @readonly
      */
     public $objects;
 
@@ -700,7 +694,6 @@ class KalturaDropFolderListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -720,7 +713,6 @@ class KalturaDropFolderFile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -728,7 +720,6 @@ class KalturaDropFolderFile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -736,7 +727,6 @@ class KalturaDropFolderFile extends KalturaObjectBase
      *
      *
      * @var int
-     * @insertonly
      */
     public $dropFolderId = null;
 
@@ -744,7 +734,6 @@ class KalturaDropFolderFile extends KalturaObjectBase
      *
      *
      * @var string
-     * @insertonly
      */
     public $fileName = null;
 
@@ -759,7 +748,6 @@ class KalturaDropFolderFile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $fileSizeLastSetAt = null;
 
@@ -809,7 +797,6 @@ class KalturaDropFolderFile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -817,7 +804,6 @@ class KalturaDropFolderFile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -1023,7 +1009,6 @@ class KalturaDropFolderFileListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaDropFolderFile
-     * @readonly
      */
     public $objects;
 
@@ -1031,7 +1016,6 @@ class KalturaDropFolderFileListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

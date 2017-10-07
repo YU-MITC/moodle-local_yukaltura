@@ -135,7 +135,6 @@ class KalturaTVComDistributionProfile extends KalturaConfigurableDistributionPro
      *
      *
      * @var string
-     * @readonly
      */
     public $feedUrl = null;
 

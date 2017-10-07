@@ -31,7 +31,7 @@ define(['jquery'], function($) {
         /**
          * Initial function.
          * @access public
-         * @param {string} selectorURL - url of simple selector page.
+         * @param {string} selectorUrl - url of simple selector page.
          * @param {string} replaceLabel - label of media replace button.
          */
         init: function(selectorUrl, replaceLabel) {
@@ -135,6 +135,8 @@ define(['jquery'], function($) {
                 $(parent.window).resize(function() {
                     centeringModalSyncer("#selector_content");
                 });
+
+                return true;
             }
 
             /**

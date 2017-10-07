@@ -436,7 +436,6 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -445,7 +444,6 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -454,7 +452,6 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -462,7 +459,6 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -470,7 +466,6 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase
      *
      *
      * @var KalturaDistributionProviderType
-     * @insertonly
      */
     public $providerType = null;
 
@@ -669,7 +664,6 @@ class KalturaDistributionProfileListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaDistributionProfile
-     * @readonly
      */
     public $objects;
 
@@ -677,7 +671,6 @@ class KalturaDistributionProfileListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -731,7 +724,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -740,7 +732,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -749,7 +740,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -758,7 +748,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $submittedAt = null;
 
@@ -766,7 +755,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var string
-     * @insertonly
      */
     public $entryId = null;
 
@@ -774,7 +762,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -782,7 +769,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var int
-     * @insertonly
      */
     public $distributionProfileId = null;
 
@@ -790,7 +776,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaEntryDistributionStatus
-     * @readonly
      */
     public $status = null;
 
@@ -798,7 +783,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaEntryDistributionSunStatus
-     * @readonly
      */
     public $sunStatus = null;
 
@@ -806,7 +790,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaEntryDistributionFlag
-     * @readonly
      */
     public $dirtyStatus = null;
 
@@ -844,7 +827,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      * The id as returned from the distributed destination
      *
      * @var string
-     * @readonly
      */
     public $remoteId = null;
 
@@ -852,7 +834,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      * The plays as retrieved from the remote destination reports
      *
      * @var int
-     * @readonly
      */
     public $plays = null;
 
@@ -860,7 +841,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      * The views as retrieved from the remote destination reports
      *
      * @var int
-     * @readonly
      */
     public $views = null;
 
@@ -868,7 +848,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var array of KalturaDistributionValidationError
-     * @readonly
      */
     public $validationErrors;
 
@@ -876,7 +855,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaBatchJobErrorTypes
-     * @readonly
      */
     public $errorType = null;
 
@@ -884,7 +862,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $errorNumber = null;
 
@@ -892,7 +869,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $errorDescription = null;
 
@@ -900,7 +876,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasSubmitResultsLog = null;
 
@@ -908,7 +883,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasSubmitSentDataLog = null;
 
@@ -916,7 +890,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasUpdateResultsLog = null;
 
@@ -924,7 +897,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasUpdateSentDataLog = null;
 
@@ -932,7 +904,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasDeleteResultsLog = null;
 
@@ -940,7 +911,6 @@ class KalturaEntryDistribution extends KalturaObjectBase
      *
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasDeleteSentDataLog = null;
 
@@ -1125,7 +1095,6 @@ class KalturaEntryDistributionListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaEntryDistribution
-     * @readonly
      */
     public $objects;
 
@@ -1133,7 +1102,6 @@ class KalturaEntryDistributionListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -1192,7 +1160,6 @@ abstract class KalturaDistributionProvider extends KalturaObjectBase
      *
      *
      * @var KalturaDistributionProviderType
-     * @readonly
      */
     public $type = null;
 
@@ -1268,7 +1235,6 @@ class KalturaDistributionProviderListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaDistributionProvider
-     * @readonly
      */
     public $objects;
 
@@ -1276,7 +1242,6 @@ class KalturaDistributionProviderListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -1297,7 +1262,6 @@ class KalturaGenericDistributionProvider extends KalturaDistributionProvider
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -1306,7 +1270,6 @@ class KalturaGenericDistributionProvider extends KalturaDistributionProvider
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -1315,7 +1278,6 @@ class KalturaGenericDistributionProvider extends KalturaDistributionProvider
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -1323,7 +1285,6 @@ class KalturaGenericDistributionProvider extends KalturaDistributionProvider
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -1338,7 +1299,6 @@ class KalturaGenericDistributionProvider extends KalturaDistributionProvider
      *
      *
      * @var KalturaGenericDistributionProviderStatus
-     * @readonly
      */
     public $status = null;
 
@@ -1509,7 +1469,6 @@ class KalturaGenericDistributionProviderListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaGenericDistributionProvider
-     * @readonly
      */
     public $objects;
 
@@ -1517,7 +1476,6 @@ class KalturaGenericDistributionProviderListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -1538,7 +1496,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -1547,7 +1504,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -1556,7 +1512,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -1564,7 +1519,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var int
-     * @insertonly
      */
     public $genericDistributionProviderId = null;
 
@@ -1572,7 +1526,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var KalturaDistributionAction
-     * @insertonly
      */
     public $action = null;
 
@@ -1580,7 +1533,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var KalturaGenericDistributionProviderStatus
-     * @readonly
      */
     public $status = null;
 
@@ -1644,7 +1596,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $mrssTransformer = null;
 
@@ -1652,7 +1603,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $mrssValidator = null;
 
@@ -1660,7 +1610,6 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $resultsTransformer = null;
 
@@ -1775,7 +1724,6 @@ class KalturaGenericDistributionProviderActionListResponse extends KalturaObject
      *
      *
      * @var array of KalturaGenericDistributionProviderAction
-     * @readonly
      */
     public $objects;
 
@@ -1783,7 +1731,6 @@ class KalturaGenericDistributionProviderActionListResponse extends KalturaObject
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -2013,7 +1960,6 @@ class KalturaDistributionFieldConfig extends KalturaObjectBase
      * Is this field config is the default for the distribution provider?
      *
      * @var bool
-     * @readonly
      */
     public $isDefault = null;
 
@@ -2127,7 +2073,6 @@ class KalturaGenericDistributionProfile extends KalturaDistributionProfile
      *
      *
      * @var int
-     * @insertonly
      */
     public $genericProviderId = null;
 
@@ -2196,7 +2141,6 @@ class KalturaSyndicationDistributionProfile extends KalturaDistributionProfile
      *
      *
      * @var string
-     * @readonly
      */
     public $feedId = null;
 

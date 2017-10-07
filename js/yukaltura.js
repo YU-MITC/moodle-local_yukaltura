@@ -132,12 +132,12 @@ M.local_yukaltura = {
     search_course: function() {
 
         YUI({filter: 'raw'}).use("autocomplete", function(Y) {
-            var search_txt = Y.one('#kaltura_search_txt');
-            var kaltura_search = document.getElementById("kaltura_search_txt");
-            var search_btn = Y.one('#kaltura_search_btn');
-            var clear_btn = Y.one('#kaltura_clear_btn');
+            var searchTxt = Y.one('#kaltura_search_txt');
+            var kalturaSearch = document.getElementById("kaltura_search_txt");
+            var searchBtn = Y.one('#kaltura_search_btn');
+            var clearBtn = Y.one('#kaltura_clear_btn');
 
-            search_txt.plug(Y.Plugin.AutoComplete, {
+            searchTxt.plug(Y.Plugin.AutoComplete, {
                 resultTextLocator: 'fullname',
                 enableCache: false,
                 minQueryLength: 2,
@@ -173,54 +173,54 @@ M.local_yukaltura = {
                 }
             });
 
-            kaltura_search.onkeypress = function(e) {
+            kalturaSearch.onkeypress = function(e) {
                 e.preventDefault();
                 // Enter is pressed.
                 if (e.keyCode === 13) {
-                    var query = search_txt.get('value');
+                    var query = searchTxt.get('value');
                     // Don't accept an empty search string.
                     if (!(/^\s*$/.test(query))) {
                         document.getElementById('resourceobject').src = 'courses.php?action=search&query=' + query;
                         // Lose focus of the auto-suggest menu.
-                        kaltura_search.blur();
+                        kalturaSearch.blur();
                     }
                 }
             };
 
-            search_btn.on('click', function(e) {
+            searchBtn.on('click', function(e) {
                 e.preventDefault();
-                var query = search_txt.get('value');
+                var query = searchTxt.get('value');
                 // Don't accept an empty search string.
                 if (!(/^\s*$/.test(query))) {
                     document.getElementById('resourceobject').src = 'courses.php?action=search&query=' + query;
-                    kaltura_search.blur();
+                    kalturaSearch.blur();
                 }
             });
 
-            clear_btn.on('click', function(e) {
+            clearBtn.on('click', function(e) {
                 e.preventDefault();
-                search_txt.set("value", "");
+                searchTxt.set("value", "");
             });
 
         });
 
     },
 
-    get_thumbnail_url: function(entry_id) {
+    get_thumbnail_url: function(entryId) {
 
         YUI().use("io-base", "json-parse", "node", function(Y) {
-            var location = M.local_yukaltura.dataroot + entry_id;
+            var location = M.local_yukaltura.dataroot + entryId;
 
             Y.io(location);
 
             function check_conversion_status(id, o) {
                 if ('' != o.responseText) {
                     var data = Y.JSON.parse(o.responseText);
-                    var img_tag = Y.one("#media_thumbnail");
-                    if (data.thumbnailUrl != img_tag.get("src")) {
-                        img_tag.set("src", data.thumbnailUrl);
-                        img_tag.set("alt", data.name);
-                        img_tag.set("title", data.name);
+                    var imgTag = Y.one("#media_thumbnail");
+                    if (data.thumbnailUrl != imgTag.get("src")) {
+                        imgTag.set("src", data.thumbnailUrl);
+                        imgTag.set("alt", data.name);
+                        imgTag.set("title", data.name);
                     }
                 }
             }
@@ -235,7 +235,7 @@ M.local_yukaltura = {
 
     show_loading: function() {
         M.local_yukaltura.loading_panel = new Y.YUI2.widget.Panel("wait",
-            {width:"240px", fixedcenter:true, close:false, draggable:false, zindex:4, modal:true, visible:false});
+            {width: "240px", fixedcenter: true, close: false, draggable: false, zindex: 4, modal: true, visible: false});
 
         M.local_yukaltura.loading_panel.setHeader("Loading, please wait...");
         M.local_yukaltura.loading_panel.setBody('<img src="../../local/yukaltura/pix/rel_interstitial_loading.gif" />');

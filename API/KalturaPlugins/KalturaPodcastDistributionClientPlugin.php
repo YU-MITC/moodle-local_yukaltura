@@ -135,7 +135,6 @@ class KalturaPodcastDistributionProfile extends KalturaDistributionProfile
      *
      *
      * @var string
-     * @readonly
      */
     public $feedId = null;
 

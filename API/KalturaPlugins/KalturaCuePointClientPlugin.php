@@ -96,7 +96,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $id = null;
 
@@ -104,7 +103,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase
      *
      *
      * @var KalturaCuePointType
-     * @readonly
      */
     public $cuePointType = null;
 
@@ -112,7 +110,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase
      *
      *
      * @var KalturaCuePointStatus
-     * @readonly
      */
     public $status = null;
 
@@ -120,7 +117,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase
      *
      *
      * @var string
-     * @insertonly
      */
     public $entryId = null;
 
@@ -128,7 +124,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -136,7 +131,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -144,7 +138,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -166,7 +159,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase
      *
      *
      * @var string
-     * @readonly
      */
     public $userId = null;
 
@@ -428,7 +420,6 @@ class KalturaCuePointListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaCuePoint
-     * @readonly
      */
     public $objects;
 
@@ -436,7 +427,6 @@ class KalturaCuePointListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

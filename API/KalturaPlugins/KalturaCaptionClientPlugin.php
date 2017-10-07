@@ -111,7 +111,6 @@ class KalturaCaptionAsset extends KalturaAsset
      *
      *
      * @var int
-     * @insertonly
      */
     public $captionParamsId = null;
 
@@ -128,7 +127,6 @@ class KalturaCaptionAsset extends KalturaAsset
      *
      *
      * @var KalturaLanguageCode
-     * @readonly
      */
     public $languageCode = null;
 
@@ -153,7 +151,6 @@ class KalturaCaptionAsset extends KalturaAsset
      *
      *
      * @var KalturaCaptionType
-     * @insertonly
      */
     public $format = null;
 
@@ -162,7 +159,6 @@ class KalturaCaptionAsset extends KalturaAsset
      *
      *
      * @var KalturaCaptionAssetStatus
-     * @readonly
      */
     public $status = null;
 
@@ -182,7 +178,6 @@ class KalturaCaptionAssetListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaCaptionAsset
-     * @readonly
      */
     public $objects;
 
@@ -190,7 +185,6 @@ class KalturaCaptionAssetListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
@@ -211,7 +205,6 @@ class KalturaCaptionParams extends KalturaAssetParams
      *
      *
      * @var KalturaLanguage
-     * @insertonly
      */
     public $language = null;
 
@@ -236,7 +229,6 @@ class KalturaCaptionParams extends KalturaAssetParams
      *
      *
      * @var KalturaCaptionType
-     * @insertonly
      */
     public $format = null;
 
@@ -302,7 +294,6 @@ class KalturaCaptionParamsListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaCaptionParams
-     * @readonly
      */
     public $objects;
 
@@ -310,7 +301,6 @@ class KalturaCaptionParamsListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

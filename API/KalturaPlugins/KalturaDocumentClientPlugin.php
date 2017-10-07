@@ -162,7 +162,6 @@ class KalturaDocumentEntry extends KalturaBaseEntry
      * The type of the document
      *
      * @var KalturaDocumentType
-     * @insertonly
      */
     public $documentType = null;
 
@@ -171,7 +170,6 @@ class KalturaDocumentEntry extends KalturaBaseEntry
      *
      *
      * @var string
-     * @readonly
      */
     public $assetParamsIds = null;
 
@@ -244,7 +242,6 @@ class KalturaDocumentListResponse extends KalturaObjectBase
      *
      *
      * @var array of KalturaDocumentEntry
-     * @readonly
      */
     public $objects;
 
@@ -252,7 +249,6 @@ class KalturaDocumentListResponse extends KalturaObjectBase
      *
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 

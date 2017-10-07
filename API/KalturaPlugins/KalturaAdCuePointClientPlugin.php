@@ -190,7 +190,6 @@ class KalturaAdCuePoint extends KalturaCuePoint
      *
      *
      * @var KalturaAdProtocolType
-     * @insertonly
      */
     public $protocolType = null;
 
@@ -226,7 +225,6 @@ class KalturaAdCuePoint extends KalturaCuePoint
      * Duration in milliseconds
      *
      * @var int
-     * @readonly
      */
     public $duration = null;
 

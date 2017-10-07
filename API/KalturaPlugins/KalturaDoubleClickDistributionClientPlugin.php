@@ -149,7 +149,6 @@ class KalturaDoubleClickDistributionProfile extends KalturaConfigurableDistribut
      *
      *
      * @var string
-     * @readonly
      */
     public $feedUrl = null;
 
