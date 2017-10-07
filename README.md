@@ -12,8 +12,7 @@ This plugin is updated with stable releases. To follow active development on Git
 Requirements
 ------
 
-PHP5 or greater (For PHP 5.2 or less, you must also install the JSON extension)
-For PHP5.3 or greater, PHP may display a warning if you have not set the timezone.
+PHP5.6 or greater.
 Web browsers must supprot the JavaScript and HTML5.
 
 Installation
