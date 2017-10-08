@@ -40,7 +40,7 @@ module.exports = function (grunt) {
             amd: {
                 dvelopement: {
                     options: {
-                        paths: ["amd/"],
+                        paths: ["amd/src"],
                         compress: true
                     },
                     files: {
@@ -49,8 +49,13 @@ module.exports = function (grunt) {
                     },
                     tasks: ["jshint", "uglify"]
                 },
+            },
+            uglify: {
+                dvelopement: {
+                    tasks: ["uglify"]
+                },
             }
-        },
+        }, 
     });
     // The default task (running "grunt" in console).
     grunt.registerTask("default", ["styleling:less"]);
