@@ -35,6 +35,6 @@ module.exports = function (grunt) {
         }
     });
     // The default task (running "grunt" in console).
-    grunt.registerTask("default", ["less"]);
+    grunt.registerTask("default", ["styleling:less"]);
 };
 
