@@ -19,7 +19,7 @@ module.exports = function (grunt) {
             files: "less/*.less",
             tasks: ["stylelint:less"]
         },
-        "stylelint:less": {
+        "stylelint.less": {
             // Production config is also available.
             development: {
                 options: {
@@ -30,7 +30,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     "styles.css": "less/styles.less"
-                }
+                },
+                tasks: ["stylelint:less"]
             },
         }
     });
