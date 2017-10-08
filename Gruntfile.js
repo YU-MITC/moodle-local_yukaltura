@@ -19,20 +19,22 @@ module.exports = function (grunt) {
             files: "less/*.less",
             tasks: ["stylelint:less"]
         },
-        "stylelint.less": {
-            // Production config is also available.
-            development: {
-                options: {
-                    // Specifies directories to scan for @import directives when parsing.
-                    // Default value is the directory of the source, which is probably what you want.
-                    paths: ["less/"],
-                    compress: true
+        stylelint: {
+            less: {
+                // Production config is also available.
+                development: {
+                    options: {
+                        // Specifies directories to scan for @import directives when parsing.
+                        // Default value is the directory of the source, which is probably what you want.
+                        paths: ["less/"],
+                        compress: true
+                    },
+                    files: {
+                        "styles.css": "less/styles.less"
+                    },
+                    tasks: ["stylelint:less"]
                 },
-                files: {
-                    "styles.css": "less/styles.less"
-                },
-                tasks: ["stylelint:less"]
-            },
+            }
         }
     });
     // The default task (running "grunt" in console).
