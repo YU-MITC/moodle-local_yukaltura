@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                         "properties.js": "amd/src/properties.js",
                         "simpleuploader.js": "amd/src/simpleuploader.js"
                     },
-                    tasks: ["amd"]
+                    tasks: ["jshint", "uglify"]
                 },
             }
         },
