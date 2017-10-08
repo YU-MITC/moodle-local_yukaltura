@@ -279,7 +279,7 @@ define(['jquery'], function($) {
                 if (width !== "" && width != "0" && height !== "" && height != "0") {
                     for (var j = 0; j < $("#media_prop_size").children("option").length; j++) {
                         if ($("#media_prop_size option:eq(" + j + ")").text().indexOf(dimension) != -1) {
-                            $("#media_prop_size").prop("selectedIndex", i);
+                            $("#media_prop_size").prop("selectedIndex", j);
                             $("#media_prop_width").prop("disabled", true);
                             $("#media_prop_height").prop("disabled", true);
                         }

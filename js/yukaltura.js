@@ -250,8 +250,8 @@ M.local_yukaltura = {
 
     dataroot: {},
 
-    set_dataroot: function(web_location) {
-        M.local_yukaltura.dataroot = web_location;
+    set_dataroot: function(weblocation) {
+        M.local_yukaltura.dataroot = weblocation;
     }
 
 };
