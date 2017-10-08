@@ -35,9 +35,23 @@ module.exports = function (grunt) {
                     tasks: ["stylelint:less"]
                 },
             }
-        }
+        },
+        eslint: {
+            amd: {
+                dvelopement: {
+                    options: {
+                        paths: ["amd/"],
+                        compress: true
+                    },
+                    files: {
+                        "properties.js": "amd/src/properties.js",
+                        "simpleuploader.js": "amd/src/simpleuploader.js"
+                    },
+                    tasks: ["amd"]
+                },
+            }
+        },
     });
     // The default task (running "grunt" in console).
     grunt.registerTask("default", ["styleling:less"]);
 };
-
