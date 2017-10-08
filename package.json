@@ -1,4 +1,9 @@
 {
     "name": "local_yukaltura"
+    "description": "YU Kaltura Media Local Libraries for Moodle"
+    "bugs": {"url": "https://github.com/YU-MITC/moodle-local_yukaltura/issues"}
+    "repository": {"type": "git", "url": "https://github.com/YU-MITC/moodle-local_yukaltura"}
+    "license" : "GPL-3.0"
+    "version" : "2017100800"
 }
 
