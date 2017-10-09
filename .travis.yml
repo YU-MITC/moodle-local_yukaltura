@@ -30,7 +30,7 @@ env:
 before_install:
   - phpenv config-rm xdebug.ini
   - nvm install node
-  - npm install grunt grunt-contrib-less grunt-contrib-watch grunt-load-gruntfile grunt-contrib-clean grunt-contrib-jshint grunt-contrib-uglfy
+  - npm install grunt grunt-contrib-less grunt-contrib-watch grunt-load-gruntfile grunt-contrib-clean grunt-contrib-jshint grunt-contrib-uglify
   - npm install graceful-fs
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2
