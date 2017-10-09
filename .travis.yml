@@ -22,7 +22,7 @@ php:
 
 env:
  global:
-  - MOODLE_BRANCH=MOODLE_32_STABLE
+  - MOODLE_BRANCH=MOODLE_33_STABLE
  matrix:
   - DB=pgsql
   - DB=mysqli
@@ -30,8 +30,6 @@ env:
 before_install:
   - phpenv config-rm xdebug.ini
   - nvm install node
-  - npm install grunt grunt-contrib-less grunt-contrib-watch grunt-load-gruntfile grunt-contrib-clean grunt-contrib-jshint grunt-contrib-uglify
-  - npm install graceful-fs
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
@@ -47,6 +45,7 @@ script:
   - moodle-plugin-ci validate
   - moodle-plugin-ci savepoints
   - moodle-plugin-ci mustache
-  - moodle-plugin-ci grunt
+  - moodle-plugin-ci grunt --tasks amd
+  - moodle-plugin-ci grunt --tasks gherkinlint
   - moodle-plugin-ci phpunit
   - moodle-plugin-ci behat
