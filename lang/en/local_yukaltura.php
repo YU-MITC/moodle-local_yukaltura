@@ -154,9 +154,9 @@ $string['screenrecorder'] = 'Screen Recording';
 $string['loadingwait'] = 'Loading. This may take a few minutes.';
 
 // Capabilities.
-$string['kaltura:view_report'] = 'View Kaltura reports';
-$string['kaltura:view_selector'] = 'View media';
-$string['kaltura:search_selector'] = 'Search media';
+$string['yukaltura:view_report'] = 'View Kaltura reports';
+$string['yukaltura:view_selector'] = 'View media';
+$string['yukaltura:search_selector'] = 'Search media';
 
 // Search.
 $string['search'] = 'Search';
