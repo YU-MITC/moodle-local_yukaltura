@@ -25,10 +25,7 @@
 require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/config.php');
 require_once(dirname(dirname(__FILE__)) . '/locallib.php');
 
-// It must be included from a Moodle page.
-if (!defined('MOODLE_INTERNAL')) {
-    die('Direct access to this script is forbidden.');
-}
+defined('MOODLE_INTERNAL') || die();
 
 /**
  * This function install XML DB to Moodle.

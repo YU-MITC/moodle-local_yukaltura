@@ -33,7 +33,7 @@ define(['jquery'], function($) {
          * @access public
          * @param {string} propertiesUrl - url of media properties page.
          */
-        init: function(propertiesUrl) {
+        init: function(propertiesUrl, invalidName, emptySize, invalidCustomSize, invalidSize) {
 
             var modalX = 0;
             var modalY = 0;
@@ -201,7 +201,7 @@ define(['jquery'], function($) {
                 str = str.trim();
 
                 if (checkNameString(str) === false) {
-                    window.alert("There is deprecated letter(s) in <Name>.");
+                    window.alert(invalidName);
                     return false;
                 }
 
@@ -213,7 +213,7 @@ define(['jquery'], function($) {
                 if (index == $("#media_prop_size").children("option").length - 1) {
                     if ($("#media_prop_width").value === "" ||
                         $("#media_prop_height").value === "") {
-                        window.alert("Please input custom player size(width,height).");
+                        window.alert(emptySize);
                         return false;
                     } else {
                         width = $("#media_prop_width").val();
@@ -222,7 +222,7 @@ define(['jquery'], function($) {
                         height = height.trim();
                         var regex = /^\d{2,4}$/;
                         if (regex.test(width) === false || regex.test(height) === false) {
-                            window.alert("Custom player size(width,height) is a wrong dimension.");
+                            window.alert(invalidCustomSize);
                             return false;
                         }
                     }
@@ -230,7 +230,7 @@ define(['jquery'], function($) {
                     var dimension = $("#media_prop_size option:selected").text();
                     var dimensionArray = dimension.match(/\d{2,4}/g);
                     if (dimensionArray === null || dimensionArray.length != 2) {
-                        window.alert("Player size(width,height) is a wrong dimension.");
+                        window.alert(invalidSize);
                         return false;
                     }
                     width = dimensionArray[0];
@@ -238,7 +238,7 @@ define(['jquery'], function($) {
                 }
 
                 if (checkPlayerDimension(parseInt(width), parseInt(height)) === false) {
-                    window.alert("Player size(width,height) is a wrong dimension.");
+                    window.alert(invalidSize);
                     return false;
                 }
 

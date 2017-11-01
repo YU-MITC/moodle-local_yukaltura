@@ -34,16 +34,13 @@ $title    = optional_param('media_title', '', PARAM_TEXT);
 $widget   = optional_param('widget', 'kdp', PARAM_TEXT);
 $courseid = required_param('courseid', PARAM_INT);
 
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
+defined('MOODLE_INTERNAL') || die();
 
 require_login();
 
-$thumbnail    = '';
-$data         = new stdClass();
-$entryobj    = null;
+$thumbnail = '';
+$data = new stdClass();
+$entryobj = null;
 
 // If request is for a kaltura dynamic player get the entry object, disregarding the entry object status.
 if (0 == strcmp($widget, 'kdp')) {
@@ -63,7 +60,7 @@ if (0 == strcmp($widget, 'kdp')) {
     if (KalturaEntryStatus::READY == (string) $entryobj->status) {
 
         // Create the user KS session.
-        $session  = local_yukaltura_generate_kaltura_session(array($entryobj->id));
+        $session = local_yukaltura_generate_kaltura_session(array($entryobj->id));
 
         $data->markup = local_yukaltura_get_kdp_code($entryobj, $uiconfid, $courseid, $session);
 
@@ -87,7 +84,7 @@ if (0 == strcmp($widget, 'kdp')) {
 
 } else if (0 == strcmp($widget, 'kpdp')) {
     // If request is for a kaltura presentation dynamic player, get the entry object only when it is ready.
-    $entryobj  = local_yukaltura_get_ready_entry_object($entryid);
+    $entryobj = local_yukaltura_get_ready_entry_object($entryid);
 
     $adminmode = optional_param('admin_mode', 0, PARAM_INT);
     $adminmode = empty($adminmode) ? false : true;
@@ -96,7 +93,7 @@ if (0 == strcmp($widget, 'kdp')) {
 
     // Pre-set the height and width of the media presentation popup panel.
     $data->height = 400;
-    $data->width  = 780;
+    $data->width = 780;
 
 }
 

@@ -144,6 +144,26 @@ $string['confirm_category_reset'] = '<p>Are you sure you want to reset the root 
                                     '<p>Choose wisely.</p>';
 $string['category_reset_complete'] = '<b>Root category has been reset</b>';
 
+
+// Properties panel.
+$string['media_properties'] = 'Media Properties';
+$string['media_prop_header'] = 'Media Properties';
+$string['media_prop_name'] = 'Name:';
+$string['media_prop_player'] = 'Player design:';
+$string['media_prop_dimensions'] = 'Player dimensions:';
+$string['media_prop_size'] = 'Player size:';
+$string['media_prop_size_large'] = 'Large (400x365)';
+$string['media_prop_size_small'] = 'Small (260x260)';
+$string['media_prop_size_custom'] = 'Custom size';
+$string['custom_player'] = 'Custom player';
+$string['invalid_name'] = 'There is deprecated letter(s) in name.';
+$string['empty_size'] = 'Please input custom player size(width,height).';
+$string['invalid_custom_size'] = 'Custom player size(width,height) is a wrong dimension.';
+$string['invalid_size'] = 'Player size(width,height) is a wrong dimension.';
+
+// Simple selector.
+$string['selected_media'] = 'Selected Media';
+
 // Troubles.
 $string['no_media'] = 'No media found';
 $string['problem_viewing'] = 'There is a problem displaying the page.  Please try again or contact your site administrator';

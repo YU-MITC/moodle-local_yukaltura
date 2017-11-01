@@ -25,10 +25,7 @@
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once($CFG->dirroot . '/local/yukaltura/locallib.php');
 
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
+defined('MOODLE_INTERNAL') || die();
 
 global $SESSION, $USER, $COURSE;
 
@@ -96,7 +93,7 @@ if (local_yukaltura_get_mymedia_permission()) {
     try {
 
         if (!$connection) {
-            throw new Exception("Unable to connect");
+            throw new Exception(get_string('conn_failed', 'local_yukaltura'));
         }
 
         $perpage = 9;
@@ -123,7 +120,6 @@ if (local_yukaltura_get_mymedia_permission()) {
                                         $page,
                                         $perpage,
                                         new moodle_url('/local/yukaltura/simple_selector.php', array('sort' => $sort)));
-
 
             echo $renderer->create_options_table_upper($page);
 

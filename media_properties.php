@@ -25,17 +25,14 @@
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(dirname(dirname(__FILE__))) . '/local/yukaltura/locallib.php');
 
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
+defined('MOODLE_INTERNAL') || die();
 
 global $SESSION, $USER, $COURSE, $OUTPUT;
 
 $context = context_course::instance($COURSE->id);
 $PAGE->set_context($context);
 
-$header  = format_string($SITE->shortname).": Media Properties";
+$header  = format_string($SITE->shortname).": " . get_string('media_prop_header', 'local_yukaltura');
 
 $PAGE->set_url('/local/yukaltura/media_properties.php');
 
@@ -46,7 +43,14 @@ $PAGE->set_heading("");
 $PAGE->add_body_class('player-properties');
 $PAGE->requires->css('/local/yukaltura/css/simple_selector.css', true);
 $PAGE->requires->js_call_amd('local_yukaltura/properties', 'init',
-                             array($CFG->wwwroot . "/local/yukaltura/media_properties.php"));
+                             array(
+                                 $CFG->wwwroot . "/local/yukaltura/media_properties.php",
+                                 get_string('invalid_name', 'local_yukaltura'),
+                                 get_string('empty_size', 'local_yukaltura'),
+                                 get_string('invalid_custom_size', 'local_yukaltura'),
+                                 get_string('invalid_size', 'local_yukaltura')
+                             )
+                            );
 
 require_login();
 

@@ -531,7 +531,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     public function create_selector_submit_form() {
         $output = '';
 
-        $output .= 'Select Media: ';
+        $output .= get_string('selected_media', 'local_yukaltura') . ' : ';
 
         $attr = array('id' => 'select_name', 'name' => 'select_name');
         $output .= html_writer::start_tag('span', $attr);
@@ -585,7 +585,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         // Panel markup to set media properties.
 
         $attr = array('class' => 'hd');
-        $output .= html_writer::tag('div', '<center>' . get_string('media_prop_header', 'kalmediares') . '</center>', $attr);
+        $output .= html_writer::tag('div', '<center>' . get_string('media_prop_header', 'local_yukaltura') . '</center>', $attr);
         $output .= html_writer::start_tag('br', array());
 
         $attr = array('class' => 'bd');
@@ -613,7 +613,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         // Display name input box.
         $attr = array('for' => 'media_prop_name');
-        $output .= html_writer::tag('label', get_string('media_prop_name', 'kalmediares'), $attr);
+        $output .= html_writer::tag('label', get_string('media_prop_name', 'local_yukaltura'), $attr);
         $output .= '&nbsp;';
 
         $attr = array('type' => 'text',
@@ -628,7 +628,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         // Display section element for player design.
         $attr = array('for' => 'media_prop_player');
-        $output .= html_writer::tag('label', get_string('media_prop_player', 'kalmediares'), $attr);
+        $output .= html_writer::tag('label', get_string('media_prop_player', 'local_yukaltura'), $attr);
         $output .= '&nbsp;';
 
         list($options, $defaultoption) = $this->get_media_resource_players();
@@ -641,12 +641,12 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         // Display player size drop down button.
         $attr = array('for' => 'media_prop_size');
-        $output .= html_writer::tag('label', get_string('media_prop_size', 'kalmediares'), $attr);
+        $output .= html_writer::tag('label', get_string('media_prop_size', 'local_yukaltura'), $attr);
         $output .= '&nbsp;';
 
-        $options = array(0 => get_string('media_prop_size_large', 'kalmediares'),
-                         1 => get_string('media_prop_size_small', 'kalmediares'),
-                         2 => get_string('media_prop_size_custom', 'kalmediares')
+        $options = array(0 => get_string('media_prop_size_large', 'local_yukaltura'),
+                         1 => get_string('media_prop_size_small', 'local_yukaltura'),
+                         2 => get_string('media_prop_size_custom', 'local_yukaltura')
                          );
 
         $attr = array('id' => 'media_prop_size');
@@ -711,7 +711,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         // If the default player id does not exist in the list of choice.
         // Then the user must be using a custom player id, add it to the list.
         if (!array_key_exists($defaultplayerid, $choices)) {
-            $choices = $choices + array($defaultplayerid => get_string('custom_player', 'kalmediares'));
+            $choices = $choices + array($defaultplayerid => get_string('custom_player', 'local_yukaltura'));
         }
 
         // Check if player selection is globally overridden.
