@@ -35,7 +35,11 @@ Moodle 2.9, 3.0, 3.1, 3.2, 3.3
 Branches
 ------
 
-* MOODLE_29_STABLE -> Moodle2.9-3.3 branch 
+* MOODLE_29_STABLE -> Moodle2.9 branch 
+* MOODLE_30_STABLE -> Moodle3.0 branch 
+* MOODLE_31_STABLE -> Moodle3.1 branch 
+* MOODLE_32_STABLE -> Moodle3.2 branch 
+* MOODLE_33_STABLE -> Moodle3.3 branch 
 
 First clone the repository with "git clone", then "git checkout MOODLE_29_STABLE(branch name)" to switch branches.
 
