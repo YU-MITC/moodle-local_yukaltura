@@ -22,14 +22,14 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$param = optional_param('section', '', PARAM_TEXT);
-
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(__FILE__) . '/locallib.php');
 
 defined('MOODLE_INTERNAL') || die();
 
 require_login();
+
+$param = optional_param('section', '', PARAM_TEXT);
 
 /*
  * $enableapicalls is a flag to enable the settings page to make API calls to
