@@ -30,8 +30,8 @@ env:
 before_install:
   - phpenv config-rm xdebug.ini
   - nvm ls-remote
+  - nvm alias default node v8.9.1
   - nvm install node v8.9.1
-  - nvm alias default node
   - node --version
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2
