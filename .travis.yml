@@ -32,7 +32,7 @@ before_install:
   - nvm ls-remote
   - nvm install --lts
   - nvm use --lts
-  - nvm use default
+  - nvm alias default v8.9.1
   - node --version
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2
