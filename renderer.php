@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
 require_once(dirname(dirname(dirname(__FILE__))) . '/lib/tablelib.php');
 
@@ -33,18 +33,6 @@ require_once(dirname(dirname(dirname(__FILE__))) . '/lib/tablelib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_yukaltura_renderer extends plugin_renderer_base {
-
-    /**
-     * Generate the HTML for the iframe
-     * @return string - HTML markup for iframe
-     */
-    public function render_recent_courses() {
-        $html = '<div class="resourcecontent resourcegeneral">
-                    <iframe id="resourceobject" src="courses.php?action=recent_courses" width="700" height="700"></iframe>
-                </div>';
-
-        return $html;
-    }
 
     /**
      * This function outputs a table layout for display media

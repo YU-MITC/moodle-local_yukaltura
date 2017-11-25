@@ -159,7 +159,8 @@ if ($hassiteconfig) {
                     }
                 }
             }
-        } else if ($ipaddress != null && 0 != strcmp($ipaddress, $ipaddressprevious) && 0 != strcmp($ipaddress, '0.0.0.0/0')) {
+        } else if ($ipaddress != null && 0 != strcmp($ipaddress, $ipaddressprevious) &&
+                   0 != strcmp($ipaddress, '0.0.0.0/0')) {
             $control = local_yukaltura_get_internal_access_control($connection);
 
             if (is_null($control)) {
@@ -219,7 +220,8 @@ if ($hassiteconfig) {
     $settings->add($adminsetting);
 
     // Kaltura password.
-    $adminsetting = new admin_setting_configpasswordunmask('password', get_string('hosted_password', 'local_yukaltura'),
+    $adminsetting = new admin_setting_configpasswordunmask('password',
+                       get_string('hosted_password', 'local_yukaltura'),
                        get_string('hosted_password_desc', 'local_yukaltura'), '');
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
@@ -316,6 +318,12 @@ if ($hassiteconfig) {
     // Kaltura My Media settings.
     $settings->add(new admin_setting_heading('kaltura_mymedia_heading',
                    get_string('kaltura_mymedia_title', 'local_yukaltura'), ''));
+
+    $adminsetting = new admin_setting_configcheckbox('enable_webcam',
+                                                     get_string('enable_webcam', 'local_yukaltura'),
+                                                     get_string('enable_webcam_desc', 'local_yukaltura'), '0');
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
 
     $adminsetting = new admin_setting_configcheckbox('mymedia_limited_access',
                                                      get_string('mymedia_limited_access', 'local_yukaltura'),

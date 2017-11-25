@@ -26,7 +26,7 @@ require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(__FILE__) . '/API/KalturaClient.php');
 require_once(dirname(__FILE__) . '/kaltura_entries.class.php');
 
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
 /**
  * KALTURA_PLUGIN_NAME - local plugin name.
@@ -242,7 +242,6 @@ function local_yukaltura_initialize_account($login, $password, $uri = '') {
     }
 }
 
-
 /**
  * Uninitialize the kaltura account.
  */
@@ -276,7 +275,6 @@ function local_yukaltura_send_initialization($session) {
     curl_exec($ch);
     curl_close($ch);
 }
-
 
 /**
  * Log in with the user's credentials.  General a kaltura session locally
@@ -345,93 +343,6 @@ function local_yukaltura_login($admin = false, $privileges = '', $expiry = 10800
     } else {
         return false;
     }
-
-}
-
-/**
- * Generate a weak Kaltura session
- *
- * @param int $courseid - The id of the course
- * @param string $coursename - The name of the course
- *
- * @return string|bool - The session ID string value or false on error
- */
-function local_yukaltura_generate_weak_kaltura_session($courseid, $coursename) {
-    global $CFG, $USER;
-
-    $configobj = local_yukaltura_get_report_configuration_obj();
-
-    if (empty($configobj) || !($configobj instanceof KalturaConfiguration)) {
-        return false;
-    }
-
-    $clientobj = new KalturaClient($configobj);
-
-    if (empty($clientobj)) {
-        return false;
-    }
-
-    $kaltura = new yukaltura_connection();
-    $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
-
-    if (empty($connection)) {
-        return '';
-    }
-
-    $kalturaversion = get_config(KALTURA_PLUGIN_NAME, 'version');
-    $kalcategory = local_yukaltura_create_user_category($connection, $USER->username);
-
-    $context = context_course::instance($courseid);;
-    $students = count_enrolled_users($context, 'moodle/grade:view');
-
-    $secret = get_config(KALTURA_PLUGIN_NAME, 'adminsecret');
-    $partnerid = get_config(KALTURA_PLUGIN_NAME, 'partner_id');
-
-    $username = null;
-
-    if (isloggedin()) {
-        $username = $USER->username;
-    }
-
-    /*
-     *  TODO: LOOK INTO THE CALLING OF A NON OBJECT
-     *  var_dump($kal_category);
-     */
-
-    $privilege = array(
-        'app' => 'moodle',
-        'userId' => $username,
-        'returnUrl' => $CFG->wwwroot . '/local/yukaltura/reports.php?couseid=' . $courseid,
-        'parentUrl' => $CFG->wwwroot,
-        'appVersion' => $kalturaversion,
-        'locale' => 'en',
-        'frameWidth' => '800',
-        'frameHeight' => '600',
-        'tz' => '300', // This is 60*5 = EST = GMT+5.
-        'categoryId' => $kalcategory->id,
-        'courseName' => $coursename,
-        'totalUsersCount' => $students,
-    );
-
-    $privstr  = '';
-
-    foreach ($privilege as $key => $val) {
-        $privstr .= ','.$key.':'.$val;
-    }
-
-    $privilege = ltrim($privstr, ',');
-
-    if (function_exists('mcrypt_encrypt')) {
-        $ks = $clientobj->generateSessionV2($secret, $username, KalturaSessionType::USER,
-                                             $partnerid, 10800, $privilege);
-
-    } else {
-        $ks = $clientobj->generateSession($secret, $username, KalturaSessionType::USER,
-                                             $partnerid, 10800, $privilege);
-    }
-
-    return $ks;
-
 }
 
 /**
@@ -495,35 +406,6 @@ function local_yukaltura_get_credentials() {
  * @return obj - KalturaConfiguration object
  */
 function local_yukaltura_get_configuration_obj() {
-    global $CFG;
-
-    $partnerid = local_yukaltura_get_partner_id();
-
-    if (empty($partnerid)) {
-        return false;
-    }
-
-    $configobj = new KalturaConfiguration($partnerid);
-    $configobj->serviceUrl = local_yukaltura_get_host();
-    $configobj->cdnUrl = local_yukaltura_get_host();
-    $configobj->clientTag = local_yukaltura_create_client_tag();
-
-    if (!empty($CFG->proxyhost)) {
-        $configobj->proxyHost = $CFG->proxyhost;
-        $configobj->proxyPort = $CFG->proxyport;
-        $configobj->proxyType = $CFG->proxytype;
-        $configobj->proxyUser = ($CFG->proxyuser) ? $CFG->proxyuser : null;
-        $configobj->proxyPassword = ($CFG->proxypassword && $CFG->proxyuser) ? $CFG->proxypassword : null;
-    }
-    return $configobj;
-}
-
-/**
- * Retrieve an instance of the KalturaConfiguration class
- *
- * @return obj - KalturaConfiguration object
- */
-function local_yukaltura_get_report_configuration_obj() {
     global $CFG;
 
     $partnerid = local_yukaltura_get_partner_id();
@@ -1074,7 +956,6 @@ function local_yukaltura_has_mobile_flavor_enabled() {
     }
 }
 
-
 /**
  * This function test connection to kaltura server.
  * @param obj $clientobj - Kaltura Client
@@ -1464,7 +1345,6 @@ function local_yukaltura_get_server_variable($key, $default = null) {
     return (isset($_SERVER[$key])) ? $_SERVER[$key] : $default;
 }
 
-
 /**
  * This function checks whether the IP address of the client is internal.
  *
@@ -1520,7 +1400,6 @@ function local_yukaltura_check_internal($ipaddress) {
     return false;
 }
 
-
 /**
  * This function checks whether the IP address of the client is within a predetermined range.
  *
@@ -1571,7 +1450,6 @@ function check_ipaddress_in_range($ip, $range) {
     return false;
 }
 
-
 /**
  * This function retrieves defaul access control of Kaltura server.
  *
@@ -1601,14 +1479,13 @@ function local_yukaltura_get_default_access_control($connection) {
             }
         }
     } catch (Exception $ex) {
-        $errormessage = 'Error in local_yukaltura_get_internal_profile(' . $ex->getMessage() . ')';
+        $errormessage = 'Error in local_yukaltura_get_default_access_control(' . $ex->getMessage() . ')';
         print_error($errormessage, 'local_yukaltura');
         return null;
     }
 
     return null;
 }
-
 
 /**
  * This function retrieves internal access control of Kaltura server.
@@ -1673,7 +1550,6 @@ function local_yukaltura_create_default_access_control($connection) {
     return $control;
 }
 
-
 /**
  * This function creates internal access control of Kaltura server.
  *
@@ -1712,7 +1588,6 @@ function local_yukaltura_create_internal_access_control($connection) {
 
     return $control;
 }
-
 
 /**
  * This function updates internal access control of Kaltura server.
@@ -1862,7 +1737,6 @@ function local_yukaltura_create_root_category($connection) {
     return array($rootcategory, $result->id);
 }
 
-
 /**
  * Create a category in the KMC.  If a perent id is passed then the category
  * will be created as a sub category of the parent id
@@ -1894,7 +1768,6 @@ function local_yukaltura_create_category($connection, $name, $parentid = 0) {
     return false;
 }
 
-
 /**
  * Checks if a specific category has a matching fullName value
  * @param obj $connection - Kaltura connection object
@@ -1923,7 +1796,6 @@ function local_yukaltura_category_id_path_exists($connection, $categoryid, $path
     return false;
 
 }
-
 
 /**
  * Checks if a category path exists, if path exists then it returns the
@@ -1971,7 +1843,6 @@ function local_yukaltura_category_path_exists($connection, $path) {
 
     return false;
 }
-
 
 /**
  * This function creates a Kaltura category, if one doesn't exist, whose name is
@@ -2167,4 +2038,19 @@ function local_yukaltura_create_pager($pageindex = 0, $itemsperpage = 0) {
 
     return $page;
 
+}
+
+/**
+ * This function checks if the user can use webcamera.
+ *
+ * @return - true if user can use webcamera, otherwise false.
+ */
+function local_yukaltura_get_webcam_permission() {
+    $check = get_config(KALTURA_PLUGIN_NAME, 'enable_webcam');
+
+    if ($check == '1') {
+        return true;
+    } else {
+        return false;
+    }
 }
