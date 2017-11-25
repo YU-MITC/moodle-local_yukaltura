@@ -49,3 +49,4 @@ Warning
 * We are not responsible for any problem caused by this software. 
 * This software follows the license policy of Moodle (GNU GPL v3).
 * "Kaltura" is the registered trademark of the Kaltura Inc.
+* Webcamera recording function in "My Media" supports the Mozilla firefox, Google chrome and Opera.
