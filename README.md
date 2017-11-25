@@ -49,3 +49,10 @@ Warning
 * We are not responsible for any problem caused by this software. 
 * This software follows the license policy of Moodle (GNU GPL v3).
 * "Kaltura" is the registered trademark of the Kaltura Inc.
+
+Change log
+------
+Version 1.1.0
+
+* fixed some error messages in locallib.php.
+* added a webcam enable/disable selector in plugin setting page.
