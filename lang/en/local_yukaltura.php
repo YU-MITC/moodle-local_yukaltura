@@ -41,12 +41,12 @@ $string['player_regular_light'] = 'Player light (6709421)';
 $string['player_regular_dark'] = 'Player dark (6709411)';
 $string['custom_player'] = 'Custom player';
 $string['kaltura_player_resource'] = 'Kaltura resource player';
-$string['kaltura_player_resource_desc'] = 'Player used to play back media for Media Resources.  This player will appear as the default player for new Media Resources.'.
+$string['kaltura_player_resource_desc'] = 'Player used to play-back media for Media Resources.  This player will appear as the default player for new Media Resources.'.
 ' However it may be overridden if the <b>Override media resource player setting</b> is unchecked';
 $string['kaltura_player_resource_custom'] = 'Custom UIConf';
 $string['kaltura_player_resource_custom_desc'] = 'Only used if you have a custom resource player UIConf ID';
 $string['kaltura_player'] = 'Kaltura player';
-$string['kaltura_player_desc'] = 'Player used to play back media for Media Assignments';
+$string['kaltura_player_desc'] = 'Player used to play-back media for Media Assignments';
 $string['kaltura_player_custom'] = 'Custom UIConf';
 $string['kaltura_player_custom_desc'] = 'Only used if you have a custom assignment player UIConf ID';
 $string['conn_status_title'] = 'Connection status';
@@ -126,7 +126,7 @@ $string['kalmediaassign_popup_player_width_desc'] = 'Adjust this setting if your
 $string['enable_reports'] = 'Enable reports';
 $string['enable_reports_desc'] = 'Kaltura reports are only compatible with Kaltura version Falcon or above';
 $string['internal_ipaddress'] = 'Internal IP Address';
-$string['internal_ipaddress_desc'] = 'A global setting to internal IP address / subnet used in your organization. For example, the IP address is writtern like 192.168.1.1, and the subnet is written like 192.168.1.0/24. If You need multiple IP address and subnet, those must be separated by whitespace(s).';
+$string['internal_ipaddress_desc'] = 'A global setting to internal IP address / subnet used in your organization. For example, the IP address is written like 192.168.1.1, and the subnet is written like 192.168.1.0/24. If you need multiple IP address and subnet, those must be separated by whitespace(s).';
 
 // Copy string from repository.
 $string['connection_status'] = 'Connection Status';
