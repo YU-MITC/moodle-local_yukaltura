@@ -26,7 +26,7 @@ Installation will be completed after you log in as an administrator and access t
 How to use
 ------
 
-User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version1.1.pdf).
+User's guide, click [here](https://github.com/YU-MITC/moodle-local_yukaltura/blob/master/userguide_version1.1.pdf).
 
 Now, we wrote sections about installation, initial configuration and summary of "My Media".
 
