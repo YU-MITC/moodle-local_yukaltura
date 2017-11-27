@@ -26,8 +26,11 @@ Installation will be completed after you log in as an administrator and access t
 How to use
 ------
 
-Soory!!
-We will write soon...
+User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version1.1.pdf).
+
+Now, we wrote sections about installation, initial configuration and summary of "My Media".
+
+Rest sections will be written soon...
 
 Targeted Moodle versions
 ------
@@ -52,4 +55,4 @@ Warning
 * We are not responsible for any problem caused by this software. 
 * This software follows the license policy of Moodle (GNU GPL v3).
 * "Kaltura" is the registered trademark of the Kaltura Inc.
-* Web-camera recording function in "My Media" supports the Mozilla Firefox, Google chrome and Opera.
+* Web-camera recording function in "My Media" supports the Mozilla Firefox, Google chrome and Opera. For smartphones and tablets, you can record  and upload movies through a normal media uploader.
