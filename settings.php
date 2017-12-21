@@ -18,7 +18,7 @@
  * YU Kaltura Local Libraries setting script
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2017 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -67,6 +67,9 @@ if ($hassiteconfig) {
 
     // Connection status headers.
     $initialized = false;
+
+    // Kaltura session objects.
+    $session = null;
 
     // Check to see if the username, password or uri has changed.
     $login = get_config(KALTURA_PLUGIN_NAME, 'login');
@@ -134,7 +137,7 @@ if ($hassiteconfig) {
     $kaltura = new yukaltura_connection();
     $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
 
-    if (!empty($connection)) {
+    if (!empty($connection) && !empty($session)) {
         $control = local_yukaltura_get_default_access_control($connection);
 
         if (is_null($control)) {
@@ -395,7 +398,7 @@ if ($hassiteconfig) {
     $kaltura = new yukaltura_connection();
     $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
 
-    if (!empty($connection)) {
+    if (!empty($connection) && !empty($session)) {
         $control = local_yukaltura_get_internal_access_control($connection);
         if (!is_null($control)) {
             $restriction = $control->restrictions[0];

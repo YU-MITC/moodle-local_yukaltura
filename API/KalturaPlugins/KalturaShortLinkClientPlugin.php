@@ -19,26 +19,23 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
+defined('MOODLE_INTERNAL') || die();
 
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaShortLinkOrderBy
@@ -56,7 +53,7 @@ class KalturaShortLinkOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaShortLinkStatus
@@ -71,7 +68,7 @@ class KalturaShortLinkStatus
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaShortLinkBaseFilter extends KalturaFilter
@@ -195,7 +192,7 @@ abstract class KalturaShortLinkBaseFilter extends KalturaFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaShortLinkFilter extends KalturaShortLinkBaseFilter
@@ -208,7 +205,7 @@ class KalturaShortLinkFilter extends KalturaShortLinkBaseFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaShortLink extends KalturaObjectBase
@@ -290,7 +287,7 @@ class KalturaShortLink extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaShortLinkListResponse extends KalturaObjectBase
@@ -316,16 +313,16 @@ class KalturaShortLinkListResponse extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaShortLinkService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaShortLinkFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaShortLinkFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -343,9 +340,9 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function add(KalturaShortLink $shortLink) {
+    public function add(KalturaShortLink $shortlink) {
         $kparams = array();
-        $this->client->addParam($kparams, "shortLink", $shortLink->toParams());
+        $this->client->addParam($kparams, "shortLink", $shortlink->toParams());
         $this->client->queueServiceActionCall("shortlink_shortlink", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -356,7 +353,7 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("shortlink_shortlink", "get", $kparams);
@@ -369,10 +366,10 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function update($id, KalturaShortLink $shortLink) {
+    public function update($id, KalturaShortLink $shortlink) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "shortLink", $shortLink->toParams());
+        $this->client->addParam($kparams, "shortLink", $shortlink->toParams());
         $this->client->queueServiceActionCall("shortlink_shortlink", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -383,7 +380,7 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("shortlink_shortlink", "delete", $kparams);
@@ -396,7 +393,7 @@ class KalturaShortLinkService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function gotoAction($id, $proxy = false) {
+    public function gotoAction($id, $proxy = false) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "proxy", $proxy);
@@ -411,7 +408,7 @@ class KalturaShortLinkService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaShortLinkClientPlugin extends KalturaClientPlugin

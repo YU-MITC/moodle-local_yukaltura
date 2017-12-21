@@ -19,27 +19,24 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
+defined('MOODLE_INTERNAL') || die();
 
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaMetadataClientPlugin.php");
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConfigurableDistributionProfileOrderBy
@@ -55,7 +52,7 @@ class KalturaConfigurableDistributionProfileOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionAction
@@ -71,7 +68,7 @@ class KalturaDistributionAction
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionErrorType
@@ -87,7 +84,7 @@ class KalturaDistributionErrorType
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionFieldRequiredStatus
@@ -102,7 +99,7 @@ class KalturaDistributionFieldRequiredStatus
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProfileActionStatus
@@ -117,7 +114,7 @@ class KalturaDistributionProfileActionStatus
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProfileOrderBy
@@ -133,7 +130,7 @@ class KalturaDistributionProfileOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProfileStatus
@@ -148,7 +145,7 @@ class KalturaDistributionProfileStatus
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProtocol
@@ -165,7 +162,7 @@ class KalturaDistributionProtocol
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProviderOrderBy
@@ -177,7 +174,7 @@ class KalturaDistributionProviderOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProviderType
@@ -200,7 +197,7 @@ class KalturaDistributionProviderType
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionValidationErrorType
@@ -217,7 +214,7 @@ class KalturaDistributionValidationErrorType
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryDistributionFlag
@@ -235,7 +232,7 @@ class KalturaEntryDistributionFlag
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryDistributionOrderBy
@@ -257,7 +254,7 @@ class KalturaEntryDistributionOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryDistributionStatus
@@ -280,7 +277,7 @@ class KalturaEntryDistributionStatus
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryDistributionSunStatus
@@ -295,7 +292,7 @@ class KalturaEntryDistributionSunStatus
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProfileOrderBy
@@ -311,7 +308,7 @@ class KalturaGenericDistributionProfileOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderActionOrderBy
@@ -327,7 +324,7 @@ class KalturaGenericDistributionProviderActionOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderOrderBy
@@ -343,7 +340,7 @@ class KalturaGenericDistributionProviderOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderParser
@@ -358,7 +355,7 @@ class KalturaGenericDistributionProviderParser
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderStatus
@@ -372,7 +369,7 @@ class KalturaGenericDistributionProviderStatus
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationDistributionProfileOrderBy
@@ -388,7 +385,7 @@ class KalturaSyndicationDistributionProfileOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationDistributionProviderOrderBy
@@ -400,7 +397,7 @@ class KalturaSyndicationDistributionProviderOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionThumbDimensions extends KalturaObjectBase
@@ -426,7 +423,7 @@ class KalturaDistributionThumbDimensions extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDistributionProfile extends KalturaObjectBase
@@ -574,7 +571,7 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDistributionProfileBaseFilter extends KalturaFilter
@@ -642,7 +639,7 @@ abstract class KalturaDistributionProfileBaseFilter extends KalturaFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProfileFilter extends KalturaDistributionProfileBaseFilter
@@ -655,7 +652,7 @@ class KalturaDistributionProfileFilter extends KalturaDistributionProfileBaseFil
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProfileListResponse extends KalturaObjectBase
@@ -681,7 +678,7 @@ class KalturaDistributionProfileListResponse extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDistributionValidationError extends KalturaObjectBase
@@ -714,7 +711,7 @@ abstract class KalturaDistributionValidationError extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryDistribution extends KalturaObjectBase
@@ -921,7 +918,7 @@ class KalturaEntryDistribution extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaEntryDistributionBaseFilter extends KalturaFilter
@@ -1073,7 +1070,7 @@ abstract class KalturaEntryDistributionBaseFilter extends KalturaFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryDistributionFilter extends KalturaEntryDistributionBaseFilter
@@ -1086,7 +1083,7 @@ class KalturaEntryDistributionFilter extends KalturaEntryDistributionBaseFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryDistributionListResponse extends KalturaObjectBase
@@ -1112,7 +1109,7 @@ class KalturaEntryDistributionListResponse extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDistributionProviderBaseFilter extends KalturaFilter
@@ -1138,7 +1135,7 @@ abstract class KalturaDistributionProviderBaseFilter extends KalturaFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProviderFilter extends KalturaDistributionProviderBaseFilter
@@ -1151,7 +1148,7 @@ class KalturaDistributionProviderFilter extends KalturaDistributionProviderBaseF
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDistributionProvider extends KalturaObjectBase
@@ -1226,7 +1223,7 @@ abstract class KalturaDistributionProvider extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProviderListResponse extends KalturaObjectBase
@@ -1252,7 +1249,7 @@ class KalturaDistributionProviderListResponse extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProvider extends KalturaDistributionProvider
@@ -1351,7 +1348,7 @@ class KalturaGenericDistributionProvider extends KalturaDistributionProvider
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaGenericDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
@@ -1447,7 +1444,7 @@ abstract class KalturaGenericDistributionProviderBaseFilter extends KalturaDistr
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderFilter extends KalturaGenericDistributionProviderBaseFilter
@@ -1460,7 +1457,7 @@ class KalturaGenericDistributionProviderFilter extends KalturaGenericDistributio
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderListResponse extends KalturaObjectBase
@@ -1486,7 +1483,7 @@ class KalturaGenericDistributionProviderListResponse extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderAction extends KalturaObjectBase
@@ -1620,7 +1617,7 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaGenericDistributionProviderActionBaseFilter extends KalturaFilter
@@ -1702,7 +1699,7 @@ abstract class KalturaGenericDistributionProviderActionBaseFilter extends Kaltur
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderActionFilter extends KalturaGenericDistributionProviderActionBaseFilter
@@ -1715,7 +1712,7 @@ class KalturaGenericDistributionProviderActionFilter extends KalturaGenericDistr
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderActionListResponse extends KalturaObjectBase
@@ -1741,7 +1738,7 @@ class KalturaGenericDistributionProviderActionListResponse extends KalturaObject
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaContentDistributionSearchItem extends KalturaSearchItem
@@ -1802,7 +1799,7 @@ class KalturaContentDistributionSearchItem extends KalturaSearchItem
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaConfigurableDistributionProfileBaseFilter extends KalturaDistributionProfileFilter
@@ -1815,7 +1812,7 @@ abstract class KalturaConfigurableDistributionProfileBaseFilter extends KalturaD
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaGenericDistributionProfileBaseFilter extends KalturaDistributionProfileFilter
@@ -1828,7 +1825,7 @@ abstract class KalturaGenericDistributionProfileBaseFilter extends KalturaDistri
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaSyndicationDistributionProfileBaseFilter extends KalturaDistributionProfileFilter
@@ -1841,7 +1838,7 @@ abstract class KalturaSyndicationDistributionProfileBaseFilter extends KalturaDi
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaSyndicationDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
@@ -1854,7 +1851,7 @@ abstract class KalturaSyndicationDistributionProviderBaseFilter extends KalturaD
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConfigurableDistributionProfileFilter extends KalturaConfigurableDistributionProfileBaseFilter
@@ -1867,7 +1864,7 @@ class KalturaConfigurableDistributionProfileFilter extends KalturaConfigurableDi
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProfileFilter extends KalturaGenericDistributionProfileBaseFilter
@@ -1880,7 +1877,7 @@ class KalturaGenericDistributionProfileFilter extends KalturaGenericDistribution
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationDistributionProfileFilter extends KalturaSyndicationDistributionProfileBaseFilter
@@ -1893,7 +1890,7 @@ class KalturaSyndicationDistributionProfileFilter extends KalturaSyndicationDist
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationDistributionProviderFilter extends KalturaSyndicationDistributionProviderBaseFilter
@@ -1906,7 +1903,7 @@ class KalturaSyndicationDistributionProviderFilter extends KalturaSyndicationDis
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionFieldConfig extends KalturaObjectBase
@@ -1970,7 +1967,7 @@ class KalturaDistributionFieldConfig extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaConfigurableDistributionProfile extends KalturaDistributionProfile
@@ -1996,7 +1993,7 @@ abstract class KalturaConfigurableDistributionProfile extends KalturaDistributio
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProfileAction extends KalturaObjectBase
@@ -2064,7 +2061,7 @@ class KalturaGenericDistributionProfileAction extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProfile extends KalturaDistributionProfile
@@ -2125,7 +2122,7 @@ class KalturaGenericDistributionProfile extends KalturaDistributionProfile
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationDistributionProfile extends KalturaDistributionProfile
@@ -2151,7 +2148,7 @@ class KalturaSyndicationDistributionProfile extends KalturaDistributionProfile
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionValidationErrorInvalidData extends KalturaDistributionValidationError
@@ -2185,7 +2182,7 @@ class KalturaDistributionValidationErrorInvalidData extends KalturaDistributionV
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionValidationErrorInvalidMetadata extends KalturaDistributionValidationErrorInvalidData
@@ -2204,7 +2201,7 @@ class KalturaDistributionValidationErrorInvalidMetadata extends KalturaDistribut
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionValidationErrorMissingFlavor extends KalturaDistributionValidationError
@@ -2223,7 +2220,7 @@ class KalturaDistributionValidationErrorMissingFlavor extends KalturaDistributio
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionValidationErrorMissingMetadata extends KalturaDistributionValidationError
@@ -2242,7 +2239,7 @@ class KalturaDistributionValidationErrorMissingMetadata extends KalturaDistribut
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionValidationErrorMissingThumbnail extends KalturaDistributionValidationError
@@ -2261,7 +2258,7 @@ class KalturaDistributionValidationErrorMissingThumbnail extends KalturaDistribu
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationDistributionProvider extends KalturaDistributionProvider
@@ -2274,18 +2271,18 @@ class KalturaSyndicationDistributionProvider extends KalturaDistributionProvider
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProfileService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaDistributionProfile $distributionProfile) {
+    public function add(KalturaDistributionProfile $distributionprofile) {
         $kparams = array();
-        $this->client->addParam($kparams, "distributionProfile", $distributionProfile->toParams());
+        $this->client->addParam($kparams, "distributionProfile", $distributionprofile->toParams());
         $this->client->queueServiceActionCall("contentdistribution_distributionprofile", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2296,7 +2293,7 @@ class KalturaDistributionProfileService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_distributionprofile", "get", $kparams);
@@ -2309,10 +2306,10 @@ class KalturaDistributionProfileService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function update($id, KalturaDistributionProfile $distributionProfile) {
+    public function update($id, KalturaDistributionProfile $distributionprofile) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "distributionProfile", $distributionProfile->toParams());
+        $this->client->addParam($kparams, "distributionProfile", $distributionprofile->toParams());
         $this->client->queueServiceActionCall("contentdistribution_distributionprofile", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2323,7 +2320,7 @@ class KalturaDistributionProfileService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function updateStatus($id, $status) {
+    public function updateStatus($id, $status) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->addParam($kparams, "status", $status);
@@ -2337,7 +2334,7 @@ class KalturaDistributionProfileService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_distributionprofile", "delete", $kparams);
@@ -2350,7 +2347,7 @@ class KalturaDistributionProfileService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function listAction(KalturaDistributionProfileFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaDistributionProfileFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2368,7 +2365,7 @@ class KalturaDistributionProfileService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function listByPartner(KalturaPartnerFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listByPartner(KalturaPartnerFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2392,18 +2389,18 @@ class KalturaDistributionProfileService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryDistributionService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaEntryDistribution $entryDistribution) {
+    public function add(KalturaEntryDistribution $entrydistribution) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryDistribution", $entryDistribution->toParams());
+        $this->client->addParam($kparams, "entryDistribution", $entrydistribution->toParams());
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2414,7 +2411,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "get", $kparams);
@@ -2427,7 +2424,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function validate($id) {
+    public function validate($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "validate", $kparams);
@@ -2440,10 +2437,10 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function update($id, KalturaEntryDistribution $entryDistribution) {
+    public function update($id, KalturaEntryDistribution $entrydistribution) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "entryDistribution", $entryDistribution->toParams());
+        $this->client->addParam($kparams, "entryDistribution", $entrydistribution->toParams());
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2454,7 +2451,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "delete", $kparams);
@@ -2467,7 +2464,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function listAction(KalturaEntryDistributionFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaEntryDistributionFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2485,10 +2482,10 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function submitAdd($id, $submitWhenReady = false) {
+    public function submitAdd($id, $submitwhenready = false) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "submitWhenReady", $submitWhenReady);
+        $this->client->addParam($kparams, "submitWhenReady", $submitwhenready);
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "submitAdd", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2499,7 +2496,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function submitUpdate($id) {
+    public function submitUpdate($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "submitUpdate", $kparams);
@@ -2512,7 +2509,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function submitFetchReport($id) {
+    public function submitFetchReport($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "submitFetchReport", $kparams);
@@ -2525,7 +2522,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function submitDelete($id) {
+    public function submitDelete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "submitDelete", $kparams);
@@ -2538,7 +2535,7 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function retrySubmit($id) {
+    public function retrySubmit($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_entrydistribution", "retrySubmit", $kparams);
@@ -2551,19 +2548,19 @@ class KalturaEntryDistributionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function serveSentData($id, $actionType) {
+    public function serveSentData($id, $actiontype) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "actionType", $actionType);
+        $this->client->addParam($kparams, "actionType", $actiontype);
         $this->client->queueServiceActionCall('contentdistribution_entrydistribution', 'serveSentData', $kparams);
         $resultobject = $this->client->getServeUrl();
         return $resultobject;
     }
 
-    function serveReturnedData($id, $actionType) {
+    public function serveReturnedData($id, $actiontype) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "actionType", $actionType);
+        $this->client->addParam($kparams, "actionType", $actiontype);
         $this->client->queueServiceActionCall('contentdistribution_entrydistribution', 'serveReturnedData', $kparams);
         $resultobject = $this->client->getServeUrl();
         return $resultobject;
@@ -2575,16 +2572,16 @@ class KalturaEntryDistributionService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDistributionProviderService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function listAction(KalturaDistributionProviderFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaDistributionProviderFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2608,18 +2605,18 @@ class KalturaDistributionProviderService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaGenericDistributionProvider $genericDistributionProvider) {
+    public function add(KalturaGenericDistributionProvider $genericdistributionprovider) {
         $kparams = array();
-        $this->client->addParam($kparams, "genericDistributionProvider", $genericDistributionProvider->toParams());
+        $this->client->addParam($kparams, "genericDistributionProvider", $genericdistributionprovider->toParams());
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovider", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2630,7 +2627,7 @@ class KalturaGenericDistributionProviderService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovider", "get", $kparams);
@@ -2643,10 +2640,10 @@ class KalturaGenericDistributionProviderService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function update($id, KalturaGenericDistributionProvider $genericDistributionProvider) {
+    public function update($id, KalturaGenericDistributionProvider $genericdistributionprovider) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "genericDistributionProvider", $genericDistributionProvider->toParams());
+        $this->client->addParam($kparams, "genericDistributionProvider", $genericdistributionprovider->toParams());
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovider", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2657,7 +2654,7 @@ class KalturaGenericDistributionProviderService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovider", "delete", $kparams);
@@ -2670,7 +2667,7 @@ class KalturaGenericDistributionProviderService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function listAction(KalturaGenericDistributionProviderFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaGenericDistributionProviderFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2694,18 +2691,18 @@ class KalturaGenericDistributionProviderService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add(KalturaGenericDistributionProviderAction $genericDistributionProviderAction) {
+    public function add(KalturaGenericDistributionProviderAction $genericdistributionprovideraction) {
         $kparams = array();
-        $this->client->addParam($kparams, "genericDistributionProviderAction", $genericDistributionProviderAction->toParams());
+        $this->client->addParam($kparams, "genericDistributionProviderAction", $genericdistributionprovideraction->toParams());
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2716,10 +2713,10 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function addMrssTransform($id, $xslData) {
+    public function addMrssTransform($id, $xsldata) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "xslData", $xslData);
+        $this->client->addParam($kparams, "xslData", $xsldata);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "addMrssTransform", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2730,11 +2727,11 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function addMrssTransformFromFile($id, $xslFile) {
+    public function addMrssTransformFromFile($id, $xslfile) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $kfiles = array();
-        $this->client->addParam($kfiles, "xslFile", $xslFile);
+        $this->client->addParam($kfiles, "xslFile", $xslfile);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "addMrssTransformFromFile", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2745,10 +2742,10 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function addMrssValidate($id, $xsdData) {
+    public function addMrssValidate($id, $xsddata) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "xsdData", $xsdData);
+        $this->client->addParam($kparams, "xsdData", $xsddata);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "addMrssValidate", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2759,11 +2756,11 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function addMrssValidateFromFile($id, $xsdFile) {
+    public function addMrssValidateFromFile($id, $xsdfile) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $kfiles = array();
-        $this->client->addParam($kfiles, "xsdFile", $xsdFile);
+        $this->client->addParam($kfiles, "xsdFile", $xsdfile);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "addMrssValidateFromFile", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2774,10 +2771,10 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function addResultsTransform($id, $transformData) {
+    public function addResultsTransform($id, $transformdata) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "transformData", $transformData);
+        $this->client->addParam($kparams, "transformData", $transformdata);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "addResultsTransform", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2788,11 +2785,11 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function addResultsTransformFromFile($id, $transformFile) {
+    public function addResultsTransformFromFile($id, $transformfile) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $kfiles = array();
-        $this->client->addParam($kfiles, "transformFile", $transformFile);
+        $this->client->addParam($kfiles, "transformFile", $transformfile);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "addResultsTransformFromFile", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2803,7 +2800,7 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function get($id) {
+    public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "get", $kparams);
@@ -2816,10 +2813,10 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function getByProviderId($genericDistributionProviderId, $actionType) {
+    public function getByProviderId($genericdistributionproviderid, $actiontype) {
         $kparams = array();
-        $this->client->addParam($kparams, "genericDistributionProviderId", $genericDistributionProviderId);
-        $this->client->addParam($kparams, "actionType", $actionType);
+        $this->client->addParam($kparams, "genericDistributionProviderId", $genericdistributionproviderid);
+        $this->client->addParam($kparams, "actionType", $actiontype);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "getByProviderId", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2830,11 +2827,11 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function updateByProviderId($genericDistributionProviderId, $actionType, KalturaGenericDistributionProviderAction $genericDistributionProviderAction) {
+    public function updateByProviderId($genericdistributionproviderid, $actiontype, KalturaGenericDistributionProviderAction $genericdistributionprovideraction) {
         $kparams = array();
-        $this->client->addParam($kparams, "genericDistributionProviderId", $genericDistributionProviderId);
-        $this->client->addParam($kparams, "actionType", $actionType);
-        $this->client->addParam($kparams, "genericDistributionProviderAction", $genericDistributionProviderAction->toParams());
+        $this->client->addParam($kparams, "genericDistributionProviderId", $genericdistributionproviderid);
+        $this->client->addParam($kparams, "actionType", $actiontype);
+        $this->client->addParam($kparams, "genericDistributionProviderAction", $genericdistributionprovideraction->toParams());
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "updateByProviderId", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2845,10 +2842,10 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function update($id, KalturaGenericDistributionProviderAction $genericDistributionProviderAction) {
+    public function update($id, KalturaGenericDistributionProviderAction $genericdistributionprovideraction) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "genericDistributionProviderAction", $genericDistributionProviderAction->toParams());
+        $this->client->addParam($kparams, "genericDistributionProviderAction", $genericdistributionprovideraction->toParams());
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2859,7 +2856,7 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function delete($id) {
+    public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "delete", $kparams);
@@ -2872,10 +2869,10 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function deleteByProviderId($genericDistributionProviderId, $actionType) {
+    public function deleteByProviderId($genericdistributionproviderid, $actiontype) {
         $kparams = array();
-        $this->client->addParam($kparams, "genericDistributionProviderId", $genericDistributionProviderId);
-        $this->client->addParam($kparams, "actionType", $actionType);
+        $this->client->addParam($kparams, "genericDistributionProviderId", $genericdistributionproviderid);
+        $this->client->addParam($kparams, "actionType", $actiontype);
         $this->client->queueServiceActionCall("contentdistribution_genericdistributionprovideraction", "deleteByProviderId", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -2886,7 +2883,7 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function listAction(KalturaGenericDistributionProviderActionFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaGenericDistributionProviderActionFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -2910,18 +2907,18 @@ class KalturaGenericDistributionProviderActionService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaTvComService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function getFeed($distributionProfileId, $hash) {
+    public function getFeed($distributionprofileid, $hash) {
         $kparams = array();
-        $this->client->addParam($kparams, "distributionProfileId", $distributionProfileId);
+        $this->client->addParam($kparams, "distributionProfileId", $distributionprofileid);
         $this->client->addParam($kparams, "hash", $hash);
         $this->client->queueServiceActionCall("tvcomdistribution_tvcom", "getFeed", $kparams);
         if ($this->client->isMultiRequest()) {
@@ -2939,7 +2936,7 @@ class KalturaTvComService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaContentDistributionClientPlugin extends KalturaClientPlugin

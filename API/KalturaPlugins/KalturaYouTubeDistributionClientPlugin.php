@@ -19,27 +19,24 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
+defined('MOODLE_INTERNAL') || die();
 
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYouTubeDistributionProfileOrderBy
@@ -55,7 +52,7 @@ class KalturaYouTubeDistributionProfileOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYouTubeDistributionProviderOrderBy
@@ -67,7 +64,7 @@ class KalturaYouTubeDistributionProviderOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaYouTubeDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
@@ -80,7 +77,7 @@ abstract class KalturaYouTubeDistributionProfileBaseFilter extends KalturaConfig
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaYouTubeDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
@@ -93,7 +90,7 @@ abstract class KalturaYouTubeDistributionProviderBaseFilter extends KalturaDistr
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYouTubeDistributionProfileFilter extends KalturaYouTubeDistributionProfileBaseFilter
@@ -106,7 +103,7 @@ class KalturaYouTubeDistributionProfileFilter extends KalturaYouTubeDistribution
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYouTubeDistributionProviderFilter extends KalturaYouTubeDistributionProviderBaseFilter
@@ -119,7 +116,7 @@ class KalturaYouTubeDistributionProviderFilter extends KalturaYouTubeDistributio
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionProfile
@@ -271,7 +268,7 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYouTubeDistributionProvider extends KalturaDistributionProvider
@@ -284,7 +281,7 @@ class KalturaYouTubeDistributionProvider extends KalturaDistributionProvider
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaYouTubeDistributionClientPlugin extends KalturaClientPlugin

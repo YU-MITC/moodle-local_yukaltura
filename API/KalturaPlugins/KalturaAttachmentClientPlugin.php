@@ -19,26 +19,23 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
+defined('MOODLE_INTERNAL') || die();
 
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 /**
  * Kaltura Attachment Asset OrderBy class
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetOrderBy
@@ -58,7 +55,7 @@ class KalturaAttachmentAssetOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetStatus
@@ -75,7 +72,7 @@ class KalturaAttachmentAssetStatus
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentType
@@ -90,7 +87,7 @@ class KalturaAttachmentType
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAsset extends KalturaAsset
@@ -131,7 +128,7 @@ class KalturaAttachmentAsset extends KalturaAsset
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetListResponse extends KalturaObjectBase
@@ -157,7 +154,7 @@ class KalturaAttachmentAssetListResponse extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAttachmentAssetBaseFilter extends KalturaAssetFilter
@@ -204,7 +201,7 @@ abstract class KalturaAttachmentAssetBaseFilter extends KalturaAssetFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetFilter extends KalturaAttachmentAssetBaseFilter
@@ -217,19 +214,19 @@ class KalturaAttachmentAssetFilter extends KalturaAttachmentAssetBaseFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentAssetService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function add($entryId, KalturaAttachmentAsset $attachmentAsset) {
+    public function add($entryid, KalturaAttachmentAsset $attachmentasset) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
-        $this->client->addParam($kparams, "attachmentAsset", $attachmentAsset->toParams());
+        $this->client->addParam($kparams, "entryId", $entryid);
+        $this->client->addParam($kparams, "attachmentAsset", $attachmentasset->toParams());
         $this->client->queueServiceActionCall("attachment_attachmentasset", "add", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -240,10 +237,10 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function setContent($id, KalturaContentResource $contentResource) {
+    public function setContent($id, KalturaContentResource $contentresource) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "contentResource", $contentResource->toParams());
+        $this->client->addParam($kparams, "contentResource", $contentresource->toParams());
         $this->client->queueServiceActionCall("attachment_attachmentasset", "setContent", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -254,10 +251,10 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function update($id, KalturaAttachmentAsset $attachmentAsset) {
+    public function update($id, KalturaAttachmentAsset $attachmentasset) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "attachmentAsset", $attachmentAsset->toParams());
+        $this->client->addParam($kparams, "attachmentAsset", $attachmentasset->toParams());
         $this->client->queueServiceActionCall("attachment_attachmentasset", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -268,10 +265,10 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function getUrl($id, $storageId = null) {
+    public function getUrl($id, $storageid = null) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
-        $this->client->addParam($kparams, "storageId", $storageId);
+        $this->client->addParam($kparams, "storageId", $storageid);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "getUrl", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -282,7 +279,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function getRemotePaths($id) {
+    public function getRemotePaths($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "getRemotePaths", $kparams);
@@ -295,17 +292,17 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function serve($attachmentAssetId) {
+    public function serve($attachmentassetid) {
         $kparams = array();
-        $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
+        $this->client->addParam($kparams, "attachmentAssetId", $attachmentassetid);
         $this->client->queueServiceActionCall('attachment_attachmentasset', 'serve', $kparams);
         $resultobject = $this->client->getServeUrl();
         return $resultobject;
     }
 
-    function get($attachmentAssetId) {
+    public function get($attachmentassetid) {
         $kparams = array();
-        $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
+        $this->client->addParam($kparams, "attachmentAssetId", $attachmentassetid);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "get", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -316,7 +313,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaAssetFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -334,9 +331,9 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function delete($attachmentAssetId) {
+    public function delete($attachmentassetid) {
         $kparams = array();
-        $this->client->addParam($kparams, "attachmentAssetId", $attachmentAssetId);
+        $this->client->addParam($kparams, "attachmentAssetId", $attachmentassetid);
         $this->client->queueServiceActionCall("attachment_attachmentasset", "delete", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -353,7 +350,7 @@ class KalturaAttachmentAssetService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAttachmentClientPlugin extends KalturaClientPlugin

@@ -18,17 +18,15 @@
  * Kaltura media assignment locallib
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2017 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 
 $string['pluginname'] = 'YU Kaltura Media Local Libraries';
 $string['hostedconn'] = 'Kaltura Hosted Solution (SaaS)';
 $string['ceconn'] = 'Kaltura CE';
 $string['conn_heading_title'] = 'Kaltura hosted and CE settings';
-$string['conn_heading_desc'] = 'Input the type of connection you would like to use (KalturaCE or the hosted Kaltura server) and enter in the'.
-                               ' credentials related to the connection you are using.';
+$string['conn_heading_desc'] = 'Input the type of connection you would like to use (KalturaCE or the hosted Kaltura server) and enter in the credentials related to the connection you are using.';
 $string['conn_server'] = 'Connection Server';
 $string['conn_server_desc'] = 'Select whether you are connecting to a hosted account on whether you are connect to your own Kaltura CE server';
 $string['server_uri'] = 'Server URI';
@@ -41,8 +39,7 @@ $string['player_regular_light'] = 'Player light (6709421)';
 $string['player_regular_dark'] = 'Player dark (6709411)';
 $string['custom_player'] = 'Custom player';
 $string['kaltura_player_resource'] = 'Kaltura resource player';
-$string['kaltura_player_resource_desc'] = 'Player used to play-back media for Media Resources.  This player will appear as the default player for new Media Resources.'.
-' However it may be overridden if the <b>Override media resource player setting</b> is unchecked';
+$string['kaltura_player_resource_desc'] = 'Player used to play-back media for Media Resources.  This player will appear as the default player for new Media Resources. However it may be overridden if the <b>Override media resource player setting</b> is unchecked';
 $string['kaltura_player_resource_custom'] = 'Custom UIConf';
 $string['kaltura_player_resource_custom_desc'] = 'Only used if you have a custom resource player UIConf ID';
 $string['kaltura_player'] = 'Kaltura player';
@@ -55,8 +52,7 @@ $string['conn_failed'] = 'Unable to login.  Please verify your credentials and c
 $string['test_connection'] = 'Test connection to Kaltura server';
 $string['click_test_button'] = 'Click button to test the connection';
 $string['start'] = 'Start';
-$string['flashminimum'] = 'Flash player version 9 and above is required. '.
-                          '<a href=\"http://get.adobe.com/flashplayer/\">Upgrade your flash version</a>';
+$string['flashminimum'] = 'Flash player version 9 and above is required. <a href=\"http://get.adobe.com/flashplayer/\">Upgrade your flash version</a>';
 $string['upload_successful'] = 'Media uploaded successfully.  Remember to save/submit.';
 $string['media_converting'] = 'The media is still converting.  Please check the status of the media at a later time.';
 $string['media_converting'] = 'The media is still converting.  Please check the status of the media at a later time.';
@@ -133,19 +129,14 @@ $string['connection_status'] = 'Connection Status';
 $string['connected'] = 'Connection to Kaltura successful';
 $string['not_connected'] = 'Connection to Kaltura failed';
 $string['rootcategory'] = 'Root category path';
-$string['rootcategory_desc'] = '<p>Set the root category path to create a category/sub-category structure, in the KMC, to organize all of the Moodle course categories.  '.
-                               'For example: <b>Sites>My Moodle Site</b>, will create a KMC category called "Sites" and a sub category called "My Moodle Site".  '.
-                               'All of your Moodle course categories will created as a sub directories of "My Moodle Site".</p>';
+$string['rootcategory_desc'] = '<p>Set the root category path to create a category/sub-category structure, in the KMC, to organize all of the Moodle course categories. For example: <b>Sites>My Moodle Site</b>, will create a KMC category called "Sites" and a sub category called "My Moodle Site".  All of your Moodle course categories will created as a sub directories of "My Moodle Site".</p>';
 $string['rootcategory_warning'] = 'The root category has already been set.  If you change the name all Moodle course category related data on the KMC will be lost';
 $string['rootcategory_created'] = 'Root category created with the following structure <b>{$a}</b>';
 $string['rootcategory_create'] = 'Please specify a root category.';
 $string['unable_to_create'] = 'Unable to create root category as <b>{$a}</b>.  Please Choose another name(s) for the root category';
 $string['resetroot'] = 'Reset category location';
-$string['confirm_category_reset'] = '<p>Are you sure you want to reset the root category location?</p><p>If you perform this action, all media course sharing and usage information in Moodle will be lost.</p>'.
-                                    '<p>If you accidentially click "continue", it is possible to get your information back, but only if you set the category path back to the <b>original</b> value.</p>'.
-                                    '<p>Choose wisely.</p>';
+$string['confirm_category_reset'] = '<p>Are you sure you want to reset the root category location?</p><p>If you perform this action, all media course sharing and usage information in Moodle will be lost.</p><p>If you accidentially click "continue", it is possible to get your information back, but only if you set the category path back to the <b>original</b> value.</p><p>Choose wisely.</p>';
 $string['category_reset_complete'] = '<b>Root category has been reset</b>';
-
 
 // Properties panel.
 $string['media_properties'] = 'Media Properties';

@@ -19,26 +19,23 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
+defined('MOODLE_INTERNAL') || die();
 
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
-require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
-
-if (!defined('MOODLE_INTERNAL')) {
-    // It must be included from a Moodle page.
-    die('Direct access to this script is forbidden.');
-}
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentEntryOrderBy
@@ -66,7 +63,7 @@ class KalturaDocumentEntryOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentFlavorParamsOrderBy
@@ -78,7 +75,7 @@ class KalturaDocumentFlavorParamsOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentFlavorParamsOutputOrderBy
@@ -90,7 +87,7 @@ class KalturaDocumentFlavorParamsOutputOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentType
@@ -105,7 +102,7 @@ class KalturaDocumentType
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPdfFlavorParamsOrderBy
@@ -117,7 +114,7 @@ class KalturaPdfFlavorParamsOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPdfFlavorParamsOutputOrderBy
@@ -129,7 +126,7 @@ class KalturaPdfFlavorParamsOutputOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSwfFlavorParamsOrderBy
@@ -141,7 +138,7 @@ class KalturaSwfFlavorParamsOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSwfFlavorParamsOutputOrderBy
@@ -153,7 +150,7 @@ class KalturaSwfFlavorParamsOutputOrderBy
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentEntry extends KalturaBaseEntry
@@ -180,7 +177,7 @@ class KalturaDocumentEntry extends KalturaBaseEntry
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDocumentEntryBaseFilter extends KalturaBaseEntryFilter
@@ -220,7 +217,7 @@ abstract class KalturaDocumentEntryBaseFilter extends KalturaBaseEntryFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentEntryFilter extends KalturaDocumentEntryBaseFilter
@@ -233,7 +230,7 @@ class KalturaDocumentEntryFilter extends KalturaDocumentEntryBaseFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentListResponse extends KalturaObjectBase
@@ -259,7 +256,7 @@ class KalturaDocumentListResponse extends KalturaObjectBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDocumentFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
@@ -272,7 +269,7 @@ abstract class KalturaDocumentFlavorParamsBaseFilter extends KalturaFlavorParams
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDocumentFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
@@ -285,7 +282,7 @@ abstract class KalturaDocumentFlavorParamsOutputBaseFilter extends KalturaFlavor
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaPdfFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
@@ -298,7 +295,7 @@ abstract class KalturaPdfFlavorParamsBaseFilter extends KalturaFlavorParamsFilte
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaPdfFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
@@ -311,7 +308,7 @@ abstract class KalturaPdfFlavorParamsOutputBaseFilter extends KalturaFlavorParam
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaSwfFlavorParamsBaseFilter extends KalturaFlavorParamsFilter
@@ -324,7 +321,7 @@ abstract class KalturaSwfFlavorParamsBaseFilter extends KalturaFlavorParamsFilte
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaSwfFlavorParamsOutputBaseFilter extends KalturaFlavorParamsOutputFilter
@@ -337,7 +334,7 @@ abstract class KalturaSwfFlavorParamsOutputBaseFilter extends KalturaFlavorParam
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentFlavorParamsFilter extends KalturaDocumentFlavorParamsBaseFilter
@@ -350,7 +347,7 @@ class KalturaDocumentFlavorParamsFilter extends KalturaDocumentFlavorParamsBaseF
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentFlavorParamsOutputFilter extends KalturaDocumentFlavorParamsOutputBaseFilter
@@ -363,7 +360,7 @@ class KalturaDocumentFlavorParamsOutputFilter extends KalturaDocumentFlavorParam
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPdfFlavorParamsFilter extends KalturaPdfFlavorParamsBaseFilter
@@ -376,7 +373,7 @@ class KalturaPdfFlavorParamsFilter extends KalturaPdfFlavorParamsBaseFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPdfFlavorParamsOutputFilter extends KalturaPdfFlavorParamsOutputBaseFilter
@@ -389,7 +386,7 @@ class KalturaPdfFlavorParamsOutputFilter extends KalturaPdfFlavorParamsOutputBas
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSwfFlavorParamsFilter extends KalturaSwfFlavorParamsBaseFilter
@@ -402,7 +399,7 @@ class KalturaSwfFlavorParamsFilter extends KalturaSwfFlavorParamsBaseFilter
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSwfFlavorParamsOutputFilter extends KalturaSwfFlavorParamsOutputBaseFilter
@@ -415,7 +412,7 @@ class KalturaSwfFlavorParamsOutputFilter extends KalturaSwfFlavorParamsOutputBas
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentFlavorParamsOutput extends KalturaFlavorParamsOutput
@@ -428,7 +425,7 @@ class KalturaDocumentFlavorParamsOutput extends KalturaFlavorParamsOutput
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentFlavorParams extends KalturaFlavorParams
@@ -441,7 +438,7 @@ class KalturaDocumentFlavorParams extends KalturaFlavorParams
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPdfFlavorParamsOutput extends KalturaFlavorParamsOutput
@@ -460,7 +457,7 @@ class KalturaPdfFlavorParamsOutput extends KalturaFlavorParamsOutput
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPdfFlavorParams extends KalturaFlavorParams
@@ -479,7 +476,7 @@ class KalturaPdfFlavorParams extends KalturaFlavorParams
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSwfFlavorParamsOutput extends KalturaFlavorParamsOutput
@@ -492,7 +489,7 @@ class KalturaSwfFlavorParamsOutput extends KalturaFlavorParamsOutput
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSwfFlavorParams extends KalturaFlavorParams
@@ -505,19 +502,19 @@ class KalturaSwfFlavorParams extends KalturaFlavorParams
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentsService extends KalturaServiceBase
 {
-    function __construct(KalturaClient $client = null) {
+    public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
-    function addFromUploadedFile(KalturaDocumentEntry $documentEntry, $uploadTokenId) {
+    public function addFromUploadedFile(KalturaDocumentEntry $documententry, $uploadtokenid) {
         $kparams = array();
-        $this->client->addParam($kparams, "documentEntry", $documentEntry->toParams());
-        $this->client->addParam($kparams, "uploadTokenId", $uploadTokenId);
+        $this->client->addParam($kparams, "documentEntry", $documententry->toParams());
+        $this->client->addParam($kparams, "uploadTokenId", $uploadtokenid);
         $this->client->queueServiceActionCall("document_documents", "addFromUploadedFile", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -528,13 +525,13 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function addFromEntry($sourceEntryId, KalturaDocumentEntry $documentEntry = null, $sourceFlavorParamsId = null) {
+    public function addFromEntry($sourceentryid, KalturaDocumentEntry $documententry = null, $sourceflavorparamsid = null) {
         $kparams = array();
-        $this->client->addParam($kparams, "sourceEntryId", $sourceEntryId);
-        if ($documentEntry !== null) {
-            $this->client->addParam($kparams, "documentEntry", $documentEntry->toParams());
+        $this->client->addParam($kparams, "sourceEntryId", $sourceentryid);
+        if ($documententry !== null) {
+            $this->client->addParam($kparams, "documentEntry", $documententry->toParams());
         }
-        $this->client->addParam($kparams, "sourceFlavorParamsId", $sourceFlavorParamsId);
+        $this->client->addParam($kparams, "sourceFlavorParamsId", $sourceflavorparamsid);
         $this->client->queueServiceActionCall("document_documents", "addFromEntry", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -545,11 +542,11 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function addFromFlavorAsset($sourceFlavorAssetId, KalturaDocumentEntry $documentEntry = null) {
+    public function addFromFlavorAsset($sourceflavorassetid, KalturaDocumentEntry $documententry = null) {
         $kparams = array();
-        $this->client->addParam($kparams, "sourceFlavorAssetId", $sourceFlavorAssetId);
-        if ($documentEntry !== null) {
-            $this->client->addParam($kparams, "documentEntry", $documentEntry->toParams());
+        $this->client->addParam($kparams, "sourceFlavorAssetId", $sourceflavorassetid);
+        if ($documententry !== null) {
+            $this->client->addParam($kparams, "documentEntry", $documententry->toParams());
         }
         $this->client->queueServiceActionCall("document_documents", "addFromFlavorAsset", $kparams);
         if ($this->client->isMultiRequest()) {
@@ -561,12 +558,12 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function convert($entryId, $conversionProfileId = null, array $dynamicConversionAttributes = null) {
+    public function convert($entryid, $conversionprofileid = null, array $dynamicconversionattributes = null) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
-        $this->client->addParam($kparams, "conversionProfileId", $conversionProfileId);
-        if ($dynamicConversionAttributes !== null) {
-            foreach ($dynamicConversionAttributes as $index => $obj) {
+        $this->client->addParam($kparams, "entryId", $entryid);
+        $this->client->addParam($kparams, "conversionProfileId", $conversionprofileid);
+        if ($dynamicconversionattributes !== null) {
+            foreach ($dynamicconversionattributes as $index => $obj) {
                 $this->client->addParam($kparams, "dynamicConversionAttributes:$index", $obj->toParams());
             }
         }
@@ -580,9 +577,9 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function get($entryId, $version = -1) {
+    public function get($entryid, $version = -1) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
+        $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "version", $version);
         $this->client->queueServiceActionCall("document_documents", "get", $kparams);
         if ($this->client->isMultiRequest()) {
@@ -594,10 +591,10 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function update($entryId, KalturaDocumentEntry $documentEntry) {
+    public function update($entryid, KalturaDocumentEntry $documententry) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
-        $this->client->addParam($kparams, "documentEntry", $documentEntry->toParams());
+        $this->client->addParam($kparams, "entryId", $entryid);
+        $this->client->addParam($kparams, "documentEntry", $documententry->toParams());
         $this->client->queueServiceActionCall("document_documents", "update", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -608,9 +605,9 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function delete($entryId) {
+    public function delete($entryid) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
+        $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->queueServiceActionCall("document_documents", "delete", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -621,7 +618,7 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function listAction(KalturaDocumentEntryFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaDocumentEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -639,10 +636,10 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function upload($fileData) {
+    public function upload($filedata) {
         $kparams = array();
         $kfiles = array();
-        $this->client->addParam($kfiles, "fileData", $fileData);
+        $this->client->addParam($kfiles, "fileData", $filedata);
         $this->client->queueServiceActionCall("document_documents", "upload", $kparams, $kfiles);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -653,9 +650,9 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function convertPptToSwf($entryId) {
+    public function convertPptToSwf($entryid) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
+        $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->queueServiceActionCall("document_documents", "convertPptToSwf", $kparams);
         if ($this->client->isMultiRequest()) {
             return $this->client->getMultiRequestResult();
@@ -666,21 +663,21 @@ class KalturaDocumentsService extends KalturaServiceBase
         return $resultobject;
     }
 
-    function serve($entryId, $flavorAssetId = null, $forceProxy = false) {
+    public function serve($entryid, $flavorassetid = null, $forceproxy = false) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
-        $this->client->addParam($kparams, "flavorAssetId", $flavorAssetId);
-        $this->client->addParam($kparams, "forceProxy", $forceProxy);
+        $this->client->addParam($kparams, "entryId", $entryid);
+        $this->client->addParam($kparams, "flavorAssetId", $flavorassetid);
+        $this->client->addParam($kparams, "forceProxy", $forceproxy);
         $this->client->queueServiceActionCall('document_documents', 'serve', $kparams);
         $resultobject = $this->client->getServeUrl();
         return $resultobject;
     }
 
-    function serveByFlavorParamsId($entryId, $flavorParamsId = null, $forceProxy = false) {
+    public function serveByFlavorParamsId($entryid, $flavorparamsid = null, $forceproxy = false) {
         $kparams = array();
-        $this->client->addParam($kparams, "entryId", $entryId);
-        $this->client->addParam($kparams, "flavorParamsId", $flavorParamsId);
-        $this->client->addParam($kparams, "forceProxy", $forceProxy);
+        $this->client->addParam($kparams, "entryId", $entryid);
+        $this->client->addParam($kparams, "flavorParamsId", $flavorparamsid);
+        $this->client->addParam($kparams, "forceProxy", $forceproxy);
         $this->client->queueServiceActionCall('document_documents', 'serveByFlavorParamsId', $kparams);
         $resultobject = $this->client->getServeUrl();
         return $resultobject;
@@ -692,7 +689,7 @@ class KalturaDocumentsService extends KalturaServiceBase
  *
  * @package   local_yukaltura
  * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2017 Yamaguchi University (info-cc@ml.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2016-2017 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDocumentClientPlugin extends KalturaClientPlugin

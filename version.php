@@ -15,18 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * YU Kaltura My Media Gallery version file
+ * YU Kaltura Media Local Libraries version file
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2017 Yamaguchi University <info-cc@ml.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2017 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2017112700;
+$plugin->version = 2017122100;
 $plugin->component = 'local_yukaltura';
-$plugin->release = 'YU Kaltura Media Local Libraries 1.1.0';
+$plugin->release = 'YU Kaltura Media Local Libraries 1.1.1';
 $plugin->requires = 2015051100;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->system_version = 2.1; // Used to send information to Kaltura.
