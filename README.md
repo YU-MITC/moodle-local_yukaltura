@@ -1,6 +1,12 @@
 # YU Kaltura Media Package
 "YU Kaltura Media Package" is a third-party's Kaltura plugin package for Moodle 2.9 or later. This package is developed by the Media and Information Technology Center, Yamaguchi University. By using this package, users can upload media to the Kaltura server, and easily embed the media in Moodle courses. Moreover, this package provides some useful functions. Since this package does not require Kaltura Application Framework (KAF), can work with Kaltura Community Edition (CE) and other editions.
 
+In order to use this package, administrators must install "[YU Kaltura Media Local Libraries](https://moodle.org/plugins/local_yukaltura)" and "[YU Kaltura Media Gallery](https://moodle.org/plugins/local_yumymedia)".
+These plugins provide functions such as uploading, playing back and deleting media files to users.
+
+In addition, the administrators can install "[YU Kaltura Media Assignment](https://moodle.org/plugins/mod_kalmediaassign)" and "[YU Kaltura Media Resource](https://moodle.org/plugins/mod_kalmediares)".
+These plugins provide teachers ability of creating resource and activity modules which use kaltura media in their Moodle courses.
+
 Please note that there is a chance this module will not work on some Moodle environment. Also, this package is only available in English. Stay tuned to future versions for other language supports.
 
 Original plugin package ("Kaltura Video Package") has better functions than ours and is easy to use. So that, for customers of the "Kaltura SaaS Edition", use the original plugin package is the better.
@@ -55,4 +61,4 @@ Warning
 * We are not responsible for any problem caused by this software. 
 * This software follows the license policy of Moodle (GNU GPL v3).
 * "Kaltura" is the registered trademark of the Kaltura Inc.
-* Web-camera recording function in "My Media" supports the Mozilla Firefox, Google Chrome, Opera and Safari. For smartphones and tablets, you can record  and upload movies through a normal media uploader.
+* Web-camera recording function in "My Media" supports the Mozilla Firefox, Google Chrome, Opera and Safari. For smartphones and tablets, you can record and upload movies through a normal media uploader.

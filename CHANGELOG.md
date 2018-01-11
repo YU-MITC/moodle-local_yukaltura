@@ -13,3 +13,10 @@ Version 1.1.1
 * fixed error handling in settings.php.
 * fixed coding style about local variables in Kaltura PHP Client Library.
 * fixed statements in REAME.md.
+
+Version 1.1.2
+
+* fixed some bugs in yukaltura.js and properties.js
+* added document to JavaScript files.
+* added statements in README.md.
+* added configuration items about mymedia player in settings.php.

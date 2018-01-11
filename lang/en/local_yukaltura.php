@@ -46,6 +46,11 @@ $string['kaltura_player'] = 'Kaltura player';
 $string['kaltura_player_desc'] = 'Player used to play-back media for Media Assignments';
 $string['kaltura_player_custom'] = 'Custom UIConf';
 $string['kaltura_player_custom_desc'] = 'Only used if you have a custom assignment player UIConf ID';
+$string['kaltura_player_mymedia'] = 'Kaltura mymedia player';
+$string['kaltura_player_mymedia_desc'] = 'Player used to play-back media for My Media. This player will appear as the default player for preview media, link URL, and embed code.';
+$string['kaltura_player_mymedia_custom'] = 'Custom UIConf';
+$string['kaltura_player_mymedia_custom_desc'] = 'Only used if you have a custom mymedia player UIConf ID';
+
 $string['conn_status_title'] = 'Connection status';
 $string['conn_success'] = 'Successfully logged in with credentials';
 $string['conn_failed'] = 'Unable to login.  Please verify your credentials and connection settings and try again';

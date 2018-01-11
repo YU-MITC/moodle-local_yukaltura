@@ -502,6 +502,7 @@ function local_yukaltura_get_player_uiconf($type = 'player') {
 
     switch ($type) {
         case 'player':
+        case 'player_mymedia';
         case 'player_resource':
         case 'res_uploader':
         case 'pres_uploader':
@@ -690,6 +691,72 @@ function local_yukaltura_create_image_markup($entryobj, $title, $theme,
 }
 
 /**
+ * This functions returns the HTML markup for the Kaltura iframe player.
+ *
+ * @param obj $entryobj - KalturaMedia object
+ * @param int $uiconfid - player ui_conf_id (optional).  If no value is specified the
+ * default player will be used.
+ * @param string $session - A kaltura session string
+ * @param int $uid - a unique identifier, this value is appented to 'kaltura_player_'
+ * and is used as the id of the object tag
+ *
+ * @return string - HTML markup
+ */
+function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
+
+    if (!local_yukaltura_is_valid_entry_object($entryobj)) {
+        return 'Unable to play media ('. $entryobj->id . ') please contact your site administrator.';
+    }
+
+    if (0 == $uid) {
+        $uid  = floor(microtime(true));
+        $uid .= '_' . mt_rand();
+    }
+
+    $host = local_yukaltura_get_host();
+    $flashvars = local_yukaltura_get_kwidget_flashvars($entryobj->creatorId, $session);
+    if (KalturaMediaType::IMAGE == $entryobj->mediaType) {
+        $varstr = '&amp;IframeCustomPluginCss1=' .  new moodle_url('/local/yukaltura/css/hiddenPlayButton.css');
+        $flashvars .= $varstr;
+    }
+
+    if (empty($uiconfid)) {
+        $uiconf = local_yukaltura_get_player_uiconf('player');
+    } else {
+        $uiconf = $uiconfid;
+    }
+
+    $originalurl = $entryobj->thumbnailUrl;
+
+    $httppattern = '/^http:\/\/[A-Za-z0-9\-\.]{1,61}\//';
+    $httpspattern = '/^https:\/\/[A-Za-z0-9\-\.]{1,61}\//';
+
+    $replace = local_yukaltura_get_host() . '/';
+
+    $modifiedurl = preg_replace($httpspattern, $replace, $originalurl, 1, $count);
+    if ($count != 1) {
+        $modifiedurl = preg_replace($httppattern, $replace, $originalurl, 1, $count);
+        if ($count != 1) {
+            $modifiedurl = $originalurl;
+        }
+    }
+
+    $output = '';
+
+    $now = time();
+
+    $output .= "<iframe src=\"{$host}/p/{$entryobj->partnerId}/";
+    $output .= "sp/{$entryobj->partnerId}00/embedIframeJs/uiconf_id/{$uiconf}/";
+    $output .= "partner_id/{$entryobj->partnerId}?";
+    $output .= "iframeembed=true&playerId=kaltura_player_{$now}&entry_id={$entryobj->id}\" ";
+    $output .= "width=\"$entryobj->width\" height=\"{$entryobj->height}\" ";
+    $output .= "allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder=\"0\"></iframe>" . PHP_EOL;
+
+    return $output;
+}
+
+
+/**
  * This functions returns the HTML markup for the Kaltura dynamic player.
  *
  * @param obj $entryobj - KalturaMedia object
@@ -701,7 +768,7 @@ function local_yukaltura_create_image_markup($entryobj, $title, $theme,
  *
  * @return string - HTML markup
  */
-function local_yukaltura_get_kdp_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
+function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
 
     if (!local_yukaltura_is_valid_entry_object($entryobj)) {
         return 'Unable to play media ('. $entryobj->id . ') please contact your site administrator.';
@@ -742,34 +809,84 @@ function local_yukaltura_get_kdp_code($entryobj, $uiconfid = 0, $session = '', $
 
     $output = '';
 
-    $output .= "<object id=\"kaltura_player_{$uid}\" name=\"kaltura_player_{$uid}\" ";
-    $output .= "type=\"application/x-shockwave-flash\" allowFullScreen=\"true\" allowNetworking=\"all\" ";
-    $output .= "allowScriptAccess=\"always\" height=\"{$entryobj->height}\" width=\"{$entryobj->width}\" ";
-    $output .= "xmlns:dc=\"http://purl.org/dc/terms/\" xmlns:media=\"http://search.yahoo.com/searchmonkey/media/\" ";
-    $output .= "rel=\"media:{$entryobj->mediaType}\" ";
-    $output .= "resource=\"{$host}/index.php/kwidget/wid/_{$entryobj->partnerId}/uiconf_id/{$uiconf}/entry_id/{$entryobj->id}\" ";
-    $output .= "data=\"{$host}/index.php/kwidget/wid/_{$entryobj->partnerId}/uiconf_id/{$uiconf}";
-    $output .= "/entry_id/{$entryobj->id}\"> " . PHP_EOL;
-    $output .= "<param name=\"allowFullScreen\" value=\"true\" />" . PHP_EOL;
-    $output .= "<param name=\"allowNetworking\" value=\"all\" />" . PHP_EOL;
-    $output .= "<param name=\"allowScriptAccess\" value=\"always\" />" . PHP_EOL;
-    $output .= "<param name=\"bgcolor\" value=\"#000000\" /> " . PHP_EOL;
-    $output .= "<param name=\"flashvars\" value=\"{$flashvars}\" /> " . PHP_EOL;
-    $output .= "<param name=\"wmode\" value=\"opaque\" /> " . PHP_EOL;
+    $now = time();
+    $flashvars = local_yukaltura_get_kwidget_flashvars($entryobj->creatorId, $session);
 
-    $output .= "<param name=\"movie\" value=\"{$host}/index.php/kwidget/wid/_{$entryobj->partnerId}";
-    $output .= "/uiconf_id/{$uiconf}/entry_id/{$entryobj->id}\" />" . PHP_EOL;
-
-    $output .= "<a rel=\"media:thumbnail\" href=\"{$modifiedurl}/width/120/height/90/bgcolor/000000/type/2\"></a>". PHP_EOL;
-    $output .= "<span property=\"dc:description\" content=\"{$entryobj->description}\"></span>" . PHP_EOL;
-    $output .= "<span property=\"media:title\" content=\"{$entryobj->name}\"></span>" . PHP_EOL;
-    $output .= "<span property=\"media:width\" content=\"{$entryobj->width}\"></span>" . PHP_EOL;
-    $output .= "<span property=\"media:height\" content=\"{$entryobj->height}\"></span>" . PHP_EOL;
-    $output .= "<span property=\"media:type\" content=\"application/x-shockwave-flash\"></span>" . PHP_EOL;
-    $output .= "<span property=\"media:duration\" content=\"{$entryobj->duration}\"></span>". PHP_EOL;
-    $output .= "</object>" . PHP_EOL;
+    $output .= "<script src=\"{$host}/p/{$entryobj->partnerId}/sp/{$entryobj->partnerId}00/embedIframeJs/";
+    $output .= "uiconf_id/{$uiconf}/partner_id/{$entryobj->partnerId}\"></script>" . PHP_EOL;
+    $output .= "<div id=\"kaltura_player_{$now}\" style=\"width: {$entryobj->width}px; height: {$entryobj->height}px;\">";
+    $output .= "</div>" . PHP_EOL;
+    $output .= "<script>" . PHP_EOL;
+    $output .= "kWidget.embed({" . PHP_EOL;
+    $output .= "\"targetId\": \"kaltura_player_{$now}\"," . PHP_EOL;
+    $output .= "\"wid\": \"_101\"," . PHP_EOL;
+    $output .= "\"uiconf_id\": {$uiconf}," . PHP_EOL;
+    $output .= "\"flashvars\": {{$flashvars}}," . PHP_EOL;
+    $output .= "\"cache_st\": {$now}," . PHP_EOL;
+    $output .= "\"entry_id\": \"{$entryobj->id}\"" . PHP_EOL;
+    $output .= "});" . PHP_EOL;
+    $output .= "</script>" . PHP_EOL;
 
     return $output;
+}
+
+/**
+ * This function returns a string of flash variables required for Kaltura
+ * analytics
+ *
+ * @param string $creatorname - username or media creator.
+ * @param string $session - Kaltura session string.
+ * @return string - query string of flash variables.
+ *
+ */
+function local_yukaltura_get_kwidget_flashvars($creatorname = '', $session = '') {
+    global $USER;
+
+    if (isloggedin()) {
+        $flashvars = "\"userId\": \"{$USER->username}\"";
+    } else {
+        $flashvars = '';
+    }
+    if (!empty($session)) {
+        if (!empty($flashvars)) {
+            $flashvars .= ",";
+        }
+
+        $flashvars .= "\"ks\": \"{$session}\"";
+    }
+
+    $applicationname = get_config(KALTURA_PLUGIN_NAME, 'mymedia_application_name');
+
+    $applicationname = empty($applicationname) ? 'Moodle' : $applicationname;
+
+    if (!empty($flashvars)) {
+        $flashvars .= ",";
+    }
+
+    $flashvars .= "\"applicationName\": \"{$applicationname}\"";;
+
+    if ('' != $creatorname) {
+        return $flashvars;
+    }
+
+    $kaltura = new yukaltura_connection();
+    $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
+
+    if (!$connection) {
+        return '';
+    }
+
+    $category = local_yukaltura_create_user_category($connection, $creatorname);
+
+    if ($category) {
+        if (!empty($flashvars)) {
+            $flashvars .= ",";
+        }
+
+        $flashvars .= "\"playbackContext\" : \"{$category->id}\"";
+    }
+
+    return $flashvars;
 }
 
 /**
@@ -790,12 +907,19 @@ function local_yukaltura_get_kdp_flashvars($creatorname = '', $session = '') {
         $flashvars = '';
     }
     if (!empty($session)) {
+        if (!empty($flashvars)) {
+            $flashvars .= ",";
+        }
         $flashvars .= '&amp;ks='. $session;
     }
 
     $applicationname = get_config(KALTURA_PLUGIN_NAME, 'mymedia_application_name');
 
     $applicationname = empty($applicationname) ? 'Moodle' : $applicationname;
+
+    if (!empty($flashvars)) {
+        $flashvars .= ",";
+    }
 
     $flashvars .= '&amp;applicationName='.$applicationname;
 
@@ -813,6 +937,9 @@ function local_yukaltura_get_kdp_flashvars($creatorname = '', $session = '') {
     $category = local_yukaltura_create_user_category($connection, $creatorname);
 
     if ($category) {
+        if (!empty($flashvars)) {
+            $flashvars .= ",";
+        }
         $flashvars .= '&amp;playbackContext=' . $category->id;
     }
 
@@ -1185,15 +1312,7 @@ function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '
         $uid .= '_' . mt_rand();
     }
 
-    $flashvars        = local_yukaltura_get_kdp_flashvars($entryobj->creatorId, $session);
-    $flashvars        = explode('&amp;', $flashvars);
-    $kwidgetflashvar  = '';
-
-    // Re-format the flashvars into javascript object properties.
-    foreach ($flashvars as $var) {
-        $proval = explode('=', $var);
-        $kwidgetflashvar .= ",'". $proval[0] ."' : '". $proval[1] . "'";
-    }
+    $kwidgetflashvar = local_yukaltura_get_kwidget_flashvars($entryobj->creatorId, $session);
 
     if (KalturaMediaType::IMAGE == $entryobj->mediaType) {
         $kwidgetflashvar .= ", 'IframeCustomPluginCss1' : '". new moodle_url('/local/yukaltura/css/hiddenPlayButton.css') . "'";

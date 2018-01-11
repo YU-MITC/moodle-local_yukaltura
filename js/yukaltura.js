@@ -28,6 +28,11 @@ M.local_yukaltura = {
     Y: null,
     transaction: {},
 
+    /**
+     * Initial function.
+     * @access public
+     * @param {object} Y - YUI object.
+     */
     init: function(Y) {
         this.Y = Y;
 
@@ -122,12 +127,43 @@ M.local_yukaltura = {
 
             });
 
+            // Add a 'change' event to the Kaltura mymedia player selection drop down.
+            var kalturaPlayerMymedia = Y.one('#id_s_local_yukaltura_player_mymedia');
+
+            // Check for the selected option.
+            var kalturaPlayerMymediaDom = Y.Node.getDOMNode(kalturaPlayerMymedia);
+
+            length = kalturaPlayerMymediaDom.length - 1;
+
+            if (length == kalturaPlayerMymediaDom.selectedIndex) {
+                Y.DOM.byId('id_s_local_yukaltura_player_mymedia_custom').disabled = false;
+            } else {
+                Y.DOM.byId('id_s_local_yukaltura_player_mymedia_custom').disabled = true;
+            }
+
+            kalturaPlayerMymedia.on('change', function(e) {
+                e.preventDefault();
+                var kalturaCustomPlayerMymedia = Y.DOM.byId("id_s_local_yukaltura_player_mymedia_custom");
+
+                var kalturaPlayerMymediaDom = Y.Node.getDOMNode(e.target);
+
+                var length = kalturaPlayerMymediaDom.length - 1;
+
+                if (length == kalturaPlayerMymediaDom.selectedIndex) {
+                    kalturaCustomPlayerMymedia.disabled = false;
+                } else {
+                    kalturaCustomPlayerMymedia.disabled = true;
+                }
+
+            });
+
         }
 
     },
 
     /**
      * Perform course searching with auto-complete
+     * @access public
      */
     search_course: function() {
 
@@ -206,6 +242,11 @@ M.local_yukaltura = {
 
     },
 
+    /**
+     * This function set thumbnail url
+     * @access public
+     * @param {string} entryId - id of media entry
+     */
     get_thumbnail_url: function(entryId) {
 
         YUI().use("io-base", "json-parse", "node", function(Y) {
@@ -213,6 +254,9 @@ M.local_yukaltura = {
 
             Y.io(location);
 
+            /**
+             * This function checks conversion status of media.
+             */
             function check_conversion_status(id, o) {
                 if ('' != o.responseText) {
                     var data = Y.JSON.parse(o.responseText);
@@ -233,6 +277,10 @@ M.local_yukaltura = {
 
     loading_panel: {},
 
+    /**
+     * This function print loading panel.
+     * @access public
+     */
     show_loading: function() {
         M.local_yukaltura.loading_panel = new Y.YUI2.widget.Panel("wait",
             {width: "240px", fixedcenter: true, close: false, draggable: false, zindex: 4, modal: true, visible: false});
@@ -244,12 +292,21 @@ M.local_yukaltura = {
         M.local_yukaltura.loading_panel.show();
     },
 
-    hide_loading: function () {
+    /**
+     * This function hide loading panel.
+     * @access public
+     */
+    hide_loading: function() {
         M.local_yukaltura.loading_panel.hide();
     },
 
     dataroot: {},
 
+    /**
+     * This function set root directory of web data.
+     * @access public
+     * @param {string} weblocation - root directory of web data.
+     */
     set_dataroot: function(weblocation) {
         M.local_yukaltura.dataroot = weblocation;
     }

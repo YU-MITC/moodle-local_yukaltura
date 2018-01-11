@@ -32,6 +32,9 @@ define(['jquery'], function($) {
          * Initial function.
          * @access public
          * @param {string} propertiesUrl - url of media properties page.
+         * @param {string} invalidName - message for invalid  page name.
+         * @param {string} invalidCustomSize - message for invalid player size.
+         * @param {string} invalidSize - message for invalid size.
          */
         init: function(propertiesUrl, invalidName, emptySize, invalidCustomSize, invalidSize) {
 
@@ -41,6 +44,7 @@ define(['jquery'], function($) {
 
             /**
              * This function centerize modal window.
+             * @access public
              * @param {object} contentPanel - HTML element of content panel.
              */
             function centeringModalSyncer(contentPanel) {
@@ -66,6 +70,7 @@ define(['jquery'], function($) {
 
             /**
              * This function checks letter of name.
+             * @access public
              * @param {string} str - media title
              * @return {bool} - if check is passed, return "true". Otherwise return "false".
              */
@@ -80,6 +85,7 @@ define(['jquery'], function($) {
 
             /**
              * This function checks player size.
+             * @access public
              * @param {int} width - player width set by user.
              * @param {int} height - player height set by user.
              * @return {bool} - if palyer size is appropriate, return "true". Otherwise return "false".
@@ -96,12 +102,13 @@ define(['jquery'], function($) {
 
             /**
              * This function print modal window of player properties.
+             * @access public
              * @param {string} url - URL of selector page.
              * @return {bool} - if fade-in modal window, return true;
              */
             function fadeInPropertiesWindow(url) {
                 // Avoidance of duplicatable execute.
-                $(this).blur();  // Unfocous.
+                $(this).blur(); // Unfocous.
                 if ($("#modal_window")[0]) {
                     return false;
                 }
@@ -109,8 +116,8 @@ define(['jquery'], function($) {
                 // Save scroll position of base window.
                 var dElm = document.documentElement;
                 var dBody = document.body;
-                modalX = dElm.scrollLeft || dBody.scrollLeft;   // X value of current position.
-                modalY = dElm.scrollTop || dBody.scrollTop;     // Y value of current position.
+                modalX = dElm.scrollLeft || dBody.scrollLeft; // X value of current position.
+                modalY = dElm.scrollTop || dBody.scrollTop; // Y value of current position.
                 // Print overlay.
                 $("body").append("<div id=\"media_properties_panel\"></div>");
                 $("body").append("<div id=\"modal_window\"></div>");
@@ -134,6 +141,7 @@ define(['jquery'], function($) {
 
             /**
              * This function deletes modal window of player properties.
+             * @access public
              */
             function fadeOutPropertiesWindow() {
 
@@ -149,6 +157,7 @@ define(['jquery'], function($) {
 
             /**
              * This function is callback for player dimension.
+             * @access public
              */
             function handlePlayerDimensionChange() {
                 var flag = false;
@@ -172,6 +181,7 @@ define(['jquery'], function($) {
 
             /**
              * This function is callback for player dimension.
+             * @access public
              */
             function handlePlayerSizeSelect() {
                 var index = $("#media_prop_size").prop("selectedIndex");
@@ -192,7 +202,7 @@ define(['jquery'], function($) {
 
             /**
              * This function is callback for OK button on player properties window.
-             * @acecss public
+             * @access public
              * @return {bool} - if fade-out modal window, return true.
              */
             function propertiesSubmitClick() {
@@ -255,6 +265,7 @@ define(['jquery'], function($) {
 
             /**
              * This function describe module parameters to mod_form.
+             * @access public
              */
             function loadPropertiesParameter() {
                 $("#media_prop_name").val($("#media_title", parent.document).val());

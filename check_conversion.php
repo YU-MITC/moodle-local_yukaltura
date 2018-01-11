@@ -62,7 +62,7 @@ if (0 == strcmp($widget, 'kdp')) {
         // Create the user KS session.
         $session = local_yukaltura_generate_kaltura_session(array($entryobj->id));
 
-        $data->markup = local_yukaltura_get_kdp_code($entryobj, $uiconfid, $courseid, $session);
+        $data->markup = local_yukaltura_get_iframeembed_code($entryobj, $uiconfid, $courseid, $session);
 
         if (local_yukaltura_has_mobile_flavor_enabled() && local_yukaltura_get_enable_html5()) {
             $data->script = 'kAddedScript = false; kCheckAddScript();';

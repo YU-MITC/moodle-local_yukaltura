@@ -53,7 +53,7 @@ define(['jquery'], function($) {
 
             /**
              * This is callback function for thumbnail click.
-             * @access private
+             * @access public
              * @param {object} e - event object of target image.
              */
             function clickThumbnailImage(e) {
@@ -78,7 +78,7 @@ define(['jquery'], function($) {
 
             /**
              * This function centerize modal window.
-             * @access private
+             * @access public
              * @param {object} contentPanel - HTML element of content panel.
              */
             function centeringModalSyncer(contentPanel) {
@@ -101,7 +101,7 @@ define(['jquery'], function($) {
 
             /**
              * This function print modal window.
-             * @access private
+             * @access public
              * @param {string} url - URL of simple selector web page.
              * @return {bool} - if fade-in modal window, return true.
              */
@@ -116,7 +116,7 @@ define(['jquery'], function($) {
                 var dElm = document.documentElement;
                 var dBody = document.body;
                 modalX = dElm.scrollLeft || dBody.scrollLeft; // X value of current position.
-                modalY = dElm.scrollTop || dBody.scrollTop;  // Y value of current position.
+                modalY = dElm.scrollTop || dBody.scrollTop; // Y value of current position.
                 // Print ovaerlay.
                 $("body").append("<div id=\"selector_content\"></div>");
                 $("body").append("<div id=\"modal_window\"></div>");
@@ -217,7 +217,7 @@ define(['jquery'], function($) {
 
             /**
              * This function replaces "Add Media" label when membed media is selected.
-             * @access private
+             * @access public
              * @param {string} str - Label of "Add Media" button.
              */
             function replaceAddMediaLabel(str) {

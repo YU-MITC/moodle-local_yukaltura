@@ -352,8 +352,10 @@ if ($hassiteconfig) {
                                                  get_string('mymedia_access_keyword', 'local_yukaltura'),
                                                  get_string('mymedia_access_keyword_desc', 'local_yukaltura'),
                                                  '', PARAM_NOTAGS);
+
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
+
 
     $perpage  = array(9 => get_string('nine', 'local_yukaltura'),
                       18 => get_string('eighteen', 'local_yukaltura'),
@@ -373,6 +375,31 @@ if ($hassiteconfig) {
                                                  get_string('rootcategory', 'local_yukaltura'),
                                                  get_string('rootcategory_desc', 'local_yukaltura'),
                                                  'Moodle', PARAM_NOTAGS);
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $choices = array(KALTURA_PLAYER_PLAYERREGULARDARK  => get_string('player_regular_dark', 'local_yukaltura'),
+                     KALTURA_PLAYER_PLAYERREGULARLIGHT => get_string('player_regular_light', 'local_yukaltura'),
+                     );
+
+    if (!empty($players)) {
+        $choices = $choices + $players;
+    }
+
+    $choices[0] = get_string('custom_player', 'local_yukaltura');
+
+    $adminsetting = new admin_setting_configselect('player_mymedia',
+                                                   get_string('kaltura_player_mymedia', 'local_yukaltura'),
+                                                   get_string('kaltura_player_mymedia_desc', 'local_yukaltura'),
+                                                   KALTURA_PLAYER_PLAYERREGULARDARK, $choices);
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $adminsetting = new admin_setting_configtext('player_mymedia_custom',
+                                                 get_string('kaltura_player_mymedia_custom', 'local_yukaltura'),
+                                                 get_string('kaltura_player_mymedia_custom_desc', 'local_yukaltura'),
+                                                 '', PARAM_INT);
+
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
