@@ -17,6 +17,8 @@ Version 1.1.1
 Version 1.1.2
 
 * fixed some bugs in yukaltura.js and properties.js
+* fixed some statements in lane/en/local_yukaltura.php
 * added document to JavaScript files.
 * added statements in README.md.
 * added configuration items about mymedia player in settings.php.
+
