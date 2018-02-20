@@ -33,6 +33,7 @@ define(['jquery'], function($) {
          * @access public
          * @param {string} propertiesUrl - url of media properties page.
          * @param {string} invalidName - message for invalid  page name.
+         * @param {string} emptySize - message printed when player size is empty.
          * @param {string} invalidCustomSize - message for invalid player size.
          * @param {string} invalidSize - message for invalid size.
          */
@@ -75,7 +76,7 @@ define(['jquery'], function($) {
              * @return {bool} - if check is passed, return "true". Otherwise return "false".
              */
             function checkNameString(str) {
-                var regex = /["$%&'~\^\\`\/]/;
+                var regex = /["$%&'~^\\`/]/;
                 if (regex.test(str) === true) {
                     return false;
                 }

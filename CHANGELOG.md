@@ -22,3 +22,7 @@ Version 1.1.2
 * added statements in README.md.
 * added configuration items about mymedia player in settings.php.
 
+Version 1.1.3
+
+* fixed some bugs in yukaltura.js and properties.js.
+

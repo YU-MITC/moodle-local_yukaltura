@@ -22,3 +22,4 @@
  */
 
 mw.setConfig('EmbedPlayer.EnableIframeApi', true);
+mw.setConfig('KalturaSupport.LeadWithHTML5', true);

@@ -256,6 +256,8 @@ M.local_yukaltura = {
 
             /**
              * This function checks conversion status of media.
+             * @param {string} id - id of YUI object.
+             * @param {object} o - YUI object.
              */
             function check_conversion_status(id, o) {
                 if ('' != o.responseText) {
