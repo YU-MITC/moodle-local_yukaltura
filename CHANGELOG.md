@@ -26,3 +26,7 @@ Version 1.1.3
 
 * fixed some bugs in yukaltura.js and properties.js.
 
+Version 1.1.4
+
+* fixed some bugs in KalturaClientBase.php.
+* Replace calling Kaltura Session V1 function with calling Kaltura session V2 function.

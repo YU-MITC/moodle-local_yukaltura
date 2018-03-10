@@ -318,11 +318,11 @@ function local_yukaltura_login($admin = false, $privileges = '', $expiry = 10800
 
     if ($admin) {
 
-        $session = $clientobj->generateSession($secret, $username, KalturaSessionType::ADMIN,
+        $session = $clientobj->generateSessionV2($secret, $username, KalturaSessionType::ADMIN,
                                      $partnerid, $expiry, $privileges);
     } else {
 
-        $session = $clientobj->generateSession($secret, $username, KalturaSessionType::USER,
+        $session = $clientobj->generateSessionV2($secret, $username, KalturaSessionType::USER,
                                      $partnerid, $expiry, $privileges);
     }
 
