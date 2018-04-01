@@ -24,9 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2018031000;
+$plugin->version = 2018040100;
 $plugin->component = 'local_yukaltura';
-$plugin->release = 'YU Kaltura Media Local Libraries 1.1.4';
+$plugin->release = 'YU Kaltura Media Local Libraries 1.1.5';
 $plugin->requires = 2015051100;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->system_version = 2.1; // Used to send information to Kaltura.

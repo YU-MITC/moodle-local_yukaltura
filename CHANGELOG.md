@@ -30,3 +30,8 @@ Version 1.1.4
 
 * fixed some bugs in KalturaClientBase.php.
 * Replace calling Kaltura Session V1 function with calling Kaltura session V2 function.
+
+Version 1.1.5
+
+* fixed some coding styles in KalturaClient.php.
+

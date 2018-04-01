@@ -1016,8 +1016,16 @@ function local_yukaltura_get_ready_entry_object($entryid, $readyonly = true) {
             return $entryobj;
         }
 
-        // Check if the entry object is ready, by making an API call.
-        $entryobj = $clientobj->baseEntry->get($entryid);
+        try {
+            // Check if the entry object is ready, by making an API call.
+            $entryobj = $clientobj->baseEntry->get($entryid);
+        } catch (Exception $ex1) {
+            return false;
+        }
+
+        if (empty($entryobj) || empty($entryobj->status)) {
+            return false;
+        }
 
         // If the entry object is ready then return it.
         if (KalturaEntryStatus::READY == $entryobj->status) {
@@ -1036,9 +1044,9 @@ function local_yukaltura_get_ready_entry_object($entryid, $readyonly = true) {
 
         return $entryobj;
 
-    } catch (Exception $ex) {
+    } catch (Exception $ex2) {
         // Connection failed for some reason.  Maybe proxy settings?
-        $errormessage = 'check conversion(' . $ex->getMessage() . ')';
+        $errormessage = 'check conversion(' . $ex2->getMessage() . ')';
         print_error($errormessage, 'local_yukaltura');
         return false;
     }

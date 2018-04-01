@@ -40,10 +40,19 @@ require_once("KalturaTypes.php");
  */
 class KalturaAccessControlService extends KalturaServiceBase
 {
+    /**
+     * Constructor of Kaltura Access Control Service.
+     * @param {object} $client - instance of KalturaClinet.
+     */
     public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
+    /**
+     * This function add new access control profile.
+     * @param {object} $accesscontrol - instance of KalturaAccessControl has description of access control profile.
+     * @return {object} - instance of KalturaAccessControl.
+     */
     public function add(KalturaAccessControl $accesscontrol) {
         $kparams = array();
         $this->client->addParam($kparams, "accessControl", $accesscontrol->toParams());
@@ -57,6 +66,11 @@ class KalturaAccessControlService extends KalturaServiceBase
         return $resultobject;
     }
 
+    /**
+     * This function get Access Control Profile by id.
+     * @param {int} $id - access control profile id.
+     * @return {object} - instance of KalturaAccessControl.
+     */
     public function get($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
@@ -70,6 +84,12 @@ class KalturaAccessControlService extends KalturaServiceBase
         return $resultobject;
     }
 
+    /**
+     * This function update Access Control Profile.
+     * @param {int} $id - id of access control profile.
+     * @param {object} $accesscontrol - instance of KalturaAccessControl has description of access control profile.
+     * @return {object} - instance of KalturaAccessControl after update.
+     */
     public function update($id, KalturaAccessControl $accesscontrol) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
@@ -84,6 +104,11 @@ class KalturaAccessControlService extends KalturaServiceBase
         return $resultobject;
     }
 
+    /**
+     * This function delete Access Control Profile by id.
+     * @param {int} $id - id of access control profile user want to delete.
+     * @return {object} - this function return "null".
+     */
     public function delete($id) {
         $kparams = array();
         $this->client->addParam($kparams, "id", $id);
@@ -97,6 +122,12 @@ class KalturaAccessControlService extends KalturaServiceBase
         return $resultobject;
     }
 
+    /**
+     * This function list access control profiles by filter and pager.
+     * @param {object} $filter - instance of KalturaAccessControlFilter.
+     * @param {object} $pager - instance of KalturaFilterPager.
+     * @return {object} - instance of KalturaAccessControlListResponse.
+     */
     public function listAction(KalturaAccessControlFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
@@ -126,10 +157,22 @@ class KalturaAccessControlService extends KalturaServiceBase
  */
 class KalturaAdminUserService extends KalturaServiceBase
 {
+    /**
+     * Constructor of Kaltura Admin User Service.
+     * @param {object} $client - instance of KalturaClinet.
+     */
     public function __construct(KalturaClient $client = null) {
         parent::__construct($client);
     }
 
+    /**
+     * This function update admin user password and email.
+     * @param {string} $email - current email address.
+     * @param {string} $password - current password.
+     * @param {string} $newemail - new email address.
+     * @param {string} $newpassword - new password.
+     * @return {object} - instance of KalturaAdminUser.
+     */
     public function updatePassword($email, $password, $newemail = "", $newpassword = "") {
         $kparams = array();
         $this->client->addParam($kparams, "email", $email);
@@ -146,6 +189,11 @@ class KalturaAdminUserService extends KalturaServiceBase
         return $resultobject;
     }
 
+    /**
+     * This function reset admin user password and sent it to the users email address.
+     * @param {string} $email - email address.
+     * @return {object} - this function return "null".
+     */
     public function resetPassword($email) {
         $kparams = array();
         $this->client->addParam($kparams, "email", $email);
@@ -159,6 +207,13 @@ class KalturaAdminUserService extends KalturaServiceBase
         return $resultobject;
     }
 
+    /**
+     * This function get an admin session using admin email and password (Used for login to the KMC application).
+     * @param {string} $email - email address of admin user.
+     * @param {string} $password - password of admin user.
+     * @param {int} - $partnerid - partner ID of admin user.
+     * @return {string} - session string.
+     */
     public function login($email, $password, $partnerid = null) {
         $kparams = array();
         $this->client->addParam($kparams, "email", $email);
@@ -174,6 +229,12 @@ class KalturaAdminUserService extends KalturaServiceBase
         return $resultobject;
     }
 
+    /**
+     * This func tion set initial password of admin user.
+     * @param {string} $haskkey - has key (admin secret).
+     * @param {string} $newpassword - new password of admin user.
+     * @return {object} - this function return "null".
+     */
     public function setInitialPassword($hashkey, $newpassword) {
         $kparams = array();
         $this->client->addParam($kparams, "hashKey", $hashkey);
