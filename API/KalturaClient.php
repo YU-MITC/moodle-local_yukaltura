@@ -668,11 +668,10 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
 
     /**
      * Activate CategoryEntry when it is pending moderation
-     *
-     * @param string $entryId 
-     * @param int $categoryId 
+     * @param string $entryid
+     * @param int $categoryid
      */
-    function activate($entryid, $categoryid) {
+    public function activate($entryid, $categoryid) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "categoryId", $categoryid);
@@ -688,10 +687,10 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
     /**
      * Add new CategoryEntry
      *
-     * @param KalturaCategoryEntry $categoryEntry 
+     * @param KalturaCategoryEntry $categoryentry
      * @return KalturaCategoryEntry
      */
-    function add(KalturaCategoryEntry $categoryentry) {
+    public function add(KalturaCategoryEntry $categoryentry) {
         $kparams = array();
         $this->client->addParam($kparams, "categoryEntry", $categoryentry->toParams());
         $this->client->queueServiceActionCall("categoryentry", "add", $kparams);
@@ -706,11 +705,11 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
 
     /**
      * Add from bulk upload.
-     * @param KalturaBulkServiceData $bulkUploadData 
-     * @param KalturaBulkUploadCategoryEntryData $bulkUploadCategoryEntryData 
+     * @param KalturaBulkServiceData $bulkuploaddata
+     * @param KalturaBulkUploadCategoryEntryData $bulkuploadcategoryentrydata
      * @return KalturaBulkUpload
      */
-    function addFromBulkUpload(KalturaBulkServiceData $bulkuploaddata,
+    public function addFromBulkUpload(KalturaBulkServiceData $bulkuploaddata,
                                KalturaBulkUploadCategoryEntryData $bulkuploadcategoryentrydata = null) {
         $kparams = array();
         $this->client->addParam($kparams, "bulkUploadData", $bulkuploaddata->toParams());
@@ -724,15 +723,15 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
         $this->client->validateObjectType($resultobject, "KalturaBulkUpload");
-        return $resultObject;
+        return $resultobject;
     }
 
     /**
      * Delete CategoryEntry.
-     * @param string $entryId 
-     * @param int $categoryId 
+     * @param string $entryid
+     * @param int $categoryid
      */
-    function delete($entryid, $categoryid) {
+    public function delete($entryid, $categoryid) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "categoryId", $categoryid);
@@ -747,12 +746,12 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
 
     /**
      * Index CategoryEntry by Id.
-     * @param string $entryId 
-     * @param int $categoryId 
-     * @param bool $shouldUpdate 
+     * @param string $entryid
+     * @param int $categoryid
+     * @param bool $shouldupdate
      * @return int
-      */
-    function index($entryid, $categoryid, $shouldupdate = true) {
+     */
+    public function index($entryid, $categoryid, $shouldupdate = true) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "categoryId", $categoryid);
@@ -769,11 +768,11 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
 
     /**
      * List all categoryEntry.
-     * @param KalturaCategoryEntryFilter $filter 
-     * @param KalturaFilterPager $pager 
+     * @param KalturaCategoryEntryFilter $filter
+     * @param KalturaFilterPager $pager
      * @return KalturaCategoryEntryListResponse
      */
-    function listAction(KalturaCategoryEntryFilter $filter = null, KalturaFilterPager $pager = null) {
+    public function listAction(KalturaCategoryEntryFilter $filter = null, KalturaFilterPager $pager = null) {
         $kparams = array();
         if ($filter !== null) {
             $this->client->addParam($kparams, "filter", $filter->toParams());
@@ -793,10 +792,10 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
 
     /**
      * Activate CategoryEntry when it is pending moderation.
-     * @param string $entryId 
-     * @param int $categoryId 
+     * @param string $entrid
+     * @param int $categoryid
      */
-    function reject($entryid, $categoryid) {
+    public function reject($entryid, $categoryid) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "categoryId", $categoryid);
@@ -811,16 +810,16 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
 
     /**
      * Update privacy context from the category.
-     * @param string $entryId 
-     * @param int $categoryId 
+     * @param string $entryid
+     * @param int $categoryid
      */
-    function syncPrivacyContext($entryid, $categoryid) {
+    public function syncPrivacyContext($entryid, $categoryid) {
         $kparams = array();
         $this->client->addParam($kparams, "entryId", $entryid);
         $this->client->addParam($kparams, "categoryId", $categoryid);
         $this->client->queueServiceActionCall("categoryentry", "syncPrivacyContext", $kparams);
         if ($this->client->isMultiRequest()) {
-			return $this->client->getMultiRequestResult();
+            return $this->client->getMultiRequestResult();
         }
         $resultobject = $this->client->doQueue();
         $this->client->throwExceptionIfError($resultobject);
