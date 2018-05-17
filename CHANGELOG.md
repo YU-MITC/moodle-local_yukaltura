@@ -39,3 +39,7 @@ Version 1.1.5R2
 
 * added APIs for Kaltura Category Entry Service in KalturaClient.php.
 
+Version 1.1.6
+
+* fixed statements about "How to use" in README.md.
+

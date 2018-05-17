@@ -34,24 +34,25 @@ How to use
 
 User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version1.1.pdf).
 
-Now, we wrote sections about installation, initial configuration and summary of "My Media".
+Now, we wrote sections about installation, initial configuration (local_yukaltura) and summary of "My Media" (local_yumymedia), summary of "YU Kaltura Media Resource" (mod_kalmediares).
 
 Rest sections will be written soon...
 
 Targeted Moodle versions
 ------
 
-Moodle 2.9, 3.0, 3.1, 3.2, 3.3, 3.4
+Moodle 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5
 
 Branches
 ------
 
-* MOODLE_29_STABLE -> Moodle2.9 branch 
-* MOODLE_30_STABLE -> Moodle3.0 branch 
-* MOODLE_31_STABLE -> Moodle3.1 branch 
-* MOODLE_32_STABLE -> Moodle3.2 branch 
-* MOODLE_33_STABLE -> Moodle3.3 branch 
-* MOODLE_34_STABLE -> Moodle3.4 branch 
+* MOODLE_29_STABLE -> Moodle2.9 branch
+* MOODLE_30_STABLE -> Moodle3.0 branch
+* MOODLE_31_STABLE -> Moodle3.1 branch
+* MOODLE_32_STABLE -> Moodle3.2 branch
+* MOODLE_33_STABLE -> Moodle3.3 branch
+* MOODLE_34_STABLE -> Moodle3.4 branch
+* MOODLE_35_STABLE -> Moodle3.5 branch
 
 First clone the repository with "git clone", then "git checkout MOODLE_29_STABLE(branch name)" to switch branches.
 
