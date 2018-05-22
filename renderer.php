@@ -42,64 +42,53 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      * @return string - HTML markup for media table
      */
     public function create_media_table($medialist = array()) {
-
-        $output      = '';
+        $output = '';
         $maxcolumns = 3;
 
-        $table = new html_table();
+        $attr = array('border' => '0', 'align' => 'center', 'id' => 'selector_media');
 
-        $table->id = 'selector_media';
-        $table->size = array('25%', '25%', '25%');
-        $table->colclasses = array('media column 1', 'media column 2', 'media column 3');
+        $output .= html_writer::start_tag('table', $attr);
 
-        $table->align = array('center', 'center', 'center');
-        $table->data = array();
-
-        $i = 0;
-        $x = 0;
-        $data = array();
+        $row = 0;
+        $col = 0;
 
         foreach ($medialist as $key => $media) {
-            if (KalturaEntryStatus::READY == $media->status) {
-                $data[] = $this->create_media_entry_markup($media, true);
+            if ($col == 0) {
+                $output .= html_writer::start_tag('tr');
+            }
+
+            $attr = array();
+
+            if ($row == 0) {
+                $attr = array('class' => 'selector_entry', 'align' => 'center', 'width' => '25%');
             } else {
-                $data[] = $this->create_media_entry_markup($media, false);
+                $attr = array('class' => 'selector_entry', 'align' => 'center');
             }
 
-            // When the max number of columns is reached, add the data to the table object.
-            if ($maxcolumns == count($data)) {
-
-                $table->data[]       = $data;
-                $table->rowclasses[] = 'row_' . $i;
-                $data                = array();
-                $i++;
-
-            } else if ($x == count($medialist) - 1 ) {
-
-                $leftovercells = $maxcolumns - count($data);
-
-                // Add some extra cells to make the table symetrical.
-                if ($leftovercells) {
-                    for ($t = 1; $t <= $leftovercells; $t++) {
-                        $data[] = '';
-                    }
-                }
-                $table->data[] = $data;
-                $table->rowclasses[] = 'row_' . $i;
-
+            $output .= html_writer::start_tag('td', $attr);
+            if (KalturaEntryStatus::READY == $media->status) {
+                $output .= $this->create_media_entry_markup($media, true);
+            } else {
+                $output .= $this->create_media_entry_markup($media, false);
             }
 
-            $x++;
+            $output .= html_writer::end_tag('td');
+
+            $col= $col + 1;
+            if ($col ==  $maxcolumns) {
+                $row = $row + 1;
+                $col = 0;
+               $output .= html_writer::end_tag('tr');
+            }
         }
 
-        $attr = array('style' => 'overflow:auto;overflow-y:hidden');
-        $output .= html_writer::start_tag('div', $attr);
-        $output .= html_writer::start_tag('center', array());
-        $output .= html_writer::table($table);
-        $output .= html_writer::end_tag('center', array());
-        $output .= html_writer::end_tag('div');
+        if ($col >= 1) {
+            $output .= html_writer::end_tag('tr');
+        }
 
-        echo $output;
+        $output .= html_writer::end_tag('table');
+
+        return $output;
     }
 
     /**
@@ -290,11 +279,11 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr   = array('class' => 'selector media thumbnail');
         $output .= html_writer::start_tag('div', $attr);
 
-        $attr    = array('src' => $url . '/width/120/height/80/type/3',
+        $attr    = array('src' => $url . '/width/120/height/90/type/3',
                          'class' => 'media_thumbnail',
                          'id' => $entryid,
                          'alt' => $alt,
-                         'height' => '80',
+                         'height' => '90',
                          'width'  => '120',
                          'title' => $alt);
 
@@ -572,11 +561,11 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         // Panel markup to set media properties.
 
-        $attr = array('class' => 'hd');
+        $attr = array('class' => 'media_properties_header');
         $output .= html_writer::tag('div', '<center>' . get_string('media_prop_header', 'local_yukaltura') . '</center>', $attr);
         $output .= html_writer::start_tag('br', array());
 
-        $attr = array('class' => 'bd');
+        $attr = array('class' => 'media_properties_body');
 
         $propertiesmarkup = $this->get_media_preferences_markup();
 

@@ -43,3 +43,9 @@ Version 1.1.6
 
 * fixed statements about "How to use" in README.md.
 
+Version 1.1.7
+
+* fixed statements in simple_selector.php and simple_selector.css.
+* "local_yukaltura" supports "Boost" theme of the Moodle. Link to the "My Media" is displayed in the left-side menu of the Boost.
+* added statements about "Supported themes" in README.md.
+

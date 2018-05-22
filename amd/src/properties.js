@@ -53,7 +53,7 @@ define(['jquery'], function($) {
                     clearTimeout(timer);
                 }
                 timer = setTimeout(function() {
-                    $(contentPanel).css({"width": "400px", "height": "400px"});
+                    $(contentPanel).css({"width": "550px", "height": "400px"});
                     $(contentPanel).css({"font-size": "14px"});
 
                     // Get width and height of window.

@@ -6,6 +6,26 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+div.selector.media.thumbnail {
+    display: block;
+    white-space: nowrap;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div.media_properties_header {
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div.media_properties_body {
+    display: block;
+    white-space: nowrap;
+}
+
 img.media_thumbnail {
     display: block;
     -moz-box-shadow: 2px 2px 3px 3px #ccc;
@@ -21,6 +41,19 @@ img:hover.media_thumbnail {
     opacity: 0.5;
     filter: alpha(opacity=70);
     background-color: #00f;
+}
+
+td.selector_entry {
+    display: table-cell;
+    word-wrap: normal;
+    word-break: break-all;
+    white-space: normal;
+}
+
+nav.selector.pagingbar {
+    text-align: center;
+    display: table;
+    margin: 0 auto;
 }
 
 #selectorSort,
@@ -96,8 +129,8 @@ img:hover.media_thumbnail {
 
 #media_properties_panel {
     border-radius: 4px;
-    width: 440px;
-    height: 440px;
+    width: 550px;
+    height: 400px;
     font-size: 14px;
     margin: 0;
     padding: 10px 20px;
