@@ -20,8 +20,9 @@ This plugin is updated with stable releases. To follow active development on Git
 Requirements
 ------
 
-* PHP5.6 or greater.
+* PHP5.3 or greater.
 * Web browsers must support the JavaScript and HTML5.
+* System administrators must use the same communication protocol for all routes (between the web browser and the Moodle, between the Moodle and the Kaltura, and between the web browser and the Kaltura). It is better to use HTTPS as the communication protocol.
 
 Supported themes
 -----
