@@ -38,7 +38,7 @@ img.media_thumbnail {
 }
 
 img:hover.media_thumbnail {
-    opacity: 0.5 !important;
+    opacity: 0.5;
     filter: alpha(opacity=70);
     background-color: #00f;
 }
