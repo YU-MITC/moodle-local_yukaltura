@@ -18,7 +18,7 @@
  * Local libraries of YU Kaltura Media package
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2017 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2018 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -847,21 +847,14 @@ function local_yukaltura_get_kwidget_flashvars($creatorname = '', $session = '')
     } else {
         $flashvars = '';
     }
-    if (!empty($session)) {
-        if (!empty($flashvars)) {
-            $flashvars .= ",";
-        }
 
-        $flashvars .= "\"ks\": \"{$session}\"";
+    if (!empty($flashvars)) {
+        $flashvars .= ",";
     }
 
     $applicationname = get_config(KALTURA_PLUGIN_NAME, 'mymedia_application_name');
 
     $applicationname = empty($applicationname) ? 'Moodle' : $applicationname;
-
-    if (!empty($flashvars)) {
-        $flashvars .= ",";
-    }
 
     $flashvars .= "\"applicationName\": \"{$applicationname}\"";;
 

@@ -49,3 +49,7 @@ Version 1.1.7
 * "local_yukaltura" supports "Boost" theme of the Moodle. Link to the "My Media" is displayed in the left-side menu of the Boost.
 * added statements about "Supported themes" in README.md.
 
+Version 1.1.8
+
+* fixed some statements for support "Boost" theme in simple_selector.css.
+* fixed some bugs in locallib.php, in order to integrate with latest version Kaltura CE.

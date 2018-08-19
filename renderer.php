@@ -18,7 +18,7 @@
  * My Media display library
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2017 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2018 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,7 +29,7 @@ require_once(dirname(dirname(dirname(__FILE__))) . '/lib/tablelib.php');
 /**
  * Renderer class of local_yukaltura
  * @package local_yukaltura
- * @copyright  (C) 2016-2017 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2018 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_yukaltura_renderer extends plugin_renderer_base {
@@ -74,11 +74,11 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
             $output .= html_writer::end_tag('td');
 
-            $col= $col + 1;
-            if ($col ==  $maxcolumns) {
+            $col = $col + 1;
+            if ($col == $maxcolumns) {
                 $row = $row + 1;
                 $col = 0;
-               $output .= html_writer::end_tag('tr');
+                $output .= html_writer::end_tag('tr');
             }
         }
 
