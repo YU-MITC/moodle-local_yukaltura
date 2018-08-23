@@ -147,7 +147,12 @@ if ($hassiteconfig) {
         $ipaddress = get_config(KALTURA_PLUGIN_NAME, 'internal_ipaddress');
         $ipaddressprevious = get_config(KALTURA_PLUGIN_NAME, 'internal_ipaddress_previous');
 
-        if ($ipaddress == null && $ipaddressprevious == null ||
+        $control = local_yukaltura_get_internal_access_control($connection);
+
+        if ($ipaddress != null && 0 != strcmp($ipaddress, '0.0.0.0/0') && is_null($control)) {
+            $result = local_yukaltura_create_internal_access_control($connection);
+            set_config(KALTURA_INTERNAL_ACCESS_CONFIG_NAME, $result->id, KALTURA_PLUGIN_NAME);
+        } else if ($ipaddress == null && $ipaddressprevious == null ||
             $ipaddress != null && 0 == strcmp($ipaddress, $ipaddressprevious)) {
             $control = local_yukaltura_get_internal_access_control($connection);
             if (!is_null($control)) {

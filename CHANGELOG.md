@@ -54,3 +54,9 @@ Version 1.1.8
 * fixed some bugs in locallib.php, in order to integrate with latest version Kaltura CE.
 * added statements about "Requirements" in README.md.
 * fixed copyright statements in all scripts.
+
+Version 1.1.8R2
+
+* fixed some bugs in settings.php, in order to create an accress control profile for "internal access". 
+* fixed some bugs in renderer.php, in order to solve an issue about sorting of media in simple media selector. 
+

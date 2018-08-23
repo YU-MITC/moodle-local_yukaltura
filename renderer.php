@@ -102,7 +102,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $old = null;
         $nameasc = null;
         $namedesc = null;
-        $sorturl = new moodle_url('/local/yukaltura/simple_selector.php?sort=');
+        $sorturl = new moodle_url('/local/yukaltura/simple_selector.php?sort');
 
         if (isset($SESSION->selectorsort) && !empty($SESSION->selectorsort)) {
             $sort = $SESSION->selectorsort;
@@ -141,7 +141,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $sort .= '&nbsp;';
         $sort .= html_writer::start_tag('select', array('id' => 'selectorSort'));
 
-        $attr = array('value' => $sorturl . 'recent');
+        $attr = array('value' => $sorturl . '=recent');
 
         if ($recent != null) {
             $attr['selected'] = 'selected';
@@ -149,7 +149,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         $sort .= html_writer::tag('option', get_string('mostrecent', 'local_yukaltura'), $attr);
 
-        $attr = array('value' => $sorturl . 'old');
+        $attr = array('value' => $sorturl . '=old');
 
         if ($old != null) {
             $attr['selected'] = 'selected';
@@ -157,7 +157,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         $sort .= html_writer::tag('option', get_string('oldest', 'local_yukaltura'), $attr);
 
-        $attr = array('value' => $sorturl . 'name_asc');
+        $attr = array('value' => $sorturl . '=name_asc');
 
         if ($nameasc != null) {
             $attr['selected'] = 'selected';
@@ -165,7 +165,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         $sort .= html_writer::tag('option', get_string('medianameasc', 'local_yukaltura'), $attr);
 
-        $attr = array('value' => $sorturl . 'name_desc');
+        $attr = array('value' => $sorturl . '=name_desc');
 
         if ($namedesc != null) {
             $attr['selected'] = 'selected';
