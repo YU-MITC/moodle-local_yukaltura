@@ -70,4 +70,4 @@ Warning
 * This software follows the license policy of Moodle (GNU GPL v3).
 * "Kaltura" is the registered trademark of the Kaltura Inc.
 * Web-camera recording function in "My Media" supports the Mozilla Firefox, Google Chrome, Opera and Safari. For smartphones and tablets, you can record and upload movies through a normal media uploader.
-* Uploading and recording functions in resource and activity modules may not work well with smartphones. Bacause, low resolutuin screen cannot display these forms correctly.
+* Uploading and recording functions in resource and activity modules may not work well with smartphones. Because, low resolution screen cannot display these forms correctly.
