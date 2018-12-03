@@ -60,3 +60,8 @@ Version 1.1.8R2
 * fixed some bugs in settings.php, in order to create an accress control profile for "internal access". 
 * fixed some bugs in renderer.php, in order to solve an issue about sorting of media in simple media selector. 
 
+Version 1.2.0
+
+* fixed some bugs in simpleselector.js, in order to resolve an issue about updating of description.
+* fixed some statements in webcamuploader.js, in order to respond to changes of WebRTC APIs in the Mozilla firefox.
+* add some items in settings.php, in order to set permissions about uploading/recording new movie in resource moudle (mod_kalmediares) and activity module (mod_kalmediaassign).

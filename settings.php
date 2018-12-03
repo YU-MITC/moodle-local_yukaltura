@@ -298,6 +298,13 @@ if ($hassiteconfig) {
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
+    // Upload checkbox.
+    $adminsetting = new admin_setting_configcheckbox('kalmediaassign_upload',
+                                                     get_string('kalmediaassign_upload', 'local_yukaltura'),
+                                                     get_string('kalmediaassign_upload_desc', 'local_yukaltura'), '0');
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
     // Kaltura Media Resource section.
     $settings->add(new admin_setting_heading('kaltura_kalmediares_heading',
                                              get_string('kaltura_kalmediares_title', 'local_yukaltura'), ''));
@@ -320,6 +327,13 @@ if ($hassiteconfig) {
     $adminsetting = new admin_setting_configcheckbox('player_resource_override',
                                                      get_string('player_resource_override', 'local_yukaltura'),
                                                      get_string('player_resource_override_desc', 'local_yukaltura'), '0');
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    // Upload checkbox.
+    $adminsetting = new admin_setting_configcheckbox('kalmediares_upload',
+                                                     get_string('kalmediares_upload', 'local_yukaltura'),
+                                                     get_string('kalmediares_upload_desc', 'local_yukaltura'), '0');
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 

@@ -191,7 +191,23 @@ define(['jquery'], function($) {
                     var editor = $("#id_introeditoreditable", parent.document);
 
                     if (editor !== null) {
-                        editor.html(desc);
+                        if (desc !== null && desc !== "") {
+                            editor.html(desc);
+                        }
+                        else {
+                            editor.html("");
+                        }
+                    }
+
+                    editor = $("#id_introeditor", parent.document);
+
+                    if (editor !== null) {
+                        if (desc !== null && desc !== "") {
+                            editor.html(desc);
+                        }
+                        else {
+                            editor.html("");
+                        }
                     }
 
                     if ($("#media_thumbnail", parent.document) !== null) {

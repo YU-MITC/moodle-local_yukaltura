@@ -50,6 +50,10 @@ $string['kaltura_player_mymedia'] = 'Kaltura mymedia player';
 $string['kaltura_player_mymedia_desc'] = 'Player used to play-back media for My Media. This player will appear as the default player for preview media, link URL, and embed code.';
 $string['kaltura_player_mymedia_custom'] = 'Custom UIConf';
 $string['kaltura_player_mymedia_custom_desc'] = 'Only used if you have a custom mymedia player UIConf ID';
+$string['kalmediaassign_upload'] = 'Enable uploading';
+$string['kalmediaassign_upload_desc'] = 'Students can upload new media in report submission form.';
+$string['kalmediares_upload'] = 'Enable uploading';
+$string['kalmediares_upload_desc'] = 'Teachers can upload new media in resource editing form.';
 
 $string['conn_status_title'] = 'Connection status';
 $string['conn_success'] = 'Successfully logged in with credentials';
@@ -64,8 +68,8 @@ $string['media_converting'] = 'The media is still converting.  Please check the 
 $string['conn_failed_alt'] = 'Connection with Kaltura is currently unavailable.  Please inform your administrator.';
 $string['player_resource_override'] = 'Override media resource player setting';
 $string['player_resource_override_desc'] = 'Check this option to override the individual Media Resource player selection.  This will force all Media Resource activities to use the selected <b>Kaltura resource player</b>';
-$string['enable_html5'] = 'Enable HTML5 flavour';
-$string['enable_html5_desc'] = 'Check this setting to enable to use of the HTML5 flavours when viewing media';
+$string['enable_html5'] = 'Enable HTML5 flavor';
+$string['enable_html5_desc'] = 'Check this setting to enable to use of the HTML5 flavors when viewing media';
 $string['media_error'] = 'There was an error processing this media.  Please try another media';
 $string['media_bad'] = 'Please do not use this media';
 $string['kaltura_general'] = 'General Settings';
@@ -161,6 +165,9 @@ $string['invalid_size'] = 'Player size(width,height) is a wrong dimension.';
 
 // Simple selector.
 $string['selected_media'] = 'Selected Media';
+
+$string['upload_media'] = 'Upload your media';
+$string['record_media'] = 'Upload from web-camera';
 
 // Troubles.
 $string['no_media'] = 'No media found';

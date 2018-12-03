@@ -23,7 +23,6 @@ Requirements
 * PHP5.3 or greater.
 * Web browsers must support the JavaScript and HTML5.
 * System administrators must use the same communication protocol for all routes (between the web browser and the Moodle, between the Moodle and the Kaltura, and between the web browser and the Kaltura). It is better to use HTTPS as the communication protocol.
-* Administrators must not delete "Default" access control profile from their Kaltura server. If they delete the "Default" profile, they must create new profile named "Default" before install our plugins.
 
 Supported themes
 -----
@@ -42,16 +41,13 @@ Installation will be completed after you log in as an administrator and access t
 How to use
 ------
 
-User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version1.1.pdf).
-
-Now, we wrote sections about installation, initial configuration (local_yukaltura) and summary of "My Media" (local_yumymedia), summary of "YU Kaltura Media Resource" (mod_kalmediares).
-
-Rest sections will be written soon...
+* User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version1.2.pdf).
+* Demonstration web page, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/demo/).
 
 Targeted Moodle versions
 ------
 
-Moodle 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5
+Moodle 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6
 
 Branches
 ------
@@ -63,6 +59,7 @@ Branches
 * MOODLE_33_STABLE -> Moodle3.3 branch
 * MOODLE_34_STABLE -> Moodle3.4 branch
 * MOODLE_35_STABLE -> Moodle3.5 branch
+* MOODLE_36_STABLE -> Moodle3.6 branch
 
 First clone the repository with "git clone", then "git checkout MOODLE_29_STABLE(branch name)" to switch branches.
 
