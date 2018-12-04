@@ -23,6 +23,7 @@ Requirements
 * PHP5.3 or greater.
 * Web browsers must support the JavaScript and HTML5.
 * System administrators must use the same communication protocol for all routes (between the web browser and the Moodle, between the Moodle and the Kaltura, and between the web browser and the Kaltura). It is better to use HTTPS as the communication protocol.
+* Administrators must not delete "Default" access control profile from their Kaltura server. If they delete the "Default" profile, they must create new profile named "Default" before install our plugins.
 
 Supported themes
 -----
@@ -70,3 +71,4 @@ Warning
 * This software follows the license policy of Moodle (GNU GPL v3).
 * "Kaltura" is the registered trademark of the Kaltura Inc.
 * Web-camera recording function in "My Media" supports the Mozilla Firefox, Google Chrome, Opera and Safari. For smartphones and tablets, you can record and upload movies through a normal media uploader.
+* Uploading and recording functions in resource and activity modules may not work well with smartphones. Because, low resolution screen cannot display these forms correctly.
