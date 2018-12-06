@@ -1,4 +1,5 @@
-##Change log of YU Kaltura Media Local Libraries
+Change log of YU Kaltura Media Local Libraries
+------
 
 Version 1.1.0
 
