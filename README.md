@@ -23,6 +23,8 @@ Requirements
 * PHP5.3 or greater.
 * Web browsers must support the JavaScript and HTML5.
 * System administrators must use the same communication protocol for all routes (between the web browser and the Moodle, between the Moodle and the Kaltura, and between the web browser and the Kaltura). It is better to use HTTPS as the communication protocol.
+* Administrators must not delete "Default" access control profile from their Kaltura server. If they delete the "Default" profile, they must create new profile named "Default" before install our plugins.
+* These plugins do not support Flash players. Therefore, please use HTML5 players.
 
 Supported themes
 -----
