@@ -1,7 +1,5 @@
-# YU Kaltura Media Local Libraries
+##Change log of YU Kaltura Media Local Libraries
 
-Change log
-------
 Version 1.1.0
 
 * fixed some error messages in locallib.php.
@@ -65,3 +63,7 @@ Version 1.2.0
 * fixed some bugs in simpleselector.js, in order to resolve an issue about updating of description.
 * fixed some statements in webcamuploader.js, in order to respond to changes of WebRTC APIs in the Mozilla firefox.
 * add some items in settings.php, in order to set permissions about uploading/recording new movie in resource moudle (mod_kalmediares) and activity module (mod_kalmediaassign).
+
+Version 1.2.1
+
+* fixed some statements in simpleselector.js, based on JSDoc warnings.
