@@ -1,10 +1,6 @@
 Change log of YU Kaltura Media Local Libraries
 ------
 
-Version 1.2.1
-
-* fixed some statements in simpleselector.js, based on JSDoc warnings.
-
 Version 1.2.0
 
 * fixed some bugs in simpleselector.js, in order to resolve an issue about updating of description.
