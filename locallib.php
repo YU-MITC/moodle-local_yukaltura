@@ -18,7 +18,7 @@
  * Local libraries of YU Kaltura Media package
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2018 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2019 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,6 +26,7 @@ require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(__FILE__) . '/API/KalturaClient.php');
 require_once(dirname(__FILE__) . '/kaltura_entries.class.php');
 
+require_login();
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -104,12 +105,12 @@ define('KALTURA_IPADDRESS_ANY', 'ANY');
 define('KALTURA_IPADDRESS_INT', 'INTERNAL');
 
 /**
- * Moodle database key name of acess control (internal).
+ * Moodle database key name of access control (internal).
  */
 define('KALTURA_INTERNAL_ACCESS_CONFIG_NAME', 'access_control_internal_id');
 
 /**
- * Moodle database key name of acess control.
+ * Moodle database key name of access control.
  */
 define('KALTURA_INTERNAL_ACCESS_CONTROL_NAME', 'Internal Access');
 
@@ -139,9 +140,9 @@ define('KALTURA_DEFAULT_ACCESS_CONTROL_DESC', 'Default access control profile');
 define('KALTURA_DEFAULT_ACCESS_CONTROL_SYSTEM_NAME', 'Default');
 
 /**
- * Moodle database key name of acess control (default).
+ * Moodle database key name of access control (default).
  */
-define('KALTURA_DEFAULT_ACCESS_CONFIG_NAME', 'acecss_control_default_id');
+define('KALTURA_DEFAULT_ACCESS_CONFIG_NAME', 'access_control_default_id');
 
 /**
  * Image width for desktop theme.
@@ -307,23 +308,26 @@ function local_yukaltura_login($admin = false, $privileges = '', $expiry = 10800
         return false;
     }
 
-    $partnerid = $clientobj->getConfig()->partnerId;
-    $secret = get_config(KALTURA_PLUGIN_NAME, 'adminsecret');
+    $partnerid = get_config(KALTURA_PLUGIN_NAME, 'partner_id');
 
-    if (isloggedin()) {
-        $username = $USER->username;
+    $servermode = get_config(KALTURA_PLUGIN_NAME, 'conn_server');
+
+    if ($servermode == 'hosted') {
+        if (isloggedin()) {
+            $username = $USER->username;
+        } else {
+            $username = null;
+        }
     } else {
-        $username = null;
+        $username = local_yukaltura_get_loginname();
     }
 
     if ($admin) {
-
-        $session = $clientobj->generateSessionV2($secret, $username, KalturaSessionType::ADMIN,
-                                     $partnerid, $expiry, $privileges);
+        $secret = get_config(KALTURA_PLUGIN_NAME, 'adminsecret');
+        $session = $clientobj->session->start($secret, $username, KalturaSessionType::ADMIN, $partnerid);
     } else {
-
-        $session = $clientobj->generateSessionV2($secret, $username, KalturaSessionType::USER,
-                                     $partnerid, $expiry, $privileges);
+        $secret = get_config(KALTURA_PLUGIN_NAME, 'secret');
+        $session = $clientobj->session->start($secret, $username, KalturaSessionType::USER, $partnerid);
     }
 
     if (!empty($session)) {
@@ -350,10 +354,11 @@ function local_yukaltura_login($admin = false, $privileges = '', $expiry = 10800
  * returns a user Kaltura session. The session value returned is mainly used for
  * inclusion into the video markup flashvars query string.
  *
+ * @param bool $admin - must use admin permission.
  * @param string $medialist - privilege string.
  * @return array - an array of Kaltura media entry ids
  */
-function local_yukaltura_generate_kaltura_session($medialist = array()) {
+function local_yukaltura_generate_kaltura_session($admin = false, $medialist = array()) {
     global $USER;
 
     $configobj = local_yukaltura_get_configuration_obj();
@@ -370,18 +375,39 @@ function local_yukaltura_generate_kaltura_session($medialist = array()) {
 
     $privilege = 'sview:' . implode(',sview:', $medialist);
 
-    $secret = get_config(KALTURA_PLUGIN_NAME, 'adminsecret');
     $partnerid = get_config(KALTURA_PLUGIN_NAME, 'partner_id');
 
-    if (isloggedin()) {
-        $username = $USER->username;
+    $servermode = get_config(KALTURA_PLUGIN_NAME, 'conn_server');
+
+    if ($servermode == 'hosted') {
+        if (isloggedin()) {
+            $username = $USER->username;
+        } else {
+            $username = null;
+        }
     } else {
-        $username = null;
+        $username = local_yukaltura_get_loginname();
     }
-    $session = $clientobj->generateSession($secret, $username, KalturaSessionType::USER,
-                                            $partnerid, KALTURA_SESSION_LENGTH, $privilege);
+
+    if ($admin) {
+        $secret = get_config(KALTURA_PLUGIN_NAME, 'adminsecret');
+        $session = $clientobj->session->start($secret, $username, KalturaSessionType::ADMIN, $partnerid);
+    } else {
+        $secret = get_config(KALTURA_PLUGIN_NAME, 'secret');
+        $session = $clientobj->session->start($secret, $username, KalturaSessionType::USER, $partnerid);
+    }
 
     return $session;
+}
+
+/**
+ * Returns an login name.
+ * @return object - if there exists a login name, returns the login name as string. Otherwise, returns false.
+ */
+function local_yukaltura_get_loginname() {
+    $login = false;
+    $login = get_config(KALTURA_PLUGIN_NAME, 'login');
+    return $login;
 }
 
 /**
@@ -1237,8 +1263,7 @@ function local_yukaltura_delete_media($connection, $entryid) {
 /**
  * This function determins whether Moodle is at 2.2 or newer.
  *
- * @return bool - true if this version of Moodle is newer than Moodel 2.3rc1
- * otherwise false
+ * @return bool - true if this version of Moodle is newer than Moodel 2.3rc1 otherwise false
  */
 function local_yukaltura_is_moodle_pre_twothree() {
     // Retrieve the release number from the config table.
@@ -1484,7 +1509,7 @@ function local_yukaltura_check_internal($ipaddress) {
         }
 
         foreach ($subnetarray as $subnet) {
-            if ($subnet == "0.0.0.0" or $subnet == "0.0.0.0/0") {
+            if ($subnet == "0.0.0.0" || $subnet == "0.0.0.0/0") {
                 return true;
             }
 
@@ -1500,11 +1525,11 @@ function local_yukaltura_check_internal($ipaddress) {
                 $networkaddress = $elements[0];
                 $networkprefix = (int)$elements[1];
                 $segments = explode(".", $networkaddress);
-                if (count($segments) == 4 and
-                    (int)$segments[0] >= 0 and (int)$segments[0] <= 255 and
-                    (int)$segments[1] >= 0 and (int)$segments[1] <= 255 and
-                    (int)$segments[2] >= 0 and (int)$segments[2] <= 255 and
-                    (int)$segments[3] >= 0 and (int)$segments[3] <= 255 and
+                if (count($segments) == 4 &&
+                    (int)$segments[0] >= 0 && (int)$segments[0] <= 255 &&
+                    (int)$segments[1] >= 0 && (int)$segments[1] <= 255 &&
+                    (int)$segments[2] >= 0 && (int)$segments[2] <= 255 &&
+                    (int)$segments[3] >= 0 && (int)$segments[3] <= 255 &&
                     $networkprefix >= 1 && $networkprefix <= 32) {
 
                     if (check_ipaddress_in_range($ipaddress, $subnet)) {
@@ -1579,7 +1604,6 @@ function check_ipaddress_in_range($ip, $range) {
  */
 function local_yukaltura_get_default_access_control($connection) {
     try {
-
         $result = $connection->accessControl->listAction();
 
         if (is_null($result)) {
@@ -1616,7 +1640,6 @@ function local_yukaltura_get_default_access_control($connection) {
  */
 function local_yukaltura_get_internal_access_control($connection) {
     try {
-
         $result = $connection->accessControl->listAction();
 
         if (is_null($result)) {
@@ -1662,7 +1685,7 @@ function local_yukaltura_create_default_access_control($connection) {
         $control->restrictions = array();
         $control = $connection->accessControl->add($control);
     } catch (Exception $ex) {
-        $errormessage = 'Error in local_yukaltura_create_internal_profile(' . $ex->getMessage() . ')';
+        $errormessage = 'Error in local_yukaltura_create_default_access_control(' . $ex->getMessage() . ')';
         print_error($errormessage, 'local_yukaltura');
         return null;
     }
@@ -1701,7 +1724,7 @@ function local_yukaltura_create_internal_access_control($connection) {
         $control->restrictions = array($restriction);
         $control = $connection->accessControl->add($control);
     } catch (Exception $ex) {
-        $errormessage = 'Error in local_yukaltura_create_internal_profile(' . $ex->getMessage() . ')';
+        $errormessage = 'Error in local_yukaltura_create_internal_access_control(' . $ex->getMessage() . ')';
         print_error($errormessage, 'local_yukaltura');
         return null;
     }

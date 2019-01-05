@@ -18,14 +18,14 @@
  * YU Kaltura static entries class
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2018 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2019 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * Thanks to Gonen Radai
  */
 
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
-require_once(dirname(dirname(dirname(__FILE__))) . '/local/yukaltura/locallib.php');
+require_once(dirname(__FILE__) . '/API/KalturaClient.php');
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -35,7 +35,7 @@ require_login();
  * Kaltura static entries class.
  *
  * @package local_yukaltura
- * @copyright  (C) 2016-2017 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2019 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStaticEntries {
