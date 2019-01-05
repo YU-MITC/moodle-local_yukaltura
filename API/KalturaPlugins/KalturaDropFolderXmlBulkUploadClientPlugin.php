@@ -18,75 +18,74 @@
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 defined('MOODLE_INTERNAL') || die();
 
+error_reporting(E_STRICT);
+
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
+require_once(dirname(__FILE__) . "/KalturaBulkUploadXmlClientPlugin.php");
 require_once(dirname(__FILE__) . "/KalturaDropFolderClientPlugin.php");
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaDropFolderXmlBulkUploadFileHandlerConfig extends KalturaDropFolderFileHandlerConfig
-{
-
+class KalturaDropFolderXmlBulkUploadFileHandlerConfig extends KalturaDropFolderFileHandlerConfig {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaDropFolderXmlBulkUploadClientPlugin extends KalturaClientPlugin
-{
-    /**
-     * @var KalturaDropFolderXmlBulkUploadClientPlugin
-     */
-    protected static $instance;
+class KalturaDropFolderXmlBulkUploadClientPlugin extends KalturaClientPlugin {
 
-    protected function __construct(KalturaClient $client) {
+    /**
+     * Constructor of Kaltura Drop Folder Xml Bulk Upload Client Plugin.
+     * @param KalturaClient $client - instance of KalturaClient.
+     */
+    public function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
-     * @return KalturaDropFolderXmlBulkUploadClientPlugin
+     * Get object.
+     * @param KalturaClient $client - instance of KalturaClient.
+     * @return KalturaDropFolderXmlBulkUploadClientPlugin - object.
      */
     public static function get(KalturaClient $client) {
-        if (!self::$instance) {
-            self::$instance = new KalturaDropFolderXmlBulkUploadClientPlugin($client);
-        }
-        return self::$instance;
+        return new KalturaDropFolderXmlBulkUploadClientPlugin($client);
     }
 
     /**
-     * @return array<KalturaServiceBase>
+     * Get services.
+     * @return array - array of KalturaServiceBase.
      */
     public function getServices() {
-        $services = array(
-        );
+        $services = array();
         return $services;
     }
 
     /**
-     * @return string
+     * Get plugin name.
+     * @return string - class name.
      */
     public function getName() {
         return 'dropFolderXmlBulkUpload';
     }
 }
-

@@ -18,13 +18,15 @@
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 defined('MOODLE_INTERNAL') || die();
+
+error_reporting(E_STRICT);
 
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
@@ -35,15 +37,33 @@ require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaYouTubeDistributionProfileOrderBy
-{
+class KalturaYouTubeDistributionFeedSpecVersion extends KalturaEnumBase {
+    /** @var version 1 */
+    const VERSION_1 = "1";
+    /** @var version 2 */
+    const VERSION_2 = "2";
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaYouTubeDistributionProfileOrderBy extends KalturaEnumBase {
+    /** @var order by created */
     const CREATED_AT_ASC = "+createdAt";
-    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by updated */
     const UPDATED_AT_ASC = "+updatedAt";
+    /** @var order by created */
+    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by updated */
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
@@ -51,78 +71,128 @@ class KalturaYouTubeDistributionProfileOrderBy
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaYouTubeDistributionProviderOrderBy
-{
+class KalturaYouTubeDistributionProviderOrderBy extends KalturaEnumBase {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaYouTubeDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
-{
-
+class KalturaYouTubeDistributionProvider extends KalturaDistributionProvider {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaYouTubeDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaYouTubeDistributionProfileFilter extends KalturaYouTubeDistributionProfileBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaYouTubeDistributionProviderFilter extends KalturaYouTubeDistributionProviderBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionProfile
-{
+class KalturaYouTubeDistributionJobProviderData extends KalturaConfigurableDistributionJobProviderData {
     /**
      *
+     * @var string
+     */
+    public $videoAssetFilePath = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $thumbAssetFilePath = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $captionAssetIds = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $sftpDirectory = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $sftpMetadataFilename = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $currentPlaylists = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $newPlaylists = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $submitXml = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $updateXml = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $deleteXml = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $googleClientId = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $googleClientSecret = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $googleTokenData = null;
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionProfile {
+    /**
+     *
+     * @var KalturaYouTubeDistributionFeedSpecVersion
+     */
+    public $feedSpecVersion = null;
+
+    /**
      *
      * @var string
      */
@@ -130,13 +200,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var string
      */
     public $notificationEmail = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -144,6 +212,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
+     * @var int
+     */
+    public $sftpPort = null;
+
+    /**
      *
      * @var string
      */
@@ -151,13 +224,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var string
      */
     public $sftpPublicKey = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -165,13 +236,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var string
      */
     public $sftpBaseDir = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -179,13 +248,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var string
      */
     public $defaultCategory = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -193,13 +260,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var string
      */
     public $allowEmbedding = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -207,13 +272,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var string
      */
     public $allowResponses = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -221,13 +284,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var string
      */
     public $ugcPolicy = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -235,13 +296,11 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var string
      */
     public $adServerPartnerId = null;
 
     /**
-     *
      *
      * @var bool
      */
@@ -249,73 +308,195 @@ class KalturaYouTubeDistributionProfile extends KalturaConfigurableDistributionP
 
     /**
      *
-     *
      * @var bool
      */
     public $allowPreRollAds = null;
 
     /**
      *
-     *
      * @var bool
      */
     public $allowPostRollAds = null;
 
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaYouTubeDistributionProvider extends KalturaDistributionProvider
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaYouTubeDistributionClientPlugin extends KalturaClientPlugin
-{
     /**
-     * @var KalturaYouTubeDistributionClientPlugin
+     *
+     * @var string
      */
-    protected static $instance;
+    public $strict = null;
 
-    protected function __construct(KalturaClient $client) {
+    /**
+     *
+     * @var string
+     */
+    public $overrideManualEdits = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $urgentReference = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $allowSyndication = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $hideViewCount = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $allowAdsenseForVideo = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $allowInvideo = null;
+
+    /**
+     *
+     * @var bool
+     */
+    public $allowMidRollAds = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $instreamStandard = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $instreamTrueview = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $claimType = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $blockOutsideOwnership = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $captionAutosync = null;
+
+    /**
+     *
+     * @var bool
+     */
+    public $deleteReference = null;
+
+    /**
+     *
+     * @var bool
+     */
+    public $releaseClaims = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $apiAuthorizeUrl = null;
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+abstract class KalturaYouTubeDistributionProviderBaseFilter extends KalturaDistributionProviderFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaYouTubeDistributionProviderFilter extends KalturaYouTubeDistributionProviderBaseFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+abstract class KalturaYouTubeDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaYouTubeDistributionProfileFilter extends KalturaYouTubeDistributionProfileBaseFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaYouTubeDistributionClientPlugin extends KalturaClientPlugin {
+    /**
+     * Constructor of Kaltura Youtube Distribution Client Plugin.
+     * @param KalturaClient $client - instance of KalturaClient.
+     */
+    public function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
+     * Get object.
+     * @param KalturaClient $client - instance of KalturaClient.
      * @return KalturaYouTubeDistributionClientPlugin
      */
     public static function get(KalturaClient $client) {
-        if (!self::$instance) {
-            self::$instance = new KalturaYouTubeDistributionClientPlugin($client);
-        }
-        return self::$instance;
+        return new KalturaYouTubeDistributionClientPlugin($client);
     }
 
     /**
-     * @return array<KalturaServiceBase>
+     * Get services.
+     * @return array - array of KalturaServiceBase.
      */
     public function getServices() {
-        $services = array(
-        );
+        $services = array();
         return $services;
     }
 
     /**
-     * @return string
+     * Get plugin name.
+     * @return string - class name.
      */
     public function getName() {
         return 'youTubeDistribution';

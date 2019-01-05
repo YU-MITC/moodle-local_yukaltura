@@ -18,32 +18,38 @@
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 defined('MOODLE_INTERNAL') || die();
 
+error_reporting(E_STRICT);
+
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+require_once(dirname(__FILE__) . "/KalturaCuePointClientPlugin.php");
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaDoubleClickDistributionProfileOrderBy
-{
+class KalturaDoubleClickDistributionProfileOrderBy extends KalturaEnumBase {
+    /** @var order by created timestamp */
     const CREATED_AT_ASC = "+createdAt";
-    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by updated timestamp */
     const UPDATED_AT_ASC = "+updatedAt";
+    /** @var order by created timestamp */
+    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by updated timestamp */
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
@@ -51,206 +57,163 @@ class KalturaDoubleClickDistributionProfileOrderBy
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaDoubleClickDistributionProviderOrderBy
-{
+class KalturaDoubleClickDistributionProviderOrderBy extends KalturaEnumBase {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaDoubleClickDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
-{
-
+class KalturaDoubleClickDistributionJobProviderData extends KalturaDistributionJobProviderData {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaDoubleClickDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
-{
-
+class KalturaDoubleClickDistributionProvider extends KalturaDistributionProvider {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaDoubleClickDistributionProfileFilter extends KalturaDoubleClickDistributionProfileBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaDoubleClickDistributionProviderFilter extends KalturaDoubleClickDistributionProviderBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaDoubleClickDistributionProfile extends KalturaConfigurableDistributionProfile
-{
+class KalturaDoubleClickDistributionProfile extends KalturaConfigurableDistributionProfile {
     /**
-     *
-     *
      * @var string
      */
     public $channelTitle = null;
 
     /**
-     *
-     *
      * @var string
      */
     public $channelLink = null;
 
     /**
-     *
-     *
      * @var string
      */
     public $channelDescription = null;
 
     /**
-     *
-     *
      * @var string
+     * @readonly
      */
     public $feedUrl = null;
 
     /**
-     *
-     *
      * @var string
      */
     public $cuePointsProvider = null;
 
     /**
-     *
-     *
      * @var string
      */
     public $itemsPerPage = null;
 
+    /**
+     * @var bool
+     */
+    public $ignoreSchedulingInFeed = null;
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaDoubleClickDistributionProvider extends KalturaDistributionProvider
-{
-
+abstract class KalturaDoubleClickDistributionProviderBaseFilter extends KalturaDistributionProviderFilter {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaDoubleClickService extends KalturaServiceBase
-{
-    public function __construct(KalturaClient $client = null) {
+class KalturaDoubleClickDistributionProviderFilter extends KalturaDoubleClickDistributionProviderBaseFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+abstract class KalturaDoubleClickDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaDoubleClickDistributionProfileFilter extends KalturaDoubleClickDistributionProfileBaseFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin {
+    /**
+     * Constructor of Kaltura Double Click Distribution Client Plugin.
+     * @param KalturaClient $client - instance of KalturaClient.
+     */
+    public function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
-    public function getFeed($distributionprofileid, $hash, $page = 1, $period = -1) {
-        $kparams = array();
-        $this->client->addParam($kparams, "distributionProfileId", $distributionprofileid);
-        $this->client->addParam($kparams, "hash", $hash);
-        $this->client->addParam($kparams, "page", $page);
-        $this->client->addParam($kparams, "period", $period);
-        $this->client->queueServiceActionCall('doubleclickdistribution_doubleclick', 'getFeed', $kparams);
-        $resultobject = $this->client->getServeUrl();
-        return $resultobject;
-    }
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaDoubleClickDistributionClientPlugin extends KalturaClientPlugin
-{
     /**
-     * @var KalturaDoubleClickDistributionClientPlugin
-     */
-    protected static $instance;
-
-    /**
-     * @var KalturaDoubleClickService
-     */
-    public $doubleClick = null;
-
-    protected function __construct(KalturaClient $client) {
-        parent::__construct($client);
-        $this->doubleClick = new KalturaDoubleClickService($client);
-    }
-
-    /**
-     * @return KalturaDoubleClickDistributionClientPlugin
+     * Get object.
+     * @param KalturaClient $client - instance of KalturaClient.
+     * @return KalturaDoubleClickDistributionClientPlugin - instance of KalturaDoubleClickDistributionClientPlugin.
      */
     public static function get(KalturaClient $client) {
-        if (!self::$instance) {
-            self::$instance = new KalturaDoubleClickDistributionClientPlugin($client);
-        }
-        return self::$instance;
+        return new KalturaDoubleClickDistributionClientPlugin($client);
     }
 
     /**
-     * @return array<KalturaServiceBase>
+     * Get services.
+     * @return array - array of KalturaServiceBase.
      */
     public function getServices() {
-        $services = array(
-            'doubleClick' => $this->doubleClick,
-        );
+        $services = array();
         return $services;
     }
 
     /**
-     * @return string
+     * Get plugin name.
+     * @return string - class name
      */
     public function getName() {
         return 'doubleClickDistribution';

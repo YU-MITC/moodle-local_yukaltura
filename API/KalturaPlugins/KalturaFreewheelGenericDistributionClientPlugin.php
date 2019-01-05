@@ -18,32 +18,38 @@
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 defined('MOODLE_INTERNAL') || die();
 
+error_reporting(E_STRICT);
+
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+require_once(dirname(__FILE__) . "/KalturaCuePointClientPlugin.php");
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaFreewheelGenericDistributionProfileOrderBy
-{
+class KalturaFreewheelGenericDistributionProfileOrderBy extends KalturaEnumBase {
+    /** @var order by created */
     const CREATED_AT_ASC = "+createdAt";
-    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by updated */
     const UPDATED_AT_ASC = "+updatedAt";
+    /** @var order by created */
+    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by updated */
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
@@ -51,78 +57,64 @@ class KalturaFreewheelGenericDistributionProfileOrderBy
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaFreewheelGenericDistributionProviderOrderBy
-{
+class KalturaFreewheelGenericDistributionProviderOrderBy extends KalturaEnumBase {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaFreewheelGenericDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
-{
-
+class KalturaFreewheelGenericDistributionProvider extends KalturaDistributionProvider {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaFreewheelGenericDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
-{
+class KalturaFreewheelGenericDistributionJobProviderData extends KalturaConfigurableDistributionJobProviderData {
+    /**
+     * Demonstrate passing array of paths to the job
+     *
+     * @var array of KalturaString
+     */
+    public $videoAssetFilePaths;
 
-}
+    /**
+     * Demonstrate passing single path to the job
+     *
+     * @var string
+     */
+    public $thumbAssetFilePath = null;
 
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaFreewheelGenericDistributionProfileFilter extends KalturaFreewheelGenericDistributionProfileBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaFreewheelGenericDistributionProviderFilter extends KalturaFreewheelGenericDistributionProviderBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDistributionProfile
-{
     /**
      *
+     * @var array of KalturaCuePoint
+     */
+    public $cuePoints;
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDistributionProfile {
+    /**
      *
      * @var string
      */
@@ -130,13 +122,11 @@ class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDist
 
     /**
      *
-     *
      * @var string
      */
     public $email = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -144,13 +134,11 @@ class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDist
 
     /**
      *
-     *
      * @var string
      */
     public $sftpLogin = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -158,13 +146,11 @@ class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDist
 
     /**
      *
-     *
      * @var string
      */
     public $upstreamVideoId = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -172,13 +158,11 @@ class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDist
 
     /**
      *
-     *
      * @var string
      */
     public $upstreamNetworkId = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -186,73 +170,99 @@ class KalturaFreewheelGenericDistributionProfile extends KalturaConfigurableDist
 
     /**
      *
-     *
      * @var bool
      */
     public $replaceGroup = null;
 
     /**
      *
-     *
      * @var bool
      */
     public $replaceAirDates = null;
-
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaFreewheelGenericDistributionProvider extends KalturaDistributionProvider
-{
-
+abstract class KalturaFreewheelGenericDistributionProviderBaseFilter extends KalturaDistributionProviderFilter {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaFreewheelGenericDistributionClientPlugin extends KalturaClientPlugin
-{
+class KalturaFreewheelGenericDistributionProviderFilter extends KalturaFreewheelGenericDistributionProviderBaseFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+abstract class KalturaFreewheelGenericDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaFreewheelGenericDistributionProfileFilter extends KalturaFreewheelGenericDistributionProfileBaseFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaFreewheelGenericDistributionClientPlugin extends KalturaClientPlugin {
     /**
-     * @var KalturaFreewheelGenericDistributionClientPlugin
+     * Constructor of Kaltura Freewheel Generic Distribution Client Plugin.
+     * @param KalturaClient $client - instance of KalturaClient.
      */
-    protected static $instance;
-
-    protected function __construct(KalturaClient $client) {
+    public function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
-     * @return KalturaFreewheelGenericDistributionClientPlugin
+     * Get object.
+     * @param KalturaClient $client - instance of KalturaClient.
+     * @return  - KalturaFreewheelGenericDistributionClientPlugin - object.
      */
     public static function get(KalturaClient $client) {
-        if (!self::$instance) {
-            self::$instance = new KalturaFreewheelGenericDistributionClientPlugin($client);
-        }
-        return self::$instance;
+        return new KalturaFreewheelGenericDistributionClientPlugin($client);
     }
 
     /**
-     * @return array<KalturaServiceBase>
+     * Get services.
+     * @return array - array of KalturaServiceBase.
      */
     public function getServices() {
-        $services = array(
-        );
+        $services = array();
         return $services;
     }
 
     /**
-     * @return string
+     * Get plugin name.
+     * @return string - class name.
      */
     public function getName() {
         return 'freewheelGenericDistribution';

@@ -18,32 +18,38 @@
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 defined('MOODLE_INTERNAL') || die();
 
+error_reporting(E_STRICT);
+
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
 require_once(dirname(__FILE__) . "/../KalturaTypes.php");
 require_once(dirname(__FILE__) . "/KalturaContentDistributionClientPlugin.php");
+require_once(dirname(__FILE__) . "/KalturaCuePointClientPlugin.php");
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaHuluDistributionProfileOrderBy
-{
+class KalturaHuluDistributionProfileOrderBy extends KalturaEnumBase {
+    /** @var order by created */
     const CREATED_AT_ASC = "+createdAt";
-    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by updated */
     const UPDATED_AT_ASC = "+updatedAt";
+    /** @var order by created */
+    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by updated */
     const UPDATED_AT_DESC = "-updatedAt";
 }
 
@@ -51,78 +57,74 @@ class KalturaHuluDistributionProfileOrderBy
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaHuluDistributionProviderOrderBy
-{
+class KalturaHuluDistributionProviderOrderBy extends KalturaEnumBase {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaHuluDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter
-{
-
+class KalturaHuluDistributionProvider extends KalturaDistributionProvider {
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaHuluDistributionProviderBaseFilter extends KalturaDistributionProviderFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaHuluDistributionProfileFilter extends KalturaHuluDistributionProfileBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaHuluDistributionProviderFilter extends KalturaHuluDistributionProviderBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProfile
-{
+class KalturaHuluDistributionJobProviderData extends KalturaConfigurableDistributionJobProviderData {
     /**
      *
+     * @var string
+     */
+    public $videoAssetFilePath = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $thumbAssetFilePath = null;
+
+    /**
+     *
+     * @var array of KalturaCuePoint
+     */
+    public $cuePoints;
+
+    /**
+     *
+     * @var string
+     */
+    public $fileBaseName = null;
+
+    /**
+     *
+     * @var array of KalturaString
+     */
+    public $captionLocalPaths;
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProfile {
+    /**
      *
      * @var string
      */
@@ -130,13 +132,11 @@ class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProf
 
     /**
      *
-     *
      * @var string
      */
     public $sftpLogin = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -144,13 +144,11 @@ class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProf
 
     /**
      *
-     *
      * @var string
      */
     public $seriesChannel = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -158,13 +156,11 @@ class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProf
 
     /**
      *
-     *
      * @var array of KalturaString
      */
     public $seriesAdditionalCategories;
 
     /**
-     *
      *
      * @var string
      */
@@ -172,13 +168,11 @@ class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProf
 
     /**
      *
-     *
      * @var string
      */
     public $seasonSynopsis = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -186,66 +180,147 @@ class KalturaHuluDistributionProfile extends KalturaConfigurableDistributionProf
 
     /**
      *
-     *
      * @var string
      */
     public $videoMediaType = null;
 
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaHuluDistributionProvider extends KalturaDistributionProvider
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin
-{
     /**
-     * @var KalturaHuluDistributionClientPlugin
+     *
+     * @var bool
      */
-    protected static $instance;
+    public $disableEpisodeNumberCustomValidation = null;
 
-    protected function __construct(KalturaClient $client) {
+    /**
+     *
+     * @var KalturaDistributionProtocol
+     */
+    public $protocol = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $asperaHost = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $asperaLogin = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $asperaPass = null;
+
+    /**
+     *
+     * @var int
+     */
+    public $port = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $passphrase = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $asperaPublicKey = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $asperaPrivateKey = null;
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+abstract class KalturaHuluDistributionProviderBaseFilter extends KalturaDistributionProviderFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaHuluDistributionProviderFilter extends KalturaHuluDistributionProviderBaseFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+abstract class KalturaHuluDistributionProfileBaseFilter extends KalturaConfigurableDistributionProfileFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaHuluDistributionProfileFilter extends KalturaHuluDistributionProfileBaseFilter {
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaHuluDistributionClientPlugin extends KalturaClientPlugin {
+    /**
+     * Constructor of Kaltura Hulu Distribution Client Plugin.
+     * @param KalturaClient $client - instance of KalturaClient.
+     */
+    public function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
-     * @return KalturaHuluDistributionClientPlugin
+     * Get object.
+     * @param KalturaClient $client - instance of KalturaClient.
+     * @return instance of KalturaHuluDistributionClientPlugin - object.
      */
     public static function get(KalturaClient $client) {
-        if (!self::$instance) {
-            self::$instance = new KalturaHuluDistributionClientPlugin($client);
-        }
-        return self::$instance;
+        return new KalturaHuluDistributionClientPlugin($client);
     }
 
     /**
-     * @return array<KalturaServiceBase>
+     * Get services.
+     * @return array - array of KalturaServiceBase.
      */
     public function getServices() {
-        $services = array(
-        );
+        $services = array();
         return $services;
     }
 
     /**
-     * @return string
+     * Get plugin name.
+     * @return string - class name.
      */
     public function getName() {
         return 'huluDistribution';

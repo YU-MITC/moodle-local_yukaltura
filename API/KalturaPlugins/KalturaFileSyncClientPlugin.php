@@ -18,13 +18,15 @@
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/config.php');
 defined('MOODLE_INTERNAL') || die();
+
+error_reporting(E_STRICT);
 
 require_once(dirname(__FILE__) . "/../KalturaClientBase.php");
 require_once(dirname(__FILE__) . "/../KalturaEnums.php");
@@ -34,38 +36,20 @@ require_once(dirname(__FILE__) . "/../KalturaTypes.php");
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaFileSyncOrderBy
-{
-    const CREATED_AT_ASC = "+createdAt";
-    const CREATED_AT_DESC = "-createdAt";
-    const UPDATED_AT_ASC = "+updatedAt";
-    const UPDATED_AT_DESC = "-updatedAt";
-    const READY_AT_ASC = "+readyAt";
-    const READY_AT_DESC = "-readyAt";
-    const SYNC_TIME_ASC = "+syncTime";
-    const SYNC_TIME_DESC = "-syncTime";
-    const FILE_SIZE_ASC = "+fileSize";
-    const FILE_SIZE_DESC = "-fileSize";
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaFileSyncStatus
-{
+class KalturaFileSyncStatus extends KalturaEnumBase {
+    /** @var error */
     const ERROR = -1;
+    /** @var pending */
     const PENDING = 1;
+    /** @var ready */
     const READY = 2;
+    /** @var deleted */
     const DELETED = 3;
+    /** @var purged */
     const PURGED = 4;
 }
 
@@ -73,14 +57,16 @@ class KalturaFileSyncStatus
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaFileSyncType
-{
+class KalturaFileSyncType extends KalturaEnumBase {
+    /** @var file */
     const FILE = 1;
+    /** @var link */
     const LINK = 2;
+    /** @var url */
     const URL = 3;
 }
 
@@ -88,14 +74,246 @@ class KalturaFileSyncType
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-abstract class KalturaFileSyncBaseFilter extends KalturaFilter
-{
+class KalturaFileSyncOrderBy extends KalturaEnumBase {
+    /** @var order by created */
+    const CREATED_AT_ASC = "+createdAt";
+    /** @var order by file size */
+    const FILE_SIZE_ASC = "+fileSize";
+    /** @var order by ready */
+    const READY_AT_ASC = "+readyAt";
+    /** @var order by sync time */
+    const SYNC_TIME_ASC = "+syncTime";
+    /** @var order by updated */
+    const UPDATED_AT_ASC = "+updatedAt";
+    /** @var order by version */
+    const VERSION_ASC = "+version";
+    /** @var order by created */
+    const CREATED_AT_DESC = "-createdAt";
+    /** @var order by file size */
+    const FILE_SIZE_DESC = "-fileSize";
+    /** @var order by ready */
+    const READY_AT_DESC = "-readyAt";
+    /** @var order by sync time */
+    const SYNC_TIME_DESC = "-syncTime";
+    /** @var order by updated */
+    const UPDATED_AT_DESC = "-updatedAt";
+    /** @var order by version */
+    const VERSION_DESC = "-version";
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaFileSync extends KalturaObjectBase {
     /**
      *
+     * @var int
+     * @readonly
+     */
+    public $id = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $partnerId = null;
+
+    /**
+     *
+     * @var KalturaFileSyncObjectType
+     * @readonly
+     */
+    public $fileObjectType = null;
+
+    /**
+     *
+     * @var string
+     * @readonly
+     */
+    public $objectId = null;
+
+    /**
+     *
+     * @var string
+     * @readonly
+     */
+    public $version = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $objectSubType = null;
+
+    /**
+     *
+     * @var string
+     * @readonly
+     */
+    public $dc = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $original = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $createdAt = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $updatedAt = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $readyAt = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $syncTime = null;
+
+    /**
+     *
+     * @var KalturaFileSyncStatus
+     */
+    public $status = null;
+
+    /**
+     *
+     * @var KalturaFileSyncType
+     * @readonly
+     */
+    public $fileType = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $linkedId = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $linkCount = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $fileRoot = null;
+
+    /**
+     *
+     * @var string
+     */
+    public $filePath = null;
+
+    /**
+     *
+     * @var float
+     * @readonly
+     */
+    public $fileSize = null;
+
+    /**
+     *
+     * @var string
+     * @readonly
+     */
+    public $fileUrl = null;
+
+    /**
+     *
+     * @var string
+     * @readonly
+     */
+    public $fileContent = null;
+
+    /**
+     *
+     * @var float
+     * @readonly
+     */
+    public $fileDiscSize = null;
+
+    /**
+     *
+     * @var bool
+     * @readonly
+     */
+    public $isCurrentDc = null;
+
+    /**
+     *
+     * @var bool
+     * @readonly
+     */
+    public $isDir = null;
+
+    /**
+     *
+     * @var int
+     * @readonly
+     */
+    public $originalId = null;
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaFileSyncListResponse extends KalturaListResponse {
+    /**
+     *
+     * @var array of KalturaFileSync
+     * @readonly
+     */
+    public $objects;
+}
+
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+abstract class KalturaFileSyncBaseFilter extends KalturaFilter {
+    /**
      *
      * @var int
      */
@@ -103,13 +321,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var KalturaFileSyncObjectType
      */
     public $fileObjectTypeEqual = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -117,13 +333,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var string
      */
     public $objectIdEqual = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -131,13 +345,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var string
      */
     public $versionEqual = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -145,13 +357,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var int
      */
     public $objectSubTypeEqual = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -159,13 +369,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var string
      */
     public $dcEqual = null;
 
     /**
-     *
      *
      * @var string
      */
@@ -173,13 +381,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var int
      */
     public $originalEqual = null;
 
     /**
-     *
      *
      * @var int
      */
@@ -187,13 +393,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var int
      */
     public $createdAtLessThanOrEqual = null;
 
     /**
-     *
      *
      * @var int
      */
@@ -201,13 +405,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var int
      */
     public $updatedAtLessThanOrEqual = null;
 
     /**
-     *
      *
      * @var int
      */
@@ -215,13 +417,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var int
      */
     public $readyAtLessThanOrEqual = null;
 
     /**
-     *
      *
      * @var int
      */
@@ -229,13 +429,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var int
      */
     public $syncTimeLessThanOrEqual = null;
 
     /**
-     *
      *
      * @var KalturaFileSyncStatus
      */
@@ -243,13 +441,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var string
      */
     public $statusIn = null;
 
     /**
-     *
      *
      * @var KalturaFileSyncType
      */
@@ -257,13 +453,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var string
      */
     public $fileTypeIn = null;
 
     /**
-     *
      *
      * @var int
      */
@@ -271,13 +465,11 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
      * @var int
      */
     public $linkCountGreaterThanOrEqual = null;
 
     /**
-     *
      *
      * @var int
      */
@@ -285,64 +477,62 @@ abstract class KalturaFileSyncBaseFilter extends KalturaFilter
 
     /**
      *
-     *
-     * @var int
+     * @var float
      */
     public $fileSizeGreaterThanOrEqual = null;
 
     /**
      *
-     *
-     * @var int
+     * @var float
      */
     public $fileSizeLessThanOrEqual = null;
-
 }
 
 /**
  * Kaltura Client API.
  *
  * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class KalturaFileSyncFilter extends KalturaFileSyncBaseFilter
-{
-
-}
-
-/**
- * Kaltura Client API.
- *
- * @package   local_yukaltura
- * @copyright (C) 2014 Kaltura Inc.
- * @copyright (C) 2016-2018 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-class KalturaFileSyncClientPlugin extends KalturaClientPlugin
-{
+class KalturaFileSyncFilter extends KalturaFileSyncBaseFilter {
     /**
-     * @var KalturaFileSyncClientPlugin
+     *
+     * @var KalturaNullableBoolean
      */
-    protected static $instance;
+    public $currentDc = null;
+}
 
-    protected function __construct(KalturaClient $client) {
+/**
+ * Kaltura Client API.
+ *
+ * @package   local_yukaltura
+ * @copyright (C) 2018 Kaltura Inc.
+ * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class KalturaFileSyncClientPlugin extends KalturaClientPlugin {
+    /**
+     * Constructor of Kaltura File Sync Client Plugin.
+     * @param KalturaClient $client - instance of KalturaClient.
+     */
+    public function __construct(KalturaClient $client) {
         parent::__construct($client);
     }
 
     /**
-     * @return KalturaFileSyncClientPlugin
+     * Get object.
+     * @param KalturaClient $client - instance of KalutaClient.
+     * @return KalturaFileSyncClientPlugin - object.
      */
     public static function get(KalturaClient $client) {
-        if (!self::$instance) {
-            self::$instance = new KalturaFileSyncClientPlugin($client);
-        }
-        return self::$instance;
+        return new KalturaFileSyncClientPlugin($client);
     }
 
     /**
-     * @return array<KalturaServiceBase>
+     * Get services.
+     * @return array - array of KalturaServiceBase.
      */
     public function getServices() {
         $services = array(
@@ -351,7 +541,8 @@ class KalturaFileSyncClientPlugin extends KalturaClientPlugin
     }
 
     /**
-     * @return string
+     * Get plugin name.
+     * @return string - class name.
      */
     public function getName() {
         return 'fileSync';
