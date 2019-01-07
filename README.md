@@ -80,7 +80,7 @@ Change log of YU Kaltura Media Local Libraries
 Version 1.2.1
 
 * fixed some statements in simpleselector.js, based on JSDoc warnings.
-* fixed some statements in lcoallib.php, in order to fixed issue about "Invalid Session Str" errors.
+* fixed some statements in lcoallib.php, in order to fixed issue about "Invalid KS" errors.
 * "Kaltura Client Libraries" has been replaced from "3.1.4" to "3.3.0".
 
 Version 1.2.0
