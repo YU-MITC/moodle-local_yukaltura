@@ -575,7 +575,6 @@ class KalturaDistributionFieldConfig extends KalturaObjectBase {
     /**
      * Is this field config is the default for the distribution provider?
      * @var bool
-     * @readonly
      */
     public $isDefault = null;
 
@@ -629,33 +628,28 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase {
     /**
      * Auto generated unique id
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      * Profile creation date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      * Profile last update date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      * @var KalturaDistributionProviderType
-     * @insertonly
      */
     public $providerType = null;
 
@@ -779,7 +773,6 @@ abstract class KalturaDistributionProfile extends KalturaObjectBase {
 abstract class KalturaDistributionProvider extends KalturaObjectBase {
     /**
      * @var KalturaDistributionProviderType
-     * @readonly
      */
     public $type = null;
 
@@ -886,64 +879,54 @@ class KalturaEntryDistribution extends KalturaObjectBase {
     /**
      * Auto generated unique id
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      * Entry distribution creation date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      * Entry distribution last update date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      * Entry distribution submission date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $submittedAt = null;
 
     /**
      * @var string
-     * @insertonly
      */
     public $entryId = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      * @var int
-     * @insertonly
      */
     public $distributionProfileId = null;
 
     /**
      * @var KalturaEntryDistributionStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      * @var KalturaEntryDistributionSunStatus
-     * @readonly
      */
     public $sunStatus = null;
 
     /**
      * @var KalturaEntryDistributionFlag
-     * @readonly
      */
     public $dirtyStatus = null;
 
@@ -980,21 +963,18 @@ class KalturaEntryDistribution extends KalturaObjectBase {
     /**
      * The id as returned from the distributed destination
      * @var string
-     * @readonly
      */
     public $remoteId = null;
 
     /**
      * The plays as retrieved from the remote destination reports
      * @var int
-     * @readonly
      */
     public $plays = null;
 
     /**
      * The views as retrieved from the remote destination reports
      * @var int
-     * @readonly
      */
     public $views = null;
 
@@ -1005,55 +985,46 @@ class KalturaEntryDistribution extends KalturaObjectBase {
 
     /**
      * @var KalturaBatchJobErrorTypes
-     * @readonly
      */
     public $errorType = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $errorNumber = null;
 
     /**
      * @var string
-     * @readonly
      */
     public $errorDescription = null;
 
     /**
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasSubmitResultsLog = null;
 
     /**
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasSubmitSentDataLog = null;
 
     /**
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasUpdateResultsLog = null;
 
     /**
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasUpdateSentDataLog = null;
 
     /**
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasDeleteResultsLog = null;
 
     /**
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $hasDeleteSentDataLog = null;
 }
@@ -1120,39 +1091,33 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase {
     /**
      * Auto generated
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      * Generic distribution provider action creation date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      * Generic distribution provider action last update date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      * @var int
-     * @insertonly
      */
     public $genericDistributionProviderId = null;
 
     /**
      * @var KalturaDistributionAction
-     * @insertonly
      */
     public $action = null;
 
     /**
      * @var KalturaGenericDistributionProviderStatus
-     * @readonly
      */
     public $status = null;
 
@@ -1198,19 +1163,16 @@ class KalturaGenericDistributionProviderAction extends KalturaObjectBase {
 
     /**
      * @var string
-     * @readonly
      */
     public $mrssTransformer = null;
 
     /**
      * @var string
-     * @readonly
      */
     public $mrssValidator = null;
 
     /**
      * @var string
-     * @readonly
      */
     public $resultsTransformer = null;
 }
@@ -1227,27 +1189,23 @@ class KalturaGenericDistributionProvider extends KalturaDistributionProvider {
     /**
      * Auto generated
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      * Generic distribution provider creation date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      * Generic distribution provider last update date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -1258,7 +1216,6 @@ class KalturaGenericDistributionProvider extends KalturaDistributionProvider {
 
     /**
      * @var KalturaGenericDistributionProviderStatus
-     * @readonly
      */
     public $status = null;
 
@@ -1531,7 +1488,6 @@ abstract class KalturaDistributionProfileBaseFilter extends KalturaFilter {
 class KalturaDistributionProfileListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaDistributionProfile
-     * @readonly
      */
     public $objects;
 }
@@ -1567,7 +1523,6 @@ abstract class KalturaDistributionProviderBaseFilter extends KalturaFilter {
 class KalturaDistributionProviderListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaDistributionProvider
-     * @readonly
      */
     public $objects;
 }
@@ -1685,7 +1640,6 @@ class KalturaDistributionValidationErrorMissingThumbnail extends KalturaDistribu
 class KalturaEntryDistributionListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaEntryDistribution
-     * @readonly
      */
     public $objects;
 }
@@ -1726,7 +1680,6 @@ class KalturaGenericDistributionJobProviderData extends KalturaDistributionJobPr
 class KalturaGenericDistributionProfile extends KalturaDistributionProfile {
     /**
      * @var int
-     * @insertonly
      */
     public $genericProviderId = null;
 
@@ -1832,7 +1785,6 @@ abstract class KalturaGenericDistributionProviderActionBaseFilter extends Kaltur
 class KalturaGenericDistributionProviderActionListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaGenericDistributionProviderAction
-     * @readonly
      */
     public $objects;
 }
@@ -1848,7 +1800,6 @@ class KalturaGenericDistributionProviderActionListResponse extends KalturaListRe
 class KalturaGenericDistributionProviderListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaGenericDistributionProvider
-     * @readonly
      */
     public $objects;
 }
@@ -1869,7 +1820,6 @@ class KalturaSyndicationDistributionProfile extends KalturaDistributionProfile {
 
     /**
      * @var string
-     * @readonly
      */
     public $feedId = null;
 }

@@ -279,14 +279,12 @@ class KalturaEventNotificationTemplate extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -311,28 +309,24 @@ class KalturaEventNotificationTemplate extends KalturaObjectBase {
     /**
      *
      * @var KalturaEventNotificationTemplateType
-     * @insertonly
      */
     public $type = null;
 
     /**
      *
      * @var KalturaEventNotificationTemplateStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -577,7 +571,6 @@ class KalturaEventNotificationTemplateListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaEventNotificationTemplate
-     * @readonly
      */
     public $objects;
 }

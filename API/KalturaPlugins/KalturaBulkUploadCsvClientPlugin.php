@@ -62,7 +62,6 @@ class KalturaBulkUploadCsvJobData extends KalturaBulkUploadJobData {
     /**
      * The version of the csv file
      * @var KalturaBulkUploadCsvVersion
-     * @readonly
      */
     public $csvVersion = null;
 

@@ -85,7 +85,6 @@ class KalturaAvnDistributionProvider extends KalturaDistributionProvider {
 class KalturaAvnDistributionProfile extends KalturaConfigurableDistributionProfile {
     /**
      * @var string
-     * @readonly
      */
     public $feedUrl = null;
 

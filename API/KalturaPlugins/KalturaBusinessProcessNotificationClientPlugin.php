@@ -221,27 +221,23 @@ abstract class KalturaBusinessProcessServer extends KalturaObjectBase {
     /**
      * Auto generated identifier
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      * Server creation date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      * Server update date as Unix timestamp (In seconds)
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -262,14 +258,12 @@ abstract class KalturaBusinessProcessServer extends KalturaObjectBase {
 
     /**
      * @var KalturaBusinessProcessServerStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      * The type of the server, this is auto filled by the derived server object
      * @var KalturaBusinessProcessProvider
-     * @readonly
      */
     public $type = null;
 
@@ -414,7 +408,6 @@ abstract class KalturaBusinessProcessServerBaseFilter extends KalturaFilter {
 class KalturaBusinessProcessServerListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaBusinessProcessServer
-     * @readonly
      */
     public $objects;
 }

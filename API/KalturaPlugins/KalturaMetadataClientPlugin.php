@@ -174,77 +174,66 @@ class KalturaMetadata extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $metadataProfileId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $metadataProfileVersion = null;
 
     /**
      *
      * @var KalturaMetadataObjectType
-     * @readonly
      */
     public $metadataObjectType = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $objectId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var KalturaMetadataStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $xml = null;
 }
@@ -261,14 +250,12 @@ class KalturaMetadataProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -281,7 +268,6 @@ class KalturaMetadataProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 
@@ -306,42 +292,36 @@ class KalturaMetadataProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var KalturaMetadataProfileStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $xsd = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $views = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $xslt = null;
 
@@ -370,28 +350,24 @@ class KalturaMetadataProfileField extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $xPath = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $key = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $label = null;
 }
@@ -436,7 +412,6 @@ class KalturaMetadataListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaMetadata
-     * @readonly
      */
     public $objects;
 }
@@ -571,7 +546,6 @@ class KalturaMetadataProfileFieldListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaMetadataProfileField
-     * @readonly
      */
     public $objects;
 }
@@ -588,7 +562,6 @@ class KalturaMetadataProfileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaMetadataProfile
-     * @readonly
      */
     public $objects;
 }

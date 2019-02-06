@@ -83,7 +83,6 @@ class KalturaAnnotationOrderBy extends KalturaEnumBase {
 class KalturaAnnotation extends KalturaCuePoint {
     /**
      * @var string
-     * @insertonly
      */
     public $parentId = null;
 
@@ -101,28 +100,24 @@ class KalturaAnnotation extends KalturaCuePoint {
     /**
      * Duration in milliseconds
      * @var int
-     * @readonly
      */
     public $duration = null;
 
     /**
      * Depth in the tree
      * @var int
-     * @readonly
      */
     public $depth = null;
 
     /**
      * Number of all descendants
      * @var int
-     * @readonly
      */
     public $childrenCount = null;
 
     /**
      * Number of children, first generation only.
      * @var int
-     * @readonly
      */
     public $directChildrenCount = null;
 
@@ -150,7 +145,6 @@ class KalturaAnnotation extends KalturaCuePoint {
 class KalturaAnnotationListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaAnnotation
-     * @readonly
      */
     public $objects;
 }

@@ -124,7 +124,6 @@ class KalturaCaptionAsset extends KalturaAsset {
     /**
      * The Caption Params used to create this Caption Asset
      * @var int
-     * @insertonly
      */
     public $captionParamsId = null;
 
@@ -137,7 +136,6 @@ class KalturaCaptionAsset extends KalturaAsset {
     /**
      * The language of the caption asset content
      * @var KalturaLanguageCode
-     * @readonly
      */
     public $languageCode = null;
 
@@ -158,21 +156,18 @@ class KalturaCaptionAsset extends KalturaAsset {
      * The caption format
      *
      * @var KalturaCaptionType
-     * @insertonly
      */
     public $format = null;
 
     /**
      * The status of the asset
      * @var KalturaCaptionAssetStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      * The parent id of the asset
      * @var string
-     * @insertonly
      */
     public $parentId = null;
 
@@ -195,7 +190,6 @@ class KalturaCaptionParams extends KalturaAssetParams {
     /**
      * The language of the caption content
      * @var KalturaLanguage
-     * @insertonly
      */
     public $language = null;
 
@@ -214,7 +208,6 @@ class KalturaCaptionParams extends KalturaAssetParams {
     /**
      * The caption format
      * @var KalturaCaptionType
-     * @insertonly
      */
     public $format = null;
 
@@ -236,7 +229,6 @@ class KalturaCaptionParams extends KalturaAssetParams {
 class KalturaCaptionAssetListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaCaptionAsset
-     * @readonly
      */
     public $objects;
 }
@@ -253,7 +245,6 @@ class KalturaCaptionParamsListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaCaptionParams
-     * @readonly
      */
     public $objects;
 }

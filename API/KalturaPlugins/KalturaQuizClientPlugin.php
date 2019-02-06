@@ -141,7 +141,6 @@ class KalturaQuiz extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 
@@ -201,14 +200,12 @@ class KalturaAnswerCuePoint extends KalturaCuePoint {
     /**
      *
      * @var string
-     * @insertonly
      */
     public $parentId = null;
 
     /**
      *
      * @var string
-     * @insertonly
      */
     public $quizUserEntryId = null;
 
@@ -221,7 +218,6 @@ class KalturaAnswerCuePoint extends KalturaCuePoint {
     /**
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $isCorrect = null;
 
@@ -229,14 +225,12 @@ class KalturaAnswerCuePoint extends KalturaCuePoint {
      * Array of string
      *
      * @var array of KalturaString
-     * @readonly
      */
     public $correctAnswerKeys;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $explanation = null;
 }
@@ -304,7 +298,6 @@ class KalturaQuizListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaQuiz
-     * @readonly
      */
     public $objects;
 }

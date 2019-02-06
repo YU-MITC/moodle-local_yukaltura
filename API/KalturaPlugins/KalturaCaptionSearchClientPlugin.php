@@ -81,7 +81,6 @@ class KalturaCaptionAssetItem extends KalturaObjectBase {
 class KalturaCaptionAssetItemListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaCaptionAssetItem
-     * @readonly
      */
     public $objects;
 }

@@ -196,7 +196,6 @@ class KalturaUiConfAdmin extends KalturaUiConf {
 class KalturaTrackEntryListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaTrackEntry
-     * @readonly
      */
     public $objects;
 }
@@ -212,7 +211,6 @@ class KalturaTrackEntryListResponse extends KalturaListResponse {
 class KalturaUiConfAdminListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaUiConfAdmin
-     * @readonly
      */
     public $objects;
 }

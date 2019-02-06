@@ -211,14 +211,12 @@ class KalturaDrmPolicy extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @insertonly
      */
     public $partnerId = null;
 
@@ -280,14 +278,12 @@ class KalturaDrmPolicy extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -310,14 +306,12 @@ class KalturaDrmProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @insertonly
      */
     public $partnerId = null;
 
@@ -360,14 +354,12 @@ class KalturaDrmProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -477,7 +469,6 @@ class KalturaDrmPolicyListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaDrmPolicy
-     * @readonly
      */
     public $objects;
 }
@@ -558,7 +549,6 @@ class KalturaDrmProfileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaDrmProfile
-     * @readonly
      */
     public $objects;
 }

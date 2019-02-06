@@ -139,7 +139,6 @@ class KalturaTimedThumbAsset extends KalturaThumbAsset {
      * Associated thumb cue point ID
      *
      * @var string
-     * @insertonly
      */
     public $cuePointId = null;
 }

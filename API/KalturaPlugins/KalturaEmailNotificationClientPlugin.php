@@ -142,7 +142,6 @@ abstract class KalturaEmailNotificationRecipientJobData extends KalturaObjectBas
      * Provider type of the job data.
      *
      * @var KalturaEmailNotificationRecipientProviderType
-     * @readonly
      */
     public $providerType = null;
 }

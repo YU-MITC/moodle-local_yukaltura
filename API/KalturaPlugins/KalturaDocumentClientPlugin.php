@@ -205,7 +205,6 @@ class KalturaDocumentEntry extends KalturaBaseEntry {
      * The type of the document
      *
      * @var KalturaDocumentType
-     * @insertonly
      */
     public $documentType = null;
 
@@ -213,7 +212,6 @@ class KalturaDocumentEntry extends KalturaBaseEntry {
      * Comma separated asset params ids that exists for this media entry
      *
      * @var string
-     * @readonly
      */
     public $assetParamsIds = null;
 }
@@ -229,7 +227,6 @@ class KalturaDocumentEntry extends KalturaBaseEntry {
 class KalturaDocumentListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaDocumentEntry
-     * @readonly
      */
     public $objects;
 }

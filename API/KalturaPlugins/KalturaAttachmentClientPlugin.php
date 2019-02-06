@@ -131,7 +131,6 @@ class KalturaAttachmentAsset extends KalturaAsset {
     /**
      * The status of the asset
      * @var KalturaAttachmentAssetStatus
-     * @readonly
      */
     public $status = null;
 }
@@ -147,7 +146,6 @@ class KalturaAttachmentAsset extends KalturaAsset {
 class KalturaAttachmentAssetListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaAttachmentAsset
-     * @readonly
      */
     public $objects;
 }

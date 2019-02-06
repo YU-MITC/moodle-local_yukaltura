@@ -97,7 +97,6 @@ class KalturaIntegrationJobData extends KalturaJobData {
     /**
      *
      * @var string
-     * @readonly
      */
     public $callbackNotificationUrl = null;
 

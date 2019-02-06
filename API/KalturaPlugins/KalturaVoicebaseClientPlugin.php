@@ -75,7 +75,6 @@ class KalturaVoicebaseJobProviderData extends KalturaIntegrationJobProviderData 
      * Api key for service provider
      *
      * @var string
-     * @readonly
      */
     public $apiKey = null;
 
@@ -83,7 +82,6 @@ class KalturaVoicebaseJobProviderData extends KalturaIntegrationJobProviderData 
      * Api key for service provider
      *
      * @var string
-     * @readonly
      */
     public $apiPassword = null;
 
@@ -98,7 +96,6 @@ class KalturaVoicebaseJobProviderData extends KalturaIntegrationJobProviderData 
      * Transcript Content location
      *
      * @var string
-     * @readonly
      */
     public $fileLocation = null;
 
@@ -113,7 +110,6 @@ class KalturaVoicebaseJobProviderData extends KalturaIntegrationJobProviderData 
      * additional parameters to send to VoiceBase
      *
      * @var string
-     * @readonly
      */
     public $additionalParameters = null;
 }

@@ -135,7 +135,6 @@ class KalturaExternalMediaEntry extends KalturaMediaEntry {
      * The source type of the external media
      *
      * @var KalturaExternalMediaSourceType
-     * @insertonly
      */
     public $externalSourceType = null;
 
@@ -143,7 +142,6 @@ class KalturaExternalMediaEntry extends KalturaMediaEntry {
      * Comma separated asset params ids that exists for this external media entry
      *
      * @var string
-     * @readonly
      */
     public $assetParamsIds = null;
 }
@@ -160,7 +158,6 @@ class KalturaExternalMediaEntryListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaExternalMediaEntry
-     * @readonly
      */
     public $objects;
 }

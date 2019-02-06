@@ -243,26 +243,22 @@ abstract class KalturaAuditTrailInfo extends KalturaObjectBase {
 class KalturaAuditTrail extends KalturaObjectBase {
     /**
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      * Indicates when the data was parsed
      * @var int
-     * @readonly
      */
     public $parsedAt = null;
 
     /**
      * @var KalturaAuditTrailStatus
-     * @readonly
      */
     public $status = null;
 
@@ -293,19 +289,16 @@ class KalturaAuditTrail extends KalturaObjectBase {
 
     /**
      * @var int
-     * @readonly
      */
     public $masterPartnerId = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      * @var string
-     * @readonly
      */
     public $requestId = null;
 
@@ -327,38 +320,32 @@ class KalturaAuditTrail extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $ks = null;
 
     /**
      * @var KalturaAuditTrailContext
-     * @readonly
      */
     public $context = null;
 
     /**
      * The API service and action that called and caused this audit
      * @var string
-     * @readonly
      */
     public $entryPoint = null;
 
     /**
      * @var string
-     * @readonly
      */
     public $serverName = null;
 
     /**
      * @var string
-     * @readonly
      */
     public $ipAddress = null;
 
     /**
      * @var string
-     * @readonly
      */
     public $userAgent = null;
 
@@ -374,7 +361,6 @@ class KalturaAuditTrail extends KalturaObjectBase {
 
     /**
      * @var string
-     * @readonly
      */
     public $errorDescription = null;
 }
@@ -480,7 +466,6 @@ class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo {
 class KalturaAuditTrailListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaAuditTrail
-     * @readonly
      */
     public $objects;
 }

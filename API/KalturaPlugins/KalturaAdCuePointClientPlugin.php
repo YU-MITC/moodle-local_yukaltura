@@ -117,7 +117,6 @@ class KalturaAdType extends KalturaEnumBase {
 class KalturaAdCuePoint extends KalturaCuePoint {
     /**
      * @var KalturaAdProtocolType
-     * @insertonly
      */
     public $protocolType = null;
 

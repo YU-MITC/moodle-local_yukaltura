@@ -106,21 +106,18 @@ class KalturaCielo24JobProviderData extends KalturaIntegrationJobProviderData {
     /**
      * Api key for service provider
      * @var string
-     * @readonly
      */
     public $username = null;
 
     /**
      * Api key for service provider
      * @var string
-     * @readonly
      */
     public $password = null;
 
     /**
      * Base url for service provider
      * @var string
-     * @readonly
      */
     public $baseUrl = null;
 

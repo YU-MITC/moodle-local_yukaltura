@@ -42,7 +42,6 @@ class KalturaListResponse extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 }
@@ -71,14 +70,12 @@ class KalturaAccessControl extends KalturaObjectBase {
      * The id of the Access Control Profile
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -107,7 +104,6 @@ class KalturaAccessControl extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -130,7 +126,6 @@ class KalturaAccessControl extends KalturaObjectBase {
      * using KalturaAccessControlProfile object and accessControlProfile service
      *
      * @var bool
-     * @readonly
      */
     public $containsUnsuportedRestrictions = null;
 }
@@ -198,7 +193,6 @@ abstract class KalturaRuleAction extends KalturaObjectBase {
      * The type of the action
      *
      * @var KalturaRuleActionType
-     * @readonly
      */
     public $type = null;
 }
@@ -216,7 +210,6 @@ abstract class KalturaCondition extends KalturaObjectBase {
      * The type of the access control condition
      *
      * @var KalturaConditionType
-     * @readonly
      */
     public $type = null;
 
@@ -319,14 +312,12 @@ class KalturaAccessControlProfile extends KalturaObjectBase {
      * The id of the Access Control Profile
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -355,7 +346,6 @@ class KalturaAccessControlProfile extends KalturaObjectBase {
      * Creation time as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -363,7 +353,6 @@ class KalturaAccessControlProfile extends KalturaObjectBase {
      * Update time as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -581,7 +570,6 @@ class KalturaAppToken extends KalturaObjectBase {
      * The id of the application token
      *
      * @var string
-     * @readonly
      */
     public $id = null;
 
@@ -589,14 +577,12 @@ class KalturaAppToken extends KalturaObjectBase {
      * The application token
      *
      * @var string
-     * @readonly
      */
     public $token = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -604,7 +590,6 @@ class KalturaAppToken extends KalturaObjectBase {
      * Creation time as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -612,7 +597,6 @@ class KalturaAppToken extends KalturaObjectBase {
      * Update time as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -620,7 +604,6 @@ class KalturaAppToken extends KalturaObjectBase {
      * Application token status
      *
      * @var KalturaAppTokenStatus
-     * @readonly
      */
     public $status = null;
 
@@ -685,7 +668,6 @@ class KalturaAsset extends KalturaObjectBase {
      * The ID of the Flavor Asset
      *
      * @var string
-     * @readonly
      */
     public $id = null;
 
@@ -693,14 +675,12 @@ class KalturaAsset extends KalturaObjectBase {
      * The entry ID of the Flavor Asset
      *
      * @var string
-     * @readonly
      */
     public $entryId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -708,7 +688,6 @@ class KalturaAsset extends KalturaObjectBase {
      * The version of the Flavor Asset
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 
@@ -716,7 +695,6 @@ class KalturaAsset extends KalturaObjectBase {
      * The size (in KBytes) of the Flavor Asset
      *
      * @var int
-     * @readonly
      */
     public $size = null;
 
@@ -731,28 +709,24 @@ class KalturaAsset extends KalturaObjectBase {
      * The file extension
      *
      * @var string
-     * @insertonly
      */
     public $fileExt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $deletedAt = null;
 
@@ -760,7 +734,6 @@ class KalturaAsset extends KalturaObjectBase {
      * System description, error message, warnings and failure cause.
      *
      * @var string
-     * @readonly
      */
     public $description = null;
 
@@ -815,7 +788,6 @@ class KalturaAssetParams extends KalturaObjectBase {
      * The id of the Flavor Params
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -850,7 +822,6 @@ class KalturaAssetParams extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -858,7 +829,6 @@ class KalturaAssetParams extends KalturaObjectBase {
      * True if those Flavor Params are part of system defaults
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $isSystemDefault = null;
 
@@ -997,7 +967,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Auto generated 10 characters alphanumeric string
      *
      * @var string
-     * @readonly
      */
     public $id = null;
 
@@ -1018,7 +987,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -1033,7 +1001,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * The ID of the user who created this entry
      *
      * @var string
-     * @insertonly
      */
     public $creatorId = null;
 
@@ -1072,7 +1039,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
     /**
      *
      * @var KalturaEntryStatus
-     * @readonly
      */
     public $status = null;
 
@@ -1080,7 +1046,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Entry moderation status
      *
      * @var KalturaEntryModerationStatus
-     * @readonly
      */
     public $moderationStatus = null;
 
@@ -1088,7 +1053,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Number of moderation requests waiting for this entry
      *
      * @var int
-     * @readonly
      */
     public $moderationCount = null;
 
@@ -1103,7 +1067,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Entry creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -1111,7 +1074,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Entry update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -1119,7 +1081,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * The calculated average rank. rank = totalRank / votes
      *
      * @var float
-     * @readonly
      */
     public $rank = null;
 
@@ -1127,7 +1088,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * The sum of all rank values submitted to the baseEntry.anonymousRank action
      *
      * @var int
-     * @readonly
      */
     public $totalRank = null;
 
@@ -1135,7 +1095,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * A count of all requests made to the baseEntry.anonymousRank action
      *
      * @var int
-     * @readonly
      */
     public $votes = null;
 
@@ -1156,7 +1115,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Download URL for the entry
      *
      * @var string
-     * @readonly
      */
     public $downloadUrl = null;
 
@@ -1164,7 +1122,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Indexed search text for full text search
      *
      * @var string
-     * @readonly
      */
     public $searchText = null;
 
@@ -1179,7 +1136,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Version of the entry data
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 
@@ -1187,7 +1143,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Thumbnail URL
      *
      * @var string
-     * @readonly
      */
     public $thumbnailUrl = null;
 
@@ -1223,7 +1178,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * ID of temporary entry that will replace this entry when it's approved and ready for replacement
      *
      * @var string
-     * @readonly
      */
     public $replacingEntryId = null;
 
@@ -1231,7 +1185,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * ID of the entry that will be replaced when the replacement approved and this entry is ready
      *
      * @var string
-     * @readonly
      */
     public $replacedEntryId = null;
 
@@ -1239,7 +1192,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Status of the replacement readiness and approval
      *
      * @var KalturaEntryReplacementStatus
-     * @readonly
      */
     public $replacementStatus = null;
 
@@ -1268,7 +1220,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * ID of source root entry, used for clipped, skipped and cropped entries that created from another entry
      *
      * @var string
-     * @readonly
      */
     public $rootEntryId = null;
 
@@ -1314,7 +1265,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Comma seperated string of the capabilities of the entry. Any capability needed can be added to this list.
      *
      * @var string
-     * @readonly
      */
     public $capabilities = null;
 
@@ -1322,7 +1272,6 @@ class KalturaBaseEntry extends KalturaObjectBase {
      * Template entry id
      *
      * @var string
-     * @insertonly
      */
     public $templateEntryId = null;
 
@@ -1368,21 +1317,18 @@ abstract class KalturaBaseSyndicationFeed extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $feedUrl = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -1405,7 +1351,6 @@ abstract class KalturaBaseSyndicationFeed extends KalturaObjectBase {
      * feed status
      *
      * @var KalturaSyndicationFeedStatus
-     * @readonly
      */
     public $status = null;
 
@@ -1413,7 +1358,6 @@ abstract class KalturaBaseSyndicationFeed extends KalturaObjectBase {
      * feed type
      *
      * @var KalturaSyndicationFeedType
-     * @insertonly
      */
     public $type = null;
 
@@ -1429,7 +1373,6 @@ abstract class KalturaBaseSyndicationFeed extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -1504,7 +1447,6 @@ abstract class KalturaBaseSyndicationFeed extends KalturaObjectBase {
      * Update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -1609,56 +1551,48 @@ class KalturaBatchJob extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $deletedAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $lockExpiration = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $executionAttempts = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $lockVersion = null;
 
@@ -1677,7 +1611,6 @@ class KalturaBatchJob extends KalturaObjectBase {
     /**
      *
      * @var KalturaBatchJobType
-     * @readonly
      */
     public $jobType = null;
 
@@ -1951,7 +1884,6 @@ class KalturaPartner extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -1982,7 +1914,6 @@ class KalturaPartner extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -2068,7 +1999,6 @@ class KalturaPartner extends KalturaObjectBase {
     /**
      *
      * @var KalturaPartnerStatus
-     * @readonly
      */
     public $status = null;
 
@@ -2105,21 +2035,18 @@ class KalturaPartner extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $secret = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $adminSecret = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $cmsPassword = null;
 
@@ -2132,7 +2059,6 @@ class KalturaPartner extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $adminLoginUsersQuota = null;
 
@@ -2173,98 +2099,84 @@ class KalturaPartner extends KalturaObjectBase {
     /**
      *
      * @var array of KalturaKeyValue
-     * @insertonly
      */
     public $additionalParams;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $publishersQuota = null;
 
     /**
      *
      * @var KalturaPartnerGroupType
-     * @readonly
      */
     public $partnerGroupType = null;
 
     /**
      *
      * @var bool
-     * @readonly
      */
     public $defaultEntitlementEnforcement = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $defaultDeliveryType = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $defaultEmbedCodeType = null;
 
     /**
      *
      * @var array of KalturaPlayerDeliveryType
-     * @readonly
      */
     public $deliveryTypes;
 
     /**
      *
      * @var array of KalturaPlayerEmbedCodeType
-     * @readonly
      */
     public $embedCodeTypes;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $templatePartnerId = null;
 
     /**
      *
      * @var bool
-     * @readonly
      */
     public $ignoreSeoLinks = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $host = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $cdnHost = null;
 
     /**
      *
      * @var bool
-     * @readonly
      */
     public $isFirstLogin = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $logoutUrl = null;
 
@@ -2277,7 +2189,6 @@ class KalturaPartner extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $crmId = null;
 
@@ -2290,7 +2201,6 @@ class KalturaPartner extends KalturaObjectBase {
     /**
      *
      * @var bool
-     * @readonly
      */
     public $timeAlignedRenditions = null;
 
@@ -2368,7 +2278,6 @@ class KalturaBulkUploadResult extends KalturaObjectBase {
      * The id of the result
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -2607,7 +2516,6 @@ class KalturaCEError extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $id = null;
 
@@ -2679,7 +2587,6 @@ class KalturaCategory extends KalturaObjectBase {
      * The id of the Category
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -2692,14 +2599,12 @@ class KalturaCategory extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $depth = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -2715,7 +2620,6 @@ class KalturaCategory extends KalturaObjectBase {
      * The full name of the Category
      *
      * @var string
-     * @readonly
      */
     public $fullName = null;
 
@@ -2723,7 +2627,6 @@ class KalturaCategory extends KalturaObjectBase {
      * The full ids of the Category
      *
      * @var string
-     * @readonly
      */
     public $fullIds = null;
 
@@ -2731,7 +2634,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Number of entries in this Category (including child categories)
      *
      * @var int
-     * @readonly
      */
     public $entriesCount = null;
 
@@ -2739,7 +2641,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -2747,7 +2648,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -2790,7 +2690,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Who can ask to join this category
      *
      * @var KalturaUserJoinPolicyType
-     * @readonly
      */
     public $userJoinPolicy = null;
 
@@ -2812,7 +2711,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Number of entries that belong to this category directly
      *
      * @var int
-     * @readonly
      */
     public $directEntriesCount = null;
 
@@ -2834,7 +2732,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Number of active members for this category
      *
      * @var int
-     * @readonly
      */
     public $membersCount = null;
 
@@ -2842,7 +2739,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Number of pending members for this category
      *
      * @var int
-     * @readonly
      */
     public $pendingMembersCount = null;
 
@@ -2858,7 +2754,6 @@ class KalturaCategory extends KalturaObjectBase {
      * comma separated parents that defines a privacyContext for search
      *
      * @var string
-     * @readonly
      */
     public $privacyContexts = null;
 
@@ -2866,7 +2761,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Status
      *
      * @var KalturaCategoryStatus
-     * @readonly
      */
     public $status = null;
 
@@ -2874,7 +2768,6 @@ class KalturaCategory extends KalturaObjectBase {
      * The category id that this category inherit its members and members permission (for contribution and join)
      *
      * @var int
-     * @readonly
      */
     public $inheritedParentId = null;
 
@@ -2903,7 +2796,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Number of direct children categories
      *
      * @var int
-     * @readonly
      */
     public $directSubCategoriesCount = null;
 
@@ -2918,7 +2810,6 @@ class KalturaCategory extends KalturaObjectBase {
      * Nunber of pending moderation entries
      *
      * @var int
-     * @readonly
      */
     public $pendingEntriesCount = null;
 
@@ -2963,7 +2854,6 @@ class KalturaCategoryEntry extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -2971,7 +2861,6 @@ class KalturaCategoryEntry extends KalturaObjectBase {
      * The full ids of the Category
      *
      * @var string
-     * @readonly
      */
     public $categoryFullIds = null;
 
@@ -2979,7 +2868,6 @@ class KalturaCategoryEntry extends KalturaObjectBase {
      * CategroyEntry status
      *
      * @var KalturaCategoryEntryStatus
-     * @readonly
      */
     public $status = null;
 
@@ -2987,7 +2875,6 @@ class KalturaCategoryEntry extends KalturaObjectBase {
      * CategroyEntry creator puser ID
      *
      * @var string
-     * @readonly
      */
     public $creatorUserId = null;
 }
@@ -3004,7 +2891,6 @@ class KalturaCategoryUser extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @insertonly
      */
     public $categoryId = null;
 
@@ -3012,7 +2898,6 @@ class KalturaCategoryUser extends KalturaObjectBase {
      * User id
      *
      * @var string
-     * @insertonly
      */
     public $userId = null;
 
@@ -3020,7 +2905,6 @@ class KalturaCategoryUser extends KalturaObjectBase {
      * Partner id
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -3035,7 +2919,6 @@ class KalturaCategoryUser extends KalturaObjectBase {
      * Status
      *
      * @var KalturaCategoryUserStatus
-     * @readonly
      */
     public $status = null;
 
@@ -3043,7 +2926,6 @@ class KalturaCategoryUser extends KalturaObjectBase {
      * CategoryUser creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -3051,7 +2933,6 @@ class KalturaCategoryUser extends KalturaObjectBase {
      * CategoryUser update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -3067,7 +2948,6 @@ class KalturaCategoryUser extends KalturaObjectBase {
      * The full ids of the Category
      *
      * @var string
-     * @readonly
      */
     public $categoryFullIds = null;
 
@@ -3173,7 +3053,6 @@ class KalturaControlPanelCommand extends KalturaObjectBase {
      * The id of the Category
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -3181,7 +3060,6 @@ class KalturaControlPanelCommand extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -3196,7 +3074,6 @@ class KalturaControlPanelCommand extends KalturaObjectBase {
      * Update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -3409,14 +3286,12 @@ class KalturaConversionProfile extends KalturaObjectBase {
      * The id of the Conversion Profile
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -3429,7 +3304,6 @@ class KalturaConversionProfile extends KalturaObjectBase {
     /**
      *
      * @var KalturaConversionProfileType
-     * @insertonly
      */
     public $type = null;
 
@@ -3472,7 +3346,6 @@ class KalturaConversionProfile extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -3494,7 +3367,6 @@ class KalturaConversionProfile extends KalturaObjectBase {
      * Indicates that this conversion profile is partner default
      *
      * @var bool
-     * @readonly
      */
     public $isPartnerDefault = null;
 
@@ -3597,7 +3469,6 @@ class KalturaConversionProfileAssetParams extends KalturaObjectBase {
      * The id of the conversion profile
      *
      * @var int
-     * @readonly
      */
     public $conversionProfileId = null;
 
@@ -3605,7 +3476,6 @@ class KalturaConversionProfileAssetParams extends KalturaObjectBase {
      * The id of the asset params
      *
      * @var int
-     * @readonly
      */
     public $assetParamsId = null;
 
@@ -3775,7 +3645,6 @@ class KalturaDataEntry extends KalturaBaseEntry {
      * indicator whether to return the object for get action with the dataContent field.
      *
      * @var bool
-     * @insertonly
      */
     public $retrieveDataContentByGet = null;
 }
@@ -4019,14 +3888,12 @@ class KalturaDeliveryProfile extends KalturaObjectBase {
      * The id of the Delivery
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -4062,7 +3929,6 @@ class KalturaDeliveryProfile extends KalturaObjectBase {
      * Creation time as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -4070,7 +3936,6 @@ class KalturaDeliveryProfile extends KalturaObjectBase {
      * Update time as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -4090,7 +3955,6 @@ class KalturaDeliveryProfile extends KalturaObjectBase {
      * the host part of the url
      *
      * @var string
-     * @readonly
      */
     public $hostName = null;
 
@@ -4116,7 +3980,6 @@ class KalturaDeliveryProfile extends KalturaObjectBase {
      * True if this is the systemwide default for the protocol
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $isDefault = null;
 
@@ -4124,7 +3987,6 @@ class KalturaDeliveryProfile extends KalturaObjectBase {
      * the object from which this object was cloned (or 0)
      *
      * @var int
-     * @readonly
      */
     public $parentId = null;
 
@@ -4365,7 +4227,6 @@ abstract class KalturaObject extends KalturaObjectBase {
     /**
      *
      * @var map
-     * @readonly
      */
     public $relatedObjects;
 }
@@ -4382,7 +4243,6 @@ class KalturaEmailIngestionProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -4413,7 +4273,6 @@ class KalturaEmailIngestionProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -4432,14 +4291,12 @@ class KalturaEmailIngestionProfile extends KalturaObjectBase {
     /**
      *
      * @var KalturaEmailIngestionProfileStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $createdAt = null;
 
@@ -4509,56 +4366,48 @@ abstract class KalturaEntryServerNode extends KalturaObjectBase {
      * unique auto-generated identifier
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $entryId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $serverNodeId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var KalturaEntryServerNodeStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var KalturaEntryServerNodeType
-     * @readonly
      */
     public $serverType = null;
 }
@@ -4624,7 +4473,6 @@ class KalturaPlayableEntry extends KalturaBaseEntry {
      * Number of plays
      *
      * @var int
-     * @readonly
      */
     public $plays = null;
 
@@ -4632,7 +4480,6 @@ class KalturaPlayableEntry extends KalturaBaseEntry {
      * Number of views
      *
      * @var int
-     * @readonly
      */
     public $views = null;
 
@@ -4640,7 +4487,6 @@ class KalturaPlayableEntry extends KalturaBaseEntry {
      * The last time the entry was played
      *
      * @var int
-     * @readonly
      */
     public $lastPlayedAt = null;
 
@@ -4648,7 +4494,6 @@ class KalturaPlayableEntry extends KalturaBaseEntry {
      * The width in pixels
      *
      * @var int
-     * @readonly
      */
     public $width = null;
 
@@ -4656,7 +4501,6 @@ class KalturaPlayableEntry extends KalturaBaseEntry {
      * The height in pixels
      *
      * @var int
-     * @readonly
      */
     public $height = null;
 
@@ -4664,7 +4508,6 @@ class KalturaPlayableEntry extends KalturaBaseEntry {
      * The duration in seconds
      *
      * @var int
-     * @readonly
      */
     public $duration = null;
 
@@ -4679,7 +4522,6 @@ class KalturaPlayableEntry extends KalturaBaseEntry {
      * The duration type (short for 0-4 mins, medium for 4-20 mins, long for 20+ mins)
      *
      * @var KalturaDurationType
-     * @readonly
      */
     public $durationType = null;
 }
@@ -4743,7 +4585,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * The media type of the entry
      *
      * @var KalturaMediaType
-     * @insertonly
      */
     public $mediaType = null;
 
@@ -4751,7 +4592,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * Override the default conversion quality
      *
      * @var string
-     * @insertonly
      */
     public $conversionQuality = null;
 
@@ -4759,7 +4599,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * The source type of the entry
      *
      * @var KalturaSourceType
-     * @insertonly
      */
     public $sourceType = null;
 
@@ -4767,7 +4606,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * The search provider type used to import this entry
      *
      * @var KalturaSearchProviderType
-     * @insertonly
      */
     public $searchProviderType = null;
 
@@ -4775,7 +4613,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * The ID of the media in the importing site
      *
      * @var string
-     * @insertonly
      */
     public $searchProviderId = null;
 
@@ -4797,7 +4634,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * The media date extracted from EXIF data (For images) as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $mediaDate = null;
 
@@ -4805,7 +4641,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * The URL used for playback. This is not the download URL.
      *
      * @var string
-     * @readonly
      */
     public $dataUrl = null;
 
@@ -4813,7 +4648,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * Comma separated flavor params ids that exists for this media entry
      *
      * @var string
-     * @readonly
      */
     public $flavorParamsIds = null;
 
@@ -4821,7 +4655,6 @@ class KalturaMediaEntry extends KalturaPlayableEntry {
      * True if trim action is disabled for this entry
      *
      * @var KalturaNullableBoolean
-     * @readonly
      */
     public $isTrimDisabled = null;
 
@@ -4867,28 +4700,24 @@ class KalturaFileAsset extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var KalturaFileAssetObjectType
-     * @insertonly
      */
     public $fileAssetObjectType = null;
 
     /**
      *
      * @var string
-     * @insertonly
      */
     public $objectId = null;
 
@@ -4913,28 +4742,24 @@ class KalturaFileAsset extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var KalturaFileAssetStatus
-     * @readonly
      */
     public $status = null;
 }
@@ -4980,7 +4805,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * The Flavor Params used to create this Flavor Asset
      *
      * @var int
-     * @insertonly
      */
     public $flavorParamsId = null;
 
@@ -4988,7 +4812,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * The width of the Flavor Asset
      *
      * @var int
-     * @readonly
      */
     public $width = null;
 
@@ -4996,7 +4819,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * The height of the Flavor Asset
      *
      * @var int
-     * @readonly
      */
     public $height = null;
 
@@ -5004,7 +4826,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * The overall bitrate (in KBits) of the Flavor Asset
      *
      * @var int
-     * @readonly
      */
     public $bitrate = null;
 
@@ -5012,7 +4833,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * The frame rate (in FPS) of the Flavor Asset
      *
      * @var float
-     * @readonly
      */
     public $frameRate = null;
 
@@ -5020,7 +4840,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * True if this Flavor Asset is the original source
      *
      * @var bool
-     * @readonly
      */
     public $isOriginal = null;
 
@@ -5028,7 +4847,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * True if this Flavor Asset is playable in KDP
      *
      * @var bool
-     * @readonly
      */
     public $isWeb = null;
 
@@ -5036,7 +4854,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * The container format
      *
      * @var string
-     * @readonly
      */
     public $containerFormat = null;
 
@@ -5044,7 +4861,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * The video codec
      *
      * @var string
-     * @readonly
      */
     public $videoCodecId = null;
 
@@ -5052,7 +4868,6 @@ class KalturaFlavorAsset extends KalturaAsset {
      * The status of the Flavor Asset
      *
      * @var KalturaFlavorAssetStatus
-     * @readonly
      */
     public $status = null;
 
@@ -5455,7 +5270,6 @@ class KalturaSchedulerStatus extends KalturaObjectBase {
      * The id of the Category
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -5498,7 +5312,6 @@ class KalturaSchedulerStatus extends KalturaObjectBase {
      * The id of the scheduler
      *
      * @var int
-     * @readonly
      */
     public $schedulerId = null;
 
@@ -5506,7 +5319,6 @@ class KalturaSchedulerStatus extends KalturaObjectBase {
      * The id of the worker
      *
      * @var int
-     * @readonly
      */
     public $workerId = null;
 }
@@ -5524,7 +5336,6 @@ class KalturaSchedulerConfig extends KalturaObjectBase {
      * The id of the Category
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -5633,7 +5444,6 @@ class KalturaSchedulerWorker extends KalturaObjectBase {
      * The id of the Worker
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -5742,7 +5552,6 @@ class KalturaScheduler extends KalturaObjectBase {
      * The id of the Scheduler
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -5771,7 +5580,6 @@ class KalturaScheduler extends KalturaObjectBase {
      * Array of the last statuses
      *
      * @var array of KalturaSchedulerStatus
-     * @readonly
      */
     public $statuses;
 
@@ -5779,7 +5587,6 @@ class KalturaScheduler extends KalturaObjectBase {
      * Array of the last configs
      *
      * @var array of KalturaSchedulerConfig
-     * @readonly
      */
     public $configs;
 
@@ -5787,7 +5594,6 @@ class KalturaScheduler extends KalturaObjectBase {
      * Array of the workers
      *
      * @var array of KalturaSchedulerWorker
-     * @readonly
      */
     public $workers;
 
@@ -5795,7 +5601,6 @@ class KalturaScheduler extends KalturaObjectBase {
      * creation time
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -5803,7 +5608,6 @@ class KalturaScheduler extends KalturaObjectBase {
      * last status time
      *
      * @var int
-     * @readonly
      */
     public $lastStatus = null;
 
@@ -5811,7 +5615,6 @@ class KalturaScheduler extends KalturaObjectBase {
      * last status formated
      *
      * @var string
-     * @readonly
      */
     public $lastStatusStr = null;
 }
@@ -5828,28 +5631,24 @@ class KalturaGroupUser extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @insertonly
      */
     public $userId = null;
 
     /**
      *
      * @var string
-     * @insertonly
      */
     public $groupId = null;
 
     /**
      *
      * @var KalturaGroupUserStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -5857,7 +5656,6 @@ class KalturaGroupUser extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -5865,7 +5663,6 @@ class KalturaGroupUser extends KalturaObjectBase {
      * Last update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 }
@@ -5898,7 +5695,6 @@ class KalturaBatchJobListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaBatchJob
-     * @readonly
      */
     public $objects;
 }
@@ -5916,7 +5712,6 @@ class KalturaMediaInfo extends KalturaObjectBase {
      * The id of the media info
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -6163,7 +5958,6 @@ class KalturaMediaInfoListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaMediaInfo
-     * @readonly
      */
     public $objects;
 }
@@ -6180,7 +5974,6 @@ class KalturaFlavorParamsOutputListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaFlavorParamsOutput
-     * @readonly
      */
     public $objects;
 }
@@ -6198,7 +5991,6 @@ class KalturaThumbAsset extends KalturaAsset {
      * The Flavor Params used to create this Flavor Asset
      *
      * @var int
-     * @insertonly
      */
     public $thumbParamsId = null;
 
@@ -6206,7 +5998,6 @@ class KalturaThumbAsset extends KalturaAsset {
      * The width of the Flavor Asset
      *
      * @var int
-     * @readonly
      */
     public $width = null;
 
@@ -6214,7 +6005,6 @@ class KalturaThumbAsset extends KalturaAsset {
      * The height of the Flavor Asset
      *
      * @var int
-     * @readonly
      */
     public $height = null;
 
@@ -6222,7 +6012,6 @@ class KalturaThumbAsset extends KalturaAsset {
      * The status of the asset
      *
      * @var KalturaThumbAssetStatus
-     * @readonly
      */
     public $status = null;
 }
@@ -6397,7 +6186,6 @@ class KalturaThumbParamsOutputListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaThumbParamsOutput
-     * @readonly
      */
     public $objects;
 }
@@ -6580,7 +6368,6 @@ abstract class KalturaLiveEntry extends KalturaMediaEntry {
      * The first time in which the entry was broadcast
      *
      * @var int
-     * @readonly
      */
     public $firstBroadcast = null;
 
@@ -6588,7 +6375,6 @@ abstract class KalturaLiveEntry extends KalturaMediaEntry {
      * The Last time in which the entry was broadcast
      *
      * @var int
-     * @readonly
      */
     public $lastBroadcast = null;
 
@@ -6609,7 +6395,6 @@ abstract class KalturaLiveEntry extends KalturaMediaEntry {
      * the status of the entry of type EntryServerNodeStatus
      *
      * @var KalturaEntryServerNodeStatus
-     * @readonly
      */
     public $liveStatus = null;
 
@@ -6676,14 +6461,12 @@ class KalturaLiveChannelSegment extends KalturaObjectBase {
      * Unique identifier
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -6691,7 +6474,6 @@ class KalturaLiveChannelSegment extends KalturaObjectBase {
      * Segment creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -6699,7 +6481,6 @@ class KalturaLiveChannelSegment extends KalturaObjectBase {
      * Segment update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -6734,7 +6515,6 @@ class KalturaLiveChannelSegment extends KalturaObjectBase {
     /**
      *
      * @var KalturaLiveChannelSegmentStatus
-     * @readonly
      */
     public $status = null;
 
@@ -7097,7 +6877,6 @@ class KalturaLiveStreamEntry extends KalturaLiveEntry {
      * The stream id as provided by the provider
      *
      * @var string
-     * @readonly
      */
     public $streamRemoteId = null;
 
@@ -7105,7 +6884,6 @@ class KalturaLiveStreamEntry extends KalturaLiveEntry {
      * The backup stream id as provided by the provider
      *
      * @var string
-     * @readonly
      */
     public $streamRemoteBackupId = null;
 
@@ -7192,7 +6970,6 @@ class KalturaLiveStreamEntry extends KalturaLiveEntry {
      * The broadcast username
      *
      * @var string
-     * @readonly
      */
     public $streamUsername = null;
 
@@ -7200,7 +6977,6 @@ class KalturaLiveStreamEntry extends KalturaLiveEntry {
      * The Streams primary server node id
      *
      * @var int
-     * @readonly
      */
     public $primaryServerNodeId = null;
 }
@@ -8036,7 +7812,6 @@ class KalturaMixEntry extends KalturaPlayableEntry {
      * Indicates whether the user has submited a real thumbnail to the mix (Not the one that was generated automaticaly)
      *
      * @var bool
-     * @readonly
      */
     public $hasRealThumbnail = null;
 
@@ -8068,14 +7843,12 @@ class KalturaModerationFlag extends KalturaObjectBase {
      * Moderation flag id
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -8083,7 +7856,6 @@ class KalturaModerationFlag extends KalturaObjectBase {
      * The user id that added the moderation flag
      *
      * @var string
-     * @readonly
      */
     public $userId = null;
 
@@ -8091,7 +7863,6 @@ class KalturaModerationFlag extends KalturaObjectBase {
      * The type of the moderation flag (entry or user)
      *
      * @var KalturaModerationObjectType
-     * @readonly
      */
     public $moderationObjectType = null;
 
@@ -8113,7 +7884,6 @@ class KalturaModerationFlag extends KalturaObjectBase {
      * The moderation flag status
      *
      * @var KalturaModerationFlagStatus
-     * @readonly
      */
     public $status = null;
 
@@ -8133,14 +7903,12 @@ class KalturaModerationFlag extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 }
@@ -8158,7 +7926,6 @@ class KalturaPartnerStatistics extends KalturaObjectBase {
      * Package total allowed bandwidth and storage
      *
      * @var int
-     * @readonly
      */
     public $packageBandwidthAndStorage = null;
 
@@ -8166,7 +7933,6 @@ class KalturaPartnerStatistics extends KalturaObjectBase {
      * Partner total hosting in GB on the disk
      *
      * @var float
-     * @readonly
      */
     public $hosting = null;
 
@@ -8174,7 +7940,6 @@ class KalturaPartnerStatistics extends KalturaObjectBase {
      * Partner total bandwidth in GB
      *
      * @var float
-     * @readonly
      */
     public $bandwidth = null;
 
@@ -8182,7 +7947,6 @@ class KalturaPartnerStatistics extends KalturaObjectBase {
      * total usage in GB - including bandwidth and storage
      *
      * @var int
-     * @readonly
      */
     public $usage = null;
 
@@ -8190,7 +7954,6 @@ class KalturaPartnerStatistics extends KalturaObjectBase {
      * Percent of usage out of partner's package. if usage is 5GB and package is 10GB, this value will be 50
      *
      * @var float
-     * @readonly
      */
     public $usagePercent = null;
 
@@ -8198,7 +7961,6 @@ class KalturaPartnerStatistics extends KalturaObjectBase {
      * date when partner reached the limit of his package (timestamp)
      *
      * @var int
-     * @readonly
      */
     public $reachedLimitDate = null;
 }
@@ -8216,7 +7978,6 @@ class KalturaPartnerUsage extends KalturaObjectBase {
      * Partner total hosting in GB on the disk
      *
      * @var float
-     * @readonly
      */
     public $hostingGB = null;
 
@@ -8224,7 +7985,6 @@ class KalturaPartnerUsage extends KalturaObjectBase {
      * percent of usage out of partner's package. if usageGB is 5 and package is 10GB, this value will be 50
      *
      * @var float
-     * @readonly
      */
     public $Percent = null;
 
@@ -8232,7 +7992,6 @@ class KalturaPartnerUsage extends KalturaObjectBase {
      * package total BW - actually this is usage, which represents BW+storage
      *
      * @var int
-     * @readonly
      */
     public $packageBW = null;
 
@@ -8240,7 +7999,6 @@ class KalturaPartnerUsage extends KalturaObjectBase {
      * total usage in GB - including bandwidth and storage
      *
      * @var float
-     * @readonly
      */
     public $usageGB = null;
 
@@ -8248,7 +8006,6 @@ class KalturaPartnerUsage extends KalturaObjectBase {
      * date when partner reached the limit of his package (timestamp)
      *
      * @var int
-     * @readonly
      */
     public $reachedLimitDate = null;
 
@@ -8259,7 +8016,6 @@ class KalturaPartnerUsage extends KalturaObjectBase {
      * for a daily view in a given month (1,0.4;2,0.2;...;31,0.1;)
      *
      * @var string
-     * @readonly
      */
     public $usageGraph = null;
 }
@@ -8276,14 +8032,12 @@ class KalturaPermission extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var KalturaPermissionType
-     * @readonly
      */
     public $type = null;
 
@@ -8314,7 +8068,6 @@ class KalturaPermission extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -8339,14 +8092,12 @@ class KalturaPermission extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -8369,21 +8120,18 @@ abstract class KalturaPermissionItem extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var KalturaPermissionItemType
-     * @readonly
      */
     public $type = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -8396,14 +8144,12 @@ abstract class KalturaPermissionItem extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 }
@@ -8537,7 +8283,6 @@ class KalturaPlaylist extends KalturaBaseEntry {
      * Number of plays
      *
      * @var int
-     * @readonly
      */
     public $plays = null;
 
@@ -8545,7 +8290,6 @@ class KalturaPlaylist extends KalturaBaseEntry {
      * Number of views
      *
      * @var int
-     * @readonly
      */
     public $views = null;
 
@@ -8553,7 +8297,6 @@ class KalturaPlaylist extends KalturaBaseEntry {
      * The duration in seconds
      *
      * @var int
-     * @readonly
      */
     public $duration = null;
 
@@ -8561,7 +8304,6 @@ class KalturaPlaylist extends KalturaBaseEntry {
      * The url for this playlist
      *
      * @var string
-     * @readonly
      */
     public $executeUrl = null;
 }
@@ -8578,14 +8320,12 @@ class KalturaRemotePath extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $storageProfileId = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $uri = null;
 }
@@ -8644,7 +8384,6 @@ class KalturaReport extends KalturaObjectBase {
      * Report id
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -8687,7 +8426,6 @@ class KalturaReport extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -8695,7 +8433,6 @@ class KalturaReport extends KalturaObjectBase {
      * Last update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 }
@@ -8816,21 +8553,18 @@ class KalturaReportTable extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $header = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $data = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 }
@@ -8901,7 +8635,6 @@ class KalturaResponseProfile extends KalturaDetachedResponseProfile {
      * Auto generated numeric identifier
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -8915,7 +8648,6 @@ class KalturaResponseProfile extends KalturaDetachedResponseProfile {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -8923,7 +8655,6 @@ class KalturaResponseProfile extends KalturaDetachedResponseProfile {
      * Creation time as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -8931,21 +8662,18 @@ class KalturaResponseProfile extends KalturaDetachedResponseProfile {
      * Update time as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var KalturaResponseProfileStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $version = null;
 }
@@ -9201,14 +8929,12 @@ class KalturaSearchResultResponse extends KalturaObjectBase {
     /**
      *
      * @var array of KalturaSearchResult
-     * @readonly
      */
     public $objects;
 
     /**
      *
      * @var bool
-     * @readonly
      */
     public $needMediaInfo = null;
 }
@@ -9225,35 +8951,30 @@ abstract class KalturaServerNode extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $heartbeatTime = null;
 
@@ -9287,14 +9008,12 @@ abstract class KalturaServerNode extends KalturaObjectBase {
     /**
      *
      * @var KalturaServerNodeStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var KalturaServerNodeType
-     * @readonly
      */
     public $type = null;
 
@@ -9309,7 +9028,6 @@ abstract class KalturaServerNode extends KalturaObjectBase {
      * DC where the serverNode is located
      *
      * @var int
-     * @readonly
      */
     public $dc = null;
 
@@ -9333,42 +9051,36 @@ class KalturaSessionInfo extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $ks = null;
 
     /**
      *
      * @var KalturaSessionType
-     * @readonly
      */
     public $sessionType = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $userId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $expiry = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $privileges = null;
 }
@@ -9414,21 +9126,18 @@ class KalturaStartWidgetSessionResponse extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $ks = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $userId = null;
 }
@@ -9525,7 +9234,6 @@ class KalturaStatsEvent extends KalturaObjectBase {
      * will be retrieved from the request of the user
      *
      * @var string
-     * @readonly
      */
     public $userIp = null;
 
@@ -9668,7 +9376,6 @@ class KalturaStatsKmcEvent extends KalturaObjectBase {
      * will be retrieved from the request of the user
      *
      * @var string
-     * @readonly
      */
     public $userIp = null;
 }
@@ -9685,28 +9392,24 @@ class KalturaStorageProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -9928,7 +9631,6 @@ class KalturaUiConf extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -9948,7 +9650,6 @@ class KalturaUiConf extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -9961,7 +9662,6 @@ class KalturaUiConf extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $objTypeAsString = null;
 
@@ -9992,7 +9692,6 @@ class KalturaUiConf extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $confFilePath = null;
 
@@ -10042,7 +9741,6 @@ class KalturaUiConf extends KalturaObjectBase {
      * Entry creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -10050,7 +9748,6 @@ class KalturaUiConf extends KalturaObjectBase {
      * Entry creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -10070,7 +9767,6 @@ class KalturaUiConf extends KalturaObjectBase {
      * UiConf version
      *
      * @var string
-     * @readonly
      */
     public $version = null;
 
@@ -10166,7 +9862,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * Upload token unique ID
      *
      * @var string
-     * @readonly
      */
     public $id = null;
 
@@ -10174,7 +9869,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * Partner ID of the upload token
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -10182,7 +9876,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * User id for the upload token
      *
      * @var string
-     * @readonly
      */
     public $userId = null;
 
@@ -10190,7 +9883,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * Status of the upload token
      *
      * @var KalturaUploadTokenStatus
-     * @readonly
      */
     public $status = null;
 
@@ -10199,7 +9891,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * when the upload token is created and will be updated internally after the file is uploaded
      *
      * @var string
-     * @insertonly
      */
     public $fileName = null;
 
@@ -10208,7 +9899,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * when the upload token is created and will be updated internally after the file is uploaded
      *
      * @var float
-     * @insertonly
      */
     public $fileSize = null;
 
@@ -10216,7 +9906,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * Uploaded file size in bytes, can be used to identify how many bytes were uploaded before resuming
      *
      * @var float
-     * @readonly
      */
     public $uploadedFileSize = null;
 
@@ -10224,7 +9913,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -10232,7 +9920,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * Last update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -10240,7 +9927,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * Upload url - to explicitly determine to which domain to adress the uploadToken->upload call
      *
      * @var string
-     * @readonly
      */
     public $uploadUrl = null;
 
@@ -10249,7 +9935,6 @@ class KalturaUploadToken extends KalturaObjectBase {
      * when adding the upload token.
      *
      * @var KalturaNullableBoolean
-     * @insertonly
      */
     public $autoFinalize = null;
 }
@@ -10272,7 +9957,6 @@ class KalturaUser extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -10371,7 +10055,6 @@ class KalturaUser extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -10379,7 +10062,6 @@ class KalturaUser extends KalturaObjectBase {
      * Last update date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -10405,14 +10087,12 @@ class KalturaUser extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $storageSize = null;
 
     /**
      *
      * @var string
-     * @insertonly
      */
     public $password = null;
 
@@ -10443,28 +10123,24 @@ class KalturaUser extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $lastLoginTime = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $statusUpdatedAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $deletedAt = null;
 
     /**
      *
      * @var bool
-     * @insertonly
      */
     public $loginEnabled = null;
 
@@ -10477,14 +10153,12 @@ class KalturaUser extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $roleNames = null;
 
     /**
      *
      * @var bool
-     * @insertonly
      */
     public $isAccountOwner = null;
 
@@ -10514,56 +10188,48 @@ abstract class KalturaUserEntry extends KalturaObjectBase {
      * unique auto-generated identifier
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var string
-     * @insertonly
      */
     public $entryId = null;
 
     /**
      *
      * @var string
-     * @insertonly
      */
     public $userId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var KalturaUserEntryStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var KalturaUserEntryType
-     * @readonly
      */
     public $type = null;
 
@@ -10608,7 +10274,6 @@ class KalturaUserRole extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -10639,7 +10304,6 @@ class KalturaUserRole extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -10658,14 +10322,12 @@ class KalturaUserRole extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 }
@@ -10682,7 +10344,6 @@ class KalturaWidget extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $id = null;
 
@@ -10695,14 +10356,12 @@ class KalturaWidget extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $rootWidgetId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -10733,14 +10392,12 @@ class KalturaWidget extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -10754,7 +10411,6 @@ class KalturaWidget extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $widgetHTML = null;
 
@@ -11158,7 +10814,6 @@ class KalturaAccessControlListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaAccessControl
-     * @readonly
      */
     public $objects;
 }
@@ -11222,7 +10877,6 @@ class KalturaAccessControlProfileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaAccessControlProfile
-     * @readonly
      */
     public $objects;
 }
@@ -11427,7 +11081,6 @@ class KalturaAppTokenListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaAppToken
-     * @readonly
      */
     public $objects;
 }
@@ -11581,7 +11234,6 @@ class KalturaBaseEntryListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaBaseEntry
-     * @readonly
      */
     public $objects;
 }
@@ -11609,7 +11261,6 @@ class KalturaBaseSyndicationFeedListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaBaseSyndicationFeed
-     * @readonly
      */
     public $objects;
 }
@@ -11759,7 +11410,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
     /**
      *
      * @var string
-     * @readonly
      */
     public $userId = null;
 
@@ -11767,7 +11417,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * The screen name of the user
      *
      * @var string
-     * @readonly
      */
     public $uploadedBy = null;
 
@@ -11775,7 +11424,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * Selected profile id for all bulk entries
      *
      * @var int
-     * @readonly
      */
     public $conversionProfileId = null;
 
@@ -11783,7 +11431,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * Created by the API
      *
      * @var string
-     * @readonly
      */
     public $resultsFileLocalPath = null;
 
@@ -11791,7 +11438,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * Created by the API
      *
      * @var string
-     * @readonly
      */
     public $resultsFileUrl = null;
 
@@ -11799,7 +11445,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * Number of created entries
      *
      * @var int
-     * @readonly
      */
     public $numOfEntries = null;
 
@@ -11807,7 +11452,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * Number of created objects
      *
      * @var int
-     * @readonly
      */
     public $numOfObjects = null;
 
@@ -11815,15 +11459,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * The bulk upload file path
      *
      * @var string
-     * @readonly
-     */
-    public $filePath = null;
-
-    /**
-     * Type of object for bulk upload
-     *
-     * @var KalturaBulkUploadObjectType
-     * @readonly
      */
     public $bulkUploadObjectType = null;
 
@@ -11838,7 +11473,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * Data pertaining to the objects being uploaded
      *
      * @var KalturaBulkUploadObjectData
-     * @readonly
      */
     public $objectData;
 
@@ -11846,7 +11480,6 @@ class KalturaBulkUploadJobData extends KalturaJobData {
      * Type of bulk upload
      *
      * @var KalturaBulkUploadType
-     * @readonly
      */
     public $type = null;
 
@@ -11877,7 +11510,6 @@ class KalturaBulkUploadListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaBulkUpload
-     * @readonly
      */
     public $objects;
 }
@@ -12402,7 +12034,6 @@ class KalturaCategoryEntryListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaCategoryEntry
-     * @readonly
      */
     public $objects;
 }
@@ -12436,7 +12067,6 @@ class KalturaCategoryListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaCategory
-     * @readonly
      */
     public $objects;
 }
@@ -12487,7 +12117,6 @@ class KalturaCategoryUserListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaCategoryUser
-     * @readonly
      */
     public $objects;
 }
@@ -12708,7 +12337,6 @@ class KalturaControlPanelCommandListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaControlPanelCommand
-     * @readonly
      */
     public $objects;
 }
@@ -12802,7 +12430,6 @@ class KalturaConversionProfileAssetParamsListResponse extends KalturaListRespons
     /**
      *
      * @var array of KalturaConversionProfileAssetParams
-     * @readonly
      */
     public $objects;
 }
@@ -12820,7 +12447,6 @@ class KalturaConversionProfileListResponse extends KalturaListResponse
     /**
      *
      * @var array of KalturaConversionProfile
-     * @readonly
      */
     public $objects;
 }
@@ -12980,7 +12606,6 @@ class KalturaDataListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaDataEntry
-     * @readonly
      */
     public $objects;
 }
@@ -13272,7 +12897,6 @@ class KalturaDeliveryProfileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaDeliveryProfile
-     * @readonly
      */
     public $objects;
 }
@@ -14054,7 +13678,6 @@ class KalturaEntryServerNodeListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaEntryServerNode
-     * @readonly
      */
     public $objects;
 }
@@ -14082,7 +13705,6 @@ class KalturaFeatureStatusListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaFeatureStatus
-     * @readonly
      */
     public $objects;
 }
@@ -14099,7 +13721,6 @@ class KalturaFileAssetListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaFileAsset
-     * @readonly
      */
     public $objects;
 }
@@ -14127,7 +13748,6 @@ class KalturaFlavorAssetListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaFlavorAsset
-     * @readonly
      */
     public $objects;
 }
@@ -14144,7 +13764,6 @@ class KalturaFlavorParamsListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaFlavorParams
-     * @readonly
      */
     public $objects;
 }
@@ -14215,7 +13834,6 @@ class KalturaGroupUserListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaGroupUser
-     * @readonly
      */
     public $objects;
 }
@@ -14298,7 +13916,6 @@ class KalturaITunesSyndicationFeed extends KalturaBaseSyndicationFeed {
     /**
      *
      * @var KalturaITunesSyndicationFeedCategories
-     * @readonly
      */
     public $category = null;
 
@@ -14476,7 +14093,6 @@ class KalturaLiveChannelListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaLiveChannel
-     * @readonly
      */
     public $objects;
 }
@@ -14493,7 +14109,6 @@ class KalturaLiveChannelSegmentListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaLiveChannelSegment
-     * @readonly
      */
     public $objects;
 }
@@ -14589,7 +14204,6 @@ class KalturaLiveStreamListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaLiveStreamEntry
-     * @readonly
      */
     public $objects;
 }
@@ -14844,7 +14458,6 @@ class KalturaMediaListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaMediaEntry
-     * @readonly
      */
     public $objects;
 }
@@ -14861,7 +14474,6 @@ class KalturaMixListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaMixEntry
-     * @readonly
      */
     public $objects;
 }
@@ -14878,7 +14490,6 @@ class KalturaModerationFlagListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaModerationFlag
-     * @readonly
      */
     public $objects;
 }
@@ -15021,7 +14632,6 @@ class KalturaObjectListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaObject
-     * @readonly
      */
     public $objects;
 }
@@ -15154,7 +14764,6 @@ class KalturaPartnerListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaPartner
-     * @readonly
      */
     public $objects;
 }
@@ -15171,7 +14780,6 @@ class KalturaPermissionItemListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaPermissionItem
-     * @readonly
      */
     public $objects;
 }
@@ -15188,7 +14796,6 @@ class KalturaPermissionListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaPermission
-     * @readonly
      */
     public $objects;
 }
@@ -15205,7 +14812,6 @@ class KalturaPlaylistListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaPlaylist
-     * @readonly
      */
     public $objects;
 }
@@ -15310,7 +14916,6 @@ class KalturaQuizUserEntry extends KalturaUserEntry {
     /**
      *
      * @var float
-     * @readonly
      */
     public $score = null;
 }
@@ -15338,7 +14943,6 @@ class KalturaRemotePathListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaRemotePath
-     * @readonly
      */
     public $objects;
 }
@@ -15453,7 +15057,6 @@ class KalturaReportListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaReport
-     * @readonly
      */
     public $objects;
 }
@@ -15564,7 +15167,6 @@ class KalturaResponseProfileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaResponseProfile
-     * @readonly
      */
     public $objects;
 }
@@ -15581,7 +15183,6 @@ class KalturaSchedulerListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaScheduler
-     * @readonly
      */
     public $objects;
 }
@@ -15598,7 +15199,6 @@ class KalturaSchedulerWorkerListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaSchedulerWorker
-     * @readonly
      */
     public $objects;
 }
@@ -15831,7 +15431,6 @@ class KalturaServerNodeListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaServerNode
-     * @readonly
      */
     public $objects;
 }
@@ -16069,7 +15668,6 @@ class KalturaStorageProfileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaStorageProfile
-     * @readonly
      */
     public $objects;
 }
@@ -16119,7 +15717,6 @@ class KalturaThumbAssetListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaThumbAsset
-     * @readonly
      */
     public $objects;
 }
@@ -16136,7 +15733,6 @@ class KalturaThumbParamsListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaThumbParams
-     * @readonly
      */
     public $objects;
 }
@@ -16164,7 +15760,6 @@ class KalturaTubeMogulSyndicationFeed extends KalturaBaseSyndicationFeed {
     /**
      *
      * @var KalturaTubeMogulSyndicationFeedCategories
-     * @readonly
      */
     public $category = null;
 }
@@ -16311,7 +15906,6 @@ class KalturaUiConfListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaUiConf
-     * @readonly
      */
     public $objects;
 }
@@ -16380,7 +15974,6 @@ class KalturaUploadTokenListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaUploadToken
-     * @readonly
      */
     public $objects;
 }
@@ -16772,7 +16365,6 @@ class KalturaUserEntryListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaUserEntry
-     * @readonly
      */
     public $objects;
 }
@@ -16789,7 +16381,6 @@ class KalturaUserListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaUser
-     * @readonly
      */
     public $objects;
 }
@@ -16806,7 +16397,6 @@ class KalturaUserLoginDataListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaUserLoginData
-     * @readonly
      */
     public $objects;
 }
@@ -16840,7 +16430,6 @@ class KalturaUserRoleListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaUserRole
-     * @readonly
      */
     public $objects;
 }
@@ -16956,7 +16545,6 @@ class KalturaWidgetListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaWidget
-     * @readonly
      */
     public $objects;
 }
@@ -16973,7 +16561,6 @@ class KalturaYahooSyndicationFeed extends KalturaBaseSyndicationFeed {
     /**
      *
      * @var KalturaYahooSyndicationFeedCategories
-     * @readonly
      */
     public $category = null;
 

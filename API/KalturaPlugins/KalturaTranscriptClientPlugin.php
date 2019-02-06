@@ -153,7 +153,6 @@ class KalturaTranscriptAssetListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaTranscriptAsset
-     * @readonly
      */
     public $objects;
 }

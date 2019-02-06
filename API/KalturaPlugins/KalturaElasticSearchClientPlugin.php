@@ -590,14 +590,12 @@ class KalturaESearchResponse extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $totalCount = null;
 
     /**
      *
      * @var array of KalturaESearchResult
-     * @readonly
      */
     public $objects;
 }

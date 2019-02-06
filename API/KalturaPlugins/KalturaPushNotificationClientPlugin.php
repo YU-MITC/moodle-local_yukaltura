@@ -97,21 +97,18 @@ class KalturaPushNotificationData extends KalturaObjectBase {
     /**
      *
      * @var string
-     * @readonly
      */
     public $queueName = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $queueKey = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $url = null;
 }

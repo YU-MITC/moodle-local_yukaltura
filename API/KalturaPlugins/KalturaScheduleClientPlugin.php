@@ -548,21 +548,18 @@ abstract class KalturaScheduleEvent extends KalturaObjectBase {
      * Auto-generated unique identifier
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $parentId = null;
 
@@ -582,7 +579,6 @@ abstract class KalturaScheduleEvent extends KalturaObjectBase {
     /**
      *
      * @var KalturaScheduleEventStatus
-     * @readonly
      */
     public $status = null;
 
@@ -694,7 +690,6 @@ abstract class KalturaScheduleEvent extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -702,7 +697,6 @@ abstract class KalturaScheduleEvent extends KalturaObjectBase {
      * Last update as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -725,21 +719,18 @@ class KalturaScheduleEventResource extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @insertonly
      */
     public $eventId = null;
 
     /**
      *
      * @var int
-     * @insertonly
      */
     public $resourceId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -747,7 +738,6 @@ class KalturaScheduleEventResource extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -755,7 +745,6 @@ class KalturaScheduleEventResource extends KalturaObjectBase {
      * Last update as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 }
@@ -773,7 +762,6 @@ abstract class KalturaScheduleResource extends KalturaObjectBase {
      * Auto-generated unique identifier
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
@@ -786,7 +774,6 @@ abstract class KalturaScheduleResource extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -813,7 +800,6 @@ abstract class KalturaScheduleResource extends KalturaObjectBase {
     /**
      *
      * @var KalturaScheduleResourceStatus
-     * @readonly
      */
     public $status = null;
 
@@ -827,7 +813,6 @@ abstract class KalturaScheduleResource extends KalturaObjectBase {
      * Creation date as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
@@ -835,7 +820,6 @@ abstract class KalturaScheduleResource extends KalturaObjectBase {
      * Last update as Unix timestamp (In seconds)
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 }
@@ -927,7 +911,6 @@ class KalturaScheduleEventListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaScheduleEvent
-     * @readonly
      */
     public $objects;
 }
@@ -944,7 +927,6 @@ class KalturaScheduleEventResourceListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaScheduleEventResource
-     * @readonly
      */
     public $objects;
 }
@@ -961,7 +943,6 @@ class KalturaScheduleResourceListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaScheduleResource
-     * @readonly
      */
     public $objects;
 }

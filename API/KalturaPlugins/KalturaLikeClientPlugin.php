@@ -86,7 +86,6 @@ class KalturaLikeListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaLike
-     * @readonly
      */
     public $objects;
 }

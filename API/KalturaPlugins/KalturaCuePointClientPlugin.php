@@ -146,43 +146,36 @@ class KalturaCuePointType extends KalturaEnumBase {
 abstract class KalturaCuePoint extends KalturaObjectBase {
     /**
      * @var string
-     * @readonly
      */
     public $id = null;
 
     /**
      * @var KalturaCuePointType
-     * @readonly
      */
     public $cuePointType = null;
 
     /**
      * @var KalturaCuePointStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      * @var string
-     * @insertonly
      */
     public $entryId = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -204,7 +197,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase {
 
     /**
      * @var string
-     * @readonly
      */
     public $userId = null;
 
@@ -245,7 +237,6 @@ abstract class KalturaCuePoint extends KalturaObjectBase {
 class KalturaCuePointListResponse extends KalturaListResponse {
     /**
      * @var array of KalturaCuePoint
-     * @readonly
      */
     public $objects;
 }

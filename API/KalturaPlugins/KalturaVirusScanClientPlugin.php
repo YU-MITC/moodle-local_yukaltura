@@ -137,28 +137,24 @@ class KalturaVirusScanProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -349,7 +345,6 @@ class KalturaVirusScanProfileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaVirusScanProfile
-     * @readonly
      */
     public $objects;
 }

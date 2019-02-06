@@ -92,7 +92,6 @@ class KalturaComcastMrssDistributionProfile extends KalturaConfigurableDistribut
 
     /**
      * @var string
-     * @readonly
      */
     public $feedUrl = null;
 

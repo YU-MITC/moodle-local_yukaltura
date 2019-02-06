@@ -460,7 +460,6 @@ abstract class KalturaDropFolderFileHandlerConfig extends KalturaObjectBase {
     /**
      *
      * @var KalturaDropFolderFileHandlerType
-     * @readonly
      */
     public $handlerType = null;
 }
@@ -477,14 +476,12 @@ class KalturaDropFolder extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @insertonly
      */
     public $partnerId = null;
 
@@ -595,14 +592,12 @@ class KalturaDropFolder extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -661,28 +656,24 @@ class KalturaDropFolderFile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var int
-     * @insertonly
      */
     public $dropFolderId = null;
 
     /**
      *
      * @var string
-     * @insertonly
      */
     public $fileName = null;
 
@@ -695,21 +686,18 @@ class KalturaDropFolderFile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $fileSizeLastSetAt = null;
 
     /**
      *
      * @var KalturaDropFolderFileStatus
-     * @readonly
      */
     public $status = null;
 
     /**
      *
      * @var KalturaDropFolderType
-     * @readonly
      */
     public $type = null;
 
@@ -770,14 +758,12 @@ class KalturaDropFolderFile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -808,7 +794,6 @@ class KalturaDropFolderFile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $batchJobId = null;
 }
@@ -1253,7 +1238,6 @@ class KalturaDropFolderFileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaDropFolderFile
-     * @readonly
      */
     public $objects;
 }
@@ -1270,7 +1254,6 @@ class KalturaDropFolderListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaDropFolder
-     * @readonly
      */
     public $objects;
 }

@@ -172,7 +172,6 @@ abstract class KalturaObjectTask extends KalturaObjectBase {
     /**
      *
      * @var KalturaObjectTaskType
-     * @readonly
      */
     public $type = null;
 
@@ -195,14 +194,12 @@ class KalturaScheduledTaskProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
@@ -254,14 +251,12 @@ class KalturaScheduledTaskProfile extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 
@@ -625,7 +620,6 @@ class KalturaScheduledTaskProfileListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaScheduledTaskProfile
-     * @readonly
      */
     public $objects;
 }

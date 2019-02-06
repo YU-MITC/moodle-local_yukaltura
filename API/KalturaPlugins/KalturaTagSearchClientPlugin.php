@@ -53,49 +53,42 @@ class KalturaTag extends KalturaObjectBase {
     /**
      *
      * @var int
-     * @readonly
      */
     public $id = null;
 
     /**
      *
      * @var string
-     * @readonly
      */
     public $tag = null;
 
     /**
      *
      * @var KalturaTaggedObjectType
-     * @readonly
      */
     public $taggedObjectType = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $partnerId = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $instanceCount = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $createdAt = null;
 
     /**
      *
      * @var int
-     * @readonly
      */
     public $updatedAt = null;
 }
@@ -180,7 +173,6 @@ class KalturaTagListResponse extends KalturaListResponse {
     /**
      *
      * @var array of KalturaTag
-     * @readonly
      */
     public $objects;
 }
