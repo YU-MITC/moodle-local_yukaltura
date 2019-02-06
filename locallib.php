@@ -37,12 +37,12 @@ define('KALTURA_PLUGIN_NAME', 'local_yukaltura');
 /**
  * KALTURA_DEFAULT_URI - URL of Kaltura SaaS Edition.
  */
-define('KALTURA_DEFAULT_URI', 'http://www.kaltura.com');
+define('KALTURA_DEFAULT_URI', 'https://www.kaltura.com');
 
 /**
  * KALTURA_REPORT_DEFAULT_URI - Report page URL of Kaltura SaaS Edition.
  */
-define('KALTURA_REPORT_DEFAULT_URI', 'http://apps.kaltura.com/hosted_pages');
+define('KALTURA_REPORT_DEFAULT_URI', 'https://apps.kaltura.com/hosted_pages');
 
 /**
  * KALTURA_PLAYER_PLAYERREGULARDARK - UiConf id of KDP dark.
@@ -845,7 +845,7 @@ function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $sessio
     $output .= "<script>" . PHP_EOL;
     $output .= "kWidget.embed({" . PHP_EOL;
     $output .= "\"targetId\": \"kaltura_player_{$now}\"," . PHP_EOL;
-    $output .= "\"wid\": \"_101\"," . PHP_EOL;
+    $output .= "\"wid\": \"_" . $entryobj->partnerId . "\"," . PHP_EOL;
     $output .= "\"uiconf_id\": {$uiconf}," . PHP_EOL;
     $output .= "\"flashvars\": {{$flashvars}}," . PHP_EOL;
     $output .= "\"cache_st\": {$now}," . PHP_EOL;
