@@ -77,6 +77,10 @@ Warning
 Change log of YU Kaltura Media Local Libraries
 ------
 
+Version 1.2.2
+
+* fixed some statements (about UIConf ID) in locallib.php, in order to solve a problem that unnecessary kwidget javascript codes are loaded.
+
 Version 1.2.1R2
 
 * fixed some statements (about partner ID) in locallib.php, in order to play movies normally when Moodle server connect to the Kaltura Saas Edition or recently version of the Kaltura CE.

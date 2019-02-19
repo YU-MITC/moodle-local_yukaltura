@@ -1372,7 +1372,7 @@ function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '
     $markup .= "        kWidget.embed({" . PHP_EOL;
     $markup .= "            'targetId': 'kaltura_player_{$uid}'," . PHP_EOL;
     $markup .= "            'wid': '_{$entryobj->partnerId}'," . PHP_EOL;
-    $markup .= "            'uiconf_id' : '{$uiconfid}'," . PHP_EOL;
+    $markup .= "            'uiconf_id' : '{$uiconf}'," . PHP_EOL;
     $markup .= "            'entry_id'  : '{$entryobj->id}'," . PHP_EOL;
     $markup .= "            'width'     : '{$entryobj->width}'," . PHP_EOL;
     $markup .= "            'height'    : '{$entryobj->height}'," . PHP_EOL;
