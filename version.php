@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2019050400;
+$plugin->version = 2019051100;
 $plugin->component = 'local_yukaltura';
 $plugin->release = 'YU Kaltura Media Local Libraries 1.3.0';
 $plugin->requires = 2015051100;

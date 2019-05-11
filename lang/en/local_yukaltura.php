@@ -26,7 +26,7 @@ $string['pluginname'] = 'YU Kaltura Media Local Libraries';
 $string['hostedconn'] = 'Kaltura Hosted Solution (SaaS)';
 $string['ceconn'] = 'Kaltura CE';
 $string['conn_heading_title'] = 'Kaltura hosted and CE settings';
-$string['conn_heading_desc'] = 'Input the type of connection you would like to use (KalturaCE or the hosted Kaltura server) and enter in the credentials related to the connection you are using.';
+$string['conn_heading_desc'] = 'Input the type of connection you would like to use (Kaltura CE or the hosted Kaltura server) and enter in the credentials related to the connection you are using.';
 $string['conn_server'] = 'Connection Server';
 $string['conn_server_desc'] = 'Select whether you are connecting to a hosted account on whether you are connect to your own Kaltura CE server';
 $string['server_uri'] = 'Server URI';
@@ -47,7 +47,7 @@ $string['kaltura_player_desc'] = 'Player used to play-back media for Media Assig
 $string['kaltura_player_custom'] = 'Custom UIConf';
 $string['kaltura_player_custom_desc'] = 'Only used if you have a custom assignment player UIConf ID';
 $string['kaltura_player_mymedia'] = 'Kaltura mymedia player';
-$string['kaltura_player_mymedia_desc'] = 'Player used to play-back media for My Media. This player will appear as the default player for preview media, link URL, and embed code.';
+$string['kaltura_player_mymedia_desc'] = 'Player used to play-back media for My Media.  This player will appear as the default player for preview media, link URL, and embed code.';
 $string['kaltura_player_mymedia_custom'] = 'Custom UIConf';
 $string['kaltura_player_mymedia_custom_desc'] = 'Only used if you have a custom mymedia player UIConf ID';
 $string['kalmediaassign_upload'] = 'Enable uploading';
@@ -63,7 +63,6 @@ $string['click_test_button'] = 'Click button to test the connection';
 $string['start'] = 'Start';
 $string['flashminimum'] = 'Flash player version 9 and above is required. <a href=\"http://get.adobe.com/flashplayer/\">Upgrade your flash version</a>';
 $string['upload_successful'] = 'Media uploaded successfully.  Remember to save/submit.';
-$string['media_converting'] = 'The media is still converting.  Please check the status of the media at a later time.';
 $string['media_converting'] = 'The media is still converting.  Please check the status of the media at a later time.';
 $string['conn_failed_alt'] = 'Connection with Kaltura is currently unavailable.  Please inform your administrator.';
 $string['player_resource_override'] = 'Override media resource player setting';
@@ -144,7 +143,7 @@ $string['rootcategory_created'] = 'Root category created with the following stru
 $string['rootcategory_create'] = 'Please specify a root category.';
 $string['unable_to_create'] = 'Unable to create root category as <b>{$a}</b>.  Please Choose another name(s) for the root category';
 $string['resetroot'] = 'Reset category location';
-$string['confirm_category_reset'] = '<p>Are you sure you want to reset the root category location?</p><p>If you perform this action, all media course sharing and usage information in Moodle will be lost.</p><p>If you accidentially click "continue", it is possible to get your information back, but only if you set the category path back to the <b>original</b> value.</p><p>Choose wisely.</p>';
+$string['confirm_category_reset'] = '<p>Are you sure you want to reset the root category location?</p><p>If you perform this action, all media course sharing and usage information in Moodle will be lost.</p><p>If you accidentally click "continue", it is possible to get your information back, but only if you set the category path back to the <b>original</b> value.</p><p>Choose wisely.</p>';
 $string['category_reset_complete'] = '<b>Root category has been reset</b>';
 
 // Properties panel.
