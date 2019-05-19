@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'YU Kaltura Media Local Libraries';
+$string['pluginname'] = 'YU Kaltura メディア・ローカル・ライブラリ';
 $string['hostedconn'] = 'Kaltura Hosted Solution (SaaS)';
 $string['ceconn'] = 'Kaltura CE';
 $string['conn_heading_title'] = 'ホスト接続設定';
