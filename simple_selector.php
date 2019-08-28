@@ -122,7 +122,8 @@ if (local_yukaltura_get_mymedia_permission()) {
             $page = $renderer->paging_bar($total,
                                           $page,
                                           $perpage,
-                                          new moodle_url('/local/yukaltura/simple_selector.php', array('sort' => $sort)));
+                                          new moodle_url('/local/yukaltura/simple_selector.php',
+                                                         array('sort' => $sort)));
 
             $verstr = trim($CFG->release);
             $num = preg_match('/^[0-9]+/', $verstr, $matches);

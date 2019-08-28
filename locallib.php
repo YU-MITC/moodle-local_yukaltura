@@ -536,7 +536,7 @@ function local_yukaltura_get_player_uiconf($type = 'player') {
         case 'mymedia_uploader':
         case 'mymedia_screen_recorder':
         case 'assign_uploader':
-        case 'player_filter':
+        case 'player_atto':
         case 'simple_uploader';
 
             $uiconf = get_config(KALTURA_PLUGIN_NAME, $type);
@@ -963,6 +963,27 @@ function local_yukaltura_get_kdp_flashvars($creatorname = '', $session = '') {
     }
 
     return $flashvars;
+}
+
+/**
+ * This function returns player dimension for atto plugin.
+ *
+ * @return object - dimension of atto player.
+ *
+ */
+function local_yukaltura_get_atto_player_dimension() {
+    $width = get_config(KALTURA_PLUGIN_NAME, 'atto_player_width');
+    $height = get_config(KALTURA_PLUGIN_NAME, 'atto_player_height');
+
+    if (empty($width) || $width == null) {
+        $width = 0;
+    }
+
+    if (empty($height) || $height == null) {
+        $height = 0;
+    }
+
+    return [$width, $height];
 }
 
 /**

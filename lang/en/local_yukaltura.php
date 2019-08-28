@@ -46,6 +46,10 @@ $string['kaltura_player'] = 'Kaltura player';
 $string['kaltura_player_desc'] = 'Player used to play-back media for Media Assignments';
 $string['kaltura_player_custom'] = 'Custom UIConf';
 $string['kaltura_player_custom_desc'] = 'Only used if you have a custom assignment player UIConf ID';
+$string['kaltura_player_atto'] = 'Kaltura atto player';
+$string['kaltura_player_atto_desc'] = 'Player used to play-back media for atto plugin';
+$string['kaltura_player_atto_custom'] = 'Custom UIConf';
+$string['kaltura_player_atto_custom_desc']  = 'Only used if you have custom atto plugin player UIConf ID';
 $string['kaltura_player_mymedia'] = 'Kaltura mymedia player';
 $string['kaltura_player_mymedia_desc'] = 'Player used to play-back media for My Media.  This player will appear as the default player for preview media, link URL, and embed code.';
 $string['kaltura_player_mymedia_custom'] = 'Custom UIConf';
@@ -54,6 +58,8 @@ $string['kalmediaassign_upload'] = 'Enable uploading';
 $string['kalmediaassign_upload_desc'] = 'Students can upload new media in report submission form.';
 $string['kalmediares_upload'] = 'Enable uploading';
 $string['kalmediares_upload_desc'] = 'Teachers can upload new media in resource editing form.';
+$string['atto_upload'] = 'Enable uploading';
+$string['atto_upload_desc'] = 'Teachers and students can upload new media in the Atto Text Editor';
 
 $string['conn_status_title'] = 'Connection status';
 $string['conn_success'] = 'Successfully logged in with credentials';
@@ -76,17 +82,11 @@ $string['kaltura_kalmediapres_title'] = 'Kaltura Media Presentation Settings';
 $string['kaltura_kcw_title'] = 'Kaltura Content Wizard (KCW) Settings';
 $string['kaltura_kalmediares_title'] = 'Kaltura Media Resource Settings';
 $string['kaltura_kalmediaassign_title'] = 'Kaltura Media Assignment Settings';
-$string['filter_player_width'] = 'Embedded player width';
-$string['filter_player_width_desc'] = 'Width of the embedded player';
-$string['filter_player_height'] = 'Embedded player height';
-$string['filter_player_height_desc'] = 'Height of the embedded player';
-$string['filter_player'] = 'Embedded player height';
-$string['filter_player_desc'] = 'Height of the embedded player';
-$string['filter_custom'] = 'Custom embedded UIConf ID';
-$string['filter_custom_desc'] = 'Only used if you have a custom player for embedding media';
-$string['player_filter'] = 'Embedded player';
-$string['player_filter_desc'] = 'Player used by the Kaltura filter plug-in when embedding media on the page';
-$string['kaltura_filter_title'] = 'Embedded player used via the File Picker (Kaltura Filter) settings';
+$string['atto_player_width'] = 'Atto player width';
+$string['atto_player_width_desc'] = 'Width of the embedded player';
+$string['atto_player_height'] = 'Atto player height';
+$string['atto_player_height_desc'] = 'Height of the embedded player';
+$string['kaltura_atto_title'] = 'Kaltura Atto Plugin Settings';
 $string['kaltura_mymedia_title'] = 'My Media Settings';
 $string['nine'] = '9';
 $string['eighteen'] = '18';
@@ -193,6 +193,10 @@ $string['mostrecent'] = 'Most recent';
 $string['oldest'] = 'Oldest';
 $string['medianameasc'] = 'Media name (ascending)';
 $string['medianamedesc'] = 'Media name (descending)';
+
+// Buttons.
+$string['ok_label'] = 'OK';
+$string['cancel_label'] = 'Cancel,Close';
 
 // Kaltura reports.
 $string['kaltura_report_navbar'] = 'Kaltura Course Media Reports';

@@ -64,11 +64,11 @@ define(['jquery'], function($) {
                 selectThumbnail = selectThumbnail.replace(/width\/\d+/g, "width/150");
                 selectThumbnail = selectThumbnail.replace(/height\/\d+/g, "height/100");
 
-                // Get entry id of selected media.
+                // Set entry id of selected media.
                 $("#select_id").val(selectId);
-                // Get name of selected media.
+                // Set name of selected media.
                 $("#select_name").html(selectName);
-                // Get thumbnail of selected media.
+                // Set thumbnail of selected media.
                 $("#select_thumbnail").val(selectThumbnail);
 
                 // Enable OK button.
@@ -238,12 +238,12 @@ define(['jquery'], function($) {
                 $("#id_add_media", parent.document).val(str);
             }
 
-            $("#id_add_media").on("click", function() {
-                fadeInSelectorWindow(selectorUrl);
-            });
-
             $("#selectorSort").on("change", function() {
                 changeSort();
+            });
+
+            $("#id_add_media").on("click", function() {
+                fadeInSelectorWindow(selectorUrl);
             });
 
             $("#submit_btn").on("click", function() {

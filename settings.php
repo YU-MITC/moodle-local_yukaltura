@@ -337,7 +337,46 @@ if ($hassiteconfig) {
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
-    // Kaltura My Media settings.
+    // Kaltura atto plugin section.
+    $settings->add(new admin_setting_heading('kaltura_atto_heading',
+                                             get_string('kaltura_atto_title', 'local_yukaltura'), ''));
+
+        $adminsetting = new admin_setting_configselect('player_atto',
+                                                   get_string('kaltura_player_atto', 'local_yukaltura'),
+                                                   get_string('kaltura_player_atto_desc', 'local_yukaltura'),
+                                                   KALTURA_PLAYER_PLAYERREGULARDARK, $choices);
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $adminsetting = new admin_setting_configtext('player_atto_custom',
+                                                 get_string('kaltura_player_atto_custom', 'local_yukaltura'),
+                                                 get_string('kaltura_player_atto_custom_desc', 'local_yukaltura'),
+                                                 '', PARAM_INT);
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $adminsetting = new admin_setting_configtext('atto_player_width',
+                                                 get_string('atto_player_width', 'local_yukaltura'),
+                                                 get_string('atto_player_width_desc', 'local_yukaltura'),
+                                                 '400', PARAM_INT);
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $adminsetting = new admin_setting_configtext('atto_player_height',
+                                                 get_string('atto_player_height', 'local_yukaltura'),
+                                                 get_string('atto_player_height_desc', 'local_yukaltura'),
+                                                 '365', PARAM_INT);
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    // Upload checkbox.
+    $adminsetting = new admin_setting_configcheckbox('atto_upload',
+                                                     get_string('atto_upload', 'local_yukaltura'),
+                                                     get_string('atto_upload_desc', 'local_yukaltura'), '0');
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    // Kaltura My Media section.
     $settings->add(new admin_setting_heading('kaltura_mymedia_heading',
                    get_string('kaltura_mymedia_title', 'local_yukaltura'), ''));
 

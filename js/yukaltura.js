@@ -127,6 +127,36 @@ M.local_yukaltura = {
 
             });
 
+            // Add a 'change' event to the Kaltura Atto player selection drop down.
+            var kalturaPlayerAtto = Y.one('#id_s_local_yukaltura_player_atto');
+
+            // Check for the selected option.
+            var kalturaPlayerAttoDom = Y.Node.getDOMNode(kalturaPlayerAtto);
+
+            length = kalturaPlayerAttoDom.length - 1;
+
+            if (length == kalturaPlayerAttoDom.selectedIndex) {
+                Y.DOM.byId('id_s_local_yukaltura_player_atto_custom').disabled = false;
+            } else {
+                Y.DOM.byId('id_s_local_yukaltura_player_atto_custom').disabled = true;
+            }
+
+            kalturaPlayerAtto.on('change', function(e) {
+                e.preventDefault();
+                var kalturaCustomPlayerAtto = Y.DOM.byId("id_s_local_yukaltura_player_atto_custom");
+
+                var kalturaPlayerAttoDom = Y.Node.getDOMNode(e.target);
+
+                var length = kalturaPlayerAttoDom.length - 1;
+
+                if (length == kalturaPlayerAttoDom.selectedIndex) {
+                    kalturaCustomPlayerAtto.disabled = false;
+                } else {
+                    kalturaCustomPlayerAtto.disabled = true;
+                }
+
+            });
+
             // Add a 'change' event to the Kaltura mymedia player selection drop down.
             var kalturaPlayerMymedia = Y.one('#id_s_local_yukaltura_player_mymedia');
 

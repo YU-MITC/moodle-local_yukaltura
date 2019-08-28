@@ -93,16 +93,22 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
      * This function creates HTML markup used to sort the media listing.
+     * @param string $url - URL of selector page,
      * @return string - HTML markup for sorting pulldown.
      */
-    public function create_sort_option() {
+    public function create_sort_option($url = '') {
         global $SESSION;
 
         $recent = null;
         $old = null;
         $nameasc = null;
         $namedesc = null;
-        $sorturl = new moodle_url('/local/yukaltura/simple_selector.php');
+
+        if (empty($url) || $url == '') {
+            $url = '/local/yukaltura/simple_selector.php';
+        }
+
+        $sorturl = new moodle_url($url);
         $sorturl .= "?sort=";
 
         if (isset($SESSION->selectorsort) && !empty($SESSION->selectorsort)) {
@@ -188,9 +194,10 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      * This function creates HTML markup used to display table upper options.
      *
      * @param string $page - HTML text (paging markup).
+     * @param string $url - URL of selector page.
      * @return string - HTML text added sorting pulldown.
      */
-    public function create_options_table_upper($page) {
+    public function create_options_table_upper($page, $url = '') {
         global $USER;
 
         $output = '';
@@ -200,14 +207,14 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $context = context_user::instance($USER->id);
 
         if (has_capability('local/yukaltura:search_selector', $context, $USER)) {
-            $simplesearch = $this->create_search_markup();
+            $simplesearch = $this->create_search_markup($url);
         }
 
         $output .= $simplesearch;
 
         if (!empty($page)) {
             $output .= html_writer::start_tag('center');
-            $output .= $this->create_sort_option();
+            $output .= $this->create_sort_option($url);
             $output .= $page;
             $output .= html_writer::end_tag('center');
         }
@@ -375,11 +382,15 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
      * This function creates HTML markup for a search tool box.
-     *
+     * @param string $url - URL of selector page.
      * @return string - HTML markup for search tool box.
      */
-    public function create_search_markup() {
+    public function create_search_markup($url = '') {
         global $SESSION;
+
+        if (empty($url) || $url == '') {
+            $url = '/local/yukaltura/simple_selector.php';
+        }
 
         $output = '';
 
@@ -389,7 +400,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $output .= html_writer::start_tag('span', $attr);
 
         $attr = array('method' => 'post',
-                      'action' => new moodle_url('/local/yukaltura/simple_selector.php'),
+                      'action' => new moodle_url($url),
                       'class' => 'selector search form');
 
         $output .= html_writer::start_tag('form', $attr);
@@ -503,10 +514,10 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
      * This function creates HTML markup for selected media name, submit button, and cancel button.
-     *
+     * @param string $type - Module type.
      * @return string - HTML markup for selected media name, submit button, and cancel button.
      */
-    public function create_selector_submit_form() {
+    public function create_selector_submit_form($type = '') {
         $output = '';
 
         $output .= get_string('selected_media', 'local_yukaltura') . ' : ';
@@ -518,36 +529,39 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         $output .= '<br>';
 
-        $attr = array('type' => 'hidden', 'id' => 'select_id', 'name' => 'select_id', 'value' => '');
-        $output .= html_writer::empty_tag('input', $attr);
+        if ($type != 'atto') {
 
-        $attr = array('type' => 'hidden', 'id' => 'select_thumbnail', 'name' => 'select_thumbnail', 'value' => '');
-        $output .= html_writer::empty_tag('input', $attr);
+            $attr = array('type' => 'hidden', 'id' => 'select_id', 'name' => 'select_id', 'value' => '');
+            $output .= html_writer::empty_tag('input', $attr);
 
-        $attr = array('border' => '0', 'align' => 'right', 'cellpadding' => '10');
-        $output .= html_writer::start_tag('table', $attr);
+            $attr = array('type' => 'hidden', 'id' => 'select_thumbnail', 'name' => 'select_thumbnail', 'value' => '');
+            $output .= html_writer::empty_tag('input', $attr);
 
-        $output .= html_writer::start_tag('tr', array());
+            $attr = array('border' => '0', 'align' => 'right', 'cellpadding' => '10');
+            $output .= html_writer::start_tag('table', $attr);
 
-        $output .= html_writer::start_tag('td', array());
+            $output .= html_writer::start_tag('tr', array());
 
-        $attr = array('type' => 'button', 'id' => 'submit_btn', 'name' => 'submit_btn',
-                      'value' => 'OK', 'disabled' => 'true');
-        $output .= html_writer::empty_tag('input', $attr);
+            $output .= html_writer::start_tag('td', array());
 
-        $output .= html_writer::end_tag('td');
+            $attr = array('type' => 'button', 'id' => 'submit_btn', 'name' => 'submit_btn',
+                      'value' => get_string('ok_label', 'local_yukaltura'), 'disabled' => 'true');
+            $output .= html_writer::empty_tag('input', $attr);
 
-        $output .= html_writer::start_tag('td', array());
+            $output .= html_writer::end_tag('td');
 
-        $attr = array('type' => 'button', 'id' => 'cancel_btn', 'name' => 'cancel_btn',
-                      'value' => 'Cancel, Close');
-        $output .= html_writer::empty_tag('input', $attr);
+            $output .= html_writer::start_tag('td', array());
 
-        $output .= html_writer::end_tag('td');
+            $attr = array('type' => 'button', 'id' => 'cancel_btn', 'name' => 'cancel_btn',
+                          'value' => get_string('cancel_label', 'local_yukaltura'));
+            $output .= html_writer::empty_tag('input', $attr);
 
-        $output .= html_writer::end_tag('tr');
+            $output .= html_writer::end_tag('td');
 
-        $output .= html_writer::end_tag('table');
+            $output .= html_writer::end_tag('tr');
+
+            $output .= html_writer::end_tag('table');
+        }
 
         return $output;
     }
@@ -767,4 +781,59 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         return $output;
     }
 
+    /**
+     * This function creates HTML markup used to print hidden parameters for atto plugin.
+     *
+     * @return string - HTML markup for atto plugin.
+     */
+    public function create_atto_hidden_markup() {
+        $output = '';
+
+        $kalturahost = local_yukaltura_get_host();
+        $partnerid = local_yukaltura_get_partner_id();
+        $uiconfid = local_yukaltura_get_player_uiconf('player_atto');
+        list($playerwidth, $playerheight) = local_yukaltura_get_atto_player_dimension();
+
+        $attr = array('type' => 'hidden',
+                      'name' => 'kalturahost',
+                      'id' => 'kalturahost',
+                      'value' => $kalturahost
+                     );
+
+        $output .= html_writer::empty_tag('input', $attr);
+
+        $attr = array('type' => 'hidden',
+                      'name' => 'partnerid',
+                      'id' => 'partnerid',
+                      'value' => $partnerid
+                     );
+
+        $output .= html_writer::empty_tag('input', $attr);
+
+        $attr = array('type' => 'hidden',
+                      'name' => 'uiconfid',
+                      'id' => 'uiconfid',
+                      'value' => $uiconfid
+                     );
+
+        $output .= html_writer::empty_tag('input', $attr);
+
+        $attr = array('type' => 'hidden',
+                      'name' => 'player_width',
+                      'id' => 'player_width',
+                      'value' => $playerwidth
+                     );
+
+        $output .= html_writer::empty_tag('input', $attr);
+
+        $attr = array('type' => 'hidden',
+                      'name' => 'player_height',
+                      'id' => 'player_height',
+                      'value' => $playerheight
+                     );
+
+        $output .= html_writer::empty_tag('input', $attr);
+
+        return $output;
+    }
 }
