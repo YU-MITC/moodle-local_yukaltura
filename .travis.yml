@@ -35,7 +35,7 @@ before_install:
   - nvm ls-remote
   - nvm install v8.9
   - nvm use v8.9
-  - nvm alias default v8.9.1
+  - nvm alias default v8.9.4
   - node --version
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist blackboard-open-source/moodle-plugin-ci ci ^2
