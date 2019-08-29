@@ -213,10 +213,21 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $output .= $simplesearch;
 
         if (!empty($page)) {
-            $output .= html_writer::start_tag('center');
-            $output .= $this->create_sort_option($url);
+            $attr = array('border' => 0, 'width' => '100%');
+            $output .= html_writer::start_tag('table', $attr);
+
+            $output .= html_writer::start_tag('tr');
+
+            $attr = array('colspan' => 3, 'align' => 'center');
+            $output .= html_writer::start_tag('td', $attr);
+
             $output .= $page;
-            $output .= html_writer::end_tag('center');
+
+            $output .= html_writer::end_tag('td');
+
+            $output .= html_writer::end_tag('tr');
+
+            $output .= html_writer::end_tag('table');
         }
 
         return $output;
@@ -364,6 +375,34 @@ class local_yukaltura_renderer extends plugin_renderer_base {
             $output .= $this->create_media_thumbnail_markup($modifiedurl,
                                                             $entry->name, $entry->id);
         }
+
+        $type = "video";
+
+        if (KalturaMediaType::IMAGE == $entry->mediaType) {
+            $type = "image";
+        }
+
+        if (KalturaMediaType::AUDIO == $entry->mediaType) {
+            $type = "audio";
+        }
+
+        $attr = array('type' => 'hidden',
+                       'name' => $entry->id . '_filetype',
+                       'id' => $entry->id . '_filetype',
+                       'value' => $type);
+        $output .= html_writer::start_tag('input', $attr);
+
+        $attr = array('type' => 'hidden',
+                       'name' => $entry->id . '_width',
+                       'id' => $entry->id . '_width',
+                       'value' => $entry->width);
+        $output .= html_writer::start_tag('input', $attr);
+
+        $attr = array('type' => 'hidden',
+                       'name' => $entry->id . '_height',
+                       'id' => $entry->id . '_height',
+                       'value' => $entry->height);
+        $output .= html_writer::start_tag('input', $attr);
 
         $output .= html_writer::end_tag('div');
 
