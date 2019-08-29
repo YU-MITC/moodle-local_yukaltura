@@ -43,7 +43,7 @@ before_install:
 
 install:
   - moodle-plugin-ci install
- 
+
 script:
   - moodle-plugin-ci phplint
   - moodle-plugin-ci phpcpd
