@@ -145,7 +145,7 @@ if (local_yukaltura_get_mymedia_permission()) {
         } else {
 
             echo $renderer->create_options_table_upper($page);
-            echo '<center>'. get_string('no_media', 'local_yukaltura') . '</center>';
+            echo '<br><br><p align="center">'. get_string('no_media', 'local_yukaltura') . '</p>';
             echo $renderer->create_options_table_lower($page);
 
         }

@@ -26,8 +26,9 @@ require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(__FILE__) . '/API/KalturaClient.php');
 require_once(dirname(__FILE__) . '/kaltura_entries.class.php');
 
-require_login();
 defined('MOODLE_INTERNAL') || die();
+
+require_login();
 
 /**
  * KALTURA_PLUGIN_NAME - local plugin name.
@@ -1858,7 +1859,7 @@ function local_yukaltura_create_root_category($connection) {
             $categorytocreated = $categorytocreated . '>' . $categoryname;
         }
 
-        // Check if the category already exists.  If any exists then we cannot create the category.
+        // Check if the category already exists. If any exists then we cannot create the category.
         if (local_yukaltura_category_path_exists($connection, $categorytocreated)) {
             $duplicate = true;
             break;

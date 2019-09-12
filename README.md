@@ -80,6 +80,10 @@ Warning
 Change log of YU Kaltura Media Local Libraries
 ------
 
+Version 1.3.2
+
+* fixed some statements in kaltura_entries.class.php, and locallib.php, about the Moodle internal check.
+
 Version 1.3.1
 
 * fixed some statements in simple_selector.php and renderer.php, in order to use language strings.
