@@ -51,7 +51,7 @@ How to use
 Targeted Moodle versions
 ------
 
-Moodle 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7
+Moodle 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8
 
 Branches
 ------
@@ -65,6 +65,7 @@ Branches
 * MOODLE_35_STABLE -> Moodle3.5 branch
 * MOODLE_36_STABLE -> Moodle3.6 branch
 * MOODLE_37_STABLE -> Moodle3.7 branch
+* MOODLE_38_STABLE -> Moodle3.8 branch
 
 First clone the repository with "git clone", then "git checkout MOODLE_29_STABLE(branch name)" to switch branches.
 
@@ -79,6 +80,12 @@ Warning
 
 Change log of YU Kaltura Media Local Libraries
 ------
+
+Version 1.3.3
+
+* fixed some statements in locallib.php, in order to support PHP 7.3.0 and later versions.
+* fixed javascript files based on JSDoc warnings.
+* added privacy functions ans strings to comply with GDPR.
 
 Version 1.3.2
 

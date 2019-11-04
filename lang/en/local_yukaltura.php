@@ -216,3 +216,6 @@ $string['search'] = 'Search';
 $string['search_courses_display_limit'] = 'Course search display limit';
 $string['search_courses_display_limit_desc'] = 'The limit of the number of courses to display from a search';
 $string['repo_not_installed'] = 'The Kaltura repository needs to be installed to view this file';
+
+// Privacy strings.
+$string['privacy:metadata'] = 'The YU Kaltura Media Local Libraries does not store any personal data.';

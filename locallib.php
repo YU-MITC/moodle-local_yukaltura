@@ -22,13 +22,14 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
-require_once(dirname(__FILE__) . '/API/KalturaClient.php');
-require_once(dirname(__FILE__) . '/kaltura_entries.class.php');
-
 defined('MOODLE_INTERNAL') || die();
 
+require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
+
 require_login();
+
+require_once(dirname(__FILE__) . '/API/KalturaClient.php');
+require_once(dirname(__FILE__) . '/kaltura_entries.class.php');
 
 /**
  * KALTURA_PLUGIN_NAME - local plugin name.
@@ -1489,11 +1490,16 @@ class yukaltura_connection {
  * @return string - client ip address.
  */
 function local_yukaltura_get_client_ipaddress($checkproxy = true) {
+    $ip = '';
 
     if ($checkproxy && local_yukaltura_get_server_variable('HTTP_CLIENT_IP') != null) {
         $ip = local_yukaltura_get_server_variable('HTTP_CLIENT_IP');
     } else if ($checkproxy && local_yukaltura_get_server_variable('HTTP_X_FORWARDED_FOR') != null) {
-        $ip = getServer('HTTP_X_FORWARDED_FOR');
+        if (function_exists('getServer')) {
+            $ip = getServer('HTTP_X_FORWARDED_FOR');
+        } else {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
     } else { // Not through a proxy.
         $ip = local_yukaltura_get_server_variable('REMOTE_ADDR');
     }
