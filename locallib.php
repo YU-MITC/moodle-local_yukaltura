@@ -97,6 +97,11 @@ define('KALTURA_POPUP_HEIGHT_ADJUSTMENT', 50);
 define('KALTURA_SESSION_LENGTH', 10800); // Three hours.
 
 /**
+ * Time lengh (sec) of Upload Session.
+ */
+define('UPLOAD_SESSION_LENGTH', 21600); // Six hours.
+
+/**
  * Label of Access Restriction.
  */
 define('KALTURA_IPADDRESS_ANY', 'ANY');
