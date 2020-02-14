@@ -195,9 +195,10 @@ class local_yukaltura_renderer extends plugin_renderer_base {
      *
      * @param string $page - HTML text (paging markup).
      * @param string $url - URL of selector page.
+     * @param string $searchkeyword - searchkeyword.
      * @return string - HTML text added sorting pulldown.
      */
-    public function create_options_table_upper($page, $url = '') {
+    public function create_options_table_upper($page, $url = '', $searchkeyword = '') {
         global $USER;
 
         $output = '';
@@ -207,7 +208,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $context = context_user::instance($USER->id);
 
         if (has_capability('local/yukaltura:search_selector', $context, $USER)) {
-            $simplesearch = $this->create_search_markup($url);
+            $simplesearch = $this->create_search_markup($url, $searchkeyword);
         }
 
         $output .= $simplesearch;
@@ -422,9 +423,10 @@ class local_yukaltura_renderer extends plugin_renderer_base {
     /**
      * This function creates HTML markup for a search tool box.
      * @param string $url - URL of selector page.
+     * @param string $searchkeyword - search keyword.
      * @return string - HTML markup for search tool box.
      */
-    public function create_search_markup($url = '') {
+    public function create_search_markup($url = '', $searchkeyword = '') {
         global $SESSION;
 
         if (empty($url) || $url == '') {
@@ -470,7 +472,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         $output .= '&nbsp;';
 
-        $defaultvalue = (isset($SESSION->selector) && !empty($SESSION->selector)) ? $SESSION->selector : '';
+        $defaultvalue = (isset($searchkeyword) && !empty($searchkeyword)) ? $searchkeyword : '';
         $attr = array('type' => 'text',
                       'id' => 'simple_search',
                       'class' => 'selector simple search',

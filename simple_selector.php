@@ -74,13 +74,13 @@ if ($data = data_submitted() and confirm_sesskey()) {
         $data->simple_search_name = clean_param($data->simple_search_name, PARAM_NOTAGS);
 
         if (isset($data->simple_search_btn_name)) {
-            $SESSION->selector = $data->simple_search_name;
+            $SESSION->local_yukaltura->selector = $data->simple_search_name;
         } else if (isset($data->clear_simple_search_btn_name)) {
-            $SESSION->selector = '';
+            $SESSION->local_yukaltura->selector = '';
         }
     } else {
         // Clear the session variable in case the user's permissions were revoked during a search.
-        $SESSION->selector = '';
+        $SESSION->local_yukaltura->selector = '';
     }
 }
 
@@ -108,10 +108,11 @@ if (local_yukaltura_get_mymedia_permission()) {
         $SESSION->selectorsort = $sort;
 
         // Check if the sesison data is set.
-        if (isset($SESSION->selector) && !empty($SESSION->selector)) {
-            $medialist = local_yukaltura_search_mymedia_medias($connection, $SESSION->selector, $page + 1, $perpage, $sort);
+        if (isset($SESSION->local_yukaltura->selector) && !empty($SESSION->local_yukaltura->selector)) {
+            $medialist = local_yukaltura_search_mymedia_medias($connection, $SESSION->local_yukaltura->selector,
+                                                               $page + 1, $perpage, $sort);
         } else {
-                $medialist = local_yukaltura_search_mymedia_medias($connection, '', $page + 1, $perpage, $sort);
+            $medialist = local_yukaltura_search_mymedia_medias($connection, '', $page + 1, $perpage, $sort);
         }
 
         $total = $medialist->totalCount;
@@ -137,14 +138,14 @@ if (local_yukaltura_get_mymedia_permission()) {
                 }
             }
 
-            echo $renderer->create_options_table_upper($page);
+            echo $renderer->create_options_table_upper($page, '', $SESSION->local_yukaltura->selector);
 
             echo $renderer->create_media_table($medialist);
 
             echo $renderer->create_options_table_lower($page);
         } else {
 
-            echo $renderer->create_options_table_upper($page);
+            echo $renderer->create_options_table_upper($page, '', $SESSION->local_yukaltura->selector);
             echo '<br><br><p align="center">'. get_string('no_media', 'local_yukaltura') . '</p>';
             echo $renderer->create_options_table_lower($page);
 

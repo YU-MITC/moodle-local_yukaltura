@@ -81,6 +81,10 @@ Warning
 Change log of YU Kaltura Media Local Libraries
 ------
 
+Version 1.4.0R2
+
+* fixed some statements in renderer.php, and simple_search.php, in order to resolve an issue about search keyword handling.
+
 Version 1.4.0
 
 * fixed some statements in locallib.php, in order to support PHP 7.3.0 and later versions.
