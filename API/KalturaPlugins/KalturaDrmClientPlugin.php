@@ -19,7 +19,7 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -37,7 +37,7 @@ require_once(dirname(__FILE__) . "/../KalturaTypes.php");
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmLicenseExpirationPolicy extends KalturaEnumBase {
@@ -54,7 +54,7 @@ class KalturaDrmLicenseExpirationPolicy extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmPolicyStatus extends KalturaEnumBase {
@@ -69,7 +69,7 @@ class KalturaDrmPolicyStatus extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmProfileStatus extends KalturaEnumBase {
@@ -84,7 +84,7 @@ class KalturaDrmProfileStatus extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmLicenseScenario extends KalturaEnumBase {
@@ -103,7 +103,7 @@ class KalturaDrmLicenseScenario extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmLicenseType extends KalturaEnumBase {
@@ -118,7 +118,7 @@ class KalturaDrmLicenseType extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmPolicyOrderBy extends KalturaEnumBase {
@@ -129,7 +129,7 @@ class KalturaDrmPolicyOrderBy extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmProfileOrderBy extends KalturaEnumBase {
@@ -148,7 +148,7 @@ class KalturaDrmProfileOrderBy extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmProviderType extends KalturaEnumBase {
@@ -167,7 +167,7 @@ class KalturaDrmProviderType extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmLicenseAccessDetails extends KalturaObjectBase {
@@ -204,7 +204,7 @@ class KalturaDrmLicenseAccessDetails extends KalturaObjectBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmPolicy extends KalturaObjectBase {
@@ -299,7 +299,7 @@ class KalturaDrmPolicy extends KalturaObjectBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmProfile extends KalturaObjectBase {
@@ -375,7 +375,7 @@ class KalturaDrmProfile extends KalturaObjectBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAccessControlDrmPolicyAction extends KalturaRuleAction {
@@ -392,7 +392,7 @@ class KalturaAccessControlDrmPolicyAction extends KalturaRuleAction {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDrmPolicyBaseFilter extends KalturaFilter {
@@ -462,7 +462,7 @@ abstract class KalturaDrmPolicyBaseFilter extends KalturaFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmPolicyListResponse extends KalturaListResponse {
@@ -478,7 +478,7 @@ class KalturaDrmPolicyListResponse extends KalturaListResponse {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaDrmProfileBaseFilter extends KalturaFilter {
@@ -542,7 +542,7 @@ abstract class KalturaDrmProfileBaseFilter extends KalturaFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmProfileListResponse extends KalturaListResponse {
@@ -558,7 +558,7 @@ class KalturaDrmProfileListResponse extends KalturaListResponse {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmPolicyFilter extends KalturaDrmPolicyBaseFilter {
@@ -569,7 +569,7 @@ class KalturaDrmPolicyFilter extends KalturaDrmPolicyBaseFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmProfileFilter extends KalturaDrmProfileBaseFilter {
@@ -580,7 +580,7 @@ class KalturaDrmProfileFilter extends KalturaDrmProfileBaseFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmPolicyService extends KalturaServiceBase {
@@ -696,7 +696,7 @@ class KalturaDrmPolicyService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmProfileService extends KalturaServiceBase {
@@ -830,7 +830,7 @@ class KalturaDrmProfileService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmLicenseAccessService extends KalturaServiceBase {
@@ -869,7 +869,7 @@ class KalturaDrmLicenseAccessService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDrmClientPlugin extends KalturaClientPlugin {

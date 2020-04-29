@@ -19,7 +19,7 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -38,7 +38,7 @@ require_once(dirname(__FILE__) . "/KalturaCuePointClientPlugin.php");
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbCuePointOrderBy extends KalturaEnumBase {
@@ -69,7 +69,7 @@ class KalturaThumbCuePointOrderBy extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaTimedThumbAssetOrderBy extends KalturaEnumBase {
@@ -96,7 +96,7 @@ class KalturaTimedThumbAssetOrderBy extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbCuePoint extends KalturaCuePoint {
@@ -131,7 +131,7 @@ class KalturaThumbCuePoint extends KalturaCuePoint {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaTimedThumbAsset extends KalturaThumbAsset {
@@ -148,7 +148,7 @@ class KalturaTimedThumbAsset extends KalturaThumbAsset {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaThumbCuePointBaseFilter extends KalturaCuePointFilter {
@@ -206,7 +206,7 @@ abstract class KalturaThumbCuePointBaseFilter extends KalturaCuePointFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbCuePointFilter extends KalturaThumbCuePointBaseFilter {
@@ -217,7 +217,7 @@ class KalturaThumbCuePointFilter extends KalturaThumbCuePointBaseFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaTimedThumbAssetBaseFilter extends KalturaThumbAssetFilter {
@@ -228,7 +228,7 @@ abstract class KalturaTimedThumbAssetBaseFilter extends KalturaThumbAssetFilter 
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaTimedThumbAssetFilter extends KalturaTimedThumbAssetBaseFilter {
@@ -239,7 +239,7 @@ class KalturaTimedThumbAssetFilter extends KalturaTimedThumbAssetBaseFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbCuePointClientPlugin extends KalturaClientPlugin {

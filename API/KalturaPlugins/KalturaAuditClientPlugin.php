@@ -19,7 +19,7 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -37,7 +37,7 @@ require_once(dirname(__FILE__) . "/../KalturaTypes.php");
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailChangeXmlNodeType extends KalturaEnumBase {
@@ -54,7 +54,7 @@ class KalturaAuditTrailChangeXmlNodeType extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailContext extends KalturaEnumBase {
@@ -73,7 +73,7 @@ class KalturaAuditTrailContext extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailFileSyncType extends KalturaEnumBase {
@@ -90,7 +90,7 @@ class KalturaAuditTrailFileSyncType extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailStatus extends KalturaEnumBase {
@@ -107,7 +107,7 @@ class KalturaAuditTrailStatus extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailAction extends KalturaEnumBase {
@@ -136,7 +136,7 @@ class KalturaAuditTrailAction extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailObjectType extends KalturaEnumBase {
@@ -207,7 +207,7 @@ class KalturaAuditTrailObjectType extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailOrderBy extends KalturaEnumBase {
@@ -226,7 +226,7 @@ class KalturaAuditTrailOrderBy extends KalturaEnumBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAuditTrailInfo extends KalturaObjectBase {
@@ -237,7 +237,7 @@ abstract class KalturaAuditTrailInfo extends KalturaObjectBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrail extends KalturaObjectBase {
@@ -370,7 +370,7 @@ class KalturaAuditTrail extends KalturaObjectBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailChangeItem extends KalturaObjectBase {
@@ -395,7 +395,7 @@ class KalturaAuditTrailChangeItem extends KalturaObjectBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailChangeInfo extends KalturaAuditTrailInfo {
@@ -410,7 +410,7 @@ class KalturaAuditTrailChangeInfo extends KalturaAuditTrailInfo {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailChangeXmlNode extends KalturaAuditTrailChangeItem {
@@ -425,7 +425,7 @@ class KalturaAuditTrailChangeXmlNode extends KalturaAuditTrailChangeItem {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo {
@@ -460,7 +460,7 @@ class KalturaAuditTrailFileSyncCreateInfo extends KalturaAuditTrailInfo {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailListResponse extends KalturaListResponse {
@@ -475,7 +475,7 @@ class KalturaAuditTrailListResponse extends KalturaListResponse {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo {
@@ -490,7 +490,7 @@ class KalturaAuditTrailTextInfo extends KalturaAuditTrailInfo {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 abstract class KalturaAuditTrailBaseFilter extends KalturaRelatedFilter {
@@ -685,7 +685,7 @@ abstract class KalturaAuditTrailBaseFilter extends KalturaRelatedFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailFilter extends KalturaAuditTrailBaseFilter {
@@ -697,7 +697,7 @@ class KalturaAuditTrailFilter extends KalturaAuditTrailBaseFilter {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditTrailService extends KalturaServiceBase {
@@ -774,7 +774,7 @@ class KalturaAuditTrailService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 2018-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAuditClientPlugin extends KalturaClientPlugin {

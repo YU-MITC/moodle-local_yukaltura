@@ -18,7 +18,7 @@
  * YU Kaltura Media Properties page
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2019 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright  (C) 2016-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -61,7 +61,7 @@ echo $OUTPUT->header();
 
 // Connect to Kaltura server.
 $kaltura = new yukaltura_connection();
-$connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
+$connection = $kaltura->get_connection(false, true, KALTURA_SESSION_LENGTH);
 
 if (!$connection) {
     $url = new moodle_url('/admin/settings.php', array('section' => 'local_yukaltura'));

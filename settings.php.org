@@ -123,7 +123,7 @@ if ($hassiteconfig) {
 
     if ($enableapicalls) {
 
-        $session = local_yukaltura_login(false, true, '', KALTURA_SESSION_LENGTH, true);
+        $session = local_yukaltura_login(true, '', KALTURA_SESSION_LENGTH, true);
 
         if (!empty($session)) {
             $settings->add(new admin_setting_heading('conn_status', get_string('conn_status_title', 'local_yukaltura'),
@@ -135,7 +135,7 @@ if ($hassiteconfig) {
     }
 
     $kaltura = new yukaltura_connection();
-    $connection = $kaltura->get_connection(false, true, KALTURA_SESSION_LENGTH);
+    $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
 
     if (!empty($connection) && !empty($session)) {
         $control = local_yukaltura_get_default_access_control($connection);
@@ -231,25 +231,6 @@ if ($hassiteconfig) {
     $adminsetting = new admin_setting_configpasswordunmask('password',
                        get_string('hosted_password', 'local_yukaltura'),
                        get_string('hosted_password_desc', 'local_yukaltura'), '');
-    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
-    $settings->add($adminsetting);
-
-    // Upload URI.
-    $adminsetting = new admin_setting_configtext('upload_uri', get_string('upload_uri', 'local_yukaltura'),
-                       get_string('upload_uri_desc', 'local_yukaltura'), '', PARAM_URL);
-    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
-    $settings->add($adminsetting);
-
-    // Kaltura upload login.
-    $adminsetting = new admin_setting_configtext('upload_login', get_string('upload_login', 'local_yukaltura'),
-                       get_string('upload_login_desc', 'local_yukaltura'), '', PARAM_TEXT);
-    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
-    $settings->add($adminsetting);
-
-    // Kaltura upload password.
-    $adminsetting = new admin_setting_configpasswordunmask('upload_password',
-                       get_string('upload_password', 'local_yukaltura'),
-                       get_string('upload_password_desc', 'local_yukaltura'), '');
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
@@ -500,7 +481,7 @@ if ($hassiteconfig) {
     $addresses = '';
 
     $kaltura = new yukaltura_connection();
-    $connection = $kaltura->get_connection(false, true, KALTURA_SESSION_LENGTH);
+    $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
 
     if (!empty($connection) && !empty($session)) {
         $control = local_yukaltura_get_internal_access_control($connection);

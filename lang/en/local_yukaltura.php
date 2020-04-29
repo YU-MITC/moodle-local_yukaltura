@@ -18,7 +18,7 @@
  * Language file of YU Kaltura Media Local Libaries.
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2019 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,10 +31,16 @@ $string['conn_server'] = 'Connection Server';
 $string['conn_server_desc'] = 'Select whether you are connecting to a hosted account on whether you are connect to your own Kaltura CE server';
 $string['server_uri'] = 'Server URI';
 $string['server_uri_desc'] = 'Type in the server URI you want to connect to.  Otherwise just type in the default settings';
+$string['upload_uri'] = 'Upload URI';
+$string['upload_uri_desc'] = 'Type in the Upload server URI. If this item is empty, plugin uses Server URI to upload new media';
 $string['hosted_login'] = 'Hosted account login';
 $string['hosted_login_desc'] = 'Login username that is used to log into the Kaltura site';
 $string['hosted_password'] = 'Hosted account password';
 $string['hosted_password_desc'] = 'Password that is used to log into the Kaltura site';
+$string['upload_login'] = 'Upload account login';
+$string['upload_login_desc'] = 'Login username that is used to upload. If empty, plugin uses Hostd account login';
+$string['upload_password'] = 'Upload account password';
+$string['upload_password_desc'] = 'Password that is used to upload. If empty, plugin uses Hosted account password';
 $string['player_regular_light'] = 'Player light (6709421)';
 $string['player_regular_dark'] = 'Player dark (6709411)';
 $string['custom_player'] = 'Custom player';

@@ -18,7 +18,7 @@
  * Local libraries of YU Kaltura Media package
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2019 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -287,6 +287,7 @@ function local_yukaltura_send_initialization($session) {
 /**
  * Log in with the user's credentials.  General a kaltura session locally.
  *
+ * @param boolean $upload - If true, use upload URI. Otherwise, use server URI.
  * @param boolean $admin - true to login as an administrator or false to login as user.
  * @param string $privileges - privleges give to the user.
  * @param int $expiry - number of seconds to keep the session alive.
@@ -294,16 +295,16 @@ function local_yukaltura_send_initialization($session) {
  *
  * @return obj - KalturaClient
  */
-function local_yukaltura_login($admin = false, $privileges = '', $expiry = 10800, $testconn = false) {
+function local_yukaltura_login($upload = false, $admin = false, $privileges = '', $expiry = 10800, $testconn = false) {
     global $USER;
 
-    list($login, $password) = local_yukaltura_get_credentials();
+    list($login, $password) = local_yukaltura_get_credentials($upload);
 
     if (empty($login) || empty($password)) {
         return false;
     }
 
-    $configobj = local_yukaltura_get_configuration_obj();
+    $configobj = local_yukaltura_get_configuration_obj($upload);
 
     if (empty($configobj) || !($configobj instanceof KalturaConfiguration)) {
         return false;
@@ -419,26 +420,36 @@ function local_yukaltura_get_loginname() {
 
 /**
  * Returns an array with the login and password as values respectively
- *
+ * @param bool $upload - If true, use username and password for uplaod. Otherwise, use normal username and password.
  * @return array - login, password or an array of false values if none were found.
  */
-function local_yukaltura_get_credentials() {
+function local_yukaltura_get_credentials($upload = false) {
 
     $login = false;
     $password = false;
 
-    $login = get_config(KALTURA_PLUGIN_NAME, 'login');
-    $password = get_config(KALTURA_PLUGIN_NAME, 'password');
+    if ($upload) {
+        $login = get_config(KALTURA_PLUGIN_NAME, 'upload_login');
+        $password = get_config(KALTURA_PLUGIN_NAME, 'upload_password');
+    }
+
+    if ($upload == false || empty($login) || $login == false) {
+        $login = get_config(KALTURA_PLUGIN_NAME, 'login');
+    }
+
+    if ($upload == false || empty($password) || $password == false) {
+        $password = get_config(KALTURA_PLUGIN_NAME, 'password');
+    }
 
     return array($login, $password);
 }
 
 /**
  * Retrieve an instance of the KalturaConfiguration class
- *
+ * @param bool $upload - If true, use uplaod URI. Otherwise, use server URI.
  * @return obj - KalturaConfiguration object
  */
-function local_yukaltura_get_configuration_obj() {
+function local_yukaltura_get_configuration_obj($upload = false) {
     global $CFG;
 
     $partnerid = local_yukaltura_get_partner_id();
@@ -448,8 +459,13 @@ function local_yukaltura_get_configuration_obj() {
     }
 
     $configobj = new KalturaConfiguration($partnerid);
-    $configobj->serviceUrl = local_yukaltura_get_host();
-    $configobj->cdnUrl = local_yukaltura_get_host();
+    if ($upload) {
+        $configobj->serviceUrl = local_yukaltura_get_upload_host();
+        $configobj->cdnUrl = local_yukaltura_get_upload_host();
+    } else {
+        $configobj->serviceUrl = local_yukaltura_get_host();
+        $configobj->cdnUrl = local_yukaltura_get_host();
+    }
     $configobj->clientTag = local_yukaltura_create_client_tag();
 
     if (!empty($CFG->proxyhost)) {
@@ -492,7 +508,7 @@ function local_yukaltura_get_custom_players() {
     try {
         $customplayers = array();
 
-        $clientobj = local_yukaltura_login(true, '');
+        $clientobj = local_yukaltura_login(false, true, '');
 
         if (empty($clientobj)) {
             return $customplayers;
@@ -580,6 +596,28 @@ function local_yukaltura_get_host() {
     // Remove trailing slash.
     $trailingslash = strrpos($uri, '/') + 1;
     $length = strlen($uri);
+
+    if ($trailingslash == $length) {
+        $uri = rtrim($uri, '/');
+    }
+
+    return $uri;
+}
+
+/**
+ * Return the uploadi URI and removes trailing slash
+ *
+ * @return string - upload URI
+ */
+function local_yukaltura_get_upload_host() {
+    $uri = get_config(KALTURA_PLUGIN_NAME, 'upload_uri');
+
+    if (empty($uri) || $uri == '') {
+        $uri = local_yukaltura_get_host();
+    }
+
+    // Remove trailing slash.
+    $trailingslash = strrpos($uri, '/') + 1;
 
     if ($trailingslash == $length) {
         $uri = rtrim($uri, '/');
@@ -894,7 +932,7 @@ function local_yukaltura_get_kwidget_flashvars($creatorname = '', $session = '')
     }
 
     $kaltura = new yukaltura_connection();
-    $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
+    $connection = $kaltura->get_connection(false, true, KALTURA_SESSION_LENGTH);
 
     if (!$connection) {
         return '';
@@ -950,7 +988,7 @@ function local_yukaltura_get_kdp_flashvars($creatorname = '', $session = '') {
     }
 
     $kaltura = new yukaltura_connection();
-    $connection = $kaltura->get_connection(true, KALTURA_SESSION_LENGTH);
+    $connection = $kaltura->get_connection(false, true, KALTURA_SESSION_LENGTH);
 
     if (!$connection) {
         return '';
@@ -1043,7 +1081,7 @@ function local_yukaltura_is_valid_entry_object($entryobj) {
 function local_yukaltura_get_ready_entry_object($entryid, $readyonly = true) {
 
     try {
-        $clientobj = local_yukaltura_login(true, '');
+        $clientobj = local_yukaltura_login(false, true, '');
 
         if (empty($clientobj)) {
             return false;
@@ -1107,7 +1145,7 @@ function local_yukaltura_has_mobile_flavor_enabled() {
     $pager->pageIndex = 1;
 
     try {
-        $clientobj = local_yukaltura_login(true);
+        $clientobj = local_yukaltura_login(false, true);
 
         if (empty($clientobj)) {
             throw new Exception("Unable to connect");
@@ -1235,7 +1273,7 @@ function local_yukaltura_update_media_metadata($connection, $entryid, $param) {
  */
 function local_yukaltura_media_type_valid($entryobj) {
     try {
-        $clientobj = local_yukaltura_login(true, '');
+        $clientobj = local_yukaltura_login(false, true, '');
 
         if (empty($clientobj)) {
             throw new Exception('Invalid client object');
@@ -1411,7 +1449,7 @@ function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '
 /**
  * Kaltura connection class.
  * @package    local_yukaltura
- * @copyright  (C) 2016-2017 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class yukaltura_connection {
@@ -1429,7 +1467,7 @@ class yukaltura_connection {
      * @param int $timeout - Length of timeout for Kaltura session in minutes
      */
     public function __construct($timeout = KALTURA_SESSION_LENGTH) {
-        self::$connection = local_yukaltura_login(true, '', $timeout);
+        self::$connection = local_yukaltura_login(false, true, '', $timeout);
         if (!empty(self::$connection)) {
             self::$timestarted = time();
             self::$timeout = $timeout;
@@ -1439,13 +1477,14 @@ class yukaltura_connection {
     /**
      * Get the connection object.  Pass true to renew the connection
      *
-     * @param bool $admin if true, get connection as admin, otherwise, as user.
-     * @param int $timeout seconds to keep the session alive, if zero is passed the
+     * @param bool $uplaod - If true, use upload URI, Otherwise, use server URI.
+     * @param bool $admin - If true, get connection as admin, otherwise, as user.
+     * @param int $timeout - seconds to keep the session alive, if zero is passed the
      * last time out value will be used
      * @return object A Kaltura KalturaClient object
      */
-    public function get_connection($admin, $timeout = 0) {
-        self::$connection = local_yukaltura_login($admin, '', $timeout);
+    public function get_connection($upload, $admin, $timeout = 0) {
+        self::$connection = local_yukaltura_login($upload, $admin, '', $timeout);
         return self::$connection;
     }
 
