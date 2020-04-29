@@ -1,5 +1,5 @@
 # YU Kaltura Media Package
-"YU Kaltura Media Package" is a third-party's Kaltura plugin package (a series of plugins) for Moodle 2.9 or later. This package is developed by the Media and Information Technology Center, Yamaguchi University. By using this package, users can upload media to the Kaltura server, and easily embed the media in Moodle courses. Moreover, this package provides some useful functions. Since this package does not require Kaltura Application Framework (KAF), can work with Kaltura Community Edition (CE) and other editions.
+"YU Kaltura Media Package" is a third-party's Kaltura plugin package (a series of plugins) for Moodle 2.9 or later. This package is developed by the Center for Information Infrastructure, Yamaguchi University. By using this package, users can upload media to the Kaltura server, and easily embed the media in Moodle courses. Moreover, this package provides some useful functions. Since this package does not require Kaltura Application Framework (KAF), can work with Kaltura Community Edition (CE) and other editions.
 
 In order to use this package, administrators must install "[YU Kaltura Media Local Libraries](https://moodle.org/plugins/local_yukaltura)" and "[YU Kaltura Media Gallery](https://moodle.org/plugins/local_yumymedia)".
 These plugins provide functions such as uploading, playing back and deleting media files to users.
@@ -80,6 +80,11 @@ Warning
 
 Change log of YU Kaltura Media Local Libraries
 ------
+
+Version 1.4.1
+
+* fixed copyright statements in all files.
+* fixed locallib.php, media_properties.php, render.php, settings.php, simple_selector.php, and test.php, in order to adopt upload URI.
 
 Version 1.4.0R2
 
