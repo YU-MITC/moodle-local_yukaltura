@@ -3,14 +3,15 @@ language: php
 sudo: true
 
 addons:
-  firefox: "47.0.1"
-  postgresql: "9.4"
+  firefox: "57.0.1"
+  postgresql: "9.6"
   apt:
     packages:
       - openjdk-8-jdk
       - java-common
 
 services:
+  - postgresql
   - mysql
 
 cache:
@@ -19,8 +20,8 @@ cache:
     - $HOME/.npm
 
 php:
- - 7.0
- - 7.1
+ - 7.2
+ - 7.3
 
 env:
  global:
@@ -33,9 +34,9 @@ env:
 before_install:
   - phpenv config-rm xdebug.ini
   - nvm ls-remote
-  - nvm install v8.9
-  - nvm use v8.9
-  - nvm alias default v8.9.4
+  - nvm install v14.2
+  - nvm use v14.2
+  - nvm alias default v14.2.0
   - node --version
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist blackboard-open-source/moodle-plugin-ci ci ^2
