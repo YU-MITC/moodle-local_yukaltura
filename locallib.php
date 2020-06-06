@@ -1477,7 +1477,7 @@ class yukaltura_connection {
     /**
      * Get the connection object.  Pass true to renew the connection
      *
-     * @param bool $uplaod - If true, use upload URI, Otherwise, use server URI.
+     * @param bool $upload - If true, use upload URI, otherwise, use server URI.
      * @param bool $admin - If true, get connection as admin, otherwise, as user.
      * @param int $timeout - seconds to keep the session alive, if zero is passed the
      * last time out value will be used
