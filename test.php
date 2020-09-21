@@ -25,8 +25,6 @@
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
 require_once(dirname(__FILE__) . '/locallib.php');
 
-defined('MOODLE_INTERNAL') || die();
-
 global $CFG, $USER, $PAGE;
 
 $context = get_context_instance(CONTEXT_SYSTEM);

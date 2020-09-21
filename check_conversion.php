@@ -24,6 +24,7 @@
  */
 
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
+require_login();
 require_once(dirname(dirname(dirname(__FILE__))) . '/local/yukaltura/locallib.php');
 
 $entryid  = required_param('entry_id', PARAM_TEXT);
@@ -33,10 +34,6 @@ $uiconfid = optional_param('uiconf_id', 0, PARAM_INT);
 $title    = optional_param('media_title', '', PARAM_TEXT);
 $widget   = optional_param('widget', 'kdp', PARAM_TEXT);
 $courseid = required_param('courseid', PARAM_INT);
-
-defined('MOODLE_INTERNAL') || die();
-
-require_login();
 
 $thumbnail = '';
 $data = new stdClass();

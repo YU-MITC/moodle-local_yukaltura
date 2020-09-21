@@ -24,10 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
+global $CFG;
 
-require_once(dirname(__FILE__) . '/API/KalturaClient.php');
-require_once(dirname(__FILE__) . '/kaltura_entries.class.php');
+require_once($CFG->dirroot . '/local/yukaltura/kaltura_entries.class.php');
 
 /**
  * KALTURA_PLUGIN_NAME - local plugin name.

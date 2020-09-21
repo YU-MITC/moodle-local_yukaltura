@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/lib/tablelib.php');
+require_once($CFG->libdir . '/tablelib.php');
 
 /**
  * Renderer class of local_yukaltura

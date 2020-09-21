@@ -23,9 +23,7 @@
  */
 
 require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
-require_once(dirname(dirname(dirname(__FILE__))) . '/local/yukaltura/locallib.php');
-
-defined('MOODLE_INTERNAL') || die();
+require_once($CFG->dirroot . '/local/yukaltura/locallib.php');
 
 header('Access-Control-Allow-Origin: *');
 header('Cache-Control: no-cache');
