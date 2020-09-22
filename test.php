@@ -22,23 +22,23 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
-require_once(dirname(__FILE__) . '/locallib.php');
+require(__DIR__ . '/../../config.php');
+global $CFG;
+require_once($CFG->dirroot . '/local/yukaltura/locallib.php');
 
-global $CFG, $USER, $PAGE;
+global $USER, $PAGE;
 
-$context = get_context_instance(CONTEXT_SYSTEM);
-
-$url = new moodle_url('/local/yukaltura/test.php');
-
-$PAGE->set_url($url);
-$PAGE->set_context($context);
+$PAGE->set_url('/local/yukaltura/test.php');
+$PAGE->set_context(context_system::instance());
 
 require_login();
 
+/** @var core_renderer $OUTPUT */
+$OUTPUT;
+
 echo $OUTPUT->header();
 
-require_capability('moodle/site:config', $context);
+require_capability('moodle/site:config', $PAGE->context);
 
 $session = local_yukaltura_login(false, true, '', 2);
 

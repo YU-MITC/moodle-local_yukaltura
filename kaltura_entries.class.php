@@ -26,7 +26,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once(dirname(__FILE__) . '/API/KalturaClient.php');
+global $CFG;
+
+require_once($CFG->dirroot . '/local/yukaltura/API/KalturaClient.php');
 
 /**
  * Kaltura static entries class.

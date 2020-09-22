@@ -24,7 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once(dirname(__FILE__) . '/locallib.php');
+global $CFG;
+
+require_once($CFG->dirroot . '/local/yukaltura/locallib.php');
 
 $param = optional_param('section', '', PARAM_TEXT);
 

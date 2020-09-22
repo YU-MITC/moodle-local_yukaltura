@@ -23,9 +23,10 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
+require(__DIR__.'/../../config.php');
+global $CFG;
 require_login();
-require_once(dirname(dirname(dirname(__FILE__))) . '/local/yukaltura/locallib.php');
+require_once($CFG->dirroot . '/local/yukaltura/locallib.php');
 
 $entryid  = required_param('entry_id', PARAM_TEXT);
 $height   = optional_param('height', 0, PARAM_INT);
@@ -67,10 +68,8 @@ if (0 == strcmp($widget, 'kdp')) {
 
     } else {
         switch ((string) $entryobj->status) {
-            case KalturaEntryStatus::ERROR_IMPORTING:
-                $data->markup = get_string('media_error', 'local_yukaltura');
-                break;
             case KalturaEntryStatus::ERROR_CONVERTING:
+            case KalturaEntryStatus::ERROR_IMPORTING:
                 $data->markup = get_string('media_error', 'local_yukaltura');
                 break;
             case KalturaEntryStatus::INFECTED:

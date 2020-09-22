@@ -251,9 +251,9 @@ function local_yukaltura_initialize_account($login, $password, $uri = '') {
  * Uninitialize the kaltura account.
  */
 function local_yukaltura_uninitialize_account() {
-    set_config('secret', '', KALTURA_PLUGIN_NAME);
-    set_config('adminsecret', '', KALTURA_PLUGIN_NAME);
-    set_config('partner_id', '', KALTURA_PLUGIN_NAME);
+    set_config('secret', null, KALTURA_PLUGIN_NAME);
+    set_config('adminsecret', null, KALTURA_PLUGIN_NAME);
+    set_config('partner_id', null, KALTURA_PLUGIN_NAME);
 }
 
 /**
