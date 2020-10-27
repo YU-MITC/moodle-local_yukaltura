@@ -51,10 +51,6 @@ $PAGE->requires->js_call_amd('local_yukaltura/properties', 'init',
                              )
                             );
 
-
-/** @var core_renderer $OUTPUT */
-$OUTPUT;
-
 echo $OUTPUT->header();
 
 // Connect to Kaltura server.
