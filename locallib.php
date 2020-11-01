@@ -24,12 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
+global $CFG;
 
-require_login();
-
-require_once(dirname(__FILE__) . '/API/KalturaClient.php');
-require_once(dirname(__FILE__) . '/kaltura_entries.class.php');
+require_once($CFG->dirroot . '/local/yukaltura/kaltura_entries.class.php');
 
 /**
  * KALTURA_PLUGIN_NAME - local plugin name.
@@ -254,9 +251,9 @@ function local_yukaltura_initialize_account($login, $password, $uri = '') {
  * Uninitialize the kaltura account.
  */
 function local_yukaltura_uninitialize_account() {
-    set_config('secret', '', KALTURA_PLUGIN_NAME);
-    set_config('adminsecret', '', KALTURA_PLUGIN_NAME);
-    set_config('partner_id', '', KALTURA_PLUGIN_NAME);
+    set_config('secret', null, KALTURA_PLUGIN_NAME);
+    set_config('adminsecret', null, KALTURA_PLUGIN_NAME);
+    set_config('partner_id', null, KALTURA_PLUGIN_NAME);
 }
 
 /**

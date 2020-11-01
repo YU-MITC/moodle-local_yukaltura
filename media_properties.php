@@ -22,18 +22,14 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
-require_once(dirname(dirname(dirname(__FILE__))) . '/local/yukaltura/locallib.php');
+require(__DIR__ . '/../../config.php');
+global $CFG;
+require_once($CFG->dirroot . '/local/yukaltura/locallib.php');
 
-defined('MOODLE_INTERNAL') || die();
+global $SESSION, $USER, $COURSE, $OUTPUT, $PAGE, $SITE;
 
-header('Access-Control-Allow-Origin: *');
-header('Cache-Control: no-cache');
-
-global $SESSION, $USER, $COURSE, $OUTPUT;
-
-$context = context_course::instance($COURSE->id);
-$PAGE->set_context($context);
+$PAGE->set_context(context_course::instance($COURSE->id));
+$PAGE->set_cacheable(false);
 
 $header  = format_string($SITE->shortname).": " . get_string('media_prop_header', 'local_yukaltura');
 
@@ -55,8 +51,6 @@ $PAGE->requires->js_call_amd('local_yukaltura/properties', 'init',
                              )
                             );
 
-require_login();
-
 echo $OUTPUT->header();
 
 // Connect to Kaltura server.
@@ -70,8 +64,6 @@ if (!$connection) {
 
 $partnerid = local_yukaltura_get_partner_id();
 $loginsession = '';
-
-$context = context_user::instance($USER->id);
 
 $renderer = $PAGE->get_renderer('local_yukaltura');
 
