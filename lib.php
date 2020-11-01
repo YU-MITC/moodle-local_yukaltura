@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - http://moodle.org
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,18 +15,32 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * YU Kaltura Media Local Libraries version file.
+ * YU Kaltura Media Properties page
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_yukaltura';
-$plugin->version = 2020110200;
-$plugin->release = '1.5.0';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->requires = 2015051100;
-$plugin->system_version = 2.1; // Used to send information to Kaltura.
+/**
+ * Print specific headers if needed.
+ */
+function local_yukaltura_before_http_headers() {
+    global $PAGE;
+
+    if ($PAGE->has_set_url()) {
+        $paths = [
+            '/local/yukaltura/media_properties.php',
+            '/local/yukaltura/simple_selector.php'
+        ];
+        foreach ($paths as $path) {
+            if ($PAGE->url->compare(new moodle_url($path), URL_MATCH_BASE)) {
+                header('Access-Control-Allow-Origin: *');
+                break;
+            }
+        }
+    }
+
+}

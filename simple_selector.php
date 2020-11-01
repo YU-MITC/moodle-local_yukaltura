@@ -22,15 +22,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
+require(__DIR__.'/../../config.php');
+global $CFG;
 require_once($CFG->dirroot . '/local/yukaltura/locallib.php');
 
-defined('MOODLE_INTERNAL') || die();
-
-header('Access-Control-Allow-Origin: *');
-header('Cache-Control: no-cache');
-
-global $SESSION, $USER, $COURSE;
+global $SESSION, $USER, $COURSE, $PAGE, $SITE;
 
 $page = optional_param('page', 0, PARAM_INT);
 $sort = optional_param('sort', 'recent', PARAM_TEXT);
@@ -38,6 +34,7 @@ $simplesearch = '';
 $medias = 0;
 
 $PAGE->set_context(context_system::instance());
+$PAGE->set_cacheable(false);
 $header = format_string($SITE->shortname).": simple_selector";
 
 $PAGE->set_pagetype('simple_selector');
@@ -85,6 +82,9 @@ if ($data = data_submitted() and confirm_sesskey()) {
 }
 
 $context = context_user::instance($USER->id);
+
+/** @var core_renderer $OUTPUT */
+$OUTPUT;
 
 echo $OUTPUT->header();
 
