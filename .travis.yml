@@ -1,18 +1,11 @@
 language: php
 
-sudo: true
-
 addons:
-  firefox: "57.0.1"
   postgresql: "9.6"
-  apt:
-    packages:
-      - openjdk-8-jdk
-      - java-common
 
 services:
-  - postgresql
   - mysql
+  - postgresql
 
 cache:
   directories:
@@ -22,24 +15,20 @@ cache:
 php:
  - 7.2
  - 7.3
+ - 7.4
 
 env:
  global:
- - MOODLE_BRANCH=MOODLE_35_STABLE
-  - JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+  - MOODLE_BRANCH=MOODLE_39_STABLE
  matrix:
   - DB=pgsql
   - DB=mysqli
 
 before_install:
+  - composer self-update --2
   - phpenv config-rm xdebug.ini
-  - nvm ls-remote
-  - nvm install v14.2
-  - nvm use v14.2
-  - nvm alias default v14.2.0
-  - node --version
   - cd ../..
-  - composer create-project -n --no-dev --prefer-dist blackboard-open-source/moodle-plugin-ci ci ^2
+  - composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^3
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
 
 install:
@@ -55,5 +44,6 @@ script:
   - moodle-plugin-ci mustache
   - moodle-plugin-ci grunt --tasks amd
   - moodle-plugin-ci grunt --tasks gherkinlint
+  - moodle-plugin-ci phpdoc
   - moodle-plugin-ci phpunit
   - moodle-plugin-ci behat
