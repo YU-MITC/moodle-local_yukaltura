@@ -24,12 +24,11 @@
  * Thanks to Gonen Radai
  */
 
-require_once(dirname(dirname(dirname(__FILE__))) . '/config.php');
-require_once(dirname(__FILE__) . '/API/KalturaClient.php');
-
 defined('MOODLE_INTERNAL') || die();
 
-require_login();
+global $CFG;
+
+require_once($CFG->dirroot . '/local/yukaltura/API/KalturaClient.php');
 
 /**
  * Kaltura static entries class.
