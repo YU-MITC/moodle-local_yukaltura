@@ -86,6 +86,7 @@ Change log of YU Kaltura Media Local Libraries
 Version 1.5.0
 
 * fixed various files, in order to cleanup useless statements.
+* fixed lcoallib.php, in order to resolve a playback issue in the Kaltura media assignment plugin (mod_kalmediaassign).
 * fixed README.md, in order to support the Moodle 3.10.
 
 Version 1.4.2
