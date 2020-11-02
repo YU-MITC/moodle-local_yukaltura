@@ -1434,7 +1434,14 @@ function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '
     $markup .= "            'height'    : '{$entryobj->height}'," . PHP_EOL;
     $markup .= "            'flashvars' :{" . PHP_EOL;
     $markup .= "                'externalInterfaceDisabled' : false," . PHP_EOL;
-    $markup .= "                'autoPlay' : false{$kwidgetflashvar}" . PHP_EOL;
+    $markup .= "                'autoPlay' : false";
+
+    if (empty($kwidgetflashvar)) {
+        $markup .= PHP_EOL;
+    } else {
+        $markup .= ", {$kwidgetflashvar}" . PHP_EOL;
+    }
+
     $markup .= "            }" . PHP_EOL;
     $markup .= "        });" . PHP_EOL;
     $markup .= "    }". PHP_EOL;
