@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_yukaltura';
-$plugin->version = 2020110200;
+$plugin->version = 2020110300;
 $plugin->release = '1.5.0';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->requires = 2015051100;
