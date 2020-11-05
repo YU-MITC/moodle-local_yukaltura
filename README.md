@@ -82,7 +82,8 @@ Warning
 
 Known issues
 ------
-* In some browsers, preview window (modal window) cannot receive MPEG-DASH/HLS/HDS streaming data. And, if Kaltura server employs HTTPS and users embed their media into web sites employs HTTP, Kaltura players cannot receive streaming data. For local_yummymedia and mod_kalmediaassign, we recommend Kaltura players which receive video using progressive download.
+
+* In some browsers, preview window (modal window) cannot receive MPEG-DASH/HLS/HDS streaming data. And, if Kaltura server employs HTTPS and users embed their media into web sites employs HTTP, Kaltura players cannot receive streaming data. For local_yumymedia and mod_kalmediaassign, we recommend Kaltura players which receive video using progressive download.
 
 Change log of YU Kaltura Media Local Libraries
 ------
