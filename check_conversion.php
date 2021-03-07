@@ -19,7 +19,7 @@
  *
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -57,10 +57,13 @@ if (0 == strcmp($widget, 'kdp')) {
 
     if (KalturaEntryStatus::READY == (string) $entryobj->status) {
 
+        $kaltura = new yukaltura_connection();
+        $connection = $kaltura->get_connection(false, true, KALTURA_SESSION_LENGTH);
+
         // Create the user KS session.
         $session = local_yukaltura_generate_kaltura_session(true, array($entryobj->id));
 
-        $data->markup = local_yukaltura_get_iframeembed_code($entryobj, $uiconfid, $courseid, $session);
+        $data->markup = local_yukaltura_get_iframeembed_code($entryobj, $uiconfid, $connection, $session);
 
         if (local_yukaltura_has_mobile_flavor_enabled() && local_yukaltura_get_enable_html5()) {
             $data->script = 'kAddedScript = false; kCheckAddScript();';
