@@ -848,8 +848,9 @@ function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $cliento
 
     if ($playertype == KALTURA_TV_PLATFORM_STUDIO) {
         $output .= "<iframe type=\"text/javascript\" src=\"{$host}/p/{$entryobj->partnerId}/embedPlaykitJs/uiconf_id/{$uiconf}?";
-        $output .= "iframeembed=true&entry_id={$entryobj->id}\" style=\"width: {$entryobj->width}px; height: {$entryobj->height}px\" ";
-	$output .= "allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder=\"0\" allow=\"encrypted-media\">";
+        $output .= "iframeembed=true&entry_id={$entryobj->id}\" ";
+        $output .= "style=\"width: {$entryobj->width}px; height: {$entryobj->height}px\" ";
+        $output .= "allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder=\"0\" allow=\"encrypted-media\">";
         $output .= "</iframe>" . PHP_EOL;
     } else {
         $output .= "<iframe src=\"{$host}/p/{$entryobj->partnerId}/";
@@ -857,7 +858,7 @@ function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $cliento
         $output .= "partner_id/{$entryobj->partnerId}?";
         $output .= "iframeembed=true&playerId=kaltura_player_{$now}&entry_id={$entryobj->id}\" ";
         $output .= "width=\"$entryobj->width\" height=\"{$entryobj->height}\" ";
-	$output .= "allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder=\"0\"></iframe>" . PHP_EOL;
+        $output .= "allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder=\"0\"></iframe>" . PHP_EOL;
     }
     return $output;
 }
@@ -930,7 +931,7 @@ function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $client
         $output .= PHP_EOL;
         $output .= "<script type=\"text/javascript\" charset=\"UTF-8\" ";
         $output .= "src=\"{$host}/p/{$entryobj->partnerId}/embedPlaykitJs/uiconf_id/{$uiconf}\"></script>" . PHP_EOL;
-	$output .= "<script type=\"text/javascript\">" . PHP_EOL;
+        $output .= "<script type=\"text/javascript\">" . PHP_EOL;
         $output .= "try {" . PHP_EOL;
         $output .= "var kalturaPlayer = KalturaPlayer.setup({" . PHP_EOL;
         $output .= "targetId: \"kaltura_player_{$now}\"," . PHP_EOL;
@@ -939,10 +940,10 @@ function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $client
         $output .= "uiConfId: {$uiconf}" . PHP_EOL;
         $output .= "}" . PHP_EOL;
         $output .= "});" . PHP_EOL;
-	$output .= "kalturaPlayer.loadMedia({entryId: '{$entryobj->id}'});" . PHP_EOL;
+        $output .= "kalturaPlayer.loadMedia({entryId: '{$entryobj->id}'});" . PHP_EOL;
         $output .= "} catch (e) {" . PHP_EOL;
         $output .= "console.error(e.message)" . PHP_EOL;
-	$output .= "}" . PHP_EOL;
+        $output .= "}" . PHP_EOL;
         $output .= "</script>" . PHP_EOL;
     } else {
         $output .= "<script src=\"{$host}/p/{$entryobj->partnerId}/sp/{$entryobj->partnerId}00/embedIframeJs/";

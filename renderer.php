@@ -835,7 +835,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $kalturahost = local_yukaltura_get_host();
         $partnerid = local_yukaltura_get_partner_id();
         $uiconfid = local_yukaltura_get_player_uiconf('player_atto');
-	list($playerwidth, $playerheight) = local_yukaltura_get_atto_player_dimension();
+        list($playerwidth, $playerheight) = local_yukaltura_get_atto_player_dimension();
 
         $playerstudio = "html5";
         $playertype = local_yukaltura_get_player_type($uiconfid, $clientobj);
