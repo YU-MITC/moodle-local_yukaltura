@@ -18,7 +18,7 @@
  * Local libraries of YU Kaltura Media package
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -167,6 +167,33 @@ define('KALTURA_IMAGE_MOBILE_WIDTH', 320);
  * Image height for mobile theme.
  */
 define('KALTURA_IMAGE_MOBILE_HEIGHT', 240);
+
+/**
+ * Kaltura unknown studio.
+ */
+define('KALTURA_UNKNOWN_STUDIO', 0);
+
+/**
+ * Kaltura universal studio.
+ */
+define('KALTURA_UNIVERSAL_STUDIO', 2);
+
+/**
+ * Kaltura TV platform studio.
+ */
+define('KALTURA_TV_PLATFORM_STUDIO', 3);
+
+/**
+ * Universal studio tag.
+ */
+define('KALTURA_UNIVERSAL_STUDIO_TAG', 'html5studio');
+
+/**
+ * TV platform studio tag.
+ */
+define('KALTURA_TV_PLATFORM_STUDIO_TAG', 'kalturaPlayerJs');
+
+
 
 /**
  * Initialize the kaltura account and obtain the secrets and partner ID.
@@ -764,16 +791,20 @@ function local_yukaltura_create_image_markup($entryobj, $title, $theme,
  * @param obj $entryobj - KalturaMedia object.
  * @param int $uiconfid - player ui_conf_id (optional).  If no value is specified the
  * default player will be used.
+ * @param object $clientobj - Kaltura client object.
  * @param string $session - A kaltura session string.
  * @param int $uid - a unique identifier, this value is appented to 'kaltura_player_'
  * and is used as the id of the object tag.
  *
  * @return string - HTML markup.
  */
-function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
+function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $clientobj, $session = '', $uid = 0) {
+    if (empty($clientobj)) {
+        return get_string('conn_failed_alt', 'local_yukaltura');
+    }
 
     if (!local_yukaltura_is_valid_entry_object($entryobj)) {
-        return 'Unable to play media ('. $entryobj->id . ') please contact your site administrator.';
+        return get_string('play_failed', 'local_yukaltura', $entryobj->id);
     }
 
     if (0 == $uid) {
@@ -813,13 +844,21 @@ function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $session
 
     $now = time();
 
-    $output .= "<iframe src=\"{$host}/p/{$entryobj->partnerId}/";
-    $output .= "sp/{$entryobj->partnerId}00/embedIframeJs/uiconf_id/{$uiconf}/";
-    $output .= "partner_id/{$entryobj->partnerId}?";
-    $output .= "iframeembed=true&playerId=kaltura_player_{$now}&entry_id={$entryobj->id}\" ";
-    $output .= "width=\"$entryobj->width\" height=\"{$entryobj->height}\" ";
-    $output .= "allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder=\"0\"></iframe>" . PHP_EOL;
+    $playertype = local_yukaltura_get_player_type($uiconf, $clientobj);
 
+    if ($playertype == KALTURA_TV_PLATFORM_STUDIO) {
+        $output .= "<iframe type=\"text/javascript\" src=\"{$host}/p/{$entryobj->partnerId}/embedPlaykitJs/uiconf_id/{$uiconf}?";
+        $output .= "iframeembed=true&entry_id={$entryobj->id}\" style=\"width: {$entryobj->width}px; height: {$entryobj->height}px\" ";
+	$output .= "allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder=\"0\" allow=\"encrypted-media\">";
+        $output .= "</iframe>" . PHP_EOL;
+    } else {
+        $output .= "<iframe src=\"{$host}/p/{$entryobj->partnerId}/";
+        $output .= "sp/{$entryobj->partnerId}00/embedIframeJs/uiconf_id/{$uiconf}/";
+        $output .= "partner_id/{$entryobj->partnerId}?";
+        $output .= "iframeembed=true&playerId=kaltura_player_{$now}&entry_id={$entryobj->id}\" ";
+        $output .= "width=\"$entryobj->width\" height=\"{$entryobj->height}\" ";
+	$output .= "allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder=\"0\"></iframe>" . PHP_EOL;
+    }
     return $output;
 }
 
@@ -830,16 +869,20 @@ function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $session
  * @param obj $entryobj - KalturaMedia object.
  * @param int $uiconfid - player ui_conf_id (optional).  If no value is specified the
  * default player will be used.
+ * @param object $clientobj - Kaltura client object.
  * @param string $session - A kaltura session string.
  * @param int $uid - a unique identifier, this value is appented to 'kaltura_player_'
  * and is used as the id of the object tag.
  *
  * @return string - HTML markup.
  */
-function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
+function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $clientobj, $session = '', $uid = 0) {
+    if (empty($clientobj)) {
+        return get_string('conn_failed_alt', 'local_yukaltura');
+    }
 
     if (!local_yukaltura_is_valid_entry_object($entryobj)) {
-        return 'Unable to play media ('. $entryobj->id . ') please contact your site administrator.';
+        return get_string('play_failed', 'local_yukaltura', $entryobj->id);
     }
 
     if (0 == $uid) {
@@ -880,21 +923,43 @@ function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $sessio
     $now = time();
     $flashvars = local_yukaltura_get_kwidget_flashvars($entryobj->creatorId, $session);
 
-    $output .= "<script src=\"{$host}/p/{$entryobj->partnerId}/sp/{$entryobj->partnerId}00/embedIframeJs/";
-    $output .= "uiconf_id/{$uiconf}/partner_id/{$entryobj->partnerId}\"></script>" . PHP_EOL;
-    $output .= "<div id=\"kaltura_player_{$now}\" style=\"width: {$entryobj->width}px; height: {$entryobj->height}px;\">";
-    $output .= "</div>" . PHP_EOL;
-    $output .= "<script>" . PHP_EOL;
-    $output .= "kWidget.embed({" . PHP_EOL;
-    $output .= "\"targetId\": \"kaltura_player_{$now}\"," . PHP_EOL;
-    $output .= "\"wid\": \"_" . $entryobj->partnerId . "\"," . PHP_EOL;
-    $output .= "\"uiconf_id\": {$uiconf}," . PHP_EOL;
-    $output .= "\"flashvars\": {{$flashvars}}," . PHP_EOL;
-    $output .= "\"cache_st\": {$now}," . PHP_EOL;
-    $output .= "\"entry_id\": \"{$entryobj->id}\"" . PHP_EOL;
-    $output .= "});" . PHP_EOL;
-    $output .= "</script>" . PHP_EOL;
+    $playertype = local_yukaltura_get_player_type($uiconf, $clientobj);
 
+    if ($playertype == KALTURA_TV_PLATFORM_STUDIO) {
+        $output .= "<div id=\"kaltura_player_{$now}\" style=\"width: {$entryobj->width}px; height: {$entryobj->height}px;\"></div>";
+        $output .= PHP_EOL;
+        $output .= "<script type=\"text/javascript\" charset=\"UTF-8\" ";
+        $output .= "src=\"{$host}/p/{$entryobj->partnerId}/embedPlaykitJs/uiconf_id/{$uiconf}\"></script>" . PHP_EOL;
+	$output .= "<script type=\"text/javascript\">" . PHP_EOL;
+        $output .= "try {" . PHP_EOL;
+        $output .= "var kalturaPlayer = KalturaPlayer.setup({" . PHP_EOL;
+        $output .= "targetId: \"kaltura_player_{$now}\"," . PHP_EOL;
+        $output .= "provider: {" . PHP_EOL;
+        $output .= "partnerId: {$entryobj->partnerId}," . PHP_EOL;
+        $output .= "uiConfId: {$uiconf}" . PHP_EOL;
+        $output .= "}" . PHP_EOL;
+        $output .= "});" . PHP_EOL;
+	$output .= "kalturaPlayer.loadMedia({entryId: '{$entryobj->id}'});" . PHP_EOL;
+        $output .= "} catch (e) {" . PHP_EOL;
+        $output .= "console.error(e.message)" . PHP_EOL;
+	$output .= "}" . PHP_EOL;
+        $output .= "</script>" . PHP_EOL;
+    } else {
+        $output .= "<script src=\"{$host}/p/{$entryobj->partnerId}/sp/{$entryobj->partnerId}00/embedIframeJs/";
+        $output .= "uiconf_id/{$uiconf}/partner_id/{$entryobj->partnerId}\"></script>" . PHP_EOL;
+        $output .= "<div id=\"kaltura_player_{$now}\" style=\"width: {$entryobj->width}px; height: {$entryobj->height}px;\">";
+        $output .= "</div>" . PHP_EOL;
+        $output .= "<script>" . PHP_EOL;
+        $output .= "kWidget.embed({" . PHP_EOL;
+        $output .= "\"targetId\": \"kaltura_player_{$now}\"," . PHP_EOL;
+        $output .= "\"wid\": \"_" . $entryobj->partnerId . "\"," . PHP_EOL;
+        $output .= "\"uiconf_id\": {$uiconf}," . PHP_EOL;
+        $output .= "\"flashvars\": {{$flashvars}}," . PHP_EOL;
+        $output .= "\"cache_st\": {$now}," . PHP_EOL;
+        $output .= "\"entry_id\": \"{$entryobj->id}\"" . PHP_EOL;
+        $output .= "});" . PHP_EOL;
+        $output .= "</script>" . PHP_EOL;
+    }
     return $output;
 }
 
@@ -1021,6 +1086,26 @@ function local_yukaltura_get_atto_player_dimension() {
     }
 
     return [$width, $height];
+}
+
+
+/**
+ * This function retrieves player type.
+ * @param int $uiconfid - UIConfId of kaltura player.
+ * @param object $clientobj - Kaltura client object.
+ * @return int - player type.
+ */
+function local_yukaltura_get_player_type($uiconfid, $clientobj) {
+    $uiconfobj = $clientobj->uiConf->get($uiconfid);
+    if (empty($uiconfid) || $uiconfid == null) {
+        return KALTURA_UNKNOWN_STUDIO;
+    } else if (strpos($uiconfobj->tags, KALTURA_UNIVERSAL_STUDIO_TAG) !== false) {
+        return KALTURA_UNIVERSAL_STUDIO;
+    } else if (strpos($uiconfobj->tags, KALTURA_TV_PLATFORM_STUDIO_TAG) !== false) {
+        return KALTURA_TV_PLATFORM_STUDIO;
+    }
+
+    return KALTURA_UNKNOWN_STUDIO;
 }
 
 /**
@@ -1384,9 +1469,8 @@ function local_yukaltura_create_client_tag() {
  *
  */
 function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '', $uid = 0) {
-
     if (!local_yukaltura_is_valid_entry_object($entryobj)) {
-        return 'Unable to play media ('. $entryobj->id . ') please contact your site administrator.';
+        return get_string('play_failed', 'local_yukaltura', $entryobj->id);
     }
 
     if (0 == $uid) {
@@ -1453,7 +1537,7 @@ function local_yukaltura_get_kwidget_code($entryobj, $uiconfid = 0, $session = '
 /**
  * Kaltura connection class.
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class yukaltura_connection {

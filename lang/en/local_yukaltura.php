@@ -18,7 +18,7 @@
  * Language file of YU Kaltura Media Local Libaries.
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -77,6 +77,7 @@ $string['flashminimum'] = 'Flash player version 9 and above is required. <a href
 $string['upload_successful'] = 'Media uploaded successfully.  Remember to save/submit.';
 $string['media_converting'] = 'The media is still converting.  Please check the status of the media at a later time.';
 $string['conn_failed_alt'] = 'Connection with Kaltura is currently unavailable.  Please inform your administrator.';
+$string['play_failed'] = 'Unable to play media ({$a}) please contact your site administrator.';
 $string['player_resource_override'] = 'Override media resource player setting';
 $string['player_resource_override_desc'] = 'Check this option to override the individual Media Resource player selection.  This will force all Media Resource activities to use the selected <b>Kaltura resource player</b>';
 $string['enable_html5'] = 'Enable HTML5 flavor';
