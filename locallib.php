@@ -2351,3 +2351,4 @@ function local_yukaltura_get_webcam_permission() {
         return false;
     }
 }
+
