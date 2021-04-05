@@ -1283,15 +1283,22 @@ function local_yukaltura_test_connection($clientobj) {
 /**
  * Return the Kaltura HTML5 javascript library URL
  * @param int $uiconfid - uiconf_id of the player to use.
- *
+ * @param int $playertype - Type of Kaltura player.
  * @return string - url to the Kaltura HTML5 library URL.
  */
-function local_yukaltura_html5_javascript_url($uiconfid) {
+function local_yukaltura_html5_javascript_url($uiconfid, $playertype) {
 
     $host = local_yukaltura_get_host();
     $partnerid = local_yukaltura_get_partner_id();
+    $markup = '';
 
-    return "{$host}/p/{$partnerid}/sp/{$partnerid}00/embedIframeJs/uiconf_id/{$uiconfid}/partner_id/{$partnerid}";
+    if ($playertype ==  KALTURA_TV_PLATFORM_STUDIO) {
+        $markup .= "{$host}/p/{$partnerid}/embedPlaykitJs/uiconf_id/${uiconfid}";
+    } else {
+        $markup .= "{$host}/p/{$partnerid}/sp/{$partnerid}00/embedIframeJs/uiconf_id/{$uiconfid}/partner_id/{$partnerid}";
+    }
+
+    return $markup;
 
 }
 
