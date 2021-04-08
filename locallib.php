@@ -1292,7 +1292,7 @@ function local_yukaltura_html5_javascript_url($uiconfid, $playertype) {
     $partnerid = local_yukaltura_get_partner_id();
     $markup = '';
 
-    if ($playertype ==  KALTURA_TV_PLATFORM_STUDIO) {
+    if ($playertype == KALTURA_TV_PLATFORM_STUDIO) {
         $markup .= "{$host}/p/{$partnerid}/embedPlaykitJs/uiconf_id/${uiconfid}";
     } else {
         $markup .= "{$host}/p/{$partnerid}/sp/{$partnerid}00/embedIframeJs/uiconf_id/{$uiconfid}/partner_id/{$partnerid}";
