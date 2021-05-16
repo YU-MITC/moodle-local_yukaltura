@@ -59,7 +59,7 @@ $connection = $kaltura->get_connection(false, true, KALTURA_SESSION_LENGTH);
 
 if (!$connection) {
     $url = new moodle_url('/admin/settings.php', array('section' => 'local_yukaltura'));
-    print_error('conn_failed', 'local_yukaltura', $url);
+    throw new moodle_exception('conn_failed', 'local_yukaltura', $url);
 }
 
 $partnerid = local_yukaltura_get_partner_id();
@@ -72,10 +72,7 @@ try {
     echo $renderer->create_properties_markup();
 
 } catch (Exception $ex) {
-    $errormessage = 'View - error main page(' .  $ex->getMessage() . ')';
-    print_error($errormessage, 'local_yukaltura');
-    echo get_string('problem_viewing', 'local_yukaltura');
-    echo $ex->getMessage();
+    throw new moodle_exception('problem_viewing', 'local_yukaltura');
 }
 
 echo $OUTPUT->footer();

@@ -173,8 +173,7 @@ function migrate_assignment_data() {
                 }
             }
         } catch (Exception $ex) {
-            $errormessage = 'Data migration error(' .  $ex->getMessage() . ')';
-            print_error($errormessage, 'local_yukaltura');
+            throw new moodle_exception('migration_error', 'local_yukaltura', '', $ex->getMessage());
         }
     }
 

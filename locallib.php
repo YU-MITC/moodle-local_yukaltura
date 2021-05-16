@@ -1207,8 +1207,7 @@ function local_yukaltura_get_ready_entry_object($entryid, $readyonly = true) {
 
     } catch (Exception $ex2) {
         // Connection failed for some reason.  Maybe proxy settings?
-        $errormessage = 'check conversion(' . $ex2->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('conn_failed_alt', 'local_yukaltura');
         return false;
     }
 }
@@ -1246,8 +1245,7 @@ function local_yukaltura_has_mobile_flavor_enabled() {
         return true;
 
     } catch (Exception $ex) {
-        $errormessage = 'mobile flavor on(' . $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('mobile_flavor_failed', 'local_yukaltura', '', $ex->getMessage());
         return false;
     }
 }
@@ -1274,8 +1272,7 @@ function local_yukaltura_test_connection($clientobj) {
         return $results;
 
     } catch (Exception $ex) {
-        $errormessage = 'test connection(' . $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('test_conn_failed', 'local_yukaltura', '', $ex->getMessage());
         return false;
     }
 }
@@ -1389,8 +1386,7 @@ function local_yukaltura_media_type_valid($entryobj) {
         }
     } catch (Exception $ex) {
         // Connection failed for some reason.  Maybe proxy settings?
-        $errormessage = 'convert to valid entry type(' . $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('invalid_media_type', 'local_yukaltura', '', $ex->getMessage());
         return false;
     }
 
@@ -1784,8 +1780,7 @@ function local_yukaltura_get_default_access_control($connection) {
             }
         }
     } catch (Exception $ex) {
-        $errormessage = 'Error in local_yukaltura_get_default_access_control(' . $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('get_default_access_failed', 'local_yukaltura', '', $ex->getMessage());
         return null;
     }
 
@@ -1820,8 +1815,7 @@ function local_yukaltura_get_internal_access_control($connection) {
             }
         }
     } catch (Exception $ex) {
-        $errormessage = 'Error in local_yukaltura_get_internal_control(' . $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('get_internal_access_failed', 'local_yukaltura', '', $ex->getMessage());
         return null;
     }
 
@@ -1846,8 +1840,7 @@ function local_yukaltura_create_default_access_control($connection) {
         $control->restrictions = array();
         $control = $connection->accessControl->add($control);
     } catch (Exception $ex) {
-        $errormessage = 'Error in local_yukaltura_create_default_access_control(' . $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('create_default_access_failed', 'local_yukaltura', '', $ex->getMessage());
         return null;
     }
 
@@ -1885,8 +1878,7 @@ function local_yukaltura_create_internal_access_control($connection) {
         $control->restrictions = array($restriction);
         $control = $connection->accessControl->add($control);
     } catch (Exception $ex) {
-        $errormessage = 'Error in local_yukaltura_create_internal_access_control(' . $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('create_internal_access_failed', 'local_yukaltura', '', $ex->getMessage());
         return null;
     }
 
@@ -1926,8 +1918,7 @@ function local_yukaltura_update_internal_access_control($connection, $id) {
         $control->restrictions = array($restriction);
         $connection->accessControl->update($id, $control);
     } catch (Exception $ex) {
-        $errormessage = 'Error in local_yukaltura_update_internal_profile(' . $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
+        throw new moodle_exception('update_internal_access_failed', 'local_yukaltura', '', $ex->getMessage());
         return null;
     }
     return $control;
