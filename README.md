@@ -25,7 +25,7 @@ Requirements
 * Web browsers must support the JavaScript and HTML5.
 * System administrators must use the HTTPS protocol for their Moodle site and Kaltura server.
 * Administrators must not delete "Default" access control profile from their Kaltura server. If they delete the "Default" profile, they must create new profile named "Default" before install our plugins.
-* These plugins do not support Flash players. Therefore, please use HTML5 players.
+* These plugins do not support Flash players. Therefore, please use HTML5 or OVP players.
 
 Supported themes
 -----
@@ -92,6 +92,7 @@ Change log of YU Kaltura Media Local Libraries
 Version 2.0.0
 
 * fixed copyright statements in various files.
+* fixed various files in order to delete statements using print_error function.
 * fixed check_conversion.php, and locallib.php, in order to support Kaltura OVP media players (TV Platform studio).
 
 Version 1.5.0
