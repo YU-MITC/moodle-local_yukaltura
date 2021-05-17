@@ -18,7 +18,7 @@
  * Language file of YU Kaltura Media Local Libaries.
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -71,12 +71,22 @@ $string['conn_status_title'] = 'Connection status';
 $string['conn_success'] = 'Successfully logged in with credentials';
 $string['conn_failed'] = 'Unable to login.  Please verify your credentials and connection settings and try again';
 $string['test_connection'] = 'Test connection to Kaltura server';
+$string['test_conn_failed'] = 'Test connection failedi ({$a}).';
+$string['mobile_flavor_failed'] = 'Cannot get mobile flavor ({$a}).';
 $string['click_test_button'] = 'Click button to test the connection';
 $string['start'] = 'Start';
 $string['flashminimum'] = 'Flash player version 9 and above is required. <a href=\"http://get.adobe.com/flashplayer/\">Upgrade your flash version</a>';
 $string['upload_successful'] = 'Media uploaded successfully.  Remember to save/submit.';
 $string['media_converting'] = 'The media is still converting.  Please check the status of the media at a later time.';
+$string['invalid_media_type'] = 'Invalid media type.';
 $string['conn_failed_alt'] = 'Connection with Kaltura is currently unavailable.  Please inform your administrator.';
+$string['play_failed'] = 'Unable to play media ({$a}) please contact your site administrator.';
+$string['get_default_access_failed'] = 'Cannot get default access control object from Kaltura server ({$a}).';
+$string['get_internal_access_failed'] = 'Cannot get access control object for internal only restriction from Kaltura server ({$a}).';
+$string['create_default_access_failed'] = 'Cannot create default access control object into Kaltura server ({$a}).';
+$string['create_internal_access_failed'] = 'Cannot create access control object for internal only restriction into Kaltura server ({$a}).';
+$string['update_default_access_failed'] = 'Cannot update deault access control object ({$a}).';
+$string['update_internal_access_failed'] = 'Cannot update access control object for internal only restriction ({$a}).';
 $string['player_resource_override'] = 'Override media resource player setting';
 $string['player_resource_override_desc'] = 'Check this option to override the individual Media Resource player selection.  This will force all Media Resource activities to use the selected <b>Kaltura resource player</b>';
 $string['enable_html5'] = 'Enable HTML5 flavor';
@@ -178,6 +188,7 @@ $string['record_media'] = 'Upload from web-camera';
 $string['no_media'] = 'No media found';
 $string['problem_viewing'] = 'There is a problem displaying the page.  Please try again or contact your site administrator';
 $string['permission_disable'] = 'You don\'t have permission to use kaltura media.';
+$string['migration_error'] = 'Data migration error ({$a}).';
 
 // Screen recorder.
 $string['screenrecorder'] = 'Screen Recording';

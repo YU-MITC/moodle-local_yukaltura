@@ -18,7 +18,7 @@
  * Embed media selector script
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright  (C) 2016-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -57,7 +57,7 @@ $connection = $kaltura->get_connection(false, true, KALTURA_SESSION_LENGTH);
 
 if (!$connection) {
     $url = new moodle_url('/admin/settings.php', array('section' => 'local_yukaltura'));
-    print_error('conn_failed', 'local_yukaltura', $url);
+    throw new moodle_exception('conn_failed', 'local_yukaltura', $url);
 }
 
 $partnerid = local_yukaltura_get_partner_id();
@@ -154,9 +154,7 @@ if (local_yukaltura_get_mymedia_permission()) {
         echo $renderer->create_selector_submit_form();
 
     } catch (Exception $ex) {
-        $errormessage = 'View - error main page(' .  $ex->getMessage() . ')';
-        print_error($errormessage, 'local_yukaltura');
-        echo get_string('problem_viewing', 'local_yukaltura');
+        throw new moodle_exception('problem_viewing', 'local_yukaltura');
     }
 } else {
     echo $renderer->create_permission_message();
