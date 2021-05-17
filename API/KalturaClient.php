@@ -19,7 +19,7 @@
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -36,7 +36,7 @@ require_once(dirname(__FILE__) . "/KalturaTypes.php");
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAccessControlProfileService extends KalturaServiceBase {
@@ -151,7 +151,7 @@ class KalturaAccessControlProfileService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAccessControlService extends KalturaServiceBase {
@@ -266,7 +266,7 @@ class KalturaAccessControlService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAdminUserService extends KalturaServiceBase {
@@ -366,7 +366,7 @@ class KalturaAdminUserService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAnalyticsService extends KalturaServiceBase {
@@ -406,7 +406,7 @@ class KalturaAnalyticsService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaAppTokenService extends KalturaServiceBase {
@@ -546,7 +546,7 @@ class KalturaAppTokenService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBaseEntryService extends KalturaServiceBase {
@@ -1086,7 +1086,7 @@ class KalturaBaseEntryService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaBulkUploadService extends KalturaServiceBase {
@@ -1227,7 +1227,7 @@ class KalturaBulkUploadService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCategoryEntryService extends KalturaServiceBase {
@@ -1404,7 +1404,7 @@ class KalturaCategoryEntryService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCategoryService extends KalturaServiceBase {
@@ -1603,7 +1603,7 @@ class KalturaCategoryService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaCategoryUserService extends KalturaServiceBase {
@@ -1831,7 +1831,7 @@ class KalturaCategoryUserService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileAssetParamsService extends KalturaServiceBase {
@@ -1896,7 +1896,7 @@ class KalturaConversionProfileAssetParamsService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaConversionProfileService extends KalturaServiceBase {
@@ -2046,7 +2046,7 @@ class KalturaConversionProfileService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDataService extends KalturaServiceBase {
@@ -2206,7 +2206,7 @@ class KalturaDataService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaDeliveryProfileService extends KalturaServiceBase {
@@ -2323,7 +2323,7 @@ class KalturaDeliveryProfileService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEmailIngestionProfileService extends KalturaServiceBase {
@@ -2457,7 +2457,7 @@ class KalturaEmailIngestionProfileService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaEntryServerNodeService extends KalturaServiceBase {
@@ -2553,7 +2553,7 @@ class KalturaEntryServerNodeService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFileAssetService extends KalturaServiceBase {
@@ -2704,7 +2704,7 @@ class KalturaFileAssetService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorAssetService extends KalturaServiceBase {
@@ -3087,7 +3087,7 @@ class KalturaFlavorAssetService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParamsOutputService extends KalturaServiceBase {
@@ -3147,7 +3147,7 @@ class KalturaFlavorParamsOutputService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaFlavorParamsService extends KalturaServiceBase {
@@ -3279,7 +3279,7 @@ class KalturaFlavorParamsService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaGroupUserService extends KalturaServiceBase {
@@ -3357,7 +3357,7 @@ class KalturaGroupUserService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveChannelSegmentService extends KalturaServiceBase {
@@ -3471,7 +3471,7 @@ class KalturaLiveChannelSegmentService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveChannelService extends KalturaServiceBase {
@@ -3750,7 +3750,7 @@ class KalturaLiveChannelService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveReportsService extends KalturaServiceBase {
@@ -3858,7 +3858,7 @@ class KalturaLiveReportsService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStatsService extends KalturaServiceBase {
@@ -3895,7 +3895,7 @@ class KalturaLiveStatsService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaLiveStreamService extends KalturaServiceBase {
@@ -4331,7 +4331,7 @@ class KalturaLiveStreamService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaInfoService extends KalturaServiceBase {
@@ -4373,7 +4373,7 @@ class KalturaMediaInfoService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMediaService extends KalturaServiceBase {
@@ -5069,7 +5069,7 @@ class KalturaMediaService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaMixingService extends KalturaServiceBase {
@@ -5301,7 +5301,7 @@ class KalturaMixingService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaNotificationService extends KalturaServiceBase {
@@ -5339,7 +5339,7 @@ class KalturaNotificationService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPartnerService extends KalturaServiceBase {
@@ -5586,7 +5586,7 @@ class KalturaPartnerService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionItemService extends KalturaServiceBase {
@@ -5705,7 +5705,7 @@ class KalturaPermissionItemService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPermissionService extends KalturaServiceBase {
@@ -5839,7 +5839,7 @@ class KalturaPermissionService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaPlaylistService extends KalturaServiceBase {
@@ -6090,7 +6090,7 @@ class KalturaPlaylistService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaReportService extends KalturaServiceBase {
@@ -6331,7 +6331,7 @@ class KalturaReportService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaResponseProfileService extends KalturaServiceBase {
@@ -6503,7 +6503,7 @@ class KalturaResponseProfileService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSchemaService extends KalturaServiceBase {
@@ -6540,7 +6540,7 @@ class KalturaSchemaService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSearchService extends KalturaServiceBase {
@@ -6643,7 +6643,7 @@ class KalturaSearchService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaServerNodeService extends KalturaServiceBase {
@@ -6815,7 +6815,7 @@ class KalturaServerNodeService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSessionService extends KalturaServiceBase {
@@ -6972,7 +6972,7 @@ class KalturaSessionService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStatsService extends KalturaServiceBase {
@@ -7098,7 +7098,7 @@ class KalturaStatsService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaStorageProfileService extends KalturaServiceBase {
@@ -7214,7 +7214,7 @@ class KalturaStorageProfileService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSyndicationFeedService extends KalturaServiceBase {
@@ -7365,7 +7365,7 @@ class KalturaSyndicationFeedService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaSystemService extends KalturaServiceBase {
@@ -7447,7 +7447,7 @@ class KalturaSystemService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbAssetService extends KalturaServiceBase {
@@ -7832,7 +7832,7 @@ class KalturaThumbAssetService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParamsOutputService extends KalturaServiceBase {
@@ -7892,7 +7892,7 @@ class KalturaThumbParamsOutputService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaThumbParamsService extends KalturaServiceBase {
@@ -8024,7 +8024,7 @@ class KalturaThumbParamsService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUiConfService extends KalturaServiceBase {
@@ -8196,7 +8196,7 @@ class KalturaUiConfService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadService extends KalturaServiceBase {
@@ -8251,7 +8251,7 @@ class KalturaUploadService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUploadTokenService extends KalturaServiceBase {
@@ -8385,7 +8385,7 @@ class KalturaUploadTokenService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserEntryService extends KalturaServiceBase {
@@ -8536,7 +8536,7 @@ class KalturaUserEntryService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserRoleService extends KalturaServiceBase {
@@ -8672,7 +8672,7 @@ class KalturaUserRoleService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaUserService extends KalturaServiceBase {
@@ -9070,7 +9070,7 @@ class KalturaUserService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaWidgetService extends KalturaServiceBase {
@@ -9188,7 +9188,7 @@ class KalturaWidgetService extends KalturaServiceBase {
  *
  * @package   local_yukaltura
  * @copyright (C) 2018 Kaltura Inc.
- * @copyright (C) 20182020 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
+ * @copyright (C) 2018-2021 Yamaguchi University (gh-cc@mlex.cc.yamaguchi-u.ac.jp)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class KalturaClient extends KalturaClientBase {
