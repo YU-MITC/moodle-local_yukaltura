@@ -18,7 +18,7 @@
  * Kaltura Post installation and migration code.
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -173,8 +173,7 @@ function migrate_assignment_data() {
                 }
             }
         } catch (Exception $ex) {
-            $errormessage = 'Data migration error(' .  $ex->getMessage() . ')';
-            print_error($errormessage, 'local_yukaltura');
+            throw new moodle_exception('migration_error', 'local_yukaltura', '', $ex->getMessage());
         }
     }
 

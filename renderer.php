@@ -18,7 +18,7 @@
  * My Media display library
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,7 +31,7 @@ require_once($CFG->libdir . '/tablelib.php');
 /**
  * Renderer class of local_yukaltura
  * @package local_yukaltura
- * @copyright  (C) 2016-2020 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_yukaltura_renderer extends plugin_renderer_base {
@@ -826,16 +826,22 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
     /**
      * This function creates HTML markup used to print hidden parameters for atto plugin.
-     *
+     * @param object $clientobj - Kaltura Client object.
      * @return string - HTML markup for atto plugin.
      */
-    public function create_atto_hidden_markup() {
+    public function create_atto_hidden_markup($clientobj) {
         $output = '';
 
         $kalturahost = local_yukaltura_get_host();
         $partnerid = local_yukaltura_get_partner_id();
         $uiconfid = local_yukaltura_get_player_uiconf('player_atto');
         list($playerwidth, $playerheight) = local_yukaltura_get_atto_player_dimension();
+
+        $playerstudio = "html5";
+        $playertype = local_yukaltura_get_player_type($uiconfid, $clientobj);
+        if ($playertype == KALTURA_TV_PLATFORM_STUDIO) {
+            $playerstudio = "ovp";
+        }
 
         $attr = array('type' => 'hidden',
                       'name' => 'kalturahost',
@@ -857,6 +863,14 @@ class local_yukaltura_renderer extends plugin_renderer_base {
                       'name' => 'uiconfid',
                       'id' => 'uiconfid',
                       'value' => $uiconfid
+                     );
+
+        $output .= html_writer::empty_tag('input', $attr);
+
+        $attr = array('type' => 'hidden',
+                      'name' => 'player_studio',
+                      'id' => 'player_studio',
+                      'value' => $playerstudio
                      );
 
         $output .= html_writer::empty_tag('input', $attr);
