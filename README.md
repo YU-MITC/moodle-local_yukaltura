@@ -59,7 +59,7 @@ Branches
 * MOODLE_310_STABLE -> Moodle3.10 branch
 * MOODLE_311_STABLE -> Moodle3.11 branch
 
-First clone the repository with "git clone", then "git checkout MOODLE_29_STABLE(branch name)" to switch branches.
+First clone the repository with "git clone", then "git checkout MOODLE_39_STABLE(branch name)" to switch branches.
 
 Warning
 ------
