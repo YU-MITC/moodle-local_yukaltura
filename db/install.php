@@ -18,7 +18,7 @@
  * Kaltura Post installation and migration code.
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2022 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -378,7 +378,7 @@ function migrate_configuration_data() {
                 if (array_key_exists($name , $namemap)) {
 
                     $record->plugin = 'local_yukaltura';
-                    $record->name = $namemap[$name ];
+                    $record->name = $namemap[$name];
 
                     $DB->update_record('config_plugins', $record);
                 }
