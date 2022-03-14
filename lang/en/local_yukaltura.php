@@ -18,7 +18,7 @@
  * Language file of YU Kaltura Media Local Libaries.
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2022 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -48,6 +48,10 @@ $string['kaltura_player_resource'] = 'Kaltura resource player';
 $string['kaltura_player_resource_desc'] = 'Player used to play-back media for Media Resources.  This player will appear as the default player for new Media Resources. However it may be overridden if the <b>Override media resource player setting</b> is unchecked';
 $string['kaltura_player_resource_custom'] = 'Custom UIConf';
 $string['kaltura_player_resource_custom_desc'] = 'Only used if you have a custom resource player UIConf ID';
+$string['enable_player_resource_audio'] = 'Use audio player';
+$string['enable_player_resource_audio_desc'] = 'Check this setting to enable to use of other player when play audio media';
+$string['kaltura_player_resource_audio'] = 'Kaltura audio player for resource';
+$string['kaltura_player_resource_audio_desc'] = 'Player used to play-back audio for Media Resource.  This player will appear as the default player for new Media Resources.  Howerver it may be overridden if the <b>Override media resource player setting</b> is unchecked.';
 $string['kaltura_player'] = 'Kaltura player';
 $string['kaltura_player_desc'] = 'Player used to play-back media for Media Assignments';
 $string['kaltura_player_custom'] = 'Custom UIConf';
@@ -56,6 +60,10 @@ $string['kaltura_player_atto'] = 'Kaltura atto player';
 $string['kaltura_player_atto_desc'] = 'Player used to play-back media for atto plugin';
 $string['kaltura_player_atto_custom'] = 'Custom UIConf';
 $string['kaltura_player_atto_custom_desc']  = 'Only used if you have custom atto plugin player UIConf ID';
+$string['enable_player_atto_audio'] = 'Use audio player';
+$string['enable_player_atto_audio_desc'] = 'Check this setting to enable to use of other player when embed audio media';
+$string['kaltura_player_atto_audio'] = 'Kaltura audio player for atto';
+$string['kaltura_player_atto_audio_desc'] = 'Player used to play-back audio media for atto plugin';
 $string['kaltura_player_mymedia'] = 'Kaltura mymedia player';
 $string['kaltura_player_mymedia_desc'] = 'Player used to play-back media for My Media.  This player will appear as the default player for preview media, link URL, and embed code.';
 $string['kaltura_player_mymedia_custom'] = 'Custom UIConf';

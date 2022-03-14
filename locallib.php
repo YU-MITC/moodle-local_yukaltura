@@ -18,7 +18,7 @@
  * Local libraries of YU Kaltura Media package
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2022 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -87,6 +87,16 @@ define('KALTURA_POPUP_WIDTH_ADJUSTMENT', 30);
  * YUI panel popup border adjustment to make the embedded video look centered.
  */
 define('KALTURA_POPUP_HEIGHT_ADJUSTMENT', 50);
+
+/**
+ * KALTURA_ATTO_MEDIA_WIDTH - Player width of Kaltura Media Resource.
+ */
+ define('KALTURA_ATTO_MEDIA_WIDTH', 400);
+
+/**
+ * KALTURA_ATTO_MEDIA_HEIGHT - Player height of Kaltura Media Resourcet.
+ */
+define('KALTURA_ATTO_MEDIA_HEIGHT', 365);
 
 /**
  * Time lengh (sec) of Kaltura Session.
@@ -1107,6 +1117,20 @@ function local_yukaltura_get_player_type($uiconfid, $clientobj) {
     }
 
     return KALTURA_UNKNOWN_STUDIO;
+}
+
+/**
+ * This function retrieves player object.
+ * @param int $uiconfid - UIConfId of kaltura player.
+ * @param object $clientobj - Kaltura client object.
+ * @return object - playter object.
+ */
+function local_yukaltura_get_player_object($uiconfid, $clientobj) {
+    $uiconfobj = $clientobj->uiConf->get($uiconfid);
+    if (empty($uiconfobj) || $uiconfobj === null || $uiconfobj === false) {
+        return null;
+    }
+    return $uiconfobj;
 }
 
 /**
