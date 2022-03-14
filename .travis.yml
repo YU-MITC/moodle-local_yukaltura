@@ -1,3 +1,7 @@
+os: linux
+arch:
+  - amd64
+
 language: php
 
 addons:
