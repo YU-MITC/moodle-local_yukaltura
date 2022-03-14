@@ -18,7 +18,7 @@
  * YU Kaltura Local Libraries setting script
  *
  * @package    local_yukaltura
- * @copyright  (C) 2016-2021 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
+ * @copyright  (C) 2016-2022 Yamaguchi University <gh-cc@mlex.cc.yamaguchi-u.ac.jp>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -289,14 +289,14 @@ if ($hassiteconfig) {
                                                  get_string('kalmediaassign_player_width',
                                                  'local_yukaltura'),
                                                  get_string('kalmediaassign_player_width_desc',
-                                                 'local_yukaltura'), '400', PARAM_INT);
+                                                 'local_yukaltura'), KALTURA_ASSIGN_MEDIA_WIDTH, PARAM_INT);
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
     $adminsetting = new admin_setting_configtext('kalmediaassign_player_height',
                                                  get_string('kalmediaassign_player_height', 'local_yukaltura'),
                                                  get_string('kalmediaassign_player_height_desc', 'local_yukaltura'),
-                                                 '365', PARAM_INT);
+                                                 KALTURA_ASSIGN_MEDIA_HEIGHT, PARAM_INT);
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
@@ -304,7 +304,7 @@ if ($hassiteconfig) {
                                                  get_string('kalmediaassign_popup_player_width',
                                                  'local_yukaltura'),
                                                  get_string('kalmediaassign_popup_player_width_desc',
-                                                 'local_yukaltura'), '500', PARAM_INT);
+                                                 'local_yukaltura'), KALTURA_ASSIGN_POPUP_MEDIA_WIDTH, PARAM_INT);
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
@@ -312,7 +312,7 @@ if ($hassiteconfig) {
                                                  get_string('kalmediaassign_popup_player_height',
                                                  'local_yukaltura'),
                                                  get_string('kalmediaassign_popup_player_height_desc', 'local_yukaltura'),
-                                                 '460', PARAM_INT);
+                                                 KALTURA_ASSIGN_POPUP_MEDIA_HEIGHT, PARAM_INT);
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
@@ -338,6 +338,19 @@ if ($hassiteconfig) {
                                                  get_string('kaltura_player_resource_custom', 'local_yukaltura'),
                                                  get_string('kaltura_player_resource_custom_desc', 'local_yukaltura'),
                                                  '', PARAM_INT);
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $adminsetting = new admin_setting_configcheckbox('enable_player_resource_audio',
+                                                     get_string('enable_player_resource_audio', 'local_yukaltura'),
+                                                     get_string('enable_player_resource_audio_desc', 'local_yukaltura'), '0');
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $adminsetting = new admin_setting_configselect('player_resource_audio',
+                                                   get_string('kaltura_player_resource_audio', 'local_yukaltura'),
+                                                   get_string('kaltura_player_resource_audio_desc', 'local_yukaltura'),
+                                                   KALTURA_PLAYER_PLAYERREGULARDARK, $choices);
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
@@ -376,14 +389,27 @@ if ($hassiteconfig) {
     $adminsetting = new admin_setting_configtext('atto_player_width',
                                                  get_string('atto_player_width', 'local_yukaltura'),
                                                  get_string('atto_player_width_desc', 'local_yukaltura'),
-                                                 '400', PARAM_INT);
+                                                 KALTURA_ATTO_MEDIA_WIDTH, PARAM_INT);
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
     $adminsetting = new admin_setting_configtext('atto_player_height',
                                                  get_string('atto_player_height', 'local_yukaltura'),
                                                  get_string('atto_player_height_desc', 'local_yukaltura'),
-                                                 '365', PARAM_INT);
+                                                 KALTURA_ATTO_MEDIA_HEIGHT, PARAM_INT);
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $adminsetting = new admin_setting_configcheckbox('enable_player_atto_audio',
+                                                     get_string('enable_player_atto_audio', 'local_yukaltura'),
+                                                     get_string('enable_player_atto_audio_desc', 'local_yukaltura'), '0');
+    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
+    $settings->add($adminsetting);
+
+    $adminsetting = new admin_setting_configselect('player_atto_audio',
+                                                   get_string('kaltura_player_atto_audio', 'local_yukaltura'),
+                                                   get_string('kaltura_player_atto_audio_desc', 'local_yukaltura'),
+                                                   KALTURA_PLAYER_PLAYERREGULARDARK, $choices);
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
