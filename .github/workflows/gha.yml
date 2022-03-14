@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.3', '7.4', '8.0']
+        php: ['7.4', '8.0']
         moodle-branch: ['MOODLE_311_STABLE']
         database: [pgsql, mariadb]
 
@@ -78,7 +78,7 @@ jobs:
 
       - name: Moodle Code Checker
         if: ${{ always() }}
-        run: moodle-plugin-ci codechecker --max-warnings 0
+        run: moodle-plugin-ci codechecker
 
       - name: Moodle PHPDoc Checker
         if: ${{ always() }}
@@ -98,7 +98,7 @@ jobs:
 
       - name: Grunt
         if: ${{ always() }}
-        run: moodle-plugin-ci grunt --max-lint-warnings 0
+        run: moodle-plugin-ci grunt
 
       - name: PHPUnit tests
         if: ${{ always() }}
