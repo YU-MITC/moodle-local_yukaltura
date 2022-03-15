@@ -400,19 +400,6 @@ if ($hassiteconfig) {
     $adminsetting->plugin = KALTURA_PLUGIN_NAME;
     $settings->add($adminsetting);
 
-    $adminsetting = new admin_setting_configcheckbox('enable_player_atto_audio',
-                                                     get_string('enable_player_atto_audio', 'local_yukaltura'),
-                                                     get_string('enable_player_atto_audio_desc', 'local_yukaltura'), '0');
-    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
-    $settings->add($adminsetting);
-
-    $adminsetting = new admin_setting_configselect('player_atto_audio',
-                                                   get_string('kaltura_player_atto_audio', 'local_yukaltura'),
-                                                   get_string('kaltura_player_atto_audio_desc', 'local_yukaltura'),
-                                                   KALTURA_PLAYER_PLAYERREGULARDARK, $choices);
-    $adminsetting->plugin = KALTURA_PLUGIN_NAME;
-    $settings->add($adminsetting);
-
     // Upload checkbox.
     $adminsetting = new admin_setting_configcheckbox('atto_upload',
                                                      get_string('atto_upload', 'local_yukaltura'),

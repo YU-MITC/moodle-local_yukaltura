@@ -837,24 +837,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $uiconfid = local_yukaltura_get_player_uiconf('player_atto');
         list($playerwidth, $playerheight) = local_yukaltura_get_atto_player_dimension();
 
-        $audiouiconfid = 0;
-        $audiowidth = 0;
-        $audioheight = 0;
-        $audiostudio = "html5";
-
-        if (get_config(KALTURA_PLUGIN_NAME, 'enable_player_atto_audio') == 1) {
-            $uiconfobj = local_yukaltura_get_player_object(get_config(KALTURA_PLUGIN_NAME, 'player_atto_audio'), $clientobj);
-            if (!empty($uiconfobj)) {
-                $audiouiconfid = get_config(KALTURA_PLUGIN_NAME, 'player_resource_audio');
-                $audiowidth = $uiconfobj->width;
-                $audioheight = $uiconfobj->height;
-                $playertype = local_yukaltura_get_player_type($audiouiconfid, $clientobj);
-                if ($playertype == KALTURA_TV_PLATFORM_STUDIO) {
-                    $audiostudio = "ovp";
-                }
-            }
-        }
-
         $playerstudio = "html5";
         $playertype = local_yukaltura_get_player_type($uiconfid, $clientobj);
         if ($playertype == KALTURA_TV_PLATFORM_STUDIO) {
@@ -905,38 +887,6 @@ class local_yukaltura_renderer extends plugin_renderer_base {
                       'name' => 'player_height',
                       'id' => 'player_height',
                       'value' => $playerheight
-                     );
-
-        $output .= html_writer::empty_tag('input', $attr);
-
-        $attr = array('type' => 'hidden',
-                      'name' => 'audio_uiconfid',
-                      'id' => 'audio_uiconfid',
-                      'value' => $audiouiconfid
-                     );
-
-        $output .= html_writer::empty_tag('input', $attr);
-
-        $attr = array('type' => 'hidden',
-                      'name' => 'audio_studio',
-                      'id' => 'audio_studio',
-                      'value' => $audiostudio
-                     );
-
-        $output .= html_writer::empty_tag('input', $attr);
-
-        $attr = array('type' => 'hidden',
-                      'name' => 'audio_width',
-                      'id' => 'audio_width',
-                      'value' => $audiowidth
-                     );
-
-        $output .= html_writer::empty_tag('input', $attr);
-
-        $attr = array('type' => 'hidden',
-                      'name' => 'audio_height',
-                      'id' => 'audio_height',
-                      'value' => $audioheight
                      );
 
         $output .= html_writer::empty_tag('input', $attr);
