@@ -30,6 +30,7 @@ Requirements
 Supported themes
 -----
 
+* Clean
 * Boost (version 1.1.7 and later)
 * Classic (version 1.3.0 and later)
 
@@ -44,20 +45,21 @@ Installation will be completed after you log in as an administrator and access t
 How to use
 ------
 
-* User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version2.0.pdf).
+* User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version2.1.pdf).
 * Demonstration web page, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/demo/).
 
 Targeted Moodle versions
 ------
 
-Moodle 3.9, 3.10, 3.11
+Moodle 3.9, 3.10, 3.11, 4.0
 
 Branches
 ------
 
-* MOODLE_39_STABLE -> Moodle3.9 branch
-* MOODLE_310_STABLE -> Moodle3.10 branch
-* MOODLE_311_STABLE -> Moodle3.11 branch
+* MOODLE_39_STABLE -> Moodle 3.9 branch
+* MOODLE_310_STABLE -> Moodle 3.10 branch
+* MOODLE_311_STABLE -> Moodle 3.11 branch
+* MOODLE_40_STABLE -> Moodle 4.0 branch
 
 First clone the repository with "git clone", then "git checkout MOODLE_39_STABLE(branch name)" to switch branches.
 
@@ -77,6 +79,12 @@ Known issues
 
 Change log of YU Kaltura Media Local Libraries
 ------
+
+Version 2.1.0
+
+* fixed copyright statements in various files.
+* fixed provider.php, in order to only support formats employed in Moodle 3.5 and laters.
+* fixed renderer.php, settings.php, and local_yukaltura.php, in order to add configuration item to set audio players.
 
 Version 2.0.0
 
