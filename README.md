@@ -1,5 +1,5 @@
 # YU Kaltura Media Package
-"YU Kaltura Media Package" is a third-party's Kaltura plugin package (a series of plugins) for Moodle 4.0 or later. This package is developed by the Center for Information Infrastructure, Yamaguchi University. By using this package, users can upload media to the Kaltura server, and easily embed the media in Moodle courses. Moreover, this package provides some useful functions. Since this package does not require Kaltura Application Framework (KAF), can work with Kaltura Community Edition (CE) and other editions.
+"YU Kaltura Media Package" is a third-party's Kaltura plugin package (a series of plugins) for Moodle 3.9 or later. This package is developed by the Center for Information Infrastructure, Yamaguchi University. By using this package, users can upload media to the Kaltura server, and easily embed the media in Moodle courses. Moreover, this package provides some useful functions. Since this package does not require Kaltura Application Framework (KAF), can work with Kaltura Community Edition (CE) and other editions.
 
 In order to use this package, administrators must install "[YU Kaltura Media Local Libraries](https://moodle.org/plugins/local_yukaltura)" and "[YU Kaltura Media Gallery](https://moodle.org/plugins/local_yumymedia)".
 These plugins provide functions such as uploading, playing back and deleting media files to users.
@@ -51,15 +51,18 @@ How to use
 Targeted Moodle versions
 ------
 
-Moodle 4.0, 4.1
+Moodle 3.9, 3.10, 3,11, 4.0, 4.1
 
 Branches
 ------
 
+* MOODLE_39_STABLE -> Moodle 3.9 branch
+* MOODLE_310_STABLE -> Moodle 3.10 branch
+* MOODLE_311_STABLE -> Moodle 3.11 branch
 * MOODLE_400_STABLE -> Moodle 4.0 branch
 * MOODLE_401_STABLE -> Moodle 4.1 branch
 
-First clone the repository with "git clone", then "git checkout MOODLE_400_STABLE(branch name)" to switch branches.
+First clone the repository with "git clone", then "git checkout MOODLE_401_STABLE(branch name)" to switch branches.
 
 Warning
 ------
