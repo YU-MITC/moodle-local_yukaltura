@@ -24,8 +24,6 @@
 
 namespace local_yukaltura\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem for local_yukaltura implementing null_provider.
  *
