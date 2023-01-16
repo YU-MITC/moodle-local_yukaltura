@@ -29,5 +29,5 @@ $plugin->version = 2023011600;
 $plugin->release = '2.1.0 BETA1';
 $plugin->maturity = MATURITY_BETA;
 $plugin->requires = 2022041900;
-$plugin->supported = [40, 41];
+$plugin->supported = [400, 401];
 $plugin->system_version = 2.1; // Used to send information to Kaltura.
