@@ -25,9 +25,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_yukaltura';
-$plugin->version = 2023011601;
-$plugin->release = '2.1.0 BETA2';
-$plugin->maturity = MATURITY_BETA;
+$plugin->version = 2023011900;
+$plugin->release = '2.1.0';
+$plugin->maturity = MATURITY_STABLE;
 $plugin->requires = 2022041900;
 $plugin->supported = [400, 401];
 $plugin->system_version = 2.1; // Used to send information to Kaltura.

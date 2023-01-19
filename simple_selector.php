@@ -22,7 +22,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+//defined('MOODLE_INTERNAL') || die();
 
 require(__DIR__.'/../../config.php');
 
@@ -53,6 +53,9 @@ require_login();
 $PAGE->requires->css('/local/yukaltura/css/simple_selector.css', true);
 $PAGE->requires->js_call_amd('local_yukaltura/simpleselector', 'init',
                              array($CFG->wwwroot . "/local/yukaltura/simple_selector.php", null));
+
+header('Access-Control-Allow-Origin: *');
+header('Cache-Control: no-cache');
 
 // Connect to Kaltura server.
 $kaltura = new yukaltura_connection();
@@ -86,9 +89,6 @@ if ($data = data_submitted() && confirm_sesskey()) {
 
 $context = context_user::instance($USER->id);
 
-/** @var core_renderer $OUTPUT */
-$OUTPUT;
-
 echo $OUTPUT->header();
 
 require_capability('local/yukaltura:view_selector', $context, $USER);
@@ -120,7 +120,7 @@ if (local_yukaltura_get_mymedia_permission()) {
 
         $total = $medialist->totalCount;
 
-        if ($medialist instanceof KalturaMediaListResponse &&  0 < $medialist->totalCount ) {
+        if ($medialist instanceof KalturaMediaListResponse &&  0 < $medialist->totalCount) {
             $medialist = $medialist->objects;
 
             $page = $renderer->paging_bar($total,
@@ -129,29 +129,16 @@ if (local_yukaltura_get_mymedia_permission()) {
                                           new moodle_url('/local/yukaltura/simple_selector.php',
                                                          array('sort' => $sort)));
 
-            $verstr = trim($CFG->release);
-            $num = preg_match('/^[0-9]+/', $verstr, $matches);
-            if ($num >= 1) {
-                $vernum = (int)$matches[0];
-                if ($vernum <= 2 && strpos($page, '<nav ') !== false) {
-                    $index = strpos($page, '<nav ');
-                    $first = substr($page, 0, $index + 5);
-                    $second = substr($page, $index + 5);
-                    $page = $first . 'class="mymedia pagingbar"' . $second;
-                }
-            }
-
             echo $renderer->create_options_table_upper($page, '', $SESSION->local_yukaltura->selector);
 
             echo $renderer->create_media_table($medialist);
 
             echo $renderer->create_options_table_lower($page);
-        } else {
 
+        } else {
             echo $renderer->create_options_table_upper($page, '', $SESSION->local_yukaltura->selector);
             echo '<br><br><p align="center">'. get_string('no_media', 'local_yukaltura') . '</p>';
             echo $renderer->create_options_table_lower($page);
-
         }
 
         echo $renderer->create_selector_submit_form();
@@ -159,6 +146,7 @@ if (local_yukaltura_get_mymedia_permission()) {
     } catch (Exception $ex) {
         throw new moodle_exception('problem_viewing', 'local_yukaltura');
     }
+
 } else {
     echo $renderer->create_permission_message();
 }
