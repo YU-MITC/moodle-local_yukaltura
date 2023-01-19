@@ -51,7 +51,7 @@ How to use
 Targeted Moodle versions
 ------
 
-Moodle 3.9, 3.10, 3,11, 4.0, 4.1
+Moodle 3.9, 3.10, 3.11, 4.0, 4.1
 
 Branches
 ------
