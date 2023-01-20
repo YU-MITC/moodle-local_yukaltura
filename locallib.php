@@ -808,7 +808,7 @@ function local_yukaltura_create_image_markup($entryobj, $title, $theme,
  *
  * @return string - HTML markup.
  */
-function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $clientobj, $session = '', $uid = 0) {
+function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $clientobj = null, $session = '', $uid = 0) {
     if (empty($clientobj)) {
         return get_string('conn_failed_alt', 'local_yukaltura');
     }
@@ -887,7 +887,7 @@ function local_yukaltura_get_iframeembed_code($entryobj, $uiconfid = 0, $cliento
  *
  * @return string - HTML markup.
  */
-function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $clientobj, $session = '', $uid = 0) {
+function local_yukaltura_get_dynamicembed_code($entryobj, $uiconfid = 0, $clientobj = null, $session = '', $uid = 0) {
     if (empty($clientobj)) {
         return get_string('conn_failed_alt', 'local_yukaltura');
     }
@@ -1314,7 +1314,7 @@ function local_yukaltura_html5_javascript_url($uiconfid, $playertype) {
     $markup = '';
 
     if ($playertype == KALTURA_TV_PLATFORM_STUDIO) {
-        $markup .= "{$host}/p/{$partnerid}/embedPlaykitJs/uiconf_id/${uiconfid}";
+        $markup .= "{$host}/p/{$partnerid}/embedPlaykitJs/uiconf_id/{$uiconfid}";
     } else {
         $markup .= "{$host}/p/{$partnerid}/sp/{$partnerid}00/embedIframeJs/uiconf_id/{$uiconfid}/partner_id/{$partnerid}";
     }
