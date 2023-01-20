@@ -121,7 +121,7 @@ class KalturaStaticEntries {
      * @param object $baseentryservice a KalturaBaseEntryService object
      * @return array array of entry objects with the entry id as the key
      */
-    public static function list_entries($entryids = array(), $baseentryservice) {
+    public static function list_entries($entryids = array(), $baseentryservice = null) {
 
         $returnedentries = array();
         $fetchentriesfromapi = array();
@@ -157,7 +157,7 @@ class KalturaStaticEntries {
      * @param object $baseentryservice a KalturaBaseEntryService object
      * @return nothing
      */
-    private static function list_entries_from_api($entryids = array(), $baseentryservice) {
+    private static function list_entries_from_api($entryids = array(), $baseentryservice = null) {
 
         // Perform baseEntry->listAction() call.
         $filter = new KalturaBaseEntryFilter();
