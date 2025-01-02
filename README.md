@@ -86,7 +86,6 @@ Version 3.0.0
 * added hook_callbacks.php and hooks.php, and deleted lib.php, in order to migrate to new hook mechanism.
 * fixed settings.php, in order to add new setting item (about maximum data size).
 * fixed javascript files, in order to resolve an issue data comparison use "undefined".
-* fixed javascript files, in order to resolve an issue data comparison use "undefined".
 
 Version 2.1.0
 
