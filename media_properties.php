@@ -49,7 +49,7 @@ $PAGE->requires->js_call_amd('local_yukaltura/properties', 'init',
                                  get_string('invalid_name', 'local_yukaltura'),
                                  get_string('empty_size', 'local_yukaltura'),
                                  get_string('invalid_custom_size', 'local_yukaltura'),
-                                 get_string('invalid_size', 'local_yukaltura')
+                                 get_string('invalid_size', 'local_yukaltura'),
                              )
                             );
 

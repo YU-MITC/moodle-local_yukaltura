@@ -681,7 +681,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
 
         $options = array(0 => get_string('media_prop_size_large', 'local_yukaltura'),
                          1 => get_string('media_prop_size_small', 'local_yukaltura'),
-                         2 => get_string('media_prop_size_custom', 'local_yukaltura')
+                         2 => get_string('media_prop_size_custom', 'local_yukaltura'),
                          );
 
         $attr = array('id' => 'media_prop_size');
@@ -697,7 +697,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
                       'name' => 'media_prop_width',
                       'value' => '',
                       'maxlength' => '4',
-                      'size' => '4'
+                      'size' => '4',
                       );
         $output .= html_writer::empty_tag('input', $attr);
 
@@ -708,7 +708,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
                       'name' => 'media_prop_height',
                       'value' => '',
                       'maxlength' => '4',
-                      'size' => '4'
+                      'size' => '4',
                       );
         $output .= html_writer::empty_tag('input', $attr);
 
@@ -752,7 +752,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         // Check if player selection is globally overridden.
         if (local_yukaltura_get_player_override()) {
             return array(array( $defaultplayerid => $choices[$defaultplayerid]),
-                         $defaultplayerid
+                         $defaultplayerid,
                         );
         }
 
@@ -814,7 +814,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr = array('type' => 'button',
                       'name' => 'faedeout',
                       'id' => 'fadeout',
-                      'value' => 'Close'
+                      'value' => 'Close',
                      );
 
         $output .= html_writer::empty_tag('input', $attr);
@@ -846,7 +846,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr = array('type' => 'hidden',
                       'name' => 'kalturahost',
                       'id' => 'kalturahost',
-                      'value' => $kalturahost
+                      'value' => $kalturahost,
                      );
 
         $output .= html_writer::empty_tag('input', $attr);
@@ -854,7 +854,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr = array('type' => 'hidden',
                       'name' => 'partnerid',
                       'id' => 'partnerid',
-                      'value' => $partnerid
+                      'value' => $partnerid,
                      );
 
         $output .= html_writer::empty_tag('input', $attr);
@@ -862,7 +862,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr = array('type' => 'hidden',
                       'name' => 'uiconfid',
                       'id' => 'uiconfid',
-                      'value' => $uiconfid
+                      'value' => $uiconfid,
                      );
 
         $output .= html_writer::empty_tag('input', $attr);
@@ -870,7 +870,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr = array('type' => 'hidden',
                       'name' => 'player_studio',
                       'id' => 'player_studio',
-                      'value' => $playerstudio
+                      'value' => $playerstudio,
                      );
 
         $output .= html_writer::empty_tag('input', $attr);
@@ -878,7 +878,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr = array('type' => 'hidden',
                       'name' => 'player_width',
                       'id' => 'player_width',
-                      'value' => $playerwidth
+                      'value' => $playerwidth,
                      );
 
         $output .= html_writer::empty_tag('input', $attr);
@@ -886,7 +886,7 @@ class local_yukaltura_renderer extends plugin_renderer_base {
         $attr = array('type' => 'hidden',
                       'name' => 'player_height',
                       'id' => 'player_height',
-                      'value' => $playerheight
+                      'value' => $playerheight,
                      );
 
         $output .= html_writer::empty_tag('input', $attr);

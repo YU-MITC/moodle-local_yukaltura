@@ -23,7 +23,7 @@
  */
 
 namespace local_yukaltura\local;
-use \core\hook\output\before_http_headers;
+use core\hook\output\before_http_headers;
 use moodle_url;
 
 /**
@@ -43,7 +43,7 @@ class hook_callbacks {
         if ($PAGE->has_set_url()) {
             $paths = [
                 '/local/yukaltura/media_properties.php',
-                '/local/yukaltura/simple_selector.php'
+                '/local/yukaltura/simple_selector.php',
             ];
             foreach ($paths as $path) {
                 if ($PAGE->url->compare(new moodle_url($path), URL_MATCH_BASE)) {
