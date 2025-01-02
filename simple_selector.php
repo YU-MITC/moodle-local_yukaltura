@@ -110,7 +110,7 @@ if (local_yukaltura_get_mymedia_permission()) {
 
         if (empty($perpage)) {
             $perpage = MYMEDIA_ITEMS_PER_PAGE;
-	}
+        }
 
         if (!isset($SESSION->selectorsort) || empty($SESSION->selectorsort)) {
             $SESSION->selectorsort = new StdClass;
