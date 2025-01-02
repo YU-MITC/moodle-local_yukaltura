@@ -206,7 +206,7 @@ if ($hassiteconfig) {
 
     // Server Connection.
     $choices = array('hosted' => get_string('hostedconn', 'local_yukaltura'),
-                     'ce' => get_string('ceconn', 'local_yukaltura')
+                     'ce' => get_string('ceconn', 'local_yukaltura'),
                      );
 
     $adminsetting = new admin_setting_configselect('conn_server', get_string('conn_server', 'local_yukaltura'),
