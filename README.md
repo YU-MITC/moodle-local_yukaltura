@@ -1,5 +1,5 @@
 # YU Kaltura Media Package
-"YU Kaltura Media Package" is a third-party's Kaltura plugin package (a series of plugins) for Moodle 3.9 or later. This package is developed by the Center for Information Infrastructure, Yamaguchi University. By using this package, users can upload media to the Kaltura server, and easily embed the media in Moodle courses. Moreover, this package provides some useful functions. Since this package does not require Kaltura Application Framework (KAF), can work with Kaltura Community Edition (CE) and other editions.
+"YU Kaltura Media Package" is a third-party's Kaltura plugin package (a series of plugins) for Moodle 4.3 or later. This package is developed by the Center for Information Infrastructure, Yamaguchi University. By using this package, users can upload media to the Kaltura server, and easily embed the media in Moodle courses. Moreover, this package provides some useful functions. Since this package does not require Kaltura Application Framework (KAF), can work with Kaltura Community Edition (CE) and other editions.
 
 In order to use this package, administrators must install "[YU Kaltura Media Local Libraries](https://moodle.org/plugins/local_yukaltura)" and "[YU Kaltura Media Gallery](https://moodle.org/plugins/local_yumymedia)".
 These plugins provide functions such as uploading, playing back and deleting media files to users.
@@ -21,7 +21,7 @@ This plugin is updated with stable releases. To follow active development on Git
 Requirements
 ------
 
-* PHP 7.3 or greater.
+* PHP 8.0 or greater.
 * Web browsers must support the JavaScript and HTML5.
 * System administrators must use the HTTPS protocol for their Moodle site and Kaltura server.
 * Administrators must not delete "Default" access control profile from their Kaltura server. If they delete the "Default" profile, they must create new profile named "Default" before install our plugins.
@@ -30,7 +30,6 @@ Requirements
 Supported themes
 -----
 
-* Clean
 * Boost (version 1.1.7 and later)
 * Classic (version 1.3.0 and later)
 
@@ -45,24 +44,22 @@ Installation will be completed after you log in as an administrator and access t
 How to use
 ------
 
-* User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version2.1.pdf).
+* User's guide, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/userguide_version3.0.pdf).
 * Demonstration web page, click [here](http://www.cc.yamaguchi-u.ac.jp/guides/cas/plugins/demo/).
 
 Targeted Moodle versions
 ------
 
-Moodle 3.9, 3.10, 3.11, 4.0, 4.1
+Moodle 4.3, 4.4, 4.5
 
 Branches
 ------
 
-* MOODLE_39_STABLE -> Moodle 3.9 branch
-* MOODLE_310_STABLE -> Moodle 3.10 branch
-* MOODLE_311_STABLE -> Moodle 3.11 branch
-* MOODLE_400_STABLE -> Moodle 4.0 branch
-* MOODLE_401_STABLE -> Moodle 4.1 branch
+* MOODLE_403_STABLE -> Moodle 4.3 branch
+* MOODLE_404_STABLE -> Moodle 4.4 branch
+* MOODLE_405_STABLE -> Moodle 4.5 branch
 
-First clone the repository with "git clone", then "git checkout MOODLE_401_STABLE(branch name)" to switch branches.
+First clone the repository with "git clone", then "git checkout MOODLE_403_STABLE(branch name)" to switch branches.
 
 Warning
 ------
@@ -80,6 +77,16 @@ Known issues
 
 Change log of YU Kaltura Media Local Libraries
 ------
+
+Version 3.0.0
+
+* fixed copyright statements in various files.
+* fixed simple_selector.php, in order to resolve au undefined property issue in a dynamic defined class.
+* fixed simple_selector.php, in order to resolve a media search issue in the Moodle 4.3 and later versions.
+* added hook_callbacks.php and hooks.php, and deleted lib.php, in order to migrate to new hook mechanism.
+* fixed settings.php, in order to add new setting item (about maximum data size).
+* fixed javascript files, in order to resolve an issue data comparison use "undefined".
+* fixed javascript files, in order to resolve an issue data comparison use "undefined".
 
 Version 2.1.0
 
