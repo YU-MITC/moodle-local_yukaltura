@@ -16,7 +16,7 @@ jobs:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 3
       mariadb:
-        image: mariadb:11.2
+        image: mariadb:10.6
         env:
           MYSQL_USER: 'root'
           MYSQL_ALLOW_EMPTY_PASSWORD: "true"
@@ -57,7 +57,6 @@ jobs:
           echo "NVM_DIR=$HOME/.nvm" >> $GITHUB_ENV
       - name: Install moodle-plugin-ci
         run: |
-          moodle-plugin-ci add-plugin --branch MOODLE_403_STABLE YU-MITC/moodle-local_yukaltura
           moodle-plugin-ci install --plugin ./plugin --db-host=127.0.0.1
         env:
           DB: ${{ matrix.database }}
