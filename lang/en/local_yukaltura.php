@@ -178,7 +178,6 @@ $string['media_prop_size'] = 'Player size:';
 $string['media_prop_size_large'] = 'Large (400x365)';
 $string['media_prop_size_small'] = 'Small (260x260)';
 $string['media_prop_size_custom'] = 'Custom size';
-$string['custom_player'] = 'Custom player';
 $string['invalid_name'] = 'There is deprecated letter(s) in name.';
 $string['empty_size'] = 'Please input custom player size(width,height).';
 $string['invalid_custom_size'] = 'Custom player size(width,height) is a wrong dimension.';

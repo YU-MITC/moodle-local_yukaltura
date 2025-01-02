@@ -31,23 +31,23 @@ $capabilities = array(
         'contextlevel' => CONTEXT_COURSE,
         'archetypes' => array(
             'manager' => CAP_ALLOW,
-            'editingteacher' => CAP_ALLOW
-        )
+            'editingteacher' => CAP_ALLOW,
+        ),
     ),
 
     'local/yukaltura:view_selector' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_USER,
         'archetypes' => array(
-            'user' => CAP_ALLOW
-        )
+            'user' => CAP_ALLOW,
+        ),
     ),
 
     'local/yukaltura:search_selector' => array(
         'captype' => 'read',
         'contextlevel' => CONTEXT_USER,
         'archetypes' => array(
-            'user' => CAP_ALLOW
-        )
-    )
+            'user' => CAP_ALLOW,
+        ),
+    ),
 );
