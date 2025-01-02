@@ -34,6 +34,9 @@ use moodle_url;
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class hook_callbacks {
+    /**
+     * Print specific headers if needed.
+     */
     public static function local_yukaltura_before_http_headers() {
         global $PAGE;
 
